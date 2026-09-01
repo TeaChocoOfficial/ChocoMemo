@@ -1,0 +1,261 @@
+{
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "auth": "Authentication",
+        "socket": "Socket.io",
+        "threejs": "Three.js"
+    },
+    "home": {
+        "title": "Vite React Router",
+        "subtitle": "Modern Server-Side Rendering (SSR) Starter Template",
+        "description": "A production-ready starter boilerplate integrating React Router 7 (SSR), Tailwind CSS 4, i18n, Zustand 5, Socket.io, and Three.js in a robust and clean layout.",
+        "features": "Key Features",
+        "get_started": "Get Started",
+        "view_source": "View Source",
+        "choose_language": "Choose a Language to Learn"
+    },
+    "features": {
+        "performance": {
+            "title": "React Router 7 SSR",
+            "description": "Full server-side rendering (SSR) support with integrated data loading, layout engines, and route type generation."
+        },
+        "routing": {
+            "title": "Routing & Layouts",
+            "description": "Nested layouts, dynamic ':lang' localized routing segment, and client/server lifecycle wrappers."
+        },
+        "i18n": {
+            "title": "i18n URL Routing",
+            "description": "Locale-based routing switch and detection (/en-US, /th-TH, /ja-JP) utilizing robust i18next bundles."
+        },
+        "theme": {
+            "title": "Tailwind CSS 4 & Theme",
+            "description": "Modern dark/light theme switching utilizing Tailwind v4 css variables and hydrated Zustand state."
+        },
+        "socket": {
+            "title": "Real-time Socket.io",
+            "description": "Bidirectional real-time client-server events showing active count and live socket status."
+        },
+        "state": {
+            "title": "Zustand & 3D Graphics",
+            "description": "Lightweight global state manager paired with responsive WebGL 3D scenes using React Three Fiber."
+        }
+    },
+    "about": {
+        "title": "About This Starter",
+        "description": "This template serves as a production-grade blueprint for developing modern React web applications featuring top SEO performance, speed, and standard SSR capabilities.",
+        "tech_stack": "Technology Stack",
+        "architecture": "Architecture & Folder Structure",
+        "architecture_desc": "Built with the new standard 'app/' directory of React Router 7. Routing is centralized in routes.ts, layout is managed in layout.tsx/root.tsx, and styling uses CSS-only Tailwind 4 config.",
+        "back_home": "Back to Home"
+    },
+    "socket": {
+        "badge": "Real-time",
+        "title": "Socket.io Connection Demo",
+        "description": "Real-time connection status and player count synchronization.",
+        "status": "Connection Status",
+        "connected": "Connected",
+        "disconnected": "Disconnected",
+        "players": "Players Online",
+        "connect": "Connect",
+        "disconnect": "Disconnect",
+        "socket_id": "Socket ID",
+        "no_id": "Not connected",
+        "features_title": "Capabilities",
+        "feature_realtime_title": "Real-time Communication",
+        "feature_realtime_desc": "Bidirectional event-based communication between client and server with automatic reconnection support.",
+        "feature_websocket_title": "WebSocket Protocol",
+        "feature_websocket_desc": "Efficient full-duplex communication over a single TCP connection with minimal latency overhead.",
+        "feature_scalable_title": "Rooms & Namespaces",
+        "feature_scalable_desc": "Built-in support for channel-based broadcasting, rooms, namespaces, and horizontal scaling with adapters."
+    },
+    "auth": {
+        "badge": "Authentication Testing",
+        "title": "Authentication",
+        "description": "Test your server authentication flow — login with email/password or Google OAuth, check auth status, and sign out.",
+        "login_title": "Sign In",
+        "email": "Email",
+        "email_placeholder": "Enter your email",
+        "password": "Password",
+        "password_placeholder": "Enter your password",
+        "login_button": "Sign In",
+        "or": "OR",
+        "google_login": "Continue with Google",
+        "status_title": "Auth Status",
+        "current_status": "Current Status",
+        "checking": "Checking...",
+        "authenticated": "Authenticated",
+        "not_authenticated": "Not Authenticated",
+        "unknown_user": "Unknown User",
+        "no_email": "No email",
+        "user_id": "User ID",
+        "joined": "Joined",
+        "check_auth": "Check Auth Status",
+        "logout_button": "Sign Out",
+        "back_home": "Back to Home",
+        "login_success": "Login successful",
+        "login_failed": "Login failed. Please check your credentials.",
+        "logout_success": "Signed out successfully",
+        "logout_failed": "Sign out failed",
+        "register_title": "Create Account",
+        "name": "Name",
+        "name_placeholder": "Enter your name",
+        "register_button": "Sign Up",
+        "register_success": "Registration successful",
+        "register_failed": "Registration failed",
+        "data_title": "User Data",
+        "role": "Role",
+        "last_login": "Last Login",
+        "copy_id": "Copy ID",
+        "copied": "Copied!",
+        "edit_name": "Edit name",
+        "save": "Save",
+        "cancel": "Cancel",
+        "name_updated": "Name updated",
+        "name_update_failed": "Failed to update name",
+        "change_password_title": "Change Password",
+        "current_password": "Current Password",
+        "new_password": "New Password",
+        "change_password_button": "Update Password",
+        "password_changed": "Password changed successfully",
+        "password_change_failed": "Failed to change password",
+        "delete_account": "Delete Account",
+        "delete_account_confirm": "Are you sure? This cannot be undone.",
+        "delete_account_button": "Delete My Account",
+        "account_deleted": "Account deleted",
+        "google_linked": "Google Account",
+        "invalid_token": "Invalid or expired authentication token"
+    },
+    "threejs": {
+        "badge": "3D Graphics",
+        "title": "Three.js Interactive Scene",
+        "description": "Interactive 3D graphics powered by Three.js with React-three-fiber — explore geometric shapes and real-time rendering.",
+        "features_title": "Capabilities",
+        "feature_renderer_title": "WebGL Renderer",
+        "feature_renderer_desc": "Hardware-accelerated 3D rendering using WebGL for high-performance graphics across all modern browsers.",
+        "feature_interaction_title": "Interactive Controls",
+        "feature_interaction_desc": "Orbit controls allow you to rotate, pan, and zoom around the 3D scene with intuitive mouse and touch gestures.",
+        "feature_shapes_title": "Multiple Geometries",
+        "feature_shapes_desc": "Various 3D shapes with different materials, colors, and real-time animations rendered in a unified scene.",
+        "loading": "Loading 3D Scene..."
+    },
+    "theme": {
+        "dark": "Dark",
+        "light": "Light"
+    },
+    "common": {
+        "error": {
+            "oops": "Oops!",
+            "unexpected": "An unexpected error occurred.",
+            "notFound": "The requested page could not be found."
+        }
+    },
+    "notfound": {
+        "title": "Page Not Found",
+        "description": "The page you are looking for doesn't exist or has been moved.",
+        "back_home": "Back to Home",
+        "error_code": "404"
+    },
+    "languageSelect": {
+        "badge": "Language Selection",
+        "title": "Choose a Language to Learn",
+        "description": "Pick the language you want to study. More languages are coming soon.",
+        "back_home": "Back to Home",
+        "languages": {
+            "japanese": {
+                "name": "Japanese",
+                "description": "Learn Hiragana, Katakana and essential vocabulary through interactive quizzes."
+            },
+            "english": {
+                "name": "English",
+                "description": "English courses are currently in preparation."
+            }
+        }
+    },
+    "japanese": {
+        "badge": "Japanese",
+        "title": "Learn Japanese",
+        "description": "Master the basics of Japanese through characters, vocabulary, and quizzes.",
+        "back_language": "Back to Language Selection",
+        "nav": {
+            "characters": {
+                "title": "Characters",
+                "description": "Browse all Hiragana and Katakana characters with their readings.",
+                "action": "View Characters"
+            },
+            "characterQuiz": {
+                "title": "Character Quiz",
+                "description": "Test your recognition of Hiragana and Katakana characters.",
+                "action": "Start Character Quiz"
+            },
+            "vocabularyQuiz": {
+                "title": "Vocabulary Quiz",
+                "description": "Practice Japanese vocabulary words and meanings.",
+                "action": "Start Vocabulary Quiz"
+            }
+        },
+        "characters": {
+            "badge": "Characters",
+            "title": "Japanese Characters",
+            "description": "Hiragana and Katakana are the two Japanese syllabaries. Tap the tabs to switch.",
+            "tabs": {
+                "hiragana": "Hiragana",
+                "katakana": "Katakana"
+            },
+            "take_quiz": "Take the Quiz",
+            "count": "characters",
+            "back_hub": "Back to Japanese"
+        },
+        "characterQuiz": {
+            "badge": "Character Quiz",
+            "title": "Character Quiz",
+            "intro": "See the character and pick the correct reading. Choose which syllabary to practice.",
+            "chooseSet": "Choose a set",
+            "sets": {
+                "both": "Both",
+                "hiragana": "Hiragana",
+                "katakana": "Katakana"
+            },
+            "start": "Start Quiz",
+            "progress": "Question",
+            "score": "Score",
+            "promptLabel": "What is the reading of this character?",
+            "correct": "Correct!",
+            "wrong": "Not quite.",
+            "correctAnswer": "Correct answer",
+            "next": "Next Question",
+            "resultTitle": "Quiz Complete!",
+            "retry": "Try Again",
+            "back_characters": "Back to Characters"
+        },
+        "vocabularyQuiz": {
+            "badge": "Vocabulary Quiz",
+            "title": "Vocabulary Quiz",
+            "intro": "See the Japanese word and pick its meaning. Add your own words to practice.",
+            "available": "{{count}} words available",
+            "start": "Start Quiz",
+            "manage": "Manage Vocabulary",
+            "manageTitle": "Add Custom Words",
+            "jpPlaceholder": "Japanese word",
+            "readingPlaceholder": "Reading (optional)",
+            "meaningPlaceholder": "Meaning",
+            "add": "Add Word",
+            "customList": "Your custom words",
+            "remove": "Remove",
+            "progress": "Question",
+            "score": "Score",
+            "promptLabel": "What does this word mean?",
+            "correct": "Correct!",
+            "wrong": "Not quite.",
+            "correctAnswer": "Correct answer",
+            "next": "Next Question",
+            "resultTitle": "Quiz Complete!",
+            "retry": "Try Again",
+            "back_hub": "Back to Japanese"
+        }
+    },
+    "footer": {
+        "built_with": "Built with",
+        "by": "by"
+    }
+}

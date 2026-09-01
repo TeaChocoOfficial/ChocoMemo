@@ -1,0 +1,261 @@
+{
+    "nav": {
+        "home": "หน้าหลัก",
+        "about": "เกี่ยวกับ",
+        "auth": "ยืนยันตัวตน",
+        "socket": "ซ็อกเก็ต",
+        "threejs": "Three.js"
+    },
+    "home": {
+        "title": "Vite React Router",
+        "subtitle": "เทมเพลตเริ่มต้น Server-Side Rendering (SSR) สมัยใหม่",
+        "description": "เทมเพลตเริ่มต้นสำหรับการใช้งานในระดับโปรดักชันที่รวม React Router 7 (SSR), Tailwind CSS 4, i18n, Zustand 5, Socket.io และ Three.js ไว้ในโครงสร้างที่เข้าใจง่ายและปรับใช้ได้จริง",
+        "features": "ความสามารถเด่น",
+        "get_started": "เริ่มต้นใช้งาน",
+        "view_source": "ดูซอร์สโค้ด",
+        "choose_language": "เลือกภาษาที่ต้องการเรียน"
+    },
+    "features": {
+        "performance": {
+            "title": "React Router 7 SSR",
+            "description": "การเรนเดอร์ฝั่งเซิร์ฟเวอร์ (SSR) แบบเต็มรูปแบบ พร้อมระบบการดึงข้อมูลและ Type Safety ตลอดเส้นทางการทำเราต์"
+        },
+        "routing": {
+            "title": "การทำเราต์และเค้าโครง",
+            "description": "ระบบ Nested Routing, dynamic segment ':lang' และ Layout control เพื่อส่งมอบระบบจัดการหน้าเพจที่ดีเยี่ยม"
+        },
+        "i18n": {
+            "title": "ระบบหลายภาษาอัตโนมัติ",
+            "description": "การแปลภาษาด้วย i18next และการสลับภาษาตามรหัสเราต์ (Locale-based routing /en-US, /th-TH, /ja-JP)"
+        },
+        "theme": {
+            "title": "Tailwind CSS 4 & Theme",
+            "description": "การทำธีมมืด/สว่างด้วย CSS variables ล่าสุดของ Tailwind v4 และ Zustand persist state เพื่อการไฮเดรตที่รวดเร็ว"
+        },
+        "socket": {
+            "title": "Real-time Socket.io",
+            "description": "การสื่อสารข้อมูลแบบเรียลไทม์สองฝั่งและแสดงผลผู้ใช้งานแบบไลฟ์เชื่อมต่ออัตโนมัติ"
+        },
+        "state": {
+            "title": "Zustand State & Graphics",
+            "description": "การจัดการ Global State แบบเบาบางและฉาก WebGL 3D แบบตอบสนองได้ด้วย React Three Fiber"
+        }
+    },
+    "about": {
+        "title": "เกี่ยวกับเทมเพลตนี้",
+        "description": "เทมเพลตนี้เป็นโครงสร้างอ้างอิงที่ทันสมัยเพื่อเริ่มต้นพัฒนาเว็บแอปพลิเคชัน React สมัยใหม่ที่มีการทำ SEO และประสิทธิภาพที่เหนือชั้น มีระบบ Server-Side Rendering (SSR) เป็นรากฐานที่มั่นคง",
+        "tech_stack": "รายการเทคโนโลยี (Tech Stack)",
+        "architecture": "โครงสร้างและสถาปัตยกรรม",
+        "architecture_desc": "โครงงานนี้พัฒนาด้วยโครงสร้างไดเรกทอรี 'app/' ซึ่งเป็นค่าเริ่มต้นของ React Router 7 การทำเราต์ถูกรวมศูนย์ไว้ที่ routes.ts หน้าเพจทุกหน้าแยกเป็นสัดส่วน และใช้ Tailwind CSS 4 ในการสไตล์ พร้อมโมดูลเซิร์ฟเวอร์แบบไฮเดรต",
+        "back_home": "กลับหน้าหลัก"
+    },
+    "socket": {
+        "badge": "เรียลไทม์",
+        "title": "สาธิตการเชื่อมต่อ Socket.io",
+        "description": "สถานะการเชื่อมต่อแบบเรียลไทม์และการซิงค์จำนวนผู้เล่น",
+        "status": "สถานะการเชื่อมต่อ",
+        "connected": "เชื่อมต่อแล้ว",
+        "disconnected": "ไม่ได้เชื่อมต่อ",
+        "players": "ผู้เล่นออนไลน์",
+        "connect": "เชื่อมต่อ",
+        "disconnect": "ตัดการเชื่อมต่อ",
+        "socket_id": "Socket ID",
+        "no_id": "ยังไม่ได้เชื่อมต่อ",
+        "features_title": "ความสามารถ",
+        "feature_realtime_title": "การสื่อสารแบบเรียลไทม์",
+        "feature_realtime_desc": "การสื่อสารแบบสองทิศทางผ่านอีเวนต์ระหว่างไคลเอนต์และเซิร์ฟเวอร์พร้อมรองรับการเชื่อมต่อใหม่อัตโนมัติ",
+        "feature_websocket_title": "โปรโตคอล WebSocket",
+        "feature_websocket_desc": "การสื่อสารแบบฟูลดูเพล็กซ์ที่มีประสิทธิภาพผ่านการเชื่อมต่อ TCP เดียวด้วยเวลาแฝงที่น้อยที่สุด",
+        "feature_scalable_title": "Rooms และ Namespaces",
+        "feature_scalable_desc": "รองรับการกระจายเสียงตามช่องทาง, ห้อง, เนมสเปซ, และการปรับขนาดแนวนอนด้วย adapters"
+    },
+    "auth": {
+        "badge": "ทดสอบการยืนยันตัวตน",
+        "title": "การยืนยันตัวตน",
+        "description": "ทดสอบระบบยืนยันตัวตนกับเซิร์ฟเวอร์ — เข้าสู่ระบบด้วยอีเมล/รหัสผ่าน หรือ Google OAuth ตรวจสอบสถานะ และออกจากระบบ",
+        "login_title": "เข้าสู่ระบบ",
+        "email": "อีเมล",
+        "email_placeholder": "กรอกอีเมลของคุณ",
+        "password": "รหัสผ่าน",
+        "password_placeholder": "กรอกรหัสผ่านของคุณ",
+        "login_button": "เข้าสู่ระบบ",
+        "or": "หรือ",
+        "google_login": "เข้าสู่ระบบด้วย Google",
+        "status_title": "สถานะการยืนยันตัวตน",
+        "current_status": "สถานะปัจจุบัน",
+        "checking": "กำลังตรวจสอบ...",
+        "authenticated": "ยืนยันตัวตนแล้ว",
+        "not_authenticated": "ยังไม่ได้ยืนยันตัวตน",
+        "unknown_user": "ผู้ใช้ไม่ทราบชื่อ",
+        "no_email": "ไม่มีอีเมล",
+        "user_id": "รหัสผู้ใช้",
+        "joined": "เข้าร่วมเมื่อ",
+        "check_auth": "ตรวจสอบสถานะ",
+        "logout_button": "ออกจากระบบ",
+        "back_home": "กลับหน้าหลัก",
+        "login_success": "เข้าสู่ระบบสำเร็จ",
+        "login_failed": "เข้าสู่ระบบล้มเหลว กรุณาตรวจสอบข้อมูลอีกครั้ง",
+        "logout_success": "ออกจากระบบสำเร็จ",
+        "logout_failed": "ออกจากระบบล้มเหลว",
+        "register_title": "สร้างบัญชี",
+        "name": "ชื่อ",
+        "name_placeholder": "กรอกชื่อของคุณ",
+        "register_button": "สมัครสมาชิก",
+        "register_success": "สมัครสมาชิกสำเร็จ",
+        "register_failed": "สมัครสมาชิกล้มเหลว",
+        "data_title": "ข้อมูลผู้ใช้",
+        "role": "บทบาท",
+        "last_login": "เข้าสู่ระบบล่าสุด",
+        "copy_id": "คัดลอก ID",
+        "copied": "คัดลอกแล้ว!",
+        "edit_name": "แก้ไขชื่อ",
+        "save": "บันทึก",
+        "cancel": "ยกเลิก",
+        "name_updated": "อัปเดตชื่อแล้ว",
+        "name_update_failed": "ไม่สามารถอัปเดตชื่อได้",
+        "change_password_title": "เปลี่ยนรหัสผ่าน",
+        "current_password": "รหัสผ่านปัจจุบัน",
+        "new_password": "รหัสผ่านใหม่",
+        "change_password_button": "อัปเดตรหัสผ่าน",
+        "password_changed": "เปลี่ยนรหัสผ่านสำเร็จ",
+        "password_change_failed": "เปลี่ยนรหัสผ่านล้มเหลว",
+        "delete_account": "ลบบัญชี",
+        "delete_account_confirm": "แน่ใจหรือไม่? การกระทำนี้ไม่สามารถยกเลิกได้",
+        "delete_account_button": "ลบบัญชีของฉัน",
+        "account_deleted": "ลบบัญชีสำเร็จ",
+        "google_linked": "บัญชี Google",
+        "invalid_token": "โทเค็นการยืนยันตัวตนไม่ถูกต้องหรือหมดอายุ"
+    },
+    "threejs": {
+        "badge": "กราฟิก 3D",
+        "title": "ฉาก Three.js แบบโต้ตอบ",
+        "description": "กราฟิก 3D แบบโต้ตอบที่ขับเคลื่อนด้วย Three.js และ React-three-fiber — สำรวจรูปทรงเรขาคณิตและการเรนเดอร์แบบเรียลไทม์",
+        "features_title": "ความสามารถ",
+        "feature_renderer_title": "WebGL เรนเดอเรอร์",
+        "feature_renderer_desc": "การเรนเดอร์ 3D ด้วยความเร็วสูงผ่าน WebGL สำหรับกราฟิกประสิทธิภาพสูงบนเบราว์เซอร์ที่ทันสมัยทั้งหมด",
+        "feature_interaction_title": "การควบคุมแบบโต้ตอบ",
+        "feature_interaction_desc": "การควบคุมแบบ Orbit ช่วยให้หมุน เลื่อน และซูมฉาก 3D ได้ด้วยเมาส์และการสัมผัสที่เข้าใจง่าย",
+        "feature_shapes_title": "รูปทรงหลากหลาย",
+        "feature_shapes_desc": "รูปทรง 3D หลากหลายแบบที่มีวัสดุ สี และแอนิเมชันแบบเรียลไทม์ที่แตกต่างกันในฉากเดียวกัน",
+        "loading": "กำลังโหลดฉาก 3D..."
+    },
+    "theme": {
+        "dark": "มืด",
+        "light": "สว่าง"
+    },
+    "common": {
+        "error": {
+            "oops": "อุ๊ปส์!",
+            "unexpected": "เกิดข้อผิดพลาดที่ไม่คาดคิด",
+            "notFound": "ไม่พบหน้าที่ขอ"
+        }
+    },
+    "notfound": {
+        "title": "ไม่พบหน้า",
+        "description": "หน้าที่คุณกำลังมองหาไม่มีอยู่หรือถูกย้ายไปแล้ว",
+        "back_home": "กลับหน้าหลัก",
+        "error_code": "404"
+    },
+    "languageSelect": {
+        "badge": "เลือกภาษา",
+        "title": "เลือกภาษาที่ต้องการเรียน",
+        "description": "เลือกภาษาที่คุณต้องการศึกษา กำลังจะมีภาษาเพิ่มเติมในเร็วๆ นี้",
+        "back_home": "กลับหน้าหลัก",
+        "languages": {
+            "japanese": {
+                "name": "ภาษาญี่ปุ่น",
+                "description": "เรียนรู้ฮิรางานะ คาตาคานะ และคำศัพท์จำเป็นผ่านแบบทดสอบแบบโต้ตอบ"
+            },
+            "english": {
+                "name": "ภาษาอังกฤษ",
+                "description": "คอร์สภาษาอังกฤษกำลังอยู่ในระหว่างเตรียมการ"
+            }
+        }
+    },
+    "japanese": {
+        "badge": "ภาษาญี่ปุ่น",
+        "title": "เรียนภาษาญี่ปุ่น",
+        "description": "ฝึกพื้นฐานภาษาญี่ปุ่นผ่านตัวอักษร คำศัพท์ และแบบทดสอบ",
+        "back_language": "กลับไปเลือกภาษา",
+        "nav": {
+            "characters": {
+                "title": "ตัวอักษร",
+                "description": "ดูฮิรางานะและคาตาคานะทั้งหมดพร้อมการอ่าน",
+                "action": "ดูตัวอักษร"
+            },
+            "characterQuiz": {
+                "title": "แบบทดสอบตัวอักษร",
+                "description": "ทดสอบการจำตัวอักษรฮิรางานะและคาตาคานะ",
+                "action": "เริ่มแบบทดสอบตัวอักษร"
+            },
+            "vocabularyQuiz": {
+                "title": "แบบทดสอบคำศัพท์",
+                "description": "ฝึกคำศัพท์ภาษาญี่ปุ่นและความหมาย",
+                "action": "เริ่มแบบทดสอบคำศัพท์"
+            }
+        },
+        "characters": {
+            "badge": "ตัวอักษร",
+            "title": "ตัวอักษรญี่ปุ่น",
+            "description": "ฮิรางานะและคาตาคานะคือระบบพยางค์สองแบบของภาษาญี่ปุ่น แตะแท็บเพื่อสลับ",
+            "tabs": {
+                "hiragana": "ฮิรางานะ",
+                "katakana": "คาตาคานะ"
+            },
+            "take_quiz": "ทำแบบทดสอบ",
+            "count": "ตัวอักษร",
+            "back_hub": "กลับไปภาษาญี่ปุ่น"
+        },
+        "characterQuiz": {
+            "badge": "แบบทดสอบตัวอักษร",
+            "title": "แบบทดสอบตัวอักษร",
+            "intro": "ดูตัวอักษรแล้วเลือกการอ่านที่ถูกต้อง เลือกชุดพยางค์ที่จะฝึก",
+            "chooseSet": "เลือกชุด",
+            "sets": {
+                "both": "ทั้งหมด",
+                "hiragana": "ฮิรางานะ",
+                "katakana": "คาตาคานะ"
+            },
+            "start": "เริ่มแบบทดสอบ",
+            "progress": "คำถาม",
+            "score": "คะแนน",
+            "promptLabel": "ตัวอักษรนี้อ่านว่าอะไร?",
+            "correct": "ถูกต้อง!",
+            "wrong": "ยังไม่ถูก",
+            "correctAnswer": "คำตอบที่ถูกต้อง",
+            "next": "คำถามถัดไป",
+            "resultTitle": "ทำแบบทดสอบเสร็จสิ้น!",
+            "retry": "ลองใหม่",
+            "back_characters": "กลับไปตัวอักษร"
+        },
+        "vocabularyQuiz": {
+            "badge": "แบบทดสอบคำศัพท์",
+            "title": "แบบทดสอบคำศัพท์",
+            "intro": "ดูคำศัพท์ภาษาญี่ปุ่นแล้วเลือกความหมาย เพิ่มคำศัพท์ของคุณเองเพื่อฝึก",
+            "available": "มี {{count}} คำ",
+            "start": "เริ่มแบบทดสอบ",
+            "manage": "จัดการคำศัพท์",
+            "manageTitle": "เพิ่มคำศัพท์ที่กำหนดเอง",
+            "jpPlaceholder": "คำศัพท์ภาษาญี่ปุ่น",
+            "readingPlaceholder": "การอ่าน (ไม่บังคับ)",
+            "meaningPlaceholder": "ความหมาย",
+            "add": "เพิ่มคำ",
+            "customList": "คำศัพท์ที่คุณกำหนดเอง",
+            "remove": "ลบ",
+            "progress": "คำถาม",
+            "score": "คะแนน",
+            "promptLabel": "คำนี้หมายถึงอะไร?",
+            "correct": "ถูกต้อง!",
+            "wrong": "ยังไม่ถูก",
+            "correctAnswer": "คำตอบที่ถูกต้อง",
+            "next": "คำถามถัดไป",
+            "resultTitle": "ทำแบบทดสอบเสร็จสิ้น!",
+            "retry": "ลองใหม่",
+            "back_hub": "กลับไปภาษาญี่ปุ่น"
+        }
+    },
+    "footer": {
+        "built_with": "สร้างด้วย",
+        "by": "โดย"
+    }
+}

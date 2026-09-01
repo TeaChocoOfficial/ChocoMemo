@@ -1,0 +1,271 @@
+/* -Path: 'Vite-React-Router-TypeScript/app/app.css' */
+@import 'tailwindcss';
+
+/* Dark Mode Variant */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ===== COMPLETE DESIGN TOKEN SYSTEM ===== */
+@theme {
+    /* --- Surface --- */
+    --color-surface: hsl(0 0% 97.4%);
+    --color-surface-foreground: hsl(0 0% 4.3%);
+    --color-surface-subtle: hsl(0 0% 33.4%);
+    --color-surface-muted: hsl(0 0% 56.1%);
+    --color-surface-elevated: hsl(0 0% 100%);
+    --color-surface-overlay: hsl(0 0% 94.8%);
+    --color-surface-sunken: hsl(0 0% 90.9%);
+
+    /* --- Primary --- */
+    --color-primary: hsl(261.3 82.6% 59.1%);
+    --color-primary-foreground: hsl(0 0% 97.4%);
+    --color-primary-subtle: hsl(249.6 100% 97.6%);
+    --color-primary-muted: hsl(251.6 100% 90.1%);
+    --color-primary-emphasis: hsl(271.7 100% 36.1%);
+
+    /* --- Secondary --- */
+    --color-secondary: hsl(221.8 91.3% 62.7%);
+    --color-secondary-foreground: hsl(0 0% 97.4%);
+    --color-secondary-subtle: hsl(219.7 100% 95.6%);
+    --color-secondary-muted: hsl(220 100% 86%);
+    --color-secondary-emphasis: hsl(223.2 73.8% 48.8%);
+
+    /* --- Accent --- */
+    --color-accent: hsl(200 100% 50%);
+    --color-accent-foreground: hsl(0 0% 98.7%);
+    --color-accent-subtle: hsl(200 100% 95%);
+    --color-accent-muted: hsl(200 100% 85%);
+    --color-accent-emphasis: hsl(200 100% 25%);
+
+    /* --- Feedback: Error --- */
+    --color-error: hsl(357.2 68.3% 47.6%);
+    --color-error-foreground: hsl(0 0% 98.7%);
+    --color-error-subtle: hsl(5.9 100% 96.1%);
+    --color-error-muted: hsl(5.2 100% 88.9%);
+    --color-error-emphasis: hsl(351.7 100% 25.3%);
+
+    /* --- Feedback: Warning --- */
+    --color-warning: hsl(46.6 100% 31%);
+    --color-warning-foreground: hsl(37.1 65.7% 3.6%);
+    --color-warning-subtle: hsl(40.3 100% 92.7%);
+    --color-warning-muted: hsl(40.6 95.7% 77.7%);
+    --color-warning-emphasis: hsl(44.9 100% 21.1%);
+
+    /* --- Feedback: Success --- */
+    --color-success: hsl(115.2 51.5% 37.4%);
+    --color-success-foreground: hsl(0 0% 98.7%);
+    --color-success-subtle: hsl(112.9 39.3% 93.8%);
+    --color-success-muted: hsl(113.4 48.9% 80.4%);
+    --color-success-emphasis: hsl(119.5 100% 18%);
+
+    /* --- Feedback: Info --- */
+    --color-info: hsl(199.9 91.2% 42.9%);
+    --color-info-foreground: hsl(0 0% 98.7%);
+    --color-info-subtle: hsl(205.7 93.9% 95%);
+    --color-info-muted: hsl(205.3 91.4% 84.7%);
+    --color-info-emphasis: hsl(198.4 100% 25.6%);
+
+    /* --- Neutral / Muted --- */
+    --color-neutral: hsl(0 0% 33.4%);
+    --color-neutral-foreground: hsl(0 0% 97.4%);
+    --color-neutral-subtle: hsl(0 0% 94.8%);
+    --color-neutral-muted: hsl(0 0% 80.6%);
+    --color-neutral-emphasis: hsl(0 0% 22.9%);
+
+    /* --- Border / Divider --- */
+    --color-border: hsl(0 0% 87%);
+    --color-border-strong: hsl(0 0% 71.8%);
+    --color-border-hover: hsl(261.3 82.6% 59.1%);
+    --color-ring: hsl(261.3 82.6% 59.1%);
+
+    /* --- Typography --- */
+    --font-sans: 'Inter', ui-sans-serif, system-ui;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+    /* --- Radius --- */
+    --radius-none: 0;
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+    --radius-full: 9999px;
+}
+
+/* ===== DARK MODE OVERRIDES ===== */
+.dark {
+    /* Surface */
+    --color-surface: hsl(0 0% 2.2%);
+    --color-surface-foreground: hsl(0 0% 93.4%);
+    --color-surface-subtle: hsl(0 0% 62%);
+    --color-surface-muted: hsl(0 0% 38.9%);
+    --color-surface-elevated: hsl(0 0% 6%);
+    --color-surface-overlay: hsl(0 0% 9.5%);
+    --color-surface-sunken: hsl(0 0% 0.7%);
+
+    /* Primary */
+    --color-primary: hsl(257.9 100% 72.2%);
+    --color-primary-subtle: hsl(256.7 50.9% 12%);
+    --color-primary-muted: hsl(258 47.1% 30.4%);
+
+    /* Secondary */
+    --color-secondary: hsl(221.2 100% 69.3%);
+    --color-secondary-subtle: hsl(221.2 63.1% 10.7%);
+    --color-secondary-muted: hsl(221.6 56.3% 27.6%);
+
+    /* Accent */
+    --color-accent: hsl(200 100% 50%);
+    --color-accent-subtle: hsl(200 100% 95%);
+    --color-accent-muted: hsl(200 100% 85%);
+
+    /* Error */
+    --color-error: hsl(357.9 84.2% 56.8%);
+    --color-error-subtle: hsl(3.9 43% 11.7%);
+    --color-error-muted: hsl(0.1 58.2% 29.1%);
+
+    /* Warning */
+    --color-warning: hsl(42.9 67.2% 49.5%);
+    --color-warning-foreground: hsl(33.6 83.1% 1.9%);
+    --color-warning-subtle: hsl(40.6 67.5% 6.6%);
+    --color-warning-muted: hsl(44.1 100% 16.1%);
+
+    /* Success */
+    --color-success: hsl(115.2 50.9% 43.9%);
+    --color-success-subtle: hsl(114.6 49.2% 7%);
+    --color-success-muted: hsl(115.3 81.2% 17.5%);
+
+    /* Info */
+    --color-info: hsl(203.4 66.8% 56.9%);
+    --color-info-subtle: hsl(204.1 85.7% 8.1%);
+    --color-info-muted: hsl(201.8 78.5% 22.9%);
+
+    /* Neutral */
+    --color-neutral: hsl(0 0% 56.1%);
+    --color-neutral-subtle: hsl(0 0% 13.1%);
+    --color-neutral-muted: hsl(0 0% 30.2%);
+
+    /* Border */
+    --color-border: hsl(0 0% 16%);
+    --color-border-strong: hsl(0 0% 26%);
+    --color-border-hover: hsl(257.9 100% 72.2%);
+    --color-ring: hsl(257.9 100% 72.2%);
+}
+
+@layer base {
+    :root {
+        color-scheme: light;
+    }
+
+    .dark {
+        color-scheme: dark;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition:
+            fill 0.3s ease,
+            color 0.3s ease,
+            stroke 0.3s ease,
+            box-shadow 0.3s ease,
+            border-color 0.3s ease,
+            outline-color 0.3s ease,
+            background-color 0.3s ease;
+    }
+
+    html,
+    body,
+    #root {
+        @apply min-h-dvh max-w-dvw w-full text-surface-foreground;
+    }
+
+    html {
+        @apply bg-surface scroll-smooth overflow-x-hidden;
+    }
+
+    body {
+        @apply leading-[1.6] font-sans antialiased;
+    }
+
+    #root {
+        @apply min-h-screen flex flex-col;
+    }
+
+    /* Scrollbar Styling */
+    ::-webkit-scrollbar {
+        @apply w-2 h-2;
+    }
+
+    ::-webkit-scrollbar-track {
+        @apply bg-secondary/20;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        @apply bg-primary/50 rounded-full;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        @apply bg-primary/70;
+    }
+}
+
+@layer components {
+    /* ===== Buttons ===== */
+    .btn {
+        @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium no-underline transition-all duration-200 cursor-pointer border-none text-base;
+    }
+
+    .btn-surface {
+        @apply bg-surface-overlay/50 text-surface-subtle hover:bg-surface-overlay/90 hover:text-surface-foreground;
+    }
+    .btn-surface-text {
+        @apply bg-transparent text-surface-subtle hover:bg-surface-overlay hover:text-surface-foreground;
+    }
+
+    .btn-linear {
+        @apply bg-linear-to-r from-primary-emphasis to-secondary text-white shadow-lg shadow-primary/40 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-primary/50;
+    }
+
+    .btn-primary {
+        @apply bg-primary-emphasis text-primary-foreground hover:bg-primary-emphasis/70;
+    }
+
+    .btn-primary-text {
+        @apply bg-transparent text-primary hover:bg-primary/10;
+    }
+
+    .btn-primary-outline {
+        @apply border border-primary text-primary hover:bg-primary/10;
+    }
+
+    .btn-primary-ghost {
+        @apply bg-primary/10 text-primary hover:bg-primary/20;
+    }
+
+    .btn-secondary {
+        @apply bg-secondary text-secondary-foreground hover:bg-secondary/70;
+    }
+
+    .btn-accent {
+        @apply bg-accent text-accent-foreground hover:bg-accent/70;
+    }
+
+    .btn-warning {
+        @apply bg-warning text-warning-foreground hover:bg-warning/70;
+    }
+
+    .btn-error {
+        @apply bg-error text-error-foreground hover:bg-error/70;
+    }
+
+    .btn-success {
+        @apply bg-success text-success-foreground hover:bg-success/70;
+    }
+
+    .btn-info {
+        @apply bg-info text-info-foreground hover:bg-info/70;
+    }
+
+    /* ===== Cards ===== */
+    .card {
+        @apply bg-surface border border-border rounded-2xl p-6 transition-all duration-200 hover:bg-surface-elevated hover:border-secondary hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/30;
+    }
+}

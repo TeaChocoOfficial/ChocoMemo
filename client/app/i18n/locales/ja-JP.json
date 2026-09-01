@@ -1,0 +1,261 @@
+{
+    "nav": {
+        "home": "ホーム",
+        "about": "概要",
+        "auth": "認証",
+        "socket": "Socket.io",
+        "threejs": "Three.js"
+    },
+    "home": {
+        "title": "Vite React Router",
+        "subtitle": "モダンサーバーサイドレンダリング（SSR）スターターテンプレート",
+        "description": "React Router 7（SSR）、Tailwind CSS 4、i18n、Zustand 5、Socket.io、Three.jsをクリーンなレイアウトに統合したプロダクション対応のスターターボイラープレート。",
+        "features": "主な機能",
+        "get_started": "始める",
+        "view_source": "ソースコード",
+        "choose_language": "学習する言語を選ぶ"
+    },
+    "features": {
+        "performance": {
+            "title": "React Router 7 SSR",
+            "description": "データ読み込み、レイアウトエンジン、ルートタイプ生成が統合された完全なサーバーサイドレンダリング（SSR）サポート。"
+        },
+        "routing": {
+            "title": "ルーティングとレイアウト",
+            "description": "入れ子になったレイアウト、動的な ':lang' ローカライズされたルーティングセグメント、クライアント/サーバーライフサイクルラッパー。"
+        },
+        "i18n": {
+            "title": "i18n URLルーティング",
+            "description": "堅牢な i18next バンドルを利用した、ロケールベースのルーティングの切り替えと検出（/en-US、/th-TH、/ja-JP）。"
+        },
+        "theme": {
+            "title": "Tailwind CSS 4 とテーマ",
+            "description": "Tailwind v4 の CSS 変数とハイドレートされた Zustand の状態を利用した、モダンなダーク/ライトテーマの切り替え。"
+        },
+        "socket": {
+            "title": "リアルタイム Socket.io",
+            "description": "アクティブユーザー数とライブソケットステータスを表示する双方向のリアルタイムクライアントサーバーイベント。"
+        },
+        "state": {
+            "title": "Zustand と 3D グラフィックス",
+            "description": "React Three Fiber を使用した応答性の高い WebGL 3D シーンと組み合わせた軽量グローバル状態マネージャー。"
+        }
+    },
+    "about": {
+        "title": "このスターターについて",
+        "description": "このテンプレートは、トップクラスの SEO パフォーマンス、スピード、標準の SSR 機能を備えたモダンな React Web アプリケーション開発用のプロダクションレベルの設計図として機能します。",
+        "tech_stack": "技術スタック",
+        "architecture": "アーキテクチャとフォルダ構造",
+        "architecture_desc": "React Router 7 の新しい標準である 'app/' ディレクトリを使用して構築。ルーティングは routes.ts で集中管理され、レイアウトは layout.tsx/root.tsx で管理され、スタイリングには CSS のみの Tailwind 4 構成を使用します。",
+        "back_home": "ホームに戻る"
+    },
+    "socket": {
+        "badge": "リアルタイム",
+        "title": "Socket.io 接続デモ",
+        "description": "リアルタイム接続状態とプレイヤー数の同期。",
+        "status": "接続状態",
+        "connected": "接続済み",
+        "disconnected": "未接続",
+        "players": "オンラインプレイヤー",
+        "connect": "接続",
+        "disconnect": "切断",
+        "socket_id": "Socket ID",
+        "no_id": "未接続",
+        "features_title": "機能",
+        "feature_realtime_title": "リアルタイム通信",
+        "feature_realtime_desc": "自動再接続対応のクライアントとサーバー間の双方向イベントベース通信。",
+        "feature_websocket_title": "WebSocket プロトコル",
+        "feature_websocket_desc": "最小限のレイテンシで単一の TCP 接続を介した効率的な全二重通信。",
+        "feature_scalable_title": "ルームと名前空間",
+        "feature_scalable_desc": "チャンネルベースのブロードキャスト、ルーム、名前空間、アダプターによる水平スケーリングを内蔵。"
+    },
+    "auth": {
+        "badge": "認証テスト",
+        "title": "認証",
+        "description": "サーバーの認証フローをテスト — メール/パスワードまたは Google OAuth でログイン、認証状態を確認、サインアウト。",
+        "login_title": "サインイン",
+        "email": "メールアドレス",
+        "email_placeholder": "メールアドレスを入力",
+        "password": "パスワード",
+        "password_placeholder": "パスワードを入力",
+        "login_button": "サインイン",
+        "or": "または",
+        "google_login": "Google で続ける",
+        "status_title": "認証状態",
+        "current_status": "現在の状態",
+        "checking": "確認中...",
+        "authenticated": "認証済み",
+        "not_authenticated": "未認証",
+        "unknown_user": "不明なユーザー",
+        "no_email": "メールなし",
+        "user_id": "ユーザーID",
+        "joined": "登録日",
+        "check_auth": "認証状態を確認",
+        "logout_button": "サインアウト",
+        "back_home": "ホームに戻る",
+        "login_success": "ログイン成功",
+        "login_failed": "ログイン失敗。資格情報を確認してください。",
+        "logout_success": "サインアウトしました",
+        "logout_failed": "サインアウト失敗",
+        "register_title": "アカウント作成",
+        "name": "名前",
+        "name_placeholder": "名前を入力",
+        "register_button": "サインアップ",
+        "register_success": "登録成功",
+        "register_failed": "登録失敗",
+        "data_title": "ユーザーデータ",
+        "role": "ロール",
+        "last_login": "最終ログイン",
+        "copy_id": "IDをコピー",
+        "copied": "コピーしました！",
+        "edit_name": "名前を編集",
+        "save": "保存",
+        "cancel": "キャンセル",
+        "name_updated": "名前を更新しました",
+        "name_update_failed": "名前の更新に失敗しました",
+        "change_password_title": "パスワード変更",
+        "current_password": "現在のパスワード",
+        "new_password": "新しいパスワード",
+        "change_password_button": "パスワードを更新",
+        "password_changed": "パスワードを変更しました",
+        "password_change_failed": "パスワード変更に失敗しました",
+        "delete_account": "アカウント削除",
+        "delete_account_confirm": "本当によろしいですか？この操作は取り消せません。",
+        "delete_account_button": "アカウントを削除",
+        "account_deleted": "アカウントを削除しました",
+        "google_linked": "Google アカウント",
+        "invalid_token": "認証トークンが無効または期限切れです"
+    },
+    "threejs": {
+        "badge": "3D グラフィックス",
+        "title": "Three.js インタラクティブシーン",
+        "description": "Three.js と React-three-fiber によるインタラクティブな 3D グラフィックス — 幾何学形状とリアルタイムレンダリングを探索。",
+        "features_title": "機能",
+        "feature_renderer_title": "WebGL レンダラー",
+        "feature_renderer_desc": "最新ブラウザに対応した高性能グラフィックスのための WebGL を使用したハードウェアアクセラレーション 3D レンダリング。",
+        "feature_interaction_title": "インタラクティブコントロール",
+        "feature_interaction_desc": "Orbit コントロールにより、直感的なマウスとタッチ操作で 3D シーンの回転、パン、ズームが可能。",
+        "feature_shapes_title": "複数のジオメトリ",
+        "feature_shapes_desc": "さまざまなマテリアル、色、リアルタイムアニメーションを持つ多様な 3D 形状を統一されたシーンでレンダリング。",
+        "loading": "3D シーンを読み込み中..."
+    },
+    "theme": {
+        "dark": "ダーク",
+        "light": "ライト"
+    },
+    "common": {
+        "error": {
+            "oops": "おっと！",
+            "unexpected": "予期しないエラーが発生しました。",
+            "notFound": "要求されたページが見つかりませんでした。"
+        }
+    },
+    "notfound": {
+        "title": "ページが見つかりません",
+        "description": "お探しのページは存在しないか、移動された可能性があります。",
+        "back_home": "ホームに戻る",
+        "error_code": "404"
+    },
+    "languageSelect": {
+        "badge": "言語の選択",
+        "title": "学習する言語を選ぶ",
+        "description": "学びたい言語を選択してください。まもなく言語が追加されます。",
+        "back_home": "ホームに戻る",
+        "languages": {
+            "japanese": {
+                "name": "日本語",
+                "description": "ひらがな、カタカナ、基本単語をインタラクティブなクイズで学べます。"
+            },
+            "english": {
+                "name": "英語",
+                "description": "英語コースは現在準備中です。"
+            }
+        }
+    },
+    "japanese": {
+        "badge": "日本語",
+        "title": "日本語を学ぶ",
+        "description": "文字、語彙、クイズを通して日本語の基礎をマスターしましょう。",
+        "back_language": "言語選択に戻る",
+        "nav": {
+            "characters": {
+                "title": "文字",
+                "description": "ひらがなとカタカナの全文字と読み方を確認できます。",
+                "action": "文字を見る"
+            },
+            "characterQuiz": {
+                "title": "文字クイズ",
+                "description": "ひらがなとカタカナの文字認識をテストしましょう。",
+                "action": "文字クイズを始める"
+            },
+            "vocabularyQuiz": {
+                "title": "語彙クイズ",
+                "description": "日本語の単語と意味を練習しましょう。",
+                "action": "語彙クイズを始める"
+            }
+        },
+        "characters": {
+            "badge": "文字",
+            "title": "日本語の文字",
+            "description": "ひらがなとカタカナは日本語の二つの音節文字です。タブで切り替えられます。",
+            "tabs": {
+                "hiragana": "ひらがな",
+                "katakana": "カタカナ"
+            },
+            "take_quiz": "クイズに挑戦",
+            "count": "文字",
+            "back_hub": "日本語に戻る"
+        },
+        "characterQuiz": {
+            "badge": "文字クイズ",
+            "title": "文字クイズ",
+            "intro": "文字を見て正しい読み方を選びましょう。練習する音節文字を選んでください。",
+            "chooseSet": "セットを選択",
+            "sets": {
+                "both": "すべて",
+                "hiragana": "ひらがな",
+                "katakana": "カタカナ"
+            },
+            "start": "クイズを始める",
+            "progress": "問題",
+            "score": "スコア",
+            "promptLabel": "この文字の読み方は何ですか？",
+            "correct": "正解！",
+            "wrong": "不正解",
+            "correctAnswer": "正解",
+            "next": "次の問題",
+            "resultTitle": "クイズ完了！",
+            "retry": "もう一度",
+            "back_characters": "文字に戻る"
+        },
+        "vocabularyQuiz": {
+            "badge": "語彙クイズ",
+            "title": "語彙クイズ",
+            "intro": "日本語の単語を見て意味を選びましょう。自分で単語を追加して練習できます。",
+            "available": "利用可能な単語 {{count}} 個",
+            "start": "クイズを始める",
+            "manage": "語彙を管理",
+            "manageTitle": "カスタム単語を追加",
+            "jpPlaceholder": "日本語の単語",
+            "readingPlaceholder": "読み方（任意）",
+            "meaningPlaceholder": "意味",
+            "add": "追加",
+            "customList": "追加した単語",
+            "remove": "削除",
+            "progress": "問題",
+            "score": "スコア",
+            "promptLabel": "この単語の意味は何ですか？",
+            "correct": "正解！",
+            "wrong": "不正解",
+            "correctAnswer": "正解",
+            "next": "次の問題",
+            "resultTitle": "クイズ完了！",
+            "retry": "もう一度",
+            "back_hub": "日本語に戻る"
+        }
+    },
+    "footer": {
+        "built_with": "構築技術",
+        "by": "作者"
+    }
+}
