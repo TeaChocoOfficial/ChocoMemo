@@ -13,12 +13,12 @@ export default function CharacterCard({ kana, index }: CharacterCardProps) {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.3, delay: index * 0.02 }}
-            className='group flex flex-col items-center justify-center rounded-2xl border border-border bg-surface-elevated p-4 transition-all duration-300 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1'
+            className='group flex flex-col items-center justify-center rounded-sm border border-line bg-surface p-4 transition-colors duration-200 hover:border-accent hover:bg-surface-overlay'
         >
-            <span className='text-4xl sm:text-5xl font-bold text-surface-foreground mb-3 transition-transform duration-300 group-hover:scale-110'>
+            <span className='text-4xl sm:text-5xl font-bold text-surface-foreground mb-3 transition-colors duration-200 group-hover:text-accent'>
                 {kana.char}
             </span>
-            <span className='text-sm font-mono uppercase tracking-wider text-primary'>
+            <span className='text-sm font-mono uppercase tracking-wider text-accent'>
                 {kana.romaji}
             </span>
         </motion.div>

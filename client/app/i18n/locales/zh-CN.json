@@ -1,147 +1,52 @@
 {
     "nav": {
         "home": "首页",
-        "about": "关于",
-        "auth": "认证",
-        "socket": "Socket.io",
-        "threejs": "Three.js"
+        "tagline": "语言学习",
+        "languages": "语言",
+        "japanese": "日语",
+        "menu": "打开菜单"
     },
     "home": {
-        "title": "Vite React Router",
-        "subtitle": "现代服务端渲染 (SSR) 启动模板",
-        "description": "一个生产就绪的启动模板，在干净且稳健的布局中集成了 React Router 7 (SSR)、Tailwind CSS 4、i18n、Zustand 5、Socket.io 和 Three.js。",
-        "features": "主要特性",
-        "get_started": "开始使用",
-        "view_source": "查看源码",
-        "choose_language": "选择要学习的语言"
-    },
-    "features": {
-        "performance": {
-            "title": "React Router 7 SSR",
-            "description": "提供完整的服务端渲染 (SSR) 支持，集成了数据加载、布局引擎以及路由类型生成。"
-        },
-        "routing": {
-            "title": "路由与布局",
-            "description": "嵌套布局，动态的 ':lang' 本地化路由片段，以及客户端/服务端的生命周期包装器。"
-        },
-        "i18n": {
-            "title": "i18n URL 路由",
-            "description": "基于区域设置的路由切换和检测 (/en-US, /th-TH, /ja-JP)，利用了强大的 i18next 工具包。"
-        },
-        "theme": {
-            "title": "Tailwind CSS 4 与主题",
-            "description": "利用 Tailwind v4 CSS 变量和脱水 (Hydrated) 的 Zustand 状态实现现代的深色/浅色主题切换。"
-        },
-        "socket": {
-            "title": "实时 Socket.io",
-            "description": "双向的实时客户端-服务端事件通信，可显示在线人数和实时的 Socket 状态。"
-        },
-        "state": {
-            "title": "Zustand 与 3D 图形",
-            "description": "轻量级的全局状态管理器，结合 React Three Fiber 实现响应式 WebGL 3D 场景。"
+        "badge": "Learn-Choco",
+        "title": "冲泡你的日语，",
+        "titleAccent": "一次一杯慢慢来。",
+        "subtitle": "Choco 将平假名、片假名和词汇测验变成温暖的每日学习习惯。选个主题，泡一杯，开始学吧。",
+        "ctaStart": "开始学习",
+        "ctaBrowse": "浏览假名",
+        "features": {
+            "characters": {
+                "title": "平假名与片假名",
+                "description": "在整洁的练习表中学习每个字符的读音和罗马字。",
+                "action": "浏览假名"
+            },
+            "characterQuiz": {
+                "title": "假名测验",
+                "description": "十题快问快答，可选平假名、片假名或两者。",
+                "action": "开始测验"
+            },
+            "vocabularyQuiz": {
+                "title": "词汇测验",
+                "description": "用日语、读音和释义创建自己的词表，然后自测。",
+                "action": "练习词汇"
+            }
         }
     },
-    "about": {
-        "title": "关于本模板",
-        "description": "此模板作为生产级蓝图，用于开发具备顶级 SEO 性能、速度和标准 SSR 能力的现代 React Web 应用程序。",
-        "tech_stack": "技术栈",
-        "architecture": "架构与目录结构",
-        "architecture_desc": "基于 React Router 7 的新标准 'app/' 目录构建。路由在 routes.ts 中集中管理，布局在 layout.tsx/root.tsx 中处理，样式使用纯 CSS 的 Tailwind 4 配置。",
-        "back_home": "返回首页"
-    },
-    "socket": {
-        "badge": "实时",
-        "title": "Socket.io 连接演示",
-        "description": "实时连接状态和玩家数量同步。",
-        "status": "连接状态",
-        "connected": "已连接",
-        "disconnected": "未连接",
-        "players": "在线玩家",
-        "connect": "连接",
-        "disconnect": "断开",
-        "socket_id": "Socket ID",
-        "no_id": "未连接",
-        "features_title": "功能",
-        "feature_realtime_title": "实时通信",
-        "feature_realtime_desc": "客户端与服务器之间的双向事件通信，支持自动重连。",
-        "feature_websocket_title": "WebSocket 协议",
-        "feature_websocket_desc": "通过单一 TCP 连接实现高效的全双工通信，延迟极低。",
-        "feature_scalable_title": "房间与命名空间",
-        "feature_scalable_desc": "内置支持基于频道的广播、房间、命名空间以及使用适配器的水平扩展。"
-    },
-    "auth": {
-        "badge": "认证测试",
-        "title": "认证",
-        "description": "测试服务器的认证流程 — 使用邮箱/密码或 Google OAuth 登录，检查认证状态，以及登出。",
-        "login_title": "登录",
-        "email": "邮箱",
-        "email_placeholder": "请输入邮箱",
-        "password": "密码",
-        "password_placeholder": "请输入密码",
-        "login_button": "登录",
-        "or": "或",
-        "google_login": "使用 Google 继续",
-        "status_title": "认证状态",
-        "current_status": "当前状态",
-        "checking": "检查中...",
-        "authenticated": "已认证",
-        "not_authenticated": "未认证",
-        "unknown_user": "未知用户",
-        "no_email": "无邮箱",
-        "user_id": "用户 ID",
-        "joined": "加入时间",
-        "check_auth": "检查认证状态",
-        "logout_button": "登出",
-        "back_home": "返回首页",
-        "login_success": "登录成功",
-        "login_failed": "登录失败。请检查您的凭据。",
-        "logout_success": "已成功登出",
-        "logout_failed": "登出失败",
-        "register_title": "创建账户",
-        "name": "姓名",
-        "name_placeholder": "请输入姓名",
-        "register_button": "注册",
-        "register_success": "注册成功",
-        "register_failed": "注册失败",
-        "data_title": "用户数据",
-        "role": "角色",
-        "last_login": "上次登录",
-        "copy_id": "复制 ID",
-        "copied": "已复制！",
-        "edit_name": "编辑姓名",
-        "save": "保存",
-        "cancel": "取消",
-        "name_updated": "姓名已更新",
-        "name_update_failed": "更新姓名失败",
-        "change_password_title": "修改密码",
-        "current_password": "当前密码",
-        "new_password": "新密码",
-        "change_password_button": "更新密码",
-        "password_changed": "密码修改成功",
-        "password_change_failed": "密码修改失败",
-        "delete_account": "删除账户",
-        "delete_account_confirm": "确定吗？此操作无法撤销。",
-        "delete_account_button": "删除我的账户",
-        "account_deleted": "账户已删除",
-        "google_linked": "Google 账户",
-        "invalid_token": "认证令牌无效或已过期"
-    },
-    "threejs": {
-        "badge": "3D 图形",
-        "title": "Three.js 交互场景",
-        "description": "由 Three.js 和 React-three-fiber 驱动的交互式 3D 图形 — 探索几何形状和实时渲染。",
-        "features_title": "功能",
-        "feature_renderer_title": "WebGL 渲染器",
-        "feature_renderer_desc": "使用 WebGL 的硬件加速 3D 渲染，在所有现代浏览器上实现高性能图形。",
-        "feature_interaction_title": "交互控制",
-        "feature_interaction_desc": "轨道控制器允许您通过直观的鼠标和触摸手势旋转、平移和缩放 3D 场景。",
-        "feature_shapes_title": "多种几何体",
-        "feature_shapes_desc": "具有不同材质、颜色和实时动画的各种 3D 形状，在统一场景中渲染。",
-        "loading": "正在加载 3D 场景..."
-    },
     "theme": {
-        "dark": "深色",
-        "light": "浅色"
+        "pickerLabel": "切换主题",
+        "names": {
+            "dark": "暗色",
+            "light": "浅色",
+            "darkSakura": "暗樱花",
+            "lightSakura": "浅樱花",
+            "darkPaper": "暗纸张",
+            "lightPaper": "浅纸张",
+            "darkNature": "暗抹茶",
+            "lightNature": "浅抹茶",
+            "darkAutumn": "暗红叶",
+            "lightAutumn": "浅红叶",
+            "darkWinter": "暗冬雪",
+            "lightWinter": "浅冬雪"
+        }
     },
     "common": {
         "error": {
@@ -161,6 +66,14 @@
         "title": "选择要学习的语言",
         "description": "选择你想要学习的语言。更多语言即将推出。",
         "back_home": "返回首页",
+        "status": {
+            "available": "可用",
+            "comingSoon": "即将推出"
+        },
+        "cta": {
+            "start": "开始学习",
+            "unavailable": "暂不可用"
+        },
         "languages": {
             "japanese": {
                 "name": "日语",
@@ -255,7 +168,9 @@
         }
     },
     "footer": {
-        "built_with": "构建于",
-        "by": "作者"
+        "tagline": "边喝茶边学日语的温暖方式，主题多样。",
+        "explore": "浏览",
+        "learn": "我们教什么",
+        "rights": "TeaChoco · 版权所有。"
     }
 }

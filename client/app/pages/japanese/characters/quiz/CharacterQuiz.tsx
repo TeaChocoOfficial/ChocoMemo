@@ -11,6 +11,7 @@ import type { Kana, KanaSetId } from '~/data/japanese/kana';
 import { KANA_SETS, KANA_SET_IDS } from '~/data/japanese/kana';
 import QuizProgress from '../../quiz/components/QuizProgress';
 import QuizResult from '../../quiz/components/QuizResult';
+import AmbientBackdrop from '~/components/screen/AmbientBackdrop';
 import QuizQuestion from './components/QuizQuestion';
 import QuizChoices, { type ChoiceFeedback } from './components/QuizChoices';
 
@@ -98,15 +99,12 @@ export default function CharacterQuizPage() {
 
     return (
         <section className='relative min-h-screen overflow-hidden py-16 sm:py-20'>
-            <div className='absolute inset-0 -z-10'>
-                <div className='absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2' />
-                <div className='absolute bottom-0 left-0 w-80 h-80 bg-secondary/8 rounded-full blur-3xl -translate-x-1/3 translate-y-1/3' />
-            </div>
+            <AmbientBackdrop />
 
             <div className='mx-auto max-w-3xl px-4 sm:px-6 w-full'>
                 <Link
                     to='/japanese/characters'
-                    className='inline-flex items-center gap-2 mb-6 text-sm font-medium text-surface-muted hover:text-primary transition-colors'
+                    className='inline-flex items-center gap-2 mb-6 text-sm font-medium text-surface-muted hover:text-accent transition-colors'
                 >
                     <FaArrowLeft className='w-3.5 h-3.5' />
                     {t('japanese.characterQuiz.back_characters')}
@@ -133,15 +131,15 @@ export default function CharacterQuizPage() {
                             <span className='text-sm font-medium text-surface-muted'>
                                 {t('japanese.characterQuiz.chooseSet')}
                             </span>
-                            <div className='flex flex-wrap justify-center gap-2 p-1 rounded-xl bg-surface-overlay border border-border'>
+                            <div className='flex flex-wrap justify-center gap-2 p-1 rounded-sm bg-surface-overlay border border-line'>
                                 {setTabs.map((set) => (
                                     <button
                                         key={set.id}
                                         type='button'
                                         onClick={() => setSetFilter(set.id)}
-                                        className={`px-5 py-2 text-sm font-semibold rounded-lg transition-all duration-300 cursor-pointer ${
+                                        className={`px-5 py-2 text-sm font-semibold rounded-sm transition-colors duration-200 cursor-pointer ${
                                             setFilter === set.id
-                                                ? 'bg-primary text-primary-foreground'
+                                                ? 'bg-accent text-accent-foreground'
                                                 : 'text-surface-muted hover:text-surface-foreground'
                                         }`}
                                     >
@@ -152,7 +150,7 @@ export default function CharacterQuizPage() {
                             <button
                                 type='button'
                                 onClick={() => startQuiz(setFilter)}
-                                className='mt-4 px-8 py-3.5 rounded-xl bg-primary text-primary-foreground text-base font-semibold shadow-lg shadow-primary/25 hover:bg-primary/90 transition-all duration-300 cursor-pointer active:scale-95'
+                                className='mt-4 px-8 py-3.5 rounded-sm bg-accent text-accent-foreground text-base font-semibold transition-colors duration-200 cursor-pointer hover:bg-accent-emphasis active:translate-y-px'
                             >
                                 {t('japanese.characterQuiz.start')}
                             </button>
@@ -204,7 +202,7 @@ export default function CharacterQuizPage() {
                                 <button
                                     type='button'
                                     onClick={next}
-                                    className='px-8 py-3.5 rounded-xl bg-primary text-primary-foreground text-base font-semibold shadow-lg shadow-primary/25 hover:bg-primary/90 transition-all duration-300 cursor-pointer active:scale-95'
+                                    className='px-8 py-3.5 rounded-sm bg-accent text-accent-foreground text-base font-semibold transition-colors duration-200 cursor-pointer hover:bg-accent-emphasis active:translate-y-px'
                                 >
                                     {t('japanese.characterQuiz.next')}
                                 </button>

@@ -2,7 +2,6 @@
 import { motion } from 'framer-motion';
 import Badge from '~/components/custom/Badge';
 import { useTranslation } from 'react-i18next';
-import { FaLanguage } from 'react-icons/fa6';
 
 export default function LanguageSelectHero() {
     const { t } = useTranslation();
@@ -15,15 +14,16 @@ export default function LanguageSelectHero() {
             className='text-center mb-12'
         >
             <Badge variant='info' className='mb-6'>
-                <FaLanguage className='w-3 h-3' /> {t('languageSelect.badge')}
+                {t('languageSelect.badge')}
             </Badge>
 
             <h1 className='text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter text-surface-foreground mb-4'>
                 {t('languageSelect.title')}
             </h1>
-            <p className='max-w-2xl mx-auto text-lg text-surface-subtle leading-relaxed'>
+            <p className='max-w-2xl mx-auto text-lg text-surface-subtle leading-relaxed mb-8'>
                 {t('languageSelect.description')}
             </p>
+            <div className='mx-auto h-px w-16 bg-accent' />
         </motion.div>
     );
 }

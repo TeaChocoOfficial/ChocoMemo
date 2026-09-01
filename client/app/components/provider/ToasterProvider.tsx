@@ -11,21 +11,23 @@ export const ToasterProvider = () => (
         toastOptions={{
             duration: 5000, // default duration สำหรับ toast ปกติ
             style: {
-                background: '#363636',
-                color: '#fff',
+                background: 'var(--color-surface-elevated)',
+                color: 'var(--color-surface-foreground)',
+                border: '1px solid var(--color-line)',
+                borderRadius: '2px',
             },
             success: {
                 duration: 3000,
                 iconTheme: {
-                    primary: '#22c55e',
-                    secondary: '#fff',
+                    primary: 'var(--color-success)',
+                    secondary: 'var(--color-success-foreground)',
                 },
             },
             error: {
                 duration: 8000, // error toast นานขึ้น
                 iconTheme: {
-                    primary: '#ef4444',
-                    secondary: '#fff',
+                    primary: 'var(--color-error)',
+                    secondary: 'var(--color-error-foreground)',
                 },
             },
         }}

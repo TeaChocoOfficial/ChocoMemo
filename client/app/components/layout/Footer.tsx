@@ -1,63 +1,98 @@
-//-Path: "Vite-React-TypeScript/src/components/layout/Footer.tsx"
+// -Path: 'client/app/components/layout/Footer.tsx'
 import { useTranslation } from 'react-i18next';
-import { SiReactrouter } from 'react-icons/si';
-import type { IconType } from 'react-icons/lib';
-import { FaGithub, FaBook, FaRocket } from 'react-icons/fa';
+import { FaGithub } from 'react-icons/fa6';
+import { Link } from '~/i18n/routing';
 
-function FooterLink({
-    href,
-    Icon,
-    children,
-}: {
-    href: string;
-    Icon: IconType;
-    children: React.ReactNode;
-}) {
-    return (
-        <a
-            href={href}
-            target='_blank'
-            rel='noopener noreferrer'
-            className='flex items-center gap-1 text-info-emphasis hover:text-info hover:underline transition-colors text-sm'
-        >
-            <Icon />
-            {children}
-        </a>
-    );
-}
+const languages = [
+    { code: 'ja', label: '日本語' },
+    { code: 'en', label: 'English' },
+    { code: 'th', label: 'ไทย' },
+    { code: 'zh', label: '中文' },
+];
 
 export default function Footer() {
     const { t } = useTranslation();
 
     return (
-        <footer className='border-t border-border/50 bg-surface-overlay/30'>
-            <div className='mx-auto max-w-6xl px-4 sm:px-6 py-6'>
-                <div className='flex flex-col sm:flex-row items-center justify-between gap-4'>
-                    <p className='flex items-center gap-1 text-sm text-surface-foreground'>
-                        {t('footer.built_with')} <span className='text-error'>❤</span>{' '}
-                        {t('footer.by')}{' '}
-                        <FooterLink href='https://github.com/TeaChoco' Icon={FaGithub}>
-                            TeaChoco
-                        </FooterLink>
-                    </p>
-                    <div className='flex items-center gap-4'>
-                        <FooterLink
-                            href='https://github.com/TeaChoco/Vite-React-Router-TypeScript'
-                            Icon={FaGithub}
-                        >
-                            GitHub
-                        </FooterLink>
-
-                        <FooterLink href='https://reactrouter.com/docs' Icon={SiReactrouter}>
-                            React Router Docs
-                        </FooterLink>
-                        <FooterLink href='https://vite.dev' Icon={FaRocket}>
-                            Vite Docs
-                        </FooterLink>
-                        <FooterLink href='https://react.dev' Icon={FaBook}>
-                            React Docs
-                        </FooterLink>
+        <footer className='mt-auto border-t border-line bg-surface'>
+            <div className='mx-auto max-w-6xl px-4 sm:px-6 py-10'>
+                <div className='grid gap-8 sm:grid-cols-2 lg:grid-cols-3'>
+                    {/* Brand */}
+                    <div className='flex flex-col gap-3'>
+                        <Link to='/' className='flex items-center gap-3'>
+                            <div className='flex h-9 w-9 items-center justify-center rounded-sm bg-accent'>
+                                <span className='text-lg font-black leading-none text-accent-foreground'>
+                                    茶
+                                </span>
+                            </div>
+                            <span className='text-lg font-extrabold tracking-tight text-surface-foreground'>
+                                Choco<span className='text-accent'>.</span>
+                            </span>
+                        </Link>
+                        <p className='max-w-xs text-sm text-surface-muted'>{t('footer.tagline')}</p>
                     </div>
+
+                    {/* Explore */}
+                    <div className='flex flex-col gap-3'>
+                        <h3 className='text-xs font-semibold uppercase tracking-[0.18em] text-surface-subtle'>
+                            {t('footer.explore')}
+                        </h3>
+                        <ul className='flex flex-col gap-2 text-sm'>
+                            <li>
+                                <Link to='/' className='text-surface-foreground hover:text-accent transition-colors'>
+                                    {t('nav.home')}
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    to='/language-select'
+                                    className='text-surface-foreground hover:text-accent transition-colors'
+                                >
+                                    {t('nav.languages')}
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    to='/japanese'
+                                    className='text-surface-foreground hover:text-accent transition-colors'
+                                >
+                                    {t('nav.japanese')}
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
+
+                    {/* Languages */}
+                    <div className='flex flex-col gap-3'>
+                        <h3 className='text-xs font-semibold uppercase tracking-[0.18em] text-surface-subtle'>
+                            {t('footer.learn')}
+                        </h3>
+                        <ul className='flex flex-wrap gap-2'>
+                            {languages.map((lang) => (
+                                <li
+                                    key={lang.code}
+                                    className='border border-line px-3 py-1 text-sm text-surface-subtle'
+                                >
+                                    {lang.label}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+
+                <div className='mt-10 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-line pt-6'>
+                    <p className='text-sm text-surface-muted'>
+                        © {new Date().getFullYear()} {t('footer.rights')}
+                    </p>
+                    <a
+                        href='https://github.com/TeaChoco'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='flex items-center gap-2 text-sm text-surface-subtle hover:text-accent transition-colors'
+                    >
+                        <FaGithub className='h-4 w-4' />
+                        TeaChoco
+                    </a>
                 </div>
             </div>
         </footer>

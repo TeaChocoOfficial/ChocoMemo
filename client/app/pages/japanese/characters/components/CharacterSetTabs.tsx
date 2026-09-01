@@ -11,7 +11,7 @@ interface CharacterSetTabsProps {
 
 export default function CharacterSetTabs({ active, onChange, labels }: CharacterSetTabsProps) {
     return (
-        <div className='inline-flex items-center gap-1 p-1 rounded-xl bg-surface-overlay border border-border'>
+        <div className='inline-flex items-center gap-1 p-1 rounded-sm bg-surface-overlay border border-line'>
             {KANA_SET_IDS.map((set) => {
                 const isActive = set === active;
                 return (
@@ -19,16 +19,16 @@ export default function CharacterSetTabs({ active, onChange, labels }: Character
                         key={set}
                         type='button'
                         onClick={() => onChange(set)}
-                        className={`relative px-5 py-2 text-sm font-semibold rounded-lg transition-all duration-300 cursor-pointer ${
+                        className={`relative px-5 py-2 text-sm font-semibold rounded-sm transition-colors duration-200 cursor-pointer ${
                             isActive
-                                ? 'text-primary-foreground'
+                                ? 'text-accent-foreground'
                                 : 'text-surface-muted hover:text-surface-foreground'
                         }`}
                     >
                         {isActive && (
                             <motion.span
                                 layoutId='character-set-tab'
-                                className='absolute inset-0 rounded-lg bg-primary shadow-lg shadow-primary/25'
+                                className='absolute inset-0 rounded-sm bg-accent'
                                 transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                             />
                         )}

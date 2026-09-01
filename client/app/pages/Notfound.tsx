@@ -11,8 +11,8 @@ export default function Notfound() {
     return (
         <section className='relative overflow-hidden py-20 sm:py-28'>
             <div className='absolute inset-0 -z-10'>
-                <div className='absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 bg-error/10 rounded-full blur-3xl' />
-                <div className='absolute bottom-0 right-0 w-100 h-100 bg-warning/5 rounded-full blur-3xl' />
+                <div className='absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 rounded-full border border-line' />
+                <div className='absolute bottom-0 right-0 w-100 h-100 rounded-full border border-line' />
             </div>
 
             <motion.div
@@ -22,8 +22,6 @@ export default function Notfound() {
                 className='mx-auto max-w-6xl px-4 sm:px-6 text-center'
             >
                 <motion.span
-                    animate={{ scale: [1, 1.05, 1] }}
-                    transition={{ duration: 3, repeat: Infinity }}
                     className='text-[10rem] sm:text-[14rem] font-black tracking-tighter leading-none text-surface-foreground/10 select-none'
                 >
                     {t('notfound.error_code')}

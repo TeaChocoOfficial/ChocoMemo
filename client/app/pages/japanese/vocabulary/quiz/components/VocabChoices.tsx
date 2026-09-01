@@ -12,8 +12,8 @@ interface VocabChoicesProps {
 }
 
 const stateClasses: Record<VocabChoiceFeedback, string> = {
-    idle: 'border-border bg-surface-elevated hover:border-primary/40 hover:bg-surface-overlay text-surface-foreground',
-    selected: 'border-accent bg-accent/10 text-surface-foreground',
+    idle: 'border-line bg-surface hover:border-accent hover:bg-surface-overlay text-surface-foreground',
+    selected: 'border-accent bg-accent/15 text-surface-foreground',
     correct: 'border-success bg-success/15 text-success',
     wrong: 'border-error bg-error/15 text-error',
 };
@@ -32,7 +32,7 @@ export default function VocabChoices({ choices, feedback, disabled, onSelect }: 
                         transition={{ duration: 0.3, delay: index * 0.05 }}
                         disabled={disabled}
                         onClick={() => onSelect(choice)}
-                        className={`px-5 py-4 rounded-xl border-2 text-left text-base font-semibold transition-all duration-300 cursor-pointer disabled:pointer-events-none ${stateClasses[state]}`}
+                        className={`px-5 py-4 rounded-sm border text-left text-base font-semibold transition-colors duration-200 cursor-pointer disabled:pointer-events-none ${stateClasses[state]}`}
                     >
                         {choice.label}
                     </motion.button>

@@ -46,7 +46,7 @@ export const links: Route.LinksFunction = () => [
     },
     {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap',
+        href: 'https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Zen+Kaku+Gothic+New:wght@300..900&display=swap',
     },
 ];
 
@@ -58,7 +58,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <head>
                 <meta charSet='utf-8' />
                 <meta name='viewport' content='width=device-width, initial-scale=1' />
-                <link rel='icon' type='image/x-icon' href={env.BASE + 'favicon.ico'} />
+                <link rel='icon' type='imagesvg+xml' href={env.BASE + 'icon.svg'} />
                 <Meta />
                 <Links />
                 {SUPPORTED_LANGS.map((lang) => (
@@ -82,10 +82,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
                         __html: `
                             (function () {
                                 try {
+                                    var THEMES = ['dark', 'light', 'dark-sakura', 'light-sakura', 'dark-paper', 'light-paper', 'dark-nature', 'light-nature', 'dark-autumn', 'light-autumn', 'dark-winter', 'light-winter'];
+                                    var DARK = ['dark', 'dark-sakura', 'dark-paper', 'dark-nature', 'dark-autumn', 'dark-winter'];
                                     var t = document.cookie.match(/(?:^|;\\s*)theme=([^;]+)/);
                                     var saved = t ? t[1] : localStorage.getItem('theme');
-                                    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                                    var isDark = saved === 'dark' || (!saved && prefersDark);
+                                    var theme = (saved && THEMES.indexOf(saved) !== -1) ? saved : null;
+                                    if (!theme) theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                                    var isDark = DARK.indexOf(theme) !== -1;
+                                    document.documentElement.setAttribute('data-theme', theme);
+                                    document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';
                                     if (isDark) document.documentElement.classList.add('dark');
                                 } catch (e) {}
                             })();

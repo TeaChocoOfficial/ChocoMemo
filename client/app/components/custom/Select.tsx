@@ -1,8 +1,8 @@
 //-Path: "Vite-React-TypeScript/src/components/custom/Select.tsx"
 import { useTranslation } from 'react-i18next';
-import { FaChevronDown } from 'react-icons/fa6';
+import { FaCheck, FaChevronDown } from 'react-icons/fa6';
 import { AnimatePresence, motion } from 'framer-motion';
-import { useState, useRef, useEffect, useMemo } from 'react';
+import React, { useState, useRef, useEffect, useLayoutEffect, useMemo } from 'react';
 
 interface SelectOptionProps<ValueType = string> {
     value: ValueType;
@@ -29,22 +29,23 @@ function SelectOption<ValueType>({
         <button
             type='button'
             onClick={onClick}
-            className={`w-full px-4 py-3 text-left transition-all flex items-center gap-3 group ${
+            className={`w-full px-4 py-3 text-left flex items-center gap-3 group ${
                 selected
-                    ? 'font-black text-primary bg-primary/15 hover:bg-primary/20'
-                    : 'text-surface-foreground hover:pl-6 hover:bg-primary/10'
+                    ? 'font-black text-accent-foreground bg-accent hover:bg-accent-emphasis'
+                    : 'text-surface-foreground hover:bg-surface-overlay'
             } ${className}`}
         >
             {icon && (
                 <span
-                    className={`transition-transform duration-300 group-hover:scale-110 ${
-                        selected ? 'text-primary' : 'text-surface-foreground'
+                    className={`${
+                        selected ? 'text-accent-foreground' : 'text-surface-muted'
                     }`}
                 >
                     {icon}
                 </span>
             )}
             <span className='text-sm tracking-tight'>{String(content)}</span>
+            {selected && <FaCheck className='absolute h-3.5 w-3.5 right-4' />}
         </button>
     );
 }
@@ -63,8 +64,9 @@ export interface SelectProps<ValueType = string> {
     placeholder?: string;
     icon?: React.ReactNode;
     labelClassName?: string;
-    options: OptionSelectType<ValueType>[];
+    optionsClassName?: string;
     containerClassName?: string;
+    options: OptionSelectType<ValueType>[];
     onChange?: (value: ValueType) => void;
     children?: (
         Option: typeof SelectOption<ValueType>,
@@ -83,11 +85,14 @@ export default function Select<ValueType>({
     className = '',
     placeholder,
     labelClassName = '',
+    optionsClassName = '',
     containerClassName = '',
 }: SelectProps<ValueType>) {
     const { t } = useTranslation();
     const [isOpen, setIsOpen] = useState(false);
+    const optionsRef = useRef<HTMLDivElement>(null);
     const dropdownRef = useRef<HTMLDivElement>(null);
+    const [dropdownAlign, setDropdownAlign] = useState<'none' | 'left' | 'right'>('none');
     const [dropdownDirection, setDropdownDirection] = useState<'down' | 'up'>('down');
 
     const handleToggle = () => {
@@ -133,6 +138,19 @@ export default function Select<ValueType>({
         return () => document.removeEventListener('mousedown', handleClickOutside);
     }, []);
 
+    useLayoutEffect(() => {
+        if (isOpen && optionsRef.current) {
+            const rect = optionsRef.current.getBoundingClientRect();
+            setDropdownAlign(
+                rect.right > window.innerWidth
+                    ? 'right'
+                    : rect.left > window.innerWidth
+                      ? 'left'
+                      : 'none',
+            );
+        }
+    }, [isOpen]);
+
     const handleSelect = (optionValue: ValueType) => {
         if (onChange) onChange(optionValue);
         setIsOpen(false);
@@ -146,13 +164,13 @@ export default function Select<ValueType>({
         t('common.select');
     const labelClass = 'flex gap-2 text-sm font-bold text-surface-foreground mb-2 ml-1';
     const triggerClass =
-        'w-full px-5 py-3.5 rounded-2xl border border-border transition-all duration-300 flex items-center justify-between gap-3 text-left shadow-sm hover:shadow-md';
+        'w-full px-4 py-3 rounded-sm border bg-surface transition-colors duration-200 flex items-center justify-between gap-3 text-left';
 
     return (
         <div ref={dropdownRef} className={`relative ${containerClassName}`}>
             {label && (
                 <label className={`${labelClass} ${labelClassName}`}>
-                    {icon && <span className='text-primary/70'>{icon}</span>}
+                    {icon && <span className='text-accent/80'>{icon}</span>}
                     {label}
                     {required && <span className='text-red-500 font-black'>*</span>}
                 </label>
@@ -162,28 +180,26 @@ export default function Select<ValueType>({
                 type='button'
                 onClick={handleToggle}
                 className={`${triggerClass} ${className} ${
-                    isOpen
-                        ? 'border-primary ring-4 ring-primary/10 bg-surface-elevated/50'
-                        : 'border-border-foreground bg-surface/20'
+                    isOpen ? 'border-accent' : 'border-line'
                 }`}
             >
                 <div className='flex items-center gap-3 truncate'>
                     {(selectedOption?.icon || icon) && (
-                        <span className='text-primary shrink-0'>
+                        <span className='text-accent shrink-0'>
                             {selectedOption?.icon || icon}
                         </span>
                     )}
                     <span
                         className={`text-sm font-medium truncate ${
-                            isOpen ? 'text-primary' : 'text-surface-foreground'
+                            isOpen ? 'text-accent' : 'text-surface-foreground'
                         }`}
                     >
                         {String(displayText)}
                     </span>
                 </div>
                 <FaChevronDown
-                    className={`w-3.5 h-3.5 transition-transform duration-500 ${
-                        isOpen ? 'rotate-180 text-primary' : 'text-surface-foreground'
+                    className={`w-3.5 h-3.5 transition-colors duration-200 ${
+                        isOpen ? 'rotate-180 text-accent' : 'text-surface-muted'
                     }`}
                 />
             </button>
@@ -191,34 +207,37 @@ export default function Select<ValueType>({
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        transition={{ duration: 0.2 }}
-                        exit={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        className={`absolute z-100 w-full bg-surface-elevated rounded-2xl shadow-2xl border border-border overflow-hidden ${
+                        ref={optionsRef}
+                        transition={{ duration: 0.15 }}
+                        exit={{ opacity: 0, y: 4 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0, y: 4 }}
+                        className={`absolute z-100 min-w-full w-max bg-surface-elevated rounded-sm border border-line overflow-hidden ${
                             dropdownDirection === 'up' ? 'bottom-full mb-2' : 'mt-2'
-                        }`}
+                        } ${dropdownAlign === 'right' ? 'right-0' : dropdownAlign === 'left' ? 'left-0' : ''} ${optionsClassName}`}
                     >
-                        {children
-                            ? children(
-                                  ({ value: optionValue, selected, ...optionProps }) => (
+                        <div className='max-h-64 overflow-y-auto'>
+                            {children
+                                ? children(
+                                      ({ value: optionValue, selected, ...optionProps }) => (
+                                          <SelectOption<ValueType>
+                                              {...optionProps}
+                                              value={optionValue}
+                                              onClick={() => handleSelect(optionValue)}
+                                              selected={selected || value === optionValue}
+                                          />
+                                      ),
+                                      options,
+                                  )
+                                : options.map((option) => (
                                       <SelectOption<ValueType>
-                                          {...optionProps}
-                                          value={optionValue}
-                                          onClick={() => handleSelect(optionValue)}
-                                          selected={selected || value === optionValue}
+                                          key={String(option.value)}
+                                          {...option}
+                                          selected={value === option.value}
+                                          onClick={() => handleSelect(option.value)}
                                       />
-                                  ),
-                                  options,
-                              )
-                            : options.map((option) => (
-                                  <SelectOption<ValueType>
-                                      key={String(option.value)}
-                                      {...option}
-                                      selected={value === option.value}
-                                      onClick={() => handleSelect(option.value)}
-                                  />
-                              ))}
+                                  ))}
+                        </div>
                     </motion.div>
                 )}
             </AnimatePresence>

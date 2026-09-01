@@ -9,7 +9,6 @@ export interface JapaneseNavItem {
     title: string;
     description: string;
     action: string;
-    accentClass?: string;
 }
 
 interface JapaneseNavCardProps {
@@ -18,8 +17,7 @@ interface JapaneseNavCardProps {
 }
 
 export default function JapaneseNavCard({ item, index }: JapaneseNavCardProps) {
-    const { to, icon, title, description, action, accentClass = 'from-primary to-secondary' } =
-        item;
+    const { to, icon, title, description, action } = item;
 
     return (
         <motion.div
@@ -29,11 +27,9 @@ export default function JapaneseNavCard({ item, index }: JapaneseNavCardProps) {
         >
             <Link
                 to={to}
-                className='group relative flex flex-col h-full rounded-2xl border border-border bg-surface-elevated p-6 transition-all duration-300 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1'
+                className='group relative flex flex-col h-full rounded-sm border border-line bg-surface p-6 transition-colors duration-200 hover:border-accent hover:bg-surface-overlay'
             >
-                <div
-                    className={`mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-linear-to-br ${accentClass} text-primary-foreground shadow-lg transition-transform duration-300 group-hover:scale-110`}
-                >
+                <div className='mb-4 flex h-12 w-12 items-center justify-center rounded-sm bg-accent text-accent-foreground transition-colors duration-200 group-hover:bg-accent-emphasis'>
                     {icon}
                 </div>
 
@@ -42,9 +38,9 @@ export default function JapaneseNavCard({ item, index }: JapaneseNavCardProps) {
                 </h3>
                 <p className='text-sm leading-relaxed text-surface-muted flex-1'>{description}</p>
 
-                <div className='mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-all duration-300 group-hover:gap-3'>
+                <div className='mt-6 inline-flex items-center gap-2 text-sm font-semibold text-accent'>
                     {action}
-                    <FaArrowRight className='w-3.5 h-3.5' />
+                    <FaArrowRight className='w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1' />
                 </div>
             </Link>
         </motion.div>

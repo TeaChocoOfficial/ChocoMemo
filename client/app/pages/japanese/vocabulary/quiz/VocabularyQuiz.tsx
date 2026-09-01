@@ -11,6 +11,7 @@ import type { VocabularyWord } from '~/data/japanese/vocabulary';
 import { DEFAULT_VOCABULARY } from '~/data/japanese/vocabulary';
 import { useVocabularyStore } from '~/stores/vocabulary.store';
 import QuizProgress from '../../quiz/components/QuizProgress';
+import AmbientBackdrop from '~/components/screen/AmbientBackdrop';
 import VocabQuestion from './components/VocabQuestion';
 import VocabChoices, { type VocabChoiceFeedback } from './components/VocabChoices';
 import VocabResult from './components/VocabResult';
@@ -102,15 +103,12 @@ export default function VocabularyQuizPage() {
 
     return (
         <section className='relative min-h-screen overflow-hidden py-16 sm:py-20'>
-            <div className='absolute inset-0 -z-10'>
-                <div className='absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2' />
-                <div className='absolute bottom-0 left-0 w-80 h-80 bg-secondary/8 rounded-full blur-3xl -translate-x-1/3 translate-y-1/3' />
-            </div>
+            <AmbientBackdrop />
 
             <div className='mx-auto max-w-3xl px-4 sm:px-6 w-full'>
                 <Link
                     to='/japanese'
-                    className='inline-flex items-center gap-2 mb-6 text-sm font-medium text-surface-muted hover:text-primary transition-colors'
+                    className='inline-flex items-center gap-2 mb-6 text-sm font-medium text-surface-muted hover:text-accent transition-colors'
                 >
                     <FaArrowLeft className='w-3.5 h-3.5' />
                     {t('japanese.vocabularyQuiz.back_hub')}
@@ -143,14 +141,14 @@ export default function VocabularyQuizPage() {
                             <button
                                 type='button'
                                 onClick={startQuiz}
-                                className='px-8 py-3.5 rounded-xl bg-primary text-primary-foreground text-base font-semibold shadow-lg shadow-primary/25 hover:bg-primary/90 transition-all duration-300 cursor-pointer active:scale-95'
+                                className='px-8 py-3.5 rounded-sm bg-accent text-accent-foreground text-base font-semibold transition-colors duration-200 cursor-pointer hover:bg-accent-emphasis active:translate-y-px'
                             >
                                 {t('japanese.vocabularyQuiz.start')}
                             </button>
                             <button
                                 type='button'
                                 onClick={() => setShowManage((v) => !v)}
-                                className='inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border-2 border-primary text-primary hover:bg-primary/10 text-base font-semibold transition-all duration-300 cursor-pointer'
+                                className='inline-flex items-center gap-2 px-6 py-3.5 rounded-sm border border-line-strong text-surface-foreground hover:border-accent hover:text-accent text-base font-semibold transition-colors duration-200 cursor-pointer'
                             >
                                 <FaGear className='w-4 h-4' />
                                 {t('japanese.vocabularyQuiz.manage')}
@@ -165,7 +163,7 @@ export default function VocabularyQuizPage() {
                                     exit={{ opacity: 0, height: 0 }}
                                     className='overflow-hidden'
                                 >
-                                    <div className='text-left rounded-2xl border border-border bg-surface-elevated p-6'>
+                                    <div className='text-left rounded-sm border border-line bg-surface p-6'>
                                         <h3 className='text-lg font-bold tracking-tight text-surface-foreground mb-4'>
                                             {t('japanese.vocabularyQuiz.manageTitle')}
                                         </h3>
@@ -175,25 +173,25 @@ export default function VocabularyQuizPage() {
                                                 value={jpValue}
                                                 onChange={(e) => setJpValue(e.target.value)}
                                                 placeholder={t('japanese.vocabularyQuiz.jpPlaceholder')}
-                                                className='px-4 py-2.5 rounded-xl border border-border bg-surface-overlay text-surface-foreground focus:outline-primary transition-colors'
+                                                className='px-4 py-2.5 rounded-sm border border-line bg-surface-overlay text-surface-foreground focus:outline-accent transition-colors'
                                             />
                                             <input
                                                 value={readingValue}
                                                 onChange={(e) => setReadingValue(e.target.value)}
                                                 placeholder={t('japanese.vocabularyQuiz.readingPlaceholder')}
-                                                className='px-4 py-2.5 rounded-xl border border-border bg-surface-overlay text-surface-foreground focus:outline-primary transition-colors'
+                                                className='px-4 py-2.5 rounded-sm border border-line bg-surface-overlay text-surface-foreground focus:outline-accent transition-colors'
                                             />
                                             <input
                                                 value={meaningValue}
                                                 onChange={(e) => setMeaningValue(e.target.value)}
                                                 placeholder={t('japanese.vocabularyQuiz.meaningPlaceholder')}
-                                                className='px-4 py-2.5 rounded-xl border border-border bg-surface-overlay text-surface-foreground focus:outline-primary transition-colors'
+                                                className='px-4 py-2.5 rounded-sm border border-line bg-surface-overlay text-surface-foreground focus:outline-accent transition-colors'
                                             />
                                         </div>
                                         <button
                                             type='button'
                                             onClick={handleSubmitWord}
-                                            className='inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary text-primary-foreground text-sm font-semibold shadow-lg shadow-primary/25 hover:bg-primary/90 transition-all duration-300 cursor-pointer'
+                                            className='inline-flex items-center gap-2 px-5 py-2.5 rounded-sm bg-accent text-accent-foreground text-sm font-semibold transition-colors duration-200 cursor-pointer hover:bg-accent-emphasis active:translate-y-px'
                                         >
                                             <FaPlus className='w-3.5 h-3.5' />
                                             {t('japanese.vocabularyQuiz.add')}
@@ -208,7 +206,7 @@ export default function VocabularyQuizPage() {
                                                     {custom.map((word) => (
                                                         <li
                                                             key={word.id}
-                                                            className='flex items-center justify-between gap-3 rounded-xl border border-border bg-surface-overlay px-4 py-2.5'
+                                                            className='flex items-center justify-between gap-3 rounded-sm border border-line bg-surface-overlay px-4 py-2.5'
                                                         >
                                                             <div>
                                                                 <span className='font-bold text-surface-foreground'>
@@ -283,7 +281,7 @@ export default function VocabularyQuizPage() {
                                 <button
                                     type='button'
                                     onClick={next}
-                                    className='px-8 py-3.5 rounded-xl bg-primary text-primary-foreground text-base font-semibold shadow-lg shadow-primary/25 hover:bg-primary/90 transition-all duration-300 cursor-pointer active:scale-95'
+                                    className='px-8 py-3.5 rounded-sm bg-accent text-accent-foreground text-base font-semibold transition-colors duration-200 cursor-pointer hover:bg-accent-emphasis active:translate-y-px'
                                 >
                                     {t('japanese.vocabularyQuiz.next')}
                                 </button>

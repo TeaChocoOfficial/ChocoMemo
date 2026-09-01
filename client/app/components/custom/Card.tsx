@@ -11,10 +11,10 @@ interface CardProps {
 export default function Card({ icon, title, children, className, description }: CardProps) {
     return (
         <div
-            className={`group relative rounded-2xl border border-border bg-surface-elevated p-6 transition-all duration-300 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1 ${className || ''}`}
+            className={`relative rounded-sm border border-line bg-surface p-5 transition-colors duration-200 hover:bg-surface-overlay ${className || ''}`}
         >
             {icon && (
-                <div className='mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-transform duration-300 group-hover:scale-110'>
+                <div className='mb-4 flex h-11 w-11 items-center justify-center rounded-sm bg-accent text-accent-foreground'>
                     {icon}
                 </div>
             )}

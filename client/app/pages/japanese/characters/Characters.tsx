@@ -7,6 +7,7 @@ import { Link } from '~/i18n/routing';
 import { FaArrowLeft, FaCircleRight } from 'react-icons/fa6';
 import type { KanaSetId } from '~/data/japanese/kana';
 import { KANA_SETS } from '~/data/japanese/kana';
+import AmbientBackdrop from '~/components/screen/AmbientBackdrop';
 import CharacterGrid from './components/CharacterGrid';
 import CharacterSetTabs from './components/CharacterSetTabs';
 
@@ -23,14 +24,12 @@ export default function CharactersPage() {
 
     return (
         <section className='relative min-h-screen overflow-hidden py-16 sm:py-20'>
-            <div className='absolute inset-0 -z-10'>
-                <div className='absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2' />
-            </div>
+            <AmbientBackdrop kanji='字' />
 
             <div className='mx-auto max-w-5xl px-4 sm:px-6 w-full'>
                 <Link
                     to='/japanese'
-                    className='inline-flex items-center gap-2 mb-6 text-sm font-medium text-surface-muted hover:text-primary transition-colors'
+                    className='inline-flex items-center gap-2 mb-6 text-sm font-medium text-surface-muted hover:text-accent transition-colors'
                 >
                     <FaArrowLeft className='w-3.5 h-3.5' />
                     {t('japanese.characters.back_hub')}
@@ -57,7 +56,7 @@ export default function CharactersPage() {
                     <CharacterSetTabs active={activeSet} onChange={setActiveSet} labels={labels} />
                     <Link
                         to='/japanese/characters/quiz'
-                        className='inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary text-primary-foreground text-sm font-semibold shadow-lg shadow-primary/25 hover:bg-primary/90 transition-all duration-300'
+                        className='inline-flex items-center gap-2 px-5 py-2.5 rounded-sm bg-accent text-accent-foreground text-sm font-semibold transition-colors duration-200 hover:bg-accent-emphasis'
                     >
                         {t('japanese.characters.take_quiz')}
                         <FaCircleRight className='w-4 h-4' />

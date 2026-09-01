@@ -10,11 +10,10 @@ export default function Section({
 }) {
     return (
         <motion.section
-            transition={{ duration: 0.8 }}
-            initial={{ opacity: 0, y: 50 }}
+            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, y: 24 }}
             viewport={{ margin: '-100px' }}
             whileInView={{ opacity: 1, y: 0 }}
-            style={{ transform: 'translateY(50px)' }}
             className={`min-h-[calc(100vh-80px)] flex flex-col justify-center items-center p-4 ${className}`}
         >
             {children}

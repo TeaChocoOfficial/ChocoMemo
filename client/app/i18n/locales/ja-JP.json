@@ -1,147 +1,52 @@
 {
     "nav": {
         "home": "ホーム",
-        "about": "概要",
-        "auth": "認証",
-        "socket": "Socket.io",
-        "threejs": "Three.js"
+        "tagline": "言語学習",
+        "languages": "言語",
+        "japanese": "日本語",
+        "menu": "メニューを開く"
     },
     "home": {
-        "title": "Vite React Router",
-        "subtitle": "モダンサーバーサイドレンダリング（SSR）スターターテンプレート",
-        "description": "React Router 7（SSR）、Tailwind CSS 4、i18n、Zustand 5、Socket.io、Three.jsをクリーンなレイアウトに統合したプロダクション対応のスターターボイラープレート。",
-        "features": "主な機能",
-        "get_started": "始める",
-        "view_source": "ソースコード",
-        "choose_language": "学習する言語を選ぶ"
-    },
-    "features": {
-        "performance": {
-            "title": "React Router 7 SSR",
-            "description": "データ読み込み、レイアウトエンジン、ルートタイプ生成が統合された完全なサーバーサイドレンダリング（SSR）サポート。"
-        },
-        "routing": {
-            "title": "ルーティングとレイアウト",
-            "description": "入れ子になったレイアウト、動的な ':lang' ローカライズされたルーティングセグメント、クライアント/サーバーライフサイクルラッパー。"
-        },
-        "i18n": {
-            "title": "i18n URLルーティング",
-            "description": "堅牢な i18next バンドルを利用した、ロケールベースのルーティングの切り替えと検出（/en-US、/th-TH、/ja-JP）。"
-        },
-        "theme": {
-            "title": "Tailwind CSS 4 とテーマ",
-            "description": "Tailwind v4 の CSS 変数とハイドレートされた Zustand の状態を利用した、モダンなダーク/ライトテーマの切り替え。"
-        },
-        "socket": {
-            "title": "リアルタイム Socket.io",
-            "description": "アクティブユーザー数とライブソケットステータスを表示する双方向のリアルタイムクライアントサーバーイベント。"
-        },
-        "state": {
-            "title": "Zustand と 3D グラフィックス",
-            "description": "React Three Fiber を使用した応答性の高い WebGL 3D シーンと組み合わせた軽量グローバル状態マネージャー。"
+        "badge": "Learn-Choco",
+        "title": "日本語を淹れて、",
+        "titleAccent": "一口ずつ味わおう。",
+        "subtitle": "Chocoはひらがな・カタカナ・ボキャブラリーのクイズを毎日の温かな学習習慣に。テーマを選んで、一杯淹れて、学びましょう。",
+        "ctaStart": "学習を始める",
+        "ctaBrowse": "文字を見る",
+        "features": {
+            "characters": {
+                "title": "ひらがな＆カタカナ",
+                "description": "すべての文字を読みとローマ字付きのクリアな練習表で学べます。",
+                "action": "文字を見る"
+            },
+            "characterQuiz": {
+                "title": "文字クイズ",
+                "description": "ひらがな・カタカナ・両方を選んで10問をテンポよく。",
+                "action": "クイズを始める"
+            },
+            "vocabularyQuiz": {
+                "title": "ボキャブラリークイズ",
+                "description": "日本語・読み・意味から自分だけの単語帳を作って練習できます。",
+                "action": "単語を練習"
+            }
         }
     },
-    "about": {
-        "title": "このスターターについて",
-        "description": "このテンプレートは、トップクラスの SEO パフォーマンス、スピード、標準の SSR 機能を備えたモダンな React Web アプリケーション開発用のプロダクションレベルの設計図として機能します。",
-        "tech_stack": "技術スタック",
-        "architecture": "アーキテクチャとフォルダ構造",
-        "architecture_desc": "React Router 7 の新しい標準である 'app/' ディレクトリを使用して構築。ルーティングは routes.ts で集中管理され、レイアウトは layout.tsx/root.tsx で管理され、スタイリングには CSS のみの Tailwind 4 構成を使用します。",
-        "back_home": "ホームに戻る"
-    },
-    "socket": {
-        "badge": "リアルタイム",
-        "title": "Socket.io 接続デモ",
-        "description": "リアルタイム接続状態とプレイヤー数の同期。",
-        "status": "接続状態",
-        "connected": "接続済み",
-        "disconnected": "未接続",
-        "players": "オンラインプレイヤー",
-        "connect": "接続",
-        "disconnect": "切断",
-        "socket_id": "Socket ID",
-        "no_id": "未接続",
-        "features_title": "機能",
-        "feature_realtime_title": "リアルタイム通信",
-        "feature_realtime_desc": "自動再接続対応のクライアントとサーバー間の双方向イベントベース通信。",
-        "feature_websocket_title": "WebSocket プロトコル",
-        "feature_websocket_desc": "最小限のレイテンシで単一の TCP 接続を介した効率的な全二重通信。",
-        "feature_scalable_title": "ルームと名前空間",
-        "feature_scalable_desc": "チャンネルベースのブロードキャスト、ルーム、名前空間、アダプターによる水平スケーリングを内蔵。"
-    },
-    "auth": {
-        "badge": "認証テスト",
-        "title": "認証",
-        "description": "サーバーの認証フローをテスト — メール/パスワードまたは Google OAuth でログイン、認証状態を確認、サインアウト。",
-        "login_title": "サインイン",
-        "email": "メールアドレス",
-        "email_placeholder": "メールアドレスを入力",
-        "password": "パスワード",
-        "password_placeholder": "パスワードを入力",
-        "login_button": "サインイン",
-        "or": "または",
-        "google_login": "Google で続ける",
-        "status_title": "認証状態",
-        "current_status": "現在の状態",
-        "checking": "確認中...",
-        "authenticated": "認証済み",
-        "not_authenticated": "未認証",
-        "unknown_user": "不明なユーザー",
-        "no_email": "メールなし",
-        "user_id": "ユーザーID",
-        "joined": "登録日",
-        "check_auth": "認証状態を確認",
-        "logout_button": "サインアウト",
-        "back_home": "ホームに戻る",
-        "login_success": "ログイン成功",
-        "login_failed": "ログイン失敗。資格情報を確認してください。",
-        "logout_success": "サインアウトしました",
-        "logout_failed": "サインアウト失敗",
-        "register_title": "アカウント作成",
-        "name": "名前",
-        "name_placeholder": "名前を入力",
-        "register_button": "サインアップ",
-        "register_success": "登録成功",
-        "register_failed": "登録失敗",
-        "data_title": "ユーザーデータ",
-        "role": "ロール",
-        "last_login": "最終ログイン",
-        "copy_id": "IDをコピー",
-        "copied": "コピーしました！",
-        "edit_name": "名前を編集",
-        "save": "保存",
-        "cancel": "キャンセル",
-        "name_updated": "名前を更新しました",
-        "name_update_failed": "名前の更新に失敗しました",
-        "change_password_title": "パスワード変更",
-        "current_password": "現在のパスワード",
-        "new_password": "新しいパスワード",
-        "change_password_button": "パスワードを更新",
-        "password_changed": "パスワードを変更しました",
-        "password_change_failed": "パスワード変更に失敗しました",
-        "delete_account": "アカウント削除",
-        "delete_account_confirm": "本当によろしいですか？この操作は取り消せません。",
-        "delete_account_button": "アカウントを削除",
-        "account_deleted": "アカウントを削除しました",
-        "google_linked": "Google アカウント",
-        "invalid_token": "認証トークンが無効または期限切れです"
-    },
-    "threejs": {
-        "badge": "3D グラフィックス",
-        "title": "Three.js インタラクティブシーン",
-        "description": "Three.js と React-three-fiber によるインタラクティブな 3D グラフィックス — 幾何学形状とリアルタイムレンダリングを探索。",
-        "features_title": "機能",
-        "feature_renderer_title": "WebGL レンダラー",
-        "feature_renderer_desc": "最新ブラウザに対応した高性能グラフィックスのための WebGL を使用したハードウェアアクセラレーション 3D レンダリング。",
-        "feature_interaction_title": "インタラクティブコントロール",
-        "feature_interaction_desc": "Orbit コントロールにより、直感的なマウスとタッチ操作で 3D シーンの回転、パン、ズームが可能。",
-        "feature_shapes_title": "複数のジオメトリ",
-        "feature_shapes_desc": "さまざまなマテリアル、色、リアルタイムアニメーションを持つ多様な 3D 形状を統一されたシーンでレンダリング。",
-        "loading": "3D シーンを読み込み中..."
-    },
     "theme": {
-        "dark": "ダーク",
-        "light": "ライト"
+        "pickerLabel": "テーマを変更",
+        "names": {
+            "dark": "ダーク",
+            "light": "ライト",
+            "darkSakura": "桜ダーク",
+            "lightSakura": "桜ライト",
+            "darkPaper": "紙ダーク",
+            "lightPaper": "紙ライト",
+            "darkNature": "抹茶ダーク",
+            "lightNature": "抹茶ライト",
+            "darkAutumn": "紅葉ダーク",
+            "lightAutumn": "紅葉ライト",
+            "darkWinter": "雪ダーク",
+            "lightWinter": "雪ライト"
+        }
     },
     "common": {
         "error": {
@@ -161,6 +66,14 @@
         "title": "学習する言語を選ぶ",
         "description": "学びたい言語を選択してください。まもなく言語が追加されます。",
         "back_home": "ホームに戻る",
+        "status": {
+            "available": "利用可能",
+            "comingSoon": "近日公開"
+        },
+        "cta": {
+            "start": "学習を始める",
+            "unavailable": "利用できません"
+        },
         "languages": {
             "japanese": {
                 "name": "日本語",
@@ -255,7 +168,9 @@
         }
     },
     "footer": {
-        "built_with": "構築技術",
-        "by": "作者"
+        "tagline": "テーマ豊富で居心地の良い、日本語学習のひとときを。",
+        "explore": "探す",
+        "learn": "学べること",
+        "rights": "TeaChoco · 無断転載を禁じます。"
     }
 }

@@ -13,16 +13,23 @@ interface QuizResultProps {
 export default function QuizResult({ score, total, title, retryLabel, onRetry }: QuizResultProps) {
     const percentage = total > 0 ? Math.round((score / total) * 100) : 0;
 
-    const emoji = percentage >= 90 ? '🏆' : percentage >= 70 ? '🎉' : percentage >= 50 ? '👍' : '📚';
+    const rank = percentage >= 90 ? '秀' : percentage >= 70 ? '優' : percentage >= 50 ? '良' : '可';
+
+    const rankColor =
+        percentage >= 70
+            ? 'text-success'
+            : percentage >= 50
+              ? 'text-warning'
+              : 'text-error';
 
     return (
         <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className='max-w-md mx-auto text-center'
+            className='max-w-md mx-auto text-center rounded-sm border border-line bg-surface p-10'
         >
-            <div className='text-6xl mb-6'>{emoji}</div>
+            <div className={`text-7xl font-black leading-none mb-6 ${rankColor}`}>{rank}</div>
             <h2 className='text-3xl font-black tracking-tight text-surface-foreground mb-2'>
                 {title}
             </h2>
@@ -30,9 +37,9 @@ export default function QuizResult({ score, total, title, retryLabel, onRetry }:
                 {score} / {total} · {percentage}%
             </p>
 
-            <div className='relative h-4 w-full rounded-full bg-surface-overlay border border-border overflow-hidden mb-8'>
+            <div className='relative h-2 w-full bg-surface-overlay border border-line overflow-hidden mb-8'>
                 <motion.div
-                    className={`h-full rounded-full ${percentage >= 70 ? 'bg-success' : percentage >= 50 ? 'bg-warning' : 'bg-error'}`}
+                    className={`h-full ${percentage >= 70 ? 'bg-success' : percentage >= 50 ? 'bg-warning' : 'bg-error'}`}
                     initial={{ width: 0 }}
                     animate={{ width: `${percentage}%` }}
                     transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
@@ -42,7 +49,7 @@ export default function QuizResult({ score, total, title, retryLabel, onRetry }:
             <button
                 type='button'
                 onClick={onRetry}
-                className='inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-primary text-primary-foreground text-base font-semibold shadow-lg shadow-primary/25 hover:bg-primary/90 transition-all duration-300 cursor-pointer active:scale-95'
+                className='inline-flex items-center gap-2 px-7 py-3.5 rounded-sm bg-accent text-accent-foreground text-base font-semibold transition-colors duration-200 cursor-pointer hover:bg-accent-emphasis active:translate-y-px'
             >
                 <FaRotateRight className='w-4 h-4' />
                 {retryLabel}

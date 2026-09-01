@@ -18,9 +18,9 @@ export default function QuizProgress({ current, total, label }: QuizProgressProp
                     {current} / {total}
                 </span>
             </div>
-            <div className='h-2 w-full rounded-full bg-surface-overlay border border-border overflow-hidden'>
+            <div className='h-2 w-full bg-surface-overlay border border-line overflow-hidden'>
                 <motion.div
-                    className='h-full rounded-full bg-linear-to-r from-primary to-secondary'
+                    className='h-full bg-accent'
                     initial={false}
                     animate={{ width: `${progress}%` }}
                     transition={{ duration: 0.4, ease: 'easeOut' }}
