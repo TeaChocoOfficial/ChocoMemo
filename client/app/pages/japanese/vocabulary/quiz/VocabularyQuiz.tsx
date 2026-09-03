@@ -11,7 +11,6 @@ import type { VocabularyWord } from '~/data/japanese/vocabulary';
 import { DEFAULT_VOCABULARY } from '~/data/japanese/vocabulary';
 import { useVocabularyStore } from '~/stores/vocabulary.store';
 import QuizProgress from '../../quiz/components/QuizProgress';
-import AmbientBackdrop from '~/components/screen/AmbientBackdrop';
 import VocabQuestion from './components/VocabQuestion';
 import VocabChoices, { type VocabChoiceFeedback } from './components/VocabChoices';
 import VocabResult from './components/VocabResult';
@@ -36,10 +35,7 @@ export default function VocabularyQuizPage() {
     const [readingValue, setReadingValue] = useState('');
     const [meaningValue, setMeaningValue] = useState('');
 
-    const allWords = useMemo(
-        () => [...DEFAULT_VOCABULARY, ...custom],
-        [custom],
-    );
+    const allWords = useMemo(() => [...DEFAULT_VOCABULARY, ...custom], [custom]);
 
     const startQuiz = () => {
         const pool = allWords.length > 0 ? allWords : DEFAULT_VOCABULARY;
@@ -103,8 +99,6 @@ export default function VocabularyQuizPage() {
 
     return (
         <section className='relative min-h-screen overflow-hidden py-16 sm:py-20'>
-            <AmbientBackdrop />
-
             <div className='mx-auto max-w-3xl px-4 sm:px-6 w-full'>
                 <Link
                     to='/japanese'
@@ -172,19 +166,25 @@ export default function VocabularyQuizPage() {
                                             <input
                                                 value={jpValue}
                                                 onChange={(e) => setJpValue(e.target.value)}
-                                                placeholder={t('japanese.vocabularyQuiz.jpPlaceholder')}
+                                                placeholder={t(
+                                                    'japanese.vocabularyQuiz.jpPlaceholder',
+                                                )}
                                                 className='px-4 py-2.5 rounded-sm border border-line bg-surface-overlay text-surface-foreground focus:outline-accent transition-colors'
                                             />
                                             <input
                                                 value={readingValue}
                                                 onChange={(e) => setReadingValue(e.target.value)}
-                                                placeholder={t('japanese.vocabularyQuiz.readingPlaceholder')}
+                                                placeholder={t(
+                                                    'japanese.vocabularyQuiz.readingPlaceholder',
+                                                )}
                                                 className='px-4 py-2.5 rounded-sm border border-line bg-surface-overlay text-surface-foreground focus:outline-accent transition-colors'
                                             />
                                             <input
                                                 value={meaningValue}
                                                 onChange={(e) => setMeaningValue(e.target.value)}
-                                                placeholder={t('japanese.vocabularyQuiz.meaningPlaceholder')}
+                                                placeholder={t(
+                                                    'japanese.vocabularyQuiz.meaningPlaceholder',
+                                                )}
                                                 className='px-4 py-2.5 rounded-sm border border-line bg-surface-overlay text-surface-foreground focus:outline-accent transition-colors'
                                             />
                                         </div>
@@ -218,9 +218,13 @@ export default function VocabularyQuizPage() {
                                                             </div>
                                                             <button
                                                                 type='button'
-                                                                onClick={() => removeCustom(word.id)}
+                                                                onClick={() =>
+                                                                    removeCustom(word.id)
+                                                                }
                                                                 className='text-surface-muted hover:text-error transition-colors cursor-pointer'
-                                                                aria-label={t('japanese.vocabularyQuiz.remove')}
+                                                                aria-label={t(
+                                                                    'japanese.vocabularyQuiz.remove',
+                                                                )}
                                                             >
                                                                 <FaTrash className='w-4 h-4' />
                                                             </button>

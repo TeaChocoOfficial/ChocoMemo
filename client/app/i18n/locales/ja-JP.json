@@ -7,29 +7,12 @@
         "menu": "メニューを開く"
     },
     "home": {
-        "badge": "Learn-Choco",
+        "badge": "ChocoMemo",
         "title": "日本語を淹れて、",
         "titleAccent": "一口ずつ味わおう。",
         "subtitle": "Chocoはひらがな・カタカナ・ボキャブラリーのクイズを毎日の温かな学習習慣に。テーマを選んで、一杯淹れて、学びましょう。",
         "ctaStart": "学習を始める",
-        "ctaBrowse": "文字を見る",
-        "features": {
-            "characters": {
-                "title": "ひらがな＆カタカナ",
-                "description": "すべての文字を読みとローマ字付きのクリアな練習表で学べます。",
-                "action": "文字を見る"
-            },
-            "characterQuiz": {
-                "title": "文字クイズ",
-                "description": "ひらがな・カタカナ・両方を選んで10問をテンポよく。",
-                "action": "クイズを始める"
-            },
-            "vocabularyQuiz": {
-                "title": "ボキャブラリークイズ",
-                "description": "日本語・読み・意味から自分だけの単語帳を作って練習できます。",
-                "action": "単語を練習"
-            }
-        }
+        "ctaBrowse": "文字を見る"
     },
     "theme": {
         "pickerLabel": "テーマを変更",
@@ -82,6 +65,14 @@
             "english": {
                 "name": "英語",
                 "description": "英語コースは現在準備中です。"
+            },
+            "thai": {
+                "name": "タイ語",
+                "description": "タイ語コースは近日公開予定です。"
+            },
+            "korean": {
+                "name": "韓国語",
+                "description": "韓国語コースは近日公開予定です。"
             }
         }
     },
@@ -115,6 +106,14 @@
                 "hiragana": "ひらがな",
                 "katakana": "カタカナ"
             },
+            "voiceless": "清音",
+            "voiced": "濁音",
+            "contracted": "拗音",
+            "voice_label": "音声",
+            "voice_preview": "試聴",
+            "voice_auto": "自動",
+            "voice_choose": "音声を選択",
+            "voice_ja": "日本語",
             "take_quiz": "クイズに挑戦",
             "count": "文字",
             "back_hub": "日本語に戻る"
@@ -122,24 +121,64 @@
         "characterQuiz": {
             "badge": "文字クイズ",
             "title": "文字クイズ",
-            "intro": "文字を見て正しい読み方を選びましょう。練習する音節文字を選んでください。",
-            "chooseSet": "セットを選択",
-            "sets": {
-                "both": "すべて",
-                "hiragana": "ひらがな",
-                "katakana": "カタカナ"
-            },
+            "intro": "クイズを設定しましょう。練習する文字グループ、問題数、1問あたりの制限時間を選べます。",
             "start": "クイズを始める",
             "progress": "問題",
             "score": "スコア",
             "promptLabel": "この文字の読み方は何ですか？",
+            "promptLabelRomajiToChar": "この読み方に一致する文字はどれですか？",
+            "promptLabelListen": "聞こえた文字はどれですか？",
+            "listenAgain": "もう一度再生",
             "correct": "正解！",
             "wrong": "不正解",
+            "timeout": "時間切れ！",
             "correctAnswer": "正解",
             "next": "次の問題",
+            "endGame": "終了する",
             "resultTitle": "クイズ完了！",
+            "result": {
+                "correctLabel": "正解",
+                "wrongLabel": "不正解",
+                "timeoutLabel": "時間切れ",
+                "settingsSummary": "設定",
+                "settingsButton": "設定",
+                "exitButton": "終了",
+                "playAgain": "もう一度",
+                "history": "解答履歴",
+                "timeoutShort": "時間切れ",
+                "yes": "はい",
+                "no": "いいえ"
+            },
             "retry": "もう一度",
-            "back_characters": "文字に戻る"
+            "back_characters": "文字に戻る",
+            "settings": {
+                "setsLabel": "文字セット",
+                "questionLabel": "クイズ設定",
+                "modeLabel": "問題形式",
+                "mode": {
+                    "charToRomaji": "文字 → 読み",
+                    "charToRomajiHint": "かなを見て、読み方を選びます。",
+                    "romajiToChar": "読み → 文字",
+                    "romajiToCharHint": "読み方を見て、一致するかなを選びます。",
+                    "listenToChar": "聞く → 文字",
+                    "listenToCharHint": "発音を聞いて、聞こえた文字を選びます。"
+                },
+                "voiceLabel": "音声",
+                "questionCount": "問題数",
+                "questions": "問",
+                "choiceCount": "選択肢の数",
+                "choices": "択",
+                "timeLimit": "1問あたりの時間",
+                "autoAdvance": "次の問題へ自動で進む",
+                "useAll": "全文字",
+                "groups": {
+                    "voiceless": "清音",
+                    "voiced": "濁音",
+                    "contracted": "拗音"
+                },
+                "chars": "文字",
+                "totalChars": "合計文字数"
+            }
         },
         "vocabularyQuiz": {
             "badge": "語彙クイズ",
@@ -171,6 +210,12 @@
         "tagline": "テーマ豊富で居心地の良い、日本語学習のひとときを。",
         "explore": "探す",
         "learn": "学べること",
-        "rights": "TeaChoco · 無断転載を禁じます。"
+        "rights": "TeaChoco · 無断転載を禁じます。",
+        "languages": {
+            "ja": "日本語",
+            "en": "英語",
+            "ko": "韓国語",
+            "th": "タイ語"
+        }
     }
 }

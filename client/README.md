@@ -1,117 +1,125 @@
-# Learn Choco Language
+# ChocoMemo
 
-**Learn Choco Language** is a web application for learning, teaching, and practicing foreign languages. The project is built with **React Router (Vite)** on the client side, using **TypeScript**, **Zustand** for state, **i18next** for internationalization, and **Tailwind CSS** for styling.
+**ChocoMemo** is a multi-language learning web application focused on helping users practice and memorize Japanese. It combines reference charts, interactive quizzes, speech (TTS), and per-user settings into a clean, responsive app.
 
-Currently, only **Japanese** is available. **English** is planned for a future release but is not accessible yet.
+Built with **React Router v7 (framework mode)**, **TypeScript**, **Zustand**, **i18next**, and **Tailwind CSS**.
 
----
-
-## 🎯 Project Goal
-
-Provide an interactive way to learn a language through:
-- Reference material (characters, vocabulary)
-- Practice modes (flashcards, quizzes)
-- Progress tracking (planned)
+> Currently only the **Japanese** track is implemented. **English** is planned as a future track and is shown on the language-select screen as "Coming Soon".
 
 ---
 
-## 🗺️ Feature Plan
+## ✨ Features
 
-### 1. Language Select
-Landing page where the user picks which language to study.
-- ✅ Japanese — available
-- 🚧 English — shown as "Coming Soon" (disabled)
+### Language Select
+Choose which language to study. Japanese is active; English appears but is disabled ("Coming Soon").
 
-### 2. Japanese Hub
-Once Japanese is selected, the user lands on a hub page with navigation to three core features:
+### Japanese Hub
+The hub links to the two core learning features.
 
-| # | Page | Description |
-|---|------|--------------|
-| 1 | **Basic Characters** | Browse Hiragana & Katakana character charts (Seion, Dakuten, Handakuten, Yōon groupings). |
-| 2 | **Character Quiz / Practice** | Test and reinforce memory of Hiragana & Katakana (flashcards, multiple choice, or typing recall). |
-| 3 | **Vocabulary Quiz / Practice** | Test and reinforce memory of Japanese vocabulary (word ↔ meaning matching, multiple choice, spaced repetition-style review). |
+### Basic Characters
+Browse **Hiragana** and **Katakana** reference charts, organized into three groups:
+- **Voiceless** (清音 — seion)
+- **Voiced** (濁音・半濁音 — dakuten / handakuten)
+- **Contracted** (拗音 — yōon)
+
+Each character card is clickable and will **speak the character aloud** using the browser's Web Speech API.
+
+### Character Quiz
+A fully configurable multiple-choice quiz:
+
+- **Character groups** — toggle Hiragana / Katakana and any combination of Voiceless / Voiced / Contracted; each switch shows the character count it adds, plus a running total.
+- **Question set** — toggle between *all* characters in the selected groups or a specific *number* (2–12).
+- **Per-question timer** (1–20s) with a countdown bar.
+- **Auto-advance** — optionally hide the Next button and advance automatically.
+- **Live stats** during play — Correct / Wrong / Timeout counters.
+- **End Game** at any time to return to settings.
+- **Detailed results** — score rank, score bar, a Correct / Wrong / Timeout breakdown, a settings summary, a scrollable answer history per question, and Play Again / Settings / Exit actions.
+
+### Vocabulary Quiz
+Test vocabulary by matching a Japanese word to its meaning. Ships with a default word list and supports **adding your own custom words** via a manage dialog (persisted locally).
+
+### Voice (TTS)
+- Per-character click-to-speak on the character charts.
+- A **Voice Picker** on the characters page to choose the TTS voice, language, and speech rate (with an "Auto" option and a preview button).
 
 ---
 
-## 🧭 Proposed Route Structure
+## 🧭 Routes
 
-```
-/:lang/language-select        → choose a language to study
-/:lang/japanese                → Japanese hub (links to the 3 features below)
-/:lang/japanese/characters      → view Hiragana / Katakana charts
-/:lang/japanese/characters/quiz → character quiz & practice
-/:lang/japanese/vocabulary/quiz → vocabulary quiz & practice
-```
+| Route | Page |
+|-------|------|
+| `/:lang` | Home |
+| `/:lang/language-select` | Choose a language |
+| `/:lang/japanese` | Japanese hub |
+| `/:lang/japanese/characters` | Hiragana / Katakana charts + voice picker |
+| `/:lang/japanese/characters/quiz` | Character quiz |
+| `/:lang/japanese/vocabulary/quiz` | Vocabulary quiz |
 
-> `:lang` refers to the existing i18n locale segment already used in the app's routing (`en-US`, `th-TH`, `ja-JP`, `zh-CN`).
+> `:lang` is the active i18n locale segment (`en-US`, `th-TH`, `ja-JP`, `zh-CN`).
 
 ---
 
-## 🧩 Suggested Folder Structure
-
-Following the existing convention in `pages/auth` (splitting into `panel/`, `components/content`, `components/custom`), new features should be split the same way to avoid large, monolithic files:
-
-```
-pages/
-  language-select/
-    LanguageSelect.tsx
-    LanguageCard.tsx
-  japanese/
-    Japanese.tsx                 # hub page, links to sub-features
-    JapaneseHero.tsx
-    JapaneseNavCard.tsx
-    characters/
-      Characters.tsx
-      components/
-        CharacterGrid.tsx
-        CharacterCard.tsx
-        CharacterSetTabs.tsx     # switch between Hiragana / Katakana
-      quiz/
-        CharacterQuiz.tsx
-        components/
-          QuizQuestion.tsx
-          QuizChoices.tsx
-          QuizResult.tsx
-          QuizProgress.tsx
-    vocabulary/
-      quiz/
-        VocabularyQuiz.tsx
-        components/
-          VocabQuestion.tsx
-          VocabChoices.tsx
-          VocabResult.tsx
-```
-
-Quiz logic (state, scoring, timers, question generation) should live in dedicated hooks rather than inside the page components, e.g.:
+## 🧩 Code Layout
 
 ```
 app/
+  pages/
+    home/                       # home landing
+    language-select/            # pick a language
+    japanese/
+      Japanese.tsx              # hub
+      characters/
+        Characters.tsx
+        components/
+          CharacterGrid.tsx
+          CharacterCard.tsx     # click-to-speak card
+          CharacterSetTabs.tsx
+          VoicePicker.tsx
+        quiz/
+          CharacterQuiz.tsx        # phase orchestration (intro/playing/result)
+          hooks/
+            useCharacterQuiz.ts   # engine: pool, timer, scoring, mode choices
+          components/
+            QuizIntro.tsx         # hero + settings + start
+            QuizPlaying.tsx       # stats + timer + question + choices + feedback
+            QuizStats.tsx         # live Correct / Wrong / Timeout + end game
+            QuizTimer.tsx         # per-question countdown bar
+            QuizFeedback.tsx      # correct/wrong/timeout + next
+            QuizSettings.tsx      # groups × count × timer + mode + auto-advance
+            QuizQuestion.tsx
+            QuizChoices.tsx
+            CharacterQuizResult.tsx # stats + answer history
+      vocabulary/
+        quiz/
+          VocabularyQuiz.tsx
+          components/
+            VocabQuestion.tsx
+            VocabChoices.tsx
+            VocabResult.tsx
+      quiz/
+        components/
+          QuizProgress.tsx          # shared progress bar
+          QuizResult.tsx            # shared simple result
+  components/
+    custom/                     # Badge, Button, Card, Modal, RangeSlider,
+                                # Select, Switch, Skeleton, Rating, Activity …
+    layout/                     # Navbar, Footer
+    config/                     # LanguageSwitcher, ThemePicker
   hooks/
-    useCharacterQuiz.ts
-    useVocabularyQuiz.ts
+    useQuizEngine.ts            # buildChoices / choice engine
+    useSpeak.ts                 # Web Speech API wrapper
+  stores/
+    quizSettings.store.ts       # quiz settings (persisted)
+    speech.store.ts             # voice language + rate (persisted)
+    theme.store.ts              # theme (persisted)
+    vocabulary.store.ts         # custom vocab (persisted)
+  data/
+    japanese/
+      kana.ts                   # KANA_CHARS: voiceless / voiced / contracted
+      vocabulary.ts             # DEFAULT_VOCABULARY
+  i18n/
+    locales/                    # en-US, ja-JP, zh-CN, th-TH JSON
 ```
-
-Character and vocabulary source data should live under `app/data/`, similar to the existing `data/portfolioData.ts`:
-
-```
-data/
-  japanese/
-    hiragana.ts
-    katakana.ts
-    vocabulary.ts
-```
-
----
-
-## 🛣️ Roadmap
-
-- [ ] Language Select page (Japanese enabled, English disabled/"Coming Soon")
-- [ ] Japanese hub page
-- [ ] Basic Characters page (Hiragana / Katakana charts)
-- [ ] Character Quiz / Practice page
-- [ ] Vocabulary Quiz / Practice page
-- [ ] Progress tracking / persistence (local storage or backend)
-- [ ] English language track (future)
 
 ---
 
@@ -119,21 +127,27 @@ data/
 
 | Layer | Technology |
 |-------|-----------|
-| Framework | React Router (Vite) |
+| Framework | React Router v7 (Vite, SSR framework mode) |
 | Language | TypeScript |
-| State | Zustand |
+| State | Zustand (with `persist`) |
 | i18n | i18next / react-i18next |
 | Styling | Tailwind CSS |
 | Animation | Framer Motion |
-| HTTP | Axios |
-| Package Manager | pnpm |
+| Speech | Web Speech API |
 
 ---
 
 ## 🚀 Getting Started
 
+Install dependencies:
+
 ```bash
 pnpm install
+```
+
+Run the dev server:
+
+```bash
 pnpm dev
 ```
 
@@ -149,3 +163,16 @@ Type check:
 ```bash
 pnpm typecheck
 ```
+
+---
+
+## 🗺️ Roadmap
+
+- [x] Home page
+- [x] Language Select (Japanese active, English "Coming Soon")
+- [x] Japanese hub
+- [x] Basic Characters charts + click-to-speak + voice picker
+- [x] Character Quiz (configurable, stats, history)
+- [x] Vocabulary Quiz (default words + custom words)
+- [ ] Progress tracking / persistence across sessions
+- [ ] English language track

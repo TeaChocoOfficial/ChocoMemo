@@ -1,10 +1,9 @@
 // -Path: 'client/app/pages/japanese/Japanese.tsx'
-import { useTranslation } from 'react-i18next';
 import { Link } from '~/i18n/routing';
-import { FaArrowLeft } from 'react-icons/fa6';
 import JapaneseHero from './JapaneseHero';
+import { FaArrowLeft } from 'react-icons/fa6';
+import { useTranslation } from 'react-i18next';
 import JapaneseNavCard, { type JapaneseNavItem } from './JapaneseNavCard';
-import AmbientBackdrop from '~/components/screen/AmbientBackdrop';
 
 export default function JapanesePage() {
     const { t } = useTranslation();
@@ -35,8 +34,6 @@ export default function JapanesePage() {
 
     return (
         <section className='relative min-h-screen flex items-start justify-center overflow-hidden py-16 sm:py-20'>
-            <AmbientBackdrop kanji='日' />
-
             <div className='mx-auto max-w-5xl px-4 sm:px-6 w-full'>
                 <Link
                     to='/language-select'

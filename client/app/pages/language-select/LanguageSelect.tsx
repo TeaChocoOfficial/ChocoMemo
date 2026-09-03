@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 import { Link } from '~/i18n/routing';
 import LanguageCard, { type AvailableLanguage } from './LanguageCard';
 import LanguageSelectHero from './LanguageSelectHero';
-import AmbientBackdrop from '~/components/screen/AmbientBackdrop';
 import { FaArrowLeft } from 'react-icons/fa6';
 
 export default function LanguageSelectPage() {
@@ -28,12 +27,26 @@ export default function LanguageSelectPage() {
             description: t('languageSelect.languages.english.description'),
             available: false,
         },
+        {
+            id: 'thai',
+            code: 'th',
+            name: t('languageSelect.languages.thai.name'),
+            glyph: 'ก',
+            description: t('languageSelect.languages.thai.description'),
+            available: false,
+        },
+        {
+            id: 'korean',
+            code: 'ko',
+            name: t('languageSelect.languages.korean.name'),
+            glyph: '한',
+            description: t('languageSelect.languages.korean.description'),
+            available: false,
+        },
     ];
 
     return (
         <section className='relative min-h-screen flex items-start justify-center overflow-hidden py-16 sm:py-20'>
-            <AmbientBackdrop kanji='言' />
-
             <div className='mx-auto max-w-5xl px-4 sm:px-6 w-full'>
                 <Link
                     to='/'

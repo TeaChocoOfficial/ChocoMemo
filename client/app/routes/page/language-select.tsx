@@ -4,7 +4,7 @@ import type { Route } from './+types/language-select';
 
 export function meta({}: Route.MetaArgs) {
     return [
-        { title: 'Learn Choco - Choose a Language' },
+        { title: 'ChocoMemo - Choose a Language' },
         { name: 'description', content: 'Pick the language you want to learn.' },
     ];
 }

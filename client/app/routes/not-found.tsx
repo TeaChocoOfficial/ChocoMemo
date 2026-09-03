@@ -4,8 +4,8 @@ import type { Route } from './+types/not-found';
 
 export function meta({}: Route.MetaArgs) {
     return [
-        { title: 'React Router App - Not Found' },
-        { name: 'description', content: 'Page not found' },
+        { title: 'ChocoMemo - Not Found' },
+        { name: 'description', content: 'The requested page could not be found.' },
     ];
 }
 

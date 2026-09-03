@@ -3,12 +3,13 @@ import { useId } from 'react';
 
 interface SwitchProps {
     label?: string;
+    description?: string;
     checked: boolean;
     className?: string;
     onCheckedChange: (checked: boolean) => void;
 }
 
-export default function Switch({ label, checked, className, onCheckedChange }: SwitchProps) {
+export default function Switch({ label, description, checked, className, onCheckedChange }: SwitchProps) {
     const id = useId();
     const trackClass = `relative inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full transition-colors focus-visible:outline-none focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-50 ${
         checked ? 'bg-accent' : 'bg-secondary-muted'
@@ -28,13 +29,18 @@ export default function Switch({ label, checked, className, onCheckedChange }: S
                 onClick={() => onCheckedChange(!checked)}>
                 <span className={thumbClass} />
             </button>
-            {label && (
-                <label
-                    htmlFor={id}
-                    className="text-sm font-bold tracking-tight text-surface-foreground cursor-pointer">
-                    {label}
-                </label>
-            )}
+            <div className='flex flex-col'>
+                {label && (
+                    <label
+                        htmlFor={id}
+                        className="text-sm font-bold tracking-tight text-surface-foreground cursor-pointer">
+                        {label}
+                    </label>
+                )}
+                {description && (
+                    <span className="text-xs text-surface-muted">{description}</span>
+                )}
+            </div>
         </div>
     );
 }

@@ -1,0 +1,226 @@
+{
+    "nav": {
+        "home": "홈",
+        "tagline": "언어 학습",
+        "languages": "언어",
+        "japanese": "일본어",
+        "menu": "메뉴 열기"
+    },
+    "chrome": {
+        "hide": "숨기기",
+        "show": "표시",
+        "toggleLabel": "인터페이스 표시"
+    },
+    "home": {
+        "badge": "초코메모",
+        "title": "당신의 일본어를",
+        "titleAccent": "한 모금씩 우려내세요.",
+        "subtitle": "초코는 한입 크기의 히라가나, 가타카나, 어휘 퀴즈를 따뜻한 일상 학습 루틴으로 만듭니다. 테마를 고르고, 한 잔의 차를 따라 배워보세요.",
+        "ctaStart": "학습 시작",
+        "ctaBrowse": "문자 둘러보기"
+    },
+    "theme": {
+        "pickerLabel": "테마 변경",
+        "names": {
+            "dark": "다크",
+            "light": "라이트",
+            "darkSakura": "다크 사쿠라",
+            "lightSakura": "라이트 사쿠라",
+            "darkPaper": "다크 페이퍼",
+            "lightPaper": "라이트 페이퍼",
+            "darkNature": "다크 네이처",
+            "lightNature": "라이트 네이처",
+            "darkAutumn": "다크 가을",
+            "lightAutumn": "라이트 가을",
+            "darkWinter": "다크 겨울",
+            "lightWinter": "라이트 겨울"
+        }
+    },
+    "common": {
+        "error": {
+            "oops": "앗!",
+            "unexpected": "예상치 못한 오류가 발생했습니다.",
+            "notFound": "요청한 페이지를 찾을 수 없습니다."
+        }
+    },
+    "notfound": {
+        "title": "페이지를 찾을 수 없음",
+        "description": "찾으시는 페이지가 존재하지 않거나 이동되었습니다.",
+        "back_home": "홈으로 돌아가기",
+        "error_code": "404"
+    },
+    "languageSelect": {
+        "badge": "언어 선택",
+        "title": "학습할 언어를 선택하세요",
+        "description": "공부하고 싶은 언어를 골라보세요. 더 많은 언어가 곧 추가됩니다.",
+        "back_home": "홈으로 돌아가기",
+        "status": {
+            "available": "사용 가능",
+            "comingSoon": "지원 예정"
+        },
+        "cta": {
+            "start": "학습 시작",
+            "unavailable": "사용 불가"
+        },
+        "languages": {
+            "japanese": {
+                "name": "일본어",
+                "description": "인터랙티브 퀴즈로 히라가나, 가타카나와 필수 어휘를 배워보세요."
+            },
+            "english": {
+                "name": "영어",
+                "description": "영어 과정이 준비 중입니다."
+            },
+            "thai": {
+                "name": "태국어",
+                "description": "태국어 과정이 곧 추가됩니다."
+            },
+            "korean": {
+                "name": "한국어",
+                "description": "한국어 과정이 곧 추가됩니다."
+            }
+        }
+    },
+    "japanese": {
+        "badge": "일본어",
+        "title": "일본어 배우기",
+        "description": "문자, 어휘, 퀴즈를 통해 일본어의 기초를 마스터하세요.",
+        "back_language": "언어 선택으로 돌아가기",
+        "nav": {
+            "characters": {
+                "title": "문자",
+                "description": "모든 히라가나와 가타카나 문자를 읽기와 함께 살펴보세요.",
+                "action": "문자 보기"
+            },
+            "characterQuiz": {
+                "title": "문자 퀴즈",
+                "description": "히라가나와 가타카나 문자를 얼마나 잘 인식하는지 테스트하세요.",
+                "action": "문자 퀴즈 시작"
+            },
+            "vocabularyQuiz": {
+                "title": "어휘 퀴즈",
+                "description": "일본어 어휘와 의미를 연습해보세요.",
+                "action": "어휘 퀴즈 시작"
+            }
+        },
+        "characters": {
+            "badge": "문자",
+            "title": "일본어 문자",
+            "description": "히라가나와 가타카나는 일본어의 두 음절 문자입니다. 탭을 눌러 전환하세요.",
+            "tabs": {
+                "hiragana": "히라가나",
+                "katakana": "가타카나"
+            },
+            "voiceless": "청음",
+            "voiced": "탁음",
+            "contracted": "요음",
+            "voice_label": "음성",
+            "voice_preview": "미리 듣기",
+            "voice_auto": "자동",
+            "voice_choose": "음성 선택",
+            "voice_ja": "일본어",
+            "take_quiz": "퀴즈 보기",
+            "count": "문자",
+            "back_hub": "일본어로 돌아가기"
+        },
+        "characterQuiz": {
+            "badge": "문자 퀴즈",
+            "title": "문자 퀴즈",
+            "intro": "퀴즈를 구성하세요 — 포함할 문자 그룹, 문제 수, 문제당 시간을 선택하세요.",
+            "start": "퀴즈 시작",
+            "progress": "문제",
+            "score": "점수",
+            "promptLabel": "이 문자의 읽기는 무엇인가요?",
+            "promptLabelRomajiToChar": "이 읽기에 해당하는 문자는 무엇인가요?",
+            "promptLabelListen": "어떤 문자를 들으셨나요?",
+            "listenAgain": "다시 듣기",
+            "correct": "정답!",
+            "wrong": "아쉽네요.",
+            "timeout": "시간이 끝났어요!",
+            "correctAnswer": "정답",
+            "next": "다음 문제",
+            "endGame": "게임 종료",
+            "resultTitle": "퀴즈 완료!",
+            "result": {
+                "correctLabel": "정답",
+                "wrongLabel": "오답",
+                "timeoutLabel": "시간 초과",
+                "settingsSummary": "설정",
+                "settingsButton": "설정",
+                "exitButton": "종료",
+                "playAgain": "다시 풀기",
+                "history": "답변 기록",
+                "timeoutShort": "시간 초과",
+                "yes": "예",
+                "no": "아니요"
+            },
+            "retry": "다시 시도",
+            "back_characters": "문자로 돌아가기",
+            "settings": {
+                "setsLabel": "문자 집합",
+                "questionLabel": "퀴즈 옵션",
+                "modeLabel": "문제 모드",
+                "mode": {
+                    "charToRomaji": "문자 → 읽기",
+                    "charToRomajiHint": "가나를 보고 로마자 읽기를 고르세요.",
+                    "romajiToChar": "읽기 → 문자",
+                    "romajiToCharHint": "읽기를 보고 해당 가나를 고르세요.",
+                    "listenToChar": "듣기 → 문자",
+                    "listenToCharHint": "가나 발음을 듣고 들은 문자를 고르세요."
+                },
+                "voiceLabel": "음성",
+                "questionCount": "문제 수",
+                "questions": "문제",
+                "choiceCount": "답변 선택지",
+                "choices": "개의 선택지",
+                "timeLimit": "문제당 시간",
+                "autoAdvance": "다음 문제로 자동 진행",
+                "useAll": "모든 문자",
+                "groups": {
+                    "voiceless": "청음",
+                    "voiced": "탁음",
+                    "contracted": "요음"
+                },
+                "chars": "문자",
+                "totalChars": "전체 문자"
+            }
+        },
+        "vocabularyQuiz": {
+            "badge": "어휘 퀴즈",
+            "title": "어휘 퀴즈",
+            "intro": "일본어 단어를 보고 의미를 고르세요. 연습할 단어를 직접 추가할 수도 있습니다.",
+            "available": "{{count}} 단어 사용 가능",
+            "start": "퀴즈 시작",
+            "manage": "어휘 관리",
+            "manageTitle": "단어 직접 추가",
+            "jpPlaceholder": "일본어 단어",
+            "readingPlaceholder": "읽기 (선택)",
+            "meaningPlaceholder": "의미",
+            "add": "단어 추가",
+            "customList": "내 사용자 단어",
+            "remove": "제거",
+            "progress": "문제",
+            "score": "점수",
+            "promptLabel": "이 단어의 의미는 무엇인가요?",
+            "correct": "정답!",
+            "wrong": "아쉽네요.",
+            "correctAnswer": "정답",
+            "next": "다음 문제",
+            "resultTitle": "퀴즈 완료!",
+            "retry": "다시 시도",
+            "back_hub": "일본어로 돌아가기"
+        }
+    },
+    "footer": {
+        "tagline": "테마가 가득한 아늑한 방식으로 일본어를 한 모금씩 즐겨보세요.",
+        "explore": "탐색",
+        "learn": "가르치는 내용",
+        "rights": "TeaChoco · 모든 권리 보유.",
+        "languages": {
+            "ja": "일본어",
+            "en": "영어",
+            "ko": "한국어",
+            "th": "태국어"
+        }
+    }
+}

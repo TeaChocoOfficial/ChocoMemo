@@ -4,7 +4,7 @@ import type { Route } from './+types/quiz';
 
 export function meta({}: Route.MetaArgs) {
     return [
-        { title: 'Learn Choco - Vocabulary Quiz' },
+        { title: 'ChocoMemo - Vocabulary Quiz' },
         { name: 'description', content: 'Test your Japanese vocabulary knowledge.' },
     ];
 }

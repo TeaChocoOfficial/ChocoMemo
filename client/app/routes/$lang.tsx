@@ -4,6 +4,14 @@ import { redirect } from 'react-router';
 import { isValidLang } from '~/i18n/locales';
 import { Outlet, useParams } from 'react-router';
 import type { LoaderFunctionArgs } from 'react-router';
+import type { Route } from './+types/$lang';
+
+export function meta({}: Route.MetaArgs) {
+    return [
+        { title: 'ChocoMemo' },
+        { name: 'description', content: 'Learn languages with ChocoMemo.' },
+    ];
+}
 
 export async function loader({ params }: LoaderFunctionArgs) {
     const lang = params.lang;

@@ -37,6 +37,13 @@ export async function loader({ request }: LoaderFunctionArgs) {
     return {};
 }
 
+export function meta({}: Route.MetaArgs) {
+    return [
+        { title: 'ChocoMemo' },
+        { name: 'description', content: 'Learn languages with ChocoMemo.' },
+    ];
+}
+
 export const links: Route.LinksFunction = () => [
     { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
     {

@@ -6,30 +6,18 @@
         "japanese": "Japanese",
         "menu": "Open menu"
     },
+    "chrome": {
+        "hide": "Hide",
+        "show": "Show",
+        "toggleLabel": "Show interface"
+    },
     "home": {
-        "badge": "Learn-Choco",
+        "badge": "ChocoMemo",
         "title": "Brew your Japanese,",
         "titleAccent": "one sip at a time.",
         "subtitle": "Choco blends bite-sized hiragana, katakana and vocabulary quizzes into a warm daily study ritual. Pick a theme, pour a cup, and learn.",
         "ctaStart": "Start learning",
-        "ctaBrowse": "Browse characters",
-        "features": {
-            "characters": {
-                "title": "Hiragana & Katakana",
-                "description": "Study every character with its reading and romaji in a clean practice grid.",
-                "action": "Explore characters"
-            },
-            "characterQuiz": {
-                "title": "Character Quiz",
-                "description": "Rapid-fire rounds of ten questions across hiragana, katakana or both.",
-                "action": "Start a quiz"
-            },
-            "vocabularyQuiz": {
-                "title": "Vocabulary Quiz",
-                "description": "Build your own word list from Japanese, reading and meaning — then quiz yourself.",
-                "action": "Practice words"
-            }
-        }
+        "ctaBrowse": "Browse characters"
     },
     "theme": {
         "pickerLabel": "Change theme",
@@ -82,6 +70,14 @@
             "english": {
                 "name": "English",
                 "description": "English courses are currently in preparation."
+            },
+            "thai": {
+                "name": "Thai",
+                "description": "Thai courses are coming soon."
+            },
+            "korean": {
+                "name": "Korean",
+                "description": "Korean courses are coming soon."
             }
         }
     },
@@ -115,6 +111,14 @@
                 "hiragana": "Hiragana",
                 "katakana": "Katakana"
             },
+            "voiceless": "Voiceless",
+            "voiced": "Voiced",
+            "contracted": "Contracted",
+            "voice_label": "Voice",
+            "voice_preview": "Preview",
+            "voice_auto": "Auto",
+            "voice_choose": "Choose a voice",
+            "voice_ja": "Japanese",
             "take_quiz": "Take the Quiz",
             "count": "characters",
             "back_hub": "Back to Japanese"
@@ -122,24 +126,64 @@
         "characterQuiz": {
             "badge": "Character Quiz",
             "title": "Character Quiz",
-            "intro": "See the character and pick the correct reading. Choose which syllabary to practice.",
-            "chooseSet": "Choose a set",
-            "sets": {
-                "both": "Both",
-                "hiragana": "Hiragana",
-                "katakana": "Katakana"
-            },
+            "intro": "Configure your quiz — pick which character groups to include, how many questions, and how much time you get per question.",
             "start": "Start Quiz",
             "progress": "Question",
             "score": "Score",
             "promptLabel": "What is the reading of this character?",
+            "promptLabelRomajiToChar": "Which character matches this reading?",
+            "promptLabelListen": "Which character did you hear?",
+            "listenAgain": "Listen again",
             "correct": "Correct!",
             "wrong": "Not quite.",
+            "timeout": "Time's up!",
             "correctAnswer": "Correct answer",
             "next": "Next Question",
+            "endGame": "End Game",
             "resultTitle": "Quiz Complete!",
+            "result": {
+                "correctLabel": "Correct",
+                "wrongLabel": "Wrong",
+                "timeoutLabel": "Timeout",
+                "settingsSummary": "Settings",
+                "settingsButton": "Settings",
+                "exitButton": "Exit",
+                "playAgain": "Play Again",
+                "history": "Answer History",
+                "timeoutShort": "Timeout",
+                "yes": "Yes",
+                "no": "No"
+            },
             "retry": "Try Again",
-            "back_characters": "Back to Characters"
+            "back_characters": "Back to Characters",
+            "settings": {
+                "setsLabel": "Character Sets",
+                "questionLabel": "Quiz Options",
+                "modeLabel": "Question Mode",
+                "mode": {
+                    "charToRomaji": "Character → Reading",
+                    "charToRomajiHint": "See the kana, pick its romaji reading.",
+                    "romajiToChar": "Reading → Character",
+                    "romajiToCharHint": "See the reading, pick the matching kana.",
+                    "listenToChar": "Listen → Character",
+                    "listenToCharHint": "Hear the kana spoken, pick what you heard."
+                },
+                "voiceLabel": "Voice",
+                "questionCount": "Number of questions",
+                "questions": "questions",
+                "choiceCount": "Answer choices",
+                "choices": "choices",
+                "timeLimit": "Time per question",
+                "autoAdvance": "Auto-advance to next question",
+                "useAll": "All characters",
+                "groups": {
+                    "voiceless": "Voiceless",
+                    "voiced": "Voiced",
+                    "contracted": "Contracted"
+                },
+                "chars": "chars",
+                "totalChars": "Total characters"
+            }
         },
         "vocabularyQuiz": {
             "badge": "Vocabulary Quiz",
@@ -171,6 +215,12 @@
         "tagline": "A cozy, theme-rich way to sip your way through the Japanese language.",
         "explore": "Explore",
         "learn": "What we teach",
-        "rights": "TeaChoco · All rights reserved."
+        "rights": "TeaChoco · All rights reserved.",
+        "languages": {
+            "ja": "Japanese",
+            "en": "English",
+            "ko": "Korean",
+            "th": "Thai"
+        }
     }
 }

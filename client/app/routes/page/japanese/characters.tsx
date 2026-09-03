@@ -4,7 +4,7 @@ import type { Route } from './+types/characters';
 
 export function meta({}: Route.MetaArgs) {
     return [
-        { title: 'Learn Choco - Japanese Characters' },
+        { title: 'ChocoMemo - Japanese Characters' },
         { name: 'description', content: 'Browse Hiragana and Katakana characters.' },
     ];
 }

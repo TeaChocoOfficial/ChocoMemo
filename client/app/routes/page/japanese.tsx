@@ -4,7 +4,7 @@ import type { Route } from './+types/japanese';
 
 export function meta({}: Route.MetaArgs) {
     return [
-        { title: 'Learn Choco - Japanese' },
+        { title: 'ChocoMemo - Japanese' },
         { name: 'description', content: 'Learn Japanese with TeaChoco.' },
     ];
 }

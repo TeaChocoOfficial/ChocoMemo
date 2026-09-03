@@ -1,15 +1,21 @@
 // -Path: 'client/app/pages/japanese/characters/Characters.tsx'
 import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
-import Badge from '~/components/custom/Badge';
 import { Link } from '~/i18n/routing';
-import { FaArrowLeft, FaCircleRight } from 'react-icons/fa6';
-import type { KanaSetId } from '~/data/japanese/kana';
-import { KANA_SETS } from '~/data/japanese/kana';
-import AmbientBackdrop from '~/components/screen/AmbientBackdrop';
+import { motion } from 'framer-motion';
+import Badge from '~/components/custom/Badge';
+import { useTranslation } from 'react-i18next';
+import { KANA_CHARS } from '~/data/japanese/kana';
+import type { KanaChars, KanaSetId } from '~/data/japanese/kana';
 import CharacterGrid from './components/CharacterGrid';
 import CharacterSetTabs from './components/CharacterSetTabs';
+import VoicePicker from './components/VoicePicker';
+import { FaArrowLeft, FaCircleRight } from 'react-icons/fa6';
+
+interface GroupConfig {
+    key: keyof KanaChars;
+    label: string;
+    columns: number;
+}
 
 export default function CharactersPage() {
     const { t } = useTranslation();
@@ -20,12 +26,16 @@ export default function CharactersPage() {
         katakana: t('japanese.characters.tabs.katakana'),
     };
 
-    const kanaList = KANA_SETS[activeSet];
+    const kanaChars = KANA_CHARS[activeSet];
+
+    const groups: GroupConfig[] = [
+        { key: 'voiceless', label: t('japanese.characters.voiceless'), columns: 5 },
+        { key: 'voiced', label: t('japanese.characters.voiced'), columns: 5 },
+        { key: 'contracted', label: t('japanese.characters.contracted'), columns: 3 },
+    ];
 
     return (
         <section className='relative min-h-screen overflow-hidden py-16 sm:py-20'>
-            <AmbientBackdrop kanji='字' />
-
             <div className='mx-auto max-w-5xl px-4 sm:px-6 w-full'>
                 <Link
                     to='/japanese'
@@ -54,6 +64,7 @@ export default function CharactersPage() {
 
                 <div className='flex flex-col sm:flex-row items-center justify-between gap-4 mb-8'>
                     <CharacterSetTabs active={activeSet} onChange={setActiveSet} labels={labels} />
+                    <VoicePicker />
                     <Link
                         to='/japanese/characters/quiz'
                         className='inline-flex items-center gap-2 px-5 py-2.5 rounded-sm bg-accent text-accent-foreground text-sm font-semibold transition-colors duration-200 hover:bg-accent-emphasis'
@@ -63,11 +74,14 @@ export default function CharactersPage() {
                     </Link>
                 </div>
 
-                <div className='mb-4 flex items-center justify-between text-sm text-surface-muted'>
-                    <span>{kanaList.length} {t('japanese.characters.count')}</span>
-                </div>
-
-                <CharacterGrid kanaList={kanaList} />
+                {groups.map((group) => (
+                    <div key={group.key} className='mb-10'>
+                        <h2 className='mb-4 text-lg font-bold text-surface-foreground'>
+                            {group.label}
+                        </h2>
+                        <CharacterGrid kanaList={kanaChars[group.key]} columns={group.columns} />
+                    </div>
+                ))}
             </div>
         </section>
     );

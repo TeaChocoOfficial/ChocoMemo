@@ -7,29 +7,12 @@
         "menu": "打开菜单"
     },
     "home": {
-        "badge": "Learn-Choco",
+        "badge": "ChocoMemo",
         "title": "冲泡你的日语，",
         "titleAccent": "一次一杯慢慢来。",
         "subtitle": "Choco 将平假名、片假名和词汇测验变成温暖的每日学习习惯。选个主题，泡一杯，开始学吧。",
         "ctaStart": "开始学习",
-        "ctaBrowse": "浏览假名",
-        "features": {
-            "characters": {
-                "title": "平假名与片假名",
-                "description": "在整洁的练习表中学习每个字符的读音和罗马字。",
-                "action": "浏览假名"
-            },
-            "characterQuiz": {
-                "title": "假名测验",
-                "description": "十题快问快答，可选平假名、片假名或两者。",
-                "action": "开始测验"
-            },
-            "vocabularyQuiz": {
-                "title": "词汇测验",
-                "description": "用日语、读音和释义创建自己的词表，然后自测。",
-                "action": "练习词汇"
-            }
-        }
+        "ctaBrowse": "浏览假名"
     },
     "theme": {
         "pickerLabel": "切换主题",
@@ -82,6 +65,14 @@
             "english": {
                 "name": "英语",
                 "description": "英语课程正在准备中。"
+            },
+            "thai": {
+                "name": "泰语",
+                "description": "泰语课程即将推出。"
+            },
+            "korean": {
+                "name": "韩语",
+                "description": "韩语课程即将推出。"
             }
         }
     },
@@ -115,6 +106,14 @@
                 "hiragana": "平假名",
                 "katakana": "片假名"
             },
+            "voiceless": "清音",
+            "voiced": "浊音",
+            "contracted": "拗音",
+            "voice_label": "语音",
+            "voice_preview": "试听",
+            "voice_auto": "自动",
+            "voice_choose": "选择语音",
+            "voice_ja": "日语",
             "take_quiz": "开始测验",
             "count": "个文字",
             "back_hub": "返回日语"
@@ -122,24 +121,64 @@
         "characterQuiz": {
             "badge": "文字测验",
             "title": "文字测验",
-            "intro": "看文字并选择正确的读音。选择要练习的音节文字集。",
-            "chooseSet": "选择集合",
-            "sets": {
-                "both": "全部",
-                "hiragana": "平假名",
-                "katakana": "片假名"
-            },
+            "intro": "配置测验——选择要包含的字符组、题目数量以及每题的时间限制。",
             "start": "开始测验",
             "progress": "题目",
             "score": "得分",
             "promptLabel": "这个文字的读音是什么？",
+            "promptLabelRomajiToChar": "哪个字符匹配这个读音？",
+            "promptLabelListen": "你听到的是哪个字符？",
+            "listenAgain": "再听一遍",
             "correct": "正确！",
             "wrong": "不正确",
+            "timeout": "时间到！",
             "correctAnswer": "正确答案",
             "next": "下一题",
+            "endGame": "结束游戏",
             "resultTitle": "测验完成！",
+            "result": {
+                "correctLabel": "正确",
+                "wrongLabel": "错误",
+                "timeoutLabel": "超时",
+                "settingsSummary": "设置",
+                "settingsButton": "设置",
+                "exitButton": "退出",
+                "playAgain": "再玩一次",
+                "history": "答题历史",
+                "timeoutShort": "超时",
+                "yes": "是",
+                "no": "否"
+            },
             "retry": "再试一次",
-            "back_characters": "返回文字"
+            "back_characters": "返回文字",
+            "settings": {
+                "setsLabel": "字符组",
+                "questionLabel": "测验选项",
+                "modeLabel": "题目模式",
+                "mode": {
+                    "charToRomaji": "字符 → 读音",
+                    "charToRomajiHint": "看到假名，选择它的读音。",
+                    "romajiToChar": "读音 → 字符",
+                    "romajiToCharHint": "看到读音，选择匹配的假名。",
+                    "listenToChar": "听力 → 字符",
+                    "listenToCharHint": "听假名的发音，选择你听到的字符。"
+                },
+                "voiceLabel": "语音",
+                "questionCount": "题目数量",
+                "questions": "题",
+                "choiceCount": "选项数量",
+                "choices": "项",
+                "timeLimit": "每题时间",
+                "autoAdvance": "自动进入下一题",
+                "useAll": "全部字符",
+                "groups": {
+                    "voiceless": "清音",
+                    "voiced": "浊音",
+                    "contracted": "拗音"
+                },
+                "chars": "个",
+                "totalChars": "总字符数"
+            }
         },
         "vocabularyQuiz": {
             "badge": "词汇测验",
@@ -171,6 +210,12 @@
         "tagline": "边喝茶边学日语的温暖方式，主题多样。",
         "explore": "浏览",
         "learn": "我们教什么",
-        "rights": "TeaChoco · 版权所有。"
+        "rights": "TeaChoco · 版权所有。",
+        "languages": {
+            "ja": "日语",
+            "en": "英语",
+            "ko": "韩语",
+            "th": "泰语"
+        }
     }
 }

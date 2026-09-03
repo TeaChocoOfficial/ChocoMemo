@@ -4,8 +4,8 @@ import type { Route } from './+types/home';
 
 export function meta({}: Route.MetaArgs) {
     return [
-        { title: 'React Router App - Home' },
-        { name: 'description', content: 'Welcome to React Router!' },
+        { title: 'ChocoMemo - Home' },
+        { name: 'description', content: 'Welcome to ChocoMemo, your language learning companion.' },
     ];
 }
 

@@ -2,12 +2,13 @@
 import { useTranslation } from 'react-i18next';
 import { FaGithub } from 'react-icons/fa6';
 import { Link } from '~/i18n/routing';
+import { getAssetUrl } from '~/utils/url';
 
 const languages = [
-    { code: 'ja', label: '日本語' },
-    { code: 'en', label: 'English' },
-    { code: 'th', label: 'ไทย' },
-    { code: 'zh', label: '中文' },
+    { code: 'ja', labelKey: 'footer.languages.ja' },
+    { code: 'en', labelKey: 'footer.languages.en' },
+    { code: 'ko', labelKey: 'footer.languages.ko' },
+    { code: 'th', labelKey: 'footer.languages.th' },
 ];
 
 export default function Footer() {
@@ -20,13 +21,13 @@ export default function Footer() {
                     {/* Brand */}
                     <div className='flex flex-col gap-3'>
                         <Link to='/' className='flex items-center gap-3'>
-                            <div className='flex h-9 w-9 items-center justify-center rounded-sm bg-accent'>
-                                <span className='text-lg font-black leading-none text-accent-foreground'>
-                                    茶
-                                </span>
-                            </div>
-                            <span className='text-lg font-extrabold tracking-tight text-surface-foreground'>
-                                Choco<span className='text-accent'>.</span>
+                            <img
+                                src={getAssetUrl('/icon.svg')}
+                                alt='Choco'
+                                className='h-12 w-12 shrink-0'
+                            />
+                            <span className='text-lg font-extrabold tracking-tight text-accent'>
+                                ChocoMemo
                             </span>
                         </Link>
                         <p className='max-w-xs text-sm text-surface-muted'>{t('footer.tagline')}</p>
@@ -39,7 +40,10 @@ export default function Footer() {
                         </h3>
                         <ul className='flex flex-col gap-2 text-sm'>
                             <li>
-                                <Link to='/' className='text-surface-foreground hover:text-accent transition-colors'>
+                                <Link
+                                    to='/'
+                                    className='text-surface-foreground hover:text-accent transition-colors'
+                                >
                                     {t('nav.home')}
                                 </Link>
                             </li>
@@ -73,7 +77,7 @@ export default function Footer() {
                                     key={lang.code}
                                     className='border border-line px-3 py-1 text-sm text-surface-subtle'
                                 >
-                                    {lang.label}
+                                    {t(lang.labelKey)}
                                 </li>
                             ))}
                         </ul>

@@ -20,14 +20,16 @@ export default function QuizQuestion({ prompt, promptHint, current, promptLabel 
             <p className='text-sm font-medium uppercase tracking-widest text-surface-muted mb-6'>
                 {promptLabel}
             </p>
-            <div className='flex flex-col items-center gap-4'>
-                <span className='text-8xl sm:text-9xl font-bold text-surface-foreground leading-none'>
-                    {prompt}
-                </span>
-                {promptHint && (
-                    <span className='text-lg text-surface-muted'>{promptHint}</span>
-                )}
-            </div>
+            {prompt && (
+                <div className='flex flex-col items-center gap-4'>
+                    <span className='text-8xl sm:text-9xl font-bold text-surface-foreground leading-none'>
+                        {prompt}
+                    </span>
+                    {promptHint && (
+                        <span className='text-lg text-surface-muted'>{promptHint}</span>
+                    )}
+                </div>
+            )}
         </motion.div>
     );
 }

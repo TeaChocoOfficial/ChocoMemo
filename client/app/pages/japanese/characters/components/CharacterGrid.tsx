@@ -4,14 +4,22 @@ import type { Kana } from '~/data/japanese/kana';
 
 interface CharacterGridProps {
     kanaList: Kana[];
+    columns?: number;
 }
 
-export default function CharacterGrid({ kanaList }: CharacterGridProps) {
+export default function CharacterGrid({ kanaList, columns = 5 }: CharacterGridProps) {
+    const gridCols =
+        columns === 3 ? 'grid-cols-3' : 'grid-cols-5';
+
     return (
-        <div className='grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-3 sm:gap-4'>
-            {kanaList.map((kana, index) => (
-                <CharacterCard key={kana.char} kana={kana} index={index} />
-            ))}
+        <div className={`grid ${gridCols} gap-3 sm:gap-4`}>
+            {kanaList.map((kana, index) =>
+                kana.char ? (
+                    <CharacterCard key={kana.char + index} kana={kana} index={index} />
+                ) : (
+                    <div key={`empty-${index}`} className='invisible' aria-hidden='true' />
+                ),
+            )}
         </div>
     );
 }

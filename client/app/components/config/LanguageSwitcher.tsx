@@ -5,10 +5,11 @@ import type { Lang } from '~/i18n/locales';
 import { useTranslation } from 'react-i18next';
 
 const languages = [
-    { code: 'en-US', label: 'English', short: 'EN' },
-    { code: 'th-TH', label: 'ไทย', short: 'TH' },
-    { code: 'ja-JP', label: '日本語', short: 'JA' },
-    { code: 'zh-CN', label: '中文', short: 'ZH' },
+    { code: 'en-US', label: 'English', flag: '🇺🇸' },
+    { code: 'ja-JP', label: '日本語', flag: '🇯🇵' },
+    { code: 'ko-KR', label: '한국어', flag: '🇰🇷' },
+    { code: 'th-TH', label: 'ไทย', flag: '🇹🇭' },
+    { code: 'zh-CN', label: '中文', flag: '🇨🇳' },
 ] as const;
 
 export default function LanguageSwitcher() {
@@ -18,11 +19,7 @@ export default function LanguageSwitcher() {
     const languageOptions = languages.map((lang) => ({
         value: lang.code,
         label: lang.label,
-        icon: (
-            <span className='flex h-5 w-7 shrink-0 items-center justify-center border border-line text-[9px] font-mono font-semibold leading-none text-surface-subtle'>
-                {lang.short}
-            </span>
-        ),
+        icon: <span className='text-lg leading-none'>{lang.flag}</span>,
     }));
 
     const handleChange = (value: Lang) => router.switchLocale(value);
