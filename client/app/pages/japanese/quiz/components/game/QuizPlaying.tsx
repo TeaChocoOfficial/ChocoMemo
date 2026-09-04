@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 import { FaVolumeHigh } from 'react-icons/fa6';
 import { useTranslation } from 'react-i18next';
 import type { Choice } from '~/hooks/useQuizEngine';
-import type { QuizMode } from '../hooks/useCharacterQuiz';
+import type { QuizMode } from '../../hooks/useCharacterQuiz';
 import QuizStats from './QuizStats';
 import QuizTimer from './QuizTimer';
 import QuizQuestion from './QuizQuestion';

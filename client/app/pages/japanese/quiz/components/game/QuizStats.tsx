@@ -3,7 +3,7 @@
 // Correct / Wrong / Timeout counters and an End Game button.
 import { useTranslation } from 'react-i18next';
 import { FaXmark, FaCheck, FaClock } from 'react-icons/fa6';
-import QuizProgress from '../../../quiz/components/QuizProgress';
+import QuizProgress from './QuizProgress';
 
 interface QuizStatsProps {
     current: number;

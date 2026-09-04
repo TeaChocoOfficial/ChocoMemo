@@ -24,11 +24,18 @@ export default function JapanesePage() {
             icon: <span className='text-2xl leading-none font-black'>?あ</span>,
         },
         {
-            to: '/japanese/vocabulary/quiz',
-            title: t('japanese.nav.vocabularyQuiz.title'),
-            description: t('japanese.nav.vocabularyQuiz.description'),
-            action: t('japanese.nav.vocabularyQuiz.action'),
+            to: '/japanese/vocabulary',
+            title: t('japanese.nav.vocabularyList.title'),
+            description: t('japanese.nav.vocabularyList.description'),
+            action: t('japanese.nav.vocabularyList.action'),
             icon: <span className='text-2xl leading-none'>語</span>,
+        },
+        {
+            to: '/japanese/vocabulary/practice',
+            title: t('japanese.nav.practice.title'),
+            description: t('japanese.nav.practice.description'),
+            action: t('japanese.nav.practice.action'),
+            icon: <span className='text-2xl leading-none'>🔄</span>,
         },
     ];
 
@@ -45,7 +52,7 @@ export default function JapanesePage() {
 
                 <JapaneseHero />
 
-                <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
                     {navItems.map((item, index) => (
                         <JapaneseNavCard key={item.to} item={item} index={index} />
                     ))}

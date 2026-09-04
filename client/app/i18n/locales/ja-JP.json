@@ -92,10 +92,15 @@
                 "description": "ひらがなとカタカナの文字認識をテストしましょう。",
                 "action": "文字クイズを始める"
             },
-            "vocabularyQuiz": {
-                "title": "語彙クイズ",
-                "description": "日本語の単語と意味を練習しましょう。",
-                "action": "語彙クイズを始める"
+            "vocabularyList": {
+                "title": "語彙一覧",
+                "description": "日本語の単語と読み方、意味を一覧で確認できます。",
+                "action": "語彙を見る"
+            },
+            "practice": {
+                "title": "練習",
+                "description": "フラッシュカードと間隔反復で語彙を復習しましょう。",
+                "action": "練習を始める"
             }
         },
         "characters": {
@@ -180,29 +185,31 @@
                 "totalChars": "合計文字数"
             }
         },
-        "vocabularyQuiz": {
-            "badge": "語彙クイズ",
-            "title": "語彙クイズ",
-            "intro": "日本語の単語を見て意味を選びましょう。自分で単語を追加して練習できます。",
-            "available": "利用可能な単語 {{count}} 個",
-            "start": "クイズを始める",
-            "manage": "語彙を管理",
+        "vocabularyList": {
+            "badge": "語彙",
+            "title": "語彙一覧",
+            "description": "日本語の単語と読み方、意味を一覧で確認できます。カスタム単語を追加して学習しましょう。",
+            "available": "合計 {{count}} 単語",
+            "addWord": "単語を追加",
             "manageTitle": "カスタム単語を追加",
             "jpPlaceholder": "日本語の単語",
             "readingPlaceholder": "読み方（任意）",
             "meaningPlaceholder": "意味",
             "add": "追加",
-            "customList": "追加した単語",
+            "customSection": "カスタム単語",
+            "defaultSection": "組み込み語彙",
             "remove": "削除",
-            "progress": "問題",
-            "score": "スコア",
-            "promptLabel": "この単語の意味は何ですか？",
-            "correct": "正解！",
-            "wrong": "不正解",
-            "correctAnswer": "正解",
-            "next": "次の問題",
-            "resultTitle": "クイズ完了！",
-            "retry": "もう一度",
+            "back_hub": "日本語に戻る"
+        },
+        "practice": {
+            "badge": "練習",
+            "title": "語彙練習",
+            "description": "カードをめくって答えを確認し、合格か不合格を選択しましょう。",
+            "complete": "すべて完了しました！",
+            "completeDescription": "現在復習が必要な単語はありません。",
+            "exit": "練習を終了",
+            "wordsLeft": "単語残り",
+            "wordLeft": "単語残り",
             "back_hub": "日本語に戻る"
         }
     },

@@ -7,8 +7,8 @@ import type { Choice } from '~/hooks/useQuizEngine';
 import { buildChoices, uniqueStrings } from '~/hooks/useQuizEngine';
 import type { Kana, KanaChars, KanaSetId } from '~/data/japanese/kana';
 import { KANA_CHARS } from '~/data/japanese/kana';
-import type { QuizSettingsState } from '../components/QuizSettings';
-import type { ChoiceFeedback } from '../components/QuizChoices';
+import type { QuizSettingsState } from '../components/setting/QuizSettings';
+import type { ChoiceFeedback } from '../components/game/QuizChoices';
 
 export type GroupId = keyof KanaChars;
 

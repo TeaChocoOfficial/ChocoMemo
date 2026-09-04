@@ -97,10 +97,15 @@
                 "description": "히라가나와 가타카나 문자를 얼마나 잘 인식하는지 테스트하세요.",
                 "action": "문자 퀴즈 시작"
             },
-            "vocabularyQuiz": {
-                "title": "어휘 퀴즈",
-                "description": "일본어 어휘와 의미를 연습해보세요.",
-                "action": "어휘 퀴즈 시작"
+            "vocabularyList": {
+                "title": "어휘 목록",
+                "description": "일본어 어휘의 읽기와 의미를 한눈에 살펴보세요.",
+                "action": "어휘 보기"
+            },
+            "practice": {
+                "title": "연습",
+                "description": "플래시카드와 간격 반복으로 어휘를 복습하세요.",
+                "action": "연습 시작"
             }
         },
         "characters": {
@@ -185,29 +190,31 @@
                 "totalChars": "전체 문자"
             }
         },
-        "vocabularyQuiz": {
-            "badge": "어휘 퀴즈",
-            "title": "어휘 퀴즈",
-            "intro": "일본어 단어를 보고 의미를 고르세요. 연습할 단어를 직접 추가할 수도 있습니다.",
-            "available": "{{count}} 단어 사용 가능",
-            "start": "퀴즈 시작",
-            "manage": "어휘 관리",
-            "manageTitle": "단어 직접 추가",
+        "vocabularyList": {
+            "badge": "어휘",
+            "title": "어휘 목록",
+            "description": "일본어 단어의 읽기와 의미를 한눈에 살펴보세요. 사용자 단어를 추가하여 학습할 수 있습니다.",
+            "available": "전체 {{count}} 단어",
+            "addWord": "단어 추가",
+            "manageTitle": "사용자 단어 추가",
             "jpPlaceholder": "일본어 단어",
             "readingPlaceholder": "읽기 (선택)",
             "meaningPlaceholder": "의미",
-            "add": "단어 추가",
-            "customList": "내 사용자 단어",
+            "add": "추가",
+            "customSection": "사용자 단어",
+            "defaultSection": "기본 어휘",
             "remove": "제거",
-            "progress": "문제",
-            "score": "점수",
-            "promptLabel": "이 단어의 의미는 무엇인가요?",
-            "correct": "정답!",
-            "wrong": "아쉽네요.",
-            "correctAnswer": "정답",
-            "next": "다음 문제",
-            "resultTitle": "퀴즈 완료!",
-            "retry": "다시 시도",
+            "back_hub": "일본어로 돌아가기"
+        },
+        "practice": {
+            "badge": "연습",
+            "title": "어휘 연습",
+            "description": "카드를 뒤집어 정답을 확인한 후, 합격 또는 불합격으로 표시하세요.",
+            "complete": "모두 완료!",
+            "completeDescription": "지금 복습할 단어가 없습니다.",
+            "exit": "연습 종료",
+            "wordsLeft": "단어 남음",
+            "wordLeft": "단어 남음",
             "back_hub": "일본어로 돌아가기"
         }
     },

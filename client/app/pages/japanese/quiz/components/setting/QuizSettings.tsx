@@ -9,7 +9,7 @@ import VoicePicker from '~/pages/japanese/characters/components/VoicePicker';
 import type { KanaSetId } from '~/data/japanese/kana';
 import { KANA_CHARS } from '~/data/japanese/kana';
 import { motion } from 'framer-motion';
-import type { GroupId, QuizMode } from '../hooks/useCharacterQuiz';
+import type { GroupId, QuizMode } from '../../hooks/useCharacterQuiz';
 
 export interface QuizSettingsState {
     hiragana: { voiceless: boolean; voiced: boolean; contracted: boolean };

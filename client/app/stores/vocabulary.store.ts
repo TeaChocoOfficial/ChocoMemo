@@ -2,19 +2,19 @@
 // Wraps the persisted vocabulary words, including defaults merged at hydrate time.
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
-import type { VocabularyWord } from '~/data/japanese/vocabulary';
+import type { VocabWord } from '~/types/vocabulary';
 import { DEFAULT_VOCABULARY } from '~/data/japanese/vocabulary';
 
 interface VocabularyState {
-    custom: VocabularyWord[];
-    addCustom: (word: Omit<VocabularyWord, 'id'>) => void;
+    custom: VocabWord[];
+    addCustom: (word: Omit<VocabWord, 'id'>) => void;
     removeCustom: (id: string) => void;
     clearCustom: () => void;
     /**
-     * All words available for the quiz: built-in defaults plus user custom words.
+     * All words available: built-in defaults plus user custom words.
      * Derived by the consuming component; kept here for convenience.
      */
-    all: () => VocabularyWord[];
+    all: () => VocabWord[];
 }
 
 const storage =

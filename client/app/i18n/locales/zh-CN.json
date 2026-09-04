@@ -92,10 +92,15 @@
                 "description": "测试你对平假名和片假名的识别能力。",
                 "action": "开始文字测验"
             },
-            "vocabularyQuiz": {
-                "title": "词汇测验",
-                "description": "练习日语词汇及其含义。",
-                "action": "开始词汇测验"
+            "vocabularyList": {
+                "title": "词汇列表",
+                "description": "浏览日语词汇的读音和含义。",
+                "action": "查看词汇"
+            },
+            "practice": {
+                "title": "练习",
+                "description": "用闪卡和间隔重复法复习词汇。",
+                "action": "开始练习"
             }
         },
         "characters": {
@@ -180,29 +185,31 @@
                 "totalChars": "总字符数"
             }
         },
-        "vocabularyQuiz": {
-            "badge": "词汇测验",
-            "title": "词汇测验",
-            "intro": "看日语单词并选择其含义。可以添加自己的单词进行练习。",
-            "available": "可用 {{count}} 个单词",
-            "start": "开始测验",
-            "manage": "管理词汇",
+        "vocabularyList": {
+            "badge": "词汇",
+            "title": "词汇列表",
+            "description": "浏览日语词汇的读音和含义。添加自定义单词进行学习。",
+            "available": "共 {{count}} 个单词",
+            "addWord": "添加单词",
             "manageTitle": "添加自定义单词",
             "jpPlaceholder": "日语单词",
             "readingPlaceholder": "读音（可选）",
             "meaningPlaceholder": "含义",
             "add": "添加",
-            "customList": "自定义单词",
+            "customSection": "自定义单词",
+            "defaultSection": "内置词汇",
             "remove": "删除",
-            "progress": "题目",
-            "score": "得分",
-            "promptLabel": "这个单词是什么意思？",
-            "correct": "正确！",
-            "wrong": "不正确",
-            "correctAnswer": "正确答案",
-            "next": "下一题",
-            "resultTitle": "测验完成！",
-            "retry": "再试一次",
+            "back_hub": "返回日语"
+        },
+        "practice": {
+            "badge": "练习",
+            "title": "词汇练习",
+            "description": "翻转卡片查看答案，然后标记为通过或失败。",
+            "complete": "全部完成！",
+            "completeDescription": "目前没有需要复习的单词。",
+            "exit": "退出练习",
+            "wordsLeft": "个单词剩余",
+            "wordLeft": "个单词剩余",
             "back_hub": "返回日语"
         }
     },

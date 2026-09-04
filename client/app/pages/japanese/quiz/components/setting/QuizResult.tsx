@@ -1,13 +1,20 @@
-// -Path: 'client/app/pages/japanese/characters/quiz/components/CharacterQuizResult.tsx'
+// -Path: 'client/app/pages/japanese/characters/quiz/components/QuizResult.tsx'
 // Detailed results screen for the character quiz: settings summary, score
 // breakdown, scrollable question history, and Play Again / Settings / Exit buttons.
 import { motion } from 'framer-motion';
-import { FaRotateRight, FaGear, FaArrowRightFromBracket, FaCheck, FaXmark, FaClock } from 'react-icons/fa6';
+import {
+    FaRotateRight,
+    FaGear,
+    FaArrowRightFromBracket,
+    FaCheck,
+    FaXmark,
+    FaClock,
+} from 'react-icons/fa6';
 import { useTranslation } from 'react-i18next';
 import type { QuizSettingsState } from './QuizSettings';
-import type { HistoryEntry } from '../hooks/useCharacterQuiz';
+import type { HistoryEntry } from '../../hooks/useCharacterQuiz';
 
-interface CharacterQuizResultProps {
+interface QuizResultProps {
     score: number;
     wrongCount: number;
     timeoutCount: number;
@@ -23,7 +30,7 @@ interface CharacterQuizResultProps {
     onExit: () => void;
 }
 
-export default function CharacterQuizResult({
+export default function QuizResult({
     score,
     wrongCount,
     timeoutCount,
@@ -37,17 +44,13 @@ export default function CharacterQuizResult({
     onRetry,
     onSettings,
     onExit,
-}: CharacterQuizResultProps) {
+}: QuizResultProps) {
     const { t } = useTranslation();
     const percentage = total > 0 ? Math.round((score / total) * 100) : 0;
 
     const rank = percentage >= 90 ? '秀' : percentage >= 70 ? '優' : percentage >= 50 ? '良' : '可';
     const rankColor =
-        percentage >= 70
-            ? 'text-success'
-            : percentage >= 50
-              ? 'text-warning'
-              : 'text-error';
+        percentage >= 70 ? 'text-success' : percentage >= 50 ? 'text-warning' : 'text-error';
 
     const barColor = percentage >= 70 ? 'bg-success' : percentage >= 50 ? 'bg-warning' : 'bg-error';
 
@@ -118,19 +121,31 @@ export default function CharacterQuizResult({
                     {t('japanese.characterQuiz.result.settingsSummary')}
                 </p>
                 <div className='flex justify-between'>
-                    <span className='text-surface-muted'>{t('japanese.characterQuiz.settings.setsLabel')}</span>
-                    <span className='font-bold text-surface-foreground'>{setsUsed.join(' + ')}</span>
+                    <span className='text-surface-muted'>
+                        {t('japanese.characterQuiz.settings.setsLabel')}
+                    </span>
+                    <span className='font-bold text-surface-foreground'>
+                        {setsUsed.join(' + ')}
+                    </span>
                 </div>
                 <div className='flex justify-between'>
-                    <span className='text-surface-muted'>{t('japanese.characterQuiz.settings.questionCount')}</span>
+                    <span className='text-surface-muted'>
+                        {t('japanese.characterQuiz.settings.questionCount')}
+                    </span>
                     <span className='font-bold text-surface-foreground'>{total}</span>
                 </div>
                 <div className='flex justify-between'>
-                    <span className='text-surface-muted'>{t('japanese.characterQuiz.settings.choiceCount')}</span>
-                    <span className='font-bold text-surface-foreground'>{settings.choiceCount}</span>
+                    <span className='text-surface-muted'>
+                        {t('japanese.characterQuiz.settings.choiceCount')}
+                    </span>
+                    <span className='font-bold text-surface-foreground'>
+                        {settings.choiceCount}
+                    </span>
                 </div>
                 <div className='flex justify-between'>
-                    <span className='text-surface-muted'>{t('japanese.characterQuiz.settings.modeLabel')}</span>
+                    <span className='text-surface-muted'>
+                        {t('japanese.characterQuiz.settings.modeLabel')}
+                    </span>
                     <span className='font-bold text-surface-foreground'>
                         {settings.mode === 'romajiToChar'
                             ? t('japanese.characterQuiz.settings.mode.romajiToChar')
@@ -140,13 +155,19 @@ export default function CharacterQuizResult({
                     </span>
                 </div>
                 <div className='flex justify-between'>
-                    <span className='text-surface-muted'>{t('japanese.characterQuiz.settings.timeLimit')}</span>
+                    <span className='text-surface-muted'>
+                        {t('japanese.characterQuiz.settings.timeLimit')}
+                    </span>
                     <span className='font-bold text-surface-foreground'>{settings.timeLimit}s</span>
                 </div>
                 <div className='flex justify-between'>
-                    <span className='text-surface-muted'>{t('japanese.characterQuiz.settings.autoAdvance')}</span>
+                    <span className='text-surface-muted'>
+                        {t('japanese.characterQuiz.settings.autoAdvance')}
+                    </span>
                     <span className='font-bold text-surface-foreground'>
-                        {settings.autoAdvance ? t('japanese.characterQuiz.result.yes') : t('japanese.characterQuiz.result.no')}
+                        {settings.autoAdvance
+                            ? t('japanese.characterQuiz.result.yes')
+                            : t('japanese.characterQuiz.result.no')}
                     </span>
                 </div>
             </div>

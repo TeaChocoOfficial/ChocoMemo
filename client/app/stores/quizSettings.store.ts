@@ -3,7 +3,7 @@
 // so the user's choices are remembered across sessions.
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
-import type { QuizSettingsState } from '~/pages/japanese/characters/quiz/components/QuizSettings';
+import type { QuizSettingsState } from '~/pages/japanese/quiz/components/setting/QuizSettings';
 
 const DEFAULT_SETTINGS: QuizSettingsState = {
     hiragana: { voiceless: true, voiced: true, contracted: true },

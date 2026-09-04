@@ -1,31 +1,145 @@
-// Default Japanese vocabulary words.
+// -Path: 'client/app/data/japanese/vocabulary.ts'
+import type { VocabWord } from '~/types/vocabulary';
 
-export interface VocabularyWord {
-    id: string;
-    japanese: string;
-    reading: string;
-    meaning: string;
-}
-
-export const DEFAULT_VOCABULARY: VocabularyWord[] = [
-    { id: 'v1', japanese: '水', reading: 'みず', meaning: 'water' },
-    { id: 'v2', japanese: '火', reading: 'ひ', meaning: 'fire' },
-    { id: 'v3', japanese: '山', reading: 'やま', meaning: 'mountain' },
-    { id: 'v4', japanese: '川', reading: 'かわ', meaning: 'river' },
-    { id: 'v5', japanese: '空', reading: 'そら', meaning: 'sky' },
-    { id: 'v6', japanese: '海', reading: 'うみ', meaning: 'sea' },
-    { id: 'v7', japanese: '花', reading: 'はな', meaning: 'flower' },
-    { id: 'v8', japanese: '木', reading: 'き', meaning: 'tree' },
-    { id: 'v9', japanese: '犬', reading: 'いぬ', meaning: 'dog' },
-    { id: 'v10', japanese: '猫', reading: 'ねこ', meaning: 'cat' },
-    { id: 'v11', japanese: '鳥', reading: 'とり', meaning: 'bird' },
-    { id: 'v12', japanese: '魚', reading: 'さかな', meaning: 'fish' },
-    { id: 'v13', japanese: '本', reading: 'ほん', meaning: 'book' },
-    { id: 'v14', japanese: '車', reading: 'くるま', meaning: 'car' },
-    { id: 'v15', japanese: '電車', reading: 'でんしゃ', meaning: 'train' },
-    { id: 'v16', japanese: '学校', reading: 'がっこう', meaning: 'school' },
-    { id: 'v17', japanese: '友達', reading: 'ともだち', meaning: 'friend' },
-    { id: 'v18', japanese: '食べる', reading: 'たべる', meaning: 'to eat' },
-    { id: 'v19', japanese: '飲む', reading: 'のむ', meaning: 'to drink' },
-    { id: 'v20', japanese: '行く', reading: 'いく', meaning: 'to go' },
+export const DEFAULT_VOCABULARY: VocabWord[] = [
+    {
+        id: 'v1',
+        word: '水',
+        reading: 'みず',
+        meaning: 'water',
+        example: { before: '', after: 'をください。', targetReading: 'みず', english: 'Water, please.' },
+    },
+    {
+        id: 'v2',
+        word: '火',
+        reading: 'ひ',
+        meaning: 'fire',
+        example: { before: '', after: 'が起来了。', targetReading: 'ひ', english: 'The fire started.' },
+    },
+    {
+        id: 'v3',
+        word: '山',
+        reading: 'やま',
+        meaning: 'mountain',
+        example: { before: '', after: 'に登りましょう。', targetReading: 'やま', english: "Let's climb the mountain." },
+    },
+    {
+        id: 'v4',
+        word: '川',
+        reading: 'かわ',
+        meaning: 'river',
+        example: { before: '', after: 'で泳ぎましょう。', targetReading: 'かわ', english: "Let's swim in the river." },
+    },
+    {
+        id: 'v5',
+        word: '空',
+        reading: 'そら',
+        meaning: 'sky',
+        example: { before: '', after: 'がきれいです。', targetReading: 'そら', english: 'The sky is beautiful.' },
+    },
+    {
+        id: 'v6',
+        word: '海',
+        reading: 'うみ',
+        meaning: 'sea',
+        example: { before: '', after: 'で遊びたいです。', targetReading: 'うみ', english: 'I want to play at the sea.' },
+    },
+    {
+        id: 'v7',
+        word: '花',
+        reading: 'はな',
+        meaning: 'flower',
+        example: { before: '', after: 'がきれいに咲いています。', targetReading: 'はな', english: 'The flowers are blooming beautifully.' },
+    },
+    {
+        id: 'v8',
+        word: '木',
+        reading: 'き',
+        meaning: 'tree',
+        example: { before: '', after: 'の下に座ります。', targetReading: 'き', english: 'I sit under the tree.' },
+    },
+    {
+        id: 'v9',
+        word: '犬',
+        reading: 'いぬ',
+        meaning: 'dog',
+        example: { before: '', after: 'が好きです。', targetReading: 'いぬ', english: 'I like dogs.' },
+    },
+    {
+        id: 'v10',
+        word: '猫',
+        reading: 'ねこ',
+        meaning: 'cat',
+        example: { before: '', after: 'は寝ています。', targetReading: 'ねこ', english: 'The cat is sleeping.' },
+    },
+    {
+        id: 'v11',
+        word: '鳥',
+        reading: 'とり',
+        meaning: 'bird',
+        example: { before: '', after: 'が空を飛んでいます。', targetReading: 'とり', english: 'The bird is flying in the sky.' },
+    },
+    {
+        id: 'v12',
+        word: '魚',
+        reading: 'さかな',
+        meaning: 'fish',
+        example: { before: '', after: 'を食べました。', targetReading: 'さかな', english: 'I ate fish.' },
+    },
+    {
+        id: 'v13',
+        word: '本',
+        reading: 'ほん',
+        meaning: 'book',
+        example: { before: '', after: 'を読みました。', targetReading: 'ほん', english: 'I read a book.' },
+    },
+    {
+        id: 'v14',
+        word: '車',
+        reading: 'くるま',
+        meaning: 'car',
+        example: { before: '', after: 'で行きます。', targetReading: 'くるま', english: 'I go by car.' },
+    },
+    {
+        id: 'v15',
+        word: '電車',
+        reading: 'でんしゃ',
+        meaning: 'train',
+        example: { before: '', after: 'に乗ります。', targetReading: 'でんしゃ', english: 'I ride the train.' },
+    },
+    {
+        id: 'v16',
+        word: '学校',
+        reading: 'がっこう',
+        meaning: 'school',
+        example: { before: '', after: 'に行きます。', targetReading: 'がっこう', english: 'I go to school.' },
+    },
+    {
+        id: 'v17',
+        word: '友達',
+        reading: 'ともだち',
+        meaning: 'friend',
+        example: { before: '', after: 'と遊びました。', targetReading: 'ともだち', english: 'I hung out with a friend.' },
+    },
+    {
+        id: 'v18',
+        word: '食べる',
+        reading: 'たべる',
+        meaning: 'to eat',
+        example: { before: 'ご飯を', after: 'ましょう。', targetReading: 'たべ', english: "Let's eat." },
+    },
+    {
+        id: 'v19',
+        word: '飲む',
+        reading: 'のむ',
+        meaning: 'to drink',
+        example: { before: 'お茶を', after: 'ましょう。', targetReading: 'の', english: "Let's drink tea." },
+    },
+    {
+        id: 'v20',
+        word: '行く',
+        reading: 'いく',
+        meaning: 'to go',
+        example: { before: '学校に', after: 'ましょう。', targetReading: 'い', english: "Let's go to school." },
+    },
 ];

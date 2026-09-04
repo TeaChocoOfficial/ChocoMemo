@@ -97,10 +97,15 @@
                 "description": "Test your recognition of Hiragana and Katakana characters.",
                 "action": "Start Character Quiz"
             },
-            "vocabularyQuiz": {
-                "title": "Vocabulary Quiz",
-                "description": "Practice Japanese vocabulary words and meanings.",
-                "action": "Start Vocabulary Quiz"
+            "vocabularyList": {
+                "title": "Vocabulary List",
+                "description": "Browse all Japanese vocabulary words with readings and meanings.",
+                "action": "View Vocabulary"
+            },
+            "practice": {
+                "title": "Practice",
+                "description": "Review vocabulary with flashcards and spaced repetition.",
+                "action": "Start Practice"
             }
         },
         "characters": {
@@ -185,29 +190,31 @@
                 "totalChars": "Total characters"
             }
         },
-        "vocabularyQuiz": {
-            "badge": "Vocabulary Quiz",
-            "title": "Vocabulary Quiz",
-            "intro": "See the Japanese word and pick its meaning. Add your own words to practice.",
-            "available": "{{count}} words available",
-            "start": "Start Quiz",
-            "manage": "Manage Vocabulary",
+        "vocabularyList": {
+            "badge": "Vocabulary",
+            "title": "Vocabulary List",
+            "description": "Browse all Japanese vocabulary words with their readings and English meanings. Add your own custom words to study.",
+            "available": "{{count}} words total",
+            "addWord": "Add Word",
             "manageTitle": "Add Custom Words",
             "jpPlaceholder": "Japanese word",
             "readingPlaceholder": "Reading (optional)",
             "meaningPlaceholder": "Meaning",
             "add": "Add Word",
-            "customList": "Your custom words",
+            "customSection": "Custom Words",
+            "defaultSection": "Built-in Vocabulary",
             "remove": "Remove",
-            "progress": "Question",
-            "score": "Score",
-            "promptLabel": "What does this word mean?",
-            "correct": "Correct!",
-            "wrong": "Not quite.",
-            "correctAnswer": "Correct answer",
-            "next": "Next Question",
-            "resultTitle": "Quiz Complete!",
-            "retry": "Try Again",
+            "back_hub": "Back to Japanese"
+        },
+        "practice": {
+            "badge": "Practice",
+            "title": "Vocabulary Practice",
+            "description": "Flip the card to reveal the answer, then mark as Pass or Fail.",
+            "complete": "All caught up!",
+            "completeDescription": "No more words due for review right now.",
+            "exit": "Exit Practice",
+            "wordsLeft": "words left",
+            "wordLeft": "word left",
             "back_hub": "Back to Japanese"
         }
     },

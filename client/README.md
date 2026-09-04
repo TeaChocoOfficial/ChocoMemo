@@ -53,73 +53,8 @@ Test vocabulary by matching a Japanese word to its meaning. Ships with a default
 | `/:lang/japanese` | Japanese hub |
 | `/:lang/japanese/characters` | Hiragana / Katakana charts + voice picker |
 | `/:lang/japanese/characters/quiz` | Character quiz |
-| `/:lang/japanese/vocabulary/quiz` | Vocabulary quiz |
 
 > `:lang` is the active i18n locale segment (`en-US`, `th-TH`, `ja-JP`, `zh-CN`).
-
----
-
-## 🧩 Code Layout
-
-```
-app/
-  pages/
-    home/                       # home landing
-    language-select/            # pick a language
-    japanese/
-      Japanese.tsx              # hub
-      characters/
-        Characters.tsx
-        components/
-          CharacterGrid.tsx
-          CharacterCard.tsx     # click-to-speak card
-          CharacterSetTabs.tsx
-          VoicePicker.tsx
-        quiz/
-          CharacterQuiz.tsx        # phase orchestration (intro/playing/result)
-          hooks/
-            useCharacterQuiz.ts   # engine: pool, timer, scoring, mode choices
-          components/
-            QuizIntro.tsx         # hero + settings + start
-            QuizPlaying.tsx       # stats + timer + question + choices + feedback
-            QuizStats.tsx         # live Correct / Wrong / Timeout + end game
-            QuizTimer.tsx         # per-question countdown bar
-            QuizFeedback.tsx      # correct/wrong/timeout + next
-            QuizSettings.tsx      # groups × count × timer + mode + auto-advance
-            QuizQuestion.tsx
-            QuizChoices.tsx
-            CharacterQuizResult.tsx # stats + answer history
-      vocabulary/
-        quiz/
-          VocabularyQuiz.tsx
-          components/
-            VocabQuestion.tsx
-            VocabChoices.tsx
-            VocabResult.tsx
-      quiz/
-        components/
-          QuizProgress.tsx          # shared progress bar
-          QuizResult.tsx            # shared simple result
-  components/
-    custom/                     # Badge, Button, Card, Modal, RangeSlider,
-                                # Select, Switch, Skeleton, Rating, Activity …
-    layout/                     # Navbar, Footer
-    config/                     # LanguageSwitcher, ThemePicker
-  hooks/
-    useQuizEngine.ts            # buildChoices / choice engine
-    useSpeak.ts                 # Web Speech API wrapper
-  stores/
-    quizSettings.store.ts       # quiz settings (persisted)
-    speech.store.ts             # voice language + rate (persisted)
-    theme.store.ts              # theme (persisted)
-    vocabulary.store.ts         # custom vocab (persisted)
-  data/
-    japanese/
-      kana.ts                   # KANA_CHARS: voiceless / voiced / contracted
-      vocabulary.ts             # DEFAULT_VOCABULARY
-  i18n/
-    locales/                    # en-US, ja-JP, zh-CN, th-TH JSON
-```
 
 ---
 
@@ -163,16 +98,3 @@ Type check:
 ```bash
 pnpm typecheck
 ```
-
----
-
-## 🗺️ Roadmap
-
-- [x] Home page
-- [x] Language Select (Japanese active, English "Coming Soon")
-- [x] Japanese hub
-- [x] Basic Characters charts + click-to-speak + voice picker
-- [x] Character Quiz (configurable, stats, history)
-- [x] Vocabulary Quiz (default words + custom words)
-- [ ] Progress tracking / persistence across sessions
-- [ ] English language track

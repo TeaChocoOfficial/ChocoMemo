@@ -8,9 +8,9 @@ import { useTranslation } from 'react-i18next';
 import { useQuizSettingsStore } from '~/stores/quizSettings.store';
 import { useSpeak } from '~/hooks/useSpeak';
 import { useCharacterQuiz } from './hooks/useCharacterQuiz';
-import QuizIntro from './components/QuizIntro';
-import QuizPlaying from './components/QuizPlaying';
-import CharacterQuizResult from './components/CharacterQuizResult';
+import QuizIntro from './components/setting/QuizIntro';
+import QuizPlaying from './components/game/QuizPlaying';
+import QuizResult from './components/setting/QuizResult';
 
 export default function CharacterQuizPage() {
     const { t } = useTranslation();
@@ -107,7 +107,7 @@ export default function CharacterQuizPage() {
                 )}
 
                 {phase === 'result' && (
-                    <CharacterQuizResult
+                    <QuizResult
                         score={score}
                         wrongCount={wrongCount}
                         timeoutCount={timeoutCount}

@@ -2,6 +2,10 @@
 // Speaks a given text using the browser's Web Speech API.
 // Respects the user's chosen voice from the speech store.
 // Falls back gracefully when speech synthesis is unavailable.
+//
+// Optionally accepts a pre-generated static audio file (e.g. VOICEVOX) via
+// the second argument — when present it is played instead, and only falls
+// back to speech synthesis if the file fails to load.
 
 import { useCallback } from 'react';
 import { useSpeechStore } from '~/stores/speech.store';
@@ -22,26 +26,36 @@ export function useSpeak() {
     const rate = useSpeechStore((s) => s.rate);
 
     return useCallback(
-        (text: string) => {
-            if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
+        (text: string, audioSrc?: string) => {
+            if (typeof window === 'undefined') return;
 
-            window.speechSynthesis.cancel();
-
-            const utterance = new SpeechSynthesisUtterance(text);
-            utterance.lang = lang;
-            utterance.rate = rate;
-            utterance.pitch = 1;
-
-            let selected: SpeechSynthesisVoice | null = null;
-            if (voiceURI) {
-                selected = getVoices().find((v) => v.voiceURI === voiceURI) ?? null;
+            if (audioSrc) {
+                new Audio(audioSrc).play().catch(() => speakWithTTS(text));
+                return;
             }
-            if (!selected) selected = pickJapaneseVoice();
-            if (selected) utterance.voice = selected;
-
-            window.speechSynthesis.speak(utterance);
+            speakWithTTS(text);
         },
         [voiceURI, lang, rate],
     );
+
+    function speakWithTTS(text: string) {
+        if (!('speechSynthesis' in window)) return;
+
+        window.speechSynthesis.cancel();
+
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = lang;
+        utterance.rate = rate;
+        utterance.pitch = 1;
+
+        let selected: SpeechSynthesisVoice | null = null;
+        if (voiceURI) {
+            selected = getVoices().find((v) => v.voiceURI === voiceURI) ?? null;
+        }
+        if (!selected) selected = pickJapaneseVoice();
+        if (selected) utterance.voice = selected;
+
+        window.speechSynthesis.speak(utterance);
+    }
 }
 
