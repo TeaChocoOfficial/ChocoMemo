@@ -117,6 +117,22 @@
                 "action": "开始复习"
             }
         },
+        "decks": {
+            "title": "词汇卡组",
+            "description": "选择要复习的卡组。卡组来自内置集合、你自己添加的单词，或下载的合集。",
+            "availableCount": "可用卡组 {{count}} 个",
+            "startReview": "开始复习",
+            "due": "到期",
+            "byAuthor": "作者 {{author}}",
+            "download": "下载",
+            "notFound": "未找到该卡组。",
+            "source": {
+                "default": "内置",
+                "custom": "我的单词",
+                "cloud": "云",
+                "downloaded": "已下载"
+            }
+        },
         "kana": {
             "badge": "假名",
             "title": "日语假名",
@@ -250,6 +266,13 @@
             "exit": "退出复习",
             "wordsLeft": "个单词剩余",
             "wordLeft": "个单词剩余",
+            "showAnswer": "查看答案",
+            "fail": "失败",
+            "pass": "通过",
+            "failHint": "失败",
+            "passHint": "通过",
+            "wordLabel": "单词",
+            "recallPrompt": "这个单词是什么意思？",
             "back_hub": "返回日语"
         }
     },

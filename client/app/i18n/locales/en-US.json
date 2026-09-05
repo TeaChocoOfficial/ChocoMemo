@@ -122,6 +122,22 @@
                 "action": "Start Review"
             }
         },
+        "decks": {
+            "title": "Vocabulary Decks",
+            "description": "Pick a deck to review. Decks come from the built-in set, your own words, or downloaded collections.",
+            "availableCount": "{{count}} decks available",
+            "startReview": "Start Review",
+            "due": "due",
+            "byAuthor": "by {{author}}",
+            "download": "Download",
+            "notFound": "That deck was not found.",
+            "source": {
+                "default": "Built-in",
+                "custom": "My words",
+                "cloud": "Cloud",
+                "downloaded": "Downloaded"
+            }
+        },
         "kana": {
             "badge": "Kana",
             "title": "Japanese Kana",
@@ -255,6 +271,13 @@
             "exit": "Exit Review",
             "wordsLeft": "words left",
             "wordLeft": "word left",
+            "showAnswer": "Show answer",
+            "fail": "Fail",
+            "pass": "Pass",
+            "failHint": "fail",
+            "passHint": "pass",
+            "wordLabel": "Word",
+            "recallPrompt": "What does this word mean?",
             "back_hub": "Back to Japanese"
         }
     },

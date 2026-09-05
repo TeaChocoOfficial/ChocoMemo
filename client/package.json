@@ -1,6 +1,6 @@
 {
     "name": "choco-memo",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "author": "TeaChoco",
     "private": true,
     "type": "module",

@@ -122,6 +122,22 @@
                 "action": "복습 시작"
             }
         },
+        "decks": {
+            "title": "어휘 덱",
+            "description": "복습할 덱을 고르세요. 덱은 기본 세트, 직접 추가한 단어, 또는 다운로드한 모음집에서 제공됩니다.",
+            "availableCount": "사용 가능한 덱 {{count}}개",
+            "startReview": "복습 시작",
+            "due": "예정",
+            "byAuthor": "{{author}} 제작",
+            "download": "다운로드",
+            "notFound": "덱을 찾을 수 없습니다.",
+            "source": {
+                "default": "기본",
+                "custom": "내 단어",
+                "cloud": "클라우드",
+                "downloaded": "다운로드"
+            }
+        },
         "kana": {
             "badge": "문자",
             "title": "일본어 가나",
@@ -255,6 +271,13 @@
             "exit": "복습 종료",
             "wordsLeft": "단어 남음",
             "wordLeft": "단어 남음",
+            "showAnswer": "정답 보기",
+            "fail": "불합격",
+            "pass": "합격",
+            "failHint": "불합격",
+            "passHint": "합격",
+            "wordLabel": "단어",
+            "recallPrompt": "이 단어의 뜻은 무엇인가요?",
             "back_hub": "일본어로 돌아가기"
         }
     },

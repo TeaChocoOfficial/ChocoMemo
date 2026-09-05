@@ -117,6 +117,22 @@
                 "action": "復習を始める"
             }
         },
+        "decks": {
+            "title": "語彙デッキ",
+            "description": "復習するデッキを選びましょう。デッキは組み込みセット、自分で追加した単語、またはダウンロードしたコレクションから選べます。",
+            "availableCount": "利用可能なデッキ {{count}} 個",
+            "startReview": "復習を開始",
+            "due": "期限",
+            "byAuthor": "{{author}} より",
+            "download": "ダウンロード",
+            "notFound": "そのデッキは見つかりませんでした。",
+            "source": {
+                "default": "組み込み",
+                "custom": "自分の単語",
+                "cloud": "クラウド",
+                "downloaded": "ダウンロード"
+            }
+        },
         "kana": {
             "badge": "かな",
             "title": "日本語のかな",
@@ -250,6 +266,13 @@
             "exit": "復習を終了",
             "wordsLeft": "単語残り",
             "wordLeft": "単語残り",
+            "showAnswer": "答えを見る",
+            "fail": "不合格",
+            "pass": "合格",
+            "failHint": "不合格",
+            "passHint": "合格",
+            "wordLabel": "単語",
+            "recallPrompt": "この単語の意味は？",
             "back_hub": "日本語に戻る"
         }
     },

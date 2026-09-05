@@ -17,7 +17,7 @@ export default function Section({
             initial={{ opacity: 0, y: 24 }}
             viewport={{ margin: '-100px' }}
             whileInView={{ opacity: 1, y: 0 }}
-            className={`flex relative ${showChrome ? 'min-h-screen py-16 sm:py-20' : 'min-h-[calc(100vh-32px)] py-8'} ${className}`}
+            className={`flex relative ${showChrome ? 'min-h-100dvh py-16 sm:py-20' : 'min-h-[calc(100dvh-32px)] py-8'} ${className}`}
         >
             {children}
         </motion.section>

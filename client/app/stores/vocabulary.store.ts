@@ -1,9 +1,9 @@
 // Local-first store for user-added custom vocabulary.
 // Wraps the persisted vocabulary words, including defaults merged at hydrate time.
 import { create } from 'zustand';
-import { persist, createJSONStorage } from 'zustand/middleware';
 import type { VocabWord } from '~/types/vocabulary';
 import { DEFAULT_VOCABULARY } from '~/data/japanese/vocabulary';
+import { persist, createJSONStorage } from 'zustand/middleware';
 
 interface VocabularyState {
     custom: VocabWord[];

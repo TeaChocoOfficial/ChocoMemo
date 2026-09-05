@@ -7,13 +7,13 @@ import Button from '~/components/custom/Button';
 import { useTranslation } from 'react-i18next';
 import { FaArrowLeft, FaPlus, FaTrash } from 'react-icons/fa6';
 import { useVocabularyStore } from '~/stores/vocabulary.store';
-import { useVocabMeaning } from '~/hooks/useVocabMeaning';
+import { useLangText } from '~/hooks/useLangText';
 import { DEFAULT_VOCABULARY } from '~/data/japanese/vocabulary';
 import Section from '~/components/custom/Section';
 
 export default function VocabularyListPage() {
     const { t } = useTranslation();
-    const meaning = useVocabMeaning();
+    const meaning = useLangText();
     const { custom, addCustom, removeCustom } = useVocabularyStore();
 
     const [jpValue, setJpValue] = useState('');

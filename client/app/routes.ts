@@ -11,6 +11,7 @@ export default [
             route('japanese/kana-drill', 'routes/page/japanese/kana-drill.tsx'),
             route('japanese/vocabulary', 'routes/page/japanese/vocabulary.tsx'),
             route('japanese/vocabulary-review', 'routes/page/japanese/vocabulary-review.tsx'),
+            route('japanese/vocabulary-review/:dexId', 'routes/page/japanese/vocabulary-review.$dexId.tsx'),
             route('*', 'routes/not-found.tsx'),
         ]),
     ]),

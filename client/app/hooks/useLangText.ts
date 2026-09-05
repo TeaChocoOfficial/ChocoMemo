@@ -1,7 +1,7 @@
 // -Path: 'client/app/hooks/useVocabMeaning.ts'
 import { useTranslation } from 'react-i18next';
 import { SUPPORTED_LANGS, type Lang } from '~/i18n/locales';
-import type { VocabMeaning } from '~/types/vocabulary';
+import type { LangText } from '~/types/vocabulary';
 
 const FALLBACK_ORDER: Lang[] = ['en-US', ...SUPPORTED_LANGS.filter((l) => l !== 'en-US')];
 
@@ -17,16 +17,16 @@ function normalizeLang(lang: string): Lang {
 
 /** Localized meaning: plain strings pass through; records pick the user's
  *  language, falling back to en-US then the first available key. */
-export function resolveMeaning(meaning: VocabMeaning, lang: string): string {
-    if (typeof meaning === 'string') return meaning;
-    const direct = meaning[normalizeLang(lang)];
+export function resolveText(text: LangText, lang: string): string {
+    if (typeof text === 'string') return text;
+    const direct = text[normalizeLang(lang)];
     if (direct != null) return direct;
-    const fallback = FALLBACK_ORDER.find((l) => meaning[l]);
-    return fallback ? meaning[fallback] ?? '' : '';
+    const fallback = FALLBACK_ORDER.find((l) => text[l]);
+    return fallback ? text[fallback] ?? '' : '';
 }
 
 /** Returns a resolver bound to the current i18n language. */
-export function useVocabMeaning() {
+export function useLangText() {
     const { i18n } = useTranslation();
-    return (meaning: VocabMeaning) => resolveMeaning(meaning, i18n.language);
+    return (text: LangText) => resolveText(text, i18n.language);
 }

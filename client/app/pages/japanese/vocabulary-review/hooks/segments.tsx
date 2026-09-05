@@ -3,7 +3,7 @@ import { useState } from 'react';
 import type { ReactNode } from 'react';
 import { FaCheck, FaCopy, FaVolumeHigh } from 'react-icons/fa6';
 import { useSpeak } from '~/hooks/useSpeak';
-import { useVocabMeaning } from '~/hooks/useVocabMeaning';
+import { useLangText } from '~/hooks/useLangText';
 import type { VocabSegment, VocabWord } from '~/types/vocabulary';
 
 /** Plain surface text of the target as it appears in the sentence. */
@@ -227,7 +227,7 @@ function TipBody({
 /** Hover tip showing a vocabulary item's details (word, reading, meaning)
  *  plus a button that reads the word aloud. */
 export function VocabTip({ word, children }: { word: VocabWord; children: ReactNode }) {
-    const meaning = useVocabMeaning();
+    const meaning = useLangText();
     const speak = useSpeak();
     const localized = meaning(word.meaning);
     return (
