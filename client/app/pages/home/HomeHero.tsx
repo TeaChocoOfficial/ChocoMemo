@@ -5,12 +5,13 @@ import Badge from '~/components/custom/Badge';
 import { getAssetUrl } from '~/utils/url';
 import { useTranslation } from 'react-i18next';
 import { FaCircleRight } from 'react-icons/fa6';
+import Section from '~/components/custom/Section';
 
 export default function HomeHero() {
     const { t } = useTranslation();
 
     return (
-        <section className='relative min-h-dvh flex items-center justify-center overflow-hidden py-28'>
+        <Section className='items-center justify-center'>
             <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -54,6 +55,6 @@ export default function HomeHero() {
                     </Link>
                 </div>
             </motion.div>
-        </section>
+        </Section>
     );
 }

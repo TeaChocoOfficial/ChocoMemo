@@ -11,9 +11,9 @@ import { useChromeStore } from '~/stores/chrome.store';
 
 export default function Navbar() {
     const { t } = useTranslation();
-    const setShowChrome = useChromeStore((s) => s.setShowChrome);
-    const [menuOpen, setMenuOpen] = useState(false);
+    const { setShowChrome } = useChromeStore();
     const menuRef = useRef<HTMLDivElement>(null);
+    const [menuOpen, setMenuOpen] = useState(false);
     const buttonRef = useRef<HTMLButtonElement>(null);
 
     // Close the dropdown when clicking outside of it
@@ -25,9 +25,8 @@ export default function Navbar() {
                 !menuRef.current.contains(event.target as Node) &&
                 buttonRef.current &&
                 !buttonRef.current.contains(event.target as Node)
-            ) {
+            )
                 setMenuOpen(false);
-            }
         };
         document.addEventListener('mousedown', handleClickOutside);
         return () => document.removeEventListener('mousedown', handleClickOutside);
@@ -43,7 +42,11 @@ export default function Navbar() {
             <div className='mx-auto max-w-6xl px-4 sm:px-6'>
                 <div className='flex h-16 items-center justify-between'>
                     <Link to='/' className='flex items-center gap-3 group'>
-                        <img src={getAssetUrl('/icon.svg')} alt='Choco' className='h-12 w-12 shrink-0' />
+                        <img
+                            src={getAssetUrl('/icon.svg')}
+                            alt='Choco'
+                            className='h-12 w-12 shrink-0'
+                        />
                         <span className='flex flex-col leading-tight'>
                             <span className='text-lg font-extrabold tracking-tight text-accent'>
                                 ChocoMemo

@@ -20,6 +20,11 @@ function pickJapaneseVoice(): SpeechSynthesisVoice | null {
     return voices.find((v) => v.lang.toLowerCase().startsWith('ja')) ?? null;
 }
 
+export function getVoiceForSpeech(voiceURI: string): SpeechSynthesisVoice | null {
+    const selected = voiceURI ? getVoices().find((v) => v.voiceURI === voiceURI) ?? null : null;
+    return selected ?? pickJapaneseVoice();
+}
+
 export function useSpeak() {
     const voiceURI = useSpeechStore((s) => s.voiceURI);
     const lang = useSpeechStore((s) => s.lang);
@@ -27,20 +32,25 @@ export function useSpeak() {
     const volume = useSpeechStore((s) => s.volume);
 
     return useCallback(
-        (text: string, audioSrc?: string) => {
+        (text: string, audioSrc?: string, onEnd?: () => void) => {
             if (typeof window === 'undefined') return;
 
             if (audioSrc) {
-                new Audio(audioSrc).play().catch(() => speakWithTTS(text));
+                const audio = new Audio(audioSrc);
+                audio.onended = () => onEnd?.();
+                audio.play().catch(() => speakWithTTS(text, onEnd));
                 return;
             }
-            speakWithTTS(text);
+            speakWithTTS(text, onEnd);
         },
         [voiceURI, lang, rate, volume],
     );
 
-    function speakWithTTS(text: string) {
-        if (!('speechSynthesis' in window)) return;
+    function speakWithTTS(text: string, onEnd?: () => void) {
+        if (!('speechSynthesis' in window)) {
+            onEnd?.();
+            return;
+        }
 
         window.speechSynthesis.cancel();
 
@@ -50,12 +60,9 @@ export function useSpeak() {
         utterance.volume = volume;
         utterance.pitch = 1;
 
-        let selected: SpeechSynthesisVoice | null = null;
-        if (voiceURI) {
-            selected = getVoices().find((v) => v.voiceURI === voiceURI) ?? null;
-        }
-        if (!selected) selected = pickJapaneseVoice();
+        const selected = getVoiceForSpeech(voiceURI);
         if (selected) utterance.voice = selected;
+        if (onEnd) utterance.onend = onEnd;
 
         window.speechSynthesis.speak(utterance);
     }

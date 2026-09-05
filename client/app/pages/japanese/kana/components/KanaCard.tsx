@@ -7,22 +7,33 @@ import type { Kana } from '~/data/japanese/kana';
 interface KanaCardProps {
     kana: Kana;
     index: number;
+    active?: boolean;
+    onRead?: (kana: Kana, index: number) => void;
 }
 
-export default function KanaCard({ kana, index }: KanaCardProps) {
+export default function KanaCard({ kana, index, active = false, onRead }: KanaCardProps) {
     const speak = useSpeak();
 
     return (
         <motion.button
             type='button'
             whileTap={{ scale: 0.95 }}
-            onClick={() => speak(kana.char)}
+            onClick={() => {
+                onRead?.(kana, index);
+                speak(kana.char);
+            }}
             animate={{ opacity: 1, scale: 1 }}
             initial={{ opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.3, delay: index * 0.02 }}
-            className='group flex flex-col items-center justify-center rounded-sm border border-line bg-surface p-3 sm:p-4 aspect-square transition-colors duration-200 hover:border-accent hover:bg-surface-overlay cursor-pointer'
+            className={`group flex flex-col items-center justify-center rounded-sm border p-3 sm:p-4 aspect-square transition-colors duration-200 cursor-pointer ${
+                active
+                    ? 'border-accent bg-accent-subtle'
+                    : 'border-line bg-surface hover:border-accent hover:bg-surface-overlay'
+            }`}
         >
-            <span className='text-3xl sm:text-4xl md:text-5xl font-bold text-surface-foreground mb-1 sm:mb-3 leading-none transition-colors duration-200 group-hover:text-accent'>
+            <span className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-1 sm:mb-3 leading-none transition-colors duration-200 ${
+                active ? 'text-accent' : 'text-surface-foreground group-hover:text-accent'
+            }`}>
                 {kana.char}
             </span>
             <span className='flex items-center gap-1.5 text-[10px] sm:text-sm font-mono uppercase tracking-wider text-accent whitespace-nowrap'>

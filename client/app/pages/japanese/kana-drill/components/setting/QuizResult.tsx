@@ -11,19 +11,15 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import type { QuizSettingsState } from './QuizSettings';
 import type { HistoryEntry } from '../../hooks/useKanaDrill';
+import { Link } from '~/i18n/routing';
 
 interface QuizResultProps {
     score: number;
     total: number;
-    title: string;
-    exitLabel: string;
-    onExit: () => void;
     wrongCount: number;
     onRetry: () => void;
     timeoutCount: number;
-    settingsLabel: string;
     onSettings: () => void;
-    playAgainLabel: string;
     history: HistoryEntry[];
     settings: QuizSettingsState;
 }
@@ -31,17 +27,12 @@ interface QuizResultProps {
 export default function QuizResult({
     score,
     total,
-    title,
-    onExit,
     history,
     onRetry,
     settings,
-    exitLabel,
     onSettings,
     wrongCount,
     timeoutCount,
-    settingsLabel,
-    playAgainLabel,
 }: QuizResultProps) {
     const { t } = useTranslation();
     const percentage = total > 0 ? Math.round((score / total) * 100) : 0;
@@ -71,7 +62,7 @@ export default function QuizResult({
             <div>
                 <div className={`text-7xl font-black leading-none mb-4 ${rankColor}`}>{rank}</div>
                 <h2 className='text-3xl font-black tracking-tight text-surface-foreground mb-2'>
-                    {title}
+                    {t('japanese.kanaDrill.resultTitle')}
                 </h2>
                 <p className='text-lg text-surface-muted'>
                     {score} / {total} · {percentage}%
@@ -217,7 +208,7 @@ export default function QuizResult({
                     className='inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-sm bg-accent text-accent-foreground text-base font-semibold transition-colors duration-200 cursor-pointer hover:bg-accent-emphasis active:translate-y-px'
                 >
                     <FaRotateRight className='w-4 h-4' />
-                    {playAgainLabel}
+                    {t('japanese.kanaDrill.retry')}
                 </button>
                 <div className='flex gap-3'>
                     <button
@@ -226,16 +217,15 @@ export default function QuizResult({
                         className='flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-sm border border-line text-sm font-bold text-surface-foreground hover:bg-surface-overlay transition-colors cursor-pointer'
                     >
                         <FaGear className='w-4 h-4' />
-                        {settingsLabel}
+                        {t('japanese.kanaDrill.result.settingsButton')}
                     </button>
-                    <a
-                        href='/japanese/kana'
-                        onClick={onExit}
+                    <Link
+                        to='/japanese'
                         className='flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-sm border border-line text-sm font-bold text-surface-foreground hover:bg-surface-overlay transition-colors'
                     >
                         <FaArrowRightFromBracket className='w-4 h-4' />
-                        {exitLabel}
-                    </a>
+                        {t('japanese.kanaDrill.result.exitButton')}
+                    </Link>
                 </div>
             </div>
         </motion.div>

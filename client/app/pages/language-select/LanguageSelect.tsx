@@ -5,6 +5,7 @@ import { Link } from '~/i18n/routing';
 import LanguageCard, { type AvailableLanguage } from './LanguageCard';
 import LanguageSelectHero from './LanguageSelectHero';
 import { FaArrowLeft } from 'react-icons/fa6';
+import Section from '~/components/custom/Section';
 
 export default function LanguageSelectPage() {
     const { t } = useTranslation();
@@ -46,7 +47,7 @@ export default function LanguageSelectPage() {
     ];
 
     return (
-        <section className='relative min-h-screen flex items-start justify-center overflow-hidden py-16 sm:py-20'>
+        <Section className='items-start justify-center'>
             <div className='mx-auto max-w-5xl px-4 sm:px-6 w-full'>
                 <Link
                     to='/'
@@ -66,6 +67,6 @@ export default function LanguageSelectPage() {
                     ))}
                 </div>
             </div>
-        </section>
+        </Section>
     );
 }

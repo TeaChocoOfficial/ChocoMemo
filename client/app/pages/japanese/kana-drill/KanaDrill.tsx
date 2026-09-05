@@ -8,6 +8,7 @@ import QuizPlaying from './components/game/QuizPlaying';
 import QuizResult from './components/setting/QuizResult';
 import { useKanaDrill } from './hooks/useKanaDrill';
 import { useQuizSettingsStore } from '~/stores/quizSettings.store';
+import Section from '~/components/custom/Section';
 
 export default function KanaDrillPage() {
     const speak = useSpeak();
@@ -60,7 +61,7 @@ export default function KanaDrillPage() {
         : '';
 
     return (
-        <section className='relative min-h-screen overflow-hidden py-16 sm:py-20'>
+        <Section>
             <div className='mx-auto max-w-3xl px-4 sm:px-6 w-full'>
                 {phase === 'intro' && (
                     <>
@@ -77,15 +78,15 @@ export default function KanaDrillPage() {
 
                 {phase === 'playing' && question && (
                     <QuizPlaying
-                        mode={settings.mode}
-                        current={questionIndex + 1}
-                        total={round.length}
-                        questionIndex={questionIndex}
                         prompt={prompt}
-                        promptLabel={promptLabel}
-                        correctAnswerText={correctAnswerText}
-                        timeLimit={settings.timeLimit}
                         timeLeft={timeLeft}
+                        total={round.length}
+                        mode={settings.mode}
+                        promptLabel={promptLabel}
+                        current={questionIndex + 1}
+                        questionIndex={questionIndex}
+                        timeLimit={settings.timeLimit}
+                        correctAnswerText={correctAnswerText}
                         score={score}
                         wrongCount={wrongCount}
                         timeoutCount={timeoutCount}
@@ -106,21 +107,16 @@ export default function KanaDrillPage() {
                 {phase === 'result' && (
                     <QuizResult
                         score={score}
-                        wrongCount={wrongCount}
-                        timeoutCount={timeoutCount}
-                        total={round.length}
                         history={history}
-                        settings={settings}
-                        title={t('japanese.kanaDrill.resultTitle')}
-                        playAgainLabel={t('japanese.kanaDrill.retry')}
-                        settingsLabel={t('japanese.kanaDrill.result.settingsButton')}
-                        exitLabel={t('japanese.kanaDrill.result.exitButton')}
                         onRetry={startQuiz}
+                        settings={settings}
+                        total={round.length}
+                        wrongCount={wrongCount}
                         onSettings={goToSettings}
-                        onExit={() => {}}
+                        timeoutCount={timeoutCount}
                     />
                 )}
             </div>
-        </section>
+        </Section>
     );
 }

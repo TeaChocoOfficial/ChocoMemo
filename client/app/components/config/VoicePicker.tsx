@@ -45,38 +45,45 @@ export default function VoicePicker() {
     if (!voices.length) return null;
 
     return (
-        <div className='flex flex-col gap-2 rounded-sm border border-line bg-surface p-2'>
-            <div className='flex flex-wrap items-center gap-2'>
-                <Select
-                    options={options}
-                    onChange={handleChange}
-                    value={voiceURI || AUTO_VALUE}
-                    containerClassName='min-w-0 flex-1'
-                    className='border-none bg-transparent'
-                    placeholder={t('japanese.kana.voice_choose')}
-                    icon={<FaVolumeHigh className='w-3.5 h-3.5' />}
-                />
+        <div className='flex min-w-0 flex-1 flex-col gap-2'>
+            <div className='flex items-stretch gap-2'>
+                <div className='min-w-0 flex-1'>
+                    <Select
+                        options={options}
+                        onChange={handleChange}
+                        value={voiceURI || AUTO_VALUE}
+                        containerClassName='h-full'
+                        className='h-full bg-surface !px-3 !py-0'
+                        placeholder={t('japanese.kana.voice_choose')}
+                        icon={<FaVolumeHigh className='w-3 h-3 shrink-0' />}
+                    />
+                </div>
                 <button
                     type='button'
                     onClick={() => speak('あ い う え お')}
                     title={t('japanese.kana.voice_preview')}
                     aria-label={t('japanese.kana.voice_preview')}
-                    className='inline-flex items-center justify-center w-10 h-10 rounded-sm bg-accent text-accent-foreground transition-colors duration-200 cursor-pointer hover:bg-accent-emphasis shrink-0'
+                    className='grid h-9 w-9 shrink-0 cursor-pointer place-items-center rounded-sm border border-line bg-surface text-surface-muted transition-colors duration-200 hover:border-accent hover:text-accent'
                 >
-                    <FaVolumeHigh className='w-4 h-4' />
+                    <FaVolumeHigh className='h-3.5 w-3.5' />
                 </button>
             </div>
-            <RangeSlider
-                label={t('japanese.kana.voice_volume')}
-                value={volume}
-                min={0}
-                max={1}
-                step={0.05}
-                valueFormatter={(v) => `${Math.round(v * 100)}%`}
-                onChange={setVolume}
-                variant='bar'
-                className='p-2 pb-4'
-            />
+
+            <div className='flex items-center gap-2'>
+                <FaVolumeHigh className='h-3 w-3 shrink-0 text-surface-muted' />
+                <RangeSlider
+                    label={t('japanese.kana.voice_volume')}
+                    value={volume}
+                    min={0}
+                    max={1}
+                    step={0.05}
+                    labelPosition='right'
+                    valueFormatter={(v) => `${Math.round(v * 100)}%`}
+                    onChange={setVolume}
+                    variant='bar'
+                    className='min-w-0 flex-1'
+                />
+            </div>
         </div>
     );
 }

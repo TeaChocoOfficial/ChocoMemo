@@ -86,6 +86,20 @@
         "title": "Learn Japanese",
         "description": "Master the basics of Japanese through kana, vocabulary, and quizzes.",
         "back_language": "Back to Language Selection",
+        "stats": {
+            "kana": "Kana characters",
+            "vocabulary": "Vocabulary words",
+            "learned": "Words learned",
+            "due": "Due for review"
+        },
+        "sections": {
+            "kana": "Kana",
+            "kanaHint": "Learn the two Japanese syllabaries — browse every character and drill your recognition.",
+            "vocabulary": "Vocabulary",
+            "vocabularyHint": "Grow your word bank and review it on a spaced schedule.",
+            "learn": "Learn",
+            "practice": "Practice"
+        },
         "nav": {
             "kana": {
                 "title": "Kana",
@@ -127,6 +141,23 @@
             "voice_volume": "Volume",
             "take_quiz": "Take the Quiz",
             "count": "kana",
+            "stats": {
+                "set": "In set",
+                "group": "In group",
+                "read": "Read"
+            },
+            "readProgress": "{{read}} / {{total}}",
+            "gridHint": "Tap a kana to hear it, or press Start reading to walk through the group from where you left off.",
+            "readStart": "Start reading",
+            "readContinue": "Continue reading",
+            "readStop": "Stop",
+            "nowReading": "now reading",
+            "upNext": "up next",
+            "pinToolbar": "Pin toolbar",
+            "unpinToolbar": "Unpin toolbar",
+            "sticky": "Sticky",
+            "stickyOn": "On",
+            "stickyOff": "Off",
             "back_hub": "Back to Japanese"
         },
         "kanaDrill": {

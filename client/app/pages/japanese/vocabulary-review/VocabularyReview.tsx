@@ -4,17 +4,16 @@ import { Link } from '~/i18n/routing';
 import { FaArrowLeft } from 'react-icons/fa6';
 import { useTranslation } from 'react-i18next';
 import SessionReview from './content/SessionReview';
-import SessionComplete from './content/SessionComplete';
 import { useVocabularyStore } from '~/stores/vocabulary.store';
 import { DEFAULT_VOCABULARY } from '~/data/japanese/vocabulary';
 import { useVocabularySession } from '~/hooks/useVocabularySession';
+import Section from '~/components/custom/Section';
 
 export default function VocabularyReviewPage() {
     const { t } = useTranslation();
     const { custom } = useVocabularyStore();
     const words = [...DEFAULT_VOCABULARY, ...custom];
-    const { reveal, answer, revealed, remaining, currentWord, isSessionComplete } =
-        useVocabularySession(words);
+    const { reveal, answer, revealed, remaining, currentWord } = useVocabularySession(words);
 
     useEffect(() => {
         function handleKey(e: KeyboardEvent) {
@@ -30,7 +29,7 @@ export default function VocabularyReviewPage() {
     }, [currentWord, revealed, reveal, answer]);
 
     return (
-        <section className='flex relative min-h-screen overflow-hidden py-16 sm:py-20'>
+        <Section className='flex relative'>
             <div className='mx-auto max-w-3xl px-4 sm:px-6 w-full min-h-full'>
                 <Link
                     to='/japanese'
@@ -39,18 +38,15 @@ export default function VocabularyReviewPage() {
                     <FaArrowLeft className='w-3.5 h-3.5' />
                     {t('japanese.vocabularyReview.exit')}
                 </Link>
-                {isSessionComplete ? (
-                    <SessionComplete />
-                ) : (
-                    <SessionReview
-                        answer={answer}
-                        reveal={reveal}
-                        revealed={revealed}
-                        remaining={remaining}
-                        currentWord={currentWord}
-                    />
-                )}
+                <SessionReview
+                    answer={answer}
+                    reveal={reveal}
+                    revealed={revealed}
+                    remaining={remaining}
+                    currentWord={currentWord}
+                    words={words}
+                />
             </div>
-        </section>
+        </Section>
     );
 }

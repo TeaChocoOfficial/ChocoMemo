@@ -81,6 +81,20 @@
         "title": "日本語を学ぶ",
         "description": "かな、語彙、クイズを通して日本語の基礎をマスターしましょう。",
         "back_language": "言語選択に戻る",
+        "stats": {
+            "kana": "かなの文字",
+            "vocabulary": "語彙の単語",
+            "learned": "学習済み単語",
+            "due": "復習予定"
+        },
+        "sections": {
+            "kana": "かな",
+            "kanaHint": "日本語の二つの音節文字を学ぼう — 全文字を確認して、認識力を練習しましょう。",
+            "vocabulary": "語彙",
+            "vocabularyHint": "単語を増やして、間隔をあけて復習しましょう。",
+            "learn": "学習",
+            "practice": "練習"
+        },
         "nav": {
             "kana": {
                 "title": "かな",
@@ -122,6 +136,23 @@
             "voice_volume": "音量",
             "take_quiz": "クイズに挑戦",
             "count": "かな",
+            "stats": {
+                "set": "セット内",
+                "group": "グループ内",
+                "read": "読了"
+            },
+            "readProgress": "{{read}} / {{total}}",
+            "gridHint": "かなをタップして発音を聞くか、[読み上げ]で前回の続きからグループを読み上げます。",
+            "readStart": "読み上げ開始",
+            "readContinue": "続きから読む",
+            "readStop": "停止",
+            "nowReading": "読み上げ中",
+            "upNext": "次に読む",
+            "pinToolbar": "ツールバーを固定",
+            "unpinToolbar": "固定を解除",
+            "sticky": "固定",
+            "stickyOn": "オン",
+            "stickyOff": "オフ",
             "back_hub": "日本語に戻る"
         },
         "kanaDrill": {

@@ -7,10 +7,13 @@ import Button from '~/components/custom/Button';
 import { useTranslation } from 'react-i18next';
 import { FaArrowLeft, FaPlus, FaTrash } from 'react-icons/fa6';
 import { useVocabularyStore } from '~/stores/vocabulary.store';
+import { useVocabMeaning } from '~/hooks/useVocabMeaning';
 import { DEFAULT_VOCABULARY } from '~/data/japanese/vocabulary';
+import Section from '~/components/custom/Section';
 
 export default function VocabularyListPage() {
     const { t } = useTranslation();
+    const meaning = useVocabMeaning();
     const { custom, addCustom, removeCustom } = useVocabularyStore();
 
     const [jpValue, setJpValue] = useState('');
@@ -24,7 +27,7 @@ export default function VocabularyListPage() {
             word: jpValue.trim(),
             reading: readingValue.trim(),
             meaning: meaningValue.trim(),
-            example: { before: '', after: '', targetReading: '', english: '' },
+            example: { before: [], after: [], segments: [], meaning: '' },
         });
         setJpValue('');
         setReadingValue('');
@@ -32,7 +35,7 @@ export default function VocabularyListPage() {
     };
 
     return (
-        <section className='relative min-h-screen overflow-hidden py-16 sm:py-20'>
+        <Section>
             <div className='mx-auto max-w-3xl px-4 sm:px-6 w-full'>
                 <Link
                     to='/japanese'
@@ -67,11 +70,7 @@ export default function VocabularyListPage() {
                         })}
                     </p>
                     <div className='flex items-center gap-3'>
-                        <Button
-                            variant='outline'
-                            size='sm'
-                            onClick={() => setShowAdd((v) => !v)}
-                        >
+                        <Button variant='outline' size='sm' onClick={() => setShowAdd((v) => !v)}>
                             <FaPlus className='w-3.5 h-3.5' />
                             {t('japanese.vocabulary.addWord')}
                         </Button>
@@ -133,7 +132,7 @@ export default function VocabularyListPage() {
                                         </span>
                                         <span className='text-sm text-surface-muted ml-2'>
                                             {word.reading && `${word.reading} · `}
-                                            {word.meaning}
+                                            {meaning(word.meaning)}
                                         </span>
                                     </div>
                                     <button
@@ -164,13 +163,13 @@ export default function VocabularyListPage() {
                                     {word.word}
                                 </span>
                                 <span className='text-sm text-surface-muted ml-2'>
-                                    {word.reading} · {word.meaning}
+                                    {word.reading} · {meaning(word.meaning)}
                                 </span>
                             </li>
                         ))}
                     </ul>
                 </div>
             </div>
-        </section>
+        </Section>
     );
 }

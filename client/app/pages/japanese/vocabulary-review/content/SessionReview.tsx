@@ -6,6 +6,7 @@ import ReviewCardBack from '../components/ReviewCardBack';
 import ReviewCardFront from '../components/ReviewCardFront';
 
 export default function SessionReview({
+    words,
     answer,
     reveal,
     revealed,
@@ -15,6 +16,7 @@ export default function SessionReview({
     revealed: boolean;
     remaining: number;
     reveal: () => void;
+    words: VocabWord[];
     currentWord: VocabWord | null;
     answer: (pass: boolean) => void;
 }) {
@@ -30,7 +32,7 @@ export default function SessionReview({
                     transition={{ duration: 0.3 }}
                 >
                     {revealed ? (
-                        <ReviewCardBack word={currentWord} />
+                        <ReviewCardBack word={currentWord} words={words} />
                     ) : (
                         <ReviewCardFront word={currentWord} />
                     )}

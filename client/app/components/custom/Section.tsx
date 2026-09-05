@@ -1,5 +1,6 @@
 // -Path: "TeaChoco-Portfolio/client/src/layout/Section.tsx"
 import { motion } from 'framer-motion';
+import { useChromeStore } from '~/stores/chrome.store';
 
 export default function Section({
     children,
@@ -8,13 +9,15 @@ export default function Section({
     children: React.ReactNode;
     className?: string;
 }) {
+    const { showChrome } = useChromeStore();
+
     return (
         <motion.section
             transition={{ duration: 0.6 }}
             initial={{ opacity: 0, y: 24 }}
             viewport={{ margin: '-100px' }}
             whileInView={{ opacity: 1, y: 0 }}
-            className={`min-h-[calc(100vh-80px)] flex flex-col justify-center items-center p-4 ${className}`}
+            className={`flex relative ${showChrome ? 'min-h-screen py-16 sm:py-20' : 'min-h-[calc(100vh-32px)] py-8'} ${className}`}
         >
             {children}
         </motion.section>

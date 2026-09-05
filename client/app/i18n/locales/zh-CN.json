@@ -81,6 +81,20 @@
         "title": "学习日语",
         "description": "通过假名、词汇和测验掌握日语基础。",
         "back_language": "返回语言选择",
+        "stats": {
+            "kana": "假名字符",
+            "vocabulary": "词汇单词",
+            "learned": "已学单词",
+            "due": "待复习"
+        },
+        "sections": {
+            "kana": "假名",
+            "kanaHint": "学习日语的两种音节文字 — 浏览全部字符并练习识别。",
+            "vocabulary": "词汇",
+            "vocabularyHint": "扩充你的词库并按间隔时间复习。",
+            "learn": "学习",
+            "practice": "练习"
+        },
         "nav": {
             "kana": {
                 "title": "假名",
@@ -122,6 +136,23 @@
             "voice_volume": "音量",
             "take_quiz": "开始测验",
             "count": "个假名",
+            "stats": {
+                "set": "当前表",
+                "group": "当前组",
+                "read": "已读"
+            },
+            "readProgress": "{{read}} / {{total}}",
+            "gridHint": "点按假名即可发音，或按「开始朗读」从上次位置逐字朗读。",
+            "readStart": "开始朗读",
+            "readContinue": "继续朗读",
+            "readStop": "停止",
+            "nowReading": "正在朗读",
+            "upNext": "下一个",
+            "pinToolbar": "固定工具栏",
+            "unpinToolbar": "取消固定",
+            "sticky": "固定",
+            "stickyOn": "开",
+            "stickyOff": "关",
             "back_hub": "返回日语"
         },
         "kanaDrill": {

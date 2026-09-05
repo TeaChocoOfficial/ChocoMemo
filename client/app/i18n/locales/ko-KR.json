@@ -86,6 +86,20 @@
         "title": "일본어 배우기",
         "description": "가나, 어휘, 퀴즈를 통해 일본어의 기초를 마스터하세요.",
         "back_language": "언어 선택으로 돌아가기",
+        "stats": {
+            "kana": "가나 문자",
+            "vocabulary": "어휘 단어",
+            "learned": "학습한 단어",
+            "due": "복습 예정"
+        },
+        "sections": {
+            "kana": "가나",
+            "kanaHint": "일본어의 두 음절 문자를 배우세요 — 모든 문자를 살펴보고 인지력을 연습하세요.",
+            "vocabulary": "어휘",
+            "vocabularyHint": "어휘를 늘리고 간격을 두고 복습하세요.",
+            "learn": "학습",
+            "practice": "연습"
+        },
         "nav": {
             "kana": {
                 "title": "가나",
@@ -127,6 +141,23 @@
             "voice_volume": "음량",
             "take_quiz": "퀴즈 보기",
             "count": "가나",
+            "stats": {
+                "set": "세트 내",
+                "group": "그룹 내",
+                "read": "읽음"
+            },
+            "readProgress": "{{read}} / {{total}}",
+            "gridHint": "가나를 눌러 들어보거나, 읽기 시작을 눌러 중단한 위치부터 하나씩 읽어보세요.",
+            "readStart": "읽기 시작",
+            "readContinue": "이어서 읽기",
+            "readStop": "중지",
+            "nowReading": "읽는 중",
+            "upNext": "다음",
+            "pinToolbar": "툴바 고정",
+            "unpinToolbar": "고정 해제",
+            "sticky": "고정",
+            "stickyOn": "켬",
+            "stickyOff": "끔",
             "back_hub": "일본어로 돌아가기"
         },
         "kanaDrill": {
