@@ -79,33 +79,33 @@
     "japanese": {
         "badge": "日语",
         "title": "学习日语",
-        "description": "通过文字、词汇和测验掌握日语基础。",
+        "description": "通过假名、词汇和测验掌握日语基础。",
         "back_language": "返回语言选择",
         "nav": {
-            "characters": {
-                "title": "文字",
+            "kana": {
+                "title": "假名",
                 "description": "浏览全部平假名和片假名及其读音。",
-                "action": "查看文字"
+                "action": "查看假名"
             },
-            "characterQuiz": {
-                "title": "文字测验",
+            "kanaDrill": {
+                "title": "假名练习",
                 "description": "测试你对平假名和片假名的识别能力。",
-                "action": "开始文字测验"
+                "action": "开始假名练习"
             },
-            "vocabularyList": {
+            "vocabulary": {
                 "title": "词汇列表",
                 "description": "浏览日语词汇的读音和含义。",
                 "action": "查看词汇"
             },
-            "practice": {
-                "title": "练习",
+            "vocabularyReview": {
+                "title": "复习",
                 "description": "用闪卡和间隔重复法复习词汇。",
-                "action": "开始练习"
+                "action": "开始复习"
             }
         },
-        "characters": {
-            "badge": "文字",
-            "title": "日语文字",
+        "kana": {
+            "badge": "假名",
+            "title": "日语假名",
             "description": "平假名和片假名是日语的两种音节文字。点击选项卡进行切换。",
             "tabs": {
                 "hiragana": "平假名",
@@ -119,20 +119,21 @@
             "voice_auto": "自动",
             "voice_choose": "选择语音",
             "voice_ja": "日语",
+            "voice_volume": "音量",
             "take_quiz": "开始测验",
-            "count": "个文字",
+            "count": "个假名",
             "back_hub": "返回日语"
         },
-        "characterQuiz": {
-            "badge": "文字测验",
-            "title": "文字测验",
-            "intro": "配置测验——选择要包含的字符组、题目数量以及每题的时间限制。",
+        "kanaDrill": {
+            "badge": "假名练习",
+            "title": "假名练习",
+            "intro": "配置测验——选择要包含的假名组、题目数量以及每题的时间限制。",
             "start": "开始测验",
             "progress": "题目",
             "score": "得分",
-            "promptLabel": "这个文字的读音是什么？",
-            "promptLabelRomajiToChar": "哪个字符匹配这个读音？",
-            "promptLabelListen": "你听到的是哪个字符？",
+            "promptLabel": "这个假名的读音是什么？",
+            "promptLabelRomajiToChar": "哪个假名匹配这个读音？",
+            "promptLabelListen": "你听到的是哪个假名？",
             "listenAgain": "再听一遍",
             "correct": "正确！",
             "wrong": "不正确",
@@ -155,18 +156,26 @@
                 "no": "否"
             },
             "retry": "再试一次",
-            "back_characters": "返回文字",
+            "back_characters": "返回假名",
             "settings": {
-                "setsLabel": "字符组",
+                "setsLabel": "假名组",
                 "questionLabel": "测验选项",
                 "modeLabel": "题目模式",
                 "mode": {
-                    "charToRomaji": "字符 → 读音",
+                    "charToRomaji": "假名 → 读音",
                     "charToRomajiHint": "看到假名，选择它的读音。",
-                    "romajiToChar": "读音 → 字符",
+                    "romajiToChar": "读音 → 假名",
                     "romajiToCharHint": "看到读音，选择匹配的假名。",
-                    "listenToChar": "听力 → 字符",
-                    "listenToCharHint": "听假名的发音，选择你听到的字符。"
+                    "listenToChar": "听力 → 假名",
+                    "listenToCharHint": "听假名的发音，选择你听到的假名。"
+                },
+                "sound": {
+                    "label": "音效",
+                    "voice": "Aria",
+                    "voiceHint": "播放 Aria 的录音人声。",
+                    "tone": "提示音",
+                    "toneHint": "播放简单的合成音。",
+                    "volume": "音效音量"
                 },
                 "voiceLabel": "语音",
                 "questionCount": "题目数量",
@@ -175,17 +184,17 @@
                 "choices": "项",
                 "timeLimit": "每题时间",
                 "autoAdvance": "自动进入下一题",
-                "useAll": "全部字符",
+                "useAll": "全部假名",
                 "groups": {
                     "voiceless": "清音",
                     "voiced": "浊音",
                     "contracted": "拗音"
                 },
                 "chars": "个",
-                "totalChars": "总字符数"
+                "totalChars": "总假名数"
             }
         },
-        "vocabularyList": {
+        "vocabulary": {
             "badge": "词汇",
             "title": "词汇列表",
             "description": "浏览日语词汇的读音和含义。添加自定义单词进行学习。",
@@ -201,13 +210,13 @@
             "remove": "删除",
             "back_hub": "返回日语"
         },
-        "practice": {
-            "badge": "练习",
-            "title": "词汇练习",
+        "vocabularyReview": {
+            "badge": "复习",
+            "title": "词汇复习",
             "description": "翻转卡片查看答案，然后标记为通过或失败。",
             "complete": "全部完成！",
             "completeDescription": "目前没有需要复习的单词。",
-            "exit": "退出练习",
+            "exit": "退出复习",
             "wordsLeft": "个单词剩余",
             "wordLeft": "个单词剩余",
             "back_hub": "返回日语"

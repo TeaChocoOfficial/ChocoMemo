@@ -16,7 +16,7 @@ Choose which language to study. Japanese is active; English appears but is disab
 ### Japanese Hub
 The hub links to the two core learning features.
 
-### Basic Characters
+### Kana Charts
 Browse **Hiragana** and **Katakana** reference charts, organized into three groups:
 - **Voiceless** (清音 — seion)
 - **Voiced** (濁音・半濁音 — dakuten / handakuten)
@@ -24,10 +24,10 @@ Browse **Hiragana** and **Katakana** reference charts, organized into three grou
 
 Each character card is clickable and will **speak the character aloud** using the browser's Web Speech API.
 
-### Character Quiz
-A fully configurable multiple-choice quiz:
+### Kana Drill
+A fully configurable multiple-choice drill:
 
-- **Character groups** — toggle Hiragana / Katakana and any combination of Voiceless / Voiced / Contracted; each switch shows the character count it adds, plus a running total.
+- **Kana groups** — toggle Hiragana / Katakana and any combination of Voiceless / Voiced / Contracted; each switch shows the character count it adds, plus a running total.
 - **Question set** — toggle between *all* characters in the selected groups or a specific *number* (2–12).
 - **Per-question timer** (1–20s) with a countdown bar.
 - **Auto-advance** — optionally hide the Next button and advance automatically.
@@ -51,8 +51,10 @@ Test vocabulary by matching a Japanese word to its meaning. Ships with a default
 | `/:lang` | Home |
 | `/:lang/language-select` | Choose a language |
 | `/:lang/japanese` | Japanese hub |
-| `/:lang/japanese/characters` | Hiragana / Katakana charts + voice picker |
-| `/:lang/japanese/characters/quiz` | Character quiz |
+| `/:lang/japanese/kana` | Hiragana / Katakana charts + voice picker |
+| `/:lang/japanese/kana-drill` | Kana drill |
+| `/:lang/japanese/vocabulary` | Vocabulary list |
+| `/:lang/japanese/vocabulary-review` | Vocabulary review |
 
 > `:lang` is the active i18n locale segment (`en-US`, `th-TH`, `ja-JP`, `zh-CN`).
 

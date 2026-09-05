@@ -24,6 +24,7 @@ export function useSpeak() {
     const voiceURI = useSpeechStore((s) => s.voiceURI);
     const lang = useSpeechStore((s) => s.lang);
     const rate = useSpeechStore((s) => s.rate);
+    const volume = useSpeechStore((s) => s.volume);
 
     return useCallback(
         (text: string, audioSrc?: string) => {
@@ -35,7 +36,7 @@ export function useSpeak() {
             }
             speakWithTTS(text);
         },
-        [voiceURI, lang, rate],
+        [voiceURI, lang, rate, volume],
     );
 
     function speakWithTTS(text: string) {
@@ -46,6 +47,7 @@ export function useSpeak() {
         const utterance = new SpeechSynthesisUtterance(text);
         utterance.lang = lang;
         utterance.rate = rate;
+        utterance.volume = volume;
         utterance.pitch = 1;
 
         let selected: SpeechSynthesisVoice | null = null;

@@ -17,7 +17,7 @@
         "titleAccent": "one sip at a time.",
         "subtitle": "Choco blends bite-sized hiragana, katakana and vocabulary quizzes into a warm daily study ritual. Pick a theme, pour a cup, and learn.",
         "ctaStart": "Start learning",
-        "ctaBrowse": "Browse characters"
+        "ctaBrowse": "Browse kana"
     },
     "theme": {
         "pickerLabel": "Change theme",
@@ -84,33 +84,33 @@
     "japanese": {
         "badge": "Japanese",
         "title": "Learn Japanese",
-        "description": "Master the basics of Japanese through characters, vocabulary, and quizzes.",
+        "description": "Master the basics of Japanese through kana, vocabulary, and quizzes.",
         "back_language": "Back to Language Selection",
         "nav": {
-            "characters": {
-                "title": "Characters",
-                "description": "Browse all Hiragana and Katakana characters with their readings.",
-                "action": "View Characters"
+            "kana": {
+                "title": "Kana",
+                "description": "Browse all Hiragana and Katakana with their readings.",
+                "action": "View Kana"
             },
-            "characterQuiz": {
-                "title": "Character Quiz",
-                "description": "Test your recognition of Hiragana and Katakana characters.",
-                "action": "Start Character Quiz"
+            "kanaDrill": {
+                "title": "Kana Drill",
+                "description": "Test your recognition of Hiragana and Katakana kanas.",
+                "action": "Start Kana Drill"
             },
-            "vocabularyList": {
+            "vocabulary": {
                 "title": "Vocabulary List",
                 "description": "Browse all Japanese vocabulary words with readings and meanings.",
                 "action": "View Vocabulary"
             },
-            "practice": {
-                "title": "Practice",
+            "vocabularyReview": {
+                "title": "Vocabulary Review",
                 "description": "Review vocabulary with flashcards and spaced repetition.",
-                "action": "Start Practice"
+                "action": "Start Review"
             }
         },
-        "characters": {
-            "badge": "Characters",
-            "title": "Japanese Characters",
+        "kana": {
+            "badge": "Kana",
+            "title": "Japanese Kana",
             "description": "Hiragana and Katakana are the two Japanese syllabaries. Tap the tabs to switch.",
             "tabs": {
                 "hiragana": "Hiragana",
@@ -124,20 +124,21 @@
             "voice_auto": "Auto",
             "voice_choose": "Choose a voice",
             "voice_ja": "Japanese",
+            "voice_volume": "Volume",
             "take_quiz": "Take the Quiz",
-            "count": "characters",
+            "count": "kana",
             "back_hub": "Back to Japanese"
         },
-        "characterQuiz": {
-            "badge": "Character Quiz",
-            "title": "Character Quiz",
-            "intro": "Configure your quiz — pick which character groups to include, how many questions, and how much time you get per question.",
+        "kanaDrill": {
+            "badge": "Kana Drill",
+            "title": "Kana Drill",
+            "intro": "Configure your quiz — pick which kana groups to include, how many questions, and how much time you get per question.",
             "start": "Start Quiz",
             "progress": "Question",
             "score": "Score",
-            "promptLabel": "What is the reading of this character?",
-            "promptLabelRomajiToChar": "Which character matches this reading?",
-            "promptLabelListen": "Which character did you hear?",
+            "promptLabel": "What is the reading of this kana?",
+            "promptLabelRomajiToChar": "Which kana matches this reading?",
+            "promptLabelListen": "Which kana did you hear?",
             "listenAgain": "Listen again",
             "correct": "Correct!",
             "wrong": "Not quite.",
@@ -160,18 +161,26 @@
                 "no": "No"
             },
             "retry": "Try Again",
-            "back_characters": "Back to Characters",
+            "back_characters": "Back to Kana",
             "settings": {
-                "setsLabel": "Character Sets",
+                "setsLabel": "Kana Sets",
                 "questionLabel": "Quiz Options",
                 "modeLabel": "Question Mode",
                 "mode": {
-                    "charToRomaji": "Character → Reading",
+                    "charToRomaji": "Kana → Reading",
                     "charToRomajiHint": "See the kana, pick its romaji reading.",
-                    "romajiToChar": "Reading → Character",
+                    "romajiToChar": "Reading → Kana",
                     "romajiToCharHint": "See the reading, pick the matching kana.",
-                    "listenToChar": "Listen → Character",
+                    "listenToChar": "Listen → Kana",
                     "listenToCharHint": "Hear the kana spoken, pick what you heard."
+                },
+                "sound": {
+                    "label": "Sound effect",
+                    "voice": "Aria",
+                    "voiceHint": "Play a spoken recording by Aria.",
+                    "tone": "Tone",
+                    "toneHint": "Play a simple synthesized beep.",
+                    "volume": "Sound volume"
                 },
                 "voiceLabel": "Voice",
                 "questionCount": "Number of questions",
@@ -180,17 +189,17 @@
                 "choices": "choices",
                 "timeLimit": "Time per question",
                 "autoAdvance": "Auto-advance to next question",
-                "useAll": "All characters",
+                "useAll": "All kanas",
                 "groups": {
                     "voiceless": "Voiceless",
                     "voiced": "Voiced",
                     "contracted": "Contracted"
                 },
                 "chars": "chars",
-                "totalChars": "Total characters"
+                "totalChars": "Total kanas"
             }
         },
-        "vocabularyList": {
+        "vocabulary": {
             "badge": "Vocabulary",
             "title": "Vocabulary List",
             "description": "Browse all Japanese vocabulary words with their readings and English meanings. Add your own custom words to study.",
@@ -206,13 +215,13 @@
             "remove": "Remove",
             "back_hub": "Back to Japanese"
         },
-        "practice": {
-            "badge": "Practice",
-            "title": "Vocabulary Practice",
+        "vocabularyReview": {
+            "badge": "Review",
+            "title": "Vocabulary Review",
             "description": "Flip the card to reveal the answer, then mark as Pass or Fail.",
             "complete": "All caught up!",
             "completeDescription": "No more words due for review right now.",
-            "exit": "Exit Practice",
+            "exit": "Exit Review",
             "wordsLeft": "words left",
             "wordLeft": "word left",
             "back_hub": "Back to Japanese"

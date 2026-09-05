@@ -17,7 +17,7 @@
         "titleAccent": "한 모금씩 우려내세요.",
         "subtitle": "초코는 한입 크기의 히라가나, 가타카나, 어휘 퀴즈를 따뜻한 일상 학습 루틴으로 만듭니다. 테마를 고르고, 한 잔의 차를 따라 배워보세요.",
         "ctaStart": "학습 시작",
-        "ctaBrowse": "문자 둘러보기"
+        "ctaBrowse": "가나 둘러보기"
     },
     "theme": {
         "pickerLabel": "테마 변경",
@@ -84,33 +84,33 @@
     "japanese": {
         "badge": "일본어",
         "title": "일본어 배우기",
-        "description": "문자, 어휘, 퀴즈를 통해 일본어의 기초를 마스터하세요.",
+        "description": "가나, 어휘, 퀴즈를 통해 일본어의 기초를 마스터하세요.",
         "back_language": "언어 선택으로 돌아가기",
         "nav": {
-            "characters": {
-                "title": "문자",
-                "description": "모든 히라가나와 가타카나 문자를 읽기와 함께 살펴보세요.",
-                "action": "문자 보기"
+            "kana": {
+                "title": "가나",
+                "description": "모든 히라가나와 가타카나를 읽기와 함께 살펴보세요.",
+                "action": "가나 보기"
             },
-            "characterQuiz": {
-                "title": "문자 퀴즈",
-                "description": "히라가나와 가타카나 문자를 얼마나 잘 인식하는지 테스트하세요.",
-                "action": "문자 퀴즈 시작"
+            "kanaDrill": {
+                "title": "가나 드릴",
+                "description": "히라가나와 가타카나를 얼마나 잘 인식하는지 테스트하세요.",
+                "action": "가나 드릴 시작"
             },
-            "vocabularyList": {
+            "vocabulary": {
                 "title": "어휘 목록",
                 "description": "일본어 어휘의 읽기와 의미를 한눈에 살펴보세요.",
                 "action": "어휘 보기"
             },
-            "practice": {
-                "title": "연습",
+            "vocabularyReview": {
+                "title": "복습",
                 "description": "플래시카드와 간격 반복으로 어휘를 복습하세요.",
-                "action": "연습 시작"
+                "action": "복습 시작"
             }
         },
-        "characters": {
+        "kana": {
             "badge": "문자",
-            "title": "일본어 문자",
+            "title": "일본어 가나",
             "description": "히라가나와 가타카나는 일본어의 두 음절 문자입니다. 탭을 눌러 전환하세요.",
             "tabs": {
                 "hiragana": "히라가나",
@@ -124,20 +124,21 @@
             "voice_auto": "자동",
             "voice_choose": "음성 선택",
             "voice_ja": "일본어",
+            "voice_volume": "음량",
             "take_quiz": "퀴즈 보기",
-            "count": "문자",
+            "count": "가나",
             "back_hub": "일본어로 돌아가기"
         },
-        "characterQuiz": {
-            "badge": "문자 퀴즈",
-            "title": "문자 퀴즈",
-            "intro": "퀴즈를 구성하세요 — 포함할 문자 그룹, 문제 수, 문제당 시간을 선택하세요.",
+        "kanaDrill": {
+            "badge": "가나 드릴",
+            "title": "가나 드릴",
+            "intro": "퀴즈를 구성하세요 — 포함할 가나 그룹, 문제 수, 문제당 시간을 선택하세요.",
             "start": "퀴즈 시작",
             "progress": "문제",
             "score": "점수",
-            "promptLabel": "이 문자의 읽기는 무엇인가요?",
-            "promptLabelRomajiToChar": "이 읽기에 해당하는 문자는 무엇인가요?",
-            "promptLabelListen": "어떤 문자를 들으셨나요?",
+            "promptLabel": "이 가나의 읽기는 무엇인가요?",
+            "promptLabelRomajiToChar": "이 읽기에 해당하는 가나는 무엇인가요?",
+            "promptLabelListen": "어떤 가나를 들으셨나요?",
             "listenAgain": "다시 듣기",
             "correct": "정답!",
             "wrong": "아쉽네요.",
@@ -160,18 +161,26 @@
                 "no": "아니요"
             },
             "retry": "다시 시도",
-            "back_characters": "문자로 돌아가기",
+            "back_characters": "가나로 돌아가기",
             "settings": {
-                "setsLabel": "문자 집합",
+                "setsLabel": "가나 집합",
                 "questionLabel": "퀴즈 옵션",
                 "modeLabel": "문제 모드",
                 "mode": {
-                    "charToRomaji": "문자 → 읽기",
+                    "charToRomaji": "가나 → 읽기",
                     "charToRomajiHint": "가나를 보고 로마자 읽기를 고르세요.",
-                    "romajiToChar": "읽기 → 문자",
+                    "romajiToChar": "읽기 → 가나",
                     "romajiToCharHint": "읽기를 보고 해당 가나를 고르세요.",
-                    "listenToChar": "듣기 → 문자",
-                    "listenToCharHint": "가나 발음을 듣고 들은 문자를 고르세요."
+                    "listenToChar": "듣기 → 가나",
+                    "listenToCharHint": "가나 발음을 듣고 들은 가나를 고르세요."
+                },
+                "sound": {
+                    "label": "효과음",
+                    "voice": "Aria",
+                    "voiceHint": "아리아의 녹음된 음성을 재생합니다.",
+                    "tone": "톤",
+                    "toneHint": "간단한 합성음을 재생합니다.",
+                    "volume": "효과음 볼륨"
                 },
                 "voiceLabel": "음성",
                 "questionCount": "문제 수",
@@ -180,17 +189,17 @@
                 "choices": "개의 선택지",
                 "timeLimit": "문제당 시간",
                 "autoAdvance": "다음 문제로 자동 진행",
-                "useAll": "모든 문자",
+                "useAll": "모든 가나",
                 "groups": {
                     "voiceless": "청음",
                     "voiced": "탁음",
                     "contracted": "요음"
                 },
-                "chars": "문자",
-                "totalChars": "전체 문자"
+                "chars": "가나",
+                "totalChars": "전체 가나"
             }
         },
-        "vocabularyList": {
+        "vocabulary": {
             "badge": "어휘",
             "title": "어휘 목록",
             "description": "일본어 단어의 읽기와 의미를 한눈에 살펴보세요. 사용자 단어를 추가하여 학습할 수 있습니다.",
@@ -206,13 +215,13 @@
             "remove": "제거",
             "back_hub": "일본어로 돌아가기"
         },
-        "practice": {
-            "badge": "연습",
-            "title": "어휘 연습",
+        "vocabularyReview": {
+            "badge": "복습",
+            "title": "어휘 복습",
             "description": "카드를 뒤집어 정답을 확인한 후, 합격 또는 불합격으로 표시하세요.",
             "complete": "모두 완료!",
             "completeDescription": "지금 복습할 단어가 없습니다.",
-            "exit": "연습 종료",
+            "exit": "복습 종료",
             "wordsLeft": "단어 남음",
             "wordLeft": "단어 남음",
             "back_hub": "일본어로 돌아가기"

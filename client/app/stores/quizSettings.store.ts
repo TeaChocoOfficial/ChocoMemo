@@ -1,9 +1,9 @@
 // -Path: 'client/app/stores/quizSettings.store.ts'
-// Persists the character quiz settings (groups, question count, timer, auto-advance)
+// Persists the kana drill settings (groups, question count, timer, auto-advance)
 // so the user's choices are remembered across sessions.
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
-import type { QuizSettingsState } from '~/pages/japanese/quiz/components/setting/QuizSettings';
+import type { QuizSettingsState } from '~/pages/japanese/kana-drill/components/setting/QuizSettings';
 
 const DEFAULT_SETTINGS: QuizSettingsState = {
     hiragana: { voiceless: true, voiced: true, contracted: true },
@@ -14,6 +14,8 @@ const DEFAULT_SETTINGS: QuizSettingsState = {
     autoAdvance: false,
     useAll: false,
     mode: 'charToRomaji',
+    soundEffect: 'voice',
+    soundEffectVolume: 0.8,
 };
 
 interface QuizSettingsStore {
@@ -33,6 +35,10 @@ export const useQuizSettingsStore = create<QuizSettingsStore>()(
             name: 'quiz-settings',
             storage: createJSONStorage(() => localStorage),
             partialize: (state) => ({ settings: state.settings }),
+            merge: (persisted, current) => ({
+                ...current,
+                settings: { ...DEFAULT_SETTINGS, ...(persisted as { settings?: QuizSettingsState }).settings },
+            }),
         },
     ),
 );

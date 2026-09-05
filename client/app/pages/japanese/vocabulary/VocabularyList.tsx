@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import Badge from '~/components/custom/Badge';
 import Button from '~/components/custom/Button';
 import { useTranslation } from 'react-i18next';
-import { FaArrowLeft, FaCircleRight, FaPlus, FaTrash } from 'react-icons/fa6';
+import { FaArrowLeft, FaPlus, FaTrash } from 'react-icons/fa6';
 import { useVocabularyStore } from '~/stores/vocabulary.store';
 import { DEFAULT_VOCABULARY } from '~/data/japanese/vocabulary';
 
@@ -39,7 +39,7 @@ export default function VocabularyListPage() {
                     className='inline-flex items-center gap-2 mb-6 text-sm font-medium text-surface-muted hover:text-accent transition-colors'
                 >
                     <FaArrowLeft className='w-3.5 h-3.5' />
-                    {t('japanese.vocabularyList.back_hub')}
+                    {t('japanese.vocabulary.back_hub')}
                 </Link>
 
                 <motion.div
@@ -49,20 +49,20 @@ export default function VocabularyListPage() {
                     className='text-center mb-10'
                 >
                     <Badge variant='info' className='mb-6'>
-                        {t('japanese.vocabularyList.badge')}
+                        {t('japanese.vocabulary.badge')}
                     </Badge>
                     <h1 className='text-4xl sm:text-5xl font-black tracking-tighter text-surface-foreground mb-4'>
-                        {t('japanese.vocabularyList.title')}
+                        {t('japanese.vocabulary.title')}
                     </h1>
                     <p className='max-w-2xl mx-auto text-lg text-surface-subtle leading-relaxed'>
-                        {t('japanese.vocabularyList.description')}
+                        {t('japanese.vocabulary.description')}
                     </p>
                 </motion.div>
 
                 <div className='flex flex-col sm:flex-row items-center justify-between gap-4 mb-8'>
                     <p className='text-sm text-surface-muted'>
                         {DEFAULT_VOCABULARY.length + custom.length}{' '}
-                        {t('japanese.vocabularyList.available', {
+                        {t('japanese.vocabulary.available', {
                             count: DEFAULT_VOCABULARY.length + custom.length,
                         })}
                     </p>
@@ -73,15 +73,8 @@ export default function VocabularyListPage() {
                             onClick={() => setShowAdd((v) => !v)}
                         >
                             <FaPlus className='w-3.5 h-3.5' />
-                            {t('japanese.vocabularyList.addWord')}
+                            {t('japanese.vocabulary.addWord')}
                         </Button>
-                        <Link
-                            to='/japanese/vocabulary/practice'
-                            className='inline-flex items-center gap-2 px-5 py-2.5 rounded-sm bg-accent text-accent-foreground text-sm font-semibold transition-colors duration-200 hover:bg-accent-emphasis'
-                        >
-                            {t('japanese.nav.practice.action')}
-                            <FaCircleRight className='w-4 h-4' />
-                        </Link>
                     </div>
                 </div>
 
@@ -93,31 +86,31 @@ export default function VocabularyListPage() {
                     >
                         <div className='rounded-sm border border-line bg-surface p-6'>
                             <h3 className='text-lg font-bold tracking-tight text-surface-foreground mb-4'>
-                                {t('japanese.vocabularyList.manageTitle')}
+                                {t('japanese.vocabulary.manageTitle')}
                             </h3>
                             <div className='grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4'>
                                 <input
                                     value={jpValue}
                                     onChange={(e) => setJpValue(e.target.value)}
-                                    placeholder={t('japanese.vocabularyList.jpPlaceholder')}
+                                    placeholder={t('japanese.vocabulary.jpPlaceholder')}
                                     className='px-4 py-2.5 rounded-sm border border-line bg-surface-overlay text-surface-foreground focus:outline-accent transition-colors'
                                 />
                                 <input
                                     value={readingValue}
                                     onChange={(e) => setReadingValue(e.target.value)}
-                                    placeholder={t('japanese.vocabularyList.readingPlaceholder')}
+                                    placeholder={t('japanese.vocabulary.readingPlaceholder')}
                                     className='px-4 py-2.5 rounded-sm border border-line bg-surface-overlay text-surface-foreground focus:outline-accent transition-colors'
                                 />
                                 <input
                                     value={meaningValue}
                                     onChange={(e) => setMeaningValue(e.target.value)}
-                                    placeholder={t('japanese.vocabularyList.meaningPlaceholder')}
+                                    placeholder={t('japanese.vocabulary.meaningPlaceholder')}
                                     className='px-4 py-2.5 rounded-sm border border-line bg-surface-overlay text-surface-foreground focus:outline-accent transition-colors'
                                 />
                             </div>
                             <Button variant='primary' size='sm' onClick={handleSubmitWord}>
                                 <FaPlus className='w-3.5 h-3.5' />
-                                {t('japanese.vocabularyList.add')}
+                                {t('japanese.vocabulary.add')}
                             </Button>
                         </div>
                     </motion.div>
@@ -126,7 +119,7 @@ export default function VocabularyListPage() {
                 {custom.length > 0 && (
                     <div className='mb-10'>
                         <h2 className='mb-4 text-lg font-bold text-surface-foreground'>
-                            {t('japanese.vocabularyList.customSection')}
+                            {t('japanese.vocabulary.customSection')}
                         </h2>
                         <ul className='space-y-2'>
                             {custom.map((word) => (
@@ -147,7 +140,7 @@ export default function VocabularyListPage() {
                                         type='button'
                                         onClick={() => removeCustom(word.id)}
                                         className='text-surface-muted hover:text-error transition-colors cursor-pointer'
-                                        aria-label={t('japanese.vocabularyList.remove')}
+                                        aria-label={t('japanese.vocabulary.remove')}
                                     >
                                         <FaTrash className='w-4 h-4' />
                                     </button>
@@ -159,7 +152,7 @@ export default function VocabularyListPage() {
 
                 <div>
                     <h2 className='mb-4 text-lg font-bold text-surface-foreground'>
-                        {t('japanese.vocabularyList.defaultSection')}
+                        {t('japanese.vocabulary.defaultSection')}
                     </h2>
                     <ul className='space-y-2'>
                         {DEFAULT_VOCABULARY.map((word) => (

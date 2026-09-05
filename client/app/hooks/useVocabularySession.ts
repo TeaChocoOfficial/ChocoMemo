@@ -3,9 +3,6 @@ import { useState, useMemo, useCallback } from 'react';
 import { useVocabProgressStore } from '~/stores/vocabProgress.store';
 import type { VocabWord } from '~/types/vocabulary';
 
-/** How many cards later a failed word reappears in the same session.
- *  A small random range keeps it "soon" without being at a fixed,
- *  predictable spot every time. */
 const REQUEUE_MIN = 3;
 const REQUEUE_MAX = 6;
 
@@ -19,10 +16,7 @@ export function useVocabularySession(words: VocabWord[]) {
     });
     const [revealed, setRevealed] = useState(false);
 
-    const currentWord = useMemo(
-        () => words.find((w) => w.id === queue[0]) ?? null,
-        [words, queue],
-    );
+    const currentWord = useMemo(() => words.find((w) => w.id === queue[0]) ?? null, [words, queue]);
 
     const reveal = useCallback(() => setRevealed(true), []);
 

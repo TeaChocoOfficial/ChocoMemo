@@ -8,8 +8,10 @@ export interface SpeechState {
     voiceURI: string;
     lang: string;
     rate: number;
+    volume: number;
     setVoice: (voiceURI: string, lang: string) => void;
     setRate: (rate: number) => void;
+    setVolume: (volume: number) => void;
     resetVoice: () => void;
 }
 
@@ -19,8 +21,10 @@ export const useSpeechStore = create<SpeechState>()(
             voiceURI: '',
             lang: 'ja-JP',
             rate: 0.9,
+            volume: 1,
             setVoice: (voiceURI, lang) => set({ voiceURI, lang }),
             setRate: (rate) => set({ rate }),
+            setVolume: (volume) => set({ volume }),
             resetVoice: () => set({ voiceURI: '', lang: 'ja-JP' }),
         }),
         {
@@ -30,6 +34,7 @@ export const useSpeechStore = create<SpeechState>()(
                 voiceURI: state.voiceURI,
                 lang: state.lang,
                 rate: state.rate,
+                volume: state.volume,
             }),
         },
     ),

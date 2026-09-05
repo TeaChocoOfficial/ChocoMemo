@@ -12,7 +12,7 @@
         "titleAccent": "一口ずつ味わおう。",
         "subtitle": "Chocoはひらがな・カタカナ・ボキャブラリーのクイズを毎日の温かな学習習慣に。テーマを選んで、一杯淹れて、学びましょう。",
         "ctaStart": "学習を始める",
-        "ctaBrowse": "文字を見る"
+        "ctaBrowse": "かなを見る"
     },
     "theme": {
         "pickerLabel": "テーマを変更",
@@ -79,33 +79,33 @@
     "japanese": {
         "badge": "日本語",
         "title": "日本語を学ぶ",
-        "description": "文字、語彙、クイズを通して日本語の基礎をマスターしましょう。",
+        "description": "かな、語彙、クイズを通して日本語の基礎をマスターしましょう。",
         "back_language": "言語選択に戻る",
         "nav": {
-            "characters": {
-                "title": "文字",
-                "description": "ひらがなとカタカナの全文字と読み方を確認できます。",
-                "action": "文字を見る"
+            "kana": {
+                "title": "かな",
+                "description": "ひらがなとカタカナの全かなと読み方を確認できます。",
+                "action": "かなを見る"
             },
-            "characterQuiz": {
-                "title": "文字クイズ",
-                "description": "ひらがなとカタカナの文字認識をテストしましょう。",
-                "action": "文字クイズを始める"
+            "kanaDrill": {
+                "title": "かなドリル",
+                "description": "ひらがなとカタカナのかな認識をテストしましょう。",
+                "action": "かなドリルを始める"
             },
-            "vocabularyList": {
+            "vocabulary": {
                 "title": "語彙一覧",
                 "description": "日本語の単語と読み方、意味を一覧で確認できます。",
                 "action": "語彙を見る"
             },
-            "practice": {
-                "title": "練習",
+            "vocabularyReview": {
+                "title": "復習",
                 "description": "フラッシュカードと間隔反復で語彙を復習しましょう。",
-                "action": "練習を始める"
+                "action": "復習を始める"
             }
         },
-        "characters": {
-            "badge": "文字",
-            "title": "日本語の文字",
+        "kana": {
+            "badge": "かな",
+            "title": "日本語のかな",
             "description": "ひらがなとカタカナは日本語の二つの音節文字です。タブで切り替えられます。",
             "tabs": {
                 "hiragana": "ひらがな",
@@ -119,20 +119,21 @@
             "voice_auto": "自動",
             "voice_choose": "音声を選択",
             "voice_ja": "日本語",
+            "voice_volume": "音量",
             "take_quiz": "クイズに挑戦",
-            "count": "文字",
+            "count": "かな",
             "back_hub": "日本語に戻る"
         },
-        "characterQuiz": {
-            "badge": "文字クイズ",
-            "title": "文字クイズ",
-            "intro": "クイズを設定しましょう。練習する文字グループ、問題数、1問あたりの制限時間を選べます。",
+        "kanaDrill": {
+            "badge": "かなドリル",
+            "title": "かなドリル",
+            "intro": "クイズを設定しましょう。練習するかなグループ、問題数、1問あたりの制限時間を選べます。",
             "start": "クイズを始める",
             "progress": "問題",
             "score": "スコア",
-            "promptLabel": "この文字の読み方は何ですか？",
-            "promptLabelRomajiToChar": "この読み方に一致する文字はどれですか？",
-            "promptLabelListen": "聞こえた文字はどれですか？",
+            "promptLabel": "このかなの読み方は何ですか？",
+            "promptLabelRomajiToChar": "この読み方に一致するかなはどれですか？",
+            "promptLabelListen": "聞こえたかなはどれですか？",
             "listenAgain": "もう一度再生",
             "correct": "正解！",
             "wrong": "不正解",
@@ -155,18 +156,26 @@
                 "no": "いいえ"
             },
             "retry": "もう一度",
-            "back_characters": "文字に戻る",
+            "back_characters": "かなに戻る",
             "settings": {
-                "setsLabel": "文字セット",
+                "setsLabel": "かなセット",
                 "questionLabel": "クイズ設定",
                 "modeLabel": "問題形式",
                 "mode": {
-                    "charToRomaji": "文字 → 読み",
+                    "charToRomaji": "かな → 読み",
                     "charToRomajiHint": "かなを見て、読み方を選びます。",
-                    "romajiToChar": "読み → 文字",
+                    "romajiToChar": "読み → かな",
                     "romajiToCharHint": "読み方を見て、一致するかなを選びます。",
-                    "listenToChar": "聞く → 文字",
-                    "listenToCharHint": "発音を聞いて、聞こえた文字を選びます。"
+                    "listenToChar": "聞く → かな",
+                    "listenToCharHint": "発音を聞いて、聞こえたかなを選びます。"
+                },
+                "sound": {
+                    "label": "効果音",
+                    "voice": "アリア",
+                    "voiceHint": "アリアの録音音声を再生します。",
+                    "tone": "トーン",
+                    "toneHint": "シンプルな合成音を再生します。",
+                    "volume": "効果音の音量"
                 },
                 "voiceLabel": "音声",
                 "questionCount": "問題数",
@@ -175,17 +184,17 @@
                 "choices": "択",
                 "timeLimit": "1問あたりの時間",
                 "autoAdvance": "次の問題へ自動で進む",
-                "useAll": "全文字",
+                "useAll": "全かな",
                 "groups": {
                     "voiceless": "清音",
                     "voiced": "濁音",
                     "contracted": "拗音"
                 },
-                "chars": "文字",
-                "totalChars": "合計文字数"
+                "chars": "かな",
+                "totalChars": "合計かな数"
             }
         },
-        "vocabularyList": {
+        "vocabulary": {
             "badge": "語彙",
             "title": "語彙一覧",
             "description": "日本語の単語と読み方、意味を一覧で確認できます。カスタム単語を追加して学習しましょう。",
@@ -201,13 +210,13 @@
             "remove": "削除",
             "back_hub": "日本語に戻る"
         },
-        "practice": {
-            "badge": "練習",
-            "title": "語彙練習",
+        "vocabularyReview": {
+            "badge": "復習",
+            "title": "語彙復習",
             "description": "カードをめくって答えを確認し、合格か不合格を選択しましょう。",
             "complete": "すべて完了しました！",
             "completeDescription": "現在復習が必要な単語はありません。",
-            "exit": "練習を終了",
+            "exit": "復習を終了",
             "wordsLeft": "単語残り",
             "wordLeft": "単語残り",
             "back_hub": "日本語に戻る"

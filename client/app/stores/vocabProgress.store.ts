@@ -2,39 +2,33 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
-/** Per-word spaced-repetition progress. Persisted locally so scheduling
- *  survives page reloads/closing the app between sessions. */
 interface WordProgress {
-    intervalDays: number;
+    dueAt: number;
     easeFactor: number;
-    dueAt: number; // epoch ms
     reviewCount: number;
+    intervalDays: number;
 }
 
 interface VocabProgressState {
     progress: Record<string, WordProgress>;
-    getProgress: (wordId: string) => WordProgress;
     recordPass: (wordId: string) => void;
     recordFail: (wordId: string) => void;
+    getProgress: (wordId: string) => WordProgress;
 }
 
 const DAY_MS = 24 * 60 * 60 * 1000;
 const DEFAULT_PROGRESS: WordProgress = {
-    intervalDays: 0,
-    easeFactor: 2.5,
     dueAt: 0,
     reviewCount: 0,
+    intervalDays: 0,
+    easeFactor: 2.5,
 };
 
 export const useVocabProgressStore = create<VocabProgressState>()(
     persist(
         (set, get) => ({
             progress: {},
-
             getProgress: (wordId) => get().progress[wordId] ?? DEFAULT_PROGRESS,
-
-            /** Correct answer: push the word further out. First success = 1 day,
-             *  second = 3 days, then grows by the ease factor each time after. */
             recordPass: (wordId) =>
                 set((state) => {
                     const prev = state.progress[wordId] ?? DEFAULT_PROGRESS;
@@ -59,12 +53,6 @@ export const useVocabProgressStore = create<VocabProgressState>()(
                         },
                     };
                 }),
-
-            /** Wrong answer: reset the learning progress and lower the ease
-             *  factor slightly (the word was "harder" than assumed). dueAt is
-             *  set to now — the in-session requeue (see useVocabularySession)
-             *  handles resurfacing it soon; this just makes sure it's also
-             *  due again immediately in any future session. */
             recordFail: (wordId) =>
                 set((state) => {
                     const prev = state.progress[wordId] ?? DEFAULT_PROGRESS;
