@@ -1,4 +1,4 @@
-// Local-first store for user vocabulary decks (dexs).
+// Local-first store for user vocabulary decks.
 // Default decks are built-in and read-only; user decks live in
 // localStorage and can be created from custom words, or (in the future)
 // synced from cloud data or downloaded from other users.
@@ -51,7 +51,7 @@ export function myWordsDeck(): VocabDeck | null {
     const custom = useVocabularyStore.getState().custom;
     if (custom.length === 0) return null;
     return {
-        id: 'dex-my-words',
+        id: 'deck-my-words',
         name: 'My Words',
         description: 'All vocabulary you added yourself.',
         source: 'custom',

@@ -111,15 +111,15 @@
                 "description": "히라가나와 가타카나를 얼마나 잘 인식하는지 테스트하세요.",
                 "action": "가나 드릴 시작"
             },
-            "vocabulary": {
-                "title": "어휘 목록",
-                "description": "일본어 어휘의 읽기와 의미를 한눈에 살펴보세요.",
-                "action": "어휘 보기"
-            },
             "vocabularyReview": {
                 "title": "복습",
                 "description": "플래시카드와 간격 반복으로 어휘를 복습하세요.",
                 "action": "복습 시작"
+            },
+            "vocabularyExams": {
+                "title": "어휘 시험",
+                "description": "어휘로 만든 객관식 시험으로 실력을 테스트하세요.",
+                "action": "시험 보기"
             }
         },
         "decks": {
@@ -247,20 +247,7 @@
             }
         },
         "vocabulary": {
-            "badge": "어휘",
-            "title": "어휘 목록",
-            "description": "일본어 단어의 읽기와 의미를 한눈에 살펴보세요. 사용자 단어를 추가하여 학습할 수 있습니다.",
-            "available": "전체 {{count}} 단어",
-            "addWord": "단어 추가",
-            "manageTitle": "사용자 단어 추가",
-            "jpPlaceholder": "일본어 단어",
-            "readingPlaceholder": "읽기 (선택)",
-            "meaningPlaceholder": "의미",
-            "add": "추가",
-            "customSection": "사용자 단어",
-            "defaultSection": "기본 어휘",
-            "remove": "제거",
-            "back_hub": "일본어로 돌아가기"
+            "available": "전체 {{count}} 단어"
         },
         "vocabularyReview": {
             "badge": "복습",

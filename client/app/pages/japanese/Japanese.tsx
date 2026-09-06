@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from '~/i18n/routing';
 import JapaneseHero from './JapaneseHero';
 import JapaneseNavCard, { type JapaneseNavItem } from './JapaneseNavCard';
-import { FaArrowLeft, FaArrowsRotate, FaBolt } from 'react-icons/fa6';
+import { FaArrowLeft, FaArrowsRotate, FaBolt, FaClipboardCheck } from 'react-icons/fa6';
 import { useTranslation } from 'react-i18next';
 import { KANA_CHARS } from '~/data/japanese/kana';
 import { DEFAULT_VOCABULARY } from '~/data/japanese/vocabulary';
@@ -67,20 +67,20 @@ export default function JapanesePage() {
 
     const vocabItems: JapaneseNavItem[] = [
         {
-            to: '/japanese/vocabulary',
-            mode: 'learn',
-            title: t('japanese.nav.vocabulary.title'),
-            description: t('japanese.nav.vocabulary.description'),
-            action: t('japanese.nav.vocabulary.action'),
-            icon: <span className='text-2xl leading-none font-black'>語</span>,
-        },
-        {
-            to: '/japanese/vocabulary-review',
+            to: '/japanese/review',
             mode: 'practice',
             title: t('japanese.nav.vocabularyReview.title'),
             description: t('japanese.nav.vocabularyReview.description'),
             action: t('japanese.nav.vocabularyReview.action'),
             icon: <FaArrowsRotate className='w-5 h-5' />,
+        },
+        {
+            to: '/japanese/exams',
+            mode: 'practice',
+            title: t('japanese.nav.vocabularyExams.title'),
+            description: t('japanese.nav.vocabularyExams.description'),
+            action: t('japanese.nav.vocabularyExams.action'),
+            icon: <FaClipboardCheck className='w-5 h-5' />,
         },
     ];
 

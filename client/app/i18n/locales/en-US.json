@@ -111,15 +111,15 @@
                 "description": "Test your recognition of Hiragana and Katakana kanas.",
                 "action": "Start Kana Drill"
             },
-            "vocabulary": {
-                "title": "Vocabulary List",
-                "description": "Browse all Japanese vocabulary words with readings and meanings.",
-                "action": "View Vocabulary"
-            },
             "vocabularyReview": {
                 "title": "Vocabulary Review",
                 "description": "Review vocabulary with flashcards and spaced repetition.",
                 "action": "Start Review"
+            },
+            "vocabularyExams": {
+                "title": "Vocabulary Exams",
+                "description": "Test yourself with multiple-choice exams built from your vocabulary.",
+                "action": "Take an Exam"
             }
         },
         "decks": {
@@ -247,20 +247,7 @@
             }
         },
         "vocabulary": {
-            "badge": "Vocabulary",
-            "title": "Vocabulary List",
-            "description": "Browse all Japanese vocabulary words with their readings and English meanings. Add your own custom words to study.",
-            "available": "{{count}} words total",
-            "addWord": "Add Word",
-            "manageTitle": "Add Custom Words",
-            "jpPlaceholder": "Japanese word",
-            "readingPlaceholder": "Reading (optional)",
-            "meaningPlaceholder": "Meaning",
-            "add": "Add Word",
-            "customSection": "Custom Words",
-            "defaultSection": "Built-in Vocabulary",
-            "remove": "Remove",
-            "back_hub": "Back to Japanese"
+            "available": "{{count}} words total"
         },
         "vocabularyReview": {
             "badge": "Review",

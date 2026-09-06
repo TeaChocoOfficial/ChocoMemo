@@ -51,7 +51,7 @@ export interface VocabWord {
  *  planned), or decks downloaded from other users. */
 export type DeckSource = 'default' | 'custom' | 'cloud' | 'downloaded';
 
-/** A vocabulary deck (dex): a named, reviewable collection of words.
+/** A vocabulary deck: a named, reviewable collection of words.
  *  Words are referenced by id; resolution depends on the source. */
 export interface VocabDeck {
     id: string;

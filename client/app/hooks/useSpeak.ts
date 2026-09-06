@@ -10,6 +10,21 @@
 import { useCallback } from 'react';
 import { useSpeechStore } from '~/stores/speech.store';
 
+// The most recently played static audio file, so any caller can stop the
+// current reading without holding onto its own Audio element.
+let activeAudio: HTMLAudioElement | null = null;
+
+/** Cancel any in-progress speech (Web Speech API + static audio files). */
+export function stopSpeaking() {
+    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+    }
+    if (activeAudio) {
+        activeAudio.pause();
+        activeAudio = null;
+    }
+}
+
 function getVoices(): SpeechSynthesisVoice[] {
     if (typeof window === 'undefined' || !('speechSynthesis' in window)) return [];
     return window.speechSynthesis.getVoices();
@@ -35,10 +50,23 @@ export function useSpeak() {
         (text: string, audioSrc?: string, onEnd?: () => void) => {
             if (typeof window === 'undefined') return;
 
+            stopSpeaking();
+
             if (audioSrc) {
                 const audio = new Audio(audioSrc);
-                audio.onended = () => onEnd?.();
-                audio.play().catch(() => speakWithTTS(text, onEnd));
+                activeAudio = audio;
+                audio.onended = () => {
+                    if (activeAudio === audio) activeAudio = null;
+                    onEnd?.();
+                };
+                audio.onerror = () => {
+                    if (activeAudio === audio) activeAudio = null;
+                    speakWithTTS(text, onEnd);
+                };
+                audio.play().catch(() => {
+                    if (activeAudio === audio) activeAudio = null;
+                    speakWithTTS(text, onEnd);
+                });
                 return;
             }
             speakWithTTS(text, onEnd);

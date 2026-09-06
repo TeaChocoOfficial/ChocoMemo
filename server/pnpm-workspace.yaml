@@ -1,0 +1,8 @@
+allowBuilds:
+  '@parcel/watcher': true
+  '@scarf/scarf': true
+  argon2: true
+  esbuild: true
+  unrs-resolver: true
+overrides:
+  fastify: 5.12.3

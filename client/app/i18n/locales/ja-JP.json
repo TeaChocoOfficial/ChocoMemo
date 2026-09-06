@@ -106,15 +106,15 @@
                 "description": "ひらがなとカタカナのかな認識をテストしましょう。",
                 "action": "かなドリルを始める"
             },
-            "vocabulary": {
-                "title": "語彙一覧",
-                "description": "日本語の単語と読み方、意味を一覧で確認できます。",
-                "action": "語彙を見る"
-            },
             "vocabularyReview": {
                 "title": "復習",
                 "description": "フラッシュカードと間隔反復で語彙を復習しましょう。",
                 "action": "復習を始める"
+            },
+            "vocabularyExams": {
+                "title": "語彙テスト",
+                "description": "語彙から作られた四択テストで腕試しをしましょう。",
+                "action": "テストを受ける"
             }
         },
         "decks": {
@@ -242,20 +242,7 @@
             }
         },
         "vocabulary": {
-            "badge": "語彙",
-            "title": "語彙一覧",
-            "description": "日本語の単語と読み方、意味を一覧で確認できます。カスタム単語を追加して学習しましょう。",
-            "available": "合計 {{count}} 単語",
-            "addWord": "単語を追加",
-            "manageTitle": "カスタム単語を追加",
-            "jpPlaceholder": "日本語の単語",
-            "readingPlaceholder": "読み方（任意）",
-            "meaningPlaceholder": "意味",
-            "add": "追加",
-            "customSection": "カスタム単語",
-            "defaultSection": "組み込み語彙",
-            "remove": "削除",
-            "back_hub": "日本語に戻る"
+            "available": "合計 {{count}} 単語"
         },
         "vocabularyReview": {
             "badge": "復習",

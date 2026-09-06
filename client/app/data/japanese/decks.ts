@@ -8,8 +8,8 @@ import type { VocabDeck } from '~/types/vocabulary';
  * data stays in vocabulary.ts (the single source of truth) while decks
  * only describe grouping + metadata.
  *
- * Deck ids are stable ("dex-nature", ...). They appear under
- * /japanese/vocabulary-review/:dex-id.
+ * Deck ids are stable ("deck-nature", ...). They appear under
+ * /japanese/review/:deck-id.
  */
 const NATURE = ['v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v7', 'v8'];
 const ANIMALS = ['v9', 'v10', 'v11', 'v12'];
@@ -18,28 +18,28 @@ const ACTIONS = ['v18', 'v19', 'v20'];
 
 export const DEFAULT_DECKS: VocabDeck[] = [
     {
-        id: 'dex-nature',
+        id: 'deck-nature',
         name: 'Nature',
         description: 'Water, fire, mountains — the natural world in kanji.',
         source: 'default',
         wordIds: NATURE,
     },
     {
-        id: 'dex-animals',
+        id: 'deck-animals',
         name: 'Animals',
         description: 'Dogs, cats, birds and fish to get you started.',
         source: 'default',
         wordIds: ANIMALS,
     },
     {
-        id: 'dex-things',
+        id: 'deck-things',
         name: 'Everyday Things',
         description: 'Books, trains, school and friends — daily-life essentials.',
         source: 'default',
         wordIds: THINGS,
     },
     {
-        id: 'dex-actions',
+        id: 'deck-actions',
         name: 'Actions',
         description: 'Eating, drinking, going — common everyday verbs.',
         source: 'default',

@@ -53,8 +53,8 @@ Test vocabulary by matching a Japanese word to its meaning. Ships with a default
 | `/:lang/japanese` | Japanese hub |
 | `/:lang/japanese/kana` | Hiragana / Katakana charts + voice picker |
 | `/:lang/japanese/kana-drill` | Kana drill |
-| `/:lang/japanese/vocabulary` | Vocabulary list |
-| `/:lang/japanese/vocabulary-review` | Vocabulary review |
+| `/:lang/japanese/exams` | Vocabulary exams |
+| `/:lang/japanese/review` | Vocabulary review |
 
 > `:lang` is the active i18n locale segment (`en-US`, `th-TH`, `ja-JP`, `zh-CN`).
 

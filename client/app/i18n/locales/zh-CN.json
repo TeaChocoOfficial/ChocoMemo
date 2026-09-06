@@ -106,15 +106,15 @@
                 "description": "测试你对平假名和片假名的识别能力。",
                 "action": "开始假名练习"
             },
-            "vocabulary": {
-                "title": "词汇列表",
-                "description": "浏览日语词汇的读音和含义。",
-                "action": "查看词汇"
-            },
             "vocabularyReview": {
                 "title": "复习",
                 "description": "用闪卡和间隔重复法复习词汇。",
                 "action": "开始复习"
+            },
+            "vocabularyExams": {
+                "title": "词汇测验",
+                "description": "用基于词汇构建的选择题来测验自己。",
+                "action": "参加测验"
             }
         },
         "decks": {
@@ -242,20 +242,7 @@
             }
         },
         "vocabulary": {
-            "badge": "词汇",
-            "title": "词汇列表",
-            "description": "浏览日语词汇的读音和含义。添加自定义单词进行学习。",
-            "available": "共 {{count}} 个单词",
-            "addWord": "添加单词",
-            "manageTitle": "添加自定义单词",
-            "jpPlaceholder": "日语单词",
-            "readingPlaceholder": "读音（可选）",
-            "meaningPlaceholder": "含义",
-            "add": "添加",
-            "customSection": "自定义单词",
-            "defaultSection": "内置词汇",
-            "remove": "删除",
-            "back_hub": "返回日语"
+            "available": "共 {{count}} 个单词"
         },
         "vocabularyReview": {
             "badge": "复习",

@@ -1,0 +1,8 @@
+{
+    "watch": ["src"],
+    "ext": "ts,json",
+    "ignore": ["src/**/*.spec.ts"],
+    "exec": "nest start",
+    "legacyWatch": true,
+    "pollingInterval": 1000
+}
