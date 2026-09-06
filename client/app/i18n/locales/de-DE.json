@@ -1,0 +1,355 @@
+{
+    "nav": {
+        "home": "Startseite",
+        "tagline": "Sprachen lernen",
+        "languages": "Sprachen",
+        "japanese": "Japanisch",
+        "menu": "Menü öffnen"
+    },
+    "chrome": {
+        "hide": "Ausblenden",
+        "show": "Anzeigen",
+        "toggleLabel": "Oberfläche anzeigen"
+    },
+    "home": {
+        "badge": "ChocoMemo",
+        "title": "Braue dein Japanisch,",
+        "titleAccent": "Schluck für Schluck.",
+        "subtitle": "Choco kombiniert mundgerechte Hiragana-, Katakana- und Vokabelquizze zu einem warmen täglichen Lernritual. Wähle ein Thema, schenk dir eine Tasse ein und lerne.",
+        "ctaStart": "Jetzt lernen",
+        "ctaBrowse": "Kana durchstöbern"
+    },
+    "theme": {
+        "pickerLabel": "Thema wechseln",
+        "names": {
+            "dark": "Dunkel",
+            "light": "Hell",
+            "darkSakura": "Dunkle Sakura",
+            "lightSakura": "Helle Sakura",
+            "darkPaper": "Dunkles Papier",
+            "lightPaper": "Helles Papier",
+            "darkNature": "Dunkle Natur",
+            "lightNature": "Helle Natur",
+            "darkAutumn": "Dunkler Herbst",
+            "lightAutumn": "Heller Herbst",
+            "darkWinter": "Dunkler Winter",
+            "lightWinter": "Heller Winter"
+        }
+    },
+    "common": {
+        "error": {
+            "oops": "Hoppla!",
+            "unexpected": "Ein unerwarteter Fehler ist aufgetreten.",
+            "notFound": "Die angeforderte Seite konnte nicht gefunden werden."
+        },
+        "tabs": {
+            "local": "Lokal",
+            "cloud": "Cloud",
+            "community": "Community"
+        },
+        "comingSoon": {
+            "cloud": "Cloud-Sync kommt bald, Anmeldung erforderlich",
+            "community": "Community-Sets durchstöbern ist noch nicht verfügbar"
+        }
+    },
+    "notfound": {
+        "title": "Seite Nicht Gefunden",
+        "description": "Die gesuchte Seite existiert nicht oder wurde verschoben.",
+        "back_home": "Zurück zur Startseite",
+        "error_code": "404"
+    },
+    "languageSelect": {
+        "badge": "Sprachauswahl",
+        "title": "Wähle eine Sprache zum Lernen",
+        "description": "Wähle die Sprache, die du lernen möchtest. Weitere Sprachen folgen bald.",
+        "back_home": "Zurück zur Startseite",
+        "status": {
+            "available": "Verfügbar",
+            "comingSoon": "Bald Verfügbar"
+        },
+        "cta": {
+            "start": "Jetzt Lernen",
+            "unavailable": "Nicht Verfügbar"
+        },
+        "languages": {
+            "japanese": {
+                "name": "Japanisch",
+                "description": "Lerne Hiragana, Katakana und wichtigen Wortschatz mit interaktiven Quizzen."
+            },
+            "english": {
+                "name": "Englisch",
+                "description": "Englischkurse sind derzeit in Vorbereitung."
+            },
+            "thai": {
+                "name": "Thailändisch",
+                "description": "Thailändischkurse kommen bald."
+            },
+            "korean": {
+                "name": "Koreanisch",
+                "description": "Koreanischkurse kommen bald."
+            }
+        }
+    },
+    "japanese": {
+        "badge": "Japanisch",
+        "title": "Japanisch lernen",
+        "description": "Meistere die Grundlagen des Japanischen mit Kana, Wortschatz und Quizzen.",
+        "back_language": "Zurück zur Sprachauswahl",
+        "stats": {
+            "kana": "Kana-Zeichen",
+            "vocabulary": "Vokabeln",
+            "learned": "Gelernte Wörter",
+            "due": "Zur Wiederholung fällig"
+        },
+        "sections": {
+            "kana": "Kana",
+            "kanaHint": "Lerne die beiden japanischen Silbenschriften: durchstöbere jedes Zeichen und trainiere dein Erkennen.",
+            "vocabulary": "Wortschatz",
+            "vocabularyHint": "Erweitere deine Wortbank und wiederhole sie nach einem verteilten Zeitplan.",
+            "learn": "Lernen",
+            "practice": "Üben"
+        },
+        "nav": {
+            "kana": {
+                "title": "Kana",
+                "description": "Durchstöbere alle Hiragana und Katakana mit ihren Lesungen.",
+                "action": "Kana ansehen"
+            },
+            "kanaDrill": {
+                "title": "Kana-Training",
+                "description": "Teste dein Erkennen von Hiragana und Katakana.",
+                "action": "Kana-Training starten"
+            },
+            "vocabularyReview": {
+                "title": "Wortschatz-Wiederholung",
+                "description": "Wiederhole Vokabeln mit Karteikarten und verteilter Wiederholung.",
+                "action": "Wiederholung starten"
+            },
+            "vocabularyExams": {
+                "title": "Vokabel-Prüfungen",
+                "description": "Teste dich mit Multiple-Choice-Prüfungen, die aus deinem Wortschatz erstellt werden.",
+                "action": "Prüfung ablegen"
+            }
+        },
+        "decks": {
+            "title": "Wortschatz-Wiederholungsstapel",
+            "description": "Wähle einen Stapel zum Wiederholen. Die Stapel stammen aus dem integrierten Set, deinen eigenen Wörtern oder heruntergeladenen Sammlungen.",
+            "availableCount": "{{count}} Stapel verfügbar",
+            "startReview": "Wiederholung starten",
+            "due": "fällig",
+            "byAuthor": "von {{author}}",
+            "download": "Herunterladen",
+            "note": "Wiederholung",
+            "ready": "Bereit",
+            "words": "Wörter",
+            "search": "Stapel suchen...",
+            "empty": "Noch keine Stapel — importiere einen oder erstelle einen benutzerdefinierten Stapel.",
+            "addCustom": "Benutzerdefinierten Stapel hinzufügen",
+            "importDeck": "Stapel importieren",
+            "importErrorJson": "Diese Datei konnte nicht als JSON gelesen werden.",
+            "form": {
+                "title": "Benutzerdefinierten Stapel erstellen",
+                "subtitle": "Wähle Wörter aus deinem Wortschatz, um sie zu einem Wiederholungsstapel zu gruppieren.",
+                "nameLabel": "Name",
+                "namePlaceholder": "z. B. Meine Lieblingskanji",
+                "descriptionLabel": "Beschreibung (optional)",
+                "descriptionPlaceholder": "Eine kurze Notiz zu diesem Stapel",
+                "wordsLabel": "Wörter zum Einfügen",
+                "wordsPlaceholder": "Wörter suchen...",
+                "selectedCount": "{{count}} ausgewählt",
+                "nameError": "Gib deinem Stapel einen Namen.",
+                "minWordsError": "Wähle mindestens ein Wort.",
+                "cancel": "Abbrechen",
+                "submit": "Stapel erstellen"
+            },
+            "notFound": "Dieser Stapel wurde nicht gefunden.",
+            "source": {
+                "default": "Integriert",
+                "custom": "Meine Wörter",
+                "cloud": "Cloud",
+                "downloaded": "Heruntergeladen"
+            }
+        },
+        "exams": {
+            "title": "Vokabel-Prüfungsstapel",
+            "description": "Teste dich mit Multiple-Choice-Prüfungen, die aus deinem Wortschatz erstellt werden. Wähle ein Set, importiere eines oder erstelle dein eigenes.",
+            "search": "Prüfungssets suchen...",
+            "empty": "Noch keine Prüfungssets — importiere eines oder erstelle ein benutzerdefiniertes Set.",
+            "import": "Prüfungsset importieren",
+            "addCustom": "Benutzerdefiniertes Set hinzufügen",
+            "importErrorJson": "Diese Datei konnte nicht als JSON gelesen werden.",
+            "form": {
+                "title": "Benutzerdefiniertes Prüfungsset erstellen",
+                "subtitle": "Wähle Wörter aus deinem Wortschatz — das Set wird aus ihren Bedeutungen erstellt, genau wie die integrierten Sets.",
+                "titleLabel": "Titel",
+                "titlePlaceholder": "z. B. Meine Alltagswörter",
+                "descriptionLabel": "Beschreibung (optional)",
+                "descriptionPlaceholder": "Eine kurze Notiz zu diesem Set",
+                "wordsLabel": "Wörter zum Einfügen",
+                "wordsPlaceholder": "Wörter suchen...",
+                "selectedCount": "{{count}} ausgewählt",
+                "titleError": "Gib deinem Set einen Namen.",
+                "minWordsError": "Wähle mindestens zwei Wörter.",
+                "cancel": "Abbrechen",
+                "submit": "Set erstellen"
+            },
+            "card": {
+                "note": "Prüfungsnotiz",
+                "exportAria": "Prüfungsset exportieren",
+                "deleteAria": "Prüfungsset löschen",
+                "export": "Exportieren",
+                "delete": "Löschen",
+                "byAuthor": "von {{author}}",
+                "start": "Start",
+                "question_one": "{{count}} Frage",
+                "question_other": "{{count}} Fragen",
+                "source": {
+                    "default": "Standard",
+                    "custom": "Mein Set",
+                    "imported": "Importiert"
+                }
+            }
+        },
+        "kana": {
+            "badge": "Kana",
+            "title": "Japanisches Kana",
+            "description": "Hiragana und Katakana sind die beiden japanischen Silbenschriften. Tippe auf die Tabs, um zu wechseln.",
+            "tabs": {
+                "hiragana": "Hiragana",
+                "katakana": "Katakana"
+            },
+            "voiceless": "Stimmlos",
+            "voiced": "Stimmhaft",
+            "contracted": "Kontrahiert",
+            "voice_label": "Stimme",
+            "voice_preview": "Vorschau",
+            "voice_auto": "Auto",
+            "voice_choose": "Stimme wählen",
+            "voice_ja": "Japanisch",
+            "voice_volume": "Lautstärke",
+            "take_quiz": "Quiz machen",
+            "count": "Kana",
+            "stats": {
+                "set": "Im Set",
+                "group": "In der Gruppe",
+                "read": "Gelesen"
+            },
+            "readProgress": "{{read}} / {{total}}",
+            "gridHint": "Tippe auf ein Kana, um es zu hören, oder drücke Lesen starten, um die Gruppe dort fortzusetzen, wo du aufgehört hast.",
+            "readStart": "Lesen starten",
+            "readContinue": "Lesen fortsetzen",
+            "readStop": "Stopp",
+            "nowReading": "liest gerade",
+            "upNext": "als Nächstes",
+            "pinToolbar": "Symbolleiste anheften",
+            "unpinToolbar": "Symbolleiste lösen",
+            "sticky": "Fixiert",
+            "stickyOn": "An",
+            "stickyOff": "Aus",
+            "back_hub": "Zurück zu Japanisch"
+        },
+        "kanaDrill": {
+            "badge": "Kana-Training",
+            "title": "Kana-Training",
+            "intro": "Konfiguriere dein Quiz: wähle, welche Kana-Gruppen enthalten sein sollen, wie viele Fragen und wie viel Zeit pro Frage.",
+            "start": "Quiz starten",
+            "progress": "Frage",
+            "score": "Punktzahl",
+            "promptLabel": "Wie lautet die Lesung dieses Kana?",
+            "promptLabelRomajiToChar": "Welches Kana passt zu dieser Lesung?",
+            "promptLabelListen": "Welches Kana hast du gehört?",
+            "listenAgain": "Erneut anhören",
+            "correct": "Richtig!",
+            "wrong": "Nicht ganz.",
+            "timeout": "Zeit abgelaufen!",
+            "correctAnswer": "Richtige Antwort",
+            "next": "Nächste Frage",
+            "endGame": "Spiel beenden",
+            "resultTitle": "Quiz abgeschlossen!",
+            "result": {
+                "correctLabel": "Richtig",
+                "wrongLabel": "Falsch",
+                "timeoutLabel": "Zeitüberschreitung",
+                "settingsSummary": "Einstellungen",
+                "settingsButton": "Einstellungen",
+                "exitButton": "Beenden",
+                "playAgain": "Noch einmal spielen",
+                "history": "Antwortverlauf",
+                "timeoutShort": "Zeitüberschreitung",
+                "yes": "Ja",
+                "no": "Nein"
+            },
+            "retry": "Erneut versuchen",
+            "back_characters": "Zurück zu Kana",
+            "settings": {
+                "setsLabel": "Kana-Sets",
+                "questionLabel": "Quiz-Optionen",
+                "modeLabel": "Fragemodus",
+                "mode": {
+                    "charToRomaji": "Kana → Lesung",
+                    "charToRomajiHint": "Sieh das Kana, wähle seine Romaji-Lesung.",
+                    "romajiToChar": "Lesung → Kana",
+                    "romajiToCharHint": "Sieh die Lesung, wähle das passende Kana.",
+                    "listenToChar": "Hören → Kana",
+                    "listenToCharHint": "Höre das gesprochene Kana, wähle, was du gehört hast."
+                },
+                "sound": {
+                    "label": "Soundeffekt",
+                    "voice": "Aria",
+                    "voiceHint": "Eine gesprochene Aufnahme von Aria abspielen.",
+                    "tone": "Ton",
+                    "toneHint": "Einen einfachen synthetisierten Piepton abspielen.",
+                    "volume": "Soundlautstärke"
+                },
+                "voiceLabel": "Stimme",
+                "questionCount": "Anzahl der Fragen",
+                "questions": "Fragen",
+                "choiceCount": "Antwortmöglichkeiten",
+                "choices": "Möglichkeiten",
+                "timeLimit": "Zeit pro Frage",
+                "autoAdvance": "Automatisch zur nächsten Frage",
+                "useAll": "Alle Kana",
+                "groups": {
+                    "voiceless": "Stimmlos",
+                    "voiced": "Stimmhaft",
+                    "contracted": "Kontrahiert"
+                },
+                "chars": "Zeichen",
+                "totalChars": "Gesamte Kana"
+            }
+        },
+        "vocabulary": {
+            "available": "{{count}} Wörter insgesamt"
+        },
+        "vocabularyReview": {
+            "badge": "Wiederholung",
+            "title": "Wortschatz-Wiederholung",
+            "description": "Drehe die Karte um, um die Antwort zu sehen, und markiere sie dann als Bestanden oder Nicht bestanden.",
+            "complete": "Alles erledigt!",
+            "completeDescription": "Derzeit sind keine Wörter zur Wiederholung fällig.",
+            "exit": "Wiederholung beenden",
+            "wordsLeft": "Wörter übrig",
+            "wordLeft": "Wort übrig",
+            "showAnswer": "Antwort anzeigen",
+            "fail": "Nicht bestanden",
+            "pass": "Bestanden",
+            "failHint": "nicht bestanden",
+            "passHint": "bestanden",
+            "wordLabel": "Wort",
+            "recallPrompt": "Was bedeutet dieses Wort?",
+            "back_hub": "Zurück zu Japanisch"
+        }
+    },
+    "footer": {
+        "tagline": "Eine gemütliche, themenreiche Art, sich durch die japanische Sprache zu schlürfen.",
+        "explore": "Entdecken",
+        "learn": "Was wir lehren",
+        "rights": "TeaChoco · Alle Rechte vorbehalten.",
+        "languages": {
+            "ja": "Japanisch",
+            "en": "Englisch",
+            "ko": "Koreanisch",
+            "th": "Thailändisch"
+        }
+    }
+}

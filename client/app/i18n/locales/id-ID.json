@@ -1,0 +1,355 @@
+{
+    "nav": {
+        "home": "Beranda",
+        "tagline": "Pembelajaran Bahasa",
+        "languages": "Bahasa",
+        "japanese": "Bahasa Jepang",
+        "menu": "Buka menu"
+    },
+    "chrome": {
+        "hide": "Sembunyikan",
+        "show": "Tampilkan",
+        "toggleLabel": "Tampilkan antarmuka"
+    },
+    "home": {
+        "badge": "ChocoMemo",
+        "title": "Seduh bahasa Jepangmu,",
+        "titleAccent": "seteguk demi seteguk.",
+        "subtitle": "Choco memadukan kuis hiragana, katakana, dan kosakata yang mudah dicerna ke dalam ritual belajar harian yang hangat. Pilih tema, tuangkan secangkir, dan belajarlah.",
+        "ctaStart": "Mulai belajar",
+        "ctaBrowse": "Jelajahi kana"
+    },
+    "theme": {
+        "pickerLabel": "Ganti tema",
+        "names": {
+            "dark": "Gelap",
+            "light": "Terang",
+            "darkSakura": "Sakura Gelap",
+            "lightSakura": "Sakura Terang",
+            "darkPaper": "Kertas Gelap",
+            "lightPaper": "Kertas Terang",
+            "darkNature": "Alam Gelap",
+            "lightNature": "Alam Terang",
+            "darkAutumn": "Musim Gugur Gelap",
+            "lightAutumn": "Musim Gugur Terang",
+            "darkWinter": "Musim Dingin Gelap",
+            "lightWinter": "Musim Dingin Terang"
+        }
+    },
+    "common": {
+        "error": {
+            "oops": "Ups!",
+            "unexpected": "Terjadi kesalahan yang tidak terduga.",
+            "notFound": "Halaman yang diminta tidak dapat ditemukan."
+        },
+        "tabs": {
+            "local": "Lokal",
+            "cloud": "Cloud",
+            "community": "Komunitas"
+        },
+        "comingSoon": {
+            "cloud": "Sinkronisasi cloud segera hadir, diperlukan masuk",
+            "community": "Menjelajahi set komunitas belum tersedia"
+        }
+    },
+    "notfound": {
+        "title": "Halaman Tidak Ditemukan",
+        "description": "Halaman yang Anda cari tidak ada atau telah dipindahkan.",
+        "back_home": "Kembali ke Beranda",
+        "error_code": "404"
+    },
+    "languageSelect": {
+        "badge": "Pilihan Bahasa",
+        "title": "Pilih Bahasa untuk Dipelajari",
+        "description": "Pilih bahasa yang ingin Anda pelajari. Lebih banyak bahasa akan segera hadir.",
+        "back_home": "Kembali ke Beranda",
+        "status": {
+            "available": "Tersedia",
+            "comingSoon": "Segera Hadir"
+        },
+        "cta": {
+            "start": "Mulai Belajar",
+            "unavailable": "Tidak Tersedia"
+        },
+        "languages": {
+            "japanese": {
+                "name": "Bahasa Jepang",
+                "description": "Pelajari Hiragana, Katakana, dan kosakata penting melalui kuis interaktif."
+            },
+            "english": {
+                "name": "Bahasa Inggris",
+                "description": "Kursus bahasa Inggris sedang dalam persiapan."
+            },
+            "thai": {
+                "name": "Bahasa Thai",
+                "description": "Kursus bahasa Thai segera hadir."
+            },
+            "korean": {
+                "name": "Bahasa Korea",
+                "description": "Kursus bahasa Korea segera hadir."
+            }
+        }
+    },
+    "japanese": {
+        "badge": "Bahasa Jepang",
+        "title": "Belajar Bahasa Jepang",
+        "description": "Kuasai dasar-dasar bahasa Jepang melalui kana, kosakata, dan kuis.",
+        "back_language": "Kembali ke Pilihan Bahasa",
+        "stats": {
+            "kana": "Karakter kana",
+            "vocabulary": "Kata kosakata",
+            "learned": "Kata dipelajari",
+            "due": "Jatuh tempo untuk ditinjau"
+        },
+        "sections": {
+            "kana": "Kana",
+            "kanaHint": "Pelajari dua silabari Jepang — telusuri setiap karakter dan latih pengenalanmu.",
+            "vocabulary": "Kosakata",
+            "vocabularyHint": "Kembangkan bank kata dan tinjau dengan jadwal teratur.",
+            "learn": "Belajar",
+            "practice": "Latihan"
+        },
+        "nav": {
+            "kana": {
+                "title": "Kana",
+                "description": "Telusuri semua Hiragana dan Katakana beserta bacaannya.",
+                "action": "Lihat Kana"
+            },
+            "kanaDrill": {
+                "title": "Latihan Kana",
+                "description": "Uji pengenalan Hiragana dan Katakana-mu.",
+                "action": "Mulai Latihan Kana"
+            },
+            "vocabularyReview": {
+                "title": "Tinjauan Kosakata",
+                "description": "Tinjau kosakata dengan kartu kilat dan pengulangan berjarak.",
+                "action": "Mulai Tinjauan"
+            },
+            "vocabularyExams": {
+                "title": "Ujian Kosakata",
+                "description": "Uji dirimu dengan ujian pilihan ganda yang disusun dari kosakatamu.",
+                "action": "Ikuti Ujian"
+            }
+        },
+        "decks": {
+            "title": "Dek Tinjauan Kosakata",
+            "description": "Pilih dek untuk ditinjau. Dek berasal dari set bawaan, kata-katamu sendiri, atau koleksi yang diunduh.",
+            "availableCount": "{{count}} dek tersedia",
+            "startReview": "Mulai Tinjauan",
+            "due": "jatuh tempo",
+            "byAuthor": "oleh {{author}}",
+            "download": "Unduh",
+            "note": "Tinjauan",
+            "ready": "Siap",
+            "words": "kata",
+            "search": "Cari dek...",
+            "empty": "Belum ada dek — impor satu atau buat dek khusus.",
+            "addCustom": "Tambah dek khusus",
+            "importDeck": "Impor dek",
+            "importErrorJson": "Tidak dapat membaca berkas ini sebagai JSON.",
+            "form": {
+                "title": "Buat dek khusus",
+                "subtitle": "Pilih kata dari kosakata untuk dikelompokkan menjadi dek tinjauan.",
+                "nameLabel": "Nama",
+                "namePlaceholder": "mis. Kanji favorit saya",
+                "descriptionLabel": "Deskripsi (opsional)",
+                "descriptionPlaceholder": "Catatan singkat tentang dek ini",
+                "wordsLabel": "Kata untuk disertakan",
+                "wordsPlaceholder": "Cari kata...",
+                "selectedCount": "{{count}} dipilih",
+                "nameError": "Beri nama dek-mu.",
+                "minWordsError": "Pilih setidaknya satu kata.",
+                "cancel": "Batal",
+                "submit": "Buat dek"
+            },
+            "notFound": "Dek itu tidak ditemukan.",
+            "source": {
+                "default": "Bawaan",
+                "custom": "Kata-kataku",
+                "cloud": "Cloud",
+                "downloaded": "Diunduh"
+            }
+        },
+        "exams": {
+            "title": "Dek Ujian Kosakata",
+            "description": "Uji dirimu dengan ujian pilihan ganda yang disusun dari kosakatamu. Pilih satu set, impor, atau buat sendiri.",
+            "search": "Cari set ujian...",
+            "empty": "Belum ada set ujian — impor satu atau buat set khusus.",
+            "import": "Impor set ujian",
+            "addCustom": "Tambah set khusus",
+            "importErrorJson": "Tidak dapat membaca berkas ini sebagai JSON.",
+            "form": {
+                "title": "Buat set ujian khusus",
+                "subtitle": "Pilih kata dari kosakata — set disusun dari artinya, sama seperti set bawaan.",
+                "titleLabel": "Judul",
+                "titlePlaceholder": "mis. Kata sehari-hari saya",
+                "descriptionLabel": "Deskripsi (opsional)",
+                "descriptionPlaceholder": "Catatan singkat tentang set ini",
+                "wordsLabel": "Kata untuk disertakan",
+                "wordsPlaceholder": "Cari kata...",
+                "selectedCount": "{{count}} dipilih",
+                "titleError": "Beri nama set-mu.",
+                "minWordsError": "Pilih setidaknya dua kata.",
+                "cancel": "Batal",
+                "submit": "Buat set"
+            },
+            "card": {
+                "note": "Catatan ujian",
+                "exportAria": "Ekspor set ujian",
+                "deleteAria": "Hapus set ujian",
+                "export": "Ekspor",
+                "delete": "Hapus",
+                "byAuthor": "oleh {{author}}",
+                "start": "Mulai",
+                "question_one": "{{count}} pertanyaan",
+                "question_other": "{{count}} pertanyaan",
+                "source": {
+                    "default": "Bawaan",
+                    "custom": "Set-ku",
+                    "imported": "Diimpor"
+                }
+            }
+        },
+        "kana": {
+            "badge": "Kana",
+            "title": "Kana Bahasa Jepang",
+            "description": "Hiragana dan Katakana adalah dua silabari bahasa Jepang. Ketuk tab untuk berpindah.",
+            "tabs": {
+                "hiragana": "Hiragana",
+                "katakana": "Katakana"
+            },
+            "voiceless": "Tanpa suara",
+            "voiced": "Bersuara",
+            "contracted": "Kontraksi",
+            "voice_label": "Suara",
+            "voice_preview": "Pratinjau",
+            "voice_auto": "Otomatis",
+            "voice_choose": "Pilih suara",
+            "voice_ja": "Jepang",
+            "voice_volume": "Volume",
+            "take_quiz": "Ikuti Kuis",
+            "count": "kana",
+            "stats": {
+                "set": "Dalam set",
+                "group": "Dalam grup",
+                "read": "Dibaca"
+            },
+            "readProgress": "{{read}} / {{total}}",
+            "gridHint": "Ketuk kana untuk mendengarnya, atau tekan Mulai membaca untuk berjalan melalui grup dari tempat terakhir.",
+            "readStart": "Mulai membaca",
+            "readContinue": "Lanjutkan membaca",
+            "readStop": "Berhenti",
+            "nowReading": "sedang membaca",
+            "upNext": "berikutnya",
+            "pinToolbar": "Sematkan toolbar",
+            "unpinToolbar": "Lepas sematan toolbar",
+            "sticky": "Lengket",
+            "stickyOn": "Aktif",
+            "stickyOff": "Nonaktif",
+            "back_hub": "Kembali ke Bahasa Jepang"
+        },
+        "kanaDrill": {
+            "badge": "Latihan Kana",
+            "title": "Latihan Kana",
+            "intro": "Konfigurasikan kuis-mu — pilih grup kana yang disertakan, jumlah pertanyaan, dan waktu per pertanyaan.",
+            "start": "Mulai Kuis",
+            "progress": "Pertanyaan",
+            "score": "Skor",
+            "promptLabel": "Apa bacaan dari kana ini?",
+            "promptLabelRomajiToChar": "Kana mana yang cocok dengan bacaan ini?",
+            "promptLabelListen": "Kana mana yang kamu dengar?",
+            "listenAgain": "Dengarkan lagi",
+            "correct": "Benar!",
+            "wrong": "Belum tepat.",
+            "timeout": "Waktu habis!",
+            "correctAnswer": "Jawaban benar",
+            "next": "Pertanyaan Berikutnya",
+            "endGame": "Akhiri Permainan",
+            "resultTitle": "Kuis Selesai!",
+            "result": {
+                "correctLabel": "Benar",
+                "wrongLabel": "Salah",
+                "timeoutLabel": "Waktu Habis",
+                "settingsSummary": "Pengaturan",
+                "settingsButton": "Pengaturan",
+                "exitButton": "Keluar",
+                "playAgain": "Main Lagi",
+                "history": "Riwayat Jawaban",
+                "timeoutShort": "Waktu Habis",
+                "yes": "Ya",
+                "no": "Tidak"
+            },
+            "retry": "Coba Lagi",
+            "back_characters": "Kembali ke Kana",
+            "settings": {
+                "setsLabel": "Set Kana",
+                "questionLabel": "Opsi Kuis",
+                "modeLabel": "Mode Pertanyaan",
+                "mode": {
+                    "charToRomaji": "Kana → Bacaan",
+                    "charToRomajiHint": "Lihat kana, pilih bacaan romaji-nya.",
+                    "romajiToChar": "Bacaan → Kana",
+                    "romajiToCharHint": "Lihat bacaan, pilih kana yang cocok.",
+                    "listenToChar": "Dengar → Kana",
+                    "listenToCharHint": "Dengar kana diucapkan, pilih yang kamu dengar."
+                },
+                "sound": {
+                    "label": "Efek suara",
+                    "voice": "Aria",
+                    "voiceHint": "Putar rekaman suara oleh Aria.",
+                    "tone": "Nada",
+                    "toneHint": "Putar bunyi bip sintesis sederhana.",
+                    "volume": "Volume suara"
+                },
+                "voiceLabel": "Suara",
+                "questionCount": "Jumlah pertanyaan",
+                "questions": "pertanyaan",
+                "choiceCount": "Pilihan jawaban",
+                "choices": "pilihan",
+                "timeLimit": "Waktu per pertanyaan",
+                "autoAdvance": "Lanjut otomatis ke pertanyaan berikutnya",
+                "useAll": "Semua kana",
+                "groups": {
+                    "voiceless": "Tanpa suara",
+                    "voiced": "Bersuara",
+                    "contracted": "Kontraksi"
+                },
+                "chars": "karakter",
+                "totalChars": "Total kana"
+            }
+        },
+        "vocabulary": {
+            "available": "{{count}} kata total"
+        },
+        "vocabularyReview": {
+            "badge": "Tinjauan",
+            "title": "Tinjauan Kosakata",
+            "description": "Balik kartu untuk melihat jawaban, lalu tandai Lulus atau Gagal.",
+            "complete": "Semua selesai!",
+            "completeDescription": "Tidak ada kata yang jatuh tempo untuk ditinjau saat ini.",
+            "exit": "Keluar Tinjauan",
+            "wordsLeft": "kata tersisa",
+            "wordLeft": "kata tersisa",
+            "showAnswer": "Lihat jawaban",
+            "fail": "Gagal",
+            "pass": "Lulus",
+            "failHint": "gagal",
+            "passHint": "lulus",
+            "wordLabel": "Kata",
+            "recallPrompt": "Apa arti kata ini?",
+            "back_hub": "Kembali ke Bahasa Jepang"
+        }
+    },
+    "footer": {
+        "tagline": "Cara yang nyaman dan kaya tema untuk menyeruput jalanmu menelusuri bahasa Jepang.",
+        "explore": "Jelajahi",
+        "learn": "Yang kami ajarkan",
+        "rights": "TeaChoco · Semua hak dilindungi.",
+        "languages": {
+            "ja": "Jepang",
+            "en": "Inggris",
+            "ko": "Korea",
+            "th": "Thai"
+        }
+    }
+}

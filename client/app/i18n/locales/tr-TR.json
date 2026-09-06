@@ -1,0 +1,355 @@
+{
+    "nav": {
+        "home": "Ana Sayfa",
+        "tagline": "Dil Öğrenme",
+        "languages": "Diller",
+        "japanese": "Japonca",
+        "menu": "Menüyü aç"
+    },
+    "chrome": {
+        "hide": "Gizle",
+        "show": "Göster",
+        "toggleLabel": "Arayüzü göster"
+    },
+    "home": {
+        "badge": "ChocoMemo",
+        "title": "Japoncanı demle,",
+        "titleAccent": "her seferinde bir yudum.",
+        "subtitle": "Choco, küçük parçalara ayrılmış hiragana, katakana ve kelime bilgisi testlerini sıcak bir günlük çalışma ritüeline dönüştürür. Bir tema seç, bir fincan koy ve öğren.",
+        "ctaStart": "Öğrenmeye başla",
+        "ctaBrowse": "Kana'yı keşfet"
+    },
+    "theme": {
+        "pickerLabel": "Temayı değiştir",
+        "names": {
+            "dark": "Koyu",
+            "light": "Açık",
+            "darkSakura": "Koyu Sakura",
+            "lightSakura": "Açık Sakura",
+            "darkPaper": "Koyu Kağıt",
+            "lightPaper": "Açık Kağıt",
+            "darkNature": "Koyu Doğa",
+            "lightNature": "Açık Doğa",
+            "darkAutumn": "Koyu Sonbahar",
+            "lightAutumn": "Açık Sonbahar",
+            "darkWinter": "Koyu Kış",
+            "lightWinter": "Açık Kış"
+        }
+    },
+    "common": {
+        "error": {
+            "oops": "Hata!",
+            "unexpected": "Beklenmeyen bir hata oluştu.",
+            "notFound": "İstenen sayfa bulunamadı."
+        },
+        "tabs": {
+            "local": "Yerel",
+            "cloud": "Bulut",
+            "community": "Topluluk"
+        },
+        "comingSoon": {
+            "cloud": "Bulut senkronizasyonu yakında geliyor, giriş gereklidir",
+            "community": "Topluluk setlerine göz atma henüz mevcut değil"
+        }
+    },
+    "notfound": {
+        "title": "Sayfa Bulunamadı",
+        "description": "Aradığınız sayfa mevcut değil veya taşınmış.",
+        "back_home": "Ana Sayfaya Dön",
+        "error_code": "404"
+    },
+    "languageSelect": {
+        "badge": "Dil Seçimi",
+        "title": "Öğreneceğiniz Dili Seçin",
+        "description": "Çalışmak istediğiniz dili seçin. Daha fazla dil yakında gelecek.",
+        "back_home": "Ana Sayfaya Dön",
+        "status": {
+            "available": "Mevcut",
+            "comingSoon": "Yakında"
+        },
+        "cta": {
+            "start": "Öğrenmeye Başla",
+            "unavailable": "Mevcut Değil"
+        },
+        "languages": {
+            "japanese": {
+                "name": "Japonca",
+                "description": "Etkileşimli testlerle Hiragana, Katakana ve temel kelimeleri öğrenin."
+            },
+            "english": {
+                "name": "İngilizce",
+                "description": "İngilizce kursları şu anda hazırlanıyor."
+            },
+            "thai": {
+                "name": "Tayca",
+                "description": "Tayca kursları yakında gelecek."
+            },
+            "korean": {
+                "name": "Korece",
+                "description": "Korece kursları yakında gelecek."
+            }
+        }
+    },
+    "japanese": {
+        "badge": "Japonca",
+        "title": "Japonca Öğren",
+        "description": "Kana, kelime bilgisi ve testlerle Japoncanın temellerini öğrenin.",
+        "back_language": "Dil Seçimine Dön",
+        "stats": {
+            "kana": "Kana karakterleri",
+            "vocabulary": "Kelime bilgisi",
+            "learned": "Öğrenilen kelimeler",
+            "due": "Tekrar zamanı gelen"
+        },
+        "sections": {
+            "kana": "Kana",
+            "kanaHint": "İki Japonca hece alfabesini öğrenin — her karakteri keşfedin ve tanıma becerinizi geliştirin.",
+            "vocabulary": "Kelime Bilgisi",
+            "vocabularyHint": "Kelime hazinenizi büyütün ve aralıklı bir programla tekrar edin.",
+            "learn": "Öğren",
+            "practice": "Pratik Yap"
+        },
+        "nav": {
+            "kana": {
+                "title": "Kana",
+                "description": "Tüm Hiragana ve Katakana'yı okunuşlarıyla keşfedin.",
+                "action": "Kana'yı Görüntüle"
+            },
+            "kanaDrill": {
+                "title": "Kana Alıştırması",
+                "description": "Hiragana ve Katakana tanıma becerinizi test edin.",
+                "action": "Kana Alıştırmasına Başla"
+            },
+            "vocabularyReview": {
+                "title": "Kelime Tekrarı",
+                "description": "Kelime bilgisini bilgi kartları ve aralıklı tekrarla gözden geçirin.",
+                "action": "Tekrara Başla"
+            },
+            "vocabularyExams": {
+                "title": "Kelime Sınavları",
+                "description": "Kelime dağarcığınızdan oluşturulan çoktan seçmeli sınavlarla kendinizi test edin.",
+                "action": "Sınava Girin"
+            }
+        },
+        "decks": {
+            "title": "Kelime Tekrarı Desteleri",
+            "description": "Tekrar etmek için bir deste seçin. Desteler yerleşik setten, kendi kelimelerinizden veya indirilen koleksiyonlardan gelir.",
+            "availableCount": "{{count}} deste mevcut",
+            "startReview": "Tekrara Başla",
+            "due": "zamanı geldi",
+            "byAuthor": "{{author}} tarafından",
+            "download": "İndir",
+            "note": "Tekrar",
+            "ready": "Hazır",
+            "words": "kelime",
+            "search": "Desteleri ara...",
+            "empty": "Henüz deste yok — bir tane içe aktarın veya özel bir deste oluşturun.",
+            "addCustom": "Özel deste ekle",
+            "importDeck": "Deste içe aktar",
+            "importErrorJson": "Bu dosya JSON olarak okunamadı.",
+            "form": {
+                "title": "Özel bir deste oluşturun",
+                "subtitle": "Kelime dağarcığınızdan bir tekrar destesinde gruplamak için kelimeler seçin.",
+                "nameLabel": "Ad",
+                "namePlaceholder": "örn. Favori kanjilerim",
+                "descriptionLabel": "Açıklama (isteğe bağlı)",
+                "descriptionPlaceholder": "Bu deste hakkında kısa bir not",
+                "wordsLabel": "Dahil edilecek kelimeler",
+                "wordsPlaceholder": "Kelime ara...",
+                "selectedCount": "{{count}} seçildi",
+                "nameError": "Destenize bir ad verin.",
+                "minWordsError": "En az bir kelime seçin.",
+                "cancel": "İptal",
+                "submit": "Deste oluştur"
+            },
+            "notFound": "Bu deste bulunamadı.",
+            "source": {
+                "default": "Yerleşik",
+                "custom": "Kendi kelimelerim",
+                "cloud": "Bulut",
+                "downloaded": "İndirildi"
+            }
+        },
+        "exams": {
+            "title": "Kelime Sınavı Desteleri",
+            "description": "Kelime dağarcığınızdan oluşturulan çoktan seçmeli sınavlarla kendinizi test edin. Bir set seçin, içe aktarın veya kendinizinkini oluşturun.",
+            "search": "Sınav setlerini ara...",
+            "empty": "Henüz sınav seti yok — bir tane içe aktarın veya özel bir set oluşturun.",
+            "import": "Sınav seti içe aktar",
+            "addCustom": "Özel set ekle",
+            "importErrorJson": "Bu dosya JSON olarak okunamadı.",
+            "form": {
+                "title": "Özel bir sınav seti oluşturun",
+                "subtitle": "Kelime dağarcığınızdan kelimeler seçin — set, yerleşik setler gibi anlamlarından oluşturulur.",
+                "titleLabel": "Başlık",
+                "titlePlaceholder": "örn. Günlük kelimelerim",
+                "descriptionLabel": "Açıklama (isteğe bağlı)",
+                "descriptionPlaceholder": "Bu set hakkında kısa bir not",
+                "wordsLabel": "Dahil edilecek kelimeler",
+                "wordsPlaceholder": "Kelime ara...",
+                "selectedCount": "{{count}} seçildi",
+                "titleError": "Setinize bir ad verin.",
+                "minWordsError": "En az iki kelime seçin.",
+                "cancel": "İptal",
+                "submit": "Set oluştur"
+            },
+            "card": {
+                "note": "Sınav notu",
+                "exportAria": "Sınav setini dışa aktar",
+                "deleteAria": "Sınav setini sil",
+                "export": "Dışa Aktar",
+                "delete": "Sil",
+                "byAuthor": "{{author}} tarafından",
+                "start": "Başla",
+                "question_one": "{{count}} soru",
+                "question_other": "{{count}} soru",
+                "source": {
+                    "default": "Varsayılan",
+                    "custom": "Benim setim",
+                    "imported": "İçe aktarıldı"
+                }
+            }
+        },
+        "kana": {
+            "badge": "Kana",
+            "title": "Japon Kana",
+            "description": "Hiragana ve Katakana, Japoncada iki hece alfabesidir. Değiştirmek için sekmelere dokunun.",
+            "tabs": {
+                "hiragana": "Hiragana",
+                "katakana": "Katakana"
+            },
+            "voiceless": "Sessiz",
+            "voiced": "Sesli",
+            "contracted": "Büzülmüş",
+            "voice_label": "Ses",
+            "voice_preview": "Önizle",
+            "voice_auto": "Otomatik",
+            "voice_choose": "Bir ses seçin",
+            "voice_ja": "Japonca",
+            "voice_volume": "Ses düzeyi",
+            "take_quiz": "Teste Gir",
+            "count": "kana",
+            "stats": {
+                "set": "Set içinde",
+                "group": "Grupta",
+                "read": "Okundu"
+            },
+            "readProgress": "{{read}} / {{total}}",
+            "gridHint": "Duymak için bir kanaya dokunun veya kaldığınız yerden grubu geçmek için Okumaya başla'ya basın.",
+            "readStart": "Okumaya başla",
+            "readContinue": "Okumaya devam et",
+            "readStop": "Durdur",
+            "nowReading": "şu an okunuyor",
+            "upNext": "sırada",
+            "pinToolbar": "Araç çubuğunu sabitle",
+            "unpinToolbar": "Araç çubuğunu sabitlemeyi kaldır",
+            "sticky": "Sabit",
+            "stickyOn": "Açık",
+            "stickyOff": "Kapalı",
+            "back_hub": "Japoncaya Dön"
+        },
+        "kanaDrill": {
+            "badge": "Kana Alıştırması",
+            "title": "Kana Alıştırması",
+            "intro": "Testinizi yapılandırın — hangi kana gruplarını dahil edeceğinizi, kaç soru olacağını ve her soru için ne kadar süre olacağını seçin.",
+            "start": "Teste Başla",
+            "progress": "Soru",
+            "score": "Skor",
+            "promptLabel": "Bu kananın okunuşu nedir?",
+            "promptLabelRomajiToChar": "Hangi kana bu okunuşla eşleşir?",
+            "promptLabelListen": "Hangi kanayı duydunuz?",
+            "listenAgain": "Tekrar dinle",
+            "correct": "Doğru!",
+            "wrong": "Pek sayılmaz.",
+            "timeout": "Süre doldu!",
+            "correctAnswer": "Doğru cevap",
+            "next": "Sonraki Soru",
+            "endGame": "Oyunu Bitir",
+            "resultTitle": "Test Tamamlandı!",
+            "result": {
+                "correctLabel": "Doğru",
+                "wrongLabel": "Yanlış",
+                "timeoutLabel": "Süre Doldu",
+                "settingsSummary": "Ayarlar",
+                "settingsButton": "Ayarlar",
+                "exitButton": "Çıkış",
+                "playAgain": "Tekrar Oyna",
+                "history": "Cevap Geçmişi",
+                "timeoutShort": "Süre Doldu",
+                "yes": "Evet",
+                "no": "Hayır"
+            },
+            "retry": "Tekrar Dene",
+            "back_characters": "Kana'ya Dön",
+            "settings": {
+                "setsLabel": "Kana Setleri",
+                "questionLabel": "Test Seçenekleri",
+                "modeLabel": "Soru Modu",
+                "mode": {
+                    "charToRomaji": "Kana → Okunuş",
+                    "charToRomajiHint": "Kanayı görün, romaji okunuşunu seçin.",
+                    "romajiToChar": "Okunuş → Kana",
+                    "romajiToCharHint": "Okunuşu görün, eşleşen kanayı seçin.",
+                    "listenToChar": "Dinle → Kana",
+                    "listenToCharHint": "Konuşulan kanayı dinleyin, duyduğunuzu seçin."
+                },
+                "sound": {
+                    "label": "Ses efekti",
+                    "voice": "Aria",
+                    "voiceHint": "Aria tarafından seslendirilen bir kayıt çalın.",
+                    "tone": "Ton",
+                    "toneHint": "Basit sentezlenmiş bir bip sesi çalın.",
+                    "volume": "Ses düzeyi"
+                },
+                "voiceLabel": "Ses",
+                "questionCount": "Soru sayısı",
+                "questions": "soru",
+                "choiceCount": "Cevap seçenekleri",
+                "choices": "seçenek",
+                "timeLimit": "Soru başına süre",
+                "autoAdvance": "Sonraki soruya otomatik geç",
+                "useAll": "Tüm kana",
+                "groups": {
+                    "voiceless": "Sessiz",
+                    "voiced": "Sesli",
+                    "contracted": "Büzülmüş"
+                },
+                "chars": "karakter",
+                "totalChars": "Toplam kana"
+            }
+        },
+        "vocabulary": {
+            "available": "Toplam {{count}} kelime"
+        },
+        "vocabularyReview": {
+            "badge": "Tekrar",
+            "title": "Kelime Tekrarı",
+            "description": "Cevabı görmek için kartı çevirin, ardından Geçti veya Kaldı olarak işaretleyin.",
+            "complete": "Hepsi tamam!",
+            "completeDescription": "Şu anda tekrarı gelen başka kelime yok.",
+            "exit": "Tekrardan Çık",
+            "wordsLeft": "kelime kaldı",
+            "wordLeft": "kelime kaldı",
+            "showAnswer": "Cevabı göster",
+            "fail": "Kaldı",
+            "pass": "Geçti",
+            "failHint": "kaldı",
+            "passHint": "geçti",
+            "wordLabel": "Kelime",
+            "recallPrompt": "Bu kelime ne anlama geliyor?",
+            "back_hub": "Japoncaya Dön"
+        }
+    },
+    "footer": {
+        "tagline": "Japon dilinde gezinmenin rahat ve tema zengini bir yolu.",
+        "explore": "Keşfet",
+        "learn": "Ne öğretiyoruz",
+        "rights": "TeaChoco · Tüm hakları saklıdır.",
+        "languages": {
+            "ja": "Japonca",
+            "en": "İngilizce",
+            "ko": "Korece",
+            "th": "Tayca"
+        }
+    }
+}

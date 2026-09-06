@@ -1,0 +1,355 @@
+{
+    "nav": {
+        "home": "Laman Utama",
+        "tagline": "Pembelajaran Bahasa",
+        "languages": "Bahasa",
+        "japanese": "Bahasa Jepun",
+        "menu": "Buka menu"
+    },
+    "chrome": {
+        "hide": "Sembunyikan",
+        "show": "Tunjukkan",
+        "toggleLabel": "Tunjukkan antara muka"
+    },
+    "home": {
+        "badge": "ChocoMemo",
+        "title": "Seduh bahasa Jepun anda,",
+        "titleAccent": "seteguk demi seteguk.",
+        "subtitle": "Choco menggabungkan kuiz hiragana, katakana dan kosa kata bersaiz kecil ke dalam ritual belajar harian yang hangat. Pilih tema, tuangkan secawan, dan belajar.",
+        "ctaStart": "Mula belajar",
+        "ctaBrowse": "Lihat kana"
+    },
+    "theme": {
+        "pickerLabel": "Tukar tema",
+        "names": {
+            "dark": "Gelap",
+            "light": "Cerah",
+            "darkSakura": "Sakura Gelap",
+            "lightSakura": "Sakura Cerah",
+            "darkPaper": "Kertas Gelap",
+            "lightPaper": "Kertas Cerah",
+            "darkNature": "Alam Gelap",
+            "lightNature": "Alam Cerah",
+            "darkAutumn": "Musim Luruh Gelap",
+            "lightAutumn": "Musim Luruh Cerah",
+            "darkWinter": "Musim Sejuk Gelap",
+            "lightWinter": "Musim Sejuk Cerah"
+        }
+    },
+    "common": {
+        "error": {
+            "oops": "Aduh!",
+            "unexpected": "Berlaku ralat yang tidak dijangka.",
+            "notFound": "Halaman yang diminta tidak dapat ditemui."
+        },
+        "tabs": {
+            "local": "Tempatan",
+            "cloud": "Awan",
+            "community": "Komuniti"
+        },
+        "comingSoon": {
+            "cloud": "Segerak awan akan tiba tidak lama lagi, log masuk diperlukan",
+            "community": "Semakan set komuniti belum tersedia"
+        }
+    },
+    "notfound": {
+        "title": "Halaman Tidak Ditemui",
+        "description": "Halaman yang anda cari tidak wujud atau telah dipindahkan.",
+        "back_home": "Kembali ke Laman Utama",
+        "error_code": "404"
+    },
+    "languageSelect": {
+        "badge": "Pemilihan Bahasa",
+        "title": "Pilih Bahasa untuk Dipelajari",
+        "description": "Pilih bahasa yang ingin anda pelajari. Lebih banyak bahasa akan datang tidak lama lagi.",
+        "back_home": "Kembali ke Laman Utama",
+        "status": {
+            "available": "Tersedia",
+            "comingSoon": "Segera"
+        },
+        "cta": {
+            "start": "Mula Belajar",
+            "unavailable": "Tidak Tersedia"
+        },
+        "languages": {
+            "japanese": {
+                "name": "Bahasa Jepun",
+                "description": "Pelajari Hiragana, Katakana dan kosa kata penting melalui kuiz interaktif."
+            },
+            "english": {
+                "name": "Bahasa Inggeris",
+                "description": "Kursus Bahasa Inggeris sedang dalam penyediaan."
+            },
+            "thai": {
+                "name": "Bahasa Thai",
+                "description": "Kursus Bahasa Thai akan datang tidak lama lagi."
+            },
+            "korean": {
+                "name": "Bahasa Korea",
+                "description": "Kursus Bahasa Korea akan datang tidak lama lagi."
+            }
+        }
+    },
+    "japanese": {
+        "badge": "Bahasa Jepun",
+        "title": "Belajar Bahasa Jepun",
+        "description": "Kuasai asas bahasa Jepun melalui kana, kosa kata dan kuiz.",
+        "back_language": "Kembali ke Pemilihan Bahasa",
+        "stats": {
+            "kana": "Aksara kana",
+            "vocabulary": "Perkataan kosa kata",
+            "learned": "Perkataan dipelajari",
+            "due": "Tertunggak untuk semakan"
+        },
+        "sections": {
+            "kana": "Kana",
+            "kanaHint": "Pelajari dua suku kata Jepun — lihat setiap aksara dan latih pengecaman anda.",
+            "vocabulary": "Kosa Kata",
+            "vocabularyHint": "Kembangkan bank perkataan anda dan semaknya mengikut jadual berjarak.",
+            "learn": "Belajar",
+            "practice": "Berlatih"
+        },
+        "nav": {
+            "kana": {
+                "title": "Kana",
+                "description": "Lihat semua Hiragana dan Katakana beserta bacaannya.",
+                "action": "Lihat Kana"
+            },
+            "kanaDrill": {
+                "title": "Latihan Kana",
+                "description": "Uji pengecaman Hiragana dan Katakana anda.",
+                "action": "Mula Latihan Kana"
+            },
+            "vocabularyReview": {
+                "title": "Semakan Kosa Kata",
+                "description": "Semak kosa kata dengan kad imbas dan ulangan berjarak.",
+                "action": "Mula Semakan"
+            },
+            "vocabularyExams": {
+                "title": "Peperiksaan Kosa Kata",
+                "description": "Uji diri anda dengan peperiksaan aneka pilihan yang dibina daripada kosa kata anda.",
+                "action": "Ambil Peperiksaan"
+            }
+        },
+        "decks": {
+            "title": "Dek Semakan Kosa Kata",
+            "description": "Pilih dek untuk disemak. Dek datang daripada set terbina dalam, perkataan anda sendiri, atau koleksi yang dimuat turun.",
+            "availableCount": "{{count}} dek tersedia",
+            "startReview": "Mula Semakan",
+            "due": "tertunggak",
+            "byAuthor": "oleh {{author}}",
+            "download": "Muat turun",
+            "note": "Semakan",
+            "ready": "Sedia",
+            "words": "perkataan",
+            "search": "Cari dek...",
+            "empty": "Belum ada dek — import satu atau cipta dek tersuai.",
+            "addCustom": "Tambah dek tersuai",
+            "importDeck": "Import dek",
+            "importErrorJson": "Tidak dapat membaca fail ini sebagai JSON.",
+            "form": {
+                "title": "Cipta dek tersuai",
+                "subtitle": "Pilih perkataan daripada kosa kata anda untuk dikumpulkan menjadi dek semakan.",
+                "nameLabel": "Nama",
+                "namePlaceholder": "cth. Kanji kegemaran saya",
+                "descriptionLabel": "Penerangan (pilihan)",
+                "descriptionPlaceholder": "Nota ringkas tentang dek ini",
+                "wordsLabel": "Perkataan untuk disertakan",
+                "wordsPlaceholder": "Cari perkataan...",
+                "selectedCount": "{{count}} dipilih",
+                "nameError": "Beri nama kepada dek anda.",
+                "minWordsError": "Pilih sekurang-kurangnya satu perkataan.",
+                "cancel": "Batal",
+                "submit": "Cipta dek"
+            },
+            "notFound": "Dek itu tidak ditemui.",
+            "source": {
+                "default": "Terbina dalam",
+                "custom": "Perkataan saya",
+                "cloud": "Awan",
+                "downloaded": "Dimuat turun"
+            }
+        },
+        "exams": {
+            "title": "Dek Peperiksaan Kosa Kata",
+            "description": "Uji diri anda dengan peperiksaan aneka pilihan yang dibina daripada kosa kata anda. Pilih set, import satu, atau bina sendiri.",
+            "search": "Cari set peperiksaan...",
+            "empty": "Belum ada set peperiksaan — import satu atau cipta set tersuai.",
+            "import": "Import set peperiksaan",
+            "addCustom": "Tambah set tersuai",
+            "importErrorJson": "Tidak dapat membaca fail ini sebagai JSON.",
+            "form": {
+                "title": "Cipta set peperiksaan tersuai",
+                "subtitle": "Pilih perkataan daripada kosa kata anda — set dibina daripada maknanya, sama seperti set terbina dalam.",
+                "titleLabel": "Tajuk",
+                "titlePlaceholder": "cth. Perkataan harian saya",
+                "descriptionLabel": "Penerangan (pilihan)",
+                "descriptionPlaceholder": "Nota ringkas tentang set ini",
+                "wordsLabel": "Perkataan untuk disertakan",
+                "wordsPlaceholder": "Cari perkataan...",
+                "selectedCount": "{{count}} dipilih",
+                "titleError": "Beri nama kepada set anda.",
+                "minWordsError": "Pilih sekurang-kurangnya dua perkataan.",
+                "cancel": "Batal",
+                "submit": "Cipta set"
+            },
+            "card": {
+                "note": "Nota peperiksaan",
+                "exportAria": "Eksport set peperiksaan",
+                "deleteAria": "Padam set peperiksaan",
+                "export": "Eksport",
+                "delete": "Padam",
+                "byAuthor": "oleh {{author}}",
+                "start": "Mula",
+                "question_one": "{{count}} soalan",
+                "question_other": "{{count}} soalan",
+                "source": {
+                    "default": "Lalai",
+                    "custom": "Set saya",
+                    "imported": "Diimport"
+                }
+            }
+        },
+        "kana": {
+            "badge": "Kana",
+            "title": "Kana Jepun",
+            "description": "Hiragana dan Katakana ialah dua suku kata Jepun. Ketik tab untuk menukar.",
+            "tabs": {
+                "hiragana": "Hiragana",
+                "katakana": "Katakana"
+            },
+            "voiceless": "Tak bersuara",
+            "voiced": "Bersuara",
+            "contracted": "Terpengaruh",
+            "voice_label": "Suara",
+            "voice_preview": "Pratonton",
+            "voice_auto": "Auto",
+            "voice_choose": "Pilih suara",
+            "voice_ja": "Jepun",
+            "voice_volume": "Kelantangan",
+            "take_quiz": "Ambil Kuiz",
+            "count": "kana",
+            "stats": {
+                "set": "Dalam set",
+                "group": "Dalam kumpulan",
+                "read": "Dibaca"
+            },
+            "readProgress": "{{read}} / {{total}}",
+            "gridHint": "Ketik kana untuk mendengarnya, atau tekan Mula membaca untuk melalui kumpulan dari tempat anda berhenti.",
+            "readStart": "Mula membaca",
+            "readContinue": "Teruskan membaca",
+            "readStop": "Berhenti",
+            "nowReading": "sedang dibaca",
+            "upNext": "seterusnya",
+            "pinToolbar": "Semat bar alat",
+            "unpinToolbar": "Nyahsemat bar alat",
+            "sticky": "Lekat",
+            "stickyOn": "Hidup",
+            "stickyOff": "Mati",
+            "back_hub": "Kembali ke Jepun"
+        },
+        "kanaDrill": {
+            "badge": "Latihan Kana",
+            "title": "Latihan Kana",
+            "intro": "Konfigurasikan kuiz anda — pilih kumpulan kana untuk disertakan, bilangan soalan, dan masa bagi setiap soalan.",
+            "start": "Mula Kuiz",
+            "progress": "Soalan",
+            "score": "Skor",
+            "promptLabel": "Apakah bacaan kana ini?",
+            "promptLabelRomajiToChar": "Kana manakah yang padan dengan bacaan ini?",
+            "promptLabelListen": "Kana manakah yang anda dengar?",
+            "listenAgain": "Dengar semula",
+            "correct": "Betul!",
+            "wrong": "Belum tepat.",
+            "timeout": "Masa tamat!",
+            "correctAnswer": "Jawapan betul",
+            "next": "Soalan Seterusnya",
+            "endGame": "Tamatkan Permainan",
+            "resultTitle": "Kuiz Selesai!",
+            "result": {
+                "correctLabel": "Betul",
+                "wrongLabel": "Salah",
+                "timeoutLabel": "Masa Tamat",
+                "settingsSummary": "Tetapan",
+                "settingsButton": "Tetapan",
+                "exitButton": "Keluar",
+                "playAgain": "Main Lagi",
+                "history": "Sejarah Jawapan",
+                "timeoutShort": "Masa Tamat",
+                "yes": "Ya",
+                "no": "Tidak"
+            },
+            "retry": "Cuba Lagi",
+            "back_characters": "Kembali ke Kana",
+            "settings": {
+                "setsLabel": "Set Kana",
+                "questionLabel": "Pilihan Kuiz",
+                "modeLabel": "Mod Soalan",
+                "mode": {
+                    "charToRomaji": "Kana → Bacaan",
+                    "charToRomajiHint": "Lihat kana, pilih bacaan romaji-nya.",
+                    "romajiToChar": "Bacaan → Kana",
+                    "romajiToCharHint": "Lihat bacaan, pilih kana yang padan.",
+                    "listenToChar": "Dengar → Kana",
+                    "listenToCharHint": "Dengar kana yang dituturkan, pilih apa yang anda dengar."
+                },
+                "sound": {
+                    "label": "Kesan bunyi",
+                    "voice": "Aria",
+                    "voiceHint": "Mainkan rakaman suara oleh Aria.",
+                    "tone": "Nada",
+                    "toneHint": "Mainkan bip sintesis ringkas.",
+                    "volume": "Kelantangan bunyi"
+                },
+                "voiceLabel": "Suara",
+                "questionCount": "Bilangan soalan",
+                "questions": "soalan",
+                "choiceCount": "Pilihan jawapan",
+                "choices": "pilihan",
+                "timeLimit": "Masa setiap soalan",
+                "autoAdvance": "Langkah automatik ke soalan seterusnya",
+                "useAll": "Semua kana",
+                "groups": {
+                    "voiceless": "Tak bersuara",
+                    "voiced": "Bersuara",
+                    "contracted": "Terpengaruh"
+                },
+                "chars": "aksara",
+                "totalChars": "Jumlah kana"
+            }
+        },
+        "vocabulary": {
+            "available": "{{count}} perkataan keseluruhan"
+        },
+        "vocabularyReview": {
+            "badge": "Semakan",
+            "title": "Semakan Kosa Kata",
+            "description": "Terbalikkan kad untuk mendedahkan jawapan, kemudian tandakan sebagai Lulus atau Gagal.",
+            "complete": "Semua selesai!",
+            "completeDescription": "Tiada lagi perkataan tertunggak untuk semakan sekarang.",
+            "exit": "Keluar dari Semakan",
+            "wordsLeft": "perkataan lagi",
+            "wordLeft": "perkataan lagi",
+            "showAnswer": "Tunjukkan jawapan",
+            "fail": "Gagal",
+            "pass": "Lulus",
+            "failHint": "gagal",
+            "passHint": "lulus",
+            "wordLabel": "Perkataan",
+            "recallPrompt": "Apakah maksud perkataan ini?",
+            "back_hub": "Kembali ke Jepun"
+        }
+    },
+    "footer": {
+        "tagline": "Cara yang selesa dan kaya tema untuk menikmati perjalanan melalui bahasa Jepun.",
+        "explore": "Terokai",
+        "learn": "Apa yang kami ajar",
+        "rights": "TeaChoco · Hak cipta terpelihara.",
+        "languages": {
+            "ja": "Jepun",
+            "en": "Inggeris",
+            "ko": "Korea",
+            "th": "Thai"
+        }
+    }
+}

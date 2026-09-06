@@ -24,7 +24,7 @@ export default function ExamSetList() {
                     className='inline-flex items-center gap-2 mb-6 text-sm font-medium text-surface-muted hover:text-accent transition-colors'
                 >
                     <FaArrowLeft className='w-3.5 h-3.5' />
-                    Back to hub
+                    {t('japanese.exams.back_hub')}
                 </Link>
 
                 <DecksList

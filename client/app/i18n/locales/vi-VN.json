@@ -1,0 +1,356 @@
+{
+    "nav": {
+        "home": "Trang chủ",
+        "tagline": "Học ngôn ngữ",
+        "languages": "Ngôn ngữ",
+        "japanese": "Tiếng Nhật",
+        "menu": "Mở menu"
+    },
+    "chrome": {
+        "hide": "Ẩn",
+        "show": "Hiện",
+        "toggleLabel": "Hiển thị giao diện"
+    },
+    "home": {
+        "badge": "ChocoMemo",
+        "title": "Pha tiếng Nhật của bạn,",
+        "titleAccent": "từng ngụm một.",
+        "subtitle": "Choco pha trộn những bài quiz hiragana, katakana và từ vựng thành một thói quen học tập ấm áp mỗi ngày. Chọn một chủ đề, rót một tách trà và bắt đầu học.",
+        "ctaStart": "Bắt đầu học",
+        "ctaBrowse": "Khám phá kana"
+    },
+    "theme": {
+        "pickerLabel": "Đổi chủ đề",
+        "names": {
+            "dark": "Tối",
+            "light": "Sáng",
+            "darkSakura": "Sakura tối",
+            "lightSakura": "Sakura sáng",
+            "darkPaper": "Giấy tối",
+            "lightPaper": "Giấy sáng",
+            "darkNature": "Thiên nhiên tối",
+            "lightNature": "Thiên nhiên sáng",
+            "darkAutumn": "Thu tối",
+            "lightAutumn": "Thu sáng",
+            "darkWinter": "Đông tối",
+            "lightWinter": "Đông sáng"
+        }
+    },
+    "common": {
+        "error": {
+            "oops": "Ối!",
+            "unexpected": "Đã xảy ra lỗi không mong muốn.",
+            "notFound": "Không tìm thấy trang bạn yêu cầu."
+        },
+        "tabs": {
+            "local": "Trong máy",
+            "cloud": "Đám mây",
+            "community": "Cộng đồng"
+        },
+        "comingSoon": {
+            "cloud": "Đồng bộ đám mây sắp ra mắt, cần đăng nhập",
+            "community": "Chưa thể duyệt bộ từ của cộng đồng"
+        }
+    },
+    "notfound": {
+        "title": "Không tìm thấy trang",
+        "description": "Trang bạn đang tìm không tồn tại hoặc đã được di chuyển.",
+        "back_home": "Về trang chủ",
+        "error_code": "404"
+    },
+    "languageSelect": {
+        "badge": "Chọn ngôn ngữ",
+        "title": "Chọn ngôn ngữ để học",
+        "description": "Chọn ngôn ngữ bạn muốn học. Sẽ có thêm nhiều ngôn ngữ khác sắp tới.",
+        "back_home": "Về trang chủ",
+        "status": {
+            "available": "Khả dụng",
+            "comingSoon": "Sắp ra mắt"
+        },
+        "cta": {
+            "start": "Bắt đầu học",
+            "unavailable": "Chưa khả dụng"
+        },
+        "languages": {
+            "japanese": {
+                "name": "Tiếng Nhật",
+                "description": "Học Hiragana, Katakana và từ vựng thiết yếu qua các bài quiz tương tác."
+            },
+            "english": {
+                "name": "Tiếng Anh",
+                "description": "Các khóa học tiếng Anh đang được chuẩn bị."
+            },
+            "thai": {
+                "name": "Tiếng Thái",
+                "description": "Các khóa học tiếng Thái sắp ra mắt."
+            },
+            "korean": {
+                "name": "Tiếng Hàn",
+                "description": "Các khóa học tiếng Hàn sắp ra mắt."
+            }
+        }
+    },
+    "japanese": {
+        "badge": "Tiếng Nhật",
+        "title": "Học tiếng Nhật",
+        "description": "Nắm vững nền tảng tiếng Nhật qua kana, từ vựng và các bài quiz.",
+        "back_language": "Quay lại chọn ngôn ngữ",
+        "stats": {
+            "kana": "Ký tự kana",
+            "vocabulary": "Từ vựng",
+            "learned": "Từ đã học",
+            "due": "Đến hạn ôn tập"
+        },
+        "sections": {
+            "kana": "Kana",
+            "kanaHint": "Học hai bảng chữ cái tiếng Nhật — xem từng ký tự và luyện nhận biết.",
+            "vocabulary": "Từ vựng",
+            "vocabularyHint": "Mở rộng vốn từ và ôn tập theo lịch trình cách quãng.",
+            "learn": "Học",
+            "practice": "Luyện tập"
+        },
+        "nav": {
+            "kana": {
+                "title": "Kana",
+                "description": "Xem toàn bộ Hiragana và Katakana kèm cách đọc.",
+                "action": "Xem Kana"
+            },
+            "kanaDrill": {
+                "title": "Luyện Kana",
+                "description": "Kiểm tra khả năng nhận biết các ký tự Hiragana và Katakana.",
+                "action": "Bắt đầu luyện Kana"
+            },
+            "vocabularyReview": {
+                "title": "Ôn tập từ vựng",
+                "description": "Ôn tập từ vựng bằng thẻ ghi nhớ và lặp lại cách quãng.",
+                "action": "Bắt đầu ôn tập"
+            },
+            "vocabularyExams": {
+                "title": "Kiểm tra từ vựng",
+                "description": "Tự kiểm tra bằng các bài trắc nghiệm được xây dựng từ vốn từ của bạn.",
+                "action": "Làm bài kiểm tra"
+            }
+        },
+        "decks": {
+            "title": "Bộ thẻ ôn tập từ vựng",
+            "description": "Chọn một bộ thẻ để ôn tập. Bộ thẻ đến từ bộ có sẵn, từ vựng của riêng bạn hoặc các bộ sưu tập đã tải về.",
+            "availableCount": "{{count}} bộ thẻ khả dụng",
+            "startReview": "Bắt đầu ôn tập",
+            "due": "đến hạn",
+            "byAuthor": "của {{author}}",
+            "download": "Tải xuống",
+            "note": "Ôn tập",
+            "ready": "Sẵn sàng",
+            "words": "từ",
+            "search": "Tìm bộ thẻ...",
+            "empty": "Chưa có bộ thẻ nào — hãy nhập một bộ hoặc tạo bộ thẻ tùy chỉnh.",
+            "addCustom": "Thêm bộ thẻ tùy chỉnh",
+            "importDeck": "Nhập bộ thẻ",
+            "importErrorJson": "Không thể đọc tệp này dưới dạng JSON.",
+            "form": {
+                "title": "Tạo bộ thẻ tùy chỉnh",
+                "subtitle": "Chọn các từ từ vốn từ của bạn để gom thành một bộ thẻ ôn tập.",
+                "nameLabel": "Tên",
+                "namePlaceholder": "ví dụ: Kanji yêu thích của tôi",
+                "descriptionLabel": "Mô tả (không bắt buộc)",
+                "descriptionPlaceholder": "Ghi chú ngắn về bộ thẻ này",
+                "wordsLabel": "Từ cần đưa vào",
+                "wordsPlaceholder": "Tìm từ...",
+                "selectedCount": "{{count}} từ đã chọn",
+                "nameError": "Hãy đặt tên cho bộ thẻ của bạn.",
+                "minWordsError": "Chọn ít nhất một từ.",
+                "cancel": "Hủy",
+                "submit": "Tạo bộ thẻ"
+            },
+            "notFound": "Không tìm thấy bộ thẻ đó.",
+            "source": {
+                "default": "Có sẵn",
+                "custom": "Từ của tôi",
+                "cloud": "Đám mây",
+                "downloaded": "Đã tải xuống"
+            }
+        },
+        "exams": {
+"title": "Bộ đề kiểm tra từ vựng",
+  "description": "Tự kiểm tra bằng các bài trắc nghiệm được xây dựng từ vốn từ của bạn. Chọn một bộ, nhập một bộ hoặc tự tạo bộ của riêng bạn.",
+  "back_hub": "Quay lại trung tâm tiếng Nhật",
+            "search": "Tìm bộ đề kiểm tra...",
+            "empty": "Chưa có bộ đề nào — hãy nhập một bộ hoặc tạo bộ tùy chỉnh.",
+            "import": "Nhập bộ đề kiểm tra",
+            "addCustom": "Thêm bộ đề tùy chỉnh",
+            "importErrorJson": "Không thể đọc tệp này dưới dạng JSON.",
+            "form": {
+                "title": "Tạo bộ đề kiểm tra tùy chỉnh",
+                "subtitle": "Chọn từ từ vốn từ của bạn — bộ đề được xây dựng từ nghĩa của các từ, giống như các bộ có sẵn.",
+                "titleLabel": "Tiêu đề",
+                "titlePlaceholder": "ví dụ: Từ vựng hằng ngày của tôi",
+                "descriptionLabel": "Mô tả (không bắt buộc)",
+                "descriptionPlaceholder": "Ghi chú ngắn về bộ đề này",
+                "wordsLabel": "Từ cần đưa vào",
+                "wordsPlaceholder": "Tìm từ...",
+                "selectedCount": "{{count}} từ đã chọn",
+                "titleError": "Hãy đặt tên cho bộ đề của bạn.",
+                "minWordsError": "Chọn ít nhất hai từ.",
+                "cancel": "Hủy",
+                "submit": "Tạo bộ đề"
+            },
+            "card": {
+                "note": "Ghi chú đề thi",
+                "exportAria": "Xuất bộ đề kiểm tra",
+                "deleteAria": "Xóa bộ đề kiểm tra",
+                "export": "Xuất",
+                "delete": "Xóa",
+                "byAuthor": "của {{author}}",
+                "start": "Bắt đầu",
+                "question_one": "{{count}} câu hỏi",
+                "question_other": "{{count}} câu hỏi",
+                "source": {
+                    "default": "Mặc định",
+                    "custom": "Bộ của tôi",
+                    "imported": "Đã nhập"
+                }
+            }
+        },
+        "kana": {
+            "badge": "Kana",
+            "title": "Bảng chữ Kana tiếng Nhật",
+            "description": "Hiragana và Katakana là hai bảng chữ cái của tiếng Nhật. Chạm vào các tab để chuyển đổi.",
+            "tabs": {
+                "hiragana": "Hiragana",
+                "katakana": "Katakana"
+            },
+            "voiceless": "Âm trong",
+            "voiced": "Âm đục",
+            "contracted": "Âm ghép",
+            "voice_label": "Giọng đọc",
+            "voice_preview": "Nghe thử",
+            "voice_auto": "Tự động",
+            "voice_choose": "Chọn giọng đọc",
+            "voice_ja": "Tiếng Nhật",
+            "voice_volume": "Âm lượng",
+            "take_quiz": "Làm bài kiểm tra",
+            "count": "kana",
+            "stats": {
+                "set": "Trong bộ",
+                "group": "Trong nhóm",
+                "read": "Đã đọc"
+            },
+            "readProgress": "{{read}} / {{total}}",
+            "gridHint": "Chạm vào một kana để nghe âm, hoặc nhấn Bắt đầu đọc để đọc lần lượt trong nhóm từ vị trí đã dừng.",
+            "readStart": "Bắt đầu đọc",
+            "readContinue": "Đọc tiếp",
+            "readStop": "Dừng",
+            "nowReading": "đang đọc",
+            "upNext": "tiếp theo",
+            "pinToolbar": "Ghim thanh công cụ",
+            "unpinToolbar": "Bỏ ghim thanh công cụ",
+            "sticky": "Cố định",
+            "stickyOn": "Bật",
+            "stickyOff": "Tắt",
+            "back_hub": "Quay lại tiếng Nhật"
+        },
+        "kanaDrill": {
+            "badge": "Luyện Kana",
+            "title": "Luyện Kana",
+            "intro": "Tùy chỉnh bài quiz của bạn — chọn nhóm kana cần đưa vào, số lượng câu hỏi và thời gian cho mỗi câu hỏi.",
+            "start": "Bắt đầu quiz",
+            "progress": "Câu hỏi",
+            "score": "Điểm",
+            "promptLabel": "Cách đọc của kana này là gì?",
+            "promptLabelRomajiToChar": "Kana nào khớp với cách đọc này?",
+            "promptLabelListen": "Bạn vừa nghe kana nào?",
+            "listenAgain": "Nghe lại",
+            "correct": "Chính xác!",
+            "wrong": "Chưa đúng.",
+            "timeout": "Hết giờ!",
+            "correctAnswer": "Đáp án đúng",
+            "next": "Câu hỏi tiếp theo",
+            "endGame": "Kết thúc",
+            "resultTitle": "Hoàn thành bài quiz!",
+            "result": {
+                "correctLabel": "Đúng",
+                "wrongLabel": "Sai",
+                "timeoutLabel": "Hết giờ",
+                "settingsSummary": "Cài đặt",
+                "settingsButton": "Cài đặt",
+                "exitButton": "Thoát",
+                "playAgain": "Chơi lại",
+                "history": "Lịch sử trả lời",
+                "timeoutShort": "Hết giờ",
+                "yes": "Có",
+                "no": "Không"
+            },
+            "retry": "Thử lại",
+            "back_characters": "Quay lại Kana",
+            "settings": {
+                "setsLabel": "Bộ Kana",
+                "questionLabel": "Tùy chọn bài quiz",
+                "modeLabel": "Chế độ câu hỏi",
+                "mode": {
+                    "charToRomaji": "Kana → Cách đọc",
+                    "charToRomajiHint": "Nhìn kana, chọn cách đọc romaji của nó.",
+                    "romajiToChar": "Cách đọc → Kana",
+                    "romajiToCharHint": "Nhìn cách đọc, chọn kana tương ứng.",
+                    "listenToChar": "Nghe → Kana",
+                    "listenToCharHint": "Nghe kana được đọc, chọn những gì bạn đã nghe."
+                },
+                "sound": {
+                    "label": "Hiệu ứng âm thanh",
+                    "voice": "Aria",
+                    "voiceHint": "Phát bản ghi giọng đọc Aria.",
+                    "tone": "Tiếng bíp",
+                    "toneHint": "Phát một tiếng bíp tổng hợp đơn giản.",
+                    "volume": "Âm lượng hiệu ứng"
+                },
+                "voiceLabel": "Giọng đọc",
+                "questionCount": "Số câu hỏi",
+                "questions": "câu hỏi",
+                "choiceCount": "Số lựa chọn",
+                "choices": "lựa chọn",
+                "timeLimit": "Thời gian mỗi câu hỏi",
+                "autoAdvance": "Tự động chuyển sang câu hỏi tiếp theo",
+                "useAll": "Tất cả kana",
+                "groups": {
+                    "voiceless": "Âm trong",
+                    "voiced": "Âm đục",
+                    "contracted": "Âm ghép"
+                },
+                "chars": "ký tự",
+                "totalChars": "Tổng số kana"
+            }
+        },
+        "vocabulary": {
+            "available": "{{count}} từ tổng cộng"
+        },
+        "vocabularyReview": {
+            "badge": "Ôn tập",
+            "title": "Ôn tập từ vựng",
+            "description": "Lật thẻ để xem đáp án, sau đó đánh dấu Đạt hoặc Chưa đạt.",
+            "complete": "Đã ôn xong hết!",
+            "completeDescription": "Hiện không còn từ nào đến hạn ôn tập.",
+            "exit": "Thoát ôn tập",
+            "wordsLeft": "từ còn lại",
+            "wordLeft": "từ còn lại",
+            "showAnswer": "Hiện đáp án",
+            "fail": "Chưa đạt",
+            "pass": "Đạt",
+            "failHint": "chưa đạt",
+            "passHint": "đạt",
+            "wordLabel": "Từ",
+            "recallPrompt": "Từ này có nghĩa là gì?",
+            "back_hub": "Quay lại tiếng Nhật"
+        }
+    },
+    "footer": {
+        "tagline": "Một cách ấm áp, nhiều chủ đề để nhấm nháp từng ngụm tiếng Nhật.",
+        "explore": "Khám phá",
+        "learn": "Chúng tôi dạy gì",
+        "rights": "TeaChoco · Bảo lưu mọi quyền.",
+        "languages": {
+            "ja": "Tiếng Nhật",
+            "en": "Tiếng Anh",
+            "ko": "Tiếng Hàn",
+            "th": "Tiếng Thái"
+        }
+    }
+}

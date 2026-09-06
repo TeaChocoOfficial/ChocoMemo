@@ -1,0 +1,355 @@
+{
+    "nav": {
+        "home": "Tahanan",
+        "tagline": "Pag-aaral ng Wika",
+        "languages": "Mga Wika",
+        "japanese": "Hapones",
+        "menu": "Buksan ang menu"
+    },
+    "chrome": {
+        "hide": "Itago",
+        "show": "Ipakita",
+        "toggleLabel": "Ipakita ang interface"
+    },
+    "home": {
+        "badge": "ChocoMemo",
+        "title": "Itimpla ang iyong Hapones,",
+        "titleAccent": "isang higop sa bawat pagkakataon.",
+        "subtitle": "Pinagsasama ng Choco ang maliliit na pagsusulit sa hiragana, katakana at bokabularyo sa isang mainit na pang-araw-araw na ritwal sa pag-aaral. Pumili ng tema, magbuhos ng tasa, at matuto.",
+        "ctaStart": "Magsimulang matuto",
+        "ctaBrowse": "Tingnan ang kana"
+    },
+    "theme": {
+        "pickerLabel": "Baguhin ang tema",
+        "names": {
+            "dark": "Madilim",
+            "light": "Maliwanag",
+            "darkSakura": "Madilim na Sakura",
+            "lightSakura": "Maliwanag na Sakura",
+            "darkPaper": "Madilim na Papel",
+            "lightPaper": "Maliwanag na Papel",
+            "darkNature": "Madilim na Kalikasan",
+            "lightNature": "Maliwanag na Kalikasan",
+            "darkAutumn": "Madilim na Taglagas",
+            "lightAutumn": "Maliwanag na Taglagas",
+            "darkWinter": "Madilim na Taglamig",
+            "lightWinter": "Maliwanag na Taglamig"
+        }
+    },
+    "common": {
+        "error": {
+            "oops": "Ay!",
+            "unexpected": "May naganap na hindi inaasahang error.",
+            "notFound": "Hindi mahanap ang hiniling na pahina."
+        },
+        "tabs": {
+            "local": "Lokal",
+            "cloud": "Cloud",
+            "community": "Komunidad"
+        },
+        "comingSoon": {
+            "cloud": "Malapit na ang cloud sync, kailangan mag-sign in",
+            "community": "Hindi pa available ang pagtingin sa mga set ng komunidad"
+        }
+    },
+    "notfound": {
+        "title": "Hindi Nahanap ang Pahina",
+        "description": "Ang pahinang hinahanap mo ay hindi umiiral o nailipat na.",
+        "back_home": "Bumalik sa Tahanan",
+        "error_code": "404"
+    },
+    "languageSelect": {
+        "badge": "Pagpili ng Wika",
+        "title": "Pumili ng Wikang Pag-aaralan",
+        "description": "Piliin ang wikang gusto mong pag-aralan. Marami pang wika ang darating.",
+        "back_home": "Bumalik sa Tahanan",
+        "status": {
+            "available": "Available",
+            "comingSoon": "Malapit Na"
+        },
+        "cta": {
+            "start": "Magsimulang Matuto",
+            "unavailable": "Hindi Available"
+        },
+        "languages": {
+            "japanese": {
+                "name": "Hapones",
+                "description": "Matuto ng Hiragana, Katakana at mahahalagang bokabularyo sa pamamagitan ng interactive na mga pagsusulit."
+            },
+            "english": {
+                "name": "Ingles",
+                "description": "Ang mga kursong Ingles ay kasalukuyang inihahanda."
+            },
+            "thai": {
+                "name": "Thai",
+                "description": "Malapit na ang mga kursong Thai."
+            },
+            "korean": {
+                "name": "Koreano",
+                "description": "Malapit na ang mga kursong Koreano."
+            }
+        }
+    },
+    "japanese": {
+        "badge": "Hapones",
+        "title": "Matuto ng Hapones",
+        "description": "Kabisaduhin ang mga batayan ng Hapones sa pamamagitan ng kana, bokabularyo, at mga pagsusulit.",
+        "back_language": "Bumalik sa Pagpili ng Wika",
+        "stats": {
+            "kana": "Mga karakter ng kana",
+            "vocabulary": "Mga salitang bokabularyo",
+            "learned": "Mga salitang natutunan",
+            "due": "Dahil na para sa pagre-rebyu"
+        },
+        "sections": {
+            "kana": "Kana",
+            "kanaHint": "Alamin ang dalawang alpabetong pantig ng Hapones — tingnan ang bawat karakter at sanayin ang pagkilala.",
+            "vocabulary": "Bokabularyo",
+            "vocabularyHint": "Palaguin ang iyong listahan ng salita at rebyuhin ito sa nakaayos na iskedyul.",
+            "learn": "Matuto",
+            "practice": "Magsanay"
+        },
+        "nav": {
+            "kana": {
+                "title": "Kana",
+                "description": "Tingnan ang lahat ng Hiragana at Katakana kasama ang kanilang mga bigkas.",
+                "action": "Tingnan ang Kana"
+            },
+            "kanaDrill": {
+                "title": "Pagsasanay sa Kana",
+                "description": "Subukan ang iyong pagkilala sa Hiragana at Katakana.",
+                "action": "Simulan ang Pagsasanay sa Kana"
+            },
+            "vocabularyReview": {
+                "title": "Rebyu ng Bokabularyo",
+                "description": "Rebyuhin ang bokabularyo gamit ang flashcard at spaced repetition.",
+                "action": "Simulan ang Rebyu"
+            },
+            "vocabularyExams": {
+                "title": "Mga Pagsusulit sa Bokabularyo",
+                "description": "Subukan ang iyong sarili sa mga multiple-choice na pagsusulit na gawa sa iyong bokabularyo.",
+                "action": "Kumuha ng Pagsusulit"
+            }
+        },
+        "decks": {
+            "title": "Mga Deck ng Rebyu ng Bokabularyo",
+            "description": "Pumili ng deck na ire-rebyu. Ang mga deck ay mula sa built-in na set, iyong sariling mga salita, o mga na-download na koleksyon.",
+            "availableCount": "{{count}} deck ang available",
+            "startReview": "Simulan ang Rebyu",
+            "due": "dahil na",
+            "byAuthor": "ni {{author}}",
+            "download": "I-download",
+            "note": "Rebyu",
+            "ready": "Handa",
+            "words": "salita",
+            "search": "Maghanap ng deck...",
+            "empty": "Wala pang deck — mag-import ng isa o gumawa ng custom na deck.",
+            "addCustom": "Magdagdag ng custom na deck",
+            "importDeck": "Mag-import ng deck",
+            "importErrorJson": "Hindi mabasa ang file na ito bilang JSON.",
+            "form": {
+                "title": "Gumawa ng custom na deck",
+                "subtitle": "Pumili ng mga salita mula sa iyong bokabularyo upang i-grupo sa isang deck ng rebyu.",
+                "nameLabel": "Pangalan",
+                "namePlaceholder": "hal. Paborito kong kanji",
+                "descriptionLabel": "Deskripsyon (opsiyonal)",
+                "descriptionPlaceholder": "Maikling tala tungkol sa deck na ito",
+                "wordsLabel": "Mga salitang isasama",
+                "wordsPlaceholder": "Maghanap ng mga salita...",
+                "selectedCount": "{{count}} napili",
+                "nameError": "Bigyan ng pangalan ang iyong deck.",
+                "minWordsError": "Pumili ng kahit isang salita.",
+                "cancel": "Kanselahin",
+                "submit": "Gumawa ng deck"
+            },
+            "notFound": "Hindi nahanap ang deck na iyon.",
+            "source": {
+                "default": "Built-in",
+                "custom": "Aking mga salita",
+                "cloud": "Cloud",
+                "downloaded": "Na-download"
+            }
+        },
+        "exams": {
+            "title": "Mga Deck ng Pagsusulit sa Bokabularyo",
+            "description": "Subukan ang iyong sarili sa mga multiple-choice na pagsusulit na gawa sa iyong bokabularyo. Pumili ng set, mag-import ng isa, o gumawa ng sarili mo.",
+            "search": "Maghanap ng mga set ng pagsusulit...",
+            "empty": "Wala pang set ng pagsusulit — mag-import ng isa o gumawa ng custom na set.",
+            "import": "Mag-import ng set ng pagsusulit",
+            "addCustom": "Magdagdag ng custom na set",
+            "importErrorJson": "Hindi mabasa ang file na ito bilang JSON.",
+            "form": {
+                "title": "Gumawa ng custom na set ng pagsusulit",
+                "subtitle": "Pumili ng mga salita mula sa iyong bokabularyo — binuo ang set mula sa kanilang mga kahulugan, tulad ng mga built-in na set.",
+                "titleLabel": "Pamagat",
+                "titlePlaceholder": "hal. Aking pang-araw-araw na salita",
+                "descriptionLabel": "Deskripsyon (opsiyonal)",
+                "descriptionPlaceholder": "Maikling tala tungkol sa set na ito",
+                "wordsLabel": "Mga salitang isasama",
+                "wordsPlaceholder": "Maghanap ng mga salita...",
+                "selectedCount": "{{count}} napili",
+                "titleError": "Bigyan ng pangalan ang iyong set.",
+                "minWordsError": "Pumili ng hindi bababa sa dalawang salita.",
+                "cancel": "Kanselahin",
+                "submit": "Gumawa ng set"
+            },
+            "card": {
+                "note": "Tala ng pagsusulit",
+                "exportAria": "I-export ang set ng pagsusulit",
+                "deleteAria": "Tanggalin ang set ng pagsusulit",
+                "export": "I-export",
+                "delete": "Tanggalin",
+                "byAuthor": "ni {{author}}",
+                "start": "Simulan",
+                "question_one": "{{count}} tanong",
+                "question_other": "{{count}} tanong",
+                "source": {
+                    "default": "Default",
+                    "custom": "Aking set",
+                    "imported": "Na-import"
+                }
+            }
+        },
+        "kana": {
+            "badge": "Kana",
+            "title": "Kana ng Hapones",
+            "description": "Ang Hiragana at Katakana ay ang dalawang alpabetong pantig ng Hapones. I-tap ang mga tab upang lumipat.",
+            "tabs": {
+                "hiragana": "Hiragana",
+                "katakana": "Katakana"
+            },
+            "voiceless": "Walang boses",
+            "voiced": "May boses",
+            "contracted": "Kontraktado",
+            "voice_label": "Boses",
+            "voice_preview": "Preview",
+            "voice_auto": "Auto",
+            "voice_choose": "Pumili ng boses",
+            "voice_ja": "Hapones",
+            "voice_volume": "Volume",
+            "take_quiz": "Kumuha ng Pagsusulit",
+            "count": "kana",
+            "stats": {
+                "set": "Sa set",
+                "group": "Sa grupo",
+                "read": "Nabasa"
+            },
+            "readProgress": "{{read}} / {{total}}",
+            "gridHint": "I-tap ang isang kana upang marinig ito, o pindutin ang Simulang basahin upang dumaan sa grupo kung saan ka huminto.",
+            "readStart": "Simulang basahin",
+            "readContinue": "Ipagpatuloy ang pagbasa",
+            "readStop": "Itigil",
+            "nowReading": "kasalukuyang binabasa",
+            "upNext": "sunod",
+            "pinToolbar": "I-pin ang toolbar",
+            "unpinToolbar": "Alisin ang pin ng toolbar",
+            "sticky": "Sticky",
+            "stickyOn": "Bukas",
+            "stickyOff": "Sarado",
+            "back_hub": "Bumalik sa Hapones"
+        },
+        "kanaDrill": {
+            "badge": "Pagsasanay sa Kana",
+            "title": "Pagsasanay sa Kana",
+            "intro": "I-configure ang iyong pagsusulit — piliin kung aling mga grupo ng kana ang isasama, kung ilang tanong, at kung gaano karaming oras bawat tanong.",
+            "start": "Simulan ang Pagsusulit",
+            "progress": "Tanong",
+            "score": "Iskor",
+            "promptLabel": "Ano ang bigkas ng kanang ito?",
+            "promptLabelRomajiToChar": "Aling kana ang tugma sa bigkas na ito?",
+            "promptLabelListen": "Aling kana ang narinig mo?",
+            "listenAgain": "Pakinggan muli",
+            "correct": "Tama!",
+            "wrong": "Hindi eksakto.",
+            "timeout": "Naubos ang oras!",
+            "correctAnswer": "Tamang sagot",
+            "next": "Susunod na Tanong",
+            "endGame": "Tapusin ang Laro",
+            "resultTitle": "Kumpleto na ang Pagsusulit!",
+            "result": {
+                "correctLabel": "Tama",
+                "wrongLabel": "Mali",
+                "timeoutLabel": "Naubos ang Oras",
+                "settingsSummary": "Mga Setting",
+                "settingsButton": "Mga Setting",
+                "exitButton": "Lumabas",
+                "playAgain": "Maglaro Muli",
+                "history": "Kasaysayan ng Sagot",
+                "timeoutShort": "Naubos ang Oras",
+                "yes": "Oo",
+                "no": "Hindi"
+            },
+            "retry": "Subukan Muli",
+            "back_characters": "Bumalik sa Kana",
+            "settings": {
+                "setsLabel": "Mga Set ng Kana",
+                "questionLabel": "Mga Opsyon ng Pagsusulit",
+                "modeLabel": "Mode ng Tanong",
+                "mode": {
+                    "charToRomaji": "Kana → Bigkas",
+                    "charToRomajiHint": "Tingnan ang kana, piliin ang bigkas nitong romaji.",
+                    "romajiToChar": "Bigkas → Kana",
+                    "romajiToCharHint": "Tingnan ang bigkas, piliin ang tugmang kana.",
+                    "listenToChar": "Pakinggan → Kana",
+                    "listenToCharHint": "Pakinggan ang binigkas na kana, piliin ang narinig mo."
+                },
+                "sound": {
+                    "label": "Epekto ng tunog",
+                    "voice": "Aria",
+                    "voiceHint": "I-play ang binigkas na recording ni Aria.",
+                    "tone": "Tono",
+                    "toneHint": "I-play ang simpleng synthesised beep.",
+                    "volume": "Volume ng tunog"
+                },
+                "voiceLabel": "Boses",
+                "questionCount": "Bilang ng mga tanong",
+                "questions": "tanong",
+                "choiceCount": "Mga pagpipilian ng sagot",
+                "choices": "pagpipilian",
+                "timeLimit": "Oras bawat tanong",
+                "autoAdvance": "Awtomatikong lumipat sa susunod na tanong",
+                "useAll": "Lahat ng kana",
+                "groups": {
+                    "voiceless": "Walang boses",
+                    "voiced": "May boses",
+                    "contracted": "Kontraktado"
+                },
+                "chars": "karakter",
+                "totalChars": "Kabuuang kana"
+            }
+        },
+        "vocabulary": {
+            "available": "{{count}} salita sa kabuuan"
+        },
+        "vocabularyReview": {
+            "badge": "Rebyu",
+            "title": "Rebyu ng Bokabularyo",
+            "description": "I-flip ang card upang makita ang sagot, pagkatapos ay markahan bilang Pass o Fail.",
+            "complete": "Lahat ay tapos na!",
+            "completeDescription": "Wala nang salitang dapat i-rebyu ngayon.",
+            "exit": "Lumabas sa Rebyu",
+            "wordsLeft": "salita ang natitira",
+            "wordLeft": "salita ang natitira",
+            "showAnswer": "Ipakita ang sagot",
+            "fail": "Fail",
+            "pass": "Pass",
+            "failHint": "fail",
+            "passHint": "pass",
+            "wordLabel": "Salita",
+            "recallPrompt": "Ano ang kahulugan ng salitang ito?",
+            "back_hub": "Bumalik sa Hapones"
+        }
+    },
+    "footer": {
+        "tagline": "Isang maaliwalas, mayaman sa tema na paraan upang tikman ang paglalakbay sa wikang Hapones.",
+        "explore": "Tuklasin",
+        "learn": "Ano ang itinuturo namin",
+        "rights": "TeaChoco · Lahat ng karapatan ay nakalaan.",
+        "languages": {
+            "ja": "Hapones",
+            "en": "Ingles",
+            "ko": "Koreano",
+            "th": "Thai"
+        }
+    }
+}

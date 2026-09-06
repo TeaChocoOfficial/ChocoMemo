@@ -173,6 +173,7 @@
         "exams": {
             "title": "Vocabulary Exams Decks",
             "description": "Test yourself with multiple-choice exams built from your vocabulary. Pick a set, import one, or build your own.",
+            "back_hub": "Back to Japanese",
             "search": "Search exam sets...",
             "empty": "No exam sets yet — import one or create a custom set.",
             "import": "Import exam set",
