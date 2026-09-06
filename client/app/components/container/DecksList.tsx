@@ -1,19 +1,20 @@
-// -Path: 'client/app/components/container/CollectionListPage.tsx'
-// Shared layout for a list page that is split into Local / Cloud / Community
-// tabs with a search bar and a responsive card grid. Cloud and community have
-// no backend yet, so those tabs render a "coming soon" empty state instead of
-// a search bar or grid.
+// -Path: 'client/app/components/container/DecksList.tsx'
+// Shared layout for a decks list page that is split into Local / Cloud /
+// Community tabs with a search bar and a responsive card grid. Cloud and
+// community have no backend yet, so those tabs render a "coming soon" empty
+// state instead of a search bar or grid.
 //
 // The visual language is a "tea tasting note" desk: a warm paper sheet with a
-// faint dot grid, a serif tea-label title, underline tabs and a ruled search
-// line. Cards are rendered by the caller (index cards with washi tape).
+// faint dot grid, a tea-label title, underline tabs and a ruled search line.
+// Cards are rendered by the caller (index cards with washi tape).
 import { Fragment, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { FaMagnifyingGlass } from 'react-icons/fa6';
 import SetTabs, { type SetTabOption } from '~/components/custom/SetTabs';
 import { useCollectionFilter } from '~/hooks/useCollectionFilter';
 import type { CollectionTab } from '~/types/collection';
 
-interface CollectionListPageProps<T> {
+interface DecksListProps<T> {
     eyebrow?: string;
     title: string;
     description?: string;
@@ -28,17 +29,12 @@ interface CollectionListPageProps<T> {
 }
 
 const TAB_OPTIONS: SetTabOption<string, CollectionTab>[] = [
-    { id: 'local', label: 'Local' },
-    { id: 'cloud', label: 'Cloud' },
-    { id: 'community', label: 'Community' },
+    { id: 'local' },
+    { id: 'cloud' },
+    { id: 'community' },
 ];
 
-const COMING_SOON: Record<Exclude<CollectionTab, 'local'>, string> = {
-    cloud: 'Cloud sync coming soon, sign in required',
-    community: "Browsing community sets isn't available yet",
-};
-
-export default function CollectionListPage<T>({
+export default function DecksList<T>({
     eyebrow,
     title,
     description,
@@ -50,8 +46,14 @@ export default function CollectionListPage<T>({
     renderItem,
     emptyStateLabel,
     headerAction,
-}: CollectionListPageProps<T>) {
+}: DecksListProps<T>) {
+    const { t } = useTranslation();
     const [activeTab, setActiveTab] = useState<CollectionTab>('local');
+
+    const tabOptions: SetTabOption<string, CollectionTab>[] = TAB_OPTIONS.map((option) => ({
+        ...option,
+        label: t('common.tabs.' + option.id),
+    }));
 
     const items =
         activeTab === 'local' ? localItems : activeTab === 'cloud' ? cloudItems : communityItems;
@@ -90,7 +92,7 @@ export default function CollectionListPage<T>({
 
                 <SetTabs
                     active={activeTab}
-                    options={TAB_OPTIONS}
+                    options={tabOptions}
                     onChange={(option) => setActiveTab(option.id)}
                     variant='underline'
                     className='mt-8 mb-8 w-full sm:w-auto'
@@ -109,7 +111,7 @@ export default function CollectionListPage<T>({
 
                 {!isAvailable ? (
                     <p className='border border-dashed border-line-strong py-16 text-center text-sm text-surface-muted'>
-                        {COMING_SOON[activeTab as Exclude<CollectionTab, 'local'>]}
+                        {t('common.comingSoon.' + (activeTab as Exclude<CollectionTab, 'local'>))}
                     </p>
                 ) : filtered.length === 0 ? (
                     <p className='border border-dashed border-line-strong py-16 text-center text-sm text-surface-muted'>

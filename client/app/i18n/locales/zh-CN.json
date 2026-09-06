@@ -36,6 +36,15 @@
             "oops": "哎呀！",
             "unexpected": "发生了意外错误。",
             "notFound": "请求的页面未找到。"
+        },
+        "tabs": {
+            "local": "本地",
+            "cloud": "云端",
+            "community": "社区"
+        },
+        "comingSoon": {
+            "cloud": "云同步即将推出，需登录",
+            "community": "浏览社区词集的功能尚不可用"
         }
     },
     "notfound": {
@@ -118,7 +127,7 @@
             }
         },
         "decks": {
-            "title": "词汇卡组",
+            "title": "词汇复习卡组",
             "description": "选择要复习的卡组。卡组来自内置集合、你自己添加的单词，或下载的合集。",
             "availableCount": "可用卡组 {{count}} 个",
             "startReview": "开始复习",
@@ -128,12 +137,72 @@
             "note": "复习",
             "ready": "就绪",
             "words": "单词",
+            "search": "搜索卡组...",
+            "empty": "还没有卡组 — 导入一个或创建一个自定义卡组。",
+            "addCustom": "创建自定义卡组",
+            "importDeck": "导入卡组",
+            "importErrorJson": "无法将此文件作为 JSON 读取。",
+            "form": {
+                "title": "创建自定义卡组",
+                "subtitle": "从你的词汇中选择单词，组合成复习卡组。",
+                "nameLabel": "名称",
+                "namePlaceholder": "例如：喜欢的汉字",
+                "descriptionLabel": "描述（可选）",
+                "descriptionPlaceholder": "关于此卡组的简短说明",
+                "wordsLabel": "包含的单词",
+                "wordsPlaceholder": "搜索单词...",
+                "selectedCount": "已选 {{count}} 个",
+                "nameError": "请输入卡组名称。",
+                "minWordsError": "请至少选择一个单词。",
+                "cancel": "取消",
+                "submit": "创建卡组"
+            },
             "notFound": "未找到该卡组。",
             "source": {
                 "default": "内置",
                 "custom": "我的单词",
                 "cloud": "云",
                 "downloaded": "已下载"
+            }
+        },
+        "exams": {
+            "title": "词汇考试卡组",
+            "description": "用你的词汇构建的多项选择题考试来测试自己。选择一个卡组、导入一个，或创建自己的卡组。",
+            "search": "搜索考试卡组...",
+            "empty": "还没有考试卡组 — 导入一个或创建一个自定义卡组。",
+            "import": "导入考试卡组",
+            "addCustom": "创建自定义卡组",
+            "importErrorJson": "无法将此文件作为 JSON 读取。",
+            "form": {
+                "title": "创建自定义考试卡组",
+                "subtitle": "从你的词汇中选择单词 — 与内置卡组一样，题目会根据单词释义自动生成。",
+                "titleLabel": "标题",
+                "titlePlaceholder": "例如：日常词汇",
+                "descriptionLabel": "描述（可选）",
+                "descriptionPlaceholder": "关于此卡组的简短说明",
+                "wordsLabel": "包含的单词",
+                "wordsPlaceholder": "搜索单词...",
+                "selectedCount": "已选 {{count}} 个",
+                "titleError": "请输入卡组名称。",
+                "minWordsError": "请至少选择两个单词。",
+                "cancel": "取消",
+                "submit": "创建卡组"
+            },
+            "card": {
+                "note": "考试笔记",
+                "exportAria": "导出考试卡组",
+                "deleteAria": "删除考试卡组",
+                "export": "导出",
+                "delete": "删除",
+                "byAuthor": "由 {{author}} 提供",
+                "start": "开始",
+                "question_one": "{{count}} 道题",
+                "question_other": "{{count}} 道题",
+                "source": {
+                    "default": "默认",
+                    "custom": "我的卡组",
+                    "imported": "已导入"
+                }
             }
         },
         "kana": {

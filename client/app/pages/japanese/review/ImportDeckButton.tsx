@@ -1,16 +1,15 @@
-// -Path: 'client/app/pages/japanese/vocabulary/ImportExamButton.tsx'
+// -Path: 'client/app/pages/japanese/review/ImportDeckButton.tsx'
 import { useRef, useState } from 'react';
-import { FaArrowRightToBracket } from 'react-icons/fa6';
+import { FaDownload } from 'react-icons/fa6';
 import { useTranslation } from 'react-i18next';
 import Button from '~/components/custom/Button';
-import { useExamSetsStore } from '~/stores/examSets.store';
+import { useDeckStore } from '~/stores/deck.store';
 
-/** Reads a .json exam file from disk and hands it to the store for
- *  validation. No cloud/server support yet — this is the "local import"
- *  half only, matching what's needed right now. */
-export default function ImportExamButton() {
+/** Reads a .json deck file from disk and hands it to the store for
+ *  validation. Local-only for now, mirroring the exam import flow. */
+export default function ImportDeckButton() {
     const inputRef = useRef<HTMLInputElement>(null);
-    const importSet = useExamSetsStore((s) => s.importSet);
+    const importDeck = useDeckStore((s) => s.importDeck);
     const [error, setError] = useState<string | null>(null);
     const { t } = useTranslation();
 
@@ -19,10 +18,10 @@ export default function ImportExamButton() {
         try {
             const text = await file.text();
             const raw = JSON.parse(text) as unknown;
-            const result = importSet(raw);
+            const result = importDeck(raw);
             if (!result.success) setError(result.error);
         } catch {
-            setError(t('japanese.exams.importErrorJson'));
+            setError(t('japanese.decks.importErrorJson'));
         }
     };
 
@@ -40,8 +39,8 @@ export default function ImportExamButton() {
                 }}
             />
             <Button variant='outline' size='sm' onClick={() => inputRef.current?.click()}>
-                <FaArrowRightToBracket className='h-3.5 w-3.5' />
-                {t('japanese.exams.import')}
+                <FaDownload className='h-3.5 w-3.5' />
+                {t('japanese.decks.importDeck')}
             </Button>
             {error && <p className='mt-1 text-xs text-error'>{error}</p>}
         </div>

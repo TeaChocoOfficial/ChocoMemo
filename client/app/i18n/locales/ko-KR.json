@@ -41,6 +41,15 @@
             "oops": "앗!",
             "unexpected": "예상치 못한 오류가 발생했습니다.",
             "notFound": "요청한 페이지를 찾을 수 없습니다."
+        },
+        "tabs": {
+            "local": "로컬",
+            "cloud": "클라우드",
+            "community": "커뮤니티"
+        },
+        "comingSoon": {
+            "cloud": "클라우드 동기화 곧 제공 예정, 로그인 필요",
+            "community": "커뮤니티 세트 탐색은 아직 사용할 수 없습니다"
         }
     },
     "notfound": {
@@ -123,7 +132,7 @@
             }
         },
         "decks": {
-            "title": "어휘 덱",
+            "title": "어휘 복습 덱",
             "description": "복습할 덱을 고르세요. 덱은 기본 세트, 직접 추가한 단어, 또는 다운로드한 모음집에서 제공됩니다.",
             "availableCount": "사용 가능한 덱 {{count}}개",
             "startReview": "복습 시작",
@@ -133,12 +142,72 @@
             "note": "복습",
             "ready": "준비됨",
             "words": "단어",
+            "search": "덱 검색...",
+            "empty": "아직 덱이 없습니다 — 가져오거나 커스텀 덱을 만들어 보세요.",
+            "addCustom": "커스텀 덱 만들기",
+            "importDeck": "덱 가져오기",
+            "importErrorJson": "이 파일을 JSON으로 읽을 수 없습니다.",
+            "form": {
+                "title": "커스텀 덱 만들기",
+                "subtitle": "어휘에서 단어를 골라 복습 덱으로 묶어보세요.",
+                "nameLabel": "이름",
+                "namePlaceholder": "예: 좋아하는 한자",
+                "descriptionLabel": "설명 (선택)",
+                "descriptionPlaceholder": "이 덱에 대한 짧은 메모",
+                "wordsLabel": "포함할 단어",
+                "wordsPlaceholder": "단어 검색...",
+                "selectedCount": "{{count}}개 선택됨",
+                "nameError": "덱 이름을 입력하세요.",
+                "minWordsError": "단어를 하나 이상 선택하세요.",
+                "cancel": "취소",
+                "submit": "덱 만들기"
+            },
             "notFound": "덱을 찾을 수 없습니다.",
             "source": {
                 "default": "기본",
                 "custom": "내 단어",
                 "cloud": "클라우드",
                 "downloaded": "다운로드"
+            }
+        },
+        "exams": {
+            "title": "어휘 시험 덱",
+            "description": "어휘로 만든 객관식 시험으로 실력을 테스트하세요. 세트를 고르거나, 가져오거나, 직접 만들 수 있습니다.",
+            "search": "시험 세트 검색...",
+            "empty": "아직 시험 세트가 없습니다 — 가져오거나 커스텀 세트를 만들어 보세요.",
+            "import": "시험 세트 가져오기",
+            "addCustom": "커스텀 세트 만들기",
+            "importErrorJson": "이 파일을 JSON으로 읽을 수 없습니다.",
+            "form": {
+                "title": "커스텀 시험 세트 만들기",
+                "subtitle": "어휘에서 단어를 고르면 내장 세트처럼 뜻을 바탕으로 문제가 자동 생성됩니다.",
+                "titleLabel": "제목",
+                "titlePlaceholder": "예: 일상 단어",
+                "descriptionLabel": "설명 (선택)",
+                "descriptionPlaceholder": "이 세트에 대한 짧은 메모",
+                "wordsLabel": "포함할 단어",
+                "wordsPlaceholder": "단어 검색...",
+                "selectedCount": "{{count}}개 선택됨",
+                "titleError": "세트 이름을 입력하세요.",
+                "minWordsError": "단어를 두 개 이상 선택하세요.",
+                "cancel": "취소",
+                "submit": "세트 만들기"
+            },
+            "card": {
+                "note": "시험 노트",
+                "exportAria": "시험 세트 내보내기",
+                "deleteAria": "시험 세트 삭제",
+                "export": "내보내기",
+                "delete": "삭제",
+                "byAuthor": "{{author}} 제공",
+                "start": "시작",
+                "question_one": "질문 {{count}}개",
+                "question_other": "질문 {{count}}개",
+                "source": {
+                    "default": "기본",
+                    "custom": "내 세트",
+                    "imported": "가져옴"
+                }
             }
         },
         "kana": {

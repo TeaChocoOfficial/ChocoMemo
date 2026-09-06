@@ -36,6 +36,15 @@
             "oops": "おっと！",
             "unexpected": "予期しないエラーが発生しました。",
             "notFound": "要求されたページが見つかりませんでした。"
+        },
+        "tabs": {
+            "local": "ローカル",
+            "cloud": "クラウド",
+            "community": "コミュニティ"
+        },
+        "comingSoon": {
+            "cloud": "クラウド同期は近日公開、サインインが必要です",
+            "community": "コミュニティのセットを閲覧する機能はまだ利用できません"
         }
     },
     "notfound": {
@@ -118,7 +127,7 @@
             }
         },
         "decks": {
-            "title": "語彙デッキ",
+            "title": "語彙復習デッキ",
             "description": "復習するデッキを選びましょう。デッキは組み込みセット、自分で追加した単語、またはダウンロードしたコレクションから選べます。",
             "availableCount": "利用可能なデッキ {{count}} 個",
             "startReview": "復習を開始",
@@ -128,12 +137,72 @@
             "note": "復習",
             "ready": "準備OK",
             "words": "語",
+            "search": "デッキを検索...",
+            "empty": "デッキがまだありません — インポートするか、カスタムデッキを作成してください。",
+            "addCustom": "カスタムデッキを作成",
+            "importDeck": "デッキをインポート",
+            "importErrorJson": "このファイルをJSONとして読み込めませんでした。",
+            "form": {
+                "title": "カスタムデッキを作成",
+                "subtitle": "語彙から単語を選んで、復習デッキにまとめましょう。",
+                "nameLabel": "名前",
+                "namePlaceholder": "例：好きな漢字",
+                "descriptionLabel": "説明（任意）",
+                "descriptionPlaceholder": "このデッキについてのメモ",
+                "wordsLabel": "含める単語",
+                "wordsPlaceholder": "単語を検索...",
+                "selectedCount": "{{count}} 件選択中",
+                "nameError": "デッキの名前を入力してください。",
+                "minWordsError": "少なくとも1つ単語を選んでください。",
+                "cancel": "キャンセル",
+                "submit": "デッキを作成"
+            },
             "notFound": "そのデッキは見つかりませんでした。",
             "source": {
                 "default": "組み込み",
                 "custom": "自分の単語",
                 "cloud": "クラウド",
                 "downloaded": "ダウンロード"
+            }
+        },
+        "exams": {
+            "title": "語彙テストデッキ",
+            "description": "語彙から作られた四択テストで腕試しをしましょう。セットを選ぶか、インポートするか、自作できます。",
+            "search": "テストセットを検索...",
+            "empty": "テストセットがまだありません — インポートするか、カスタムセットを作成してください。",
+            "import": "テストセットをインポート",
+            "addCustom": "カスタムセットを作成",
+            "importErrorJson": "このファイルをJSONとして読み込めませんでした。",
+            "form": {
+                "title": "カスタムテストセットを作成",
+                "subtitle": "語彙から単語を選べば、組み込みセットと同じように意味から問題が自動生成されます。",
+                "titleLabel": "タイトル",
+                "titlePlaceholder": "例：日常の単語",
+                "descriptionLabel": "説明（任意）",
+                "descriptionPlaceholder": "このセットについてのメモ",
+                "wordsLabel": "含める単語",
+                "wordsPlaceholder": "単語を検索...",
+                "selectedCount": "{{count}} 件選択中",
+                "titleError": "セットの名前を入力してください。",
+                "minWordsError": "少なくとも2つ単語を選んでください。",
+                "cancel": "キャンセル",
+                "submit": "セットを作成"
+            },
+            "card": {
+                "note": "試験ノート",
+                "exportAria": "試験セットをエクスポート",
+                "deleteAria": "試験セットを削除",
+                "export": "エクスポート",
+                "delete": "削除",
+                "byAuthor": "{{author}} より",
+                "start": "開始",
+                "question_one": "{{count}} 問",
+                "question_other": "{{count}} 問",
+                "source": {
+                    "default": "デフォルト",
+                    "custom": "マイセット",
+                    "imported": "インポート"
+                }
             }
         },
         "kana": {

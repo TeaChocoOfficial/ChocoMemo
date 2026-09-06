@@ -6,6 +6,7 @@ import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { DEFAULT_DECKS, findDefaultDeck } from '~/data/japanese/decks';
 import type { VocabDeck, VocabWord } from '~/types/vocabulary';
+import { importedDeckSchema } from '~/utils/deck';
 import { useVocabularyStore } from './vocabulary.store';
 
 interface DeckState {
@@ -14,6 +15,16 @@ interface DeckState {
     addDeck: (deck: VocabDeck) => void;
     removeDeck: (id: string) => void;
     clearDecks: () => void;
+    /** Parses + validates a raw JSON payload (already JSON.parse'd) and adds
+     *  it as a user deck. Returns an error message on failure instead of
+     *  throwing, so the UI can show it inline. */
+    importDeck: (raw: unknown) => { success: true } | { success: false; error: string };
+}
+
+function newDeckId(): string {
+    return typeof crypto !== 'undefined' && 'randomUUID' in crypto
+        ? crypto.randomUUID()
+        : `d-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 7)}`;
 }
 
 const storage =
@@ -36,6 +47,21 @@ export const useDeckStore = create<DeckState>()(
                     userDecks: state.userDecks.filter((d) => d.id !== id),
                 })),
             clearDecks: () => set({ userDecks: [] }),
+
+            importDeck: (raw) => {
+                const result = importedDeckSchema.safeParse(raw);
+                if (!result.success) {
+                    return { success: false, error: 'This file is not a valid deck.' };
+                }
+
+                const deck: VocabDeck = {
+                    id: newDeckId(),
+                    source: 'custom',
+                    ...result.data,
+                };
+                set((state) => ({ userDecks: [...state.userDecks, deck] }));
+                return { success: true };
+            },
         }),
         {
             name: 'choco-vocabulary-decks',
@@ -77,7 +103,7 @@ export function deckWords(deck: VocabDeck): VocabWord[] {
             .filter((w): w is VocabWord => w != null);
     }
     if (deck.source === 'custom') {
-        return useVocabularyStore.getState().custom.filter((w) => deck.wordIds.includes(w.id));
+        return useVocabularyStore.getState().all().filter((w) => deck.wordIds.includes(w.id));
     }
     // cloud / downloaded decks with embedded words are a future server feature.
     return [];

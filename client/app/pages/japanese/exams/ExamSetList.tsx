@@ -1,14 +1,17 @@
 // -Path: 'client/app/pages/japanese/exams/ExamSetList.tsx'
+import { useTranslation } from 'react-i18next';
 import { Link } from '~/i18n/routing';
 import { FaArrowLeft } from 'react-icons/fa6';
 import Section from '~/components/custom/Section';
-import CollectionListPage from '~/components/container/CollectionListPage';
+import DecksList from '~/components/container/DecksList';
 import { defaultExamSets } from '~/data/japanese/defaultExamSets';
 import { useAllExamSets, useExamSetsStore } from '~/stores/examSets.store';
 import ExamSetCard from './components/ExamSetCard';
 import ImportExamButton from './ImportExamButton';
+import AddCustomExamButton from './AddCustomExamButton';
 
 export default function ExamSetList() {
+    const { t } = useTranslation();
     const allSets = useAllExamSets(defaultExamSets);
     const removeCustomSet = useExamSetsStore((s) => s.removeCustomSet);
     const removeImportedSet = useExamSetsStore((s) => s.removeImportedSet);
@@ -24,17 +27,22 @@ export default function ExamSetList() {
                     Back to hub
                 </Link>
 
-                <CollectionListPage
+                <DecksList
                     eyebrow='Exam desk'
-                    title='Vocabulary Exams'
-                    description='Test yourself with multiple-choice exams built from your vocabulary. Pick a set to begin, or import your own.'
-                    searchPlaceholder='Search exam sets...'
+                    title={t('japanese.exams.title')}
+                    description={t('japanese.exams.description')}
+                    searchPlaceholder={t('japanese.exams.search')}
                     localItems={allSets}
                     cloudItems={null}
                     communityItems={null}
                     getSearchText={(set) => set.title + ' ' + (set.description ?? '')}
-                    emptyStateLabel='No exam sets yet — import one to get started.'
-                    headerAction={<ImportExamButton />}
+                    emptyStateLabel={t('japanese.exams.empty')}
+                    headerAction={
+                        <div className='flex flex-wrap items-center gap-2'>
+                            <ImportExamButton />
+                            <AddCustomExamButton />
+                        </div>
+                    }
                     renderItem={(set) => (
                         <ExamSetCard
                             examSet={set}

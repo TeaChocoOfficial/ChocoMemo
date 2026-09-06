@@ -41,6 +41,15 @@
             "oops": "Oops!",
             "unexpected": "An unexpected error occurred.",
             "notFound": "The requested page could not be found."
+        },
+        "tabs": {
+            "local": "Local",
+            "cloud": "Cloud",
+            "community": "Community"
+        },
+        "comingSoon": {
+            "cloud": "Cloud sync coming soon, sign in required",
+            "community": "Browsing community sets isn't available yet"
         }
     },
     "notfound": {
@@ -123,7 +132,7 @@
             }
         },
         "decks": {
-            "title": "Vocabulary Decks",
+            "title": "Vocabulary Review Decks",
             "description": "Pick a deck to review. Decks come from the built-in set, your own words, or downloaded collections.",
             "availableCount": "{{count}} decks available",
             "startReview": "Start Review",
@@ -133,12 +142,72 @@
             "note": "Review",
             "ready": "Ready",
             "words": "words",
+            "search": "Search decks...",
+            "empty": "No decks yet — import one or create a custom deck.",
+            "addCustom": "Add custom deck",
+            "importDeck": "Import deck",
+            "importErrorJson": "Could not read this file as JSON.",
+            "form": {
+                "title": "Create a custom deck",
+                "subtitle": "Pick words from your vocabulary to group into a review deck.",
+                "nameLabel": "Name",
+                "namePlaceholder": "e.g. My favorite kanji",
+                "descriptionLabel": "Description (optional)",
+                "descriptionPlaceholder": "A short note about this deck",
+                "wordsLabel": "Words to include",
+                "wordsPlaceholder": "Search words...",
+                "selectedCount": "{{count}} selected",
+                "nameError": "Give your deck a name.",
+                "minWordsError": "Pick at least one word.",
+                "cancel": "Cancel",
+                "submit": "Create deck"
+            },
             "notFound": "That deck was not found.",
             "source": {
                 "default": "Built-in",
                 "custom": "My words",
                 "cloud": "Cloud",
                 "downloaded": "Downloaded"
+            }
+        },
+        "exams": {
+            "title": "Vocabulary Exams Decks",
+            "description": "Test yourself with multiple-choice exams built from your vocabulary. Pick a set, import one, or build your own.",
+            "search": "Search exam sets...",
+            "empty": "No exam sets yet — import one or create a custom set.",
+            "import": "Import exam set",
+            "addCustom": "Add custom set",
+            "importErrorJson": "Could not read this file as JSON.",
+            "form": {
+                "title": "Create a custom exam set",
+                "subtitle": "Pick words from your vocabulary — the set is built from their meanings, just like the built-in sets.",
+                "titleLabel": "Title",
+                "titlePlaceholder": "e.g. My everyday words",
+                "descriptionLabel": "Description (optional)",
+                "descriptionPlaceholder": "A short note about this set",
+                "wordsLabel": "Words to include",
+                "wordsPlaceholder": "Search words...",
+                "selectedCount": "{{count}} selected",
+                "titleError": "Give your set a name.",
+                "minWordsError": "Pick at least two words.",
+                "cancel": "Cancel",
+                "submit": "Create set"
+            },
+            "card": {
+                "note": "Exam note",
+                "exportAria": "Export exam set",
+                "deleteAria": "Delete exam set",
+                "export": "Export",
+                "delete": "Delete",
+                "byAuthor": "by {{author}}",
+                "start": "Start",
+                "question_one": "{{count}} question",
+                "question_other": "{{count}} questions",
+                "source": {
+                    "default": "Default",
+                    "custom": "My set",
+                    "imported": "Imported"
+                }
             }
         },
         "kana": {

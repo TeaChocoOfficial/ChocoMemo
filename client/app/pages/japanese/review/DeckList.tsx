@@ -3,10 +3,12 @@ import { FaArrowLeft } from 'react-icons/fa6';
 import { useTranslation } from 'react-i18next';
 import { Link } from '~/i18n/routing';
 import Section from '~/components/custom/Section';
-import CollectionListPage from '~/components/container/CollectionListPage';
+import DecksList from '~/components/container/DecksList';
 import { useLangText } from '~/hooks/useLangText';
 import { allDecks } from '~/stores/deck.store';
 import DeckCard from './components/DeckCard';
+import AddCustomDeckButton from './AddCustomDeckButton';
+import ImportDeckButton from './ImportDeckButton';
 
 export default function DeckListPage() {
     const { t } = useTranslation();
@@ -24,11 +26,11 @@ export default function DeckListPage() {
                     {t('japanese.vocabularyReview.back_hub')}
                 </Link>
 
-                <CollectionListPage
+                <DecksList
                     eyebrow='Review desk'
                     title={t('japanese.decks.title')}
                     description={t('japanese.decks.description')}
-                    searchPlaceholder='Search decks...'
+                    searchPlaceholder={t('japanese.decks.search')}
                     localItems={decks}
                     cloudItems={null}
                     communityItems={null}
@@ -37,7 +39,13 @@ export default function DeckListPage() {
                         const description = deck.description ? locale(deck.description) : '';
                         return `${name} ${description}`;
                     }}
-                    emptyStateLabel={t('japanese.decks.notFound')}
+                    emptyStateLabel={t('japanese.decks.empty')}
+                    headerAction={
+                        <div className='flex flex-wrap items-center gap-2'>
+                            <ImportDeckButton />
+                            <AddCustomDeckButton />
+                        </div>
+                    }
                     renderItem={(deck) => <DeckCard deck={deck} />}
                 />
             </div>
