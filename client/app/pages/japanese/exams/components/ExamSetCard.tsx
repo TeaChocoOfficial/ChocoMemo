@@ -1,0 +1,101 @@
+// -Path: 'client/app/pages/japanese/exams/components/ExamSetCard.tsx'
+import { Link } from '~/i18n/routing';
+import { FaArrowRight, FaDownload, FaTrash } from 'react-icons/fa6';
+import { WashiTape, StrengthMeter } from '~/components/custom/TastingNotes';
+import type { ExamSet } from '~/types/exam';
+import { exportExamSet } from '~/utils/exam';
+
+interface ExamSetCardProps {
+    examSet: ExamSet;
+    onDelete?: () => void;
+}
+
+const SOURCE_LABEL: Record<ExamSet['source'], string> = {
+    default: 'Default',
+    custom: 'My set',
+    imported: 'Imported',
+};
+
+const SOURCE_TAPE: Record<ExamSet['source'], `#${string}`> = {
+    default: '#e8c47a',
+    custom: '#c9b6e4',
+    imported: '#b8d8af',
+};
+
+const FULL_STRENGTH_QUESTIONS = 40;
+
+export default function ExamSetCard({ examSet, onDelete }: ExamSetCardProps) {
+    const questions = examSet.questions.length;
+    const fillPct = Math.min(100, (questions / FULL_STRENGTH_QUESTIONS) * 100);
+
+    return (
+        <div className='relative flex h-full flex-col rounded-[3px] border border-line-strong bg-surface-elevated px-6 pb-6 pt-8 transition-shadow duration-200 hover:shadow-[0_16px_32px_-20px_rgba(0,0,0,0.4)]'>
+            <WashiTape label={SOURCE_LABEL[examSet.source]} tone={SOURCE_TAPE[examSet.source]} />
+
+            <div className='flex items-start justify-between gap-3'>
+                <div className='min-w-0 flex-1'>
+                    <p className='font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-surface-muted'>
+                        Exam note
+                    </p>
+                    <h3 className='mt-1 font-sans text-xl font-bold leading-snug tracking-tight text-surface-foreground'>
+                        {examSet.title}
+                    </h3>
+                </div>
+                <div className='flex shrink-0 gap-1'>
+                    <button
+                        type='button'
+                        onClick={() => exportExamSet(examSet)}
+                        aria-label='Export exam set'
+                        title='Export'
+                        className='inline-flex h-8 w-8 cursor-pointer items-center justify-center rounded-sm text-surface-muted transition-colors hover:bg-surface-overlay hover:text-accent'
+                    >
+                        <FaDownload className='h-4 w-4' />
+                    </button>
+                    {examSet.source !== 'default' && onDelete && (
+                        <button
+                            type='button'
+                            onClick={onDelete}
+                            aria-label='Delete exam set'
+                            title='Delete'
+                            className='inline-flex h-8 w-8 cursor-pointer items-center justify-center rounded-sm text-surface-muted transition-colors hover:bg-surface-overlay hover:text-error'
+                        >
+                            <FaTrash className='h-4 w-4' />
+                        </button>
+                    )}
+                </div>
+            </div>
+
+            {examSet.description && (
+                <p className='mt-2 text-sm leading-relaxed text-surface-subtle'>
+                    {examSet.description}
+                </p>
+            )}
+
+            <div className='mt-5'>
+                <StrengthMeter
+                    value={`${questions} ${questions === 1 ? 'question' : 'questions'}`}
+                    fillPct={fillPct}
+                />
+            </div>
+
+            <div className='mt-6 flex flex-1 items-end justify-between gap-3'>
+                {examSet.authorName && examSet.source === 'imported' ? (
+                    <span className='font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-surface-muted'>
+                        by {examSet.authorName}
+                    </span>
+                ) : (
+                    <span className='font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-surface-muted'>
+                        {examSet.source}
+                    </span>
+                )}
+                <Link
+                    to={`/japanese/exams/${examSet.id}`}
+                    className='group inline-flex items-center gap-2 text-sm font-semibold text-accent underline-offset-4 hover:underline'
+                >
+                    Start
+                    <FaArrowRight className='h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1' />
+                </Link>
+            </div>
+        </div>
+    );
+}

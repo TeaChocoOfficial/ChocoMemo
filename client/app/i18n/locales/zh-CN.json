@@ -125,6 +125,9 @@
             "due": "到期",
             "byAuthor": "作者 {{author}}",
             "download": "下载",
+            "note": "复习",
+            "ready": "就绪",
+            "words": "单词",
             "notFound": "未找到该卡组。",
             "source": {
                 "default": "内置",

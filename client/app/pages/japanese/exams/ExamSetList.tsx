@@ -1,12 +1,11 @@
-// -Path: 'client/app/pages/japanese/vocabulary/ExamSetList.tsx'
-import { motion } from 'framer-motion';
+// -Path: 'client/app/pages/japanese/exams/ExamSetList.tsx'
 import { Link } from '~/i18n/routing';
 import { FaArrowLeft } from 'react-icons/fa6';
-import Badge from '~/components/custom/Badge';
 import Section from '~/components/custom/Section';
+import CollectionListPage from '~/components/container/CollectionListPage';
 import { defaultExamSets } from '~/data/japanese/defaultExamSets';
 import { useAllExamSets, useExamSetsStore } from '~/stores/examSets.store';
-import ExamSetCard from './ExamSetCard';
+import ExamSetCard from './components/ExamSetCard';
 import ImportExamButton from './ImportExamButton';
 
 export default function ExamSetList() {
@@ -25,51 +24,30 @@ export default function ExamSetList() {
                     Back to hub
                 </Link>
 
-                <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    className='text-center mb-10'
-                >
-                    <Badge variant='info' className='mb-6'>
-                        Vocabulary Exams
-                    </Badge>
-                    <h1 className='text-4xl sm:text-5xl font-black tracking-tighter text-surface-foreground mb-4'>
-                        Vocabulary Exams
-                    </h1>
-                    <p className='mx-auto max-w-2xl text-lg text-surface-subtle leading-relaxed'>
-                        Test yourself with multiple-choice exams built from your vocabulary.
-                    </p>
-                </motion.div>
-
-                <div className='flex flex-col sm:flex-row items-center justify-between gap-4 mb-8'>
-                    <p className='text-sm text-surface-muted'>
-                        {allSets.length} {allSets.length === 1 ? 'exam set' : 'exam sets'}
-                    </p>
-                    <ImportExamButton />
-                </div>
-
-                {allSets.length === 0 ? (
-                    <p className='py-16 text-center text-sm text-surface-muted'>
-                        No exam sets yet — import one to get started.
-                    </p>
-                ) : (
-                    <div className='grid grid-cols-1 gap-6 md:grid-cols-2'>
-                        {allSets.map((examSet) => (
-                            <ExamSetCard
-                                key={examSet.id}
-                                examSet={examSet}
-                                onDelete={
-                                    examSet.source === 'custom'
-                                        ? () => removeCustomSet(examSet.id)
-                                        : examSet.source === 'imported'
-                                          ? () => removeImportedSet(examSet.id)
-                                          : undefined
-                                }
-                            />
-                        ))}
-                    </div>
-                )}
+                <CollectionListPage
+                    eyebrow='Exam desk'
+                    title='Vocabulary Exams'
+                    description='Test yourself with multiple-choice exams built from your vocabulary. Pick a set to begin, or import your own.'
+                    searchPlaceholder='Search exam sets...'
+                    localItems={allSets}
+                    cloudItems={null}
+                    communityItems={null}
+                    getSearchText={(set) => set.title + ' ' + (set.description ?? '')}
+                    emptyStateLabel='No exam sets yet — import one to get started.'
+                    headerAction={<ImportExamButton />}
+                    renderItem={(set) => (
+                        <ExamSetCard
+                            examSet={set}
+                            onDelete={
+                                set.source === 'custom'
+                                    ? () => removeCustomSet(set.id)
+                                    : set.source === 'imported'
+                                      ? () => removeImportedSet(set.id)
+                                      : undefined
+                            }
+                        />
+                    )}
+                />
             </div>
         </Section>
     );

@@ -130,6 +130,9 @@
             "due": "예정",
             "byAuthor": "{{author}} 제작",
             "download": "다운로드",
+            "note": "복습",
+            "ready": "준비됨",
+            "words": "단어",
             "notFound": "덱을 찾을 수 없습니다.",
             "source": {
                 "default": "기본",

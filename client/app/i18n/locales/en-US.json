@@ -130,6 +130,9 @@
             "due": "due",
             "byAuthor": "by {{author}}",
             "download": "Download",
+            "note": "Review",
+            "ready": "Ready",
+            "words": "words",
             "notFound": "That deck was not found.",
             "source": {
                 "default": "Built-in",

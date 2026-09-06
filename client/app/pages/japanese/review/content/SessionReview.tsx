@@ -4,8 +4,8 @@ import { useTranslation } from 'react-i18next';
 import type { VocabWord } from '~/types/vocabulary';
 import { stopSpeaking } from '~/hooks/useSpeak';
 import ReviewControls from '../components/ReviewControls';
-import ReviewCardBack from '../components/ReviewCardBack';
-import ReviewCardFront from '../components/ReviewCardFront';
+import ReviewCardBack from './ReviewCardBack';
+import ReviewCardFront from './ReviewCardFront';
 
 const cardMotion = {
     initial: { opacity: 0, scale: 0.98, y: 12 },
