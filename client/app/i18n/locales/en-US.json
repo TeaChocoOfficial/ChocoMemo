@@ -16,11 +16,39 @@
     },
     "home": {
         "badge": "ChocoMemo",
-        "title": "Brew your Japanese,",
-        "titleAccent": "one sip at a time.",
-        "subtitle": "Choco blends bite-sized hiragana, katakana and vocabulary quizzes into a warm daily study ritual. Pick a theme, pour a cup, and learn.",
+        "title": "Warm up your Japanese,",
+        "titleAccent": "one kana at a time.",
+        "subtitle": "Bite-sized hiragana, katakana and vocabulary quizzes brewed into a cozy daily ritual — pick a theme, pour a cup, and learn.",
         "ctaStart": "Start learning",
-        "ctaBrowse": "Browse kana"
+        "ctaHow": "See how it works",
+        "stats": {
+            "badge": "At a glance",
+            "kana": "Kana characters",
+            "vocabulary": "Vocabulary words",
+            "modes": "Practice modes",
+            "themes": "Themes"
+        },
+        "how": {
+            "badge": "How it works",
+            "title": "A cozy daily ritual",
+            "hint": "Four small steps, repeated every day — that's all it takes.",
+            "step1": {
+                "title": "Pick your language",
+                "hint": "Choose what you're studying today."
+            },
+            "step2": {
+                "title": "Learn the kana",
+                "hint": "Hiragana and katakana, one sip at a time."
+            },
+            "step3": {
+                "title": "Drill and quiz",
+                "hint": "Fast kana drills and vocabulary exams."
+            },
+            "step4": {
+                "title": "Review daily",
+                "hint": "Spaced review keeps words warm."
+            }
+        }
     },
     "theme": {
         "pickerLabel": "Change theme",

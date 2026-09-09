@@ -16,11 +16,39 @@
     },
     "home": {
         "badge": "ChocoMemo",
-        "title": "Infusez votre japonais,",
-        "titleAccent": "une gorgée à la fois.",
-        "subtitle": "Choco assemble des mini-quiz de hiragana, katakana et vocabulaire dans un rituel d'étude quotidien chaleureux. Choisissez un thème, versez une tasse et apprenez.",
+        "title": "Réchauffez votre japonais,",
+        "titleAccent": "un kana à la fois.",
+        "subtitle": "Des bouchées d'hiragana, de katakana et de vocabulaire, infusées dans un rituel quotidien chaleureux : choisissez un thème, versez une tasse et apprenez.",
         "ctaStart": "Commencer à apprendre",
-        "ctaBrowse": "Parcourir les kana"
+        "ctaHow": "Comment ça marche",
+        "stats": {
+            "badge": "En un coup d'œil",
+            "kana": "Caractères kana",
+            "vocabulary": "Mots de vocabulaire",
+            "modes": "Modes d'entraînement",
+            "themes": "Thèmes"
+        },
+        "how": {
+            "badge": "Comment ça marche",
+            "title": "Un rituel quotidien chaleureux",
+            "hint": "Quatre petites étapes répétées chaque jour, c'est tout.",
+            "step1": {
+                "title": "Choisissez votre langue",
+                "hint": "Choisissez ce que vous étudiez aujourd'hui."
+            },
+            "step2": {
+                "title": "Apprenez les kana",
+                "hint": "Hiragana et katakana, une gorgée à la fois."
+            },
+            "step3": {
+                "title": "Entraînez-vous et testez",
+                "hint": "Exercices rapides et examens de vocabulaire."
+            },
+            "step4": {
+                "title": "Révisez chaque jour",
+                "hint": "La révision espacée garde les mots vivants."
+            }
+        }
     },
     "theme": {
         "pickerLabel": "Changer de thème",

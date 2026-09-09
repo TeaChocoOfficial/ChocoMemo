@@ -1,8 +1,8 @@
 // -Path: 'client/app/components/layout/Footer.tsx'
-import { useTranslation } from 'react-i18next';
-import { FaGithub } from 'react-icons/fa6';
 import { Link } from '~/i18n/routing';
 import { getAssetUrl } from '~/utils/url';
+import { FaGithub } from 'react-icons/fa6';
+import { useTranslation } from 'react-i18next';
 
 const languages = [
     { code: 'ja', labelKey: 'footer.languages.ja' },
@@ -86,7 +86,7 @@ export default function Footer() {
 
                 <div className='mt-10 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-line pt-6'>
                     <p className='text-sm text-surface-muted'>
-                        © {new Date().getFullYear()} {t('footer.rights')}
+                        © 2026 {t('footer.rights')}
                     </p>
                     <a
                         href='https://github.com/TeaChoco'

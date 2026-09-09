@@ -16,11 +16,39 @@
     },
     "home": {
         "badge": "ChocoMemo",
-        "title": "Itimpla ang iyong Hapones,",
-        "titleAccent": "isang higop sa bawat pagkakataon.",
-        "subtitle": "Pinagsasama ng Choco ang maliliit na pagsusulit sa hiragana, katakana at bokabularyo sa isang mainit na pang-araw-araw na ritwal sa pag-aaral. Pumili ng tema, magbuhos ng tasa, at matuto.",
+        "title": "Painitin ang iyong Hapon,",
+        "titleAccent": "isa-isang kana.",
+        "subtitle": "Ang hiragana, katakana, at mga vocabulary quiz ay ginawang maaliwalas na pang-araw-araw na gawain — pumili ng tema, magtimpla ng isang tasa, at matuto.",
         "ctaStart": "Magsimulang matuto",
-        "ctaBrowse": "Tingnan ang kana"
+        "ctaHow": "Paano ito gumagana",
+        "stats": {
+            "badge": "Sa isang sulyap",
+            "kana": "Karakter ng kana",
+            "vocabulary": "Salitang bokabularyo",
+            "modes": "Mode ng pagsasanay",
+            "themes": "Tema"
+        },
+        "how": {
+            "badge": "Paano ito gumagana",
+            "title": "Isang maaliwalas na pang-araw-araw na gawain",
+            "hint": "Apat na maliliit na hakbang na inuulit araw-araw — iyon lang.",
+            "step1": {
+                "title": "Pumili ng wika",
+                "hint": "Piliin kung ano ang pag-aaralan ngayon."
+            },
+            "step2": {
+                "title": "Alamin ang kana",
+                "hint": "Hiragana at katakana, isang subo sa bawat pagkakataon."
+            },
+            "step3": {
+                "title": "Magsanay at mag-quiz",
+                "hint": "Mabilis na pagsasanay sa kana at pagsusulit sa bokabularyo."
+            },
+            "step4": {
+                "title": "Ulitin araw-araw",
+                "hint": "Ang spaced review ay nagpapanatili ng mga salita sa alaala."
+            }
+        }
     },
     "theme": {
         "pickerLabel": "Baguhin ang tema",

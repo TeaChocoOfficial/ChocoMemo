@@ -16,11 +16,39 @@
     },
     "home": {
         "badge": "ChocoMemo",
-        "title": "Prepare seu japonês,",
-        "titleAccent": "um gole de cada vez.",
-        "subtitle": "O Choco combina miniquestionários de hiragana, katakana e vocabulário em um ritual diário de estudo aconchegante. Escolha um tema, sirva uma xícara e aprenda.",
+        "title": "Aqueça seu japonês,",
+        "titleAccent": "uma kana de cada vez.",
+        "subtitle": "Hiragana, katakana e quizzes de vocabulário misturados num ritual diário aconchegante — escolha um tema, sirva uma xícara e aprenda.",
         "ctaStart": "Começar a aprender",
-        "ctaBrowse": "Explorar kana"
+        "ctaHow": "Como funciona",
+        "stats": {
+            "badge": "De relance",
+            "kana": "Caracteres kana",
+            "vocabulary": "Palavras de vocabulário",
+            "modes": "Modos de prática",
+            "themes": "Temas"
+        },
+        "how": {
+            "badge": "Como funciona",
+            "title": "Um ritual diário aconchegante",
+            "hint": "Quatro passos pequenos repetidos todos os dias — é só isso.",
+            "step1": {
+                "title": "Escolha seu idioma",
+                "hint": "Escolha o que estudar hoje."
+            },
+            "step2": {
+                "title": "Aprenda os kana",
+                "hint": "Hiragana e katakana, um gole por vez."
+            },
+            "step3": {
+                "title": "Pratique e teste",
+                "hint": "Drills rápidos de kana e provas de vocabulário."
+            },
+            "step4": {
+                "title": "Revise diariamente",
+                "hint": "A revisão espaçada mantém as palavras vivas."
+            }
+        }
     },
     "theme": {
         "pickerLabel": "Mudar tema",

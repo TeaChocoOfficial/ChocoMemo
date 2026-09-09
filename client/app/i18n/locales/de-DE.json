@@ -16,11 +16,39 @@
     },
     "home": {
         "badge": "ChocoMemo",
-        "title": "Braue dein Japanisch,",
-        "titleAccent": "Schluck für Schluck.",
-        "subtitle": "Choco kombiniert mundgerechte Hiragana-, Katakana- und Vokabelquizze zu einem warmen täglichen Lernritual. Wähle ein Thema, schenk dir eine Tasse ein und lerne.",
+        "title": "Mach dein Japanisch warm,",
+        "titleAccent": "eine Kana nach der anderen.",
+        "subtitle": "Kleine Häppchen aus Hiragana, Katakana und Vokabel-Quizzen, gebraut zu einem gemütlichen täglichen Ritual – wähle ein Design, schenk dir eine Tasse ein und lerne.",
         "ctaStart": "Jetzt lernen",
-        "ctaBrowse": "Kana durchstöbern"
+        "ctaHow": "So funktioniert's",
+        "stats": {
+            "badge": "Auf einen Blick",
+            "kana": "Kana-Zeichen",
+            "vocabulary": "Vokabeln",
+            "modes": "Übungsmodi",
+            "themes": "Designs"
+        },
+        "how": {
+            "badge": "So funktioniert's",
+            "title": "Ein gemütliches tägliches Ritual",
+            "hint": "Vier kleine Schritte, jeden Tag wiederholt – mehr brauchst du nicht.",
+            "step1": {
+                "title": "Wähle deine Sprache",
+                "hint": "Entscheide, was du heute lernst."
+            },
+            "step2": {
+                "title": "Lerne das Kana",
+                "hint": "Hiragana und Katakana, Schluck für Schluck."
+            },
+            "step3": {
+                "title": "Üben und quizzen",
+                "hint": "Schnelle Kana-Übungen und Vokabelprüfungen."
+            },
+            "step4": {
+                "title": "Täglich wiederholen",
+                "hint": "Wiederholungen halten Wörter frisch."
+            }
+        }
     },
     "theme": {
         "pickerLabel": "Thema wechseln",

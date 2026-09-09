@@ -16,11 +16,39 @@
     },
     "home": {
         "badge": "ChocoMemo",
-        "title": "Pha tiếng Nhật của bạn,",
-        "titleAccent": "từng ngụm một.",
-        "subtitle": "Choco pha trộn những bài quiz hiragana, katakana và từ vựng thành một thói quen học tập ấm áp mỗi ngày. Chọn một chủ đề, rót một tách trà và bắt đầu học.",
+        "title": "Sưởi ấm tiếng Nhật của bạn,",
+        "titleAccent": "từng chữ kana một.",
+        "subtitle": "Hiragana, katakana và các bài kiểm tra từ vựng được pha thành nghi thức hằng ngày ấm áp — chọn chủ đề, rót một tách và học.",
         "ctaStart": "Bắt đầu học",
-        "ctaBrowse": "Khám phá kana"
+        "ctaHow": "Cách hoạt động",
+        "stats": {
+            "badge": "Tổng quan",
+            "kana": "Ký tự kana",
+            "vocabulary": "Từ vựng",
+            "modes": "Chế độ luyện tập",
+            "themes": "Chủ đề"
+        },
+        "how": {
+            "badge": "Cách hoạt động",
+            "title": "Nghi thức hằng ngày ấm áp",
+            "hint": "Bốn bước nhỏ lặp lại mỗi ngày — chỉ vậy thôi.",
+            "step1": {
+                "title": "Chọn ngôn ngữ",
+                "hint": "Chọn thứ bạn muốn học hôm nay."
+            },
+            "step2": {
+                "title": "Học kana",
+                "hint": "Hiragana và katakana, từng chút một."
+            },
+            "step3": {
+                "title": "Luyện tập và kiểm tra",
+                "hint": "Bài tập kana nhanh và bài kiểm tra từ vựng."
+            },
+            "step4": {
+                "title": "Ôn mỗi ngày",
+                "hint": "Ôn tập ngắt quãng giúp ghi nhớ từ."
+            }
+        }
     },
     "theme": {
         "pickerLabel": "Đổi chủ đề",

@@ -16,11 +16,39 @@
     },
     "home": {
         "badge": "ChocoMemo",
-        "title": "Seduh bahasa Jepun anda,",
-        "titleAccent": "seteguk demi seteguk.",
-        "subtitle": "Choco menggabungkan kuiz hiragana, katakana dan kosa kata bersaiz kecil ke dalam ritual belajar harian yang hangat. Pilih tema, tuangkan secawan, dan belajar.",
+        "title": "Panaskan bahasa Jepun anda,",
+        "titleAccent": "satu kana pada satu masa.",
+        "subtitle": "Hiragana, katakana dan kuiz kosa kata dihidangkan sebagai rutin harian yang selesa — pilih tema, tuang secawan, dan belajar.",
         "ctaStart": "Mula belajar",
-        "ctaBrowse": "Lihat kana"
+        "ctaHow": "Cara ia berfungsi",
+        "stats": {
+            "badge": "Sepintas lalu",
+            "kana": "Aksara kana",
+            "vocabulary": "Perkataan kosa kata",
+            "modes": "Mod latihan",
+            "themes": "Tema"
+        },
+        "how": {
+            "badge": "Cara ia berfungsi",
+            "title": "Rutin harian yang selesa",
+            "hint": "Empat langkah kecil diulang setiap hari — itu sahaja.",
+            "step1": {
+                "title": "Pilih bahasa anda",
+                "hint": "Pilih apa yang anda pelajari hari ini."
+            },
+            "step2": {
+                "title": "Belajar kana",
+                "hint": "Hiragana dan katakana, seteguk demi seteguk."
+            },
+            "step3": {
+                "title": "Berlatih dan kuiz",
+                "hint": "Latihan kana pantas dan peperiksaan kosa kata."
+            },
+            "step4": {
+                "title": "Ulang kaji setiap hari",
+                "hint": "Ulang kaji berjarak mengekalkan perkataan dalam ingatan."
+            }
+        }
     },
     "theme": {
         "pickerLabel": "Tukar tema",

@@ -48,10 +48,10 @@ export default function HomeHero() {
                         <FaCircleRight className='w-4 h-4' />
                     </Link>
                     <Link
-                        to='/japanese/kana'
+                        to='#how-it-works'
                         className='inline-flex items-center gap-2 rounded-sm border border-line-strong px-7 py-3.5 text-base font-semibold text-surface-foreground transition-colors duration-200 hover:border-accent hover:text-accent'
                     >
-                        {t('home.ctaBrowse')}
+                        {t('home.ctaHow')}
                     </Link>
                 </div>
             </motion.div>

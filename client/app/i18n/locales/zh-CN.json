@@ -16,11 +16,39 @@
     },
     "home": {
         "badge": "ChocoMemo",
-        "title": "冲泡你的日语，",
-        "titleAccent": "一次一杯慢慢来。",
-        "subtitle": "Choco 将平假名、片假名和词汇测验变成温暖的每日学习习惯。选个主题，泡一杯，开始学吧。",
+        "title": "温热你的日语，",
+        "titleAccent": "一次一个假名。",
+        "subtitle": "将平假名、片假名和词汇小测泡成温暖的每日习惯——选一个主题，倒上一杯，开始学习。",
         "ctaStart": "开始学习",
-        "ctaBrowse": "浏览假名"
+        "ctaHow": "使用方法",
+        "stats": {
+            "badge": "一览",
+            "kana": "假名字符",
+            "vocabulary": "词汇量",
+            "modes": "练习模式",
+            "themes": "主题"
+        },
+        "how": {
+            "badge": "使用方法",
+            "title": "温暖的每日习惯",
+            "hint": "每天重复四个小步骤，就这么简单。",
+            "step1": {
+                "title": "选择语言",
+                "hint": "选择今天要学的内容。"
+            },
+            "step2": {
+                "title": "学习假名",
+                "hint": "平假名和片假名，一口一口来。"
+            },
+            "step3": {
+                "title": "练习与测验",
+                "hint": "快速假名练习和词汇测验。"
+            },
+            "step4": {
+                "title": "每日复习",
+                "hint": "间隔复习让单词保持新鲜。"
+            }
+        }
     },
     "theme": {
         "pickerLabel": "切换主题",

@@ -16,11 +16,39 @@
     },
     "home": {
         "badge": "ChocoMemo",
-        "title": "Japoncanı demle,",
-        "titleAccent": "her seferinde bir yudum.",
-        "subtitle": "Choco, küçük parçalara ayrılmış hiragana, katakana ve kelime bilgisi testlerini sıcak bir günlük çalışma ritüeline dönüştürür. Bir tema seç, bir fincan koy ve öğren.",
+        "title": "Japoncanızı ısıtın,",
+        "titleAccent": "bir kana'da bir.",
+        "subtitle": "Hiragana, katakana ve kelime quizlerini rahat bir günlük ritüele dönüştürdük — bir tema seçin, bir fincan doldurun ve öğrenin.",
         "ctaStart": "Öğrenmeye başla",
-        "ctaBrowse": "Kana'yı keşfet"
+        "ctaHow": "Nasıl çalışır",
+        "stats": {
+            "badge": "Bir bakışta",
+            "kana": "Kana karakteri",
+            "vocabulary": "Kelime",
+            "modes": "Pratik modu",
+            "themes": "Tema"
+        },
+        "how": {
+            "badge": "Nasıl çalışır",
+            "title": "Rahat bir günlük ritüel",
+            "hint": "Her gün tekrarlanan dört küçük adım — hepsi bu.",
+            "step1": {
+                "title": "Dilinizi seçin",
+                "hint": "Bugün ne öğreneceğinizi seçin."
+            },
+            "step2": {
+                "title": "Kanayı öğrenin",
+                "hint": "Hiragana ve katakana, yudum yudum."
+            },
+            "step3": {
+                "title": "Pratik yapın ve sınanın",
+                "hint": "Hızlı kana alıştırmaları ve kelime sınavları."
+            },
+            "step4": {
+                "title": "Her gün gözden geçirin",
+                "hint": "Aralıklı tekrar kelimeleri taze tutar."
+            }
+        }
     },
     "theme": {
         "pickerLabel": "Temayı değiştir",
