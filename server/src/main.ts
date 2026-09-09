@@ -4,13 +4,14 @@ import chalk from 'chalk';
 import { AppModule } from './app.module';
 import packageJson from '../package.json';
 import { NestFactory } from '@nestjs/core';
-import fastifyCookie from '@fastify/cookie';
-import fastifyMultipart from '@fastify/multipart';
+import type { FastifyPluginCallback } from 'fastify';
 import { SecureService } from './secure/secure.service';
 import { Logger, ValidationPipe } from '@nestjs/common';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { SwaggerTheme, SwaggerThemeNameEnum } from 'swagger-themes';
+import fastifyCookie, { type FastifyCookieOptions } from '@fastify/cookie';
 import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
+import fastifyMultipart, { type FastifyMultipartAttachFieldsToBodyOptions } from '@fastify/multipart';
 
 async function bootstrap() {
     const time = Date.now();
@@ -29,14 +30,14 @@ async function bootstrap() {
     app.useGlobalPipes(new ValidationPipe({ transform: true }));
 
     // ลงทะเบียน Fastify plugins
-    await app.register(fastifyMultipart, {
+    await app.register(fastifyMultipart as FastifyPluginCallback<FastifyMultipartAttachFieldsToBodyOptions>, {
         limits: {
             fileSize: 50 * 1024 * 1024, // 50mb
         },
         attachFieldsToBody: true,
     });
 
-    await app.register(fastifyCookie);
+    await app.register(fastifyCookie as FastifyPluginCallback<FastifyCookieOptions>);
 
     // CORS configuration
     app.enableCors({

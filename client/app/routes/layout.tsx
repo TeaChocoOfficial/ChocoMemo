@@ -1,11 +1,11 @@
 //-Path: 'Vite-React-Router-TypeScript/app/routes/Layout.tsx'
 import { Outlet } from 'react-router';
-import { AnimatePresence, motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import Navbar from '~/components/layout/Navbar';
 import Footer from '~/components/layout/Footer';
 import { FaCompassDrafting } from 'react-icons/fa6';
 import { useChromeStore } from '~/stores/chrome.store';
+import { AnimatePresence, motion } from 'framer-motion';
 import { ToasterProvider } from '~/components/provider/ToasterProvider';
 
 export default function Layout() {

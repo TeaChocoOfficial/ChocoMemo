@@ -41,7 +41,7 @@
 		"chalk": "^5.6.2",
 		"class-transformer": "^0.5.1",
 		"class-validator": "^0.15.1",
-		"fastify": "5.12.3",
+		"fastify": "5.12.1",
 		"glob": "^13.0.6",
 		"joi": "^18.2.8",
 		"mongoose": "^9.9.5",
@@ -81,6 +81,11 @@
 		"tsx": "^4.23.13",
 		"typescript": "^5.9.3",
 		"typescript-eslint": "^8.69.0"
+	},
+	"pnpm": {
+		"overrides": {
+			"fastify": "5.12.1"
+		}
 	},
 	"jest": {
 		"moduleFileExtensions": [

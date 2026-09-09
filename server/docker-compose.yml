@@ -1,15 +1,15 @@
-# -Path: "Nest TypeScript/docker-compose.yml"
+# -Path: "ChocoMemo/server/docker-compose.yml"
 services:
-    server:
+    choco-memo-server:
         build:
             context: .
             dockerfile: Dockerfile
-        container_name: nest-typescript-server
+        container_name: choco-memo-server
         volumes:
             - .:/usr/src/app
             - /usr/src/app/node_modules
         ports:
-            - 3001:3001
+            - 3836:3836
         env_file:
             - ./.env
         environment:
@@ -20,11 +20,11 @@ services:
             - CHOKIDAR_USEPOLLING=true
             - CHOKIDAR_INTERVAL=1000
         networks:
-            - nest-typescript-network
+            - choco-memo-network
 
-    mongodb:
+    choco-memo-mongodb:
         image: mongo:7
-        container_name: nest-typescript-mongodb
+        container_name: choco-memo-mongodb
         restart: unless-stopped
         ports:
             - '27017:27017'
@@ -34,11 +34,11 @@ services:
         volumes:
             - mongodb_data:/data/db
         networks:
-            - nest-typescript-network
+            - choco-memo-network
 
 volumes:
     mongodb_data:
 
 networks:
-    nest-typescript-network:
+    choco-memo-network:
         driver: bridge

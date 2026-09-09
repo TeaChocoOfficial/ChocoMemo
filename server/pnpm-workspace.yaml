@@ -4,5 +4,3 @@ allowBuilds:
   argon2: true
   esbuild: true
   unrs-resolver: true
-overrides:
-  fastify: 5.12.3
