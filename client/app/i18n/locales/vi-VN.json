@@ -4,7 +4,10 @@
         "tagline": "Học ngôn ngữ",
         "languages": "Ngôn ngữ",
         "japanese": "Tiếng Nhật",
-        "menu": "Mở menu"
+        "menu": "Mở menu",
+        "settings": "Cài đặt",
+        "language": "Ngôn ngữ",
+        "theme": "Chủ đề"
     },
     "chrome": {
         "hide": "Ẩn",
@@ -171,9 +174,9 @@
             }
         },
         "exams": {
-"title": "Bộ đề kiểm tra từ vựng",
-  "description": "Tự kiểm tra bằng các bài trắc nghiệm được xây dựng từ vốn từ của bạn. Chọn một bộ, nhập một bộ hoặc tự tạo bộ của riêng bạn.",
-  "back_hub": "Quay lại trung tâm tiếng Nhật",
+            "title": "Bộ đề kiểm tra từ vựng",
+            "description": "Tự kiểm tra bằng các bài trắc nghiệm được xây dựng từ vốn từ của bạn. Chọn một bộ, nhập một bộ hoặc tự tạo bộ của riêng bạn.",
+            "back_hub": "Quay lại trung tâm tiếng Nhật",
             "search": "Tìm bộ đề kiểm tra...",
             "empty": "Chưa có bộ đề nào — hãy nhập một bộ hoặc tạo bộ tùy chỉnh.",
             "import": "Nhập bộ đề kiểm tra",

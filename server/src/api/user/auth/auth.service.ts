@@ -64,8 +64,9 @@ export class AuthService {
         if (email === '') throw new BadRequestException("Username can't be empty");
         else if (password === '') throw new BadRequestException("Password can't be empty");
         else {
-            const isValid = await this.verifyHash(password, user?.password);
-            if (!user || !isValid) throw new BadRequestException('Invalid username or password');
+            if (!user || !user.password) throw new BadRequestException('Invalid username or password');
+            const isValid = await this.verifyHash(password, user.password);
+            if (!isValid) throw new BadRequestException('Invalid username or password');
             const result = user.toObject();
             return result;
         }

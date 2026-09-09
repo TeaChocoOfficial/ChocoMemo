@@ -1,0 +1,64 @@
+# -Path: "ChocoMemo/server/docker-compose.yml"
+services:
+    choco-memo-client:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: choco-memo-client
+        volumes:
+            - ./client:/usr/src/app
+            - /usr/src/app/node_modules
+        ports:
+            - 6836:6836
+        env_file:
+            - ./.env
+        environment:
+            - VITE_CLIENT_HOST=0.0.0.0
+            - VITE_MODE=development
+            - WATCHPACK_POLLING=true
+            - CHOKIDAR_USEPOLLING=true
+            - CHOKIDAR_INTERVAL=1000
+        networks:
+            - choco-memo-network
+    choco-memo-server:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: choco-memo-server
+        volumes:
+            - ./server:/usr/src/app
+            - /usr/src/app/node_modules
+        ports:
+            - 3836:3836
+        env_file:
+            - ./.env
+        environment:
+            - SERVER_HOST=0.0.0.0
+            - MONGODB_URI=mongodb://admin:secret123@mongodb:27017/database?authSource=admin
+            - NODE_ENV=development
+            - WATCHPACK_POLLING=true
+            - CHOKIDAR_USEPOLLING=true
+            - CHOKIDAR_INTERVAL=1000
+        networks:
+            - choco-memo-network
+
+    choco-memo-mongodb:
+        image: mongo:7
+        container_name: choco-memo-mongodb
+        restart: unless-stopped
+        ports:
+            - '27017:27017'
+        environment:
+            MONGO_INITDB_ROOT_USERNAME: admin
+            MONGO_INITDB_ROOT_PASSWORD: secret123
+        volumes:
+            - mongodb_data:/data/db
+        networks:
+            - choco-memo-network
+
+volumes:
+    mongodb_data:
+
+networks:
+    choco-memo-network:
+        driver: bridge

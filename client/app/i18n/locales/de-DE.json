@@ -4,7 +4,10 @@
         "tagline": "Sprachen lernen",
         "languages": "Sprachen",
         "japanese": "Japanisch",
-        "menu": "Menü öffnen"
+        "menu": "Menü öffnen",
+        "settings": "Einstellungen",
+        "language": "Sprache",
+        "theme": "Design"
     },
     "chrome": {
         "hide": "Ausblenden",

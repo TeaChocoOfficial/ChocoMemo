@@ -4,7 +4,10 @@
         "tagline": "Dil Öğrenme",
         "languages": "Diller",
         "japanese": "Japonca",
-        "menu": "Menüyü aç"
+        "menu": "Menüyü aç",
+        "settings": "Ayarlar",
+        "language": "Dil",
+        "theme": "Tema"
     },
     "chrome": {
         "hide": "Gizle",

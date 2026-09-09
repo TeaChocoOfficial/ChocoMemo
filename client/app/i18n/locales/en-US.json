@@ -4,7 +4,10 @@
         "tagline": "Language Learning",
         "languages": "Languages",
         "japanese": "Japanese",
-        "menu": "Open menu"
+        "menu": "Open menu",
+        "settings": "Settings",
+        "language": "Language",
+        "theme": "Theme"
     },
     "chrome": {
         "hide": "Hide",
@@ -351,6 +354,30 @@
             "en": "English",
             "ko": "Korean",
             "th": "Thai"
+        }
+    },
+    "auth": {
+        "signIn": "Sign In",
+        "signUp": "Sign Up",
+        "signOut": "Sign Out",
+        "email": "Email",
+        "password": "Password",
+        "name": "Name",
+        "forgotPassword": "Forgot password?",
+        "resetPassword": "Reset Password",
+        "resetSent": "If an account exists with that email, you'll receive a reset link shortly.",
+        "backToSignIn": "Back to Sign In",
+        "orContinueWith": "Or continue with",
+        "google": "Google",
+        "noAccount": "Don't have an account?",
+        "hasAccount": "Already have an account?",
+        "profile": "Profile",
+        "settings": "Settings",
+        "welcome": "Welcome, {{name}}",
+        "error": {
+            "invalidCredentials": "Invalid email or password.",
+            "emailInUse": "An account with this email already exists.",
+            "generic": "Something went wrong. Please try again."
         }
     }
 }

@@ -82,7 +82,7 @@ async function bootstrap() {
         });
     }
 
-    const port = Number(SERVER_PORT) ?? 3000;
+    const port = Number(SERVER_PORT ?? process.env.PORT) ?? 3000;
     const host = SERVER_HOST ?? '0.0.0.0';
 
     // Fastify listen - ต้องระบุ host

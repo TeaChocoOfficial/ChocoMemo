@@ -4,7 +4,10 @@
         "tagline": "Pag-aaral ng Wika",
         "languages": "Mga Wika",
         "japanese": "Hapones",
-        "menu": "Buksan ang menu"
+        "menu": "Buksan ang menu",
+        "settings": "Mga Setting",
+        "language": "Wika",
+        "theme": "Tema"
     },
     "chrome": {
         "hide": "Itago",

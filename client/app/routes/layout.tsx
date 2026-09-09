@@ -24,7 +24,7 @@ export default function Layout() {
                         animate={{ y: 0 }}
                         exit={{ y: '-100%' }}
                         transition={{ type: 'spring', stiffness: 380, damping: 36 }}
-                        className='fixed inset-x-0 top-0 z-50 h-16'
+                        className='fixed inset-x-0 top-0 z-50 h-14'
                     >
                         <Navbar />
                     </motion.div>

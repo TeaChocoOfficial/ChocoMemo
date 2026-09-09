@@ -4,7 +4,10 @@
         "tagline": "Pembelajaran Bahasa",
         "languages": "Bahasa",
         "japanese": "Bahasa Jepun",
-        "menu": "Buka menu"
+        "menu": "Buka menu",
+        "settings": "Tetapan",
+        "language": "Bahasa",
+        "theme": "Tema"
     },
     "chrome": {
         "hide": "Sembunyikan",

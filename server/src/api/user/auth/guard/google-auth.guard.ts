@@ -8,6 +8,16 @@ export class GoogleAuthGuard extends AuthGuard('google') {
         const request = context.switchToHttp().getRequest();
         const response = context.switchToHttp().getResponse();
 
+        // Passport's OAuth2 strategy calls Express-style res.setHeader() which
+        // doesn't exist on Fastify's reply object.  Bridge the gap so the
+        // built-in redirect works.
+        if (typeof response.setHeader !== 'function') {
+            response.setHeader = (name: string, value: string) => {
+                response.header(name, value);
+                return response;
+            };
+        }
+
         const redirectUri = request.query.redirect_uri;
         if (redirectUri && typeof redirectUri === 'string') {
             response.cookie('oauth_redirect_uri', redirectUri, {

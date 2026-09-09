@@ -4,7 +4,10 @@
         "tagline": "Apprendimento delle Lingue",
         "languages": "Lingue",
         "japanese": "Giapponese",
-        "menu": "Apri il menu"
+        "menu": "Apri il menu",
+        "settings": "Impostazioni",
+        "language": "Lingua",
+        "theme": "Tema"
     },
     "chrome": {
         "hide": "Nascondi",

@@ -4,7 +4,10 @@
         "tagline": "भाषा सीखना",
         "languages": "भाषाएँ",
         "japanese": "जापानी",
-        "menu": "मेनू खोलें"
+        "menu": "मेनू खोलें",
+        "settings": "सेटिंग्स",
+        "language": "भाषा",
+        "theme": "थीम"
     },
     "chrome": {
         "hide": "छिपाएँ",
