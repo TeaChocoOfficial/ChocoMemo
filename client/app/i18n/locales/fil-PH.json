@@ -204,6 +204,7 @@
         "exams": {
             "title": "Mga Deck ng Pagsusulit sa Bokabularyo",
             "description": "Subukan ang iyong sarili sa mga multiple-choice na pagsusulit na gawa sa iyong bokabularyo. Pumili ng set, mag-import ng isa, o gumawa ng sarili mo.",
+            "back_hub": "Bumalik sa Japanese",
             "search": "Maghanap ng mga set ng pagsusulit...",
             "empty": "Wala pang set ng pagsusulit — mag-import ng isa o gumawa ng custom na set.",
             "import": "Mag-import ng set ng pagsusulit",
@@ -372,15 +373,104 @@
         }
     },
     "footer": {
-        "tagline": "Isang maaliwalas, mayaman sa tema na paraan upang tikman ang paglalakbay sa wikang Hapones.",
-        "explore": "Tuklasin",
-        "learn": "Ano ang itinuturo namin",
+        "tagline": "Isang mainam na paraan, maraming paksa para lasawin ang iyong Japaneseisa kutsara.",
+        "explore": "Mag-explore",
+        "learn": "Aming itinuturo",
         "rights": "TeaChoco · Lahat ng karapatan ay nakalaan.",
         "languages": {
-            "ja": "Hapones",
+            "ja": "Hapon",
             "en": "Ingles",
             "ko": "Koreano",
             "th": "Thai"
+        }
+    },
+    "auth": {
+        "signIn": "Mag-sign In",
+        "signUp": "Gumawa ng Account",
+        "signOut": "Mag-sign Out",
+        "email": "Email",
+        "password": "Password",
+        "name": "Pangalan",
+        "forgotPassword": "Nakalimutan ang password?",
+        "resetPassword": "I-reset ang Password",
+        "resetSent": "Naipadala na ang link para sa pag-reset ng password sa iyong email",
+        "backToSignIn": "Bumalik sa Sign In",
+        "orContinueWith": "O magpatuloy gamit ang",
+        "google": "Google",
+        "noAccount": "Wala pang account?",
+        "hasAccount": "May account na ba?",
+        "profile": "Profile",
+        "settings": "Mga Setting",
+        "welcome": "Maligayang pagdating, {{name}}!",
+        "error": {
+            "invalidCredentials": "Maling email o password",
+            "emailInUse": "Ginamit na ang email na ito",
+            "generic": "May naganap na error"
+        }
+    },
+    "settings": {
+        "title": "Mga Setting",
+        "subtitle": "Ihanda ang ChocoMemo ayon sa'yo.",
+        "back": "Bumalik",
+        "nav": {
+            "settings": "Mga Setting",
+            "appearance": "Hitsura",
+            "language": "Wika",
+            "voice": "Boses at audio",
+            "interface": "Interface",
+            "account": "Account"
+        },
+        "appearance": {
+            "hint": "Piliin ang mood ng iyong tasa."
+        },
+        "language": {
+            "hint": "Piliin ang wikang ginagamit ng ChocoMemo sa'yo."
+        },
+        "voice": {
+            "hint": "Ang boses na nagbabasa nang malakas ng kana at mga salita."
+        },
+        "interface": {
+            "hint": "Ayusin ang bumubuo sa iyong pag-aaral.",
+            "chromeLabel": "Ipakita ang interface",
+            "chromeDescription": "Ipakita o itago ang navigation at footer."
+        },
+        "account": {
+            "signedInHint": "Naka-log in bilang {{name}}",
+            "signedOutHint": "Mag-log in para mapanatili ang iyong kuwento sa pag-aaral sa lahat ng device.",
+            "goToProfile": "Tingnan ang profile",
+            "signIn": "Mag-log in"
+        }
+    },
+    "profile": {
+        "title": "Profile",
+        "subtitle": "Ang iyong kuwento sa pag-aaral kasama ang ChocoMemo.",
+        "back": "Bumalik",
+        "anonymousName": "ChocoStudyante",
+        "memberSince": "Miyembro simula",
+        "notSignedInTitle": "Hindi naka-log in",
+        "notSignedInHint": "Mag-log in para makita ang iyong profile, i-edit ang mga detalye, at masubaybayan ang progreso sa lahat ng device.",
+        "signIn": "Mag-log in",
+        "stats": {
+            "label": "Sa isang sulyap",
+            "kana": "Kana na nabasa",
+            "vocabulary": "Bokabularyo",
+            "learned": "Mga salitang natutunan",
+            "due": "Due para sa pagsusuri"
+        },
+        "details": {
+            "label": "Mga detalye ng account",
+            "name": "Pangalan",
+            "email": "Email",
+            "namePlaceholder": "Iyong pangalan",
+            "emailPlaceholder": "ikaw@halimbawa.com",
+            "save": "I-save ang mga pagbabago",
+            "saving": "Sinasave…",
+            "saved": "Na-update ang profile",
+            "updateError": "Hindi ma-update ang iyong profile."
+        },
+        "danger": {
+            "label": "Mapanganib na sona",
+            "hint": "Mag-log out sa iyong account sa device na ito. Mananatili ang iyong lokal na progreso."
         }
     }
 }

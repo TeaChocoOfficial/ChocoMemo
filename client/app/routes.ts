@@ -13,6 +13,8 @@ export default [
             route('japanese/exams/:examId', 'routes/page/japanese/exams/exams.$examId.tsx'),
             route('japanese/review', 'routes/page/japanese/review.tsx'),
             route('japanese/review/:deckId', 'routes/page/japanese/review.$deckId.tsx'),
+            route('settings', 'routes/page/settings.tsx'),
+            route('profile', 'routes/page/profile.tsx'),
             route('auth', 'routes/page/auth.tsx'),
             route('*', 'routes/not-found.tsx'),
         ]),

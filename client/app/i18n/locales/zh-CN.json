@@ -383,5 +383,94 @@
             "ko": "韩语",
             "th": "泰语"
         }
+    },
+    "auth": {
+        "signIn": "登录",
+        "signUp": "注册",
+        "signOut": "退出登录",
+        "email": "邮箱",
+        "password": "密码",
+        "name": "姓名",
+        "forgotPassword": "忘记密码？",
+        "resetPassword": "重置密码",
+        "resetSent": "如果存在使用该邮箱的账户，您将很快收到重置链接。",
+        "backToSignIn": "返回登录",
+        "orContinueWith": "或通过以下方式继续",
+        "google": "Google",
+        "noAccount": "没有账户？",
+        "hasAccount": "已有账户？",
+        "profile": "个人资料",
+        "settings": "设置",
+        "welcome": "欢迎，{{name}}",
+        "error": {
+            "invalidCredentials": "邮箱或密码不正确。",
+            "emailInUse": "已存在使用该邮箱的账户。",
+            "generic": "出了点问题。请重试。"
+        }
+    },
+    "settings": {
+        "title": "设置",
+        "subtitle": "按你的口味冲泡 ChocoMemo。",
+        "back": "返回",
+        "nav": {
+            "settings": "设置",
+            "appearance": "外观",
+            "language": "语言",
+            "voice": "语音与音频",
+            "interface": "界面",
+            "account": "账户"
+        },
+        "appearance": {
+            "hint": "选择你杯中的氛围。"
+        },
+        "language": {
+            "hint": "选择 ChocoMemo 与你交流的语言。"
+        },
+        "voice": {
+            "hint": "用于朗读假名和单词的声音。"
+        },
+        "interface": {
+            "hint": "调整围绕在你学习周围的显示。",
+            "chromeLabel": "显示界面",
+            "chromeDescription": "显示或隐藏导航栏和页脚。"
+        },
+        "account": {
+            "signedInHint": "已以 {{name}} 身份登录",
+            "signedOutHint": "登录后可在所有设备上保留你的学习故事。",
+            "goToProfile": "查看个人资料",
+            "signIn": "登录"
+        }
+    },
+    "profile": {
+        "title": "个人资料",
+        "subtitle": "你和 ChocoMemo 的学习故事。",
+        "back": "返回",
+        "anonymousName": "Choco 学习者",
+        "memberSince": "加入时间",
+        "notSignedInTitle": "未登录",
+        "notSignedInHint": "登录后可查看个人资料、编辑信息，并在所有设备上跟踪进度。",
+        "signIn": "登录",
+        "stats": {
+            "label": "一览",
+            "kana": "已读假名",
+            "vocabulary": "词汇量",
+            "learned": "已学单词",
+            "due": "待复习"
+        },
+        "details": {
+            "label": "账户详情",
+            "name": "姓名",
+            "email": "邮箱",
+            "namePlaceholder": "你的姓名",
+            "emailPlaceholder": "you@example.com",
+            "save": "保存更改",
+            "saving": "保存中…",
+            "saved": "个人资料已更新",
+            "updateError": "无法更新你的个人资料。"
+        },
+        "danger": {
+            "label": "危险区域",
+            "hint": "在此设备上退出你的账户。你的本地进度会保留。"
+        }
     }
 }

@@ -123,8 +123,8 @@ export default function Navbar() {
         { label: t('nav.japanese'), to: '/japanese' },
         { label: t('japanese.kana.title'), to: '/japanese/kana' },
         { label: t('japanese.kanaDrill.title'), to: '/japanese/kana-drill' },
-        { label: t('japanese.exams.title'), to: '/japanese/exams' },
         { label: t('japanese.vocabularyReview.title'), to: '/japanese/review' },
+        { label: t('japanese.exams.title'), to: '/japanese/exams' },
     ];
 
     const isJapaneseActive = pathname.startsWith('/japanese');

@@ -204,6 +204,7 @@
         "exams": {
             "title": "Paquets d'Examens de Vocabulaire",
             "description": "Testez-vous avec des examens à choix multiples construits à partir de votre vocabulaire. Choisissez un ensemble, importez-en un ou créez le vôtre.",
+            "back_hub": "Retour au japonais",
             "search": "Rechercher des ensembles d'examens...",
             "empty": "Aucun ensemble d'examens pour l'instant — importez-en un ou créez un ensemble personnalisé.",
             "import": "Importer un ensemble d'examens",
@@ -372,7 +373,7 @@
         }
     },
     "footer": {
-        "tagline": "Une façon chaleureuse et riche en thèmes de savourer votre parcours dans la langue japonaise.",
+        "tagline": "Une façon chaleureuse, beaucoup de thèmes pour siroter votre japonais gorgée après gorgée.",
         "explore": "Explorer",
         "learn": "Ce que nous enseignons",
         "rights": "TeaChoco · Tous droits réservés.",
@@ -381,6 +382,95 @@
             "en": "Anglais",
             "ko": "Coréen",
             "th": "Thaï"
+        }
+    },
+    "auth": {
+        "signIn": "Se connecter",
+        "signUp": "S'inscrire",
+        "signOut": "Se déconnecter",
+        "email": "E-mail",
+        "password": "Mot de passe",
+        "name": "Nom",
+        "forgotPassword": "Mot de passe oublié ?",
+        "resetPassword": "Réinitialiser le mot de passe",
+        "resetSent": "Lien de réinitialisation envoyé à votre adresse e-mail",
+        "backToSignIn": "Retour à la connexion",
+        "orContinueWith": "Ou continuer avec",
+        "google": "Google",
+        "noAccount": "Pas encore de compte ?",
+        "hasAccount": "Déjà un compte ?",
+        "profile": "Profil",
+        "settings": "Paramètres",
+        "welcome": "Bienvenue, {{name}} !",
+        "error": {
+            "invalidCredentials": "E-mail ou mot de passe incorrect",
+            "emailInUse": "Cet e-mail est déjà utilisé",
+            "generic": "Une erreur est survenue"
+        }
+    },
+    "settings": {
+        "title": "Paramètres",
+        "subtitle": "Préparez ChocoMemo à votre goût.",
+        "back": "Retour",
+        "nav": {
+            "settings": "Paramètres",
+            "appearance": "Apparence",
+            "language": "Langue",
+            "voice": "Voix et audio",
+            "interface": "Interface",
+            "account": "Compte"
+        },
+        "appearance": {
+            "hint": "Choisissez l'ambiance de votre tasse."
+        },
+        "language": {
+            "hint": "Choisissez la langue dans laquelle ChocoMemo vous parle."
+        },
+        "voice": {
+            "hint": "La voix qui lit les kana et les mots à voix haute."
+        },
+        "interface": {
+            "hint": "Ajustez ce qui encadre votre apprentissage.",
+            "chromeLabel": "Afficher l'interface",
+            "chromeDescription": "Afficher ou masquer la navigation et le pied de page."
+        },
+        "account": {
+            "signedInHint": "Connecté en tant que {{name}}",
+            "signedOutHint": "Connectez-vous pour retrouver votre histoire d'apprentissage sur tous vos appareils.",
+            "goToProfile": "Voir le profil",
+            "signIn": "Se connecter"
+        }
+    },
+    "profile": {
+        "title": "Profil",
+        "subtitle": "Votre histoire d'apprentissage avec ChocoMemo.",
+        "back": "Retour",
+        "anonymousName": "Apprenant Choco",
+        "memberSince": "Membre depuis",
+        "notSignedInTitle": "Non connecté",
+        "notSignedInHint": "Connectez-vous pour voir votre profil, modifier vos informations et suivre votre progression sur tous vos appareils.",
+        "signIn": "Se connecter",
+        "stats": {
+            "label": "En un coup d'œil",
+            "kana": "Kana lus",
+            "vocabulary": "Vocabulaire",
+            "learned": "Mots appris",
+            "due": "À réviser"
+        },
+        "details": {
+            "label": "Détails du compte",
+            "name": "Nom",
+            "email": "E-mail",
+            "namePlaceholder": "Votre nom",
+            "emailPlaceholder": "vous@exemple.com",
+            "save": "Enregistrer les modifications",
+            "saving": "Enregistrement…",
+            "saved": "Profil mis à jour",
+            "updateError": "Impossible de mettre à jour votre profil."
+        },
+        "danger": {
+            "label": "Zone sensible",
+            "hint": "Déconnectez-vous sur cet appareil. Votre progression locale reste enregistrée."
         }
     }
 }

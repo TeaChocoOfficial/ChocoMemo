@@ -110,7 +110,7 @@ async function bootstrap() {
         `🔴 Allowed Origins: ${secureService
             .getAllowedUrls()
             .map((url) => chalk.cyan(url))
-            .join(', ')}`,
+            .join(' , ')}`,
     );
     console.log('\n');
 }

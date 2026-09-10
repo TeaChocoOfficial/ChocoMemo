@@ -407,5 +407,70 @@
             "emailInUse": "An account with this email already exists.",
             "generic": "Something went wrong. Please try again."
         }
+    },
+    "settings": {
+        "title": "Settings",
+        "subtitle": "Brew ChocoMemo to your taste.",
+        "back": "Back",
+        "nav": {
+            "settings": "Settings",
+            "appearance": "Appearance",
+            "language": "Language",
+            "voice": "Voice & audio",
+            "interface": "Interface",
+            "account": "Account"
+        },
+        "appearance": {
+            "hint": "Pick the mood of your cup. A canvas for every craving."
+        },
+        "language": {
+            "hint": "Choose the language ChocoMemo speaks to you."
+        },
+        "voice": {
+            "hint": "The voice used to read kana and words aloud."
+        },
+        "interface": {
+            "hint": "Tune what frames your learning.",
+            "chromeLabel": "Show interface",
+            "chromeDescription": "Show or hide the navigation and footer."
+        },
+        "account": {
+            "signedInHint": "Signed in as {{name}}",
+            "signedOutHint": "Sign in to keep your learning story across devices.",
+            "goToProfile": "View profile",
+            "signIn": "Sign In"
+        }
+    },
+    "profile": {
+        "title": "Profile",
+        "subtitle": "Your learning story with ChocoMemo.",
+        "back": "Back",
+        "anonymousName": "ChocoLearner",
+        "memberSince": "Member since",
+        "notSignedInTitle": "Not signed in",
+        "notSignedInHint": "Sign in to see your profile, edit your details, and track progress across devices.",
+        "signIn": "Sign In",
+        "stats": {
+            "label": "At a glance",
+            "kana": "Kana read",
+            "vocabulary": "Vocabulary",
+            "learned": "Words learned",
+            "due": "Due for review"
+        },
+        "details": {
+            "label": "Account details",
+            "name": "Name",
+            "email": "Email",
+            "namePlaceholder": "Your name",
+            "emailPlaceholder": "you@example.com",
+            "save": "Save changes",
+            "saving": "Saving…",
+            "saved": "Profile updated",
+            "updateError": "Could not update your profile."
+        },
+        "danger": {
+            "label": "Danger zone",
+            "hint": "Sign out of your account on this device. Your local progress stays behind."
+        }
     }
 }

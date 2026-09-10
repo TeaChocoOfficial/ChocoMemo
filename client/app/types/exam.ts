@@ -1,16 +1,32 @@
 // -Path: 'client/app/types/exam.ts'
-import type { LangText } from './vocabulary';
+import type { LangText } from './type';
 
-export interface ExamQuestion {
+export type ExamQuestionType = 'meaning' | 'fillBlank';
+
+interface BaseExamQuestion {
     id: string;
-    prompt: string; // the word/kanji being tested
-    promptReading?: string;
-    /** Localized meaning — `LangText` so built-in sets follow the user's
-     *  language like every other page. */
+    type: ExamQuestionType;
     correctAnswer: LangText;
-    /** Includes correctAnswer, pre-shuffled at build time. */
+    /** 2 to 8 options, pre-shuffled at build time. NOT always 4. */
     options: LangText[];
 }
+
+/** "What does this word mean?" — prompt is the word/kanji being tested. */
+export interface MeaningExamQuestion extends BaseExamQuestion {
+    type: 'meaning';
+    prompt: string; // the word/kanji being tested
+    promptReading?: string;
+}
+
+/** "Fill in the blank" — a sentence with the target word blanked out. */
+export interface FillBlankExamQuestion extends BaseExamQuestion {
+    type: 'fillBlank';
+    sentenceBefore: string; // text before the blank
+    sentenceAfter: string; // text after the blank
+    sentenceReading?: string; // optional furigana/reading hint for the sentence
+}
+
+export type ExamQuestion = MeaningExamQuestion | FillBlankExamQuestion;
 
 export type ExamSetSource = 'default' | 'custom' | 'imported';
 

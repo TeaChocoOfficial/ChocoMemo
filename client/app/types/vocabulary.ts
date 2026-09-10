@@ -1,7 +1,5 @@
 // -Path: 'client/app/types/vocabulary.ts'
-import type { Lang } from '../i18n/locales';
-
-export type LangText = string | Partial<Record<Lang, string>>;
+import type { LangText } from './type';
 
 /** One character (or kana run) of the target word inside the example
  *  sentence. A kanji carries its own reading (`rt`); okurigana written

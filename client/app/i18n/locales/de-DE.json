@@ -204,6 +204,7 @@
         "exams": {
             "title": "Vokabel-Prüfungsstapel",
             "description": "Teste dich mit Multiple-Choice-Prüfungen, die aus deinem Wortschatz erstellt werden. Wähle ein Set, importiere eines oder erstelle dein eigenes.",
+            "back_hub": "Zurück zu Japanisch",
             "search": "Prüfungssets suchen...",
             "empty": "Noch keine Prüfungssets — importiere eines oder erstelle ein benutzerdefiniertes Set.",
             "import": "Prüfungsset importieren",
@@ -372,7 +373,7 @@
         }
     },
     "footer": {
-        "tagline": "Eine gemütliche, themenreiche Art, sich durch die japanische Sprache zu schlürfen.",
+        "tagline": "Eine gemütliche Art, mit vielen ThemenJapanisch schlürfen.",
         "explore": "Entdecken",
         "learn": "Was wir lehren",
         "rights": "TeaChoco · Alle Rechte vorbehalten.",
@@ -381,6 +382,95 @@
             "en": "Englisch",
             "ko": "Koreanisch",
             "th": "Thailändisch"
+        }
+    },
+    "auth": {
+        "signIn": "Anmelden",
+        "signUp": "Registrieren",
+        "signOut": "Abmelden",
+        "email": "E-Mail",
+        "password": "Passwort",
+        "name": "Name",
+        "forgotPassword": "Passwort vergessen?",
+        "resetPassword": "Passwort zurücksetzen",
+        "resetSent": "Link zum Zurücksetzen des Passworts an deine E-Mail gesendet",
+        "backToSignIn": "Zurück zur Anmeldung",
+        "orContinueWith": "Oder fortfahren mit",
+        "google": "Google",
+        "noAccount": "Noch kein Konto?",
+        "hasAccount": "Bereits ein Konto?",
+        "profile": "Profil",
+        "settings": "Einstellungen",
+        "welcome": "Willkommen, {{name}}!",
+        "error": {
+            "invalidCredentials": "Ungültige E-Mail oder Passwort",
+            "emailInUse": "E-Mail-Adresse bereits vergeben",
+            "generic": "Ein Fehler ist aufgetreten"
+        }
+    },
+    "settings": {
+        "title": "Einstellungen",
+        "subtitle": "Mix dir ChocoMemo nach deinem Geschmack.",
+        "back": "Zurück",
+        "nav": {
+            "settings": "Einstellungen",
+            "appearance": "Erscheinungsbild",
+            "language": "Sprache",
+            "voice": "Stimme & Audio",
+            "interface": "Oberfläche",
+            "account": "Konto"
+        },
+        "appearance": {
+            "hint": "Wähle die Stimmung deiner Tasse."
+        },
+        "language": {
+            "hint": "Wähle die Sprache, die ChocoMemo mit dir spricht."
+        },
+        "voice": {
+            "hint": "Die Stimme zum Vorlesen von Kana und Wörtern."
+        },
+        "interface": {
+            "hint": "Passe den Rahmen deines Lernens an.",
+            "chromeLabel": "Oberfläche anzeigen",
+            "chromeDescription": "Zeigt oder blendet Navigation und Fußzeile ein oder aus."
+        },
+        "account": {
+            "signedInHint": "Angemeldet als {{name}}",
+            "signedOutHint": "Melde dich an, um deine Lernstory geräteübergreifend zu behalten.",
+            "goToProfile": "Profil ansehen",
+            "signIn": "Anmelden"
+        }
+    },
+    "profile": {
+        "title": "Profil",
+        "subtitle": "Deine Lernstory mit ChocoMemo.",
+        "back": "Zurück",
+        "anonymousName": "ChocoLernender",
+        "memberSince": "Mitglied seit",
+        "notSignedInTitle": "Nicht angemeldet",
+        "notSignedInHint": "Melde dich an, um dein Profil zu sehen, deine Daten zu bearbeiten und Fortschritte geräteübergreifend zu verfolgen.",
+        "signIn": "Anmelden",
+        "stats": {
+            "label": "Auf einen Blick",
+            "kana": "Gelesenes Kana",
+            "vocabulary": "Wortschatz",
+            "learned": "Gelernte Wörter",
+            "due": "Fällige Wiederholungen"
+        },
+        "details": {
+            "label": "Kontodetails",
+            "name": "Name",
+            "email": "E-Mail",
+            "namePlaceholder": "Dein Name",
+            "emailPlaceholder": "du@beispiel.de",
+            "save": "Änderungen speichern",
+            "saving": "Speichern…",
+            "saved": "Profil aktualisiert",
+            "updateError": "Profil konnte nicht aktualisiert werden."
+        },
+        "danger": {
+            "label": "Gefahrenzone",
+            "hint": "Melde dich auf diesem Gerät ab. Deine lokalen Fortschritte bleiben erhalten."
         }
     }
 }

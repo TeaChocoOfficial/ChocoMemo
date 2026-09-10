@@ -204,6 +204,7 @@
         "exams": {
             "title": "Dek Ujian Kosakata",
             "description": "Uji dirimu dengan ujian pilihan ganda yang disusun dari kosakatamu. Pilih satu set, impor, atau buat sendiri.",
+            "back_hub": "Kembali ke Bahasa Jepang",
             "search": "Cari set ujian...",
             "empty": "Belum ada set ujian — impor satu atau buat set khusus.",
             "import": "Impor set ujian",
@@ -381,6 +382,95 @@
             "en": "Inggris",
             "ko": "Korea",
             "th": "Thai"
+        }
+    },
+    "auth": {
+        "signIn": "Masuk",
+        "signUp": "Daftar",
+        "signOut": "Keluar",
+        "email": "Surel",
+        "password": "Kata sandi",
+        "name": "Nama",
+        "forgotPassword": "Lupa kata sandi?",
+        "resetPassword": "Atur Ulang Kata Sandi",
+        "resetSent": "Jika ada akun dengan surel tersebut, kamu akan menerima tautan atur ulang sebentar lagi.",
+        "backToSignIn": "Kembali ke Masuk",
+        "orContinueWith": "Atau lanjutkan dengan",
+        "google": "Google",
+        "noAccount": "Belum punya akun?",
+        "hasAccount": "Sudah punya akun?",
+        "profile": "Profil",
+        "settings": "Pengaturan",
+        "welcome": "Selamat datang, {{name}}",
+        "error": {
+            "invalidCredentials": "Surel atau kata sandi salah.",
+            "emailInUse": "Akun dengan surel ini sudah ada.",
+            "generic": "Terjadi kesalahan. Silakan coba lagi."
+        }
+    },
+    "settings": {
+        "title": "Pengaturan",
+        "subtitle": "Racik ChocoMemo sesuai seleramu.",
+        "back": "Kembali",
+        "nav": {
+            "settings": "Pengaturan",
+            "appearance": "Tampilan",
+            "language": "Bahasa",
+            "voice": "Suara & audio",
+            "interface": "Antarmuka",
+            "account": "Akun"
+        },
+        "appearance": {
+            "hint": "Pilih suasana cangkirmu."
+        },
+        "language": {
+            "hint": "Pilih bahasa yang ChocoMemo gunakan untukmu."
+        },
+        "voice": {
+            "hint": "Suara yang membacakan kana dan kata dengan lantang."
+        },
+        "interface": {
+            "hint": "Sesuaikan hal-hal yang membingkai belajarmu.",
+            "chromeLabel": "Tampilkan antarmuka",
+            "chromeDescription": "Tampilkan atau sembunyikan navigasi dan footer."
+        },
+        "account": {
+            "signedInHint": "Masuk sebagai {{name}}",
+            "signedOutHint": "Masuk untuk menjaga cerita belajarmu di semua perangkat.",
+            "goToProfile": "Lihat profil",
+            "signIn": "Masuk"
+        }
+    },
+    "profile": {
+        "title": "Profil",
+        "subtitle": "Cerita belajarmu bersama ChocoMemo.",
+        "back": "Kembali",
+        "anonymousName": "Pelajar Choco",
+        "memberSince": "Anggota sejak",
+        "notSignedInTitle": "Belum masuk",
+        "notSignedInHint": "Masuk untuk melihat profil, mengedit detail, dan melacak kemajuan di semua perangkat.",
+        "signIn": "Masuk",
+        "stats": {
+            "label": "Sekilas",
+            "kana": "Kana dibaca",
+            "vocabulary": "Kosakata",
+            "learned": "Kata dipelajari",
+            "due": "Jatuh tempo tinjau"
+        },
+        "details": {
+            "label": "Detail akun",
+            "name": "Nama",
+            "email": "Email",
+            "namePlaceholder": "Namamu",
+            "emailPlaceholder": "kamu@contoh.com",
+            "save": "Simpan perubahan",
+            "saving": "Menyimpan…",
+            "saved": "Profil diperbarui",
+            "updateError": "Tidak dapat memperbarui profilmu."
+        },
+        "danger": {
+            "label": "Zona bahaya",
+            "hint": "Keluar dari akunmu di perangkat ini. Kemajuan lokalmu tetap tersimpan."
         }
     }
 }

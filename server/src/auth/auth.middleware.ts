@@ -1,7 +1,8 @@
 // -Path: "Nest TypeScript/src/auth/auth.middleware.ts"
-import type { IncomingHttpHeaders, IncomingMessage, ServerResponse } from 'node:http';
+import { timingSafeEqual } from 'node:crypto';
 import { SecureService } from '../secure/secure.service';
 import { Injectable, Logger, type NestMiddleware } from '@nestjs/common';
+import type { IncomingHttpHeaders, IncomingMessage, ServerResponse } from 'node:http';
 
 type NextFunction = (err?: unknown) => void;
 
@@ -9,56 +10,96 @@ type NextFunction = (err?: unknown) => void;
 export class AuthMiddleware implements NestMiddleware {
     logger = new Logger(AuthMiddleware.name);
 
-    constructor(private readonly secureService: SecureService) {}
-
-    private readonly publicGets = [
+    private readonly publicPaths = [
         '/',
-        '/public**',
-        '/api/img**',
+        '/public',
+        '/api/img',
         '/socket-ui',
-        '/user/auth/google/callback',
+        '/api/user/auth/google',
+        '/api/user/auth/google/callback',
     ];
 
+    constructor(private readonly secureService: SecureService) {}
+
     use(req: IncomingMessage, res: ServerResponse, next: NextFunction) {
-        if (this.secureService.isDev()) return next();
-        const { method, headers } = req;
-        const clientOrigin = req.headers.origin || req.headers.referer || '';
+        const { method, headers, url = '' } = req;
+        const path = url.split('?')[0];
+        const clientOrigin = headers.origin || headers.referer || '';
 
-        const path = (req.url ?? '').split('?')[0];
-        const publicPaths = this.publicGets.find(
-            (publicPath) =>
-                path === publicPath ||
-                (publicPath.endsWith('**') && path.startsWith(publicPath.slice(0, -2))),
-        );
+        // 1. OPTIONS ผ่าน (CORS preflight)
+        if (method === 'OPTIONS') return next();
 
-        let callback: ServerResponse | null = null;
-        if (method === 'GET') {
-            if (publicPaths) return next();
-            callback = this.checkUrl(res, clientOrigin);
-        } else {
-            callback = this.checkToken(res, headers);
-            if (callback === null) callback = this.checkUrl(res, clientOrigin);
+        // 2. Public paths ผ่าน
+        if (this.isPublic(path)) return next();
+
+        // 3. Dev mode (log ชัดเจน)
+        if (this.secureService.isDev()) {
+            this.logger.warn(`DEV bypass: ${method} ${path}`);
+            return next();
         }
 
-        if (callback === null) return next();
-        return callback;
+        // 4. เช็ค token ทุก method
+        const tokenError = this.checkToken(res, headers);
+        if (tokenError) return tokenError;
+
+        // 5. เช็ค origin (defense-in-depth)
+        const originError = this.checkOrigin(res, clientOrigin);
+        if (originError) return originError;
+
+        return next();
     }
 
-    checkUrl(res: ServerResponse, origin: string): ServerResponse | null {
-        const allowedUrls = this.secureService.getAllowedUrls();
-        if (allowedUrls.find((allowedUrl) => origin.startsWith(allowedUrl))) return null;
-        return this.sendJson(res, 400, { message: 'Bad Request: Invalid Origin' });
+    private isPublic(path: string): boolean {
+        return this.publicPaths.some((p) => path === p || path.startsWith(p + '/'));
     }
 
-    checkToken(res: ServerResponse, headers: IncomingHttpHeaders): ServerResponse | null {
+    private checkOrigin(res: ServerResponse, origin: string): ServerResponse | null {
+        if (!origin) {
+            this.logger.warn('Missing Origin header');
+            return this.sendJson(res, 400, { message: 'Bad Request: Missing Origin' });
+        }
+
+        let originHost: string;
+        try {
+            originHost = new URL(origin).origin;
+        } catch {
+            return this.sendJson(res, 400, { message: 'Bad Request: Invalid Origin' });
+        }
+
+        const allowed = this.secureService.getAllowedUrls();
+        const ok = allowed.some((url) => {
+            try {
+                return new URL(url).origin === originHost;
+            } catch {
+                return false;
+            }
+        });
+
+        if (ok) return null;
+
+        this.logger.warn(`Blocked origin: ${originHost}`);
+        return this.sendJson(res, 403, { message: 'Forbidden: Origin not allowed' });
+    }
+
+    private checkToken(res: ServerResponse, headers: IncomingHttpHeaders): ServerResponse | null {
         const authHeader = headers.authorization;
-        if (typeof authHeader === 'string' && authHeader.startsWith('Bearer ')) {
-            const token = authHeader.split(' ')[1];
-            const { API_TOKEN_KEY } = this.secureService.getEnvConfig();
-            if (token === API_TOKEN_KEY) return null;
-            return this.sendJson(res, 403, { message: 'Forbidden: Invalid API Token' });
-        }
-        return this.sendJson(res, 401, { message: 'Unauthorized: Missing API Token' });
+        if (typeof authHeader !== 'string' || !authHeader.startsWith('Bearer '))
+            return this.sendJson(res, 401, { message: 'Unauthorized: Missing API Token' });
+
+        const token = authHeader.slice(7).trim();
+        if (!token) return this.sendJson(res, 401, { message: 'Unauthorized: Empty Token' });
+
+        const { API_TOKEN_KEY } = this.secureService.getEnvConfig();
+        if (API_TOKEN_KEY && this.safeEqual(token, API_TOKEN_KEY)) return null;
+
+        return this.sendJson(res, 403, { message: 'Forbidden: Invalid API Token' });
+    }
+
+    private safeEqual(a: string, b: string): boolean {
+        const bufA = Buffer.from(a);
+        const bufB = Buffer.from(b);
+        if (bufA.length !== bufB.length) return false;
+        return timingSafeEqual(bufA, bufB);
     }
 
     private sendJson(
@@ -66,6 +107,7 @@ export class AuthMiddleware implements NestMiddleware {
         statusCode: number,
         body: { message: string },
     ): ServerResponse {
+        if (res.headersSent) return res;
         res.statusCode = statusCode;
         res.setHeader('Content-Type', 'application/json');
         res.end(JSON.stringify(body));

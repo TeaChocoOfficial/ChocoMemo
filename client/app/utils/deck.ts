@@ -1,6 +1,6 @@
 // -Path: 'client/app/utils/deck.ts'
 import { z } from 'zod';
-import type { LangText } from '~/types/vocabulary';
+import type { LangText } from '~/types/type';
 import type { VocabDeck } from '~/types/vocabulary';
 
 // A name/description is either a plain string or a per-locale record,

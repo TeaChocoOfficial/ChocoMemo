@@ -1,33 +1,77 @@
 // -Path: 'client/app/utils/exam.ts'
 import { z } from 'zod';
-import type { VocabWord } from '~/types/vocabulary';
-import type { ExamQuestion, ExamSet, ExamSetSource } from '~/types/exam';
+import type { VocabExample, VocabWord } from '~/types/vocabulary';
+import type {
+    ExamQuestion,
+    ExamSet,
+    ExamSetSource,
+    FillBlankExamQuestion,
+    MeaningExamQuestion,
+} from '~/types/exam';
 
 function shuffle<T>(arr: T[]): T[] {
     return [...arr].sort(() => Math.random() - 0.5);
 }
 
-/** Builds a multiple-choice exam set out of existing vocabulary data.
- *  Distractors are pulled from other words' meanings in the same list, so
- *  it needs at least 2 words to produce any options at all — with very
- *  small custom lists it falls back to fewer than 4 choices rather than
- *  throwing. */
+function randomInt(min: number, max: number): number {
+    return min + Math.floor(Math.random() * (max - min + 1));
+}
+
+/** Reading hint for a fill-in-the-blank sentence: the visible surface text
+ *  plus the target word itself, so the learner matches pronunciation to the
+ *  written form among the options. */
+function sentenceReading(example: VocabExample): string | undefined {
+    const parts = [...example.before, ...example.segments, ...example.after];
+    const reading = parts.map((s) => s.rt ?? s.ch).join('');
+    return reading || undefined;
+}
+
+/** Builds a mixed-type multiple-choice exam set out of existing vocabulary
+ *  data. 'meaning' questions (word → meaning) and 'fillBlank' questions
+ *  (sentence with the word blanked out) alternate evenly. Distractors are
+ *  pulled from other words in the same list — meanings for 'meaning'
+ *  questions, word forms for 'fillBlank' questions.
+ *
+ *  Distractor count varies from 2 to 7 (so options range 3–8) and shrinks
+ *  automatically on very small pools: it never throws, falling back to as
+ *  few options as the pool allows instead. */
 export function buildExamSetFromVocabulary(
     words: VocabWord[],
     opts: { id: string; title: string; description?: string; source?: ExamSetSource },
 ): ExamSet {
-    const questions: ExamQuestion[] = words.map((word) => {
-        const pool = words
-            .filter((w) => w.id !== word.id)
-            .map((w) => w.meaning);
-        const distractors = shuffle(pool).slice(0, 3);
-        return {
+    const questions: ExamQuestion[] = words.map((word, i) => {
+        const others = words.filter((w) => w.id !== word.id);
+        const maxDistractors = Math.min(others.length, 7);
+        const minDistractors = Math.min(2, maxDistractors);
+        const distractorCount =
+            maxDistractors <= minDistractors
+                ? maxDistractors
+                : randomInt(minDistractors, maxDistractors);
+
+        if (i % 2 === 1) {
+            const distractors = shuffle(others.map((w) => w.word)).slice(0, distractorCount);
+            const question: FillBlankExamQuestion = {
+                id: `${word.id}-fillblank`,
+                type: 'fillBlank',
+                sentenceBefore: word.example.before.map((s) => s.ch).join(''),
+                sentenceAfter: word.example.after.map((s) => s.ch).join(''),
+                sentenceReading: sentenceReading(word.example),
+                correctAnswer: word.word,
+                options: shuffle([word.word, ...distractors]),
+            };
+            return question;
+        }
+
+        const distractors = shuffle(others.map((w) => w.meaning)).slice(0, distractorCount);
+        const question: MeaningExamQuestion = {
             id: word.id,
+            type: 'meaning',
             prompt: word.word,
             promptReading: word.reading,
             correctAnswer: word.meaning,
             options: shuffle([word.meaning, ...distractors]),
         };
+        return question;
     });
 
     return {
@@ -45,13 +89,31 @@ export function buildExamSetFromVocabulary(
 // default sets importable again.
 const answerField = z.string().or(z.record(z.string(), z.string()));
 
-const examQuestionSchema = z.object({
+const optionField = z.array(answerField).min(2).max(8);
+
+const meaningQuestionSchema = z.object({
     id: z.string(),
+    type: z.literal('meaning'),
     prompt: z.string(),
     promptReading: z.string().optional(),
     correctAnswer: answerField,
-    options: z.array(answerField).min(2),
+    options: optionField,
 });
+
+const fillBlankQuestionSchema = z.object({
+    id: z.string(),
+    type: z.literal('fillBlank'),
+    sentenceBefore: z.string(),
+    sentenceAfter: z.string(),
+    sentenceReading: z.string().optional(),
+    correctAnswer: answerField,
+    options: optionField,
+});
+
+const examQuestionSchema = z.discriminatedUnion('type', [
+    meaningQuestionSchema,
+    fillBlankQuestionSchema,
+]);
 
 /** Validates the shape of an imported exam set file. Doesn't trust the
  *  file's own `source`/`id` — those are reassigned by the caller so an

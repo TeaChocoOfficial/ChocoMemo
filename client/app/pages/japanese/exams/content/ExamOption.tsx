@@ -1,5 +1,6 @@
 // -Path: 'client/app/pages/japanese/vocabulary/exam/ExamOption.tsx'
-const LABELS = ['A', 'B', 'C', 'D'];
+// Up to 8 options (A–H); fewer remain unused when a question has fewer.
+const LABELS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
 
 interface ExamOptionProps {
     index: number;

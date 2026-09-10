@@ -204,6 +204,7 @@
         "exams": {
             "title": "Kelime Sınavı Desteleri",
             "description": "Kelime dağarcığınızdan oluşturulan çoktan seçmeli sınavlarla kendinizi test edin. Bir set seçin, içe aktarın veya kendinizinkini oluşturun.",
+            "back_hub": "Japoncaya Dön",
             "search": "Sınav setlerini ara...",
             "empty": "Henüz sınav seti yok — bir tane içe aktarın veya özel bir set oluşturun.",
             "import": "Sınav seti içe aktar",
@@ -381,6 +382,95 @@
             "en": "İngilizce",
             "ko": "Korece",
             "th": "Tayca"
+        }
+    },
+    "auth": {
+        "signIn": "Giriş Yap",
+        "signUp": "Kayıt Ol",
+        "signOut": "Çıkış Yap",
+        "email": "E-posta",
+        "password": "Şifre",
+        "name": "Ad",
+        "forgotPassword": "Şifreni mi unuttun?",
+        "resetPassword": "Şifreyi Sıfırla",
+        "resetSent": "Bu e-posta ile bir hesap varsa, sıfırlama bağlantısı yakında gönderilecektir.",
+        "backToSignIn": "Girişe Dön",
+        "orContinueWith": "Veya şununla devam et",
+        "google": "Google",
+        "noAccount": "Hesabın yok mu?",
+        "hasAccount": "Zaten hesabın var mı?",
+        "profile": "Profil",
+        "settings": "Ayarlar",
+        "welcome": "Hoş geldin, {{name}}",
+        "error": {
+            "invalidCredentials": "Geçersiz e-posta veya şifre.",
+            "emailInUse": "Bu e-posta ile zaten bir hesap mevcut.",
+            "generic": "Bir hata oluştu. Lütfen tekrar deneyin."
+        }
+    },
+    "settings": {
+        "title": "Ayarlar",
+        "subtitle": "ChocoMemo'yu zevkine göre demle.",
+        "back": "Geri",
+        "nav": {
+            "settings": "Ayarlar",
+            "appearance": "Görünüm",
+            "language": "Dil",
+            "voice": "Ses ve seslendirme",
+            "interface": "Arayüz",
+            "account": "Hesap"
+        },
+        "appearance": {
+            "hint": "Fincanının ruh halini seç."
+        },
+        "language": {
+            "hint": "ChocoMemo'nun seninle konuştuğu dili seç."
+        },
+        "voice": {
+            "hint": "Kana ve kelimeleri sesli okuyan ses."
+        },
+        "interface": {
+            "hint": "Öğrenmeni çerçeveleyen şeyleri ayarla.",
+            "chromeLabel": "Arayüzü göster",
+            "chromeDescription": "Gezinmeyi ve alt bilgiyi gösterir veya gizler."
+        },
+        "account": {
+            "signedInHint": "{{name}} olarak giriş yapıldı",
+            "signedOutHint": "Öğrenme hikâyeni tüm cihazlarında korumak için giriş yap.",
+            "goToProfile": "Profili görüntüle",
+            "signIn": "Giriş yap"
+        }
+    },
+    "profile": {
+        "title": "Profil",
+        "subtitle": "ChocoMemo ile öğrenme hikâyen.",
+        "back": "Geri",
+        "anonymousName": "Choco Öğrenen",
+        "memberSince": "Üyelik başlangıcı",
+        "notSignedInTitle": "Giriş yapılmadı",
+        "notSignedInHint": "Profilini görmek, bilgilerini düzenlemek ve tüm cihazlarında ilerlemeni takip etmek için giriş yap.",
+        "signIn": "Giriş yap",
+        "stats": {
+            "label": "Bir bakışta",
+            "kana": "Okunan kana",
+            "vocabulary": "Kelime dağarcığı",
+            "learned": "Öğrenilen kelimeler",
+            "due": "Tekrar zamanı gelen"
+        },
+        "details": {
+            "label": "Hesap detayları",
+            "name": "Ad",
+            "email": "E-posta",
+            "namePlaceholder": "Adın",
+            "emailPlaceholder": "sen@ornek.com",
+            "save": "Değişiklikleri kaydet",
+            "saving": "Kaydediliyor…",
+            "saved": "Profil güncellendi",
+            "updateError": "Profilin güncellenemedi."
+        },
+        "danger": {
+            "label": "Tehlikeli bölge",
+            "hint": "Bu cihazda hesabından çıkış yap. Yerel ilerlemen korunur."
         }
     }
 }

@@ -1,7 +1,7 @@
 // -Path: 'client/app/hooks/useVocabMeaning.ts'
+import type { LangText } from '~/types/type';
 import { useTranslation } from 'react-i18next';
 import { SUPPORTED_LANGS, type Lang } from '~/i18n/locales';
-import type { LangText } from '~/types/vocabulary';
 
 const FALLBACK_ORDER: Lang[] = ['en-US', ...SUPPORTED_LANGS.filter((l) => l !== 'en-US')];
 

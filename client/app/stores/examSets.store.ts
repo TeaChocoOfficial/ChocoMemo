@@ -65,6 +65,15 @@ export const useExamSetsStore = create<ExamSetsState>()(
         {
             name: 'choco-exam-sets',
             storage,
+            version: 2,
+            migrate: (persistedState) => {
+                if (!persistedState) return { customSets: [], importedSets: [] };
+                const prev = persistedState as Partial<ExamSetsState>;
+                return {
+                    customSets: (prev.customSets ?? []).filter(isNewShapeSet),
+                    importedSets: (prev.importedSets ?? []).filter(isNewShapeSet),
+                };
+            },
             partialize: (state) => ({
                 customSets: state.customSets,
                 importedSets: state.importedSets,
@@ -72,6 +81,16 @@ export const useExamSetsStore = create<ExamSetsState>()(
         },
     ),
 );
+
+// v1-v2 migration: pre-discriminated-union sets (flat questions with no
+// `type` field) are dropped rather than migrated — they were generated from
+// vocabulary so they're trivially re-creatable, and keeping half-valid data
+// would render a broken session view.
+function isNewShapeSet(set: ExamSet): boolean {
+    return set.questions.every(
+        (q) => q.type === 'meaning' || q.type === 'fillBlank',
+    );
+}
 
 /** Combines default + custom + imported sets — the single place every page
  *  should read the full list from, so adding another source later (e.g.

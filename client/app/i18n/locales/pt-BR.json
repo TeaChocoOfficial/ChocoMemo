@@ -204,6 +204,7 @@
         "exams": {
             "title": "Baralhos de Exames de Vocabulário",
             "description": "Teste-se com exames de múltipla escolha criados a partir do seu vocabulário. Escolha um conjunto, importe um ou crie o seu.",
+            "back_hub": "Voltar ao Japonês",
             "search": "Buscar conjuntos de exames...",
             "empty": "Ainda não há conjuntos de exames: importe um ou crie um personalizado.",
             "import": "Importar conjunto de exame",
@@ -381,6 +382,95 @@
             "en": "Inglês",
             "ko": "Coreano",
             "th": "Tailandês"
+        }
+    },
+    "auth": {
+        "signIn": "Entrar",
+        "signUp": "Cadastrar",
+        "signOut": "Sair",
+        "email": "E-mail",
+        "password": "Senha",
+        "name": "Nome",
+        "forgotPassword": "Esqueceu a senha?",
+        "resetPassword": "Redefinir Senha",
+        "resetSent": "Se uma conta existir com esse e-mail, você receberá um link de redefinição em breve.",
+        "backToSignIn": "Voltar ao Login",
+        "orContinueWith": "Ou continue com",
+        "google": "Google",
+        "noAccount": "Não tem uma conta?",
+        "hasAccount": "Já tem uma conta?",
+        "profile": "Perfil",
+        "settings": "Configurações",
+        "welcome": "Bem-vindo, {{name}}",
+        "error": {
+            "invalidCredentials": "E-mail ou senha inválidos.",
+            "emailInUse": "Já existe uma conta com este e-mail.",
+            "generic": "Algo deu errado. Por favor, tente novamente."
+        }
+    },
+    "settings": {
+        "title": "Configurações",
+        "subtitle": "Prepare o ChocoMemo do seu jeito.",
+        "back": "Voltar",
+        "nav": {
+            "settings": "Configurações",
+            "appearance": "Aparência",
+            "language": "Idioma",
+            "voice": "Voz e áudio",
+            "interface": "Interface",
+            "account": "Conta"
+        },
+        "appearance": {
+            "hint": "Escolha o clima da sua xícara."
+        },
+        "language": {
+            "hint": "Escolha o idioma em que o ChocoMemo fala com você."
+        },
+        "voice": {
+            "hint": "A voz que lê kana e palavras em voz alta."
+        },
+        "interface": {
+            "hint": "Ajuste o que emoldura o seu aprendizado.",
+            "chromeLabel": "Mostrar interface",
+            "chromeDescription": "Mostra ou oculta a navegação e o rodapé."
+        },
+        "account": {
+            "signedInHint": "Conectado como {{name}}",
+            "signedOutHint": "Entre para manter sua história de aprendizado em todos os dispositivos.",
+            "goToProfile": "Ver perfil",
+            "signIn": "Entrar"
+        }
+    },
+    "profile": {
+        "title": "Perfil",
+        "subtitle": "Sua história de aprendizado com o ChocoMemo.",
+        "back": "Voltar",
+        "anonymousName": "Aprendiz Choco",
+        "memberSince": "Membro desde",
+        "notSignedInTitle": "Não conectado",
+        "notSignedInHint": "Entre para ver seu perfil, editar seus dados e acompanhar o progresso em todos os dispositivos.",
+        "signIn": "Entrar",
+        "stats": {
+            "label": "De relance",
+            "kana": "Kana lidos",
+            "vocabulary": "Vocabulário",
+            "learned": "Palavras aprendidas",
+            "due": "Pendentes de revisão"
+        },
+        "details": {
+            "label": "Detalhes da conta",
+            "name": "Nome",
+            "email": "E-mail",
+            "namePlaceholder": "Seu nome",
+            "emailPlaceholder": "voce@exemplo.com",
+            "save": "Salvar alterações",
+            "saving": "Salvando…",
+            "saved": "Perfil atualizado",
+            "updateError": "Não foi possível atualizar seu perfil."
+        },
+        "danger": {
+            "label": "Zona de perigo",
+            "hint": "Saia da sua conta neste dispositivo. Seu progresso local permanece."
         }
     }
 }

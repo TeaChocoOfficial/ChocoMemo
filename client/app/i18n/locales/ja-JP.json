@@ -383,5 +383,94 @@
             "ko": "韓国語",
             "th": "タイ語"
         }
+    },
+    "auth": {
+        "signIn": "ログイン",
+        "signUp": "新規登録",
+        "signOut": "ログアウト",
+        "email": "メールアドレス",
+        "password": "パスワード",
+        "name": "名前",
+        "forgotPassword": "パスワードをお忘れですか？",
+        "resetPassword": "パスワードをリセット",
+        "resetSent": "このメールアドレスのアカウントが存在する場合、リセットリンクが間もなく送信されます。",
+        "backToSignIn": "ログインに戻る",
+        "orContinueWith": "または以下で继续",
+        "google": "Google",
+        "noAccount": "アカウントをお持ちでないですか？",
+        "hasAccount": "すでにアカウントをお持ちですか？",
+        "profile": "プロフィール",
+        "settings": "設定",
+        "welcome": "ようこそ、{{name}}さん",
+        "error": {
+            "invalidCredentials": "メールアドレスまたはパスワードが正しくありません。",
+            "emailInUse": "このメールアドレスのアカウントは既に存在します。",
+            "generic": "エラーが発生しました。もう一度お試しください。"
+        }
+    },
+    "settings": {
+        "title": "設定",
+        "subtitle": "好みに合わせて ChocoMemo を淹れましょう。",
+        "back": "戻る",
+        "nav": {
+            "settings": "設定",
+            "appearance": "外観",
+            "language": "言語",
+            "voice": "音声とオーディオ",
+            "interface": "インターフェース",
+            "account": "アカウント"
+        },
+        "appearance": {
+            "hint": "あなたの一杯の雰囲気を選びましょう。"
+        },
+        "language": {
+            "hint": "ChocoMemo があなたと話す言語を選びます。"
+        },
+        "voice": {
+            "hint": "かなや単語を読み上げる声。"
+        },
+        "interface": {
+            "hint": "学びを彩る表示を調整します。",
+            "chromeLabel": "インターフェースを表示",
+            "chromeDescription": "ナビゲーションとフッターの表示／非表示を切り替えます。"
+        },
+        "account": {
+            "signedInHint": "{{name}} としてサインイン中",
+            "signedOutHint": "サインインすると、学習の記録をすべての端末で保持できます。",
+            "goToProfile": "プロフィールを見る",
+            "signIn": "サインイン"
+        }
+    },
+    "profile": {
+        "title": "プロフィール",
+        "subtitle": "ChocoMemo であなたの学習ストーリー。",
+        "back": "戻る",
+        "anonymousName": "チョコラーナー",
+        "memberSince": "登録日",
+        "notSignedInTitle": "サインインしていません",
+        "notSignedInHint": "サインインすると、プロフィールの表示・編集や、すべての端末での進捗追跡ができます。",
+        "signIn": "サインイン",
+        "stats": {
+            "label": "ひと目で",
+            "kana": "読んだかな",
+            "vocabulary": "語彙",
+            "learned": "学んだ単語",
+            "due": "復習予定"
+        },
+        "details": {
+            "label": "アカウント情報",
+            "name": "名前",
+            "email": "メールアドレス",
+            "namePlaceholder": "あなたの名前",
+            "emailPlaceholder": "you@example.com",
+            "save": "変更を保存",
+            "saving": "保存中…",
+            "saved": "プロフィールを更新しました",
+            "updateError": "プロフィールを更新できませんでした。"
+        },
+        "danger": {
+            "label": "危険ゾーン",
+            "hint": "この端末でアカウントからサインアウトします。ローカルの進捗はそのまま残ります。"
+        }
     }
 }

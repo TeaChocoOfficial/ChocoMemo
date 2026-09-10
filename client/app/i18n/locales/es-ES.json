@@ -204,6 +204,7 @@
         "exams": {
             "title": "Mazos de Exámenes de Vocabulario",
             "description": "Ponte a prueba con exámenes de opción múltiple creados a partir de tu vocabulario. Elige un conjunto, impórtalo o crea el tuyo.",
+            "back_hub": "Volver a Japonés",
             "search": "Buscar conjuntos de exámenes...",
             "empty": "Aún no hay conjuntos de exámenes: importa uno o crea uno personalizado.",
             "import": "Importar conjunto de examen",
@@ -372,7 +373,7 @@
         }
     },
     "footer": {
-        "tagline": "Una forma acogedora, rica en temas, para saborear tu camino por el idioma japonés.",
+        "tagline": "Una forma acogedora, muchos temas para saborear tu japon一口一口一口.",
         "explore": "Explorar",
         "learn": "Qué enseñamos",
         "rights": "TeaChoco · Todos los derechos reservados.",
@@ -381,6 +382,95 @@
             "en": "Inglés",
             "ko": "Coreano",
             "th": "Tailandés"
+        }
+    },
+    "auth": {
+        "signIn": "Iniciar sesión",
+        "signUp": "Crear cuenta",
+        "signOut": "Cerrar sesión",
+        "email": "Correo electrónico",
+        "password": "Contraseña",
+        "name": "Nombre",
+        "forgotPassword": "¿Olvidaste tu contraseña?",
+        "resetPassword": "Restablecer contraseña",
+        "resetSent": "Se envió el enlace para restablecer tu contraseña",
+        "backToSignIn": "Volver a iniciar sesión",
+        "orContinueWith": "O continuar con",
+        "google": "Google",
+        "noAccount": "¿No tienes cuenta?",
+        "hasAccount": "¿Ya tienes cuenta?",
+        "profile": "Perfil",
+        "settings": "Configuración",
+        "welcome": "¡Bienvenido, {{name}}!",
+        "error": {
+            "invalidCredentials": "Correo o contraseña incorrectos",
+            "emailInUse": "El correo ya está en uso",
+            "generic": "Ocurrió un error"
+        }
+    },
+    "settings": {
+        "title": "Ajustes",
+        "subtitle": "Prepara ChocoMemo a tu gusto.",
+        "back": "Atrás",
+        "nav": {
+            "settings": "Ajustes",
+            "appearance": "Apariencia",
+            "language": "Idioma",
+            "voice": "Voz y audio",
+            "interface": "Interfaz",
+            "account": "Cuenta"
+        },
+        "appearance": {
+            "hint": "Elige el ambiente de tu taza."
+        },
+        "language": {
+            "hint": "Elige el idioma en el que ChocoMemo te habla."
+        },
+        "voice": {
+            "hint": "La voz que lee en voz alta los kana y las palabras."
+        },
+        "interface": {
+            "hint": "Ajusta lo que enmarca tu aprendizaje.",
+            "chromeLabel": "Mostrar interfaz",
+            "chromeDescription": "Muestra u oculta la navegación y el pie de página."
+        },
+        "account": {
+            "signedInHint": "Sesión iniciada como {{name}}",
+            "signedOutHint": "Inicia sesión para conservar tu historia de aprendizaje en todos tus dispositivos.",
+            "goToProfile": "Ver perfil",
+            "signIn": "Iniciar sesión"
+        }
+    },
+    "profile": {
+        "title": "Perfil",
+        "subtitle": "Tu historia de aprendizaje con ChocoMemo.",
+        "back": "Atrás",
+        "anonymousName": "Estudiante Choco",
+        "memberSince": "Miembro desde",
+        "notSignedInTitle": "Sin sesión iniciada",
+        "notSignedInHint": "Inicia sesión para ver tu perfil, editar tus datos y seguir tu progreso en todos tus dispositivos.",
+        "signIn": "Iniciar sesión",
+        "stats": {
+            "label": "De un vistazo",
+            "kana": "Kana leídos",
+            "vocabulary": "Vocabulario",
+            "learned": "Palabras aprendidas",
+            "due": "Pendientes de repaso"
+        },
+        "details": {
+            "label": "Detalles de la cuenta",
+            "name": "Nombre",
+            "email": "Correo electrónico",
+            "namePlaceholder": "Tu nombre",
+            "emailPlaceholder": "tu@ejemplo.com",
+            "save": "Guardar cambios",
+            "saving": "Guardando…",
+            "saved": "Perfil actualizado",
+            "updateError": "No se pudo actualizar tu perfil."
+        },
+        "danger": {
+            "label": "Zona de riesgo",
+            "hint": "Cierra sesión en este dispositivo. Tu progreso local se conserva."
         }
     }
 }

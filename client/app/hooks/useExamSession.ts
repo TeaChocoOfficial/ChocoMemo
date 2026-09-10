@@ -1,7 +1,7 @@
 // -Path: 'client/app/hooks/useExamSession.ts'
-import { useState, useCallback } from 'react';
 import type { ExamSet } from '~/types/exam';
-import type { LangText } from '~/types/vocabulary';
+import type { LangText } from '~/types/type';
+import { useState, useCallback } from 'react';
 
 export function useExamSession(examSet: ExamSet) {
     const [index, setIndex] = useState(0);

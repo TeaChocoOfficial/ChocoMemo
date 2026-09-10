@@ -204,6 +204,7 @@
         "exams": {
             "title": "Dek Peperiksaan Kosa Kata",
             "description": "Uji diri anda dengan peperiksaan aneka pilihan yang dibina daripada kosa kata anda. Pilih set, import satu, atau bina sendiri.",
+            "back_hub": "Kembali ke Bahasa Jepang",
             "search": "Cari set peperiksaan...",
             "empty": "Belum ada set peperiksaan — import satu atau cipta set tersuai.",
             "import": "Import set peperiksaan",
@@ -381,6 +382,95 @@
             "en": "Inggeris",
             "ko": "Korea",
             "th": "Thai"
+        }
+    },
+    "auth": {
+        "signIn": "Log Masuk",
+        "signUp": "Daftar",
+        "signOut": "Log Keluar",
+        "email": "E-mel",
+        "password": "Kata laluan",
+        "name": "Nama",
+        "forgotPassword": "Lupa kata laluan?",
+        "resetPassword": "Tetap Semula Kata Laluan",
+        "resetSent": "Jika akaun wujud dengan e-mel tersebut, anda akan menerima pautan tetapan semula tidak lama lagi.",
+        "backToSignIn": "Kembali ke Log Masuk",
+        "orContinueWith": "Atau teruskan dengan",
+        "google": "Google",
+        "noAccount": "Tiada akaun?",
+        "hasAccount": "Sudah ada akaun?",
+        "profile": "Profil",
+        "settings": "Tetapan",
+        "welcome": "Selamat datang, {{name}}",
+        "error": {
+            "invalidCredentials": "E-mel atau kata laluan tidak sah.",
+            "emailInUse": "Akaun dengan e-mel ini sudah wujud.",
+            "generic": "Ralat berlaku. Sila cuba lagi."
+        }
+    },
+    "settings": {
+        "title": "Tetapan",
+        "subtitle": "Seduh ChocoMemo mengikut citarasamu.",
+        "back": "Kembali",
+        "nav": {
+            "settings": "Tetapan",
+            "appearance": "Penampilan",
+            "language": "Bahasa",
+            "voice": "Suara & audio",
+            "interface": "Antara muka",
+            "account": "Akaun"
+        },
+        "appearance": {
+            "hint": "Pilih suasana cawanmu."
+        },
+        "language": {
+            "hint": "Pilih bahasa yang digunakan ChocoMemo untuk bercakap denganmu."
+        },
+        "voice": {
+            "hint": "Suara yang membacakan kana dan perkataan dengan kuat."
+        },
+        "interface": {
+            "hint": "Laraskan apa yang membingkai pembelajarammu.",
+            "chromeLabel": "Tunjukkan antara muka",
+            "chromeDescription": "Tunjukkan atau sembunyikan navigasi dan footer."
+        },
+        "account": {
+            "signedInHint": "Didaftar masuk sebagai {{name}}",
+            "signedOutHint": "Daftar masuk untuk mengekalkan kisah pembelajarammu merentas peranti.",
+            "goToProfile": "Lihat profil",
+            "signIn": "Daftar masuk"
+        }
+    },
+    "profile": {
+        "title": "Profil",
+        "subtitle": "Kisah pembelajarammu bersama ChocoMemo.",
+        "back": "Kembali",
+        "anonymousName": "Pelajar Choco",
+        "memberSince": "Ahli sejak",
+        "notSignedInTitle": "Belum daftar masuk",
+        "notSignedInHint": "Daftar masuk untuk melihat profil, menyunting butiran, dan menjejak kemajuan merentas peranti.",
+        "signIn": "Daftar masuk",
+        "stats": {
+            "label": "Sekilas pandang",
+            "kana": "Kana dibaca",
+            "vocabulary": "Kosa kata",
+            "learned": "Perkataan dipelajari",
+            "due": "Tertunggak untuk ulang kaji"
+        },
+        "details": {
+            "label": "Butiran akaun",
+            "name": "Nama",
+            "email": "E-mel",
+            "namePlaceholder": "Namamu",
+            "emailPlaceholder": "anda@contoh.com",
+            "save": "Simpan perubahan",
+            "saving": "Menyimpan…",
+            "saved": "Profil dikemas kini",
+            "updateError": "Tidak dapat mengemas kini profil anda."
+        },
+        "danger": {
+            "label": "Zon berbahaya",
+            "hint": "Daftar keluar daripada akaun anda pada peranti ini. Kemajuan setempat anda kekal."
         }
     }
 }

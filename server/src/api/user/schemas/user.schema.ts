@@ -1,6 +1,6 @@
 // -Path: "Nest TypeScript/src/user/schemas/user.schema.ts"
 import type { Document } from 'mongoose';
-import type { Role } from '../../../types/auth';
+import { Role } from '../../../types/auth';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 
 export type UserDocument = User & Document;
@@ -22,7 +22,7 @@ export class User {
     @Prop()
     avatar?: string;
 
-    @Prop({ required: true })
+    @Prop({ type: String, enum: Role, required: true })
     role!: Role;
 
     @Prop()

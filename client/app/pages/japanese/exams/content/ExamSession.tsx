@@ -9,7 +9,8 @@ import { useExamSession } from '~/hooks/useExamSession';
 import { useLangText } from '~/hooks/useLangText';
 import { defaultExamSets } from '~/data/japanese/defaultExamSets';
 import { useAllExamSets } from '~/stores/examSets.store';
-import type { ExamSet } from '~/types/exam';
+import type { ExamQuestion, ExamSet } from '~/types/exam';
+import type { LangText } from '~/types/type';
 
 export default function ExamSession() {
     const { examId } = useParams<{ examId: string }>();
@@ -79,30 +80,20 @@ function ExamSessionInner({ examSet }: { examSet: ExamSet }) {
                 Question {index + 1} / {total}
             </p>
 
-            <div className='mb-8 rounded-sm border border-line bg-surface px-8 py-10 text-center'>
-                {currentQuestion.promptReading && (
-                    <p className='mb-2 font-mono text-sm text-surface-muted'>
-                        {currentQuestion.promptReading}
-                    </p>
-                )}
-                <h2 className='text-5xl font-black tracking-tighter text-surface-foreground'>
-                    {currentQuestion.prompt}
-                </h2>
-            </div>
+            <QuestionPrompt
+                question={currentQuestion}
+                selected={selected}
+                meaning={meaning}
+            />
 
-            <div className='flex flex-col gap-3'>
-                {currentQuestion.options.map((option, i) => (
-                    <ExamOption
-                        key={i}
-                        index={i}
-                        text={meaning(option)}
-                        isSelected={selected === option}
-                        isCorrect={option === currentQuestion.correctAnswer}
-                        answered={answered}
-                        onClick={() => selectAnswer(option)}
-                    />
-                ))}
-            </div>
+            <OptionsGrid
+                options={currentQuestion.options}
+                correctAnswer={currentQuestion.correctAnswer}
+                selected={selected}
+                answered={answered}
+                meaning={meaning}
+                onSelect={selectAnswer}
+            />
 
             {answered && (
                 <div className='mt-6 flex justify-end'>
@@ -111,6 +102,89 @@ function ExamSessionInner({ examSet }: { examSet: ExamSet }) {
                     </Button>
                 </div>
             )}
+        </div>
+    );
+}
+
+/** Question stem — differs by type, but both branches read the same
+ *  options/answer machinery below. */
+function QuestionPrompt({
+    question,
+    selected,
+    meaning,
+}: {
+    question: ExamQuestion;
+    selected: LangText | null;
+    meaning: (text: LangText) => string;
+}) {
+    if (question.type === 'meaning') {
+        return (
+            <div className='mb-8 rounded-sm border border-line bg-surface px-8 py-10 text-center'>
+                {question.promptReading && (
+                    <p className='mb-2 font-mono text-sm text-surface-muted'>
+                        {question.promptReading}
+                    </p>
+                )}
+                <h2 className='text-5xl font-black tracking-tighter text-surface-foreground'>
+                    {question.prompt}
+                </h2>
+            </div>
+        );
+    }
+
+    return (
+        <div className='mb-8 rounded-sm border border-line bg-surface px-8 py-10 text-center'>
+            {question.sentenceReading && (
+                <p className='mb-3 font-mono text-sm text-surface-muted'>
+                    {question.sentenceReading}
+                </p>
+            )}
+            <p className='text-xl font-medium leading-relaxed text-surface-foreground sm:text-2xl'>
+                {question.sentenceBefore}
+                <span
+                    aria-label='blank'
+                    className='mx-1.5 inline-flex min-w-[3.5rem] items-center justify-center rounded-sm border-b-2 border-accent bg-accent-subtle px-2 pb-0.5 align-baseline font-black text-surface-foreground'
+                >
+                    {selected ? meaning(selected) : '＿＿＿'}
+                </span>
+                {question.sentenceAfter}
+            </p>
+        </div>
+    );
+}
+
+/** Options grid + answer selection — shared by every question type so the
+ *  click-to-answer and correct/incorrect highlighting behavior is identical.
+ *  4 or fewer options stack in one column; 5–8 switch to a 2-column grid. */
+function OptionsGrid({
+    options,
+    correctAnswer,
+    selected,
+    answered,
+    meaning,
+    onSelect,
+}: {
+    options: LangText[];
+    correctAnswer: LangText;
+    selected: LangText | null;
+    answered: boolean;
+    meaning: (text: LangText) => string;
+    onSelect: (answer: LangText) => void;
+}) {
+    const gridClass = options.length > 4 ? 'grid grid-cols-2 gap-3' : 'flex flex-col gap-3';
+    return (
+        <div className={gridClass}>
+            {options.map((option, i) => (
+                <ExamOption
+                    key={i}
+                    index={i}
+                    text={meaning(option)}
+                    isSelected={selected === option}
+                    isCorrect={option === correctAnswer}
+                    answered={answered}
+                    onClick={() => onSelect(option)}
+                />
+            ))}
         </div>
     );
 }

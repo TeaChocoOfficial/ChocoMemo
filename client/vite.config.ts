@@ -55,6 +55,11 @@ export default defineConfig(({ mode }) => {
             port,
             host,
             strictPort: isDev ? true : undefined,
+            proxy: {
+                '/api': {
+                    target: String(env.VITE_API_URL),
+                },
+            },
         },
     };
 });
