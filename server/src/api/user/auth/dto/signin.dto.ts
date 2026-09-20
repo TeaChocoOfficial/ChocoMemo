@@ -12,7 +12,7 @@ export class SigninResultDto {
         example: 'user',
         description: 'User',
     })
-    user?: ResponseUserDto;
+    user?: ResponseUserDto | null;
 
     @IsNumber()
     @ApiProperty({
@@ -38,4 +38,14 @@ export class SigninResultDto {
         description: 'Access token',
     })
     access_token!: string;
+
+    @IsString()
+    @IsOptional()
+    @ApiProperty({
+        type: String,
+        example: '123456',
+        required: false,
+        description: 'Development only: the verification OTP. Never returned in production.',
+    })
+    devOtp?: string;
 }

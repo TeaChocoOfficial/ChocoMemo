@@ -1,7 +1,8 @@
 // -Path: "Nest TypeScript/src/user/dto/user.dto.ts"
 import { Role } from '../../../types/auth';
 import { ApiProperty } from '@nestjs/swagger';
-import { IsDate, IsEnum, IsNumber, IsString } from 'class-validator';
+import { IsArray, IsDate, IsEnum, IsNumber, IsOptional, IsString } from 'class-validator';
+import type { AuthIdentity } from '../auth/schemas/auth-identity.schema';
 
 export class UserLoginDto {
     @IsString()
@@ -39,10 +40,10 @@ export class ReqUserDto {
     @ApiProperty({
         type: String,
         required: false,
-        example: '1234567890',
-        description: 'Google ID',
+        example: 'John Doe',
+        description: 'Name',
     })
-    readonly googleId?: string;
+    readonly name!: string;
 
     @IsString()
     @ApiProperty({
@@ -52,15 +53,6 @@ export class ReqUserDto {
         description: 'Email',
     })
     readonly email!: string;
-
-    @IsString()
-    @ApiProperty({
-        type: String,
-        required: false,
-        example: 'John Doe',
-        description: 'Name',
-    })
-    readonly name!: string;
 
     @IsString()
     @ApiProperty({
@@ -79,6 +71,17 @@ export class ReqUserDto {
         description: 'Role',
     })
     readonly role!: Role;
+
+    /** Identities supplied at sign-in time (provider + external id).
+     *  Transient: never persisted via this DTO nor embedded in the JWT. */
+    @IsOptional()
+    @IsArray()
+    @ApiProperty({
+        type: 'array',
+        required: false,
+        description: 'Auth identities used to locate the user during sign-in',
+    })
+    readonly identities?: AuthIdentity[];
 
     @IsDate()
     @ApiProperty({
@@ -131,10 +134,10 @@ export class UserJWTPayload {
     @ApiProperty({
         type: String,
         required: false,
-        example: '1234567890',
-        description: 'Google ID',
+        example: 'John Doe',
+        description: 'Name',
     })
-    readonly googleId?: string;
+    readonly name!: string;
 
     @IsString()
     @ApiProperty({
@@ -144,15 +147,6 @@ export class UserJWTPayload {
         description: 'Email',
     })
     readonly email!: string;
-
-    @IsString()
-    @ApiProperty({
-        type: String,
-        required: false,
-        example: 'John Doe',
-        description: 'Name',
-    })
-    readonly name!: string;
 
     @IsString()
     @ApiProperty({

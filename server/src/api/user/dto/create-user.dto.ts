@@ -1,27 +1,10 @@
 // -Path: "Nest TypeScript/src/user/dto/create-user.dto.ts"
 import { Role } from '../../../types/auth';
 import { ApiProperty } from '@nestjs/swagger';
-import { IsEnum, IsNumber, IsString } from 'class-validator';
+import type { AuthIdentity } from '../auth/schemas/auth-identity.schema';
+import { IsArray, IsEnum, IsNumber, IsOptional, IsString } from 'class-validator';
 
 export class CreateUserDto {
-    @IsString()
-    @ApiProperty({
-        type: String,
-        required: true,
-        example: '1234567890',
-        description: 'Google ID',
-    })
-    googleId!: string;
-
-    @IsString()
-    @ApiProperty({
-        type: String,
-        required: true,
-        example: 'test@gmail.com',
-        description: 'Email',
-    })
-    email!: string;
-
     @IsString()
     @ApiProperty({
         type: String,
@@ -35,10 +18,40 @@ export class CreateUserDto {
     @ApiProperty({
         type: String,
         required: true,
+        example: 'test@gmail.com',
+        description: 'Email',
+    })
+    email!: string;
+
+    @IsOptional()
+    @IsString()
+    @ApiProperty({
+        type: String,
+        required: false,
         example: 'https://example.com/profile.jpg',
         description: 'Profile avatar URL',
     })
-    avatar!: string;
+    avatar?: string;
+
+    @IsOptional()
+    @IsString()
+    @ApiProperty({
+        type: String,
+        required: false,
+        example: 'https://lh3.googleusercontent.com/...',
+        description: 'Google avatar URL',
+    })
+    googleAvatar?: string;
+
+    @IsOptional()
+    @IsString()
+    @ApiProperty({
+        type: String,
+        required: false,
+        example: 'https://api.example.com/api/img/abc123',
+        description: 'Local avatar URL',
+    })
+    localAvatar?: string;
 
     @IsEnum(Role)
     @ApiProperty({
@@ -57,6 +70,23 @@ export class CreateUserDto {
         description: 'Last login timestamp',
     })
     lastLoginAt!: number;
+
+    @IsOptional()
+    @IsArray()
+    @ApiProperty({
+        type: 'array',
+        required: false,
+        description: 'Auth identities (provider accounts) this user can sign in with',
+        example: [
+            {
+                provider: 'google',
+                providerUserId: '1234567890',
+                providerEmail: 'test@gmail.com',
+                passwordHash: null,
+            },
+        ],
+    })
+    identities?: AuthIdentity[];
 }
 
 export class Tokens {

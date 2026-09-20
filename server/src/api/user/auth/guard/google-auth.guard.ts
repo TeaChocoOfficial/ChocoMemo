@@ -1,8 +1,8 @@
 // -Path: "Nest TypeScript/src/user/auth/guard/google-auth.guard.ts"
-import { Injectable, type ExecutionContext } from '@nestjs/common';
+import type { FastifyReply, FastifyRequest } from 'fastify';
 import { AuthGuard } from '@nestjs/passport';
-import type { FastifyReply } from 'fastify';
 import type { ServerResponse } from 'node:http';
+import { Injectable, type ExecutionContext } from '@nestjs/common';
 
 @Injectable()
 export class GoogleAuthGuard extends AuthGuard('google') {
@@ -30,5 +30,21 @@ export class GoogleAuthGuard extends AuthGuard('google') {
         }
 
         return (await super.canActivate(context)) as boolean;
+    }
+
+    // When Google refuses authentication (e.g. the user dismisses the consent
+    // screen -> `error=access_denied`, no `code` is returned), passport calls
+    // `fail`, so here `user` is falsy. Throwing (the default) would leave the
+    // visitor on the callback URL with a bare 401. Instead we record why OAuth
+    // failed and let the controller redirect back to the client with the error.
+    handleRequest(err: any, user: any, info: any, context: ExecutionContext, status?: number) {
+        if (err || !user) {
+            const request = context.switchToHttp().getRequest<FastifyRequest>();
+            const message = (err instanceof Error && err.message) || (info as any)?.message;
+            (request as FastifyRequest & { oauthError?: string }).oauthError =
+                (message as string) || 'access_denied';
+            return false;
+        }
+        return user;
     }
 }

@@ -14,6 +14,7 @@ import { useAuthStore } from '~/stores/auth.store';
 import { authAPI } from '~/services/auth';
 import toast from 'react-hot-toast';
 import { FaArrowLeft, FaUser, FaRightFromBracket, FaSliders } from 'react-icons/fa6';
+import { useSignOut } from '~/components/layout/navbar/useSignOut';
 
 function SectionHeading({ step, label, hint }: { step: string; label: string; hint: string }) {
     return (
@@ -33,20 +34,11 @@ function SectionHeading({ step, label, hint }: { step: string; label: string; hi
 }
 
 export default function SettingsPage() {
+    const signOut = useSignOut();
     const { t } = useTranslation();
-    const { showChrome, setShowChrome } = useChromeStore();
-    const { user, setUser } = useAuthStore();
+    const { user } = useAuthStore();
     const isAuthenticated = Boolean(user);
-
-    const handleSignOut = async () => {
-        try {
-            await authAPI.logout();
-            setUser(null);
-            toast.success(t('auth.signOut'));
-        } catch {
-            toast.error(t('auth.error.generic'));
-        }
-    };
+    const { showChrome, setShowChrome } = useChromeStore();
 
     const [authModalOpen, setAuthModalOpen] = useState(false);
 
@@ -59,7 +51,9 @@ export default function SettingsPage() {
     ];
 
     const scrollTo = (id: string) =>
-        document.getElementById(`settings-${id}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        document
+            .getElementById(`settings-${id}`)
+            ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
     return (
         <Section className='items-start justify-center'>
@@ -83,7 +77,9 @@ export default function SettingsPage() {
                         <h1 className='text-2xl sm:text-3xl font-black tracking-tight text-surface-foreground'>
                             {t('settings.title')}
                         </h1>
-                        <p className='mt-0.5 text-sm text-surface-muted'>{t('settings.subtitle')}</p>
+                        <p className='mt-0.5 text-sm text-surface-muted'>
+                            {t('settings.subtitle')}
+                        </p>
                     </div>
                 </div>
 
@@ -199,16 +195,13 @@ export default function SettingsPage() {
                                         <FaUser className='h-3.5 w-3.5' />
                                         {t('settings.account.goToProfile')}
                                     </Link>
-                                    <Button variant='ghost' onClick={handleSignOut}>
+                                    <Button variant='ghost' onClick={signOut}>
                                         <FaRightFromBracket className='h-3.5 w-3.5 text-error' />
                                         <span className='text-error'>{t('auth.signOut')}</span>
                                     </Button>
                                 </div>
                             ) : (
-                                <Button
-                                    variant='primary'
-                                    onClick={() => setAuthModalOpen(true)}
-                                >
+                                <Button variant='primary' onClick={() => setAuthModalOpen(true)}>
                                     {t('settings.account.signIn')}
                                 </Button>
                             )}
@@ -216,10 +209,7 @@ export default function SettingsPage() {
                     </div>
                 </div>
             </div>
-            <AuthModal
-                isOpen={authModalOpen}
-                onClose={() => setAuthModalOpen(false)}
-            />
+            <AuthModal isOpen={authModalOpen} onClose={() => setAuthModalOpen(false)} />
         </Section>
     );
 }

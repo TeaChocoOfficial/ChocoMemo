@@ -23,24 +23,30 @@ export class UserService {
         expiresAt?: Date,
     ): Promise<ResponseUserDto | null> {
         if (user) {
+            const doc = user as UserDocument;
             const responseUser = {
-                userId: (user as UserDocument)._id
-                    ? (user as UserDocument)._id.toString()
-                    : (user as UserJWTPayload).userId,
-                googleId: user.googleId,
+                userId: doc._id ? doc._id.toString() : (user as UserJWTPayload).userId,
                 email: user.email,
                 name: user.name,
                 avatar: user.avatar,
+                googleAvatar: doc.googleAvatar,
+                localAvatar: doc.localAvatar,
                 role: user.role,
+                emailVerified: doc.emailVerified ?? undefined,
                 expiresAt: expiresAt,
                 createdAt: new Date(String(user.createdAt)),
                 updatedAt: new Date(String(user.updatedAt)),
                 lastLoginAt: new Date(user.lastLoginAt),
+                identities: doc.identities?.map((i) => ({
+                    provider: i.provider,
+                    providerEmail: i.providerEmail ?? null,
+                })),
             } satisfies ResponseUserDto;
             return responseUser;
         }
         return null;
     }
+
     async findAll(): Promise<(ResponseUserDto | null)[]> {
         const users = await this.userModel.find().exec();
         return Promise.all(users.map((user) => this.responseUser(user)));

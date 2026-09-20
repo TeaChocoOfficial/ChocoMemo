@@ -15,13 +15,19 @@ import {
 } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import type { Auth } from '../../../types/auth';
-import type { FastifyRequest, FastifyReply } from 'fastify';
 import { RegisterDto } from './dto/register.dto';
+import { VerifyOtpDto } from './dto/verify-otp.dto';
+import { ResendOtpDto } from './dto/resend-otp.dto';
+import { ForgotPasswordDto } from './dto/forgot-password.dto';
+import { ResetPasswordDto } from './dto/reset-password.dto';
+import { ChangePasswordDto } from './dto/change-password.dto';
+import { UpdateAvatarDto } from './dto/update-avatar.dto';
 import { JwtAuthGuard } from './guard/jwt-auth.guard';
 import { UpdateUserDto } from '../dto/update-user.dto';
 import type { SigninResultDto } from './dto/signin.dto';
 import { LocalAuthGuard } from './guard/local-auth.guard';
 import { GoogleAuthGuard } from './guard/google-auth.guard';
+import type { FastifyRequest, FastifyReply } from 'fastify';
 import { SecureService } from '../../../secure/secure.service';
 import type { ResponseUserDto } from '../dto/response-user.dto';
 import { type ReqUserDto, UserLoginDto } from '../dto/user.dto';
@@ -29,6 +35,8 @@ import { ApiBody, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 
 interface AuthenticatedRequest extends FastifyRequest {
     user?: Auth;
+    /** Set by GoogleAuthGuard when OAuth failed (e.g. user denied consent). */
+    oauthError?: string;
 }
 
 @ApiTags('API User Auth')
@@ -92,17 +100,84 @@ export class AuthController {
     }
 
     @Post('register')
-    @ApiOperation({ summary: 'Register a new user with email/password' })
+    @ApiOperation({ summary: 'Register a new user with email/password (sends OTP, no sign-in)' })
     @ApiBody({ type: RegisterDto })
-    async register(
-        @Body() body: RegisterDto,
+    async register(@Body() body: RegisterDto): Promise<SigninResultDto> {
+        return this.authService.registerUser(body.email, body.password, body.name);
+    }
+
+    @Post('verify-otp')
+    @ApiOperation({ summary: 'Verify email OTP and sign the user in' })
+    @ApiBody({ type: VerifyOtpDto })
+    async verifyOtp(
+        @Body() body: VerifyOtpDto,
         @Res({ passthrough: true }) res: FastifyReply,
     ): Promise<SigninResultDto> {
-        const result = await this.authService.registerUser(body.email, body.password, body.name);
-        this.authService.setCookie(res, result.access_token, 7 * 24 * 60 * 60 * 1000);
+        const result = await this.authService.verifyOtp(body.token, body.code);
+        if (result.access_token) {
+            this.authService.setCookie(res, result.access_token, 7 * 24 * 60 * 60 * 1000);
+        }
         return {
             ...result,
-            message: 'Registration successful',
+            message: 'Email verified',
+        };
+    }
+
+    @Post('resend-otp')
+    @ApiOperation({ summary: 'Resend a verification OTP for an unverified account' })
+    @ApiBody({ type: ResendOtpDto })
+    async resendOtp(@Body() body: ResendOtpDto): Promise<SigninResultDto> {
+        return this.authService.resendOtp(body.email);
+    }
+
+    @Post('forgot-password')
+    @ApiOperation({ summary: 'Send a password-reset OTP for an existing account' })
+    @ApiBody({ type: ForgotPasswordDto })
+    async forgotPassword(@Body() body: ForgotPasswordDto): Promise<SigninResultDto> {
+        return this.authService.forgotPassword(body.email);
+    }
+
+    @Post('change-password')
+    @UseGuards(JwtAuthGuard)
+    @ApiOperation({ summary: 'Change the password for the authenticated user' })
+    @ApiBody({ type: ChangePasswordDto })
+    async changePassword(
+        @Req() req: AuthenticatedRequest,
+        @Body() body: ChangePasswordDto,
+    ): Promise<{ message: string }> {
+        const user = req.user as Auth;
+        if (!user) throw new UnauthorizedException('User not found');
+        await this.authService.changePassword(user, body.currentPassword, body.newPassword);
+        return { message: 'Password changed successfully' };
+    }
+
+    @Put('avatar')
+    @UseGuards(JwtAuthGuard)
+    @ApiOperation({ summary: 'Set or activate the avatar of a linked sign-in method' })
+    @ApiBody({ type: UpdateAvatarDto })
+    async updateAvatar(
+        @Req() req: AuthenticatedRequest,
+        @Body() body: UpdateAvatarDto,
+    ): Promise<ResponseUserDto | null> {
+        const user = req.user as Auth;
+        if (!user) throw new UnauthorizedException('User not found');
+        return this.authService.updateAvatar(user, body.provider, body.url);
+    }
+
+    @Post('reset-password')
+    @ApiOperation({ summary: 'Verify reset OTP and set a new password, signing the user in' })
+    @ApiBody({ type: ResetPasswordDto })
+    async resetPassword(
+        @Body() body: ResetPasswordDto,
+        @Res({ passthrough: true }) res: FastifyReply,
+    ): Promise<SigninResultDto> {
+        const result = await this.authService.resetPassword(body.token, body.code, body.newPassword);
+        if (result.access_token) {
+            this.authService.setCookie(res, result.access_token, 7 * 24 * 60 * 60 * 1000);
+        }
+        return {
+            ...result,
+            message: 'Password reset successfully',
         };
     }
 
@@ -136,9 +211,10 @@ export class AuthController {
             return { url: redirectUrl };
         } catch (error) {
             this.logger.error('Error in Google callback:', error);
-            const errorMessage = encodeURIComponent(
-                (error instanceof Error && error.message) || 'Authentication failed',
-            );
+            // Prefer the OAuth-specific reason (e.g. `access_denied`) recorded by
+            // the guard over the generic controller error.
+            const message = req.oauthError || (error instanceof Error && error.message) || 'Authentication failed';
+            const errorMessage = encodeURIComponent(message);
             const errorRedirect = `${redirect_uri}?error=${errorMessage}&source=google`;
             return { url: errorRedirect };
         }

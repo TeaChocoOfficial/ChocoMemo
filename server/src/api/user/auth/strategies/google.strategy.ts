@@ -1,8 +1,10 @@
 // -Path: 'src/user/auth/strategies/google.strategy.ts'
 import { Role } from '../../../../types/auth';
 import { PassportStrategy } from '@nestjs/passport';
+import { AuthProvider } from '../enum/auth-provider.enum';
 import { Injectable, Logger } from '@nestjs/common';
 import type { UserType } from '../../dto/create-user.dto';
+import type { AuthIdentity } from '../schemas/auth-identity.schema';
 import { SecureService } from '../../../../secure/secure.service';
 import { Strategy, type VerifyCallback } from 'passport-google-oauth20';
 
@@ -60,17 +62,26 @@ export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
 
         this.logger.debug('Google strategy validate called');
         const { id, displayName, emails, photos, _json } = profile;
+        const avatar = photos[0]?.value ?? _json?.avatar ?? '';
+
+        const authIdentity: AuthIdentity = {
+            provider: AuthProvider.GOOGLE,
+            providerUserId: id,
+            providerEmail: emails[0].value,
+            passwordHash: null,
+            avatar,
+        };
 
         const user: UserType = {
-            googleId: id,
             email: emails[0].value,
             name: displayName,
-            avatar: photos[0]?.value ?? _json?.avatar ?? '',
+            avatar,
             role: Role.USER,
             expiresAt: Date.now() + 3600 * 1000,
             lastLoginAt: Date.now(),
             accessToken,
             refreshToken,
+            identities: [authIdentity],
         };
 
         done(null, user);

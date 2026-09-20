@@ -52,6 +52,12 @@ export const validationSchema = Joi.object({
     GOOGLE_CLIENT_ID: Joi.string().required(),
     GOOGLE_CLIENT_SECRET: Joi.string().required(),
     GOOGLE_CALLBACK_URL: Joi.string().required(),
+
+    SMTP_HOST: Joi.string().required(),
+    SMTP_PORT: Joi.number().required(),
+    SMTP_USER: Joi.string().required(),
+    SMTP_PASS: Joi.string().required(),
+    SMTP_FROM: Joi.string().required(),
 })
     // ใช้ unknown() เพื่อให้ validation ไม่ error เมื่อมี env variables อื่นๆ ที่ไม่ได้กำหนด
     .unknown(true);

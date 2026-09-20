@@ -16,6 +16,11 @@ export const envConfigs = [
     'GOOGLE_CLIENT_ID',
     'GOOGLE_CLIENT_SECRET',
     'GOOGLE_CALLBACK_URL',
+    'SMTP_HOST',
+    'SMTP_PORT',
+    'SMTP_USER',
+    'SMTP_PASS',
+    'SMTP_FROM',
 ] as const;
 
 export type EnvConfig = {
