@@ -1,8 +1,9 @@
 // -Path: 'client/app/pages/home/HomeHero.tsx'
+import env from '~/secure/env';
 import { Link } from '~/i18n/routing';
 import { motion } from 'framer-motion';
-import Badge from '~/components/custom/Badge';
 import { getAssetUrl } from '~/utils/url';
+import Badge from '~/components/custom/Badge';
 import { useTranslation } from 'react-i18next';
 import { FaCircleRight } from 'react-icons/fa6';
 import Section from '~/components/custom/Section';
@@ -18,14 +19,21 @@ export default function HomeHero() {
                 transition={{ duration: 0.8, ease: 'easeOut' }}
                 className='relative mx-auto max-w-4xl px-4 sm:px-6 text-center'
             >
-                <motion.img
-                    src={getAssetUrl('/icon.svg')}
-                    alt='Choco'
+                <motion.div
                     initial={{ scale: 0.6, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 0.7, ease: 'easeOut' }}
                     className='mx-auto mb-8 h-28 w-28 sm:h-36 sm:w-36 drop-shadow-lg'
-                />
+                >
+                    <img
+                        alt='ChocoMemo'
+                        src={getAssetUrl('/icon.svg')}
+                        className='h-full w-full drop-shadow-lg'
+                    />
+                    <span className='absolute -bottom-2 right-1 inline-flex items-center gap-1.5 rounded-full border border-border bg-surface-overlay px-3 py-1 text-xs font-semibold text-surface-subtle shadow-lg transition-all'>
+                        v{env.VERSION}
+                    </span>
+                </motion.div>
 
                 <Badge variant='info' className='mb-6'>
                     {t('home.badge')}

@@ -3,6 +3,8 @@ import { z } from 'zod';
 import { createEnv } from '@t3-oss/env-core';
 import { SUPPORTED_LANGS } from '~/i18n/locales';
 
+declare const __APP_VERSION__: string;
+
 const rawEnv = createEnv({
     client: {
         VITE_CLIENT_BASE: z.string().default('/'),
@@ -26,6 +28,7 @@ const env = {
     API_URL: rawEnv.VITE_API_URL,
     API_TOKEN_KEY: rawEnv.VITE_API_TOKEN_KEY,
     DEFAULT_LANG: rawEnv.VITE_DEFAULT_LANG,
+    VERSION: __APP_VERSION__,
 } as const;
 
 export const isDev = env.MODE === 'development';
