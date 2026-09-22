@@ -18,15 +18,23 @@ export class GoogleAuthGuard extends AuthGuard('google') {
         const request = context.switchToHttp().getRequest();
         const reply = context.switchToHttp().getResponse<FastifyReply>();
 
+        // Passport writes and ends directly on `reply.raw`, bypassing Fastify's
+        // send pipeline — so cookies must be set on the raw response headers or
+        // they never reach the browser.
+        const cookies: string[] = [];
         const redirectUri = request.query.redirect_uri;
         if (redirectUri && typeof redirectUri === 'string') {
-            // Passport writes and ends directly on `reply.raw`, bypassing
-            // Fastify's send pipeline — so the cookie must be set on the raw
-            // response headers or it never reaches the browser.
-            reply.raw.setHeader(
-                'Set-Cookie',
+            cookies.push(
                 `oauth_redirect_uri=${encodeURIComponent(redirectUri)}; Path=/; HttpOnly; SameSite=Lax; Max-Age=600`,
             );
+        }
+        // `mode=disconnect` means the OAuth round trip is a re-verification used
+        // to authorize unlinking Google from the signed-in account.
+        if (request.query.mode === 'disconnect') {
+            cookies.push('oauth_disconnect=1; Path=/; HttpOnly; SameSite=Lax; Max-Age=600');
+        }
+        if (cookies.length > 0) {
+            reply.raw.setHeader('Set-Cookie', cookies);
         }
 
         return (await super.canActivate(context)) as boolean;

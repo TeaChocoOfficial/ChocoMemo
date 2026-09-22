@@ -39,7 +39,11 @@ export class ImgService {
             mimetype: data.mimetype,
         }));
         const image = new this.imageModel(newData);
-        return await image.save();
+        const created = await image.save();
+        return {
+            ...created.toObject({ versionKey: false }),
+            url: `/api/img/${created._id}`,
+        };
     }
 
     async findAll(auth: Auth): Promise<ResponseImgDto[]> {

@@ -73,7 +73,6 @@ export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
         };
 
         const user: UserType = {
-            email: emails[0].value,
             name: displayName,
             avatar,
             role: Role.USER,

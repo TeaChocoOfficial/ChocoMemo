@@ -24,6 +24,9 @@ export default function Setup({ children }: { children: React.ReactNode }) {
             setError(null);
             try {
                 const res = await authAPI.auth();
+                console.log('====================================');
+                console.log(res.data);
+                console.log('====================================');
                 setUser(res.data);
             } catch (err) {
                 setError(err as Error);

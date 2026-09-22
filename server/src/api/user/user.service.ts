@@ -1,7 +1,8 @@
 // -Path: "Nest TypeScript/src/user/user.service.ts"
-import { nameDB } from '../../hooks/mongodb';
+import { nameDB } from '~/hooks/mongodb';
 import { type Model, Types } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
+import { AuthProvider } from './auth/enum/auth-provider.enum';
 import { Injectable, Logger } from '@nestjs/common';
 import type { UserJWTPayload } from './dto/user.dto';
 import type { CreateUserDto } from './dto/create-user.dto';
@@ -18,6 +19,15 @@ export class UserService {
         private readonly userModel: Model<UserDocument>,
     ) {}
 
+    /** The account's login email: the local identity's email, else any linked provider email. */
+    getUserEmail(user?: UserDocument | UserJWTPayload | null): string {
+        if (!user) return '';
+        const identities = (user as UserDocument).identities ?? [];
+        const local = identities.find((i) => i.provider === AuthProvider.LOCAL);
+        if (local?.providerEmail) return local.providerEmail;
+        return identities.find((i) => i.providerEmail)?.providerEmail ?? '';
+    }
+
     async responseUser(
         user?: UserJWTPayload | UserDocument | null,
         expiresAt?: Date,
@@ -26,11 +36,8 @@ export class UserService {
             const doc = user as UserDocument;
             const responseUser = {
                 userId: doc._id ? doc._id.toString() : (user as UserJWTPayload).userId,
-                email: user.email,
                 name: user.name,
                 avatar: user.avatar,
-                googleAvatar: doc.googleAvatar,
-                localAvatar: doc.localAvatar,
                 role: user.role,
                 emailVerified: doc.emailVerified ?? undefined,
                 expiresAt: expiresAt,
@@ -40,6 +47,8 @@ export class UserService {
                 identities: doc.identities?.map((i) => ({
                     provider: i.provider,
                     providerEmail: i.providerEmail ?? null,
+                    avatar: i.avatar ?? null,
+                    hasPassword: i.passwordHash !== null,
                 })),
             } satisfies ResponseUserDto;
             return responseUser;

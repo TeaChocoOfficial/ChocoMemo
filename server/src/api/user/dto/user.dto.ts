@@ -49,15 +49,6 @@ export class ReqUserDto {
     @ApiProperty({
         type: String,
         required: false,
-        example: 'example@gmail.com',
-        description: 'Email',
-    })
-    readonly email!: string;
-
-    @IsString()
-    @ApiProperty({
-        type: String,
-        required: false,
         example: 'https://example.com/profile.jpg',
         description: 'avatar',
     })
@@ -138,15 +129,6 @@ export class UserJWTPayload {
         description: 'Name',
     })
     readonly name!: string;
-
-    @IsString()
-    @ApiProperty({
-        type: String,
-        required: false,
-        example: 'example@gmail.com',
-        description: 'Email',
-    })
-    readonly email!: string;
 
     @IsString()
     @ApiProperty({

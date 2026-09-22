@@ -11,17 +11,9 @@ export class User {
     @Prop({ required: true })
     name!: string;
 
-    @Prop({ required: true, unique: true })
-    email!: string;
-
+    /** Sign-in email lives on each `identities[].providerEmail`, not here. */
     @Prop()
     avatar?: string;
-
-    @Prop()
-    googleAvatar?: string;
-
-    @Prop()
-    localAvatar?: string;
 
     @Prop({ type: String, enum: Role, required: true })
     role!: Role;
@@ -58,3 +50,6 @@ export const UserSchema = SchemaFactory.createForClass(User);
 
 UserSchema.index({ createdAt: 1 });
 UserSchema.index({ 'identities.provider': 1, 'identities.providerUserId': 1 });
+// A verified email is unique across accounts: it may appear on at most one
+// identity (local `providerEmail` = account email, or a linked provider).
+UserSchema.index({ 'identities.providerEmail': 1 }, { unique: true, sparse: true });

@@ -14,15 +14,6 @@ export class CreateUserDto {
     })
     name!: string;
 
-    @IsString()
-    @ApiProperty({
-        type: String,
-        required: true,
-        example: 'test@gmail.com',
-        description: 'Email',
-    })
-    email!: string;
-
     @IsOptional()
     @IsString()
     @ApiProperty({
@@ -32,26 +23,6 @@ export class CreateUserDto {
         description: 'Profile avatar URL',
     })
     avatar?: string;
-
-    @IsOptional()
-    @IsString()
-    @ApiProperty({
-        type: String,
-        required: false,
-        example: 'https://lh3.googleusercontent.com/...',
-        description: 'Google avatar URL',
-    })
-    googleAvatar?: string;
-
-    @IsOptional()
-    @IsString()
-    @ApiProperty({
-        type: String,
-        required: false,
-        example: 'https://api.example.com/api/img/abc123',
-        description: 'Local avatar URL',
-    })
-    localAvatar?: string;
 
     @IsEnum(Role)
     @ApiProperty({

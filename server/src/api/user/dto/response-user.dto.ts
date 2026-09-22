@@ -22,15 +22,6 @@ export class ResponseUserDto {
     })
     name!: string;
 
-    @IsString()
-    @ApiProperty({
-        type: String,
-        required: false,
-        example: 'example@gmail.com',
-        description: 'Email',
-    })
-    email!: string;
-
     @IsOptional()
     @IsString()
     @ApiProperty({
@@ -40,26 +31,6 @@ export class ResponseUserDto {
         description: 'Active avatar URL',
     })
     avatar?: string;
-
-    @IsOptional()
-    @IsString()
-    @ApiProperty({
-        type: String,
-        required: false,
-        example: 'https://lh3.googleusercontent.com/...',
-        description: 'Google avatar URL (if linked)',
-    })
-    googleAvatar?: string;
-
-    @IsOptional()
-    @IsString()
-    @ApiProperty({
-        type: String,
-        required: false,
-        example: 'https://api.example.com/api/img/abc123',
-        description: 'Local uploaded avatar URL',
-    })
-    localAvatar?: string;
 
     @IsEnum(() => Role)
     @ApiProperty({
@@ -91,42 +62,51 @@ export class ResponseUserDto {
     @IsDate()
     @ApiProperty({
         type: Date,
-        required: false,
+        required: true,
         example: '2022-01-01',
         description: 'Created at',
     })
-    createdAt?: Date;
+    createdAt!: Date;
 
     @IsDate()
     @ApiProperty({
         type: Date,
-        required: false,
+        required: true,
         example: '2022-01-01',
         description: 'Updated at',
     })
-    updatedAt?: Date;
+    updatedAt!: Date;
 
     @IsDate()
     @ApiProperty({
         type: Date,
-        required: false,
+        required: true,
         example: '2022-01-01',
         description: 'Last login at',
     })
-    lastLoginAt?: Date;
+    lastLoginAt!: Date;
 
-    @IsOptional()
     @ApiProperty({
         type: 'array',
-        required: false,
         description: 'Linked authentication providers',
         items: {
             type: 'object',
             properties: {
                 provider: { type: 'string', example: 'google' },
                 providerEmail: { type: 'string', nullable: true, example: 'user@gmail.com' },
+                hasPassword: { type: 'boolean', example: false },
+                avatar: {
+                    type: 'string',
+                    nullable: true,
+                    example: 'https://example.com/profile.jpg',
+                },
             },
         },
     })
-    identities?: Array<{ provider: string; providerEmail?: string | null }>;
+    identities!: Array<{
+        provider: string;
+        providerEmail: string | null;
+        hasPassword?: boolean;
+        avatar: string | null;
+    }>;
 }

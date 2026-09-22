@@ -1,20 +1,51 @@
 import { Link } from '~/i18n/routing';
-import { useMemo, useState } from 'react';
+import toast from 'react-hot-toast';
+import { useEffect, useMemo, useState } from 'react';
+import { useSearchParams } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import Button from '~/components/custom/Button';
 import Section from '~/components/custom/Section';
-import AuthModal from '~/components/auth/AuthModal';
 import { useAuthStore } from '~/stores/auth.store';
 import ProfileHero from './components/ProfileHero';
+import AuthModal from '~/components/auth/AuthModal';
 import StatsSection from './components/StatsSection';
 import { FaArrowLeft, FaUser } from 'react-icons/fa6';
-import AccountDetails from './components/AccountDetails';
 import AccountIdentities from './components/AccountIdentities';
+
+/** Server error codes returned by the Google OAuth callback (`?error=...`). */
+const DISCONNECT_ERROR_KEYS: Record<string, string> = {
+    LAST_SIGNIN_METHOD: 'profile.identities.lastSigninMethod',
+    SESSION_EXPIRED: 'profile.identities.disconnectSession',
+    INVALID_SESSION: 'profile.identities.disconnectSession',
+    GOOGLE_VERIFY_FAILED: 'profile.identities.disconnectVerifyFailed',
+    IDENTITY_NOT_LINKED: 'profile.identities.disconnectVerifyFailed',
+    access_denied: 'profile.identities.disconnectCancelled',
+};
 
 export default function ProfilePage() {
     const { t } = useTranslation();
     const { user } = useAuthStore();
     const [authModalOpen, setAuthModalOpen] = useState(false);
+    const [searchParams] = useSearchParams();
+
+    // Surfaced after a Google OAuth round trip (connect/disconnect re-auth):
+    // `?disconnected=1` on success, `?error=...` on failure. Every error code is
+    // mapped to a readable message; unknown codes still surface with the raw code
+    // so a failure is never silent.
+    useEffect(() => {
+        const disconnected = searchParams.get('disconnected');
+        const error = searchParams.get('error');
+        if (disconnected === '1') {
+            toast.success(t('profile.identities.disconnectSuccess'));
+        } else if (error) {
+            const messageKey = DISCONNECT_ERROR_KEYS[error];
+            toast.error(messageKey ? t(messageKey) : t('profile.identities.disconnectError', { reason: error }));
+        }
+        if (disconnected === '1' || error) {
+            window.history.replaceState({}, '', window.location.pathname);
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [searchParams]);
 
     const memberSince = useMemo(() => {
         if (!user?.createdAt) return null;
@@ -69,7 +100,6 @@ export default function ProfilePage() {
                 <div className='space-y-12'>
                     <StatsSection />
                     <AccountIdentities />
-                    <AccountDetails />
                 </div>
             </div>
             <AuthModal isOpen={authModalOpen} onClose={() => setAuthModalOpen(false)} />

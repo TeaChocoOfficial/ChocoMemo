@@ -1,8 +1,8 @@
-import { FaBars, FaSliders, FaXmark } from 'react-icons/fa6';
+import { FaSliders } from 'react-icons/fa6';
 import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useClickOutside } from './useClickOutside';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Button from '../../custom/Button';
 import MenuDropdown from './MenuDropdown';
 import NavLinks from './NavLinks';

@@ -3,6 +3,7 @@ import { z } from 'zod';
 import env from '~/secure/env';
 import type { User } from '~/types/auth';
 import serverRest, { schemaParse } from './axios';
+import { getLocaleUrl } from '~/utils/url';
 
 const email = z.string().trim().email();
 
@@ -52,6 +53,11 @@ export type ResetPasswordPayload = z.infer<typeof resetPasswordPayloadSchema>;
  *  so it's referenced opaquely and only the nullability is validated. */
 const userField = z.custom<User>();
 
+/** Response returned by the request OTP endpoints for account changes. */
+const securityTokenSchema = z.object({
+    token: z.string(),
+});
+
 /** Response shape returned by the sign-in / registration endpoints. */
 export const signinResultSchema = z.object({
     message: z.string(),
@@ -65,7 +71,6 @@ export type SigninResult = z.infer<typeof signinResultSchema>;
 /** Partial payload accepted by the update-user endpoint. */
 export const updateUserPayloadSchema = z.object({
     name: z.string().trim().min(1).optional(),
-    email: email.optional(),
     avatar: z.string().min(1).optional(),
 });
 export type UpdateUserPayload = z.infer<typeof updateUserPayloadSchema>;
@@ -87,7 +92,7 @@ export type UpdateAvatarPayload = z.infer<typeof updateAvatarPayloadSchema>;
 const userResponseSchema = userField.nullable();
 
 export const authAPI = {
-    auth: () => schemaParse(userResponseSchema, serverRest.get('/user/auth')),
+    auth: () => schemaParse(userResponseSchema, serverRest.get<User>('/user/auth')),
     login: (data: LoginPayload) => {
         const payload = loginPayloadSchema.parse(data);
         return schemaParse(signinResultSchema, serverRest.post('/user/auth/login', payload));
@@ -119,9 +124,14 @@ export const authAPI = {
         );
     },
     logout: () => serverRest.get('/user/auth/signout'),
-    googleLogin: () => {
-        const redirectUri = `${window.location.origin}${env.BASE}auth`;
+    googleLogin: (path: string) => {
+        const redirectUri = getLocaleUrl(path);
         window.location.href = `${env.API_URL}/api/user/auth/google?redirect_uri=${encodeURIComponent(redirectUri)}`;
+    },
+    /** Re-verify the linked Google account (real Google somehow) before unlinking it. */
+    googleDisconnect: (path: string) => {
+        const redirectUri = getLocaleUrl(path);
+        window.location.href = `${env.API_URL}/api/user/auth/google?redirect_uri=${encodeURIComponent(redirectUri)}&mode=disconnect`;
     },
     updateUser: (data: UpdateUserPayload) => {
         const payload = updateUserPayloadSchema.parse(data);
@@ -130,6 +140,32 @@ export const authAPI = {
     changePassword: (data: ChangePasswordPayload) => {
         const payload = changePasswordPayloadSchema.parse(data);
         return serverRest.post('/user/auth/change-password', payload);
+    },
+    requestEmailChange: (data: { newEmail: string }) => {
+        return schemaParse(
+            securityTokenSchema,
+            serverRest.post('/user/auth/change-email/request', data),
+        );
+    },
+    confirmEmailChange: (data: { token: string; code: string }) => {
+        return schemaParse(
+            signinResultSchema,
+            serverRest.post('/user/auth/change-email/confirm', data),
+        );
+    },
+    requestPasswordChange: (data: { currentPassword?: string }) => {
+        return schemaParse(
+            securityTokenSchema,
+            serverRest.post('/user/auth/change-password/request', data),
+        );
+    },
+    confirmPasswordChange: (data: {
+        token: string;
+        code: string;
+        currentPassword?: string;
+        newPassword: string;
+    }) => {
+        return serverRest.post('/user/auth/change-password/confirm', data);
     },
     updateAvatar: (data: UpdateAvatarPayload) => {
         const payload = updateAvatarPayloadSchema.parse(data);

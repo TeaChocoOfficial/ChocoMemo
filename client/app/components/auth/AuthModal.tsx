@@ -8,6 +8,7 @@ import Button from '~/components/custom/Button';
 import { useAuthStore } from '~/stores/auth.store';
 import { FaLock, FaUser, FaGoogle, FaEnvelope, FaShieldHalved } from 'react-icons/fa6';
 import { Modal, ModalHeader, ModalBody } from '~/components/custom/Modal';
+import { usePathname } from '~/i18n/routing';
 
 interface AuthModalProps {
     isOpen: boolean;
@@ -19,6 +20,7 @@ const RESEND_COOLDOWN = 30;
 
 export default function AuthModal({ isOpen, onClose, initialMode = 'signin' }: AuthModalProps) {
     const { t } = useTranslation();
+    const pathname = usePathname();
     const { setUser } = useAuthStore();
     const [mode, setMode] = useState(initialMode);
     const [loading, setLoading] = useState(false);
@@ -130,7 +132,7 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'signin' }: A
     };
 
     const handleGoogle = () => {
-        authAPI.googleLogin();
+        authAPI.googleLogin(pathname);
     };
 
     const handleVerifyOtp = async (e: React.FormEvent) => {

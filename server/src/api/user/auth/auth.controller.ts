@@ -13,29 +13,37 @@ import {
     BadRequestException,
     UnauthorizedException,
 } from '@nestjs/common';
-import { AuthService } from './auth.service';
+import {
+    ChangeEmailConfirmDto,
+    ChangeEmailRequestDto,
+    ChangePasswordRequestDto,
+    ChangePasswordConfirmDto,
+} from './dto/security-change.dto';
 import type { Auth } from '../../../types/auth';
 import { RegisterDto } from './dto/register.dto';
 import { VerifyOtpDto } from './dto/verify-otp.dto';
 import { ResendOtpDto } from './dto/resend-otp.dto';
-import { ForgotPasswordDto } from './dto/forgot-password.dto';
-import { ResetPasswordDto } from './dto/reset-password.dto';
-import { ChangePasswordDto } from './dto/change-password.dto';
-import { UpdateAvatarDto } from './dto/update-avatar.dto';
 import { JwtAuthGuard } from './guard/jwt-auth.guard';
 import { UpdateUserDto } from '../dto/update-user.dto';
 import type { SigninResultDto } from './dto/signin.dto';
 import { LocalAuthGuard } from './guard/local-auth.guard';
+import { UpdateAvatarDto } from './dto/update-avatar.dto';
 import { GoogleAuthGuard } from './guard/google-auth.guard';
+import { ResetPasswordDto } from './dto/reset-password.dto';
 import type { FastifyRequest, FastifyReply } from 'fastify';
+import { ForgotPasswordDto } from './dto/forgot-password.dto';
+import { ChangePasswordDto } from './dto/change-password.dto';
 import { SecureService } from '../../../secure/secure.service';
 import type { ResponseUserDto } from '../dto/response-user.dto';
 import { type ReqUserDto, UserLoginDto } from '../dto/user.dto';
+import { AuthChangeService } from './service/auth-change.service';
+import { AuthAccountService } from './service/auth-account.service';
+import { AuthSessionService } from './service/auth-session.service';
+import { AuthRegistrationService } from './service/auth-registration.service';
 import { ApiBody, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 
 interface AuthenticatedRequest extends FastifyRequest {
     user?: Auth;
-    /** Set by GoogleAuthGuard when OAuth failed (e.g. user denied consent). */
     oauthError?: string;
 }
 
@@ -45,8 +53,11 @@ export class AuthController {
     private readonly logger = new Logger(AuthController.name);
 
     constructor(
-        private readonly authService: AuthService,
         private readonly secureService: SecureService,
+        private readonly changeService: AuthChangeService,
+        private readonly accountService: AuthAccountService,
+        private readonly sessionService: AuthSessionService,
+        private readonly registrationService: AuthRegistrationService,
     ) {}
 
     @Get()
@@ -55,7 +66,7 @@ export class AuthController {
     async getAuth(@Req() req: AuthenticatedRequest): Promise<ResponseUserDto | null> {
         const user = req.user as Auth;
         if (!user) return null;
-        const responseUser = await this.authService.signin(user);
+        const responseUser = await this.accountService.signin(user);
         return responseUser.user ?? null;
     }
 
@@ -69,7 +80,7 @@ export class AuthController {
         const user = req.user as Auth;
         if (!user) throw new UnauthorizedException('User not found');
         if (!body) throw new BadRequestException('Body is required');
-        const responseUser = await this.authService.updateUser(user, body);
+        const responseUser = await this.accountService.updateUser(user, body);
         return responseUser;
     }
 
@@ -88,10 +99,10 @@ export class AuthController {
         @Req() req: AuthenticatedRequest,
         @Res({ passthrough: true }) res: FastifyReply,
     ): Promise<SigninResultDto> {
-        const { accessToken } = await this.authService.login(req.user as ReqUserDto);
+        const { accessToken } = await this.sessionService.login(req.user as ReqUserDto);
         if (!accessToken) throw new BadRequestException({ message: 'Login failed' });
-        const result = await this.authService.signin(req.user as ReqUserDto);
-        this.authService.setCookie(res, accessToken, 7 * 24 * 60 * 60 * 1000);
+        const result = await this.accountService.signin(req.user as ReqUserDto);
+        this.sessionService.setCookie(res, accessToken, 7 * 24 * 60 * 60 * 1000);
 
         return {
             ...result,
@@ -103,7 +114,7 @@ export class AuthController {
     @ApiOperation({ summary: 'Register a new user with email/password (sends OTP, no sign-in)' })
     @ApiBody({ type: RegisterDto })
     async register(@Body() body: RegisterDto): Promise<SigninResultDto> {
-        return this.authService.registerUser(body.email, body.password, body.name);
+        return this.registrationService.registerUser(body.email, body.password, body.name);
     }
 
     @Post('verify-otp')
@@ -113,9 +124,9 @@ export class AuthController {
         @Body() body: VerifyOtpDto,
         @Res({ passthrough: true }) res: FastifyReply,
     ): Promise<SigninResultDto> {
-        const result = await this.authService.verifyOtp(body.token, body.code);
+        const result = await this.registrationService.verifyOtp(body.token, body.code);
         if (result.access_token) {
-            this.authService.setCookie(res, result.access_token, 7 * 24 * 60 * 60 * 1000);
+            this.sessionService.setCookie(res, result.access_token, 7 * 24 * 60 * 60 * 1000);
         }
         return {
             ...result,
@@ -127,14 +138,14 @@ export class AuthController {
     @ApiOperation({ summary: 'Resend a verification OTP for an unverified account' })
     @ApiBody({ type: ResendOtpDto })
     async resendOtp(@Body() body: ResendOtpDto): Promise<SigninResultDto> {
-        return this.authService.resendOtp(body.email);
+        return this.registrationService.resendOtp(body.email);
     }
 
     @Post('forgot-password')
     @ApiOperation({ summary: 'Send a password-reset OTP for an existing account' })
     @ApiBody({ type: ForgotPasswordDto })
     async forgotPassword(@Body() body: ForgotPasswordDto): Promise<SigninResultDto> {
-        return this.authService.forgotPassword(body.email);
+        return this.registrationService.forgotPassword(body.email);
     }
 
     @Post('change-password')
@@ -147,7 +158,7 @@ export class AuthController {
     ): Promise<{ message: string }> {
         const user = req.user as Auth;
         if (!user) throw new UnauthorizedException('User not found');
-        await this.authService.changePassword(user, body.currentPassword, body.newPassword);
+        await this.accountService.changePassword(user, body.currentPassword, body.newPassword);
         return { message: 'Password changed successfully' };
     }
 
@@ -161,7 +172,70 @@ export class AuthController {
     ): Promise<ResponseUserDto | null> {
         const user = req.user as Auth;
         if (!user) throw new UnauthorizedException('User not found');
-        return this.authService.updateAvatar(user, body.provider, body.url);
+        return this.accountService.updateAvatar(user, body.provider, body.url);
+    }
+
+    @Post('change-email/request')
+    @UseGuards(JwtAuthGuard)
+    @ApiOperation({ summary: 'Send an OTP to a new email address before changing it' })
+    @ApiBody({ type: ChangeEmailRequestDto })
+    async requestEmailChange(
+        @Req() req: AuthenticatedRequest,
+        @Body() body: ChangeEmailRequestDto,
+    ): Promise<{ token: string }> {
+        const user = req.user as Auth;
+        if (!user) throw new UnauthorizedException('User not found');
+        return this.changeService.requestEmailChange(user, body.newEmail);
+    }
+
+    @Post('change-email/confirm')
+    @UseGuards(JwtAuthGuard)
+    @ApiOperation({ summary: 'Verify the OTP and update the account email address' })
+    @ApiBody({ type: ChangeEmailConfirmDto })
+    async confirmEmailChange(
+        @Req() req: AuthenticatedRequest,
+        @Body() body: ChangeEmailConfirmDto,
+        @Res({ passthrough: true }) res: FastifyReply,
+    ): Promise<SigninResultDto> {
+        const user = req.user as Auth;
+        if (!user) throw new UnauthorizedException('User not found');
+        const result = await this.changeService.confirmEmailChange(user, body.token, body.code);
+        if (result.access_token) {
+            this.sessionService.setCookie(res, result.access_token, 7 * 24 * 60 * 60 * 1000);
+        }
+        return result;
+    }
+
+    @Post('change-password/request')
+    @UseGuards(JwtAuthGuard)
+    @ApiOperation({ summary: 'Verify the current password and email an OTP before changing it' })
+    @ApiBody({ type: ChangePasswordRequestDto })
+    async requestPasswordChange(
+        @Req() req: AuthenticatedRequest,
+        @Body() body: ChangePasswordRequestDto,
+    ): Promise<{ token: string }> {
+        const user = req.user as Auth;
+        if (!user) throw new UnauthorizedException('User not found');
+        return this.changeService.requestPasswordChange(user, body.currentPassword);
+    }
+
+    @UseGuards(JwtAuthGuard)
+    @ApiOperation({ summary: 'Verify the OTP and replace the local password' })
+    @ApiBody({ type: ChangePasswordConfirmDto })
+    async confirmPasswordChange(
+        @Req() req: AuthenticatedRequest,
+        @Body() body: ChangePasswordConfirmDto,
+    ): Promise<{ message: string }> {
+        const user = req.user as Auth;
+        if (!user) throw new UnauthorizedException('User not found');
+        await this.changeService.confirmPasswordChange(
+            user,
+            body.token,
+            body.code,
+            body.currentPassword ?? '',
+            body.newPassword,
+        );
+        return { message: 'Password changed successfully' };
     }
 
     @Post('reset-password')
@@ -171,9 +245,13 @@ export class AuthController {
         @Body() body: ResetPasswordDto,
         @Res({ passthrough: true }) res: FastifyReply,
     ): Promise<SigninResultDto> {
-        const result = await this.authService.resetPassword(body.token, body.code, body.newPassword);
+        const result = await this.registrationService.resetPassword(
+            body.token,
+            body.code,
+            body.newPassword,
+        );
         if (result.access_token) {
-            this.authService.setCookie(res, result.access_token, 7 * 24 * 60 * 60 * 1000);
+            this.sessionService.setCookie(res, result.access_token, 7 * 24 * 60 * 60 * 1000);
         }
         return {
             ...result,
@@ -201,19 +279,32 @@ export class AuthController {
         const frontendUrl = CLIENT_URL || 'http://127.0.0.1:5001';
         const redirect_uri = req.cookies?.oauth_redirect_uri || frontendUrl;
         res.clearCookie('oauth_redirect_uri', { path: '/' });
+        const disconnectMode = req.cookies?.oauth_disconnect === '1';
+        res.clearCookie('oauth_disconnect', { path: '/' });
         this.logger.log('redirect_uri', redirect_uri);
         try {
             const user = req.user as Auth;
             if (!user) throw new Error('No user data received from Google');
-            const result = await this.authService.signin(user);
-            this.authService.setCookie(res, result.access_token, 7 * 24 * 60 * 60 * 1000);
+
+            // `mode=disconnect`: this round trip is a re-verification of the
+            // linked Google account, used to authorize unlinking it.
+            if (disconnectMode) {
+                await this.changeService.disconnectViaGoogleReauth(user);
+                return { url: `${redirect_uri}?disconnected=1` };
+            }
+
+            const result = await this.accountService.signin(user);
+            this.sessionService.setCookie(res, result.access_token, 7 * 24 * 60 * 60 * 1000);
             const redirectUrl = `${redirect_uri}?token=${result.access_token}`;
             return { url: redirectUrl };
         } catch (error) {
             this.logger.error('Error in Google callback:', error);
             // Prefer the OAuth-specific reason (e.g. `access_denied`) recorded by
             // the guard over the generic controller error.
-            const message = req.oauthError || (error instanceof Error && error.message) || 'Authentication failed';
+            const message =
+                req.oauthError ||
+                (error instanceof Error && error.message) ||
+                'Authentication failed';
             const errorMessage = encodeURIComponent(message);
             const errorRedirect = `${redirect_uri}?error=${errorMessage}&source=google`;
             return { url: errorRedirect };
@@ -232,7 +323,7 @@ export class AuthController {
     @UseGuards(JwtAuthGuard)
     @ApiOperation({ summary: 'Sign out user' })
     async signout(@Res({ passthrough: true }) res: FastifyReply): Promise<{ message: string }> {
-        this.authService.clearCookie(res);
+        this.sessionService.clearCookie(res);
         return { message: 'Sign out successful' };
     }
 }

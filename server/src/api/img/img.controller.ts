@@ -18,13 +18,10 @@ import { ApiTags } from '@nestjs/swagger';
 import { ImgService } from './img.service';
 import type { Auth } from '../../types/auth';
 import type { UpdateImgDto } from './dto/update-img.dto';
-import type { ResponseImgDto } from './dto/response-img.dto';
-import { UserAuthGuard } from '../user/auth/guard/user-auth.guard';
-
-// Fastify types
 import type { FastifyRequest, FastifyReply } from 'fastify';
-import type { MultipartFile } from '@fastify/multipart';
-import { MulterFile } from '../../types/multer';
+import type { ResponseImgDto } from './dto/response-img.dto';
+import { getMultipartFile, toMulterFile } from './multipart.util';
+import { UserAuthGuard } from '../user/auth/guard/user-auth.guard';
 
 interface AuthenticatedRequest extends FastifyRequest {
     user?: Auth;
@@ -37,36 +34,14 @@ export class ImgController {
 
     constructor(private readonly imgService: ImgService) {}
 
-    // @fastify/multipart attaches file parts into req.body when attachFieldsToBody is enabled
-    private getMultipartFile(req: FastifyRequest, field: string): MultipartFile | undefined {
-        const value = (req.body as Record<string, unknown> | undefined)?.[field];
-        if (Array.isArray(value)) return value[0] as MultipartFile;
-        return value as MultipartFile | undefined;
-    }
-
-    private async toMulterFile(file: MultipartFile): Promise<MulterFile> {
-        const buffer = await file.toBuffer();
-        return {
-            fieldname: file.fieldname,
-            originalname: file.filename,
-            encoding: file.encoding || '7bit',
-            mimetype: file.mimetype,
-            size: buffer.length,
-            buffer: buffer,
-            destination: '',
-            filename: file.filename,
-            path: '',
-        };
-    }
-
     @Post()
     @UseGuards(UserAuthGuard)
     async create(@Req() req: AuthenticatedRequest) {
         const user = req.user as Auth;
-        const file = this.getMultipartFile(req, 'file');
+        const file = getMultipartFile(req, 'file');
         if (!file) throw new BadRequestException('File is required');
 
-        return this.imgService.create(user, await this.toMulterFile(file));
+        return this.imgService.create(user, await toMulterFile(file));
     }
 
     @Get()
@@ -100,8 +75,8 @@ export class ImgController {
     ) {
         const user = req.user as Auth;
 
-        const file = this.getMultipartFile(req, 'file');
-        const multerFile = file ? await this.toMulterFile(file) : undefined;
+        const file = getMultipartFile(req, 'file');
+        const multerFile = file ? await toMulterFile(file) : undefined;
 
         return this.imgService.update(user, id, data, multerFile);
     }

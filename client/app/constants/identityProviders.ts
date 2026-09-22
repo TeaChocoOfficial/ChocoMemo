@@ -14,7 +14,7 @@ export interface ProviderMeta {
     key: AuthProvider | 'discord' | 'line' | 'facebook' | 'x';
     labelKey: string;
     icon: IconType;
-    color: string;
+    color?: string;
     available: boolean;
 }
 
@@ -58,7 +58,6 @@ export const PROVIDER_META: ProviderMeta[] = [
         key: 'x',
         labelKey: 'profile.identities.x',
         icon: FaXTwitter,
-        color: '#000000',
         available: false,
     },
 ];

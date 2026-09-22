@@ -7,6 +7,7 @@ import { useSignOut } from './useSignOut';
 import MenuControls from './MenuControls';
 import MenuDropdown from './MenuDropdown';
 import { useTranslation } from 'react-i18next';
+import { getAccountEmail } from '~/types/auth';
 import HideChromeButton from './HideChromeButton';
 import { useAuthStore } from '~/stores/auth.store';
 import { useClickOutside } from './useClickOutside';
@@ -62,7 +63,7 @@ export default function ProfileMenu() {
                     <p className='truncate text-sm font-medium text-surface-foreground'>
                         {user?.name}
                     </p>
-                    <p className='truncate text-xs text-surface-muted'>{user?.email}</p>
+                    <p className='truncate text-xs text-surface-muted'>{getAccountEmail(user)}</p>
                 </div>
 
                 <NavLinks

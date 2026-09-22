@@ -11,8 +11,6 @@ import Button from '~/components/custom/Button';
 import ThemeGrid from './ThemeGrid';
 import { useChromeStore } from '~/stores/chrome.store';
 import { useAuthStore } from '~/stores/auth.store';
-import { authAPI } from '~/services/auth';
-import toast from 'react-hot-toast';
 import { FaArrowLeft, FaUser, FaRightFromBracket, FaSliders } from 'react-icons/fa6';
 import { useSignOut } from '~/components/layout/navbar/useSignOut';
 
