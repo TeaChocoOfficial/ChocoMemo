@@ -1,4 +1,4 @@
-// -Path: "Nest TypeScript/src/secure/dto/secure.dto.ts"
+// -Path: "src/secure/dto/secure.dto.ts"
 
 export const envConfigs = [
     'NODE_ENV',
@@ -13,14 +13,17 @@ export const envConfigs = [
     'JWT_REFRESH_EXPIRES_IN',
     'BCRYPT_ROUNDS',
     'PASSWORD_HASH_SALT',
-    'GOOGLE_CLIENT_ID',
-    'GOOGLE_CLIENT_SECRET',
-    'GOOGLE_CALLBACK_URL',
     'SMTP_HOST',
     'SMTP_PORT',
     'SMTP_USER',
     'SMTP_PASS',
     'SMTP_FROM',
+    'GOOGLE_CLIENT_ID',
+    'GOOGLE_CLIENT_SECRET',
+    'GOOGLE_CALLBACK_URL',
+    'DISCORD_CLIENT_ID',
+    'DISCORD_CLIENT_SECRET',
+    'DISCORD_CALLBACK_URL',
 ] as const;
 
 export type EnvConfig = {

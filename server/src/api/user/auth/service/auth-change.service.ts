@@ -32,7 +32,11 @@ export class AuthChangeService {
     ) {}
 
     /** Send an OTP to the NEW email address; the pending change is staged inside the token. */
-    async requestEmailChange(user: ReqUserDto, newEmail: string): Promise<{ token: string }> {
+    async requestEmailChange(
+        user: ReqUserDto,
+        newEmail: string,
+        locale?: string | null,
+    ): Promise<{ token: string }> {
         const normalized = newEmail.trim().toLowerCase();
         if (!normalized) throw new BadRequestException('EMAIL_INVALID');
 
@@ -49,7 +53,7 @@ export class AuthChangeService {
 
         const otp = this.otpService.generate();
         await this.otpService.storeForUser(user.userId, otp);
-        await this.otpService.sendEmail(normalized, otp);
+        await this.otpService.sendEmail(normalized, otp, locale);
 
         return {
             token: this.tokenService.sign(user.userId, 'changeEmail', { newEmail: normalized }),
@@ -121,6 +125,7 @@ export class AuthChangeService {
     async requestPasswordChange(
         user: ReqUserDto,
         currentPassword?: string,
+        locale?: string | null,
     ): Promise<{ token: string }> {
         const { userDB, localIdentity } = await this.identityService.getUserWithLocalIdentity(user);
         if (localIdentity.passwordHash) {
@@ -133,7 +138,7 @@ export class AuthChangeService {
 
         const otp = this.otpService.generate();
         await this.otpService.storeForUser(userDB._id.toString(), otp);
-        await this.otpService.sendEmail(this.userService.getUserEmail(userDB), otp);
+        await this.otpService.sendEmail(this.userService.getUserEmail(userDB), otp, locale);
 
         return { token: this.tokenService.sign(userDB._id.toString(), 'changePassword') };
     }
@@ -161,29 +166,39 @@ export class AuthChangeService {
      *  used when the identity was linked — so nothing depends on a session
      *  cookie surviving the OAuth round trip. A Google identity maps to exactly
      *  one account, so re-authing as that Google account is sufficient proof. */
-    async disconnectViaGoogleReauth(googleUser: Auth): Promise<void> {
-        const googleIdentity = (googleUser as ReqUserDto)?.identities?.find(
-            (identity) => identity.provider === AuthProvider.GOOGLE,
+    /**
+     * Re-verify an OAuth provider round trip and, if it checks out, unlink it.
+     * The caller must have completed the provider's OAuth flow in `mode=disconnect`
+     * so the identity in `oauthUser` is proof the signed-in account still owns it.
+     */
+    async disconnectViaProviderReauth(
+        provider: AuthProvider.GOOGLE | AuthProvider.DISCORD,
+        oauthUser: Auth,
+    ): Promise<void> {
+        const failCode = `${provider.toUpperCase()}_VERIFY_FAILED`;
+        const identity = (oauthUser as ReqUserDto)?.identities?.find(
+            (entry) => entry.provider === provider,
         );
-        if (!googleIdentity?.providerUserId) throw new BadRequestException('GOOGLE_VERIFY_FAILED');
+        if (!identity?.providerUserId) throw new BadRequestException(failCode);
 
         const userDB = await this.userModel
             .findOne({
                 identities: {
                     $elemMatch: {
-                        provider: AuthProvider.GOOGLE,
-                        providerUserId: googleIdentity.providerUserId,
+                        provider,
+                        providerUserId: identity.providerUserId,
                     },
                 },
             })
             .exec();
-        if (!userDB) throw new BadRequestException('GOOGLE_VERIFY_FAILED');
+        if (!userDB) throw new BadRequestException(failCode);
 
         // Never strip the last usable sign-in method.
-        await this.identityService.assertDisconnectAllowed(
-            userDB._id.toString(),
-            AuthProvider.GOOGLE,
-        );
-        await this.identityService.unlinkProvider(userDB._id.toString(), AuthProvider.GOOGLE);
+        await this.identityService.assertDisconnectAllowed(userDB._id.toString(), provider);
+        await this.identityService.unlinkProvider(userDB._id.toString(), provider);
+    }
+
+    async disconnectViaGoogleReauth(googleUser: Auth): Promise<void> {
+        return this.disconnectViaProviderReauth(AuthProvider.GOOGLE, googleUser);
     }
 }

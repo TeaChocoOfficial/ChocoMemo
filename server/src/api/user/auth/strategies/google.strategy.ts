@@ -1,11 +1,11 @@
 // -Path: 'src/user/auth/strategies/google.strategy.ts'
-import { Role } from '../../../../types/auth';
-import { PassportStrategy } from '@nestjs/passport';
-import { AuthProvider } from '../enum/auth-provider.enum';
+import { Role } from '~/types/auth';
 import { Injectable, Logger } from '@nestjs/common';
+import { PassportStrategy } from '@nestjs/passport';
+import { SecureService } from '~/secure/secure.service';
+import { AuthProvider } from '../enum/auth-provider.enum';
 import type { UserType } from '../../dto/create-user.dto';
 import type { AuthIdentity } from '../schemas/auth-identity.schema';
-import { SecureService } from '../../../../secure/secure.service';
 import { Strategy, type VerifyCallback } from 'passport-google-oauth20';
 
 @Injectable()
@@ -17,25 +17,16 @@ export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
         const { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, GOOGLE_CALLBACK_URL } =
             secureService.getEnvConfig();
 
-        const hasRequiredConfig = !!(
-            GOOGLE_CLIENT_ID &&
-            GOOGLE_CLIENT_SECRET &&
-            GOOGLE_CALLBACK_URL
-        );
-
-        if (!hasRequiredConfig) {
-            GoogleStrategy.isConfigured = false;
-            super({
-                clientID: 'dummy',
-                clientSecret: 'dummy',
-                callbackURL: 'http://localhost:3000/dummy',
-                scope: ['email', 'profile'],
-            });
-            GoogleStrategy.isConfigured = false;
-            return;
+        // Fail fast at boot rather than accepting a dummy strategy: a missing
+        // credential would otherwise only surface as an opaque 500 the first
+        // time somebody clicked "Sign in with Google". `throw` before `super()`
+        // is legal — it terminates the constructor.
+        if (!GOOGLE_CLIENT_ID || !GOOGLE_CLIENT_SECRET || !GOOGLE_CALLBACK_URL) {
+            throw new Error(
+                'Google OAuth is not configured: set GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET and GOOGLE_CALLBACK_URL.',
+            );
         }
 
-        GoogleStrategy.isConfigured = true;
         super({
             clientID: GOOGLE_CLIENT_ID,
             clientSecret: GOOGLE_CLIENT_SECRET,
@@ -43,6 +34,7 @@ export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
             scope: ['email', 'profile'],
             passReqToCallback: false,
         });
+        GoogleStrategy.isConfigured = true;
 
         this.logger.log('Google Strategy initialized successfully');
     }

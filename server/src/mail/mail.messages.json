@@ -1,0 +1,254 @@
+{
+    "en-US": {
+        "otp": {
+            "subject": "Your ChocoMemo verification code",
+            "heading": "ChocoMemo",
+            "intro": "Your verification code is:",
+            "footer": "This code expires in 10 minutes. If you didn't request this, you can safely ignore this email."
+        },
+        "passwordReset": {
+            "subject": "Reset your ChocoMemo password",
+            "heading": "ChocoMemo",
+            "intro": "We received a request to reset your password. Your reset code is:",
+            "footer": "This code expires in 10 minutes. If you didn't request this, you can safely ignore this email."
+        }
+    },
+    "th-TH": {
+        "otp": {
+            "subject": "รหัสยืนยัน ChocoMemo ของคุณ",
+            "heading": "ChocoMemo",
+            "intro": "รหัสยืนยันของคุณคือ:",
+            "footer": "รหัสนี้จะหมดอายุใน 10 นาที หากคุณไม่ได้เป็นผู้ร้องขอ คุณสามารถเพิกเฉยต่ออีเมลนี้ได้อย่างปลอดภัย"
+        },
+        "passwordReset": {
+            "subject": "รีเซ็ตรหัสผ่าน ChocoMemo ของคุณ",
+            "heading": "ChocoMemo",
+            "intro": "เราได้รับคำขอให้รีเซ็ตรหัสผ่านของคุณ รหัสรีเซ็ตของคุณคือ:",
+            "footer": "รหัสนี้จะหมดอายุใน 10 นาที หากคุณไม่ได้เป็นผู้ร้องขอ คุณสามารถเพิกเฉยต่ออีเมลนี้ได้อย่างปลอดภัย"
+        }
+    },
+    "ja-JP": {
+        "otp": {
+            "subject": "ChocoMemo の確認コード",
+            "heading": "ChocoMemo",
+            "intro": "確認コードは次のとおりです：",
+            "footer": "このコードは10分で期限切れになります。心当たりがない場合は、このメールを無視して問題ありません。"
+        },
+        "passwordReset": {
+            "subject": "ChocoMemo のパスワードを再設定",
+            "heading": "ChocoMemo",
+            "intro": "パスワード再設定のご依頼を受け付けました。再設定コードは次のとおりです：",
+            "footer": "このコードは10分で期限切れになります。心当たりがない場合は、このメールを無視して問題ありません。"
+        }
+    },
+    "zh-CN": {
+        "otp": {
+            "subject": "你的 ChocoMemo 验证码",
+            "heading": "ChocoMemo",
+            "intro": "你的验证码是：",
+            "footer": "此验证码将在 10 分钟后过期。如果这不是你本人的操作，忽略此邮件即可。"
+        },
+        "passwordReset": {
+            "subject": "重置你的 ChocoMemo 密码",
+            "heading": "ChocoMemo",
+            "intro": "我们收到了重置密码的请求。你的重置验证码是：",
+            "footer": "此重置验证码将在 10 分钟后过期。如果这不是你本人的操作，忽略此邮件即可。"
+        }
+    },
+    "ko-KR": {
+        "otp": {
+            "subject": "ChocoMemo 인증 코드",
+            "heading": "ChocoMemo",
+            "intro": "인증 코드는 다음과 같습니다:",
+            "footer": "이 코드는 10분 후 만료됩니다. 요청하지 않으셨다면 이 메일을 무시하셔도 됩니다."
+        },
+        "passwordReset": {
+            "subject": "ChocoMemo 비밀번호 재설정",
+            "heading": "ChocoMemo",
+            "intro": "비밀번호 재설정 요청을 받았습니다. 재설정 코드는 다음과 같습니다:",
+            "footer": "이 코드는 10분 후 만료됩니다. 요청하지 않으셨다면 이 메일을 무시하셔도 됩니다."
+        }
+    },
+    "vi-VN": {
+        "otp": {
+            "subject": "Mã xác minh ChocoMemo của bạn",
+            "heading": "ChocoMemo",
+            "intro": "Mã xác minh của bạn là:",
+            "footer": "Mã này hết hạn sau 10 phút. Nếu bạn không yêu cầu mã này, bạn có thể bỏ qua email này."
+        },
+        "passwordReset": {
+            "subject": "Đặt lại mật khẩu ChocoMemo của bạn",
+            "heading": "ChocoMemo",
+            "intro": "Chúng tôi đã nhận được yêu cầu đặt lại mật khẩu. Mã đặt lại của bạn là:",
+            "footer": "Mã này hết hạn sau 10 phút. Nếu bạn không yêu cầu mã này, bạn có thể bỏ qua email này."
+        }
+    },
+    "id-ID": {
+        "otp": {
+            "subject": "Kode verifikasi ChocoMemo Anda",
+            "heading": "ChocoMemo",
+            "intro": "Kode verifikasi Anda adalah:",
+            "footer": "Kode ini kedaluwarsa dalam 10 menit. Jika Anda tidak meminta kode ini, abaikan saja email ini."
+        },
+        "passwordReset": {
+            "subject": "Atur ulang kata sandi ChocoMemo Anda",
+            "heading": "ChocoMemo",
+            "intro": "Kami menerima permintaan untuk mengatur ulang kata sandi Anda. Kode atur ulang Anda adalah:",
+            "footer": "Kode ini kedaluwarsa dalam 10 menit. Jika Anda tidak meminta kode ini, abaikan saja email ini."
+        }
+    },
+    "es-ES": {
+        "otp": {
+            "subject": "Tu código de verificación de ChocoMemo",
+            "heading": "ChocoMemo",
+            "intro": "Tu código de verificación es:",
+            "footer": "Este código caduca en 10 minutos. Si no lo solicitaste, puedes ignorar este correo con seguridad."
+        },
+        "passwordReset": {
+            "subject": "Restablece tu contraseña de ChocoMemo",
+            "heading": "ChocoMemo",
+            "intro": "Hemos recibido una solicitud para restablecer tu contraseña. Tu código de restablecimiento es:",
+            "footer": "Este código caduca en 10 minutos. Si no lo solicitaste, puedes ignorar este correo con seguridad."
+        }
+    },
+    "pt-BR": {
+        "otp": {
+            "subject": "Seu código de verificação do ChocoMemo",
+            "heading": "ChocoMemo",
+            "intro": "Seu código de verificação é:",
+            "footer": "Este código expira em 10 minutos. Se você não o solicitou, pode ignorar este e-mail com segurança."
+        },
+        "passwordReset": {
+            "subject": "Redefina sua senha do ChocoMemo",
+            "heading": "ChocoMemo",
+            "intro": "Recebemos uma solicitação para redefinir sua senha. Seu código de redefinição é:",
+            "footer": "Este código expira em 10 minutos. Se você não o solicitou, pode ignorar este e-mail com segurança."
+        }
+    },
+    "fr-FR": {
+        "otp": {
+            "subject": "Votre code de vérification ChocoMemo",
+            "heading": "ChocoMemo",
+            "intro": "Votre code de vérification est :",
+            "footer": "Ce code expire dans 10 minutes. Si vous n'êtes pas à l'origine de cette demande, vous pouvez ignorer cet e-mail."
+        },
+        "passwordReset": {
+            "subject": "Réinitialisez votre mot de passe ChocoMemo",
+            "heading": "ChocoMemo",
+            "intro": "Nous avons reçu une demande de réinitialisation de votre mot de passe. Votre code de réinitialisation est :",
+            "footer": "Ce code expire dans 10 minutes. Si vous n'êtes pas à l'origine de cette demande, vous pouvez ignorer cet e-mail."
+        }
+    },
+    "de-DE": {
+        "otp": {
+            "subject": "Dein ChocoMemo-Verifizierungscode",
+            "heading": "ChocoMemo",
+            "intro": "Dein Verifizierungscode lautet:",
+            "footer": "Dieser Code läuft in 10 Minuten ab. Falls du ihn nicht angefordert hast, kannst du diese E-Mail ignorieren."
+        },
+        "passwordReset": {
+            "subject": "Setze dein ChocoMemo-Passwort zurück",
+            "heading": "ChocoMemo",
+            "intro": "Wir haben eine Anfrage zum Zurücksetzen deines Passworts erhalten. Dein Zurücksetz-Code lautet:",
+            "footer": "Dieser Code läuft in 10 Minuten ab. Falls du ihn nicht angefordert hast, kannst du diese E-Mail ignorieren."
+        }
+    },
+    "ar-SA": {
+        "otp": {
+            "subject": "رمز التحقق الخاص بك في ChocoMemo",
+            "heading": "ChocoMemo",
+            "intro": "رمز التحقق الخاص بك هو:",
+            "footer": "تنتهي صلاحية هذا الرمز خلال 10 دقائق. إذا لم تطلبه، يمكنك تجاهل هذه الرسالة بأمان."
+        },
+        "passwordReset": {
+            "subject": "إعادة تعيين كلمة مرور ChocoMemo الخاصة بك",
+            "heading": "ChocoMemo",
+            "intro": "استلمنا طلبًا لإعادة تعيين كلمة المرور الخاصة بك. رمز إعادة التعيين هو:",
+            "footer": "تنتهي صلاحية هذا الرمز خلال 10 دقائق. إذا لم تطلبه، يمكنك تجاهل هذه الرسالة بأمان."
+        }
+    },
+    "hi-IN": {
+        "otp": {
+            "subject": "आपका ChocoMemo सत्यापन कोड",
+            "heading": "ChocoMemo",
+            "intro": "आपका सत्यापन कोड है:",
+            "footer": "यह कोड 10 मिनट में समाप्त हो जाएगा। यदि आपने इसका अनुरोध नहीं किया है, तो आप इस ईमेल को अनदेखा कर सकते हैं।"
+        },
+        "passwordReset": {
+            "subject": "अपना ChocoMemo पासवर्ड रीसेट करें",
+            "heading": "ChocoMemo",
+            "intro": "हमें आपका पासवर्ड रीसेट करने का अनुरोध मिला है। आपका रीसेट कोड है:",
+            "footer": "यह कोड 10 मिनट में समाप्त हो जाएगा। यदि आपने इसका अनुरोध नहीं किया है, तो आप इस ईमेल को अनदेखा कर सकते हैं।"
+        }
+    },
+    "ru-RU": {
+        "otp": {
+            "subject": "Ваш код подтверждения ChocoMemo",
+            "heading": "ChocoMemo",
+            "intro": "Ваш код подтверждения:",
+            "footer": "Код действует 10 минут. Если вы его не запрашивали, просто проигнорируйте это письмо."
+        },
+        "passwordReset": {
+            "subject": "Сброс пароля ChocoMemo",
+            "heading": "ChocoMemo",
+            "intro": "Мы получили запрос на сброс вашего пароля. Ваш код для сброса:",
+            "footer": "Код действует 10 минут. Если вы его не запрашивали, просто проигнорируйте это письмо."
+        }
+    },
+    "it-IT": {
+        "otp": {
+            "subject": "Il tuo codice di verifica ChocoMemo",
+            "heading": "ChocoMemo",
+            "intro": "Il tuo codice di verifica è:",
+            "footer": "Questo codice scade tra 10 minuti. Se non l'hai richiesto, puoi ignorare questa email."
+        },
+        "passwordReset": {
+            "subject": "Reimposta la tua password ChocoMemo",
+            "heading": "ChocoMemo",
+            "intro": "Abbiamo ricevuto una richiesta di reimpostazione della password. Il tuo codice di reimpostazione è:",
+            "footer": "Questo codice scade tra 10 minuti. Se non l'hai richiesto, puoi ignorare questa email."
+        }
+    },
+    "tr-TR": {
+        "otp": {
+            "subject": "ChocoMemo doğrulama kodun",
+            "heading": "ChocoMemo",
+            "intro": "Doğrulama kodun:",
+            "footer": "Bu kodun geçerlilik süresi 10 dakikadır. Talep etmediysen bu e-postayı güvenle yok sayabilirsin."
+        },
+        "passwordReset": {
+            "subject": "ChocoMemo şifreni sıfırla",
+            "heading": "ChocoMemo",
+            "intro": "Şifreni sıfırlama talebini aldık. Sıfırlama kodun:",
+            "footer": "Bu kodun geçerlilik süresi 10 dakikadır. Talep etmediyseniz bu e-postayı güvenle yok sayabilirsiniz."
+        }
+    },
+    "fil-PH": {
+        "otp": {
+            "subject": "Ang iyong verification code sa ChocoMemo",
+            "heading": "ChocoMemo",
+            "intro": "Ang iyong verification code ay:",
+            "footer": "Nag-e-expire ang code na ito sa loob ng 10 minuto. Kung hindi ikaw ang humiling nito, ligtas mong i-ignore ang email na ito."
+        },
+        "passwordReset": {
+            "subject": "I-reset ang iyong password sa ChocoMemo",
+            "heading": "ChocoMemo",
+            "intro": "Natanggap namin ang kahilingan para i-reset ang iyong password. Ang iyong reset code ay:",
+            "footer": "Nag-e-expire ang code na ito sa loob ng 10 minuto. Kung hindi ikaw ang humiling nito, ligtas mong i-ignore ang email na ito."
+        }
+    },
+    "ms-MY": {
+        "otp": {
+            "subject": "Kod pengesahan ChocoMemo anda",
+            "heading": "ChocoMemo",
+            "intro": "Kod pengesahan anda ialah:",
+            "footer": "Kod ini tamat tempoh dalam 10 minit. Jika anda tidak memintanya, abaikan e-mel ini dengan selamat."
+        },
+        "passwordReset": {
+            "subject": "Tetapkan semula kata laluan ChocoMemo anda",
+            "heading": "ChocoMemo",
+            "intro": "Kami telah menerima permintaan untuk menetapkan semula kata laluan anda. Kod set semula anda ialah:",
+            "footer": "Kod ini tamat tempoh dalam 10 minit. Jika anda tidak memintanya, abaikan e-mel ini dengan selamat."
+        }
+    }
+}

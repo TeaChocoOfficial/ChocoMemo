@@ -1,8 +1,9 @@
 // -Path: "server/src/api/user/auth/dto/security-change.dto.ts"
 import { ApiProperty } from '@nestjs/swagger';
 import { IsEmail, IsOptional, IsString, Length, MinLength } from 'class-validator';
+import { LocaleDto } from './locale.dto';
 
-export class ChangeEmailRequestDto {
+export class ChangeEmailRequestDto extends LocaleDto {
     @IsEmail()
     @ApiProperty({
         type: String,
@@ -34,7 +35,7 @@ export class ChangeEmailConfirmDto {
     readonly code!: string;
 }
 
-export class ChangePasswordRequestDto {
+export class ChangePasswordRequestDto extends LocaleDto {
     @IsOptional()
     @IsString()
     @ApiProperty({

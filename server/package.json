@@ -46,6 +46,7 @@
 		"joi": "^18.2.8",
 		"mongoose": "^9.9.5",
 		"nodemailer": "^10.0.10",
+		"passport-discord-auth": "^1.2.0",
 		"passport-google-oauth20": "^2.0.0",
 		"passport-jwt": "^4.0.1",
 		"passport-local": "^1.0.0",

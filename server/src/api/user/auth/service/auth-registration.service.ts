@@ -41,6 +41,7 @@ export class AuthRegistrationService {
         password: string,
         name: string,
         nameTag: string,
+        locale?: string | null,
     ): Promise<SigninResultDto> {
         const normalizedEmail = email.trim().toLowerCase();
         const normalizedNameTag = nameTag.trim().toLowerCase();
@@ -79,7 +80,7 @@ export class AuthRegistrationService {
             )
             .exec();
 
-        await this.otpService.sendEmail(normalizedEmail, otp);
+        await this.otpService.sendEmail(normalizedEmail, otp, locale);
 
         return {
             access_token: this.tokenService.sign(pending._id.toString(), 'signup'),
@@ -90,7 +91,7 @@ export class AuthRegistrationService {
     }
 
     /** Resend a fresh OTP for an unverified registration and return a new signup token. */
-    async resendOtp(email: string): Promise<SigninResultDto> {
+    async resendOtp(email: string, locale?: string | null): Promise<SigninResultDto> {
         const normalizedEmail = email.trim().toLowerCase();
         const user = await this.userModel
             .findOne({ 'identities.providerEmail': normalizedEmail })
@@ -105,7 +106,7 @@ export class AuthRegistrationService {
 
         const otp = this.otpService.generate();
         await this.otpService.storeForPending(pending._id.toString(), otp);
-        await this.otpService.sendEmail(normalizedEmail, otp);
+        await this.otpService.sendEmail(normalizedEmail, otp, locale);
 
         return {
             access_token: this.tokenService.sign(pending._id.toString(), 'signup'),
@@ -178,7 +179,7 @@ export class AuthRegistrationService {
     }
 
     /** Send a password-reset OTP to an existing, verified local account. */
-    async forgotPassword(email: string): Promise<SigninResultDto> {
+    async forgotPassword(email: string, locale?: string | null): Promise<SigninResultDto> {
         const normalizedEmail = email.trim().toLowerCase();
         const user = await this.userModel
             .findOne({
@@ -192,7 +193,7 @@ export class AuthRegistrationService {
 
         const otp = this.otpService.generate();
         await this.otpService.storeForUser(user._id.toString(), otp);
-        await this.otpService.sendResetEmail(normalizedEmail, otp);
+        await this.otpService.sendResetEmail(normalizedEmail, otp, locale);
 
         return {
             access_token: this.tokenService.sign(user._id.toString(), 'reset'),

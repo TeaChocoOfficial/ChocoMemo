@@ -16,6 +16,7 @@ import { User, UserSchema } from '../schemas/user.schema';
 import { AuthOtpService } from './service/auth-otp.service';
 import { LocalStrategy } from './strategies/local.strategies';
 import { GoogleStrategy } from './strategies/google.strategy';
+import { DiscordStrategy } from './strategies/discord.strategy';
 import { AuthHashService } from './service/auth-hash.service';
 import { AuthTokenService } from './service/auth-token.service';
 import { AuthChangeService } from './service/auth-change.service';
@@ -42,6 +43,7 @@ import { AuthRegistrationService } from './service/auth-registration.service';
         JwtStrategy,
         LocalStrategy,
         GoogleStrategy,
+        DiscordStrategy,
         AuthOtpService,
         AuthHashService,
         AuthTokenService,

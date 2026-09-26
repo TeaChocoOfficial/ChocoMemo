@@ -5,10 +5,10 @@ import { AuthProvider } from '~/types/auth';
 /**
  * Display metadata for a login provider.
  * `key` matches `AuthProvider` for providers the backend already supports
- * (local, google). Providers not yet in `AuthProvider` are listed here with
- * `available: false` so the "linked accounts" UI is ready before the
- * backend ships them — add them to `AuthProvider` and flip `available` to
- * `true` once the OAuth flow exists.
+ * (local, google, discord). Providers not yet in `AuthProvider` are listed
+ * here with `available: false` so the "linked accounts" UI is ready before
+ * the backend ships them — add them to `AuthProvider` and flip `available`
+ * to `true` once the OAuth flow exists.
  */
 export interface ProviderMeta {
     key: AuthProvider | 'discord' | 'line' | 'facebook' | 'x';
@@ -34,11 +34,11 @@ export const PROVIDER_META: ProviderMeta[] = [
         available: true,
     },
     {
-        key: 'discord',
+        key: AuthProvider.DISCORD,
         labelKey: 'profile.identities.discord',
         icon: FaDiscord,
         color: '#5865f2',
-        available: false,
+        available: true,
     },
     {
         key: 'line',

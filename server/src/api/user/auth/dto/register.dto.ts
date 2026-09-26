@@ -2,8 +2,9 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { Transform } from 'class-transformer';
 import { IsEmail, IsString, Matches, MinLength } from 'class-validator';
+import { LocaleDto } from './locale.dto';
 
-export class RegisterDto {
+export class RegisterDto extends LocaleDto {
     @IsString()
     @MinLength(2)
     @ApiProperty({

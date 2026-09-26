@@ -1,8 +1,9 @@
 // -Path: "Nest TypeScript/src/user/auth/dto/forgot-password.dto.ts"
 import { ApiProperty } from '@nestjs/swagger';
 import { IsEmail } from 'class-validator';
+import { LocaleDto } from './locale.dto';
 
-export class ForgotPasswordDto {
+export class ForgotPasswordDto extends LocaleDto {
     @IsEmail()
     @ApiProperty({
         type: String,

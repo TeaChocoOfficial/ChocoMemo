@@ -1,8 +1,9 @@
 // -Path: "Nest TypeScript/src/user/auth/dto/resend-otp.dto.ts"
 import { ApiProperty } from '@nestjs/swagger';
 import { IsEmail } from 'class-validator';
+import { LocaleDto } from './locale.dto';
 
-export class ResendOtpDto {
+export class ResendOtpDto extends LocaleDto {
     @IsEmail()
     @ApiProperty({
         type: String,

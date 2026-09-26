@@ -37,7 +37,6 @@ export default function SettingsPage() {
         { id: 'language', label: t('settings.nav.language') },
         { id: 'voice', label: t('settings.nav.voice') },
         { id: 'interface', label: t('settings.nav.interface') },
-        { id: 'account', label: t('settings.nav.account') },
     ];
 
     const scrollTo = (id: string) =>

@@ -1,4 +1,4 @@
-// -Path: "Nest TypeScript/src/user/dto/user.dto.ts"
+// -Path: "src/user/dto/user.dto.ts"
 import { Role } from '~/types/auth';
 import { ApiProperty } from '@nestjs/swagger';
 import type { AuthIdentity } from '../auth/schemas/auth-identity.schema';

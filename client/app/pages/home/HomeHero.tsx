@@ -19,12 +19,12 @@ export default function HomeHero() {
         <Section className='items-center justify-center'>
             <div className='mx-auto w-full max-w-4xl px-4 text-center sm:px-6'>
                 <motion.div
-                    initial={{ opacity: 0, y: 32 }}
                     animate={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, y: 32 }}
                     transition={{ duration: 0.7, ease: 'easeOut' }}
                 >
                     {/* Poster mark */}
-                    <div className='relative mx-auto w-fit'>
+                    <div className='mx-auto w-fit'>
                         <motion.img
                             initial={{ opacity: 0, scale: 0.88 }}
                             animate={{ opacity: 1, scale: 1 }}
@@ -33,19 +33,19 @@ export default function HomeHero() {
                             src={getAssetUrl('/logo.png')}
                             className='h-40 w-40 sm:h-52 sm:w-52 lg:h-60 lg:w-60'
                         />
+                    </div>
+
+                    <div className='mt-6 flex flex-wrap items-center justify-center gap-2'>
+                        <Badge variant='info'>{t('home.badge')}</Badge>
                         <a
                             href='https://github.com/TeaChocoOfficial/ChocoMemo'
                             target='_blank'
                             rel='noopener noreferrer'
                             title={`v${env.VERSION}`}
-                            className='absolute -bottom-2 right-0 inline-flex items-center gap-1.5 rounded-sm border border-line bg-surface px-2.5 py-1 font-mono text-[11px] font-semibold text-surface-subtle transition-colors hover:border-primary hover:text-primary'
+                            className='inline-flex items-center gap-1.5 rounded-sm border border-line bg-surface px-2.5 py-1 font-mono text-[11px] font-semibold text-surface-subtle transition-colors hover:border-primary hover:text-primary'
                         >
                             <FaGithub aria-hidden='true' />v{env.VERSION}
                         </a>
-                    </div>
-
-                    <div className='mt-6 flex justify-center'>
-                        <Badge variant='info'>{t('home.badge')}</Badge>
                     </div>
 
                     <h1 className='mx-auto mt-6 max-w-4xl text-3xl font-black leading-[1.05] tracking-tighter text-surface-foreground sm:text-4xl lg:text-5xl'>

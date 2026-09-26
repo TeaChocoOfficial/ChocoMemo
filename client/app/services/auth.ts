@@ -7,6 +7,16 @@ import { getLocaleUrl } from '~/utils/url';
 
 const email = z.string().trim().email();
 
+/** UI locale, so the server can send its email in the user's language.
+ *  Loose BCP-47 shape; the server maps it to a catalogue and falls back
+ *  to en-US, so this only rejects values that cannot be a language tag. */
+const locale = z
+    .string()
+    .trim()
+    .max(35)
+    .regex(/^[A-Za-z]{2,3}(-[A-Za-z0-9]{2,8})*$/, 'locale: BCP-47 tag, e.g. "en" or "th-TH"')
+    .optional();
+
 /** Public handle: English letters/numbers/`_-` only, no spaces, stored lowercase. */
 export const nameTagField = z
     .string()
@@ -27,6 +37,7 @@ export const registerPayloadSchema = z.object({
     nameTag: nameTagField,
     email,
     password: z.string().min(1),
+    locale,
 });
 export type RegisterPayload = z.infer<typeof registerPayloadSchema>;
 
@@ -40,12 +51,14 @@ export type VerifyOtpPayload = z.infer<typeof verifyOtpPayloadSchema>;
 /** Payload for the OTP resend endpoint. */
 export const resendOtpPayloadSchema = z.object({
     email,
+    locale,
 });
 export type ResendOtpPayload = z.infer<typeof resendOtpPayloadSchema>;
 
 /** Payload for requesting a password reset OTP. */
 export const forgotPasswordPayloadSchema = z.object({
     email,
+    locale,
 });
 export type ForgotPasswordPayload = z.infer<typeof forgotPasswordPayloadSchema>;
 
@@ -101,6 +114,12 @@ export type UpdateAvatarPayload = z.infer<typeof updateAvatarPayloadSchema>;
 
 const userResponseSchema = userField.nullable();
 
+/** The active UI language, read lazily so this module stays import-order safe. */
+function currentLocale(): string | undefined {
+    const lang = typeof document !== 'undefined' ? document.documentElement.lang : '';
+    return lang || undefined;
+}
+
 export const authAPI = {
     auth: () => schemaParse(userResponseSchema, serverRest.get<User>('/user/auth')),
     login: (data: LoginPayload) => {
@@ -108,7 +127,7 @@ export const authAPI = {
         return schemaParse(signinResultSchema, serverRest.post('/user/auth/login', payload));
     },
     register: (data: RegisterPayload) => {
-        const payload = registerPayloadSchema.parse(data);
+        const payload = registerPayloadSchema.parse({ ...data, locale: currentLocale() });
         return schemaParse(signinResultSchema, serverRest.post('/user/auth/register', payload));
     },
     verifyOtp: (data: VerifyOtpPayload) => {
@@ -116,11 +135,14 @@ export const authAPI = {
         return schemaParse(signinResultSchema, serverRest.post('/user/auth/verify-otp', payload));
     },
     resendOtp: (data: ResendOtpPayload) => {
-        const payload = resendOtpPayloadSchema.parse(data);
+        const payload = resendOtpPayloadSchema.parse({ ...data, locale: currentLocale() });
         return schemaParse(signinResultSchema, serverRest.post('/user/auth/resend-otp', payload));
     },
     forgotPassword: (data: ForgotPasswordPayload) => {
-        const payload = forgotPasswordPayloadSchema.parse(data);
+        const payload = forgotPasswordPayloadSchema.parse({
+            ...data,
+            locale: currentLocale(),
+        });
         return schemaParse(
             signinResultSchema,
             serverRest.post('/user/auth/forgot-password', payload),
@@ -143,6 +165,15 @@ export const authAPI = {
         const redirectUri = getLocaleUrl(path);
         window.location.href = `${env.API_URL}/api/user/auth/google?redirect_uri=${encodeURIComponent(redirectUri)}&mode=disconnect`;
     },
+    discordLogin: (path: string) => {
+        const redirectUri = getLocaleUrl(path);
+        window.location.href = `${env.API_URL}/api/user/auth/discord?redirect_uri=${encodeURIComponent(redirectUri)}`;
+    },
+    /** Re-verify the linked Discord account before unlinking it. */
+    discordDisconnect: (path: string) => {
+        const redirectUri = getLocaleUrl(path);
+        window.location.href = `${env.API_URL}/api/user/auth/discord?redirect_uri=${encodeURIComponent(redirectUri)}&mode=disconnect`;
+    },
     updateUser: (data: UpdateUserPayload) => {
         const payload = updateUserPayloadSchema.parse(data);
         return schemaParse(userField, serverRest.put('/user/auth', payload));
@@ -154,7 +185,10 @@ export const authAPI = {
     requestEmailChange: (data: { newEmail: string }) => {
         return schemaParse(
             securityTokenSchema,
-            serverRest.post('/user/auth/change-email/request', data),
+            serverRest.post('/user/auth/change-email/request', {
+                ...data,
+                locale: currentLocale(),
+            }),
         );
     },
     confirmEmailChange: (data: { token: string; code: string }) => {
@@ -166,7 +200,10 @@ export const authAPI = {
     requestPasswordChange: (data: { currentPassword?: string }) => {
         return schemaParse(
             securityTokenSchema,
-            serverRest.post('/user/auth/change-password/request', data),
+            serverRest.post('/user/auth/change-password/request', {
+                ...data,
+                locale: currentLocale(),
+            }),
         );
     },
     confirmPasswordChange: (data: {

@@ -12,7 +12,7 @@ export class SecureService {
     getEnvConfig = (): EnvConfig =>
         envConfigs.reduce((acc, key) => {
             const value = this.configService.get<string>(key);
-            if (value === undefined) throw new Error(`Missing ${key}`);
+            if (value === undefined) throw new Error(`Missing ${key}`); // ⚠️
             return { ...acc, [key]: value };
         }, {});
 

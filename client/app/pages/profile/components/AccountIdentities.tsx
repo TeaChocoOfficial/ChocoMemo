@@ -122,7 +122,7 @@ function EmailRow({ onChange }: { onChange: () => void }) {
  * local password account (marked as the primary identity, with a Change
  * button for its OTP-guarded password flow), Google (Connect runs the Google
  * OAuth link; Disconnect re-verifies with Google before unlinking), and
- * Discord/Line/Facebook/X as coming soon.
+ * Discord (same flow via Discord), with Line/Facebook/X still coming soon.
  */
 export default function AccountIdentities() {
     const { t } = useTranslation();
@@ -131,10 +131,15 @@ export default function AccountIdentities() {
 
     const [emailModalOpen, setEmailModalOpen] = useState(false);
     const [passwordModalOpen, setPasswordModalOpen] = useState(false);
-    const [disconnectConfirmOpen, setDisconnectConfirmOpen] = useState(false);
+    const [disconnectProvider, setDisconnectProvider] = useState<
+        AuthProvider.GOOGLE | AuthProvider.DISCORD | null
+    >(null);
 
     const localIdentity = identities.find((identity) => identity.provider === AuthProvider.LOCAL);
     const googleIdentity = identities.find((identity) => identity.provider === AuthProvider.GOOGLE);
+    const discordIdentity = identities.find(
+        (identity) => identity.provider === AuthProvider.DISCORD,
+    );
     const comingSoonProviders = PROVIDER_META.filter((meta) => !meta.available);
 
     return (
@@ -192,7 +197,7 @@ export default function AccountIdentities() {
                             <Button
                                 size='sm'
                                 variant='outline'
-                                onClick={() => setDisconnectConfirmOpen(true)}
+                                onClick={() => setDisconnectProvider(AuthProvider.GOOGLE)}
                                 className='border-error text-error hover:bg-error/10'
                             >
                                 {t('profile.identities.disconnect')}
@@ -202,6 +207,42 @@ export default function AccountIdentities() {
                                 size='sm'
                                 variant='outline'
                                 onClick={() => authAPI.googleLogin('profile')}
+                                className='border-success text-success hover:bg-success/10'
+                            >
+                                {t('profile.identities.connect')}
+                            </Button>
+                        )
+                    }
+                />
+
+                <IdentityRow
+                    providerKey={AuthProvider.DISCORD}
+                    subtitle={
+                        discordIdentity
+                            ? (discordIdentity.providerEmail ??
+                              t('profile.identities.connected'))
+                            : ''
+                    }
+                    status={
+                        discordIdentity
+                            ? { variant: 'success', labelKey: 'profile.identities.connected' }
+                            : { variant: 'default', labelKey: 'profile.identities.notConnected' }
+                    }
+                    action={
+                        discordIdentity ? (
+                            <Button
+                                size='sm'
+                                variant='outline'
+                                onClick={() => setDisconnectProvider(AuthProvider.DISCORD)}
+                                className='border-error text-error hover:bg-error/10'
+                            >
+                                {t('profile.identities.disconnect')}
+                            </Button>
+                        ) : (
+                            <Button
+                                size='sm'
+                                variant='outline'
+                                onClick={() => authAPI.discordLogin('profile')}
                                 className='border-success text-success hover:bg-success/10'
                             >
                                 {t('profile.identities.connect')}
@@ -229,13 +270,13 @@ export default function AccountIdentities() {
 
             <Modal
                 size='sm'
-                isOpen={disconnectConfirmOpen}
-                onClose={() => setDisconnectConfirmOpen(false)}
+                isOpen={disconnectProvider !== null}
+                onClose={() => setDisconnectProvider(null)}
             >
                 <ModalHeader
                     icon={<FaPlug className='h-4 w-4' />}
                     title={t('profile.identities.disconnectTitle')}
-                    onClose={() => setDisconnectConfirmOpen(false)}
+                    onClose={() => setDisconnectProvider(null)}
                 />
                 <ModalBody>
                     <p className='text-sm leading-relaxed text-surface-muted'>
@@ -243,14 +284,19 @@ export default function AccountIdentities() {
                     </p>
                 </ModalBody>
                 <ModalFooter>
-                    <Button variant='ghost' onClick={() => setDisconnectConfirmOpen(false)}>
+                    <Button variant='ghost' onClick={() => setDisconnectProvider(null)}>
                         {t('profile.avatar.cancel')}
                     </Button>
                     <Button
                         variant='primary'
                         onClick={() => {
-                            setDisconnectConfirmOpen(false);
-                            authAPI.googleDisconnect('profile');
+                            const provider = disconnectProvider;
+                            setDisconnectProvider(null);
+                            if (provider === AuthProvider.GOOGLE) {
+                                authAPI.googleDisconnect('profile');
+                            } else if (provider === AuthProvider.DISCORD) {
+                                authAPI.discordDisconnect('profile');
+                            }
                         }}
                     >
                         {t('profile.identities.disconnect')}

@@ -8,6 +8,7 @@ export enum Role {
 export enum AuthProvider {
     LOCAL = 'local',
     GOOGLE = 'google',
+    DISCORD = 'discord',
 }
 
 export interface AuthIdentity {

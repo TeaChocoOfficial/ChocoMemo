@@ -1,4 +1,4 @@
-// -Path: "Nest TypeScript/src/types/auth.ts"
+// -Path: "src/types/auth.ts"
 import type { ReqUserDto } from '../api/user/dto/user.dto';
 
 export enum Role {

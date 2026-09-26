@@ -1,14 +1,24 @@
+import {
+    FaAt,
+    FaLock,
+    FaUser,
+    FaGoogle,
+    FaDiscord,
+    FaEnvelope,
+    FaShieldHalved,
+} from 'react-icons/fa6';
 import axios from 'axios';
 import { useSwal } from '~/hooks/useSwal';
 import PasswordInput from './PasswordInput';
 import { useEffect, useState } from 'react';
+import { AuthProvider } from '~/types/auth';
 import { usePathname } from '~/i18n/routing';
 import { useTranslation } from 'react-i18next';
 import Button from '~/components/custom/Button';
 import { useAuthStore } from '~/stores/auth.store';
 import { authAPI, nameTagField } from '~/services/auth';
+import { getProviderMeta } from '~/constants/identityProviders';
 import { Modal, ModalHeader, ModalBody } from '~/components/custom/Modal';
-import { FaLock, FaUser, FaGoogle, FaEnvelope, FaShieldHalved, FaAt } from 'react-icons/fa6';
 
 const RESEND_COOLDOWN = 30;
 
@@ -138,6 +148,10 @@ export default function AuthModal() {
 
     const handleGoogle = () => {
         authAPI.googleLogin(pathname);
+    };
+
+    const handleDiscord = () => {
+        authAPI.discordLogin(pathname);
     };
 
     const handleVerifyOtp = async (e: React.FormEvent) => {
@@ -590,9 +604,24 @@ export default function AuthModal() {
                             <div className='h-px flex-1 bg-line' />
                         </div>
 
-                        <Button variant='outline' className='mt-4 w-full' onClick={handleGoogle}>
+                        <Button
+                            variant='outline'
+                            className='mt-4 w-full'
+                            onClick={handleGoogle}
+                            brandColor={getProviderMeta(AuthProvider.GOOGLE)?.color}
+                        >
                             <FaGoogle className='h-4 w-4' />
                             {t('auth.google')}
+                        </Button>
+
+                        <Button
+                            variant='outline'
+                            className='mt-4 w-full'
+                            onClick={handleDiscord}
+                            brandColor={getProviderMeta(AuthProvider.DISCORD)?.color}
+                        >
+                            <FaDiscord className='h-4 w-4' />
+                            {t('auth.discord')}
                         </Button>
 
                         <p className='mt-4 text-center text-xs text-surface-muted'>

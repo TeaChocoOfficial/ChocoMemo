@@ -17,6 +17,7 @@ export class AuthMiddleware implements NestMiddleware {
         '/socket-ui',
         '/api/user/auth/google',
         '/api/user/auth/google/callback',
+        '/api/user/auth/discord/callback',
     ];
 
     constructor(private readonly secureService: SecureService) {}

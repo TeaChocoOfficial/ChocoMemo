@@ -50,7 +50,13 @@ export function Modal({
     return (
         <AnimatePresence>
             {isOpen && (
-                <div className='fixed inset-0 z-50 flex items-center justify-center p-4'>
+                // Scrolls on the overlay so a tall dialog can never strand its
+                // own content. `items-center` is deliberately NOT used: on a
+                // flex container, centering a child taller than the viewport
+                // overflows in *both* directions and the top becomes
+                // unreachable. The panel's `m-auto` centers it when there is
+                // room and degrades to top-aligned when there isn't.
+                <div className='fixed inset-0 z-50 flex justify-center overflow-y-auto p-4'>
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -64,7 +70,7 @@ export function Modal({
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 16 }}
                         transition={{ duration: 0.18 }}
-                        className={`relative w-full ${sizeClass} bg-surface-elevated border border-line-strong rounded-sm ${className}`}
+                        className={`relative m-auto max-h-[calc(100dvh-2rem)] w-full ${sizeClass} overflow-y-auto overscroll-contain bg-surface-elevated border border-line-strong rounded-sm ${className}`}
                     >
                         {children}
                     </motion.div>
@@ -84,7 +90,7 @@ interface ModalHeaderProps {
 export function ModalHeader({ title, icon, onClose, className = '' }: ModalHeaderProps) {
     return (
         <div
-            className={`flex items-center justify-between px-6 py-4 border-b border-line ${className}`}
+            className={`sticky top-0 z-10 flex items-center justify-between border-b border-line bg-surface-elevated px-6 py-4 ${className}`}
         >
             <div className='flex items-center gap-3'>
                 {icon && (

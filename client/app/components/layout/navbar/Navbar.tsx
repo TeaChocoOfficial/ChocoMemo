@@ -1,11 +1,13 @@
 // -Path: 'client/app/components/layout/navbar/Navbar.tsx'
 import NavbarLogo from './NavbarLogo';
 import DesktopNav from './DesktopNav';
-import NavbarMenus from './menu/NavbarMenus';
 import { useEffect, useState } from 'react';
+import NavbarMenus from './menu/NavbarMenus';
 import AuthModal from '../../auth/AuthModal';
+import { useAuthStore } from '~/stores/auth.store';
 
 export default function Navbar() {
+    const { user } = useAuthStore();
     const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
@@ -35,7 +37,7 @@ export default function Navbar() {
                 </div>
             </nav>
 
-            <AuthModal />
+            {!user && <AuthModal />}
         </>
     );
 }

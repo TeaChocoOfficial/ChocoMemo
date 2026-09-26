@@ -103,17 +103,19 @@ export class AuthOtpService {
         }
     }
 
-    async sendEmail(email: string, otp: string): Promise<void> {
+    /** Send the verification OTP. `locale` is the client's UI locale. */
+    async sendEmail(email: string, otp: string, locale?: string | null): Promise<void> {
         try {
-            await this.mailService.sendOtp(email, otp);
+            await this.mailService.sendOtp(email, otp, locale);
         } catch (error) {
             this.logger.error(`Failed to send OTP email to ${email}`, error);
         }
     }
 
-    async sendResetEmail(email: string, otp: string): Promise<void> {
+    /** Send the password-reset OTP. `locale` is the client's UI locale. */
+    async sendResetEmail(email: string, otp: string, locale?: string | null): Promise<void> {
         try {
-            await this.mailService.sendPasswordReset(email, otp);
+            await this.mailService.sendPasswordReset(email, otp, locale);
         } catch (error) {
             this.logger.error(`Failed to send password reset email to ${email}`, error);
         }

@@ -19,21 +19,22 @@ import {
     ChangePasswordRequestDto,
     ChangePasswordConfirmDto,
 } from './dto/security-change.dto';
-import type { Auth } from '../../../types/auth';
+import type { Auth } from '~/types/auth';
 import { RegisterDto } from './dto/register.dto';
 import { VerifyOtpDto } from './dto/verify-otp.dto';
 import { ResendOtpDto } from './dto/resend-otp.dto';
 import { JwtAuthGuard } from './guard/jwt-auth.guard';
 import { UpdateUserDto } from '../dto/update-user.dto';
+import { SecureService } from '~/secure/secure.service';
 import type { SigninResultDto } from './dto/signin.dto';
 import { LocalAuthGuard } from './guard/local-auth.guard';
 import { UpdateAvatarDto } from './dto/update-avatar.dto';
 import { GoogleAuthGuard } from './guard/google-auth.guard';
+import { AuthProvider } from './enum/auth-provider.enum';
 import { ResetPasswordDto } from './dto/reset-password.dto';
 import type { FastifyRequest, FastifyReply } from 'fastify';
 import { ForgotPasswordDto } from './dto/forgot-password.dto';
 import { ChangePasswordDto } from './dto/change-password.dto';
-import { SecureService } from '../../../secure/secure.service';
 import type { ResponseUserDto } from '../dto/response-user.dto';
 import { type ReqUserDto, UserLoginDto } from '../dto/user.dto';
 import { AuthChangeService } from './service/auth-change.service';
@@ -41,6 +42,7 @@ import { AuthAccountService } from './service/auth-account.service';
 import { AuthSessionService } from './service/auth-session.service';
 import { AuthRegistrationService } from './service/auth-registration.service';
 import { ApiBody, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { DiscordAuthGuard } from './guard/discord-auth.guard';
 
 interface AuthenticatedRequest extends FastifyRequest {
     user?: Auth;
@@ -119,6 +121,7 @@ export class AuthController {
             body.password,
             body.name,
             body.nameTag,
+            body.locale,
         );
     }
 
@@ -143,14 +146,14 @@ export class AuthController {
     @ApiOperation({ summary: 'Resend a verification OTP for an unverified account' })
     @ApiBody({ type: ResendOtpDto })
     async resendOtp(@Body() body: ResendOtpDto): Promise<SigninResultDto> {
-        return this.registrationService.resendOtp(body.email);
+        return this.registrationService.resendOtp(body.email, body.locale);
     }
 
     @Post('forgot-password')
     @ApiOperation({ summary: 'Send a password-reset OTP for an existing account' })
     @ApiBody({ type: ForgotPasswordDto })
     async forgotPassword(@Body() body: ForgotPasswordDto): Promise<SigninResultDto> {
-        return this.registrationService.forgotPassword(body.email);
+        return this.registrationService.forgotPassword(body.email, body.locale);
     }
 
     @Post('change-password')
@@ -190,7 +193,7 @@ export class AuthController {
     ): Promise<{ token: string }> {
         const user = req.user as Auth;
         if (!user) throw new UnauthorizedException('User not found');
-        return this.changeService.requestEmailChange(user, body.newEmail);
+        return this.changeService.requestEmailChange(user, body.newEmail, body.locale);
     }
 
     @Post('change-email/confirm')
@@ -221,7 +224,7 @@ export class AuthController {
     ): Promise<{ token: string }> {
         const user = req.user as Auth;
         if (!user) throw new UnauthorizedException('User not found');
-        return this.changeService.requestPasswordChange(user, body.currentPassword);
+        return this.changeService.requestPasswordChange(user, body.currentPassword, body.locale);
     }
 
     @UseGuards(JwtAuthGuard)
@@ -272,8 +275,8 @@ export class AuthController {
     }
 
     @Get('google/callback')
-    @UseGuards(GoogleAuthGuard)
     @Redirect()
+    @UseGuards(GoogleAuthGuard)
     @ApiOperation({ summary: 'Google OAuth callback handler' })
     async googleAuthCallback(
         @Req() req: AuthenticatedRequest,
@@ -314,6 +317,65 @@ export class AuthController {
             const errorSource = disconnectMode ? 'disconnect' : 'login';
             const errorRedirect = `${redirect_uri}?error=${errorMessage}&source=${errorSource}`;
             return { url: errorRedirect };
+        }
+    }
+
+    @Get('discord')
+    @UseGuards(DiscordAuthGuard)
+    @ApiOperation({ summary: 'Initiate Discord OAuth flow' })
+    async discordAuth() {
+        this.logger.log('Discord OAuth initiated');
+    }
+
+    @Get('discord/callback')
+    @Redirect()
+    @UseGuards(DiscordAuthGuard)
+    @ApiOperation({ summary: 'Discord OAuth callback handler' })
+    async discordAuthCallback(
+        @Req() req: AuthenticatedRequest,
+        @Res({ passthrough: true }) res: FastifyReply,
+    ): Promise<{ url: string }> {
+        this.logger.log('Discord OAuth callback received');
+
+        // The guard stashed `?redirect_uri=` in a short-lived cookie so the
+        // client's locale + path survives the round trip through Discord.
+        const { CLIENT_URL } = this.secureService.getEnvConfig();
+        const frontendUrl = CLIENT_URL || 'http://127.0.0.1:5001';
+        const redirect_uri = req.cookies?.oauth_redirect_uri || frontendUrl;
+        res.clearCookie('oauth_redirect_uri', { path: '/' });
+        const disconnectMode = req.cookies?.oauth_disconnect === '1';
+        res.clearCookie('oauth_disconnect', { path: '/' });
+
+        try {
+            const user = req.user as Auth;
+            if (!user) throw new Error('No user data received from Discord');
+
+            // `mode=disconnect`: this round trip is a re-verification of the
+            // linked Discord account, used to authorize unlinking it.
+            if (disconnectMode) {
+                await this.changeService.disconnectViaProviderReauth(
+                    AuthProvider.DISCORD,
+                    user,
+                );
+                return { url: `${redirect_uri}?disconnected=1` };
+            }
+
+            const result = await this.accountService.signin(user);
+            this.sessionService.setCookie(res, result.access_token, 7 * 24 * 60 * 60 * 1000);
+            return { url: `${redirect_uri}?token=${result.access_token}` };
+        } catch (error) {
+            this.logger.error('Error in Discord callback:', error);
+            // Prefer the OAuth-specific reason (e.g. `access_denied`) recorded
+            // by the guard over the generic controller error.
+            const message =
+                req.oauthError ||
+                (error instanceof Error && error.message) ||
+                'Authentication failed';
+            const errorMessage = encodeURIComponent(message);
+            const errorSource = disconnectMode ? 'disconnect' : 'login';
+            return {
+                url: `${redirect_uri}?error=${errorMessage}&source=${errorSource}`,
+            };
         }
     }
 
