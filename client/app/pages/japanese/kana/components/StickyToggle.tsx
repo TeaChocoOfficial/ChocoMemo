@@ -22,7 +22,7 @@ export default function StickyToggle({
             className='inline-flex items-center rounded-sm border border-line bg-surface-overlay p-1'
         >
             <span className='flex items-center gap-1.5 border-r border-line pr-2 pl-1.5'>
-                <FaThumbtack className='h-3.5 w-3.5 text-accent' />
+                <FaThumbtack className='h-3.5 w-3.5 text-primary' />
                 <span className='font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-surface-muted'>
                     {t('japanese.kana.sticky')}
                 </span>
@@ -43,14 +43,14 @@ export default function StickyToggle({
                             }
                             className={`relative rounded-sm px-2.5 py-1 text-xs font-bold transition-colors duration-200 cursor-pointer ${
                                 active
-                                    ? 'text-accent-foreground'
+                                    ? 'text-primary-foreground'
                                     : 'text-surface-muted hover:text-surface-foreground'
                             }`}
                         >
                             {active && (
                                 <motion.span
                                     layoutId='sticky-toggle-pill'
-                                    className='absolute inset-0 rounded-sm bg-accent'
+                                    className='absolute inset-0 rounded-sm bg-primary'
                                     transition={{
                                         type: 'spring',
                                         stiffness: 300,

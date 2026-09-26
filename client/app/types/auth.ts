@@ -20,6 +20,10 @@ export interface AuthIdentity {
 export interface User {
     userId: string;
     name?: string;
+    /** Public handle used to find this user. English only, no spaces. */
+    nameTag: string;
+    /** Short self-description shown on the public profile. */
+    bio?: string;
     avatar?: string;
     role?: Role;
     emailVerified?: boolean;
@@ -27,17 +31,4 @@ export interface User {
     createdAt?: Date;
     updatedAt?: Date;
     identities?: AuthIdentity[];
-}
-
-/** The account's email lives on the identities: the local identity's email takes precedence. */
-export function getAccountEmail(
-    user: Pick<User, 'identities'> | null | undefined,
-): string | undefined {
-    if (!user?.identities) return undefined;
-    const local = user.identities.find((identity) => identity.provider === AuthProvider.LOCAL);
-    return (
-        local?.providerEmail ??
-        user.identities.find((identity) => identity.providerEmail)?.providerEmail ??
-        undefined
-    );
 }

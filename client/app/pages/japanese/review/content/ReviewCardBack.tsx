@@ -30,7 +30,7 @@ const copyButton = (
             onClick={() => onCopy(key, text)}
             aria-label={copied ? 'Copied' : `Copy ${key}`}
             title={copied ? 'Copied' : `Copy ${key}`}
-            className='inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-sm border border-line bg-surface text-surface-muted transition-colors cursor-pointer hover:border-accent hover:text-primary'
+            className='inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-sm border border-line bg-surface text-surface-muted transition-colors cursor-pointer hover:border-primary hover:text-primary'
         >
             {copied ? <FaCheck className='h-2.5 w-2.5' /> : <FaCopy className='h-2.5 w-2.5' />}
         </button>
@@ -81,7 +81,7 @@ export default function ReviewCardBack({ word, words }: ReviewCardBackProps) {
                     type='button'
                     onClick={() => speak(word.word, word.audioWordUrl)}
                     aria-label='Play word pronunciation'
-                    className='inline-flex items-center gap-2 rounded-full border border-line bg-surface px-4 py-2 text-xs font-semibold text-surface-foreground transition-colors cursor-pointer hover:border-accent hover:text-primary active:translate-y-px'
+                    className='inline-flex items-center gap-2 rounded-full border border-line bg-surface px-4 py-2 text-xs font-semibold text-surface-foreground transition-colors cursor-pointer hover:border-primary hover:text-primary active:translate-y-px'
                 >
                     <FaPlay className='h-2.5 w-2.5' />
                     {word.word}
@@ -90,7 +90,7 @@ export default function ReviewCardBack({ word, words }: ReviewCardBackProps) {
                     type='button'
                     onClick={() => speak(exampleSentence(word), word.audioSentenceUrl)}
                     aria-label='Play example sentence'
-                    className='inline-flex items-center gap-2 rounded-full border border-line bg-surface px-4 py-2 text-xs font-semibold text-surface-muted transition-colors cursor-pointer hover:border-accent hover:text-primary active:translate-y-px'
+                    className='inline-flex items-center gap-2 rounded-full border border-line bg-surface px-4 py-2 text-xs font-semibold text-surface-muted transition-colors cursor-pointer hover:border-primary hover:text-primary active:translate-y-px'
                 >
                     <FaPlay className='h-2.5 w-2.5' />
                     {word.reading}
@@ -122,7 +122,7 @@ export default function ReviewCardBack({ word, words }: ReviewCardBackProps) {
                     <SectionLabel>Example</SectionLabel>
                     <p className='max-w-md text-xl leading-relaxed text-surface-foreground/90'>
                         {renderPart(word.example.before)}
-                        <span className='rounded-sm bg-accent/15 px-1 py-0.5 font-bold text-primary'>
+                        <span className='rounded-sm bg-primary/15 px-1 py-0.5 font-bold text-primary'>
                             <VocabTip word={word}>
                                 <RubySegments segments={segments} primary />
                             </VocabTip>

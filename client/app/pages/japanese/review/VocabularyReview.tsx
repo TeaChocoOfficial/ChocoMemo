@@ -34,7 +34,7 @@ export default function VocabularyReviewPage() {
             <div className='mx-auto max-w-3xl px-4 sm:px-6 w-full flex min-h-0 flex-col'>
                 <Link
                     to='/japanese/review'
-                    className='inline-flex items-center gap-2 mb-6 text-sm font-medium text-surface-muted hover:text-accent transition-colors self-start shrink-0'
+                    className='inline-flex items-center gap-2 mb-6 text-sm font-medium text-surface-muted hover:text-primary transition-colors self-start shrink-0'
                 >
                     <FaArrowLeft className='w-3.5 h-3.5' />
                     {t('japanese.vocabularyReview.exit')}

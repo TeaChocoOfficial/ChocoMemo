@@ -12,6 +12,10 @@ export class PendingRegistration {
     @Prop({ required: true })
     name!: string;
 
+    /** Public handle chosen at registration; becomes the account's nameTag. */
+    @Prop({ lowercase: true })
+    nameTag?: string;
+
     @Prop({ select: false })
     passwordHash?: string;
 

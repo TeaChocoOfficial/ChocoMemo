@@ -1,36 +1,32 @@
 import axios from 'axios';
-import toast from 'react-hot-toast';
-import { authAPI } from '~/services/auth';
+import { useSwal } from '~/hooks/useSwal';
 import PasswordInput from './PasswordInput';
 import { useEffect, useState } from 'react';
+import { usePathname } from '~/i18n/routing';
 import { useTranslation } from 'react-i18next';
 import Button from '~/components/custom/Button';
 import { useAuthStore } from '~/stores/auth.store';
-import { FaLock, FaUser, FaGoogle, FaEnvelope, FaShieldHalved } from 'react-icons/fa6';
+import { authAPI, nameTagField } from '~/services/auth';
 import { Modal, ModalHeader, ModalBody } from '~/components/custom/Modal';
-import { usePathname } from '~/i18n/routing';
-
-interface AuthModalProps {
-    isOpen: boolean;
-    onClose: () => void;
-    initialMode?: 'signin' | 'signup' | 'forgot' | 'verify';
-}
+import { FaLock, FaUser, FaGoogle, FaEnvelope, FaShieldHalved, FaAt } from 'react-icons/fa6';
 
 const RESEND_COOLDOWN = 30;
 
-export default function AuthModal({ isOpen, onClose, initialMode = 'signin' }: AuthModalProps) {
+export default function AuthModal() {
+    const swal = useSwal();
     const { t } = useTranslation();
     const pathname = usePathname();
-    const { setUser } = useAuthStore();
-    const [mode, setMode] = useState(initialMode);
-    const [loading, setLoading] = useState(false);
+    const [mode, setMode] = useState('signin');
     const [resendIn, setResendIn] = useState(0);
-    const [showPassword, setShowPassword] = useState<Record<string, boolean>>({});
+    const [loading, setLoading] = useState(false);
+    const { setUser, open, setOpen } = useAuthStore();
     const [verifyingEmail, setVerifyingEmail] = useState('');
-    const [signupToken, setSignupToken] = useState<string | null>(null);
     const [resetToken, setResetToken] = useState<string | null>(null);
+    const [signupToken, setSignupToken] = useState<string | null>(null);
+    const [showPassword, setShowPassword] = useState<Record<string, boolean>>({});
     const [form, setForm] = useState({
         name: '',
+        nameTag: '',
         email: '',
         password: '',
         confirmPassword: '',
@@ -53,9 +49,14 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'signin' }: A
         axios.isAxiosError(err) &&
         (err.response?.data as { message?: string } | undefined)?.message === 'EMAIL_NOT_FOUND';
 
+    const isNameTagTaken = (err: unknown) =>
+        axios.isAxiosError(err) &&
+        (err.response?.data as { message?: string } | undefined)?.message === 'NAME_TAG_TAKEN';
+
     const resetForm = () =>
         setForm({
             name: '',
+            nameTag: '',
             email: '',
             password: '',
             confirmPassword: '',
@@ -71,7 +72,7 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'signin' }: A
         setResendIn(0);
         setVerifyingEmail('');
         setMode('signin');
-        onClose();
+        setOpen(false);
     };
 
     const startVerification = async (email: string) => {
@@ -80,7 +81,7 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'signin' }: A
         setVerifyingEmail(email);
         setResendIn(RESEND_COOLDOWN);
         setMode('verify');
-        toast.success(t('auth.otpSent', { email }));
+        swal.success(t('auth.otpSent', { email }));
     };
 
     const handleSignIn = async (e: React.FormEvent) => {
@@ -89,17 +90,17 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'signin' }: A
         try {
             const res = await authAPI.login({ email: form.email, password: form.password });
             setUser(res.data.user);
-            toast.success(t('auth.welcome', { name: res.data.user?.name ?? '' }));
+            swal.success(t('auth.welcome', { name: res.data.user?.name ?? '' }));
             handleClose();
         } catch (err) {
             if (isEmailNotVerified(err)) {
                 try {
                     await startVerification(form.email);
-                } catch {
-                    toast.error(t('auth.error.invalidCredentials'));
+                } catch (error) {
+                    swal.error(t('auth.error.invalidCredentials'), { error });
                 }
             } else {
-                toast.error(t('auth.error.invalidCredentials'));
+                swal.error(t('auth.error.invalidCredentials'), { error: err });
             }
         } finally {
             setLoading(false);
@@ -108,14 +109,17 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'signin' }: A
 
     const handleSignUp = async (e: React.FormEvent) => {
         e.preventDefault();
-        if (form.password !== form.confirmPassword) {
-            toast.error(t('auth.error.passwordMismatch'));
-            return;
-        }
+        if (form.password !== form.confirmPassword)
+            return swal.error(t('auth.error.passwordMismatch'));
+
+        if (!nameTagField.safeParse(form.nameTag).success)
+            return swal.error(t('auth.error.nameTagInvalid'));
+
         setLoading(true);
         try {
             const res = await authAPI.register({
                 name: form.name,
+                nameTag: form.nameTag,
                 email: form.email,
                 password: form.password,
             });
@@ -123,9 +127,10 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'signin' }: A
             setVerifyingEmail(form.email);
             setResendIn(RESEND_COOLDOWN);
             setMode('verify');
-            toast.success(t('auth.otpSent', { email: form.email }));
-        } catch {
-            toast.error(t('auth.error.emailInUse'));
+            swal.success(t('auth.otpSent', { email: form.email }));
+        } catch (err) {
+            if (isNameTagTaken(err)) swal.error(t('auth.error.nameTagTaken'), { error: err });
+            else swal.error(t('auth.error.emailInUse'), { error: err });
         } finally {
             setLoading(false);
         }
@@ -142,10 +147,11 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'signin' }: A
         try {
             const res = await authAPI.verifyOtp({ token: signupToken, code: form.code });
             setUser(res.data.user);
-            toast.success(t('auth.verifySuccess', { name: res.data.user?.name ?? '' }));
+            swal.success(t('auth.verifySuccess', { name: res.data.user?.name ?? '' }));
             handleClose();
-        } catch {
-            toast.error(t('auth.error.invalidOtp'));
+        } catch (error) {
+            if (isNameTagTaken(error)) swal.error(t('auth.error.nameTagTaken'), { error });
+            else swal.error(t('auth.error.invalidOtp'), { error });
         } finally {
             setLoading(false);
         }
@@ -158,9 +164,9 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'signin' }: A
             const res = await authAPI.resendOtp({ email: verifyingEmail });
             setSignupToken(res.data.access_token);
             setResendIn(RESEND_COOLDOWN);
-            toast.success(t('auth.otpResent'));
-        } catch {
-            toast.error(t('auth.error.resendFailed'));
+            swal.success(t('auth.otpResent'));
+        } catch (error) {
+            swal.error(t('auth.error.resendFailed'), { error });
         } finally {
             setLoading(false);
         }
@@ -174,12 +180,12 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'signin' }: A
             setResetToken(res.data.access_token);
             setVerifyingEmail(form.email);
             setResendIn(RESEND_COOLDOWN);
-            toast.success(t('auth.resetCodeSent', { email: form.email }));
+            swal.success(t('auth.resetCodeSent', { email: form.email }));
         } catch (err) {
             if (isEmailNotFound(err)) {
-                toast.error(t('auth.error.emailNotFound'));
+                swal.error(t('auth.error.emailNotFound'), { error: err });
             } else {
-                toast.error(t('auth.error.resetFailed'));
+                swal.error(t('auth.error.resetFailed'), { error: err });
             }
         } finally {
             setLoading(false);
@@ -189,10 +195,9 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'signin' }: A
     const handleResetPassword = async (e: React.FormEvent) => {
         e.preventDefault();
         if (!resetToken) return;
-        if (form.newPassword !== form.confirmNewPassword) {
-            toast.error(t('auth.error.passwordMismatch'));
-            return;
-        }
+        if (form.newPassword !== form.confirmNewPassword)
+            return swal.error(t('auth.error.passwordMismatch'));
+
         setLoading(true);
         try {
             const res = await authAPI.resetPassword({
@@ -201,10 +206,10 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'signin' }: A
                 newPassword: form.newPassword,
             });
             setUser(res.data.user);
-            toast.success(t('auth.resetSuccess'));
+            swal.success(t('auth.resetSuccess'));
             handleClose();
-        } catch {
-            toast.error(t('auth.error.resetFailed'));
+        } catch (error) {
+            swal.error(t('auth.error.resetFailed'), { error });
         } finally {
             setLoading(false);
         }
@@ -217,16 +222,16 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'signin' }: A
             const res = await authAPI.forgotPassword({ email: verifyingEmail });
             setResetToken(res.data.access_token);
             setResendIn(RESEND_COOLDOWN);
-            toast.success(t('auth.otpResent'));
-        } catch {
-            toast.error(t('auth.error.resendFailed'));
+            swal.success(t('auth.otpResent'));
+        } catch (error) {
+            swal.error(t('auth.error.resendFailed'), { error });
         } finally {
             setLoading(false);
         }
     };
 
     const inputClass =
-        'w-full rounded-sm border border-line bg-surface px-3 py-2.5 text-sm text-surface-foreground placeholder:text-surface-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent';
+        'w-full rounded-sm border border-line bg-surface px-3 py-2.5 text-sm text-surface-foreground placeholder:text-surface-muted focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary';
 
     const renderPasswordField = (
         key: string,
@@ -248,14 +253,14 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'signin' }: A
     };
 
     return (
-        <Modal isOpen={isOpen} onClose={handleClose} size='sm'>
+        <Modal isOpen={open} onClose={handleClose} size='sm'>
             {mode === 'forgot' ? (
                 resetToken ? (
                     <>
                         <ModalHeader title={t('auth.resetPassword')} onClose={handleClose} />
                         <ModalBody>
                             <div className='mb-4 flex flex-col items-center text-center'>
-                                <FaLock className='h-8 w-8 text-accent' />
+                                <FaLock className='h-8 w-8 text-primary' />
                                 <p className='mt-2 text-sm text-surface-muted'>
                                     {t('auth.resetHint', { email: verifyingEmail })}
                                 </p>
@@ -342,7 +347,7 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'signin' }: A
                         <ModalHeader title={t('auth.resetPassword')} onClose={handleClose} />
                         <ModalBody>
                             <div className='mb-4 flex flex-col items-center text-center'>
-                                <FaLock className='h-8 w-8 text-accent' />
+                                <FaLock className='h-8 w-8 text-primary' />
                                 <p className='mt-2 text-sm text-surface-muted'>
                                     {t('auth.forgotHint')}
                                 </p>
@@ -391,7 +396,7 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'signin' }: A
                     <ModalHeader title={t('auth.verifyEmail')} onClose={handleClose} />
                     <ModalBody>
                         <div className='mb-4 flex flex-col items-center text-center'>
-                            <FaShieldHalved className='h-8 w-8 text-accent' />
+                            <FaShieldHalved className='h-8 w-8 text-primary' />
                             <p className='mt-2 text-sm text-surface-muted'>
                                 {t('auth.verifyHint', { email: verifyingEmail })}
                             </p>
@@ -482,6 +487,36 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'signin' }: A
                                 </div>
                             )}
 
+                            {mode === 'signup' && (
+                                <div>
+                                    <label className='mb-1 block text-xs font-medium text-surface-muted'>
+                                        {t('auth.nameTag')}
+                                    </label>
+                                    <div className='relative'>
+                                        <FaAt className='absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-surface-muted' />
+                                        <input
+                                            type='text'
+                                            required
+                                            value={form.nameTag}
+                                            onChange={(e) =>
+                                                setForm((f) => ({
+                                                    ...f,
+                                                    nameTag: e.target.value
+                                                        .replace(/[^A-Za-z0-9_-]/g, '')
+                                                        .slice(0, 30)
+                                                        .toLowerCase(),
+                                                }))
+                                            }
+                                            className={`${inputClass} pl-10`}
+                                            placeholder={t('auth.nameTag')}
+                                        />
+                                    </div>
+                                    <p className='mt-1 text-xs text-surface-muted'>
+                                        {t('auth.nameTagHint')}
+                                    </p>
+                                </div>
+                            )}
+
                             <div>
                                 <label className='mb-1 block text-xs font-medium text-surface-muted'>
                                     {t('auth.email')}
@@ -531,7 +566,7 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'signin' }: A
                             {mode === 'signin' && (
                                 <button
                                     type='button'
-                                    className='text-xs text-accent hover:underline cursor-pointer'
+                                    className='text-xs text-primary hover:underline cursor-pointer'
                                     onClick={() => setMode('forgot')}
                                 >
                                     {t('auth.forgotPassword')}
@@ -564,7 +599,7 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'signin' }: A
                             {mode === 'signin' ? t('auth.noAccount') : t('auth.hasAccount')}{' '}
                             <button
                                 type='button'
-                                className='text-accent hover:underline cursor-pointer'
+                                className='text-primary hover:underline cursor-pointer'
                                 onClick={() => {
                                     resetForm();
                                     setMode(mode === 'signin' ? 'signup' : 'signin');

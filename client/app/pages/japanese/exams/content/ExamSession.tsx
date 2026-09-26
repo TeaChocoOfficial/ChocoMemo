@@ -23,7 +23,7 @@ export default function ExamSession() {
                 <div className='mx-auto max-w-3xl px-4 sm:px-6 w-full py-20 text-center'>
                     <p className='text-sm text-surface-muted'>
                         Exam set not found.{' '}
-                        <Link to='/japanese/exams' className='font-semibold text-accent'>
+                        <Link to='/japanese/exams' className='font-semibold text-primary'>
                             Back to sets
                         </Link>
                     </p>
@@ -37,7 +37,7 @@ export default function ExamSession() {
             <div className='mx-auto max-w-3xl px-4 sm:px-6 w-full py-10'>
                 <Link
                     to='/japanese/exams'
-                    className='mb-6 inline-flex items-center gap-2 text-sm font-medium text-surface-muted transition-colors hover:text-accent'
+                    className='mb-6 inline-flex items-center gap-2 text-sm font-medium text-surface-muted transition-colors hover:text-primary'
                 >
                     <FaArrowLeft className='w-3.5 h-3.5' />
                     Back to sets
@@ -143,7 +143,7 @@ function QuestionPrompt({
                 {question.sentenceBefore}
                 <span
                     aria-label='blank'
-                    className='mx-1.5 inline-flex min-w-[3.5rem] items-center justify-center rounded-sm border-b-2 border-accent bg-accent-subtle px-2 pb-0.5 align-baseline font-black text-surface-foreground'
+                    className='mx-1.5 inline-flex min-w-[3.5rem] items-center justify-center rounded-sm border-b-2 border-primary bg-primary-subtle px-2 pb-0.5 align-baseline font-black text-surface-foreground'
                 >
                     {selected ? meaning(selected) : '＿＿＿'}
                 </span>

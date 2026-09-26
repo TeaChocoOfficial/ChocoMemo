@@ -15,46 +15,117 @@
         "toggleLabel": "Tunjukkan antara muka"
     },
     "home": {
-        "badge": "ChocoMemo",
-        "title": "Panaskan bahasa Jepun anda,",
-        "titleAccent": "satu kana pada satu masa.",
-        "subtitle": "Hiragana, katakana dan kuiz kosa kata dihidangkan sebagai rutin harian yang selesa — pilih tema, tuang secawan, dan belajar.",
+        "badge": "ChocoMemo · pustaka bahasa komuniti",
+        "title": "Pelajari mana-mana bahasa,",
+        "titleAccent": "satu deck kongsi sekali gus.",
+        "subtitle": "Jepun, Inggeris, Thai, Korea dan Cina — setiap satu dibina daripada deck, latihan dan kuiz yang ditulis serta dikongsi oleh pelajar sebenar. Percuma, terbuka, dan boleh kamu perbesar.",
         "ctaStart": "Mula belajar",
+        "ctaCreate": "Terbitkan deck",
         "ctaHow": "Cara ia berfungsi",
+        "scriptsLabel": "Sedang diseduh",
+        "scripts": [
+            "A",
+            "あ",
+            "한",
+            "ก",
+            "字"
+        ],
         "stats": {
-            "badge": "Sepintas lalu",
-            "kana": "Aksara kana",
+            "badge": "Di rak",
+            "languages": "Bahasa",
+            "kana": "Huruf kana",
             "vocabulary": "Perkataan kosa kata",
-            "modes": "Mod latihan",
-            "themes": "Tema"
+            "shelves": "Deck & kuiz"
+        },
+        "languages": {
+            "badge": "Rak itu",
+            "title": "Lima bahasa, satu kebiasaan yang hangat",
+            "hint": "Mulakan dengan dulang yang sudah sedia hari ini — yang lain masih diseduh.",
+            "available": "Sedia untuk dituang",
+            "comingSoon": "Sedang diseduh",
+            "toAll": "Lihat semua bahasa",
+            "items": {
+                "japanese": {
+                    "name": "Bahasa Jepun",
+                    "description": "Hiragana, katakana dan kanji dengan latihan dan ulangan berjarak."
+                },
+                "english": {
+                    "name": "Bahasa Inggeris",
+                    "description": "Kosa kata dan frasa harian, disusun oleh orang yang menggunakannya."
+                },
+                "thai": {
+                    "name": "Bahasa Thai",
+                    "description": "Nada, tulisan dan perkataan yang memang akan kamu temui di jalan."
+                },
+                "korean": {
+                    "name": "Bahasa Korea",
+                    "description": "Hangul dalam satu sessi, kemudian deck perbualan yang melekat."
+                },
+                "chinese": {
+                    "name": "Bahasa Cina",
+                    "description": "Aksara, pinyin dan pasangan nada, diulang dalam pusingan pendek."
+                }
+            }
+        },
+        "library": {
+            "badge": "Rak komuniti",
+            "title": "Tulis deck. Kongsi. Lihat ia mengajar.",
+            "hint": "Setiap set pembelajaran dalam ChocoMemo ditulis oleh manusia, bukan penerbit. Rapikan satu, terbitkan, dan orang lain mendapat satu kursus penuh darinya.",
+            "cta": "Buka rak ulangan",
+            "items": {
+                "decks": {
+                    "title": "Deck kosa kata",
+                    "hint": "Kumpulkan perkataan dalam deck bertema — alam, haiwan, perkara harian — dan ulangulang seperti e-book kecil."
+                },
+                "exams": {
+                    "title": "Set kuiz",
+                    "hint": "Tukar deck kepada peperiksaan bermasa dan lihat perkataan mana yang masih perlu diseduh."
+                },
+                "kana": {
+                    "title": "Latihan kana",
+                    "hint": "Pusingan pantas melalui kedua-dua silabari sehingga bentuknya datang tanpa berfikir."
+                },
+                "review": {
+                    "title": "Ulangan berjarak",
+                    "hint": "Deck yang kamu muat turun kembali mengikut jadual sendiri, jadi tiada yang menjadi sejuk."
+                }
+            }
         },
         "how": {
             "badge": "Cara ia berfungsi",
-            "title": "Rutin harian yang selesa",
-            "hint": "Empat langkah kecil diulang setiap hari — itu sahaja.",
+            "title": "Tuangan harianmu",
+            "hint": "Empat langkah kecil, diulang setiap hari — itu sahaja yang diperlukan.",
             "step1": {
-                "title": "Pilih bahasa anda",
-                "hint": "Pilih apa yang anda pelajari hari ini."
+                "title": "Pilih bahasamu",
+                "hint": "Pilih dulang yang kamu belajar hari ini."
             },
             "step2": {
-                "title": "Belajar kana",
-                "hint": "Hiragana dan katakana, seteguk demi seteguk."
+                "title": "Pinjam deck",
+                "hint": "Ambil deck yang ditulis orang lain, atau mulakan dari rak terbina dalam."
             },
             "step3": {
-                "title": "Berlatih dan kuiz",
-                "hint": "Latihan kana pantas dan peperiksaan kosa kata."
+                "title": "Latihan dan kuiz",
+                "hint": "Latihan kana ringkas dan peperiksaan kosa kata, lima minit sekali gus."
             },
             "step4": {
-                "title": "Ulang kaji setiap hari",
-                "hint": "Ulang kaji berjarak mengekalkan perkataan dalam ingatan."
+                "title": "Terbitkan sendiri",
+                "hint": "Tambah perkataan yang selalu kamu lupa dan kongsi semula dengan rak."
             }
+        },
+        "cta": {
+            "title": "Cerek sudah pun menyala.",
+            "hint": "Tiada dinding pendaftaran antara kamu dan deck pertama. Masuk sahaja apabila kamu mahu menyegerakkan perkataanmu.",
+            "primary": "Mula belajar",
+            "secondary": "Terbitkan deck"
         }
     },
     "theme": {
         "pickerLabel": "Tukar tema",
         "names": {
-            "dark": "Gelap",
-            "light": "Cerah",
+            "lightChoco": "Coklat Cerah",
+            "darkChoco": "Coklat Gelap",
+            "darkGalaxy": "Galaksi Gelap",
+            "lightGalaxy": "Galaksi Cerah",
             "darkSakura": "Sakura Gelap",
             "lightSakura": "Sakura Cerah",
             "darkPaper": "Kertas Gelap",
@@ -92,7 +163,7 @@
     "languageSelect": {
         "badge": "Pemilihan Bahasa",
         "title": "Pilih Bahasa untuk Dipelajari",
-        "description": "Pilih bahasa yang ingin anda pelajari. Lebih banyak bahasa akan datang tidak lama lagi.",
+        "description": "Pilih bahasa yang kamu mahu belajar. Bahasa Jepun sedia hari ini; yang lain sedang diseduh.",
         "back_home": "Kembali ke Laman Utama",
         "status": {
             "available": "Tersedia",
@@ -105,19 +176,23 @@
         "languages": {
             "japanese": {
                 "name": "Bahasa Jepun",
-                "description": "Pelajari Hiragana, Katakana dan kosa kata penting melalui kuiz interaktif."
+                "description": "Hiragana, katakana dan kanji, diulang dalam pusingan pendek dan kekal panas dengan ulangan berjarak."
             },
             "english": {
                 "name": "Bahasa Inggeris",
-                "description": "Kursus Bahasa Inggeris sedang dalam penyediaan."
+                "description": "Kosa kata dan frasa harian, disusun ke dalam deck oleh orang yang memang menggunakannya."
             },
             "thai": {
                 "name": "Bahasa Thai",
-                "description": "Kursus Bahasa Thai akan datang tidak lama lagi."
+                "description": "Nada dan tulisan bersebelahan, berserta perkataan yang akan kamu temui di jalan."
             },
             "korean": {
                 "name": "Bahasa Korea",
-                "description": "Kursus Bahasa Korea akan datang tidak lama lagi."
+                "description": "Hangul dalam satu sessi, kemudian deck perbualan yang enggan menjadi sejuk."
+            },
+            "chinese": {
+                "name": "Bahasa Cina",
+                "description": "Aksara, pinyin dan pasangan nada, diulang beberapa minit sekali gus."
             }
         }
     },
@@ -391,6 +466,8 @@
         "email": "E-mel",
         "password": "Kata laluan",
         "name": "Nama",
+        "nameTag": "Nama pengguna",
+        "nameTagHint": "3-30 aksara. Hanya huruf Inggeris, nombor, garis bawah (_) atau sempang (-), tanpa ruang. Nama pengguna awam anda.",
         "confirmPassword": "Sahkan Kata Laluan",
         "forgotPassword": "Lupa kata laluan?",
         "resetPassword": "Tetap Semula Kata Laluan",
@@ -414,6 +491,8 @@
         "error": {
             "invalidCredentials": "E-mel atau kata laluan tidak sah.",
             "emailInUse": "Akaun dengan e-mel ini sudah wujud.",
+            "nameTagTaken": "Nama pengguna itu sudah digunakan.",
+            "nameTagInvalid": "Nama pengguna mestilah 3-30 aksara: hanya huruf Inggeris, nombor, garis bawah atau sempang (tanpa ruang).",
             "passwordMismatch": "Kata laluan tidak sepadan.",
             "invalidOtp": "Kod tidak sah atau telah tamat tempoh. Sila cuba lagi.",
             "resendFailed": "Tidak dapat menghantar kod baharu. Sila cuba lagi.",
@@ -511,7 +590,15 @@
             "namePlaceholder": "Namamu",
             "saving": "Menyimpan…",
             "saved": "Profil dikemas kini",
-            "updateError": "Tidak dapat mengemas kini profil anda."
+            "updateError": "Tidak dapat mengemas kini profil anda.",
+            "editProfile": "Edit profil",
+            "nameTag": "Nama pengguna",
+            "nameTagHint": "3-30 aksara. Hanya huruf Inggeris, nombor, garis bawah (_) atau sempang (-), tanpa ruang. Nama pengguna awam anda.",
+            "nameTagTaken": "Nama pengguna itu sudah digunakan.",
+            "nameTagInvalid": "Nama pengguna mestilah 3-30 aksara: hanya huruf Inggeris, nombor, garis bawah atau sempang (tanpa ruang).",
+            "noNameTag": "Belum ada nama pengguna",
+            "bio": "Bio",
+            "bioPlaceholder": "Ceritakan sedikit tentang diri anda kepada orang lain…"
         },
         "email": {
             "label": "Change email",

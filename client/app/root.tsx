@@ -12,6 +12,7 @@ import {
     type LoaderFunctionArgs,
 } from 'react-router';
 import i18n from '~/i18n';
+import { getAssetUrl } from './utils/url';
 import env, { isDev } from '~/secure/env';
 import type { Route } from './+types/root';
 import { useTranslation } from 'react-i18next';
@@ -65,7 +66,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <head>
                 <meta charSet='utf-8' />
                 <meta name='viewport' content='width=device-width, initial-scale=1' />
-                <link rel='icon' type='imagesvg+xml' href={env.BASE + 'icon.svg'} />
+                <link rel='icon' type='image/png' href={getAssetUrl('icon.png')} />
+                <link rel='apple-touch-icon' href={getAssetUrl('icon.png')} />
+                <link rel='icon' type='image/x-icon' href={getAssetUrl('favicon.ico')} />
                 <Meta />
                 <Links />
                 {SUPPORTED_LANGS.map((lang) => (
@@ -89,12 +92,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
                         __html: `
                             (function () {
                                 try {
-                                    var THEMES = ['dark', 'light', 'dark-sakura', 'light-sakura', 'dark-paper', 'light-paper', 'dark-nature', 'light-nature', 'dark-autumn', 'light-autumn', 'dark-winter', 'light-winter'];
-                                    var DARK = ['dark', 'dark-sakura', 'dark-paper', 'dark-nature', 'dark-autumn', 'dark-winter'];
+                                    var THEMES = ['light-choco', 'dark-choco', 'dark-galaxy', 'light-galaxy', 'dark-sakura', 'light-sakura', 'dark-paper', 'light-paper', 'dark-nature', 'light-nature', 'dark-autumn', 'light-autumn', 'dark-winter', 'light-winter'];
+                                    var DARK = ['dark-choco', 'dark-galaxy', 'dark-sakura', 'dark-paper', 'dark-nature', 'dark-autumn', 'dark-winter'];
                                     var t = document.cookie.match(/(?:^|;\\s*)theme=([^;]+)/);
                                     var saved = t ? t[1] : localStorage.getItem('theme');
                                     var theme = (saved && THEMES.indexOf(saved) !== -1) ? saved : null;
-                                    if (!theme) theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                                    if (!theme) theme = 'light-choco';
                                     var isDark = DARK.indexOf(theme) !== -1;
                                     document.documentElement.setAttribute('data-theme', theme);
                                     document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';

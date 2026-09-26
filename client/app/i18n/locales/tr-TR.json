@@ -15,46 +15,117 @@
         "toggleLabel": "Arayüzü göster"
     },
     "home": {
-        "badge": "ChocoMemo",
-        "title": "Japoncanızı ısıtın,",
-        "titleAccent": "bir kana'da bir.",
-        "subtitle": "Hiragana, katakana ve kelime quizlerini rahat bir günlük ritüele dönüştürdük — bir tema seçin, bir fincan doldurun ve öğrenin.",
+        "badge": "ChocoMemo · topluluk dil kitaplığı",
+        "title": "Herhangi bir dili öğren,",
+        "titleAccent": "her seferinde bir ortak deste.",
+        "subtitle": "Japonca, İngilizce, Tayca, Korece ve Çince — her biri gerçek öğrenenlerin yazdığı ve paylaştığı desteler, alıştırmalar ve quizlerden oluşur. Ücretsiz, açık ve genişletmeye açık.",
         "ctaStart": "Öğrenmeye başla",
+        "ctaCreate": "Deste yayımla",
         "ctaHow": "Nasıl çalışır",
+        "scriptsLabel": "Şimdi demleniyor",
+        "scripts": [
+            "A",
+            "あ",
+            "한",
+            "ก",
+            "字"
+        ],
         "stats": {
-            "badge": "Bir bakışta",
-            "kana": "Kana karakteri",
-            "vocabulary": "Kelime",
-            "modes": "Pratik modu",
-            "themes": "Tema"
+            "badge": "Rafta",
+            "languages": "Diller",
+            "kana": "Kana karakterleri",
+            "vocabulary": "Kelime sayısı",
+            "shelves": "Desteler ve quizler"
+        },
+        "languages": {
+            "badge": "Raf",
+            "title": "Beş dil, tek sıcak alışkanlık",
+            "hint": "Bugün hazır olan tepsiyle başla — gerisi hâlâ demleniyor.",
+            "available": "Dökmeye hazır",
+            "comingSoon": "Demleniyor",
+            "toAll": "Tüm dilleri gör",
+            "items": {
+                "japanese": {
+                    "name": "Japonca",
+                    "description": "Hiragana, katakana ve kanji; alıştırmalarla ve aralıklı tekrar ile."
+                },
+                "english": {
+                    "name": "İngilizce",
+                    "description": "Günlük kelimeler ve kalıplar, onları kullananların düzenlediği gibi."
+                },
+                "thai": {
+                    "name": "Tayca",
+                    "description": "Tonlar, yazı ve sokakta gerçekten karşılaşacağın kelimeler."
+                },
+                "korean": {
+                    "name": "Korece",
+                    "description": "Hangul tek oturuşta, ardından akılda kalan sohbet desteleri."
+                },
+                "chinese": {
+                    "name": "Çince",
+                    "description": "Karakterler, pinyin ve ton çiftleri; kısa turlarla."
+                }
+            }
+        },
+        "library": {
+            "badge": "Topluluk rafı",
+            "title": "Bir deste yaz. Paylaş. Onun öğretişini izle.",
+            "hint": "ChocoMemo'daki her çalışma seti bir yayıncı değil, bir insan tarafından yazılır. Birini düzelt, yayımla; başka biri ondan bir bütün kurs edinsin.",
+            "cta": "Tekrar rafını aç",
+            "items": {
+                "decks": {
+                    "title": "Kelime desteleri",
+                    "hint": "Kelimeleri temalı bir destede topla — doğa, hayvanlar, gündelik şeyler — ve küçük bir e-kitap gibi tekrar et."
+                },
+                "exams": {
+                    "title": "Quiz setleri",
+                    "hint": "Bir desteyi süreli bir sınava çevir ve hangi kelimelerin hâlâ demlenmesi gerektiğini gör."
+                },
+                "kana": {
+                    "title": "Kana alıştırmaları",
+                    "hint": "İki heceleme tablosunda hızlı turlar; biçimler düşünmeden gelene kadar."
+                },
+                "review": {
+                    "title": "Aralıklı tekrar",
+                    "hint": "İndirdiğin desteler kendi programlarıyla geri gelir, böylece hiçbiri soğumaz."
+                }
+            }
         },
         "how": {
             "badge": "Nasıl çalışır",
-            "title": "Rahat bir günlük ritüel",
-            "hint": "Her gün tekrarlanan dört küçük adım — hepsi bu.",
+            "title": "Günlük demlemen",
+            "hint": "Her gün tekrarlanan dört küçük adım — hepsi bu kadar.",
             "step1": {
-                "title": "Dilinizi seçin",
-                "hint": "Bugün ne öğreneceğinizi seçin."
+                "title": "Dilini seç",
+                "hint": "Bugün çalıştığın tepsiyi seç."
             },
             "step2": {
-                "title": "Kanayı öğrenin",
-                "hint": "Hiragana ve katakana, yudum yudum."
+                "title": "Bir deste ödünç al",
+                "hint": "Başkasının yazdığı bir desteyi al ya da hazır raftan başla."
             },
             "step3": {
-                "title": "Pratik yapın ve sınanın",
-                "hint": "Hızlı kana alıştırmaları ve kelime sınavları."
+                "title": "Alıştır ve quiz çöz",
+                "hint": "Kısa kana alıştırmaları ve kelime sınavları, beşer dakika."
             },
             "step4": {
-                "title": "Her gün gözden geçirin",
-                "hint": "Aralıklı tekrar kelimeleri taze tutar."
+                "title": "Kendi desteni yayımla",
+                "hint": "Sürekli unuttuğun kelimeleri ekle ve rafa geri paylaş."
             }
+        },
+        "cta": {
+            "title": "Demlik zaten yanıyor.",
+            "hint": "Seninle ilk deste arasında kayıt duvarı yok. Kelimelerini eşitlemek istediğinde giriş yap.",
+            "primary": "Öğrenmeye başla",
+            "secondary": "Deste yayımla"
         }
     },
     "theme": {
         "pickerLabel": "Temayı değiştir",
         "names": {
-            "dark": "Koyu",
-            "light": "Açık",
+            "lightChoco": "Açık Çikolata",
+            "darkChoco": "Koyu Çikolata",
+            "darkGalaxy": "Koyu Galaksi",
+            "lightGalaxy": "Açık Galaksi",
             "darkSakura": "Koyu Sakura",
             "lightSakura": "Açık Sakura",
             "darkPaper": "Koyu Kağıt",
@@ -92,7 +163,7 @@
     "languageSelect": {
         "badge": "Dil Seçimi",
         "title": "Öğreneceğiniz Dili Seçin",
-        "description": "Çalışmak istediğiniz dili seçin. Daha fazla dil yakında gelecek.",
+        "description": "Öğrenmek istediğin dili seç. Japonca bugün hazır; gerisi demleniyor.",
         "back_home": "Ana Sayfaya Dön",
         "status": {
             "available": "Mevcut",
@@ -105,19 +176,23 @@
         "languages": {
             "japanese": {
                 "name": "Japonca",
-                "description": "Etkileşimli testlerle Hiragana, Katakana ve temel kelimeleri öğrenin."
+                "description": "Hiragana, Katakana ve kanji; kısa turlarla çalışılır ve aralıklı tekrar ile sıcak tutulur."
             },
             "english": {
                 "name": "İngilizce",
-                "description": "İngilizce kursları şu anda hazırlanıyor."
+                "description": "Günlük kelimeler ve kalıplar, onları gerçekten kullananlar tarafından destelere ayrılır."
             },
             "thai": {
                 "name": "Tayca",
-                "description": "Tayca kursları yakında gelecek."
+                "description": "Tonlar ve yazı yan yana, bir de sokakta karşılaşacağın kelimeler."
             },
             "korean": {
                 "name": "Korece",
-                "description": "Korece kursları yakında gelecek."
+                "description": "Hangul tek oturuşta, ardından soğumakta ısrar eden sohbet desteleri."
+            },
+            "chinese": {
+                "name": "Çince",
+                "description": "Karakterler, pinyin ve ton çiftleri; her seferinde birkaç dakika çalışılır."
             }
         }
     },
@@ -391,6 +466,8 @@
         "email": "E-posta",
         "password": "Şifre",
         "name": "Ad",
+        "nameTag": "Kullanıcı adı",
+        "nameTagHint": "3-30 karakter. Yalnızca İngilizce harfler, sayılar, alt çizgi (_) veya kısa çizgi (-), boşluksuz. Herkese açık kullanıcı adın.",
         "confirmPassword": "Şifreyi Onayla",
         "forgotPassword": "Şifreni mi unuttun?",
         "resetPassword": "Şifreyi Sıfırla",
@@ -414,6 +491,8 @@
         "error": {
             "invalidCredentials": "Geçersiz e-posta veya şifre.",
             "emailInUse": "Bu e-posta ile zaten bir hesap mevcut.",
+            "nameTagTaken": "Bu kullanıcı adı zaten alınmış.",
+            "nameTagInvalid": "Kullanıcı adı 3-30 karakter olmalı: yalnızca İngilizce harfler, sayılar, alt çizgi veya kısa çizgi (boşluksuz).",
             "passwordMismatch": "Şifreler eşleşmiyor.",
             "invalidOtp": "Geçersiz veya süresi dolmuş kod. Lütfen tekrar deneyin.",
             "resendFailed": "Yeni bir kod gönderilemedi. Lütfen tekrar deneyin.",
@@ -511,7 +590,15 @@
             "namePlaceholder": "Adın",
             "saving": "Kaydediliyor…",
             "saved": "Profil güncellendi",
-            "updateError": "Profilin güncellenemedi."
+            "updateError": "Profilin güncellenemedi.",
+            "editProfile": "Profili düzenle",
+            "nameTag": "Kullanıcı adı",
+            "nameTagHint": "3-30 karakter. Yalnızca İngilizce harfler, sayılar, alt çizgi (_) veya kısa çizgi (-), boşluksuz. Herkese açık kullanıcı adın.",
+            "nameTagTaken": "Bu kullanıcı adı zaten alınmış.",
+            "nameTagInvalid": "Kullanıcı adı 3-30 karakter olmalı: yalnızca İngilizce harfler, sayılar, alt çizgi veya kısa çizgi (boşluksuz).",
+            "noNameTag": "Henüz kullanıcı adı yok",
+            "bio": "Hakkımda",
+            "bioPlaceholder": "Kendinden biraz bahset…"
         },
         "email": {
             "label": "Change email",

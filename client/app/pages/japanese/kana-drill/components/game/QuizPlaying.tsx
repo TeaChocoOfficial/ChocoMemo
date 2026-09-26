@@ -89,7 +89,7 @@ export default function QuizPlaying({
                         type='button'
                         onClick={onListen}
                         aria-label={t('japanese.kanaDrill.listenAgain')}
-                        className='inline-flex items-center justify-center w-28 h-28 rounded-2xl bg-surface text-surface-foreground border-2 border-accent hover:bg-accent hover:text-accent-foreground transition-colors duration-200 cursor-pointer active:translate-y-px'
+                        className='inline-flex items-center justify-center w-28 h-28 rounded-2xl bg-surface text-surface-foreground border-2 border-primary hover:bg-primary hover:text-primary-foreground transition-colors duration-200 cursor-pointer active:translate-y-px'
                     >
                         <FaVolumeHigh className='w-12 h-12' />
                     </button>

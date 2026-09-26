@@ -7,6 +7,13 @@ import { getLocaleUrl } from '~/utils/url';
 
 const email = z.string().trim().email();
 
+/** Public handle: English letters/numbers/`_-` only, no spaces, stored lowercase. */
+export const nameTagField = z
+    .string()
+    .trim()
+    .toLowerCase()
+    .regex(/^[A-Za-z0-9_-]{3,30}$/, 'nameTag: English letters, numbers, "_" or "-" only (no spaces), 3-30 chars');
+
 /** Payload for the password sign-in endpoint. */
 export const loginPayloadSchema = z.object({
     email,
@@ -17,6 +24,7 @@ export type LoginPayload = z.infer<typeof loginPayloadSchema>;
 /** Payload for the registration endpoint. */
 export const registerPayloadSchema = z.object({
     name: z.string().trim().min(1),
+    nameTag: nameTagField,
     email,
     password: z.string().min(1),
 });
@@ -72,6 +80,8 @@ export type SigninResult = z.infer<typeof signinResultSchema>;
 export const updateUserPayloadSchema = z.object({
     name: z.string().trim().min(1).optional(),
     avatar: z.string().min(1).optional(),
+    nameTag: nameTagField.optional(),
+    bio: z.string().trim().max(160).optional(),
 });
 export type UpdateUserPayload = z.infer<typeof updateUserPayloadSchema>;
 

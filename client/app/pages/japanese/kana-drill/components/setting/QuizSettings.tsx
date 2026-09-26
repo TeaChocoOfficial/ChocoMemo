@@ -155,8 +155,8 @@ export default function QuizSettings({ settings, onChange }: QuizSettingsProps) 
                                     onClick={() => onChange({ ...settings, mode: mode.id })}
                                     className={`text-left rounded-sm border px-4 py-3 transition-colors duration-200 cursor-pointer ${
                                         active
-                                            ? 'border-accent bg-accent/15 text-surface-foreground'
-                                            : 'border-line bg-surface-overlay text-surface-foreground hover:border-accent'
+                                            ? 'border-primary bg-primary/15 text-surface-foreground'
+                                            : 'border-line bg-surface-overlay text-surface-foreground hover:border-primary'
                                     }`}
                                 >
                                     <span className='block text-sm font-bold'>
@@ -186,8 +186,8 @@ export default function QuizSettings({ settings, onChange }: QuizSettingsProps) 
                                     onClick={() => onChange({ ...settings, soundEffect: sound.id })}
                                     className={`text-left rounded-sm border px-4 py-3 transition-colors duration-200 cursor-pointer ${
                                         active
-                                            ? 'border-accent bg-accent/15 text-surface-foreground'
-                                            : 'border-line bg-surface-overlay text-surface-foreground hover:border-accent'
+                                            ? 'border-primary bg-primary/15 text-surface-foreground'
+                                            : 'border-line bg-surface-overlay text-surface-foreground hover:border-primary'
                                     }`}
                                 >
                                     <span className='block text-sm font-bold'>

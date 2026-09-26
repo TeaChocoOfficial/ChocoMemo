@@ -15,46 +15,117 @@
         "toggleLabel": "Ipakita ang interface"
     },
     "home": {
-        "badge": "ChocoMemo",
-        "title": "Painitin ang iyong Hapon,",
-        "titleAccent": "isa-isang kana.",
-        "subtitle": "Ang hiragana, katakana, at mga vocabulary quiz ay ginawang maaliwalas na pang-araw-araw na gawain — pumili ng tema, magtimpla ng isang tasa, at matuto.",
+        "badge": "ChocoMemo · shared na library ng wika",
+        "title": "Matuto ng kahit anong wika,",
+        "titleAccent": "isang shared deck sa isang beses.",
+        "subtitle": "Japanese, English, Thai, Korean at Chinese — bawat isa ay binubuo mula sa mga deck, drill at quiz na sinusulat at ibinabahagi ng mga tunay na nag-aaral. Libreng bukas at iyong palaguin.",
         "ctaStart": "Magsimulang matuto",
+        "ctaCreate": "I-publish ang deck",
         "ctaHow": "Paano ito gumagana",
+        "scriptsLabel": "Naghihimulot ngayon",
+        "scripts": [
+            "A",
+            "あ",
+            "한",
+            "ก",
+            "字"
+        ],
         "stats": {
-            "badge": "Sa isang sulyap",
-            "kana": "Karakter ng kana",
-            "vocabulary": "Salitang bokabularyo",
-            "modes": "Mode ng pagsasanay",
-            "themes": "Tema"
+            "badge": "Nasa shelf",
+            "languages": "Mga wika",
+            "kana": "Mga kana character",
+            "vocabulary": "Mga salitang bokabularyo",
+            "shelves": "Mga deck at quiz"
+        },
+        "languages": {
+            "badge": "Ang shelf",
+            "title": "Limang wika, isang mainit na gawi",
+            "hint": "Magsimula sa tray na handa ngayon — ang iba ay naghihimulot pa.",
+            "available": "Handa nang i-pour",
+            "comingSoon": "Naghihimulot",
+            "toAll": "Tingnan ang lahat ng wika",
+            "items": {
+                "japanese": {
+                    "name": "Hapones",
+                    "description": "Hiragana, katakana at kanji kasama ang mga drill at spaced review."
+                },
+                "english": {
+                    "name": "Ingles",
+                    "description": "Mga pang-araw-araw na salita at pariralang, inaayos ng mga gumagamit nito."
+                },
+                "thai": {
+                    "name": "Thai",
+                    "description": "Mga tone, sulat at mga salitang lalabas mo talaga sa kalsada."
+                },
+                "korean": {
+                    "name": "Koreano",
+                    "description": "Hangul sa isang upuan, saka mga conversation deck na tumatagal."
+                },
+                "chinese": {
+                    "name": "Tsino",
+                    "description": "Mga karakter, pinyin at pares ng tono, nadrill sa maikling round."
+                }
+            }
+        },
+        "library": {
+            "badge": "Ang shelf ng komunidad",
+            "title": "Sumulat ng deck. Ibahagi. Panoorin itong magtuturo.",
+            "hint": "Bawat study set sa ChocoMemo ay sinusulat ng tao, hindi ng publisher. Ayusin isa, i-publish, at iba pang tao ay makakakuha ng buong kurso mula rito.",
+            "cta": "Buksan ang shelf ng review",
+            "items": {
+                "decks": {
+                    "title": "Mga deck ng bokabularyo",
+                    "hint": "Pumili ng salitang may tema — kalikasan, hayop, mga bagay-araw — at i-review ito gaya ng maliit na e-book."
+                },
+                "exams": {
+                    "title": "Mga quiz set",
+                    "hint": "Gawing timed exam ang isang deck at makita mong eksaktong aling mga salita pa ang naghihimulot."
+                },
+                "kana": {
+                    "title": "Mga kana drill",
+                    "hint": "Mabilis na round sa dalawang syllabaryo hanggang dumating ang anyo nang walang iniisip."
+                },
+                "review": {
+                    "title": "Spaced review",
+                    "hint": "Ang mga deck na na-download mo ay bumabalik ayon sa sarili nilang iskedyul, kaya walang naumuumaw."
+                }
+            }
         },
         "how": {
             "badge": "Paano ito gumagana",
-            "title": "Isang maaliwalas na pang-araw-araw na gawain",
-            "hint": "Apat na maliliit na hakbang na inuulit araw-araw — iyon lang.",
+            "title": "Ang iyong araw-araw na pour",
+            "hint": "Apat na maliit na hakbang, uulitin araw-araw — iyon lang ang kailangan.",
             "step1": {
                 "title": "Pumili ng wika",
-                "hint": "Piliin kung ano ang pag-aaralan ngayon."
+                "hint": "Piliin ang tray na pinupununtahan mo ngayon."
             },
             "step2": {
-                "title": "Alamin ang kana",
-                "hint": "Hiragana at katakana, isang subo sa bawat pagkakataon."
+                "title": "Magrampa ng deck",
+                "hint": "Kumuha ng deck na isinulat ng iba, o magsimula sa built-in shelf."
             },
             "step3": {
-                "title": "Magsanay at mag-quiz",
-                "hint": "Mabilis na pagsasanay sa kana at pagsusulit sa bokabularyo."
+                "title": "Mag-drill at mag-quiz",
+                "hint": "Maikling kana drill at exam sa bokabularyo, limang minuto sa isang beses."
             },
             "step4": {
-                "title": "Ulitin araw-araw",
-                "hint": "Ang spaced review ay nagpapanatili ng mga salita sa alaala."
+                "title": "I-publish ang sarili mo",
+                "hint": "Idagdag ang mga salitang palaging nakakalimot at ibahagi muli sa shelf."
             }
+        },
+        "cta": {
+            "title": "Naka-on na ang pot.",
+            "hint": "Walang sign-up wall sa pagitan ng iyo at ang unang deck. Mag-sign in lang kapag gusto mong ma-sync ang mga salita mo.",
+            "primary": "Magsimulang matuto",
+            "secondary": "I-publish ang deck"
         }
     },
     "theme": {
         "pickerLabel": "Baguhin ang tema",
         "names": {
-            "dark": "Madilim",
-            "light": "Maliwanag",
+            "lightChoco": "Maliwanag na Choco",
+            "darkChoco": "Madilim na Choco",
+            "darkGalaxy": "Madilim na Galaksya",
+            "lightGalaxy": "Maliwanag na Galaksya",
             "darkSakura": "Madilim na Sakura",
             "lightSakura": "Maliwanag na Sakura",
             "darkPaper": "Madilim na Papel",
@@ -92,7 +163,7 @@
     "languageSelect": {
         "badge": "Pagpili ng Wika",
         "title": "Pumili ng Wikang Pag-aaralan",
-        "description": "Piliin ang wikang gusto mong pag-aralan. Marami pang wika ang darating.",
+        "description": "Piliin ang wikang gusto mong pag-aralan. Handa na ang Japanese ngayon; ang iba ay naghihimulot pa.",
         "back_home": "Bumalik sa Tahanan",
         "status": {
             "available": "Available",
@@ -105,19 +176,23 @@
         "languages": {
             "japanese": {
                 "name": "Hapones",
-                "description": "Matuto ng Hiragana, Katakana at mahahalagang bokabularyo sa pamamagitan ng interactive na mga pagsusulit."
+                "description": "Hiragana, katakana at kanji, nadrill sa maikling round at pinananatiling mainit ng spaced review."
             },
             "english": {
                 "name": "Ingles",
-                "description": "Ang mga kursong Ingles ay kasalukuyang inihahanda."
+                "description": "Mga pang-araw-araw na salita at pariralang, inaayos sa mga deck ng mga tunay na gumagamit."
             },
             "thai": {
                 "name": "Thai",
-                "description": "Malapit na ang mga kursong Thai."
+                "description": "Mga tone at sulat magkatabi, kasama ang mga salitang makikita mo sa kalsada."
             },
             "korean": {
                 "name": "Koreano",
-                "description": "Malapit na ang mga kursong Koreano."
+                "description": "Hangul sa isang upuan, saka mga conversation deck na ayaw tumalam."
+            },
+            "chinese": {
+                "name": "Tsino",
+                "description": "Mga karakter, pinyin at pares ng tono, nadrill ng ilang minuto sa isang beses."
             }
         }
     },
@@ -391,6 +466,8 @@
         "email": "Email",
         "password": "Password",
         "name": "Pangalan",
+        "nameTag": "Username",
+        "nameTagHint": "3-30 na karakter. English letters, numero, underscore (_) o hyphen (-) lang, walang espasyo. Ang iyong pampublikong username.",
         "confirmPassword": "Kumpirmahin ang Password",
         "forgotPassword": "Nakalimutan ang password?",
         "resetPassword": "I-reset ang Password",
@@ -414,6 +491,8 @@
         "error": {
             "invalidCredentials": "Maling email o password",
             "emailInUse": "Ginamit na ang email na ito",
+            "nameTagTaken": "Ginagamit na ang username na iyon.",
+            "nameTagInvalid": "Ang username ay dapat 3-30 na karakter: English letters, numero, underscore o hyphen lang (walang espasyo).",
             "passwordMismatch": "Hindi tugma ang mga password.",
             "invalidOtp": "Hindi wasto o expired na code. Subukan muli.",
             "resendFailed": "Hindi maipadala ang bagong code. Subukan muli.",
@@ -511,7 +590,15 @@
             "namePlaceholder": "Iyong pangalan",
             "saving": "Sinasave…",
             "saved": "Na-update ang profile",
-            "updateError": "Hindi ma-update ang iyong profile."
+            "updateError": "Hindi ma-update ang iyong profile.",
+            "editProfile": "I-edit ang profile",
+            "nameTag": "Username",
+            "nameTagHint": "3-30 na karakter. English letters, numero, underscore (_) o hyphen (-) lang, walang espasyo. Ang iyong pampublikong username.",
+            "nameTagTaken": "Ginagamit na ang username na iyon.",
+            "nameTagInvalid": "Ang username ay dapat 3-30 na karakter: English letters, numero, underscore o hyphen lang (walang espasyo).",
+            "noNameTag": "Wala pang username",
+            "bio": "Bio",
+            "bioPlaceholder": "Magkwento nang kaunti tungkol sa iyong sarili…"
         },
         "email": {
             "label": "Change email",

@@ -16,6 +16,7 @@ export default [
             route('settings', 'routes/page/settings.tsx'),
             route('profile', 'routes/page/profile.tsx'),
             route('auth', 'routes/page/auth.tsx'),
+            route('dev/swal', 'routes/page/dev/swal.tsx'),
             route('*', 'routes/not-found.tsx'),
         ]),
     ]),

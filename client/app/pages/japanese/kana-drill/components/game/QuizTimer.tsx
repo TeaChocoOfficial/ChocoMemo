@@ -20,7 +20,7 @@ export default function QuizTimer({ timeLeft, timeLimit }: QuizTimerProps) {
             </span>
             <div className='h-2 flex-1 bg-surface-overlay border border-line overflow-hidden'>
                 <motion.div
-                    className={`h-full ${urgent ? 'bg-error' : 'bg-accent'}`}
+                    className={`h-full ${urgent ? 'bg-error' : 'bg-primary'}`}
                     animate={{ width: `${percent}%` }}
                     transition={{ duration: 0.3 }}
                 />

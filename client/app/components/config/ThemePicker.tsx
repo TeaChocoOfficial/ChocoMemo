@@ -6,19 +6,22 @@ export default function ThemePicker() {
     const { t } = useTranslation();
     const { theme, setTheme } = useThemeStore();
 
-    const themeOptions = THEMES.map((item) => ({
-        value: item.id,
-        label: t(`theme.names.${item.labelKey}`),
-        icon: (
-            <span
-                aria-hidden
-                className='flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-border-strong text-[10px] font-bold leading-none'
-                style={{ background: item.swatch, color: item.dark ? '#fff' : '#333' }}
-            >
-                {item.kanji}
-            </span>
-        ),
-    }));
+    const themeOptions = THEMES.map((item) => {
+        const Icon = item.icon;
+        return {
+            value: item.id,
+            label: t(`theme.names.${item.labelKey}`),
+            icon: (
+                <span
+                    aria-hidden
+                    className='flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-border-strong'
+                    style={{ background: item.swatch, color: item.dark ? '#fff' : '#333' }}
+                >
+                    <Icon className='h-3.5 w-3.5' />
+                </span>
+            ),
+        };
+    });
 
     const handleChange = (id: ThemeName) => setTheme(id);
 
@@ -27,7 +30,6 @@ export default function ThemePicker() {
             value={theme}
             options={themeOptions}
             onChange={handleChange}
-            optionsClassName='right-0!'
             className='py-2! px-3! rounded-sm! text-xs'
         />
     );

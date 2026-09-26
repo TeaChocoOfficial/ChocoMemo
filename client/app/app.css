@@ -4,38 +4,33 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* ===== COMPLETE DESIGN TOKEN SYSTEM ===== */
-/* Editorial / minimal: monochrome base + ONE accent per theme, hairline
+/* Editorial / minimal: monochrome base + ONE primary hue per theme, hairline
    borders, flat surfaces. No gradients, no glow, no soft shadows. */
 @theme {
-    /* --- Surface (fallback = light) --- */
-    --color-surface: hsl(40 10% 98%);
-    --color-surface-foreground: hsl(40 15% 9%);
-    --color-surface-subtle: hsl(40 8% 42%);
-    --color-surface-muted: hsl(40 6% 62%);
-    --color-surface-elevated: hsl(0 0% 100%);
-    --color-surface-overlay: hsl(40 8% 93%);
-    --color-surface-sunken: hsl(40 8% 89%);
+    /* --- Surface (fallback = choco) --- */
+    --color-surface: hsl(30 32% 97%);
+    --color-surface-foreground: hsl(24 34% 12%);
+    --color-surface-subtle: hsl(26 16% 40%);
+    --color-surface-muted: hsl(26 12% 60%);
+    --color-surface-elevated: hsl(30 45% 99%);
+    --color-surface-overlay: hsl(28 30% 92%);
+    --color-surface-sunken: hsl(28 26% 88%);
 
-    /* --- Primary (aliased to the single accent) --- */
-    --color-primary: hsl(41 92% 46%);
-    --color-primary-foreground: hsl(40 70% 7%);
-    --color-primary-subtle: hsl(41 90% 95%);
-    --color-primary-muted: hsl(41 95% 85%);
-    --color-primary-emphasis: hsl(35 95% 34%);
+    /* --- Primary (the one hue of the theme) --- */
+    --color-primary: hsl(24 62% 38%);
+    --color-primary-foreground: hsl(30 60% 96%);
+    --color-primary-subtle: hsl(28 45% 94%);
+    --color-primary-muted: hsl(26 50% 86%);
+    --color-primary-emphasis: hsl(20 66% 28%);
 
     /* --- Secondary (neutralized gray — never a second hue) --- */
-    --color-secondary: hsl(40 8% 40%);
-    --color-secondary-foreground: hsl(0 0% 100%);
-    --color-secondary-subtle: hsl(40 8% 96%);
-    --color-secondary-muted: hsl(40 8% 86%);
-    --color-secondary-emphasis: hsl(40 8% 28%);
+    --color-secondary: hsl(26 18% 38%);
+    --color-secondary-foreground: hsl(30 40% 98%);
+    --color-secondary-subtle: hsl(28 24% 95%);
+    --color-secondary-muted: hsl(28 18% 85%);
+    --color-secondary-emphasis: hsl(26 20% 26%);
 
     /* --- Accent (the one hue of the theme) --- */
-    --color-accent: hsl(41 92% 46%);
-    --color-accent-foreground: hsl(40 70% 7%);
-    --color-accent-subtle: hsl(41 90% 95%);
-    --color-accent-muted: hsl(41 95% 85%);
-    --color-accent-emphasis: hsl(35 95% 34%);
 
     /* --- Feedback: Error --- */
     --color-error: hsl(357.2 68.3% 47.6%);
@@ -73,19 +68,19 @@
     --color-neutral-emphasis: hsl(0 0% 22.9%);
 
     /* --- Border / Divider --- */
-    --color-border: hsl(40 8% 87%);
-    --color-border-strong: hsl(40 6% 70%);
-    --color-border-hover: hsl(41 92% 46%);
-    --color-ring: hsl(41 92% 46%);
+    --color-border: hsl(28 22% 86%);
+    --color-border-strong: hsl(26 20% 70%);
+    --color-border-hover: hsl(24 62% 38%);
+    --color-ring: hsl(24 62% 38%);
 
     /* --- Hairline (aliases to per-theme border) --- */
     --color-line: var(--color-border);
     --color-line-strong: var(--color-border-strong);
 
     /* --- Ambient rings (flat neutral, no glow) --- */
-    --color-ambient-a: hsl(40 8% 84%);
-    --color-ambient-b: hsl(40 8% 90%);
-    --color-ambient-c: hsl(40 8% 95%);
+    --color-ambient-a: hsl(28 20% 88%);
+    --color-ambient-b: hsl(28 18% 93%);
+    --color-ambient-c: hsl(28 16% 96%);
 
     /* --- Typography --- */
     --font-sans: 'Archivo', 'Zen Kaku Gothic New', 'Inter', ui-sans-serif, system-ui, sans-serif;
@@ -100,65 +95,125 @@
     --radius-full: 9999px;
 }
 
-/* ===== ACCENT HUES PER THEME =====
-   Each id keeps ONE accent hue (mapped from its theme swatch) plus a
-   monochrome surface scale tinted toward that hue. */
-:root[data-theme='light'] {
-    --color-surface: hsl(40 10% 98%);
-    --color-surface-foreground: hsl(40 15% 9%);
-    --color-surface-subtle: hsl(40 8% 42%);
-    --color-surface-muted: hsl(40 6% 62%);
-    --color-surface-elevated: hsl(0 0% 100%);
-    --color-surface-overlay: hsl(40 8% 93%);
-    --color-surface-sunken: hsl(40 8% 89%);
+/* ===== PRIMARY HUES PER THEME =====
+   Each id keeps ONE primary hue (mapped from its theme swatch) plus a
+   monochrome surface scale tinted toward that hue. The values below are
+   also mirrored in the @theme block above, which is what paints before the
+   no-flash script sets data-theme. */
+:root[data-theme='light-choco'] {
+    --color-surface: hsl(30 32% 97%);
+    --color-surface-foreground: hsl(24 34% 12%);
+    --color-surface-subtle: hsl(26 16% 40%);
+    --color-surface-muted: hsl(26 12% 60%);
+    --color-surface-elevated: hsl(30 45% 99%);
+    --color-surface-overlay: hsl(28 30% 92%);
+    --color-surface-sunken: hsl(28 26% 88%);
 
-    --color-border: hsl(40 8% 87%);
-    --color-border-strong: hsl(40 6% 70%);
+    --color-border: hsl(28 22% 86%);
+    --color-border-strong: hsl(26 20% 70%);
 
-    --color-accent: hsl(41 92% 46%);
-    --color-accent-foreground: hsl(40 70% 7%);
-    --color-accent-subtle: hsl(41 90% 95%);
-    --color-accent-muted: hsl(41 95% 85%);
-    --color-accent-emphasis: hsl(35 95% 34%);
+    --color-primary: hsl(24 62% 38%);
+    --color-primary-foreground: hsl(30 60% 96%);
+    --color-primary-subtle: hsl(28 45% 94%);
+    --color-primary-muted: hsl(26 50% 86%);
+    --color-primary-emphasis: hsl(20 66% 28%);
 
-    --color-secondary: hsl(40 8% 40%);
-    --color-secondary-foreground: hsl(0 0% 100%);
-    --color-secondary-subtle: hsl(40 8% 96%);
-    --color-secondary-muted: hsl(40 8% 86%);
-    --color-secondary-emphasis: hsl(40 8% 28%);
+    --color-secondary: hsl(26 18% 38%);
+    --color-secondary-foreground: hsl(30 40% 98%);
+    --color-secondary-subtle: hsl(28 24% 95%);
+    --color-secondary-muted: hsl(28 18% 85%);
+    --color-secondary-emphasis: hsl(26 20% 26%);
 
-    --color-ambient-a: hsl(40 8% 84%);
-    --color-ambient-b: hsl(40 8% 90%);
-    --color-ambient-c: hsl(40 8% 95%);
+    --color-ambient-a: hsl(28 20% 88%);
+    --color-ambient-b: hsl(28 18% 93%);
+    --color-ambient-c: hsl(28 16% 96%);
 }
 
-:root[data-theme='dark'] {
-    --color-surface: hsl(240 15% 4%);
-    --color-surface-foreground: hsl(240 10% 93%);
-    --color-surface-subtle: hsl(240 8% 64%);
-    --color-surface-muted: hsl(240 6% 44%);
-    --color-surface-elevated: hsl(240 16% 7%);
-    --color-surface-overlay: hsl(240 14% 11%);
-    --color-surface-sunken: hsl(240 10% 2%);
+:root[data-theme='dark-choco'] {
+    --color-surface: hsl(24 18% 7%);
+    --color-surface-foreground: hsl(30 25% 92%);
+    --color-surface-subtle: hsl(28 12% 64%);
+    --color-surface-muted: hsl(28 8% 46%);
+    --color-surface-elevated: hsl(24 18% 10%);
+    --color-surface-overlay: hsl(24 16% 14%);
+    --color-surface-sunken: hsl(24 20% 5%);
 
-    --color-border: hsl(240 12% 15%);
-    --color-border-strong: hsl(240 10% 26%);
+    --color-border: hsl(26 14% 18%);
+    --color-border-strong: hsl(26 12% 28%);
 
-    --color-accent: hsl(250 70% 62%);
-    --color-accent-foreground: hsl(250 60% 8%);
-    --color-accent-subtle: hsl(250 45% 16%);
-    --color-accent-muted: hsl(250 55% 28%);
-    --color-accent-emphasis: hsl(250 70% 50%);
+    --color-primary: hsl(30 68% 60%);
+    --color-primary-foreground: hsl(26 40% 8%);
+    --color-primary-subtle: hsl(28 40% 18%);
+    --color-primary-muted: hsl(28 45% 30%);
+    --color-primary-emphasis: hsl(32 72% 50%);
 
-    --color-secondary: hsl(240 6% 58%);
+    --color-secondary: hsl(28 10% 58%);
     --color-secondary-foreground: hsl(0 0% 100%);
-    --color-secondary-subtle: hsl(240 6% 13%);
-    --color-secondary-muted: hsl(240 6% 26%);
-    --color-secondary-emphasis: hsl(240 6% 40%);
+    --color-secondary-subtle: hsl(28 8% 13%);
+    --color-secondary-muted: hsl(28 8% 26%);
+    --color-secondary-emphasis: hsl(28 8% 40%);
 
-    --color-ambient-a: hsl(240 10% 18%);
-    --color-ambient-b: hsl(240 10% 12%);
-    --color-ambient-c: hsl(240 10% 8%);
+    --color-ambient-a: hsl(26 12% 20%);
+    --color-ambient-b: hsl(26 10% 13%);
+    --color-ambient-c: hsl(26 8% 9%);
+}
+
+:root[data-theme='light-galaxy'] {
+    --color-surface: hsl(250 30% 98%);
+    --color-surface-foreground: hsl(248 30% 12%);
+    --color-surface-subtle: hsl(250 14% 42%);
+    --color-surface-muted: hsl(250 10% 62%);
+    --color-surface-elevated: hsl(250 40% 99%);
+    --color-surface-overlay: hsl(250 28% 93%);
+    --color-surface-sunken: hsl(250 24% 89%);
+
+    --color-border: hsl(250 20% 87%);
+    --color-border-strong: hsl(250 16% 70%);
+
+    --color-primary: hsl(250 62% 44%);
+    --color-primary-foreground: hsl(250 40% 98%);
+    --color-primary-subtle: hsl(250 45% 95%);
+    --color-primary-muted: hsl(250 50% 87%);
+    --color-primary-emphasis: hsl(250 66% 36%);
+
+    --color-secondary: hsl(250 12% 40%);
+    --color-secondary-foreground: hsl(0 0% 100%);
+    --color-secondary-subtle: hsl(250 16% 96%);
+    --color-secondary-muted: hsl(250 12% 86%);
+    --color-secondary-emphasis: hsl(250 14% 28%);
+
+    --color-ambient-a: hsl(250 18% 88%);
+    --color-ambient-b: hsl(250 16% 93%);
+    --color-ambient-c: hsl(250 14% 96%);
+}
+
+:root[data-theme='dark-galaxy'] {
+    --color-surface: hsl(230 30% 5%);
+    --color-surface-foreground: hsl(225 30% 94%);
+    --color-surface-subtle: hsl(228 16% 66%);
+    --color-surface-muted: hsl(228 12% 48%);
+    --color-surface-elevated: hsl(230 30% 8%);
+    --color-surface-overlay: hsl(230 26% 12%);
+    --color-surface-sunken: hsl(232 34% 3%);
+
+    --color-border: hsl(230 20% 18%);
+    --color-border-strong: hsl(230 18% 28%);
+
+    --color-primary: hsl(268 85% 68%);
+    --color-primary-foreground: hsl(260 50% 8%);
+    --color-primary-subtle: hsl(268 40% 18%);
+    --color-primary-muted: hsl(268 50% 30%);
+    --color-primary-emphasis: hsl(268 90% 58%);
+
+    --color-secondary: hsl(230 10% 60%);
+    --color-secondary-foreground: hsl(0 0% 100%);
+    --color-secondary-subtle: hsl(230 10% 13%);
+    --color-secondary-muted: hsl(230 10% 26%);
+    --color-secondary-emphasis: hsl(230 10% 40%);
+
+    --color-ambient-a: hsl(232 16% 20%);
+    --color-ambient-b: hsl(232 14% 13%);
+    --color-ambient-c: hsl(232 12% 9%);
 }
 
 :root[data-theme='dark-sakura'] {
@@ -173,11 +228,11 @@
     --color-border: hsl(330 12% 15%);
     --color-border-strong: hsl(330 10% 26%);
 
-    --color-accent: hsl(327 70% 60%);
-    --color-accent-foreground: hsl(330 50% 8%);
-    --color-accent-subtle: hsl(327 40% 15%);
-    --color-accent-muted: hsl(327 55% 27%);
-    --color-accent-emphasis: hsl(327 75% 48%);
+    --color-primary: hsl(327 70% 60%);
+    --color-primary-foreground: hsl(330 50% 8%);
+    --color-primary-subtle: hsl(327 40% 15%);
+    --color-primary-muted: hsl(327 55% 27%);
+    --color-primary-emphasis: hsl(327 75% 48%);
 
     --color-secondary: hsl(330 6% 58%);
     --color-secondary-foreground: hsl(0 0% 100%);
@@ -202,11 +257,11 @@
     --color-border: hsl(330 22% 88%);
     --color-border-strong: hsl(330 16% 72%);
 
-    --color-accent: hsl(327 80% 55%);
-    --color-accent-foreground: hsl(330 60% 10%);
-    --color-accent-subtle: hsl(327 80% 95%);
-    --color-accent-muted: hsl(327 85% 85%);
-    --color-accent-emphasis: hsl(327 75% 38%);
+    --color-primary: hsl(327 80% 55%);
+    --color-primary-foreground: hsl(330 60% 10%);
+    --color-primary-subtle: hsl(327 80% 95%);
+    --color-primary-muted: hsl(327 85% 85%);
+    --color-primary-emphasis: hsl(327 75% 38%);
 
     --color-secondary: hsl(330 8% 40%);
     --color-secondary-foreground: hsl(0 0% 100%);
@@ -220,61 +275,61 @@
 }
 
 :root[data-theme='dark-paper'] {
-    --color-surface: hsl(28 18% 5%);
-    --color-surface-foreground: hsl(30 12% 92%);
-    --color-surface-subtle: hsl(28 8% 64%);
-    --color-surface-muted: hsl(28 6% 44%);
-    --color-surface-elevated: hsl(28 18% 8%);
-    --color-surface-overlay: hsl(28 16% 11%);
-    --color-surface-sunken: hsl(28 10% 3%);
+    --color-surface: hsl(48 20% 6%);
+    --color-surface-foreground: hsl(48 25% 92%);
+    --color-surface-subtle: hsl(46 12% 66%);
+    --color-surface-muted: hsl(46 10% 48%);
+    --color-surface-elevated: hsl(48 20% 9%);
+    --color-surface-overlay: hsl(48 18% 13%);
+    --color-surface-sunken: hsl(48 24% 4%);
 
-    --color-border: hsl(28 12% 15%);
-    --color-border-strong: hsl(28 10% 26%);
+    --color-border: hsl(48 16% 18%);
+    --color-border-strong: hsl(48 14% 28%);
 
-    --color-accent: hsl(27 65% 58%);
-    --color-accent-foreground: hsl(28 60% 8%);
-    --color-accent-subtle: hsl(27 40% 15%);
-    --color-accent-muted: hsl(27 50% 26%);
-    --color-accent-emphasis: hsl(25 65% 45%);
+    --color-primary: hsl(48 92% 58%);
+    --color-primary-foreground: hsl(48 55% 8%);
+    --color-primary-subtle: hsl(48 45% 17%);
+    --color-primary-muted: hsl(48 50% 29%);
+    --color-primary-emphasis: hsl(50 95% 50%);
 
-    --color-secondary: hsl(28 6% 58%);
+    --color-secondary: hsl(48 10% 58%);
     --color-secondary-foreground: hsl(0 0% 100%);
-    --color-secondary-subtle: hsl(28 6% 13%);
-    --color-secondary-muted: hsl(28 6% 26%);
-    --color-secondary-emphasis: hsl(28 6% 40%);
+    --color-secondary-subtle: hsl(48 8% 13%);
+    --color-secondary-muted: hsl(48 8% 26%);
+    --color-secondary-emphasis: hsl(48 8% 40%);
 
-    --color-ambient-a: hsl(28 10% 18%);
-    --color-ambient-b: hsl(28 10% 12%);
-    --color-ambient-c: hsl(28 10% 8%);
+    --color-ambient-a: hsl(48 12% 19%);
+    --color-ambient-b: hsl(48 10% 13%);
+    --color-ambient-c: hsl(48 8% 9%);
 }
 
 :root[data-theme='light-paper'] {
-    --color-surface: hsl(30 35% 98%);
-    --color-surface-foreground: hsl(28 25% 11%);
-    --color-surface-subtle: hsl(28 10% 42%);
-    --color-surface-muted: hsl(28 8% 62%);
-    --color-surface-elevated: hsl(0 0% 100%);
-    --color-surface-overlay: hsl(28 30% 93%);
-    --color-surface-sunken: hsl(28 32% 89%);
+    --color-surface: hsl(50 45% 97%);
+    --color-surface-foreground: hsl(42 40% 11%);
+    --color-surface-subtle: hsl(44 16% 40%);
+    --color-surface-muted: hsl(46 12% 60%);
+    --color-surface-elevated: hsl(50 50% 99%);
+    --color-surface-overlay: hsl(48 38% 92%);
+    --color-surface-sunken: hsl(48 32% 87%);
 
-    --color-border: hsl(28 22% 88%);
-    --color-border-strong: hsl(28 16% 72%);
+    --color-border: hsl(48 26% 85%);
+    --color-border-strong: hsl(46 22% 68%);
 
-    --color-accent: hsl(22 65% 52%);
-    --color-accent-foreground: hsl(20 60% 8%);
-    --color-accent-subtle: hsl(22 60% 94%);
-    --color-accent-muted: hsl(22 70% 84%);
-    --color-accent-emphasis: hsl(20 65% 36%);
+    --color-primary: hsl(48 92% 44%);
+    --color-primary-foreground: hsl(45 60% 12%);
+    --color-primary-subtle: hsl(48 70% 93%);
+    --color-primary-muted: hsl(48 72% 84%);
+    --color-primary-emphasis: hsl(46 94% 34%);
 
-    --color-secondary: hsl(28 8% 40%);
-    --color-secondary-foreground: hsl(0 0% 100%);
-    --color-secondary-subtle: hsl(28 8% 96%);
-    --color-secondary-muted: hsl(28 8% 86%);
-    --color-secondary-emphasis: hsl(28 8% 28%);
+    --color-secondary: hsl(44 16% 38%);
+    --color-secondary-foreground: hsl(50 50% 98%);
+    --color-secondary-subtle: hsl(48 30% 95%);
+    --color-secondary-muted: hsl(48 20% 85%);
+    --color-secondary-emphasis: hsl(44 18% 26%);
 
-    --color-ambient-a: hsl(28 18% 86%);
-    --color-ambient-b: hsl(28 16% 92%);
-    --color-ambient-c: hsl(28 14% 96%);
+    --color-ambient-a: hsl(48 30% 88%);
+    --color-ambient-b: hsl(48 26% 93%);
+    --color-ambient-c: hsl(48 22% 96%);
 }
 
 :root[data-theme='dark-nature'] {
@@ -289,11 +344,11 @@
     --color-border: hsl(100 12% 15%);
     --color-border-strong: hsl(100 10% 26%);
 
-    --color-accent: hsl(86 50% 55%);
-    --color-accent-foreground: hsl(90 40% 6%);
-    --color-accent-subtle: hsl(90 40% 13%);
-    --color-accent-muted: hsl(88 50% 24%);
-    --color-accent-emphasis: hsl(88 55% 40%);
+    --color-primary: hsl(86 50% 55%);
+    --color-primary-foreground: hsl(90 40% 6%);
+    --color-primary-subtle: hsl(90 40% 13%);
+    --color-primary-muted: hsl(88 50% 24%);
+    --color-primary-emphasis: hsl(88 55% 40%);
 
     --color-secondary: hsl(100 6% 58%);
     --color-secondary-foreground: hsl(0 0% 100%);
@@ -318,11 +373,11 @@
     --color-border: hsl(90 20% 88%);
     --color-border-strong: hsl(92 14% 72%);
 
-    --color-accent: hsl(82 55% 40%);
-    --color-accent-foreground: hsl(85 50% 8%);
-    --color-accent-subtle: hsl(85 55% 94%);
-    --color-accent-muted: hsl(85 60% 84%);
-    --color-accent-emphasis: hsl(85 55% 28%);
+    --color-primary: hsl(82 55% 40%);
+    --color-primary-foreground: hsl(85 50% 8%);
+    --color-primary-subtle: hsl(85 55% 94%);
+    --color-primary-muted: hsl(85 60% 84%);
+    --color-primary-emphasis: hsl(85 55% 28%);
 
     --color-secondary: hsl(95 8% 40%);
     --color-secondary-foreground: hsl(0 0% 100%);
@@ -347,11 +402,11 @@
     --color-border: hsl(15 14% 15%);
     --color-border-strong: hsl(15 12% 26%);
 
-    --color-accent: hsl(10 70% 58%);
-    --color-accent-foreground: hsl(10 60% 8%);
-    --color-accent-subtle: hsl(10 50% 15%);
-    --color-accent-muted: hsl(10 60% 27%);
-    --color-accent-emphasis: hsl(8 70% 46%);
+    --color-primary: hsl(10 70% 58%);
+    --color-primary-foreground: hsl(10 60% 8%);
+    --color-primary-subtle: hsl(10 50% 15%);
+    --color-primary-muted: hsl(10 60% 27%);
+    --color-primary-emphasis: hsl(8 70% 46%);
 
     --color-secondary: hsl(25 6% 58%);
     --color-secondary-foreground: hsl(0 0% 100%);
@@ -376,11 +431,11 @@
     --color-border: hsl(25 24% 88%);
     --color-border-strong: hsl(25 16% 72%);
 
-    --color-accent: hsl(8 70% 52%);
-    --color-accent-foreground: hsl(8 60% 8%);
-    --color-accent-subtle: hsl(8 65% 94%);
-    --color-accent-muted: hsl(8 75% 84%);
-    --color-accent-emphasis: hsl(6 65% 36%);
+    --color-primary: hsl(8 70% 52%);
+    --color-primary-foreground: hsl(8 60% 8%);
+    --color-primary-subtle: hsl(8 65% 94%);
+    --color-primary-muted: hsl(8 75% 84%);
+    --color-primary-emphasis: hsl(6 65% 36%);
 
     --color-secondary: hsl(25 10% 40%);
     --color-secondary-foreground: hsl(0 0% 100%);
@@ -405,11 +460,11 @@
     --color-border: hsl(215 14% 15%);
     --color-border-strong: hsl(215 12% 26%);
 
-    --color-accent: hsl(200 70% 62%);
-    --color-accent-foreground: hsl(210 50% 6%);
-    --color-accent-subtle: hsl(205 45% 14%);
-    --color-accent-muted: hsl(205 55% 25%);
-    --color-accent-emphasis: hsl(200 70% 48%);
+    --color-primary: hsl(200 70% 62%);
+    --color-primary-foreground: hsl(210 50% 6%);
+    --color-primary-subtle: hsl(205 45% 14%);
+    --color-primary-muted: hsl(205 55% 25%);
+    --color-primary-emphasis: hsl(200 70% 48%);
 
     --color-secondary: hsl(215 6% 58%);
     --color-secondary-foreground: hsl(0 0% 100%);
@@ -434,11 +489,11 @@
     --color-border: hsl(210 22% 88%);
     --color-border-strong: hsl(210 16% 72%);
 
-    --color-accent: hsl(199 70% 58%);
-    --color-accent-foreground: hsl(210 50% 8%);
-    --color-accent-subtle: hsl(205 60% 94%);
-    --color-accent-muted: hsl(205 70% 84%);
-    --color-accent-emphasis: hsl(200 70% 40%);
+    --color-primary: hsl(199 70% 58%);
+    --color-primary-foreground: hsl(210 50% 8%);
+    --color-primary-subtle: hsl(205 60% 94%);
+    --color-primary-muted: hsl(205 70% 84%);
+    --color-primary-emphasis: hsl(200 70% 40%);
 
     --color-secondary: hsl(215 8% 40%);
     --color-secondary-foreground: hsl(0 0% 100%);
@@ -451,30 +506,28 @@
     --color-ambient-c: hsl(210 12% 96%);
 }
 
-/* ===== PRIMARY ALIAS (every theme: primary === accent) ===== */
-:root[data-theme='light'],
+/* ===== PRIMARY SHARED (hover border + focus ring, every theme) ===== */
+:root[data-theme='light-choco'],
 :root[data-theme='light-sakura'],
 :root[data-theme='light-paper'],
 :root[data-theme='light-nature'],
 :root[data-theme='light-autumn'],
 :root[data-theme='light-winter'],
-:root[data-theme='dark'],
+:root[data-theme='dark-choco'],
+:root[data-theme='dark-galaxy'],
+:root[data-theme='light-galaxy'],
 :root[data-theme='dark-sakura'],
 :root[data-theme='dark-paper'],
 :root[data-theme='dark-nature'],
 :root[data-theme='dark-autumn'],
 :root[data-theme='dark-winter'] {
-    --color-primary: var(--color-accent);
-    --color-primary-foreground: var(--color-accent-foreground);
-    --color-primary-subtle: var(--color-accent-subtle);
-    --color-primary-muted: var(--color-accent-muted);
-    --color-primary-emphasis: var(--color-accent-emphasis);
-    --color-border-hover: var(--color-accent);
-    --color-ring: var(--color-accent);
+    --color-border-hover: var(--color-primary);
+    --color-ring: var(--color-primary);
 }
 
 /* ===== SHARED LIGHT MODE (feedback + neutral) ===== */
-:root[data-theme='light'],
+:root[data-theme='light-choco'],
+:root[data-theme='light-galaxy'],
 :root[data-theme='light-sakura'],
 :root[data-theme='light-paper'],
 :root[data-theme='light-nature'],
@@ -512,7 +565,8 @@
 }
 
 /* ===== SHARED DARK MODE (feedback + neutral) ===== */
-:root[data-theme='dark'],
+:root[data-theme='dark-choco'],
+:root[data-theme='dark-galaxy'],
 :root[data-theme='dark-sakura'],
 :root[data-theme='dark-paper'],
 :root[data-theme='dark-nature'],
@@ -551,7 +605,8 @@
 
 @layer base {
     :root,
-    :root[data-theme='light'],
+    :root[data-theme='light-choco'],
+    :root[data-theme='light-galaxy'],
     :root[data-theme='light-sakura'],
     :root[data-theme='light-paper'],
     :root[data-theme='light-nature'],
@@ -560,7 +615,8 @@
         color-scheme: light;
     }
 
-    :root[data-theme='dark'],
+    :root[data-theme='dark-choco'],
+    :root[data-theme='dark-galaxy'],
     :root[data-theme='dark-sakura'],
     :root[data-theme='dark-paper'],
     :root[data-theme='dark-nature'],
@@ -602,21 +658,21 @@
 
     /* Editorial focus indicator (accessibility without glow) */
     :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
-        outline: 2px solid var(--color-accent);
+        outline: 2px solid var(--color-primary);
         outline-offset: 2px;
     }
 
-    /* Selection uses the single accent */
+    /* Selection uses the single primary hue */
     ::selection {
-        background-color: var(--color-accent);
-        color: var(--color-accent-foreground);
+        background-color: var(--color-primary);
+        color: var(--color-primary-foreground);
     }
 
-    /* Native form controls pick up the accent */
+    /* Native form controls pick up the primary hue */
     input[type='range'],
     input[type='checkbox'],
     input[type='radio'] {
-        accent-color: var(--color-accent);
+        accent-color: var(--color-primary);
     }
 
     /* Scrollbar Styling */
@@ -634,7 +690,7 @@
     }
 
     ::-webkit-scrollbar-thumb:hover {
-        @apply bg-accent;
+        @apply bg-primary;
     }
 }
 
@@ -653,27 +709,23 @@
     }
 
     .btn-primary {
-        @apply bg-accent text-accent-foreground hover:bg-accent-emphasis;
+        @apply bg-primary text-primary-foreground hover:bg-primary-emphasis;
     }
 
     .btn-primary-text {
-        @apply bg-transparent text-accent underline-offset-4 hover:underline;
+        @apply bg-transparent text-primary underline-offset-4 hover:underline;
     }
 
     .btn-primary-outline {
-        @apply border border-line-strong text-accent hover:border-accent hover:bg-accent-subtle;
+        @apply border border-line-strong text-primary hover:border-primary hover:bg-primary-subtle;
     }
 
     .btn-primary-ghost {
-        @apply bg-transparent text-accent hover:bg-accent-subtle;
+        @apply bg-transparent text-primary hover:bg-primary-subtle;
     }
 
     .btn-secondary {
         @apply bg-secondary text-secondary-foreground hover:bg-secondary-emphasis;
-    }
-
-    .btn-accent {
-        @apply bg-accent text-accent-foreground hover:bg-accent-emphasis;
     }
 
     .btn-warning {
@@ -700,7 +752,180 @@
     /* ===== Kanji watermark ===== */
     .watermark {
         @apply pointer-events-none select-none font-sans font-black text-transparent;
-        -webkit-text-stroke: 1px var(--color-accent);
+        -webkit-text-stroke: 1px var(--color-primary);
         opacity: 0.06;
     }
+}
+/* ===== SWEETALERT2 → PROJECT THEME =====
+   SweetAlert2's stylesheet is driven entirely by `--swal2-*` custom
+   properties, so mapping them onto our design tokens themes every dialog and
+   toast for free — including live theme switches, because the tokens live on
+   :root and re-resolve when [data-theme] changes. No JS colour reading, and
+   all 13 themes are covered at once.
+
+   Selectors are prefixed with `html` on purpose: SweetAlert2 injects its own
+   <style> at import time, so source order against this file is not
+   guaranteed. The `html` prefix lifts specificity above both its `:root`
+   variables and its zero-specificity `:where(...)` rules. */
+html:root {
+    /* Popup shell — flat surface, hairline border, no glow. */
+    --swal2-background: var(--color-surface-elevated);
+    --swal2-color: var(--color-surface-foreground);
+    --swal2-border: 1px solid var(--color-border-strong);
+    --swal2-border-radius: var(--radius-sm);
+    --swal2-width: 30rem;
+    --swal2-font-family: var(--font-sans);
+    --swal2-backdrop: rgb(0 0 0 / 0.6);
+    --swal2-show-animation: swal2-show 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+    --swal2-hide-animation: swal2-hide 0.16s ease-in forwards;
+
+    /* Buttons read as the project's own: primary fill, hairline ghost. */
+    --swal2-confirm-button-background-color: var(--color-primary);
+    --swal2-confirm-button-color: var(--color-primary-foreground);
+    --swal2-confirm-button-border-radius: var(--radius-sm);
+    --swal2-deny-button-background-color: var(--color-error);
+    --swal2-deny-button-color: var(--color-error-foreground);
+    --swal2-deny-button-border-radius: var(--radius-sm);
+    --swal2-cancel-button-background-color: transparent;
+    --swal2-cancel-button-color: var(--color-surface-foreground);
+    --swal2-cancel-button-border-radius: var(--radius-sm);
+    --swal2-action-button-focus-box-shadow: 0 0 0 2px
+        color-mix(in srgb, var(--color-primary) 45%, transparent);
+
+    /* Inputs */
+    --swal2-input-border: 1px solid var(--color-line-strong);
+    --swal2-input-border-radius: var(--radius-sm);
+    --swal2-input-background: var(--color-surface);
+    --swal2-input-focus-border: 1px solid var(--color-primary);
+    --swal2-input-focus-box-shadow: 0 0 0 2px
+        color-mix(in srgb, var(--color-primary) 35%, transparent);
+    --swal2-validation-message-background: var(--color-error-subtle);
+    --swal2-validation-message-color: var(--color-error);
+
+    /* Toast */
+    --swal2-toast-border: 1px solid var(--color-border-strong);
+    --swal2-toast-box-shadow: 0 18px 40px -24px rgb(0 0 0 / 0.45);
+    --swal2-timer-progress-bar-background: var(--color-primary);
+
+    --swal2-close-button-color: var(--color-surface-muted);
+    --swal2-footer-border-color: var(--color-line);
+    --swal2-icon-zoom: 0.8;
+}
+
+/* --- Popup chrome --- */
+html .swal2-popup {
+    box-shadow: 0 18px 40px -24px rgb(0 0 0 / 0.35);
+}
+
+/* --- Type: display weight, tighter tracking, left aligned like every other
+       surface in the app (SweetAlert2 centres by default). --- */
+html .swal2-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: var(--color-surface-foreground);
+}
+
+html .swal2-html-container {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--color-surface-subtle);
+}
+
+/* --- Buttons: match the shared .btn-* sizing and weight --- */
+html .swal2-styled {
+    margin: 0 0.5rem 0 0;
+    padding: 0.625rem 1.5rem;
+    font-weight: 600;
+    box-shadow: none;
+}
+
+html .swal2-styled.swal2-confirm:hover {
+    background: var(--color-primary-emphasis);
+}
+
+/* Destructive confirms opt in with `customClass: { confirmButton: 'btn-error' }`.
+   Needed because the unlayered hover rule above would otherwise win over the
+   layered .btn-error background. */
+html .swal2-styled.swal2-confirm.btn-error:hover {
+    background: var(--color-error-emphasis);
+}
+
+html .swal2-styled.swal2-deny:hover {
+    background: var(--color-error-emphasis);
+}
+
+html .swal2-styled.swal2-cancel {
+    border: 1px solid var(--color-line-strong);
+    background: transparent;
+    color: var(--color-surface-foreground);
+    transition:
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+html .swal2-styled.swal2-cancel:hover {
+    border-color: var(--color-primary);
+    background: var(--color-primary-subtle);
+    color: var(--color-primary);
+}
+
+/* --- Status icons use the feedback tokens, not SweetAlert2's pastels --- */
+html .swal2-icon.swal2-success {
+    color: var(--color-success);
+    border-color: var(--color-success);
+}
+
+html .swal2-icon.swal2-error {
+    color: var(--color-error);
+    border-color: var(--color-error);
+}
+
+html .swal2-error [class^='swal2-x-mark-line'] {
+    background-color: var(--color-error);
+}
+
+html .swal2-icon.swal2-warning {
+    border-color: var(--color-warning);
+    color: var(--color-warning);
+}
+
+html .swal2-icon.swal2-info {
+    border-color: var(--color-info);
+    color: var(--color-info);
+}
+
+html .swal2-icon.swal2-question {
+    border-color: var(--color-surface-muted);
+    color: var(--color-surface-muted);
+}
+
+/* --- Toast: compact pill, border tinted by state --- */
+html .swal2-toast {
+    border-radius: var(--radius-sm);
+}
+
+html .swal2-toast .swal2-icon {
+    /* The zoom var is for the full-size dialog icon; keep toasts legible. */
+    zoom: 1;
+}
+
+html .swal2-toast.swal2-success {
+    border-color: color-mix(in srgb, var(--color-success) 45%, transparent);
+}
+
+html .swal2-toast.swal2-error {
+    border-color: color-mix(in srgb, var(--color-error) 45%, transparent);
+}
+
+html .swal2-toast.swal2-warning {
+    border-color: color-mix(in srgb, var(--color-warning) 45%, transparent);
+}
+
+html .swal2-toast.swal2-info {
+    border-color: color-mix(in srgb, var(--color-info) 45%, transparent);
+}
+
+html .swal2-close:hover {
+    color: var(--color-error);
 }

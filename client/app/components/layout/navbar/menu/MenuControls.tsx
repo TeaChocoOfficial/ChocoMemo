@@ -1,5 +1,5 @@
-import LanguageSwitcher from '../../config/LanguageSwitcher';
-import ThemePicker from '../../config/ThemePicker';
+import LanguageSwitcher from '../../../config/LanguageSwitcher';
+import ThemePicker from '../../../config/ThemePicker';
 import { useTranslation } from 'react-i18next';
 
 type MenuControlsProps = {

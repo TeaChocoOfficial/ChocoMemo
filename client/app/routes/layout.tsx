@@ -6,7 +6,6 @@ import Footer from '~/components/layout/Footer';
 import { FaCompassDrafting } from 'react-icons/fa6';
 import { useChromeStore } from '~/stores/chrome.store';
 import { AnimatePresence, motion } from 'framer-motion';
-import { ToasterProvider } from '~/components/provider/ToasterProvider';
 
 export default function Layout() {
     const { t } = useTranslation();
@@ -14,8 +13,6 @@ export default function Layout() {
 
     return (
         <div className='flex flex-col min-h-dvh'>
-            <ToasterProvider />
-
             <AnimatePresence>
                 {showChrome && (
                     <motion.div
@@ -64,7 +61,7 @@ export default function Layout() {
                         transition={{ type: 'spring', stiffness: 380, damping: 28 }}
                         className='fixed z-50 bottom-4 right-4 inline-flex items-center gap-2 rounded-full border border-line bg-surface px-4 py-2.5 text-sm font-bold text-surface-foreground shadow-lg transition-colors hover:bg-surface-overlay cursor-pointer'
                     >
-                        <FaCompassDrafting className='w-4 h-4 text-accent' />
+                        <FaCompassDrafting className='w-4 h-4 text-primary' />
                         <span className='hidden sm:inline'>{t('chrome.toggleLabel')}</span>
                     </motion.button>
                 )}

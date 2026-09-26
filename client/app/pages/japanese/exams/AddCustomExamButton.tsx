@@ -85,7 +85,7 @@ export default function AddCustomExamButton() {
                                 value={title}
                                 onChange={(e) => setTitle(e.target.value)}
                                 placeholder={t('japanese.exams.form.titlePlaceholder')}
-                                className='w-full border-b border-line-strong bg-transparent py-2 font-sans text-sm text-surface-foreground placeholder:text-surface-muted outline-none transition-colors focus:border-accent'
+                                className='w-full border-b border-line-strong bg-transparent py-2 font-sans text-sm text-surface-foreground placeholder:text-surface-muted outline-none transition-colors focus:border-primary'
                             />
                         </div>
 
@@ -98,7 +98,7 @@ export default function AddCustomExamButton() {
                                 value={description}
                                 onChange={(e) => setDescription(e.target.value)}
                                 placeholder={t('japanese.exams.form.descriptionPlaceholder')}
-                                className='w-full border-b border-line-strong bg-transparent py-2 font-sans text-sm text-surface-foreground placeholder:text-surface-muted outline-none transition-colors focus:border-accent'
+                                className='w-full border-b border-line-strong bg-transparent py-2 font-sans text-sm text-surface-foreground placeholder:text-surface-muted outline-none transition-colors focus:border-primary'
                             />
                         </div>
 

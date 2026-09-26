@@ -1,5 +1,5 @@
 // -Path: "Nest TypeScript/src/user/dto/response-user.dto.ts"
-import { Role } from '../../../types/auth';
+import { Role } from '~/types/auth';
 import { ApiProperty } from '@nestjs/swagger';
 import { IsBoolean, IsDate, IsEnum, IsOptional, IsString } from 'class-validator';
 
@@ -21,6 +21,26 @@ export class ResponseUserDto {
         description: 'First name',
     })
     name!: string;
+
+    @IsOptional()
+    @IsString()
+    @ApiProperty({
+        type: String,
+        required: false,
+        example: 'john_doe',
+        description: 'Public handle used to find this user',
+    })
+    nameTag?: string;
+
+    @IsOptional()
+    @IsString()
+    @ApiProperty({
+        type: String,
+        required: false,
+        example: 'I learn languages with ChocoMemo.',
+        description: 'Short self-description shown on the public profile',
+    })
+    bio?: string;
 
     @IsOptional()
     @IsString()

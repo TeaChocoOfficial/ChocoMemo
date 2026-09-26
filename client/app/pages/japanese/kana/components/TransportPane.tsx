@@ -42,7 +42,7 @@ export default function TransportPane({
                 <div
                     className={`grid h-10 w-10 shrink-0 place-items-center rounded-sm border transition-colors duration-200 ${
                         isReading
-                            ? 'border-accent bg-accent-subtle'
+                            ? 'border-primary bg-primary-subtle'
                             : 'border-line-strong bg-surface'
                     }`}
                 >
@@ -56,7 +56,7 @@ export default function TransportPane({
                             damping: 22,
                         }}
                         className={`text-xl font-black leading-none ${
-                            isReading ? 'text-accent' : 'text-surface-foreground'
+                            isReading ? 'text-primary' : 'text-surface-foreground'
                         }`}
                     >
                         {displayChar ?? '—'}
@@ -66,13 +66,13 @@ export default function TransportPane({
                 <div className='min-w-0 flex-1'>
                     <p className='flex items-center gap-1.5 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-surface-muted'>
                         {isReading && (
-                            <span className='inline-block h-1.5 w-1.5 shrink-0 animate-pulse rounded-full bg-accent' />
+                            <span className='inline-block h-1.5 w-1.5 shrink-0 animate-pulse rounded-full bg-primary' />
                         )}
                         <span className='truncate'>{statusLabel}</span>
                         <span className='text-line-strong'>·</span>
-                        <span className='truncate text-accent'>{activeGroupLabel}</span>
+                        <span className='truncate text-primary'>{activeGroupLabel}</span>
                     </p>
-                    <p className='mt-0.5 truncate font-mono text-xs font-semibold text-accent'>
+                    <p className='mt-0.5 truncate font-mono text-xs font-semibold text-primary'>
                         {currentRomaji || '—'}
                         <span className='ml-1.5 text-[11px] font-medium text-surface-muted'>
                             {t('japanese.kana.readProgress', {
@@ -118,9 +118,9 @@ export default function TransportPane({
                                 key={`${kana.char}-${index}`}
                                 className={`h-1 min-w-0 flex-1 rounded-[1px] transition-colors duration-300 ${
                                     isCurrent
-                                        ? 'bg-accent'
+                                        ? 'bg-primary'
                                         : isDone
-                                          ? 'bg-accent/40'
+                                          ? 'bg-primary/40'
                                           : 'bg-line/60'
                                 }`}
                             />

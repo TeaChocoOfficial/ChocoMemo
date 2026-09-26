@@ -35,7 +35,7 @@ export default function QuizIntro({ settings, onChange, onStart }: QuizIntroProp
             <button
                 type='button'
                 onClick={onStart}
-                className='mt-8 px-8 py-3.5 rounded-sm bg-accent text-accent-foreground text-base font-semibold transition-colors duration-200 cursor-pointer hover:bg-accent-emphasis active:translate-y-px w-full'
+                className='mt-8 px-8 py-3.5 rounded-sm bg-primary text-primary-foreground text-base font-semibold transition-colors duration-200 cursor-pointer hover:bg-primary-emphasis active:translate-y-px w-full'
             >
                 {t('japanese.kanaDrill.start')}
             </button>

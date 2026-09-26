@@ -15,46 +15,117 @@
         "toggleLabel": "Mostrar interface"
     },
     "home": {
-        "badge": "ChocoMemo",
-        "title": "Aqueça seu japonês,",
-        "titleAccent": "uma kana de cada vez.",
-        "subtitle": "Hiragana, katakana e quizzes de vocabulário misturados num ritual diário aconchegante — escolha um tema, sirva uma xícara e aprenda.",
+        "badge": "ChocoMemo · biblioteca de idiomas da comunidade",
+        "title": "Aprenda qualquer idioma,",
+        "titleAccent": "um baralho por vez.",
+        "subtitle": "Japonês, inglês, tailandês, coreano e chinês — cada um feito de baralhos, exercícios e quizzes escritos e compartilhados por quem está aprendendo de verdade. Grátis, aberto e seu para ampliar.",
         "ctaStart": "Começar a aprender",
+        "ctaCreate": "Publicar um baralho",
         "ctaHow": "Como funciona",
+        "scriptsLabel": "Infusionando agora",
+        "scripts": [
+            "A",
+            "あ",
+            "한",
+            "ก",
+            "字"
+        ],
         "stats": {
-            "badge": "De relance",
+            "badge": "Na prateleira",
+            "languages": "Idiomas",
             "kana": "Caracteres kana",
             "vocabulary": "Palavras de vocabulário",
-            "modes": "Modos de prática",
-            "themes": "Temas"
+            "shelves": "Baralhos e quizzes"
+        },
+        "languages": {
+            "badge": "A prateleira",
+            "title": "Cinco idiomas, um hábito aconchegante",
+            "hint": "Comece pela bandeja que está pronta hoje — o resto está infusionando.",
+            "available": "Pronto para servir",
+            "comingSoon": "Infusionando",
+            "toAll": "Ver todos os idiomas",
+            "items": {
+                "japanese": {
+                    "name": "Japonês",
+                    "description": "Hiragana, katakana e kanji com exercícios e revisão espaçada."
+                },
+                "english": {
+                    "name": "Inglês",
+                    "description": "Vocabulário e frases do dia a dia, organizdos por quem os usa."
+                },
+                "thai": {
+                    "name": "Tailandês",
+                    "description": "Tons, escrita e as palavras que você realmente vai encontrar na rua."
+                },
+                "korean": {
+                    "name": "Coreano",
+                    "description": "Hangul em uma só sentada, depois baralhos de conversa que ficam."
+                },
+                "chinese": {
+                    "name": "Chinês",
+                    "description": "Caracteres, pinyin e pares de tons, treinados em rodadas curtas."
+                }
+            }
+        },
+        "library": {
+            "badge": "A prateleira da comunidade",
+            "title": "Escreva um baralho. Compartilhe. Veja ele ensinar.",
+            "hint": "Cada conjunto de estudos do ChocoMemo é escrito por uma pessoa, não por uma editora. Arrume um, publique e outra pessoa ganha um curso inteiro a partir dele.",
+            "cta": "Abrir a prateleira de revisão",
+            "items": {
+                "decks": {
+                    "title": "Baralhos de vocabulário",
+                    "hint": "Agrupe palavras em um baralho com tema — natureza, animais, coisas do dia a dia — e revise como um pequeno e-book."
+                },
+                "exams": {
+                    "title": "Conjuntos de quiz",
+                    "hint": "Transforme um baralho em uma prova cronometrada e veja exatamente quais palavras ainda precisam infusionar."
+                },
+                "kana": {
+                    "title": "Exercícios de kana",
+                    "hint": "Rodadas rápidas pelos dois silabários até os formatos saírem sem pensar."
+                },
+                "review": {
+                    "title": "Revisão espaçada",
+                    "hint": "Os baralhos que você baixou voltam na própria agenda, então nada esfria."
+                }
+            }
         },
         "how": {
             "badge": "Como funciona",
-            "title": "Um ritual diário aconchegante",
-            "hint": "Quatro passos pequenos repetidos todos os dias — é só isso.",
+            "title": "Sua infusão diária",
+            "hint": "Quatro passos pequenos, repetidos todo dia — é só isso.",
             "step1": {
                 "title": "Escolha seu idioma",
-                "hint": "Escolha o que estudar hoje."
+                "hint": "Escolha a bandeja que você estuda hoje."
             },
             "step2": {
-                "title": "Aprenda os kana",
-                "hint": "Hiragana e katakana, um gole por vez."
+                "title": "Pegue um baralho",
+                "hint": "Leve um baralho escrito por outra pessoa ou comece pela prateleira pronta."
             },
             "step3": {
-                "title": "Pratique e teste",
-                "hint": "Drills rápidos de kana e provas de vocabulário."
+                "title": "Exercite e faça quiz",
+                "hint": "Exercícios curtos de kana e provas de vocabulário, cinco minutos por vez."
             },
             "step4": {
-                "title": "Revise diariamente",
-                "hint": "A revisão espaçada mantém as palavras vivas."
+                "title": "Publique o seu",
+                "hint": "Adicione as palavras que você sempre esquece e devolva-as à prateleira."
             }
+        },
+        "cta": {
+            "title": "O bule já está no fogo.",
+            "hint": "Sem parede de cadastro entre você e o primeiro baralho. Entre só quando quiser sincronizar suas palavras.",
+            "primary": "Começar a aprender",
+            "secondary": "Publicar um baralho"
         }
     },
     "theme": {
         "pickerLabel": "Mudar tema",
         "names": {
-            "dark": "Escuro",
-            "light": "Claro",
+            "lightChoco": "Chocolate Claro",
+            "darkChoco": "Chocolate Escuro",
+            "darkGalaxy": "Galáxia Escura",
+            "lightGalaxy": "Galáxia Clara",
             "darkSakura": "Sakura Escuro",
             "lightSakura": "Sakura Claro",
             "darkPaper": "Papel Escuro",
@@ -92,7 +163,7 @@
     "languageSelect": {
         "badge": "Seleção de Idioma",
         "title": "Escolha um Idioma para Aprender",
-        "description": "Escolha o idioma que deseja estudar. Mais idiomas em breve.",
+        "description": "Escolha o idioma que quer estudar. O japonês está pronto hoje; o resto está infusionando.",
         "back_home": "Voltar ao Início",
         "status": {
             "available": "Disponível",
@@ -105,19 +176,23 @@
         "languages": {
             "japanese": {
                 "name": "Japonês",
-                "description": "Aprenda hiragana, katakana e vocabulário essencial com questionários interativos."
+                "description": "Hiragana, katakana e kanji, treinados em rodadas curtas e mantidos quentes pela revisão espaçada."
             },
             "english": {
                 "name": "Inglês",
-                "description": "Os cursos de inglês estão em preparação."
+                "description": "Vocabulário e frases do dia a dia, organizados em baralhos por quem realmente os usa."
             },
             "thai": {
                 "name": "Tailandês",
-                "description": "Os cursos de tailandês chegarão em breve."
+                "description": "Tons e escrita lado a lado, mais as palavras que você vai encontrar na rua."
             },
             "korean": {
                 "name": "Coreano",
-                "description": "Os cursos de coreano chegarão em breve."
+                "description": "Hangul em uma só sentada e depois baralhos de conversa que se recusam a esfriar."
+            },
+            "chinese": {
+                "name": "Chinês",
+                "description": "Caracteres, pinyin e pares de tons, praticados a poucos minutos de cada vez."
             }
         }
     },
@@ -391,6 +466,8 @@
         "email": "E-mail",
         "password": "Senha",
         "name": "Nome",
+        "nameTag": "Nome de usuário",
+        "nameTagHint": "De 3 a 30 caracteres. Apenas letras do alfabeto inglês, números, sublinhados (_) ou hífens (-), sem espaços. Seu identificador público.",
         "confirmPassword": "Confirmar Senha",
         "forgotPassword": "Esqueceu a senha?",
         "resetPassword": "Redefinir Senha",
@@ -414,6 +491,8 @@
         "error": {
             "invalidCredentials": "E-mail ou senha inválidos.",
             "emailInUse": "Já existe uma conta com este e-mail.",
+            "nameTagTaken": "Este nome de usuário já está em uso.",
+            "nameTagInvalid": "O nome de usuário deve ter de 3 a 30 caracteres: apenas letras do alfabeto inglês, números, sublinhados ou hífens (sem espaços).",
             "passwordMismatch": "As senhas não coincidem.",
             "invalidOtp": "Código inválido ou expirado. Tente novamente.",
             "resendFailed": "Não foi possível enviar um novo código. Tente novamente.",
@@ -511,7 +590,15 @@
             "namePlaceholder": "Seu nome",
             "saving": "Salvando…",
             "saved": "Perfil atualizado",
-            "updateError": "Não foi possível atualizar seu perfil."
+            "updateError": "Não foi possível atualizar seu perfil.",
+            "editProfile": "Editar perfil",
+            "nameTag": "Nome de usuário",
+            "nameTagHint": "De 3 a 30 caracteres. Apenas letras do alfabeto inglês, números, sublinhados (_) ou hífens (-), sem espaços. Seu identificador público.",
+            "nameTagTaken": "Este nome de usuário já está em uso.",
+            "nameTagInvalid": "O nome de usuário deve ter de 3 a 30 caracteres: apenas letras do alfabeto inglês, números, sublinhados ou hífens (sem espaços).",
+            "noNameTag": "Nenhum nome de usuário ainda",
+            "bio": "Biografia",
+            "bioPlaceholder": "Conte um pouco sobre você…"
         },
         "email": {
             "label": "Change email",

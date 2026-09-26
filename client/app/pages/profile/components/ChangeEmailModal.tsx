@@ -1,19 +1,19 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import toast from 'react-hot-toast';
+import { useSwal } from '~/hooks/useSwal';
 import { useTranslation } from 'react-i18next';
 import Button from '~/components/custom/Button';
 import OtpInput from '~/components/auth/OtpInput';
 import { Modal, ModalBody, ModalFooter, ModalHeader } from '~/components/custom/Modal';
 import { authAPI } from '~/services/auth';
 import { useAuthStore } from '~/stores/auth.store';
-import { getAccountEmail } from '~/types/auth';
+import { getAccountEmail } from '~/utils/auth';
 import { FaEnvelope, FaShieldHalved } from 'react-icons/fa6';
 
 const RESEND_COOLDOWN = 30;
 
 const inputClass =
-    'w-full rounded-sm border border-line bg-surface px-3 py-2 text-sm text-surface-foreground placeholder:text-surface-muted/60 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors';
+    'w-full rounded-sm border border-line bg-surface px-3 py-2 text-sm text-surface-foreground placeholder:text-surface-muted/60 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors';
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -40,6 +40,7 @@ export default function ChangeEmailModal({
     isOpen: boolean;
     onClose: () => void;
 }) {
+    const swal = useSwal();
     const { t } = useTranslation();
     const [code, setCode] = useState('');
     const [email, setEmail] = useState('');
@@ -77,7 +78,7 @@ export default function ChangeEmailModal({
             setStep('otp');
             setError(undefined);
             setResendIn(RESEND_COOLDOWN);
-            toast.success(t('profile.otp.codeSent'));
+            swal.success(t('profile.otp.codeSent'));
         } catch (err) {
             const message = serverMessage(err);
             if (message === 'EMAIL_TAKEN') setError(t('profile.otp.emailTaken'));
@@ -96,9 +97,9 @@ export default function ChangeEmailModal({
             setToken(res.data.token);
             setCode('');
             setResendIn(RESEND_COOLDOWN);
-            toast.success(t('profile.otp.codeResent'));
-        } catch {
-            toast.error(t('profile.otp.resendFailed'));
+            swal.success(t('profile.otp.codeResent'));
+        } catch (error) {
+            swal.error(t('profile.otp.resendFailed'), { error });
         } finally {
             setSaving(false);
         }
@@ -110,9 +111,9 @@ export default function ChangeEmailModal({
         try {
             const res = await authAPI.confirmEmailChange({ token, code });
             setUser(res.data.user);
-            toast.success(t('profile.email.saved'));
+            swal.success(t('profile.email.saved'));
             onClose();
-        } catch {
+        } catch (error) {
             setError(t('profile.otp.invalidCode'));
         } finally {
             setSaving(false);
@@ -136,7 +137,7 @@ export default function ChangeEmailModal({
                 {step === 'otp' ? (
                     <>
                         <div className='mb-4 flex flex-col items-center text-center'>
-                            <FaShieldHalved className='h-8 w-8 text-accent' />
+                            <FaShieldHalved className='h-8 w-8 text-primary' />
                             <p className='mt-2 text-sm text-surface-muted'>
                                 {t('profile.otp.codeSentTo', { email: email.trim() })}
                             </p>

@@ -55,10 +55,10 @@ export default function SetTabs<T extends SetTabOption>({
                         onClick={() => onChange(option)}
                         className={`relative flex items-center gap-2 text-sm font-semibold transition-colors duration-200 cursor-pointer ${
                             isUnderline
-                                ? `pb-3 ${isActive ? 'text-accent' : 'text-surface-muted hover:text-surface-foreground'}`
+                                ? `pb-3 ${isActive ? 'text-primary' : 'text-surface-muted hover:text-surface-foreground'}`
                                 : `px-5 py-2 rounded-sm ${
                                       isActive
-                                          ? 'text-accent-foreground'
+                                          ? 'text-primary-foreground'
                                           : 'text-surface-muted hover:text-surface-foreground'
                                   }`
                         }`}
@@ -66,7 +66,7 @@ export default function SetTabs<T extends SetTabOption>({
                         {!isUnderline && isActive && (
                             <motion.span
                                 layoutId={indicatorLayoutId}
-                                className='absolute inset-0 rounded-sm bg-accent'
+                                className='absolute inset-0 rounded-sm bg-primary'
                                 transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                             />
                         )}
@@ -77,7 +77,7 @@ export default function SetTabs<T extends SetTabOption>({
                         {isUnderline && isActive && (
                             <motion.span
                                 layoutId={indicatorLayoutId}
-                                className='absolute left-0 right-0 -bottom-px h-[2px] bg-accent'
+                                className='absolute left-0 right-0 -bottom-px h-[2px] bg-primary'
                                 transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                             />
                         )}

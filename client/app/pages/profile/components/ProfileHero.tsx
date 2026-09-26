@@ -1,16 +1,17 @@
+import axios from 'axios';
 import env from '~/secure/env';
-import toast from 'react-hot-toast';
 import { motion } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { authAPI } from '~/services/auth';
+import { useSwal } from '~/hooks/useSwal';
 import avatarAPI from '~/services/avatar';
 import { AuthProvider } from '~/types/auth';
 import Badge from '~/components/custom/Badge';
 import { useTranslation } from 'react-i18next';
 import Button from '~/components/custom/Button';
 import { useAuthStore } from '~/stores/auth.store';
-import { FaImage, FaCamera, FaPen } from 'react-icons/fa6';
+import { authAPI, nameTagField } from '~/services/auth';
 import { getInitials } from '~/components/layout/navbar/utils';
+import { FaImage, FaCamera, FaPen, FaAt } from 'react-icons/fa6';
 import AvatarSourceSelector, { type AvatarSource } from './AvatarSourceSelector';
 import { Modal, ModalBody, ModalHeader, ModalFooter } from '~/components/custom/Modal';
 
@@ -35,6 +36,7 @@ function avatarUrlId(url: string): string | undefined {
  * discards whatever was picked and leaves the saved avatar untouched.
  */
 export default function ProfileHero({ memberSince }: ProfileHeroProps) {
+    const swal = useSwal();
     const { t } = useTranslation();
     const { user, setUser } = useAuthStore();
     const fileInputRef = useRef<HTMLInputElement>(null);
@@ -46,6 +48,13 @@ export default function ProfileHero({ memberSince }: ProfileHeroProps) {
     const [editingName, setEditingName] = useState(false);
     const [nameDraft, setNameDraft] = useState('');
     const [savingName, setSavingName] = useState(false);
+
+    // nameTag + bio, edited in a small modal.
+    const [profileModalOpen, setProfileModalOpen] = useState(false);
+    const [nameTagDraft, setNameTagDraft] = useState('');
+    const [bioDraft, setBioDraft] = useState('');
+    const [savingProfile, setSavingProfile] = useState(false);
+    const [profileError, setProfileError] = useState<string | null>(null);
 
     // Staged (not-yet-saved) choice made inside the modal.
     const [pendingSource, setPendingSource] = useState<AvatarSource>('default');
@@ -96,14 +105,8 @@ export default function ProfileHero({ memberSince }: ProfileHeroProps) {
         const file = e.target.files?.[0];
         e.target.value = '';
         if (!file) return;
-        if (!file.type.startsWith('image/')) {
-            toast.error(t('profile.avatar.invalidType'));
-            return;
-        }
-        if (file.size > 5 * 1024 * 1024) {
-            toast.error(t('profile.avatar.tooLarge'));
-            return;
-        }
+        if (!file.type.startsWith('image/')) return swal.error(t('profile.avatar.invalidType'));
+        if (file.size > 5 * 1024 * 1024) return swal.error(t('profile.avatar.tooLarge'));
 
         if (pendingPreviewUrl) URL.revokeObjectURL(pendingPreviewUrl);
         setPendingFile(file);
@@ -131,12 +134,51 @@ export default function ProfileHero({ memberSince }: ProfileHeroProps) {
         try {
             const updated = await authAPI.updateUser({ name: nameDraft.trim() || undefined });
             setUser(updated.data);
-            toast.success(t('profile.details.saved'));
+            swal.success(t('profile.details.saved'));
             setEditingName(false);
-        } catch {
-            toast.error(t('profile.details.updateError'));
+        } catch (error) {
+            swal.error(t('profile.details.updateError'), { error });
         } finally {
             setSavingName(false);
+        }
+    };
+
+    /** Open the nameTag/bio editor, seeded from the current profile. */
+    const openProfileModal = () => {
+        setNameTagDraft(user?.nameTag ?? '');
+        setBioDraft(user?.bio ?? '');
+        setProfileError(null);
+        setProfileModalOpen(true);
+    };
+
+    /** Persist the nameTag + bio, keeping the modal open on validation errors. */
+    const handleProfileSave = async () => {
+        if (!user) return;
+        if (!nameTagField.safeParse(nameTagDraft).success) {
+            setProfileError(t('profile.details.nameTagInvalid'));
+            return;
+        }
+        setSavingProfile(true);
+        setProfileError(null);
+        try {
+            const updated = await authAPI.updateUser({
+                nameTag: nameTagDraft,
+                bio: bioDraft.trim(),
+            });
+            setUser(updated.data);
+            swal.success(t('profile.details.saved'));
+            setProfileModalOpen(false);
+        } catch (err) {
+            const message = axios.isAxiosError(err)
+                ? (err.response?.data as { message?: string } | undefined)?.message
+                : undefined;
+            if (message === 'NAME_TAG_TAKEN') {
+                setProfileError(t('profile.details.nameTagTaken'));
+            } else {
+                setProfileError(t('profile.details.updateError'));
+            }
+        } finally {
+            setSavingProfile(false);
         }
     };
 
@@ -151,7 +193,9 @@ export default function ProfileHero({ memberSince }: ProfileHeroProps) {
         try {
             if (pendingRemoveLocal) {
                 // Best-effort delete of the stored picture from the avatar store.
-                const avatarId = localIdentity?.avatar ? avatarUrlId(localIdentity.avatar) : undefined;
+                const avatarId = localIdentity?.avatar
+                    ? avatarUrlId(localIdentity.avatar)
+                    : undefined;
                 if (avatarId) void avatarAPI.remove(avatarId).catch(() => {});
                 // `updateAvatarPayloadSchema` requires `url` to be a non-empty string
                 // when present, so it's omitted entirely here (clears the local avatar).
@@ -188,10 +232,10 @@ export default function ProfileHero({ memberSince }: ProfileHeroProps) {
                 });
                 setUser(updated.data);
             }
-            toast.success(t('profile.avatar.updated'));
+            swal.success(t('profile.avatar.updated'));
             closeAvatarModal();
-        } catch {
-            toast.error(t('profile.avatar.updateError'));
+        } catch (error) {
+            swal.error(t('profile.avatar.updateError'), { error });
         } finally {
             setUploading(false);
         }
@@ -205,7 +249,7 @@ export default function ProfileHero({ memberSince }: ProfileHeroProps) {
                 transition={{ duration: 0.4 }}
                 className='mb-10 overflow-hidden rounded-sm border border-line bg-surface'
             >
-                <div className='h-20 bg-linear-to-r from-accent/20 via-accent/5 to-transparent sm:h-24' />
+                <div className='h-20 bg-linear-to-r from-primary/20 via-primary/5 to-transparent sm:h-24' />
 
                 <div className='flex flex-col gap-5 px-6 pb-6 sm:flex-row sm:items-end sm:gap-6 sm:px-8 sm:pb-8'>
                     <div className='relative -mt-12 h-24 w-24 shrink-0 sm:-mt-14 sm:h-28 sm:w-28'>
@@ -217,7 +261,7 @@ export default function ProfileHero({ memberSince }: ProfileHeroProps) {
                                     className='h-full w-full object-cover'
                                 />
                             ) : (
-                                <span className='flex h-full w-full items-center justify-center rounded-sm bg-accent/15 text-4xl font-bold text-accent'>
+                                <span className='flex h-full w-full items-center justify-center rounded-sm bg-primary/15 text-4xl font-bold text-primary'>
                                     {getInitials(user?.name)}
                                 </span>
                             )}
@@ -229,11 +273,11 @@ export default function ProfileHero({ memberSince }: ProfileHeroProps) {
                         </div>
                         <button
                             type='button'
-                            onClick={openAvatarModal}
                             disabled={uploading}
+                            onClick={openAvatarModal}
                             title={t('profile.avatar.source')}
                             aria-label={t('profile.avatar.source')}
-                            className='absolute bottom-0.5 right-0.5 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border-2 border-surface bg-accent text-white transition-colors hover:bg-accent/80 disabled:opacity-60'
+                            className='absolute bottom-0.5 right-0.5 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border-2 border-surface bg-primary text-white transition-colors hover:bg-primary/80 disabled:opacity-60'
                         >
                             <FaCamera className='h-3.5 w-3.5' />
                         </button>
@@ -254,7 +298,7 @@ export default function ProfileHero({ memberSince }: ProfileHeroProps) {
                                             if (e.key === 'Enter') void handleNameSave();
                                             if (e.key === 'Escape') setEditingName(false);
                                         }}
-                                        className='w-48 rounded-sm border border-line bg-surface px-3 py-2 text-lg font-black tracking-tight text-surface-foreground placeholder:text-surface-muted/60 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors sm:w-64'
+                                        className='w-48 rounded-sm border border-line bg-surface px-3 py-2 text-lg font-black tracking-tight text-surface-foreground placeholder:text-surface-muted/60 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors sm:w-64'
                                     />
                                     <Button
                                         size='sm'
@@ -262,7 +306,9 @@ export default function ProfileHero({ memberSince }: ProfileHeroProps) {
                                         onClick={handleNameSave}
                                         disabled={savingName || !nameDraft.trim()}
                                     >
-                                        {savingName ? t('profile.details.saving') : t('profile.avatar.confirm')}
+                                        {savingName
+                                            ? t('profile.details.saving')
+                                            : t('profile.avatar.confirm')}
                                     </Button>
                                     <Button
                                         size='sm'
@@ -297,6 +343,28 @@ export default function ProfileHero({ memberSince }: ProfileHeroProps) {
                                 {t('profile.memberSince')} {memberSince}
                             </p>
                         )}
+                        <div className='mt-2 space-y-1'>
+                            <p className='inline-flex items-center gap-1.5 text-sm font-semibold text-primary'>
+                                {user?.nameTag ? (
+                                    <>
+                                        <FaAt className='h-3.5 w-3.5' />
+                                        <span className='truncate'>{user.nameTag}</span>
+                                    </>
+                                ) : (
+                                    <span className='italic text-surface-muted'>
+                                        {t('profile.details.noNameTag')}
+                                    </span>
+                                )}
+                            </p>
+                            {!!user?.bio && (
+                                <p className='max-w-md text-sm text-surface-foreground/90'>
+                                    {user.bio}
+                                </p>
+                            )}
+                            <Button size='sm' variant='ghost' onClick={openProfileModal}>
+                                {t('profile.details.editProfile')}
+                            </Button>
+                        </div>
                     </div>
                 </div>
             </motion.div>
@@ -334,8 +402,85 @@ export default function ProfileHero({ memberSince }: ProfileHeroProps) {
                     <Button variant='ghost' onClick={closeAvatarModal} disabled={uploading}>
                         {t('profile.avatar.cancel')}
                     </Button>
-                    <Button variant='primary' onClick={handleConfirm} disabled={uploading || !hasPendingChange}>
+                    <Button
+                        variant='primary'
+                        onClick={handleConfirm}
+                        disabled={uploading || !hasPendingChange}
+                    >
                         {uploading ? t('profile.avatar.saving') : t('profile.avatar.confirm')}
+                    </Button>
+                </ModalFooter>
+            </Modal>
+
+            <Modal isOpen={profileModalOpen} onClose={() => setProfileModalOpen(false)} size='sm'>
+                <ModalHeader
+                    title={t('profile.details.editProfile')}
+                    icon={<FaPen className='h-4 w-4' />}
+                    onClose={() => setProfileModalOpen(false)}
+                />
+                <ModalBody>
+                    <div className='space-y-4'>
+                        <div>
+                            <label className='mb-1 block text-xs font-medium text-surface-muted'>
+                                {t('profile.details.nameTag')}
+                            </label>
+                            <div className='relative'>
+                                <FaAt className='absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-surface-muted' />
+                                <input
+                                    type='text'
+                                    autoFocus
+                                    value={nameTagDraft}
+                                    disabled={savingProfile}
+                                    onChange={(e) =>
+                                        setNameTagDraft(
+                                            e.target.value
+                                                .replace(/[^A-Za-z0-9_-]/g, '')
+                                                .slice(0, 30)
+                                                .toLowerCase(),
+                                        )
+                                    }
+                                    className='w-full rounded-sm border border-line bg-surface py-2.5 pl-10 pr-3 text-sm text-surface-foreground placeholder:text-surface-muted focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary'
+                                    placeholder={t('profile.details.nameTag')}
+                                />
+                            </div>
+                            <p className='mt-1 text-xs text-surface-muted'>
+                                {t('profile.details.nameTagHint')}
+                            </p>
+                        </div>
+                        <div>
+                            <label className='mb-1 block text-xs font-medium text-surface-muted'>
+                                {t('profile.details.bio')}
+                            </label>
+                            <textarea
+                                rows={3}
+                                value={bioDraft}
+                                disabled={savingProfile}
+                                maxLength={160}
+                                onChange={(e) => setBioDraft(e.target.value)}
+                                className='w-full resize-none rounded-sm border border-line bg-surface px-3 py-2.5 text-sm text-surface-foreground placeholder:text-surface-muted focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary'
+                                placeholder={t('profile.details.bioPlaceholder')}
+                            />
+                            <p className='mt-1 text-right text-xs text-surface-muted'>
+                                {bioDraft.length}/160
+                            </p>
+                        </div>
+                        {profileError && (
+                            <p className='text-sm text-red-500' role='alert'>
+                                {profileError}
+                            </p>
+                        )}
+                    </div>
+                </ModalBody>
+                <ModalFooter>
+                    <Button
+                        variant='ghost'
+                        onClick={() => setProfileModalOpen(false)}
+                        disabled={savingProfile}
+                    >
+                        {t('profile.avatar.cancel')}
+                    </Button>
+                    <Button variant='primary' onClick={handleProfileSave} disabled={savingProfile}>
+                        {savingProfile ? t('profile.details.saving') : t('profile.avatar.confirm')}
                     </Button>
                 </ModalFooter>
             </Modal>

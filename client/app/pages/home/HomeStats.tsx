@@ -4,7 +4,8 @@ import { useTranslation } from 'react-i18next';
 import Section from '~/components/custom/Section';
 import { KANA_CHARS } from '~/data/japanese/kana';
 import { DEFAULT_VOCABULARY } from '~/data/japanese/vocabulary';
-import { THEMES } from '~/stores/theme.store';
+import { DEFAULT_DECKS } from '~/data/japanese/decks';
+import { defaultExamSets } from '~/data/japanese/defaultExamSets';
 
 function StatTile({
     value,
@@ -23,7 +24,7 @@ function StatTile({
             transition={{ duration: 0.5, delay: index * 0.08 }}
             className='rounded-sm border border-line bg-surface px-5 py-6 text-center'
         >
-            <p className='text-4xl sm:text-5xl font-black tracking-tight text-accent'>{value}</p>
+            <p className='text-4xl font-black tracking-tight text-primary sm:text-5xl'>{value}</p>
             <p className='mt-2 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-surface-muted'>
                 {label}
             </p>
@@ -40,10 +41,13 @@ export default function HomeStats() {
     );
 
     const stats = [
+        { value: '5', label: t('home.stats.languages') },
         { value: totalKana.toLocaleString(), label: t('home.stats.kana') },
         { value: DEFAULT_VOCABULARY.length.toLocaleString(), label: t('home.stats.vocabulary') },
-        { value: '3', label: t('home.stats.modes') },
-        { value: THEMES.length.toLocaleString(), label: t('home.stats.themes') },
+        {
+            value: (DEFAULT_DECKS.length + defaultExamSets.length).toLocaleString(),
+            label: t('home.stats.shelves'),
+        },
     ];
 
     return (
@@ -56,7 +60,7 @@ export default function HomeStats() {
                     transition={{ duration: 0.5 }}
                     className='mb-8 flex items-center gap-3'
                 >
-                    <span className='font-mono text-xs font-bold tracking-[0.14em] text-accent'>
+                    <span className='font-mono text-xs font-bold uppercase tracking-[0.14em] text-primary'>
                         {t('home.stats.badge')}
                     </span>
                     <span className='h-px w-10 bg-line-strong' />

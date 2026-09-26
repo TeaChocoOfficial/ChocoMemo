@@ -114,7 +114,12 @@ export class AuthController {
     @ApiOperation({ summary: 'Register a new user with email/password (sends OTP, no sign-in)' })
     @ApiBody({ type: RegisterDto })
     async register(@Body() body: RegisterDto): Promise<SigninResultDto> {
-        return this.registrationService.registerUser(body.email, body.password, body.name);
+        return this.registrationService.registerUser(
+            body.email,
+            body.password,
+            body.name,
+            body.nameTag,
+        );
     }
 
     @Post('verify-otp')
@@ -306,7 +311,8 @@ export class AuthController {
                 (error instanceof Error && error.message) ||
                 'Authentication failed';
             const errorMessage = encodeURIComponent(message);
-            const errorRedirect = `${redirect_uri}?error=${errorMessage}&source=google`;
+            const errorSource = disconnectMode ? 'disconnect' : 'login';
+            const errorRedirect = `${redirect_uri}?error=${errorMessage}&source=${errorSource}`;
             return { url: errorRedirect };
         }
     }

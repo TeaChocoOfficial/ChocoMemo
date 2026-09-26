@@ -12,8 +12,8 @@ interface QuizChoicesProps {
 }
 
 const stateClasses: Record<ChoiceFeedback, string> = {
-    idle: 'border-line bg-surface hover:border-accent hover:bg-surface-overlay text-surface-foreground',
-    selected: 'border-accent bg-accent/15 text-surface-foreground',
+    idle: 'border-line bg-surface hover:border-primary hover:bg-surface-overlay text-surface-foreground',
+    selected: 'border-primary bg-primary/15 text-surface-foreground',
     correct: 'border-success bg-success/15 text-success',
     wrong: 'border-error bg-error/15 text-error',
 };

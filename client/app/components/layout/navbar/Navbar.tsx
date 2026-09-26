@@ -1,13 +1,12 @@
 // -Path: 'client/app/components/layout/navbar/Navbar.tsx'
 import NavbarLogo from './NavbarLogo';
 import DesktopNav from './DesktopNav';
-import NavbarMenus from './NavbarMenus';
+import NavbarMenus from './menu/NavbarMenus';
 import { useEffect, useState } from 'react';
 import AuthModal from '../../auth/AuthModal';
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
-    const [authModalOpen, setAuthModalOpen] = useState(false);
 
     useEffect(() => {
         const onScroll = () => setScrolled(window.scrollY > 8);
@@ -31,12 +30,12 @@ export default function Navbar() {
 
                         <DesktopNav />
 
-                        <NavbarMenus onSignIn={() => setAuthModalOpen(true)} />
+                        <NavbarMenus />
                     </div>
                 </div>
             </nav>
 
-            <AuthModal isOpen={authModalOpen} onClose={() => setAuthModalOpen(false)} />
+            <AuthModal />
         </>
     );
 }

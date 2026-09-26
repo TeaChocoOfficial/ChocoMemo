@@ -39,7 +39,7 @@ function SourceCard({
         <label
             className={`inline-flex w-[76px] cursor-pointer flex-col items-center gap-1.5 rounded-sm border px-2 pb-2 pt-2.5 transition-all duration-150 ${
                 active
-                    ? 'border-accent bg-accent/5'
+                    ? 'border-primary bg-primary/5'
                     : 'border-line bg-transparent hover:border-line-strong hover:bg-surface-overlay'
             }`}
         >
@@ -54,7 +54,7 @@ function SourceCard({
             <span className='relative block'>
                 <span
                     className={`flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-secondary-muted ${
-                        active ? 'ring-2 ring-accent/70' : 'ring-1 ring-line'
+                        active ? 'ring-2 ring-primary/70' : 'ring-1 ring-line'
                     }`}
                 >
                     {preview}
@@ -63,7 +63,7 @@ function SourceCard({
                 <span
                     className={`absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full border-2 border-surface transition-colors ${
                         active
-                            ? 'bg-accent text-accent-foreground'
+                            ? 'bg-primary text-primary-foreground'
                             : 'bg-surface-overlay text-transparent'
                     }`}
                 >
@@ -150,7 +150,7 @@ export default function AvatarSourceSelector({
                     label={t('profile.avatar.default')}
                     onChange={() => onSelect('default')}
                     preview={
-                        <span className='flex h-full w-full items-center justify-center rounded-sm bg-accent/15 text-lg font-bold text-accent'>
+                        <span className='flex h-full w-full items-center justify-center rounded-sm bg-primary/15 text-lg font-bold text-primary'>
                             {getInitials(user?.name)}
                         </span>
                     }
@@ -170,7 +170,7 @@ export default function AvatarSourceSelector({
                                 className='h-full w-full object-cover'
                             />
                         ) : (
-                            <span className='flex h-12 w-12 items-center justify-center rounded-full border border-dashed border-accent/60 bg-accent/10 text-accent'>
+                            <span className='flex h-12 w-12 items-center justify-center rounded-full border border-dashed border-primary/60 bg-primary/10 text-primary'>
                                 <FaUpload className='h-4 w-4' />
                             </span>
                         )
@@ -182,7 +182,7 @@ export default function AvatarSourceSelector({
                                 disabled={busy}
                                 onClick={handleChangePhotoClick}
                                 title={t('profile.avatar.change')}
-                                className='absolute -bottom-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-accent text-white ring-2 ring-surface transition-colors hover:bg-accent/80 disabled:pointer-events-none disabled:opacity-50'
+                                className='absolute -bottom-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-white ring-2 ring-surface transition-colors hover:bg-primary/80 disabled:pointer-events-none disabled:opacity-50'
                             >
                                 <FaCamera className='h-2.5 w-2.5' />
                             </button>

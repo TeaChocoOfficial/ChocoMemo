@@ -5,64 +5,110 @@ import { motion } from 'framer-motion';
 import { getAssetUrl } from '~/utils/url';
 import Badge from '~/components/custom/Badge';
 import { useTranslation } from 'react-i18next';
-import { FaCircleRight } from 'react-icons/fa6';
 import Section from '~/components/custom/Section';
+import { FaCircleRight, FaGithub, FaPenNib } from 'react-icons/fa6';
+
+/** Alphabetical by language code; order matches `home.scripts` in the locale files. */
+const SCRIPT_CODES = ['en', 'ja', 'ko', 'th', 'zh'];
 
 export default function HomeHero() {
     const { t } = useTranslation();
+    const scripts = t('home.scripts', { returnObjects: true }) as string[];
 
     return (
         <Section className='items-center justify-center'>
-            <motion.div
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: 'easeOut' }}
-                className='relative mx-auto max-w-4xl px-4 sm:px-6 text-center'
-            >
+            <div className='mx-auto w-full max-w-4xl px-4 text-center sm:px-6'>
                 <motion.div
-                    initial={{ scale: 0.6, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
+                    initial={{ opacity: 0, y: 32 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7, ease: 'easeOut' }}
-                    className='mx-auto mb-8 h-28 w-28 sm:h-36 sm:w-36 drop-shadow-lg'
                 >
-                    <img
-                        alt='ChocoMemo'
-                        src={getAssetUrl('/icon.svg')}
-                        className='h-full w-full drop-shadow-lg'
-                    />
-                    <span className='absolute -bottom-2 right-1 inline-flex items-center gap-1.5 rounded-full border border-border bg-surface-overlay px-3 py-1 text-xs font-semibold text-surface-subtle shadow-lg transition-all'>
-                        v{env.VERSION}
-                    </span>
-                </motion.div>
+                    {/* Poster mark */}
+                    <div className='relative mx-auto w-fit'>
+                        <motion.img
+                            initial={{ opacity: 0, scale: 0.88 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.8, ease: 'easeOut', delay: 0.1 }}
+                            alt='ChocoMemo'
+                            src={getAssetUrl('/logo.png')}
+                            className='h-40 w-40 sm:h-52 sm:w-52 lg:h-60 lg:w-60'
+                        />
+                        <a
+                            href='https://github.com/TeaChocoOfficial/ChocoMemo'
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            title={`v${env.VERSION}`}
+                            className='absolute -bottom-2 right-0 inline-flex items-center gap-1.5 rounded-sm border border-line bg-surface px-2.5 py-1 font-mono text-[11px] font-semibold text-surface-subtle transition-colors hover:border-primary hover:text-primary'
+                        >
+                            <FaGithub aria-hidden='true' />v{env.VERSION}
+                        </a>
+                    </div>
 
-                <Badge variant='info' className='mb-6'>
-                    {t('home.badge')}
-                </Badge>
+                    <div className='mt-6 flex justify-center'>
+                        <Badge variant='info'>{t('home.badge')}</Badge>
+                    </div>
 
-                <h1 className='text-5xl sm:text-6xl lg:text-7xl font-black tracking-tighter leading-[1.05] text-surface-foreground mb-6'>
-                    {t('home.title')} <span className='text-accent'>{t('home.titleAccent')}</span>
-                </h1>
+                    <h1 className='mx-auto mt-6 max-w-4xl text-3xl font-black leading-[1.05] tracking-tighter text-surface-foreground sm:text-4xl lg:text-5xl'>
+                        {t('home.title')}{' '}
+                        <span className='text-primary'>{t('home.titleAccent')}</span>
+                    </h1>
 
-                <p className='mx-auto max-w-2xl text-lg sm:text-xl text-surface-subtle leading-relaxed mb-10'>
-                    {t('home.subtitle')}
-                </p>
+                    <p className='mx-auto mt-6 max-w-2xl text-base leading-relaxed text-surface-subtle sm:text-lg'>
+                        {t('home.subtitle')}
+                    </p>
 
-                <div className='flex flex-col sm:flex-row items-center justify-center gap-4'>
-                    <Link
-                        to='/language-select'
-                        className='inline-flex items-center gap-2 rounded-sm bg-accent px-7 py-3.5 text-base font-semibold text-accent-foreground transition-colors duration-200 hover:bg-accent-emphasis'
-                    >
-                        {t('home.ctaStart')}
-                        <FaCircleRight className='w-4 h-4' />
-                    </Link>
+                    <div className='mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row'>
+                        <Link
+                            to='/language-select'
+                            className='inline-flex w-full items-center justify-center gap-2 rounded-sm bg-primary px-7 py-3.5 text-base font-semibold text-primary-foreground transition-colors duration-200 hover:bg-primary-emphasis sm:w-auto'
+                        >
+                            {t('home.ctaStart')}
+                            <FaCircleRight className='h-4 w-4' />
+                        </Link>
+                        <Link
+                            to='/auth'
+                            className='inline-flex w-full items-center justify-center gap-2 rounded-sm border border-line-strong px-7 py-3.5 text-base font-semibold text-surface-foreground transition-colors duration-200 hover:border-primary hover:text-primary sm:w-auto'
+                        >
+                            <FaPenNib className='h-4 w-4' />
+                            {t('home.ctaCreate')}
+                        </Link>
+                    </div>
+
                     <Link
                         to='#how-it-works'
-                        className='inline-flex items-center gap-2 rounded-sm border border-line-strong px-7 py-3.5 text-base font-semibold text-surface-foreground transition-colors duration-200 hover:border-accent hover:text-accent'
+                        className='mt-7 inline-flex items-center gap-2 text-sm font-medium text-surface-muted underline-offset-4 transition-colors hover:text-primary hover:underline'
                     >
                         {t('home.ctaHow')}
                     </Link>
-                </div>
-            </motion.div>
+                </motion.div>
+
+                {/* The shelf: one cell per language script */}
+                <motion.div
+                    initial={{ opacity: 0, y: 24 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, ease: 'easeOut', delay: 0.35 }}
+                    className='mt-14'
+                >
+                    <p className='font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-surface-muted'>
+                        {t('home.scriptsLabel')}
+                    </p>
+                    <ul className='mt-4 grid grid-cols-5 divide-x divide-line overflow-hidden rounded-sm border border-line'>
+                        {scripts.map((script, index) => (
+                            <li key={script} className='px-2 py-5'>
+                                <span
+                                    lang={SCRIPT_CODES[index]}
+                                    className='block text-2xl font-black leading-none text-surface-foreground sm:text-3xl'
+                                >
+                                    {script}
+                                </span>
+                                <span className='mt-2 block font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-primary'>
+                                    {SCRIPT_CODES[index]}
+                                </span>
+                            </li>
+                        ))}
+                    </ul>
+                </motion.div>
+            </div>
         </Section>
     );
 }

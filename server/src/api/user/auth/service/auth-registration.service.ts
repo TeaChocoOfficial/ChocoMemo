@@ -1,20 +1,20 @@
 // -Path: "server/src/api/user/auth/service/auth-registration.service.ts"
+import { Role } from '~/types/auth';
 import type { Model } from 'mongoose';
-import { Role } from '../../../../types/auth';
+import { nameDB } from '~/hooks/mongodb';
 import { InjectModel } from '@nestjs/mongoose';
 import {
     PendingRegistration,
     type PendingRegistrationDocument,
 } from '../schemas/pending-registration.schema';
-import { nameDB } from '../../../../hooks/mongodb';
 import type { ReqUserDto } from '../../dto/user.dto';
 import { AuthHashService } from './auth-hash.service';
+import { SecureService } from '~/secure/secure.service';
 import { AuthTokenService } from './auth-token.service';
 import type { SigninResultDto } from '../dto/signin.dto';
 import { AuthProvider } from '../enum/auth-provider.enum';
 import { AuthAccountService } from './auth-account.service';
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { SecureService } from '../../../../secure/secure.service';
 import type { AuthIdentity } from '../schemas/auth-identity.schema';
 import { User, type UserDocument } from '../../schemas/user.schema';
 import { AuthOtpService, OTP_EXPIRES_MS } from './auth-otp.service';
@@ -36,9 +36,21 @@ export class AuthRegistrationService {
         private readonly pendingRegistrationModel: Model<PendingRegistrationDocument>,
     ) {}
 
-    async registerUser(email: string, password: string, name: string): Promise<SigninResultDto> {
-        const existing = await this.userModel.findOne({ 'identities.providerEmail': email }).exec();
+    async registerUser(
+        email: string,
+        password: string,
+        name: string,
+        nameTag: string,
+    ): Promise<SigninResultDto> {
+        const normalizedEmail = email.trim().toLowerCase();
+        const normalizedNameTag = nameTag.trim().toLowerCase();
+        const existing = await this.userModel
+            .findOne({ 'identities.providerEmail': normalizedEmail })
+            .exec();
         if (existing) throw new BadRequestException('Email already registered');
+
+        const tagExists = await this.userModel.findOne({ nameTag: normalizedNameTag }).exec();
+        if (tagExists) throw new BadRequestException('NAME_TAG_TAKEN');
 
         // The account is only created AFTER the OTP is verified. Until then the
         // credentials + OTP live in a TTL-backed pending registration.
@@ -50,11 +62,12 @@ export class AuthRegistrationService {
 
         const pending = await this.pendingRegistrationModel
             .findOneAndUpdate(
-                { email },
+                { email: normalizedEmail },
                 {
                     $set: {
-                        email,
-                        name,
+                        email: normalizedEmail,
+                        name: name.trim(),
+                        nameTag: normalizedNameTag,
                         passwordHash,
                         otpHash,
                         otpExpiresAt: new Date(Date.now() + OTP_EXPIRES_MS),
@@ -66,7 +79,7 @@ export class AuthRegistrationService {
             )
             .exec();
 
-        await this.otpService.sendEmail(email, otp);
+        await this.otpService.sendEmail(normalizedEmail, otp);
 
         return {
             access_token: this.tokenService.sign(pending._id.toString(), 'signup'),
@@ -78,18 +91,21 @@ export class AuthRegistrationService {
 
     /** Resend a fresh OTP for an unverified registration and return a new signup token. */
     async resendOtp(email: string): Promise<SigninResultDto> {
-        const user = await this.userModel.findOne({ 'identities.providerEmail': email }).exec();
+        const normalizedEmail = email.trim().toLowerCase();
+        const user = await this.userModel
+            .findOne({ 'identities.providerEmail': normalizedEmail })
+            .exec();
         if (user?.emailVerified) throw new BadRequestException('ALREADY_VERIFIED');
 
         const pending = await this.pendingRegistrationModel
-            .findOne({ email })
+            .findOne({ email: normalizedEmail })
             .select('+otpHash +otpExpiresAt +otpAttempts')
             .exec();
         if (!pending) throw new BadRequestException('EMAIL_NOT_FOUND');
 
         const otp = this.otpService.generate();
         await this.otpService.storeForPending(pending._id.toString(), otp);
-        await this.otpService.sendEmail(email, otp);
+        await this.otpService.sendEmail(normalizedEmail, otp);
 
         return {
             access_token: this.tokenService.sign(pending._id.toString(), 'signup'),
@@ -134,6 +150,7 @@ export class AuthRegistrationService {
             {
                 userId: pending._id.toString(),
                 name: pending.name,
+                nameTag: pending.nameTag,
                 role: Role.USER,
                 lastLoginAt: new Date(),
                 expiresAt: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
@@ -153,6 +170,7 @@ export class AuthRegistrationService {
         return this.accountService.signin({
             userId: newUser._id.toString(),
             name: newUser.name,
+            nameTag: newUser.nameTag,
             role: newUser.role,
             expiresAt: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
             lastLoginAt: newUser.lastLoginAt,
@@ -161,9 +179,12 @@ export class AuthRegistrationService {
 
     /** Send a password-reset OTP to an existing, verified local account. */
     async forgotPassword(email: string): Promise<SigninResultDto> {
+        const normalizedEmail = email.trim().toLowerCase();
         const user = await this.userModel
             .findOne({
-                identities: { $elemMatch: { provider: AuthProvider.LOCAL, providerEmail: email } },
+                identities: {
+                    $elemMatch: { provider: AuthProvider.LOCAL, providerEmail: normalizedEmail },
+                },
             })
             .exec();
         // Generic response to avoid leaking which emails are registered.
@@ -171,7 +192,7 @@ export class AuthRegistrationService {
 
         const otp = this.otpService.generate();
         await this.otpService.storeForUser(user._id.toString(), otp);
-        await this.otpService.sendResetEmail(email, otp);
+        await this.otpService.sendResetEmail(normalizedEmail, otp);
 
         return {
             access_token: this.tokenService.sign(user._id.toString(), 'reset'),
@@ -205,6 +226,7 @@ export class AuthRegistrationService {
         return this.accountService.signin({
             userId: user._id.toString(),
             name: user.name,
+            nameTag: user.nameTag,
             role: user.role,
             expiresAt: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
             lastLoginAt: user.lastLoginAt,

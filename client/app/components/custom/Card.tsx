@@ -14,7 +14,7 @@ export default function Card({ icon, title, children, className, description }: 
             className={`relative rounded-sm border border-line bg-surface p-5 transition-colors duration-200 hover:bg-surface-overlay ${className || ''}`}
         >
             {icon && (
-                <div className='mb-4 flex h-11 w-11 items-center justify-center rounded-sm bg-accent text-accent-foreground'>
+                <div className='mb-4 flex h-11 w-11 items-center justify-center rounded-sm bg-primary text-primary-foreground'>
                     {icon}
                 </div>
             )}

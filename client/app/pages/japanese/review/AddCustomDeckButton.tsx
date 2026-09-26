@@ -1,29 +1,28 @@
 // -Path: 'client/app/pages/japanese/review/AddCustomDeckButton.tsx'
 // "Add custom new deck" — composes a custom VocabDeck from the words the
 // user picks (default + custom vocabulary), then hands it to the store.
-import { useMemo, useState } from 'react';
 import { FaPlus } from 'react-icons/fa6';
+import { useMemo, useState } from 'react';
+import type { DeckData } from '~/types/type';
 import { useTranslation } from 'react-i18next';
 import Button from '~/components/custom/Button';
-import { Modal, ModalHeader, ModalBody, ModalFooter } from '~/components/custom/Modal';
-import WordPicker from '~/components/custom/WordPicker';
-import { DEFAULT_VOCABULARY } from '~/data/japanese/vocabulary';
 import { useDeckStore } from '~/stores/deck.store';
+import WordPicker from '~/components/custom/WordPicker';
 import { useVocabularyStore } from '~/stores/vocabulary.store';
-import type { VocabDeck } from '~/types/vocabulary';
+import { DEFAULT_VOCABULARY } from '~/data/japanese/vocabulary';
+import { Modal, ModalHeader, ModalBody, ModalFooter } from '~/components/custom/Modal';
 
 export default function AddCustomDeckButton() {
     const { t } = useTranslation();
-    const customWords = useVocabularyStore((s) => s.custom);
-    const addDeck = useDeckStore((s) => s.addDeck);
-
-    const [open, setOpen] = useState(false);
+    const { addDeck } = useDeckStore();
     const [name, setName] = useState('');
+    const { custom } = useVocabularyStore();
+    const [open, setOpen] = useState(false);
     const [description, setDescription] = useState('');
     const [selected, setSelected] = useState<string[]>([]);
     const [error, setError] = useState<string | null>(null);
 
-    const allWords = useMemo(() => [...DEFAULT_VOCABULARY, ...customWords], [customWords]);
+    const allWords = useMemo(() => [...DEFAULT_VOCABULARY, ...custom], [custom]);
 
     const toggle = (id: string) =>
         setSelected((prev) => (prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]));
@@ -44,11 +43,11 @@ export default function AddCustomDeckButton() {
             setError(t('japanese.decks.form.minWordsError'));
             return;
         }
-        const deck: VocabDeck = {
+        const deck: DeckData = {
             id: `deck-custom-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 7)}`,
             name: name.trim(),
             description: description.trim() || undefined,
-            source: 'custom',
+            source: 'local',
             wordIds: selected,
         };
         addDeck(deck);
@@ -64,7 +63,10 @@ export default function AddCustomDeckButton() {
             </Button>
 
             <Modal isOpen={open} onClose={() => setOpen(false)} size='lg'>
-                <ModalHeader title={t('japanese.decks.form.title')} onClose={() => setOpen(false)} />
+                <ModalHeader
+                    title={t('japanese.decks.form.title')}
+                    onClose={() => setOpen(false)}
+                />
                 <ModalBody>
                     <p className='mb-5 text-sm text-surface-subtle'>
                         {t('japanese.decks.form.subtitle')}
@@ -80,7 +82,7 @@ export default function AddCustomDeckButton() {
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
                                 placeholder={t('japanese.decks.form.namePlaceholder')}
-                                className='w-full border-b border-line-strong bg-transparent py-2 font-sans text-sm text-surface-foreground placeholder:text-surface-muted outline-none transition-colors focus:border-accent'
+                                className='w-full border-b border-line-strong bg-transparent py-2 font-sans text-sm text-surface-foreground placeholder:text-surface-muted outline-none transition-colors focus:border-primary'
                             />
                         </div>
 
@@ -93,7 +95,7 @@ export default function AddCustomDeckButton() {
                                 value={description}
                                 onChange={(e) => setDescription(e.target.value)}
                                 placeholder={t('japanese.decks.form.descriptionPlaceholder')}
-                                className='w-full border-b border-line-strong bg-transparent py-2 font-sans text-sm text-surface-foreground placeholder:text-surface-muted outline-none transition-colors focus:border-accent'
+                                className='w-full border-b border-line-strong bg-transparent py-2 font-sans text-sm text-surface-foreground placeholder:text-surface-muted outline-none transition-colors focus:border-primary'
                             />
                         </div>
 

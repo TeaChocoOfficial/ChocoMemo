@@ -86,7 +86,7 @@ export default function KanaPage() {
             <div className='mx-auto max-w-5xl px-4 sm:px-6 w-full'>
                 <Link
                     to='/japanese'
-                    className='inline-flex items-center gap-2 mb-6 text-sm font-medium text-surface-muted hover:text-accent transition-colors'
+                    className='inline-flex items-center gap-2 mb-6 text-sm font-medium text-surface-muted hover:text-primary transition-colors'
                 >
                     <FaArrowLeft className='w-3.5 h-3.5' />
                     {t('japanese.kana.back_hub')}

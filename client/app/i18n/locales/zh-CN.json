@@ -15,46 +15,117 @@
         "toggleLabel": "显示界面"
     },
     "home": {
-        "badge": "ChocoMemo",
-        "title": "温热你的日语，",
-        "titleAccent": "一次一个假名。",
-        "subtitle": "将平假名、片假名和词汇小测泡成温暖的每日习惯——选一个主题，倒上一杯，开始学习。",
+        "badge": "ChocoMemo · 社区语言库",
+        "title": "学任何语言，",
+        "titleAccent": "一次一张共享卡组。",
+        "subtitle": "日语、英语、泰语、韩语和中文——每一种都由真实学习者编写并分享的卡组、练习和测验构成。免费、开放，你也可以继续扩展。",
         "ctaStart": "开始学习",
+        "ctaCreate": "发布卡组",
         "ctaHow": "使用方法",
+        "scriptsLabel": "正在冲泡",
+        "scripts": [
+            "A",
+            "あ",
+            "한",
+            "ก",
+            "字"
+        ],
         "stats": {
-            "badge": "一览",
+            "badge": "在架上",
+            "languages": "语言",
             "kana": "假名字符",
             "vocabulary": "词汇量",
-            "modes": "练习模式",
-            "themes": "主题"
+            "shelves": "卡组与测验"
+        },
+        "languages": {
+            "badge": "书架",
+            "title": "五种语言，一个温暖的习惯",
+            "hint": "从今天就绪的那一盘开始——其余的还在浸泡。",
+            "available": "可以冲泡",
+            "comingSoon": "浸泡中",
+            "toAll": "浏览全部语言",
+            "items": {
+                "japanese": {
+                    "name": "日语",
+                    "description": "平假名、片假名和汉字，配上练习与间隔复习。"
+                },
+                "english": {
+                    "name": "英语",
+                    "description": "日常词汇和短句，由真正使用它们的人整理。"
+                },
+                "thai": {
+                    "name": "泰语",
+                    "description": "声调、文字，以及你在街头真正会遇到的词。"
+                },
+                "korean": {
+                    "name": "韩语",
+                    "description": "一节课学完韩文，之后是记得住的会话卡组。"
+                },
+                "chinese": {
+                    "name": "中文",
+                    "description": "汉字、拼音和声调配对，用短回合反复操练。"
+                }
+            }
+        },
+        "library": {
+            "badge": "社区书架",
+            "title": "写一张卡组，分享它，看它教人。",
+            "hint": "ChocoMemo 的每一套学习内容都由真人书写，而非出版商。整理好并发布，别人就能从中得到一整门课程。",
+            "cta": "打开复习书架",
+            "items": {
+                "decks": {
+                    "title": "词汇卡组",
+                    "hint": "把词归进一个主题卡组——自然、动物、日常事物——像读一本小电子书那样复习。"
+                },
+                "exams": {
+                    "title": "测验套装",
+                    "hint": "把卡组变成限时考试，正好看看哪些词还需要继续浸泡。"
+                },
+                "kana": {
+                    "title": "假名练习",
+                    "hint": "在两套音节表中快速轮转，直到字形不经思考就能写出来。"
+                },
+                "review": {
+                    "title": "间隔复习",
+                    "hint": "你下载的卡组会按自己的节奏回来，所以没有任何内容会变凉。"
+                }
+            }
         },
         "how": {
             "badge": "使用方法",
-            "title": "温暖的每日习惯",
-            "hint": "每天重复四个小步骤，就这么简单。",
+            "title": "你每天的一杯",
+            "hint": "四个小步骤，每天重复——仅此而已。",
             "step1": {
                 "title": "选择语言",
-                "hint": "选择今天要学的内容。"
+                "hint": "选今天要学的那一盘。"
             },
             "step2": {
-                "title": "学习假名",
-                "hint": "平假名和片假名，一口一口来。"
+                "title": "借一张卡组",
+                "hint": "拿一张别人写的卡组，或从内置书架开始。"
             },
             "step3": {
                 "title": "练习与测验",
-                "hint": "快速假名练习和词汇测验。"
+                "hint": "短促的假名练习和词汇考试，每次五分钟。"
             },
             "step4": {
-                "title": "每日复习",
-                "hint": "间隔复习让单词保持新鲜。"
+                "title": "发布你自己的",
+                "hint": "补上你总记不住的词，再分享回书架。"
             }
+        },
+        "cta": {
+            "title": "茶壶已经烧上了。",
+            "hint": "第一张卡组之前没有注册门槛。只有想同步你的词时才需要登录。",
+            "primary": "开始学习",
+            "secondary": "发布卡组"
         }
     },
     "theme": {
         "pickerLabel": "切换主题",
         "names": {
-            "dark": "暗色",
-            "light": "浅色",
+            "lightChoco": "浅巧克力",
+            "darkChoco": "暗巧克力",
+            "darkGalaxy": "暗银河",
+            "lightGalaxy": "浅银河",
             "darkSakura": "暗樱花",
             "lightSakura": "浅樱花",
             "darkPaper": "暗纸张",
@@ -92,7 +163,7 @@
     "languageSelect": {
         "badge": "选择语言",
         "title": "选择要学习的语言",
-        "description": "选择你想要学习的语言。更多语言即将推出。",
+        "description": "选择你想学的语言。日语今天就能用，其余的还在浸泡。",
         "back_home": "返回首页",
         "status": {
             "available": "可用",
@@ -105,19 +176,23 @@
         "languages": {
             "japanese": {
                 "name": "日语",
-                "description": "通过互动测验学习平假名、片假名和基础词汇。"
+                "description": "平假名、片假名和汉字，短回合反复练，用间隔复习保持温热。"
             },
             "english": {
                 "name": "英语",
-                "description": "英语课程正在准备中。"
+                "description": "日常词汇和短句，由真正使用它们的人整理成卡组。"
             },
             "thai": {
                 "name": "泰语",
-                "description": "泰语课程即将推出。"
+                "description": "声调与文字并排，外加你在街头会遇到的词。"
             },
             "korean": {
                 "name": "韩语",
-                "description": "韩语课程即将推出。"
+                "description": "一节课学完韩文，之后是不肯放凉的会话卡组。"
+            },
+            "chinese": {
+                "name": "中文",
+                "description": "汉字、拼音和声调配对，每次只练几分钟。"
             }
         }
     },
@@ -391,6 +466,8 @@
         "email": "邮箱",
         "password": "密码",
         "name": "姓名",
+        "nameTag": "用户名",
+        "nameTagHint": "3-30 个字符。仅限英文字母、数字、下划线 (_) 或连字符 (-)，不能有空格。你的公开用户名。",
         "confirmPassword": "确认密码",
         "forgotPassword": "忘记密码？",
         "resetPassword": "重置密码",
@@ -414,6 +491,8 @@
         "error": {
             "invalidCredentials": "邮箱或密码不正确。",
             "emailInUse": "已存在使用该邮箱的账户。",
+            "nameTagTaken": "该用户名已被使用。",
+            "nameTagInvalid": "用户名必须为 3-30 个字符：仅限英文字母、数字、下划线或连字符（不能有空格）。",
             "passwordMismatch": "两次输入的密码不一致。",
             "invalidOtp": "验证码无效或已过期，请重试。",
             "resendFailed": "无法发送新验证码，请重试。",
@@ -511,7 +590,15 @@
             "namePlaceholder": "你的姓名",
             "saving": "保存中…",
             "saved": "个人资料已更新",
-            "updateError": "无法更新你的个人资料。"
+            "updateError": "无法更新你的个人资料。",
+            "editProfile": "编辑个人资料",
+            "nameTag": "用户名",
+            "nameTagHint": "3-30 个字符。仅限英文字母、数字、下划线 (_) 或连字符 (-)，不能有空格。你的公开用户名。",
+            "nameTagTaken": "该用户名已被使用。",
+            "nameTagInvalid": "用户名必须为 3-30 个字符：仅限英文字母、数字、下划线或连字符（不能有空格）。",
+            "noNameTag": "还没有用户名",
+            "bio": "简介",
+            "bioPlaceholder": "向大家介绍一下你自己…"
         },
         "email": {
             "label": "Change email",

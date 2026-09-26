@@ -1,13 +1,9 @@
-import Skeleton from '../../custom/Skeleton';
+import Skeleton from '../../../custom/Skeleton';
 import GuestMenus from './GuestMenus';
 import ProfileMenu from './ProfileMenu';
 import { useAuthStore } from '~/stores/auth.store';
 
-type NavbarMenusProps = {
-    onSignIn: () => void;
-};
-
-export default function NavbarMenus({ onSignIn }: NavbarMenusProps) {
+export default function NavbarMenus() {
     const { user, loading } = useAuthStore();
 
     const isAuthenticated = user !== null && user !== undefined;
@@ -26,5 +22,5 @@ export default function NavbarMenus({ onSignIn }: NavbarMenusProps) {
         );
     }
 
-    return isAuthenticated ? <ProfileMenu /> : <GuestMenus onSignIn={onSignIn} />;
+    return isAuthenticated ? <ProfileMenu /> : <GuestMenus />;
 }

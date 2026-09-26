@@ -1,8 +1,8 @@
 // -Path: "Nest TypeScript/src/user/dto/user.dto.ts"
-import { Role } from '../../../types/auth';
+import { Role } from '~/types/auth';
 import { ApiProperty } from '@nestjs/swagger';
-import { IsArray, IsDate, IsEnum, IsNumber, IsOptional, IsString } from 'class-validator';
 import type { AuthIdentity } from '../auth/schemas/auth-identity.schema';
+import { IsArray, IsDate, IsEnum, IsNumber, IsOptional, IsString } from 'class-validator';
 
 export class UserLoginDto {
     @IsString()
@@ -44,6 +44,26 @@ export class ReqUserDto {
         description: 'Name',
     })
     readonly name!: string;
+
+    @IsOptional()
+    @IsString()
+    @ApiProperty({
+        type: String,
+        required: false,
+        example: 'john_doe',
+        description: 'Public handle used to find this user',
+    })
+    readonly nameTag?: string;
+
+    @IsOptional()
+    @IsString()
+    @ApiProperty({
+        type: String,
+        required: false,
+        example: 'I learn languages with ChocoMemo.',
+        description: 'Short self-description shown on the public profile',
+    })
+    readonly bio?: string;
 
     @IsString()
     @ApiProperty({
@@ -129,6 +149,16 @@ export class UserJWTPayload {
         description: 'Name',
     })
     readonly name!: string;
+
+    @IsOptional()
+    @IsString()
+    @ApiProperty({
+        type: String,
+        required: false,
+        example: 'john_doe',
+        description: 'Public handle used to find this user',
+    })
+    readonly nameTag?: string;
 
     @IsString()
     @ApiProperty({

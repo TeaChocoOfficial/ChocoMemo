@@ -43,7 +43,7 @@ export function StrengthMeter({ value, fillPct }: StrengthMeterProps) {
             </div>
             <div className='mt-2 h-1.5 w-full overflow-hidden rounded-full border border-line bg-surface-overlay'>
                 <div
-                    className='h-full rounded-full bg-accent transition-[width] duration-500'
+                    className='h-full rounded-full bg-primary transition-[width] duration-500'
                     style={{ width: `${Math.max(0, Math.min(100, fillPct))}%` }}
                 />
             </div>
@@ -68,7 +68,7 @@ export function DueSeal({ due, dueLabel, readyLabel }: DueSealProps) {
             className={`flex h-12 w-12 rotate-6 shrink-0 select-none flex-col items-center justify-center rounded-full border-[1.5px] ${
                 ready
                     ? 'border-success/60 bg-success-subtle text-success'
-                    : 'border-accent/70 bg-accent-subtle text-accent'
+                    : 'border-primary/70 bg-primary-subtle text-primary'
             }`}
         >
             {ready ? (

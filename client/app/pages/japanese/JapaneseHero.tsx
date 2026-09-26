@@ -23,7 +23,7 @@ export default function JapaneseHero() {
             <p className='max-w-2xl mx-auto text-lg text-surface-subtle leading-relaxed mb-8'>
                 {t('japanese.description')}
             </p>
-            <div className='mx-auto h-px w-16 bg-accent' />
+            <div className='mx-auto h-px w-16 bg-primary' />
         </motion.div>
     );
 }

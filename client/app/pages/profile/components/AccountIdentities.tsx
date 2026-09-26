@@ -5,7 +5,7 @@ import { authAPI } from '~/services/auth';
 import { AuthProvider } from '~/types/auth';
 import Badge from '~/components/custom/Badge';
 import { useTranslation } from 'react-i18next';
-import { getAccountEmail } from '~/types/auth';
+import { getAccountEmail } from '~/utils/auth';
 import Button from '~/components/custom/Button';
 import ChangeEmailModal from './ChangeEmailModal';
 import { useAuthStore } from '~/stores/auth.store';
@@ -86,7 +86,7 @@ function EmailRow({ onChange }: { onChange: () => void }) {
     return (
         <div className='flex items-center justify-between gap-3 rounded-sm border border-line bg-surface px-4 py-3.5 transition-colors hover:bg-surface-overlay'>
             <div className='flex min-w-0 items-center gap-3'>
-                <span className='flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent'>
+                <span className='flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/15 text-primary'>
                     <FaEnvelope className='h-4 w-4' />
                 </span>
                 <div className='min-w-0'>
@@ -144,7 +144,7 @@ export default function AccountIdentities() {
             transition={{ duration: 0.4, delay: 0.05 }}
         >
             <div className='mb-5 flex items-center gap-3'>
-                <span className='font-mono text-xs font-bold tracking-[0.14em] text-accent'>
+                <span className='font-mono text-xs font-bold tracking-[0.14em] text-primary'>
                     02
                 </span>
                 <span className='h-px w-10 bg-line-strong' />

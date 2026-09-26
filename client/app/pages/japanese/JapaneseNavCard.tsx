@@ -36,15 +36,15 @@ export default function JapaneseNavCard({ item, index }: JapaneseNavCardProps) {
         >
             <Link
                 to={to}
-                className='group relative flex h-full flex-col rounded-sm border border-line bg-surface p-6 transition-colors duration-200 hover:border-accent hover:bg-surface-overlay'
+                className='group relative flex h-full flex-col rounded-sm border border-line bg-surface p-6 transition-colors duration-200 hover:border-primary hover:bg-surface-overlay'
             >
                 {mode && (
-                    <span className='absolute right-5 top-5 font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-surface-muted transition-colors duration-200 group-hover:text-accent'>
+                    <span className='absolute right-5 top-5 font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-surface-muted transition-colors duration-200 group-hover:text-primary'>
                         {t(modeLabels[mode])}
                     </span>
                 )}
 
-                <div className='mb-4 flex h-14 w-14 items-center justify-center rounded-sm bg-accent text-accent-foreground transition-colors duration-200 group-hover:bg-accent-emphasis'>
+                <div className='mb-4 flex h-14 w-14 items-center justify-center rounded-sm bg-primary text-primary-foreground transition-colors duration-200 group-hover:bg-primary-emphasis'>
                     {icon}
                 </div>
 
@@ -53,7 +53,7 @@ export default function JapaneseNavCard({ item, index }: JapaneseNavCardProps) {
                 </h3>
                 <p className='flex-1 text-sm leading-relaxed text-surface-muted'>{description}</p>
 
-                <div className='mt-6 inline-flex items-center gap-2 text-sm font-semibold text-accent'>
+                <div className='mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary'>
                     {action}
                     <FaArrowRight className='w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1' />
                 </div>

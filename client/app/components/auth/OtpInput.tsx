@@ -10,7 +10,7 @@ export default function OtpInput({
     autoFocus?: boolean;
 }) {
     const inputClass =
-        'w-full rounded-sm border border-line bg-surface px-3 py-2.5 text-center text-xl tracking-[0.5em] text-sm text-surface-foreground placeholder:text-surface-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent';
+        'w-full rounded-sm border border-line bg-surface px-3 py-2.5 text-center text-xl tracking-[0.5em] text-sm text-surface-foreground placeholder:text-surface-muted focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary';
 
     return (
         <input

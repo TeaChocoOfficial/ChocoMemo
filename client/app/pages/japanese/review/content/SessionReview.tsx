@@ -40,7 +40,7 @@ export default function SessionReview({
     if (!currentWord) {
         return (
             <div className='flex flex-col items-center justify-center py-24 text-center'>
-                <p className='font-mono text-xs font-bold uppercase tracking-[0.2em] text-accent'>
+                <p className='font-mono text-xs font-bold uppercase tracking-[0.2em] text-primary'>
                     {t('japanese.vocabularyReview.badge')}
                 </p>
                 <h2 className='mt-4 text-4xl font-black tracking-tight text-surface-foreground'>
@@ -59,7 +59,7 @@ export default function SessionReview({
         <div className='flex h-full flex-col'>
             <div className='mb-6 shrink-0'>
                 <div className='flex items-center justify-between gap-4 mb-3'>
-                    <span className='font-mono text-xs font-bold uppercase tracking-[0.14em] text-accent'>
+                    <span className='font-mono text-xs font-bold uppercase tracking-[0.14em] text-primary'>
                         {t('japanese.vocabularyReview.badge')}
                     </span>
                     <span className='font-mono text-xs font-semibold uppercase tracking-[0.14em] text-surface-muted tabular-nums'>
@@ -71,7 +71,7 @@ export default function SessionReview({
                 </div>
                 <div className='h-px w-full bg-line'>
                     <div
-                        className='h-px bg-accent transition-all duration-500 ease-out'
+                        className='h-px bg-primary transition-all duration-500 ease-out'
                         style={{ width: `${progress}%` }}
                     />
                 </div>

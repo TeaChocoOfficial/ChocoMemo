@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import toast from 'react-hot-toast';
+import { useSwal } from '~/hooks/useSwal';
 import { useTranslation } from 'react-i18next';
 import Button from '~/components/custom/Button';
 import PasswordInput from '~/components/auth/PasswordInput';
@@ -9,7 +9,7 @@ import { Modal, ModalBody, ModalFooter, ModalHeader } from '~/components/custom/
 import { authAPI } from '~/services/auth';
 import { useAuthStore } from '~/stores/auth.store';
 import { AuthProvider } from '~/types/auth';
-import { getAccountEmail } from '~/types/auth';
+import { getAccountEmail } from '~/utils/auth';
 import { FaKey, FaShieldHalved } from 'react-icons/fa6';
 
 const RESEND_COOLDOWN = 30;
@@ -43,7 +43,7 @@ function PasswordField({
     autoComplete,
 }: PasswordFieldProps) {
     const inputClass =
-        'w-full rounded-sm border border-line bg-surface px-3 py-2 text-sm text-surface-foreground placeholder:text-surface-muted/60 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors';
+        'w-full rounded-sm border border-line bg-surface px-3 py-2 text-sm text-surface-foreground placeholder:text-surface-muted/60 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors';
 
     return (
         <div>
@@ -80,6 +80,7 @@ export default function ChangePasswordModal({
     isOpen: boolean;
     onClose: () => void;
 }) {
+    const swal = useSwal();
     const { t } = useTranslation();
     const { user } = useAuthStore();
     const [code, setCode] = useState('');
@@ -157,7 +158,7 @@ export default function ChangePasswordModal({
             setErrors({});
             setError(undefined);
             setResendIn(RESEND_COOLDOWN);
-            toast.success(t('profile.otp.codeSent'));
+            swal.success(t('profile.otp.codeSent'));
         } catch (err) {
             const message = serverMessage(err);
             if (message === 'WRONG_CURRENT_PASSWORD' || message === 'NO_LOGIN_PASSWORD') {
@@ -180,9 +181,9 @@ export default function ChangePasswordModal({
             setToken(res.data.token);
             setCode('');
             setResendIn(RESEND_COOLDOWN);
-            toast.success(t('profile.otp.codeResent'));
-        } catch {
-            toast.error(t('profile.otp.resendFailed'));
+            swal.success(t('profile.otp.codeResent'));
+        } catch (error) {
+            swal.error(t('profile.otp.resendFailed'), { error });
         } finally {
             setSaving(false);
         }
@@ -198,7 +199,7 @@ export default function ChangePasswordModal({
                 currentPassword: hasPassword ? currentPassword : undefined,
                 newPassword,
             });
-            toast.success(t('profile.password.changed'));
+            swal.success(t('profile.password.changed'));
             onClose();
         } catch {
             setError(t('profile.otp.invalidCode'));
@@ -230,7 +231,7 @@ export default function ChangePasswordModal({
                 ) : step === 'otp' ? (
                     <>
                         <div className='mb-4 flex flex-col items-center text-center'>
-                            <FaShieldHalved className='h-8 w-8 text-accent' />
+                            <FaShieldHalved className='h-8 w-8 text-primary' />
                             <p className='mt-2 text-sm text-surface-muted'>
                                 {t('profile.otp.codeSentTo', {
                                     email: getAccountEmail(user) ?? '',

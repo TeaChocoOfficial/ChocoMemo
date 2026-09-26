@@ -15,46 +15,117 @@
         "toggleLabel": "Mostrar interfaz"
     },
     "home": {
-        "badge": "ChocoMemo",
-        "title": "Calienta tu japonés,",
-        "titleAccent": "una kana a la vez.",
-        "subtitle": "Píldoras de hiragana, katakana y vocabulario preparadas como un ritual diario acogedor: elige un tema, sirve una taza y aprende.",
+        "badge": "ChocoMemo · biblioteca de idiomas de la comunidad",
+        "title": "Aprende cualquier idioma,",
+        "titleAccent": "un mazo compartido cada vez.",
+        "subtitle": "Japonés, inglés, tailandés, coreano y chino: cada uno hecho de mazos, ejercicios y cuestionarios que escriben y comparten personas que están aprendiendo de verdad. Gratis, abierto y tuyo para ampliar.",
         "ctaStart": "Empezar a aprender",
+        "ctaCreate": "Publicar un mazo",
         "ctaHow": "Cómo funciona",
+        "scriptsLabel": "Infusionando ahora",
+        "scripts": [
+            "A",
+            "あ",
+            "한",
+            "ก",
+            "字"
+        ],
         "stats": {
-            "badge": "De un vistazo",
+            "badge": "En el estante",
+            "languages": "Idiomas",
             "kana": "Caracteres kana",
             "vocabulary": "Palabras de vocabulario",
-            "modes": "Modos de práctica",
-            "themes": "Temas"
+            "shelves": "Mazos y cuestionarios"
+        },
+        "languages": {
+            "badge": "El estante",
+            "title": "Cinco idiomas, un hábito cálido",
+            "hint": "Empieza por la bandeja que está lista hoy; las demás se infusionan.",
+            "available": "Listo para servir",
+            "comingSoon": "Infusionándose",
+            "toAll": "Ver todos los idiomas",
+            "items": {
+                "japanese": {
+                    "name": "Japonés",
+                    "description": "Hiragana, katakana y kanji con ejercicios y repaso espaciado."
+                },
+                "english": {
+                    "name": "Inglés",
+                    "description": "Vocabulario y frases cotidianas, ordenados por quienes los usan."
+                },
+                "thai": {
+                    "name": "Tailandés",
+                    "description": "Tonos, escritura y las palabras que de verdad te vas a encontrar en la calle."
+                },
+                "korean": {
+                    "name": "Coreano",
+                    "description": "Hangul de una sentada y luego mazos de conversación que se quedan."
+                },
+                "chinese": {
+                    "name": "Chino",
+                    "description": "Caracteres, pinyin y pares de tonos, practicados en rondas cortas."
+                }
+            }
+        },
+        "library": {
+            "badge": "El estante comunitario",
+            "title": "Escribe un mazo. Compártelo. Míralo enseñar.",
+            "hint": "Cada conjunto de estudio en ChocoMemo lo escribe una persona, no una editorial. Ordena uno, publícalo y alguien más recibe un curso entero de él.",
+            "cta": "Abrir el estante de repaso",
+            "items": {
+                "decks": {
+                    "title": "Mazos de vocabulario",
+                    "hint": "Agrupa palabras en un mazo con tema — naturaleza, animales, cosas cotidianas — y repásalo como un pequeño libro."
+                },
+                "exams": {
+                    "title": "Cuestionarios",
+                    "hint": "Convierte un mazo en un examen cronometrado y verás qué palabras siguen sin infusionarse."
+                },
+                "kana": {
+                    "title": "Ejercicios de kana",
+                    "hint": "Rondas rápidas por ambas sílabarias hasta que las formas salgan sin pensar."
+                },
+                "review": {
+                    "title": "Repaso espaciado",
+                    "hint": "Los mazos que descargas vuelven según su propio calendario, así que nada se enfría."
+                }
+            }
         },
         "how": {
             "badge": "Cómo funciona",
-            "title": "Un ritual diario acogedor",
-            "hint": "Cuatro pequeños pasos repetidos cada día: eso es todo.",
+            "title": "Tu infusión diaria",
+            "hint": "Cuatro pasos pequeños, repetidos cada día. Eso es todo.",
             "step1": {
                 "title": "Elige tu idioma",
-                "hint": "Elige qué estudiar hoy."
+                "hint": "Escoge la bandeja que estudias hoy."
             },
             "step2": {
-                "title": "Aprende los kana",
-                "hint": "Hiragana y katakana, de una en una."
+                "title": "Toma un mazo prestado",
+                "hint": "Coge un mazo que escribió otra persona o empieza por el estante incluido."
             },
             "step3": {
-                "title": "Practica y examen",
-                "hint": "Ejercicios rápidos de kana y exámenes de vocabulario."
+                "title": "Practica y examina",
+                "hint": "Ejercicios breves de kana y tests de vocabulario, cinco minutos cada vez."
             },
             "step4": {
-                "title": "Repasa a diario",
-                "hint": "La repetición espaciada mantiene vivas las palabras."
+                "title": "Publica el tuyo",
+                "hint": "Añade las palabras que siempre olvidas y devuélvelas al estante."
             }
+        },
+        "cta": {
+            "title": "La tetera ya está al fuego.",
+            "hint": "Sin registro entre tú y el primer mazo. Inicia sesión solo cuando quieras sincronizar tus palabras.",
+            "primary": "Empezar a aprender",
+            "secondary": "Publicar un mazo"
         }
     },
     "theme": {
         "pickerLabel": "Cambiar tema",
         "names": {
-            "dark": "Oscuro",
-            "light": "Claro",
+            "lightChoco": "Chocolate Claro",
+            "darkChoco": "Chocolate Oscuro",
+            "darkGalaxy": "Galaxia Oscura",
+            "lightGalaxy": "Galaxia Clara",
             "darkSakura": "Sakura Oscuro",
             "lightSakura": "Sakura Claro",
             "darkPaper": "Papel Oscuro",
@@ -92,7 +163,7 @@
     "languageSelect": {
         "badge": "Selección de Idioma",
         "title": "Elige un Idioma para Aprender",
-        "description": "Elige el idioma que quieres estudiar. Pronto habrá más idiomas.",
+        "description": "Elige el idioma que quieras estudiar. El japonés está listo hoy; el resto se infusiona.",
         "back_home": "Volver al Inicio",
         "status": {
             "available": "Disponible",
@@ -105,19 +176,23 @@
         "languages": {
             "japanese": {
                 "name": "Japonés",
-                "description": "Aprende hiragana, katakana y vocabulario esencial mediante cuestionarios interactivos."
+                "description": "Hiragana, katakana y kanji, practicados en rondas cortas y mantenidos vivos con el repaso espaciado."
             },
             "english": {
                 "name": "Inglés",
-                "description": "Los cursos de inglés están en preparación."
+                "description": "Vocabulario y frases cotidianas, ordenados en mazos por quienes realmente los usan."
             },
             "thai": {
                 "name": "Tailandés",
-                "description": "Los cursos de tailandés llegarán pronto."
+                "description": "Tonos y escritura uno junto al otro, más las palabras que encontrarás en la calle."
             },
             "korean": {
                 "name": "Coreano",
-                "description": "Los cursos de coreano llegarán pronto."
+                "description": "Hangul de una sentada y luego mazos de conversación que se niegan a enfriarse."
+            },
+            "chinese": {
+                "name": "Chino",
+                "description": "Caracteres, pinyin y pares de tonos, practicados a ratos de unos minutos."
             }
         }
     },
@@ -391,6 +466,8 @@
         "email": "Correo electrónico",
         "password": "Contraseña",
         "name": "Nombre",
+        "nameTag": "Nombre de usuario",
+        "nameTagHint": "De 3 a 30 caracteres. Solo letras del alfabeto inglés, números, guiones bajos (_) o guiones (-), sin espacios. Tu identificador público.",
         "confirmPassword": "Confirmar contraseña",
         "forgotPassword": "¿Olvidaste tu contraseña?",
         "resetPassword": "Restablecer contraseña",
@@ -414,6 +491,8 @@
         "error": {
             "invalidCredentials": "Correo o contraseña incorrectos",
             "emailInUse": "El correo ya está en uso",
+            "nameTagTaken": "Ese nombre de usuario ya está en uso.",
+            "nameTagInvalid": "El nombre de usuario debe tener de 3 a 30 caracteres: solo letras del alfabeto inglés, números, guiones bajos o guiones (sin espacios).",
             "passwordMismatch": "Las contraseñas no coinciden.",
             "invalidOtp": "Código no válido o caducado. Inténtalo de nuevo.",
             "resendFailed": "No se pudo enviar un código nuevo. Inténtalo de nuevo.",
@@ -511,7 +590,15 @@
             "namePlaceholder": "Tu nombre",
             "saving": "Guardando…",
             "saved": "Perfil actualizado",
-            "updateError": "No se pudo actualizar tu perfil."
+            "updateError": "No se pudo actualizar tu perfil.",
+            "editProfile": "Editar perfil",
+            "nameTag": "Nombre de usuario",
+            "nameTagHint": "De 3 a 30 caracteres. Solo letras del alfabeto inglés, números, guiones bajos (_) o guiones (-), sin espacios. Tu identificador público.",
+            "nameTagTaken": "Ese nombre de usuario ya está en uso.",
+            "nameTagInvalid": "El nombre de usuario debe tener de 3 a 30 caracteres: solo letras del alfabeto inglés, números, guiones bajos o guiones (sin espacios).",
+            "noNameTag": "Aún no tienes nombre de usuario",
+            "bio": "Biografía",
+            "bioPlaceholder": "Cuéntale a la gente un poco sobre ti…"
         },
         "email": {
             "label": "Change email",

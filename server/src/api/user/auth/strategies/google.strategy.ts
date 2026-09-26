@@ -52,7 +52,7 @@ export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
         refreshToken: string,
         profile: any,
         done: VerifyCallback,
-    ): Promise<UserType> {
+    ): Promise<Omit<UserType, 'nameTag'>> {
         if (!GoogleStrategy.isConfigured) {
             const error = new Error('Google Sign-in is not configured');
             this.logger.error(error.message);
@@ -72,7 +72,7 @@ export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
             avatar,
         };
 
-        const user: UserType = {
+        const user: Omit<UserType, 'nameTag'> = {
             name: displayName,
             avatar,
             role: Role.USER,

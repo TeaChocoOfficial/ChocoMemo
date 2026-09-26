@@ -37,7 +37,7 @@ export default function WordPicker({ words, selected, onToggle, placeholder }: W
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                     placeholder={placeholder}
-                    className='w-full border-b border-line-strong bg-transparent py-2 pl-5 pr-2 font-mono text-sm text-surface-foreground placeholder:text-surface-muted outline-none transition-colors focus:border-accent'
+                    className='w-full border-b border-line-strong bg-transparent py-2 pl-5 pr-2 font-mono text-sm text-surface-foreground placeholder:text-surface-muted outline-none transition-colors focus:border-primary'
                 />
             </div>
 
@@ -58,7 +58,7 @@ export default function WordPicker({ words, selected, onToggle, placeholder }: W
                                     type='checkbox'
                                     checked={isSelected}
                                     onChange={() => onToggle(w.id)}
-                                    className='h-4 w-4 shrink-0 accent-accent'
+                                    className='h-4 w-4 shrink-0 accent-primary'
                                 />
                                 <span className='min-w-0 flex-1'>
                                     <span className='block text-sm font-semibold text-surface-foreground'>

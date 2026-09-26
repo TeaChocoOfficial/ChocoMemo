@@ -88,7 +88,7 @@ export function ModalHeader({ title, icon, onClose, className = '' }: ModalHeade
         >
             <div className='flex items-center gap-3'>
                 {icon && (
-                    <div className='flex items-center justify-center w-9 h-9 rounded-sm bg-accent text-accent-foreground'>
+                    <div className='flex items-center justify-center w-9 h-9 rounded-sm bg-primary text-primary-foreground'>
                         {icon}
                     </div>
                 )}

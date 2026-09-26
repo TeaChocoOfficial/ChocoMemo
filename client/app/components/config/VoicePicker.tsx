@@ -63,7 +63,7 @@ export default function VoicePicker() {
                     onClick={() => speak('あ い う え お')}
                     title={t('japanese.kana.voice_preview')}
                     aria-label={t('japanese.kana.voice_preview')}
-                    className='grid h-9 w-9 shrink-0 cursor-pointer place-items-center rounded-sm border border-line bg-surface text-surface-muted transition-colors duration-200 hover:border-accent hover:text-accent'
+                    className='grid h-9 w-9 shrink-0 cursor-pointer place-items-center rounded-sm border border-line bg-surface text-surface-muted transition-colors duration-200 hover:border-primary hover:text-primary'
                 >
                     <FaVolumeHigh className='h-3.5 w-3.5' />
                 </button>

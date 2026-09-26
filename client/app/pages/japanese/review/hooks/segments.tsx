@@ -203,7 +203,7 @@ function TipBody({
                         type='button'
                         onClick={onSpeak}
                         aria-label='Read aloud'
-                        className='inline-flex w-5 h-5 items-center justify-center rounded-full bg-accent text-accent-foreground hover:bg-accent-emphasis cursor-pointer'
+                        className='inline-flex w-5 h-5 items-center justify-center rounded-full bg-primary text-primary-foreground hover:bg-primary-emphasis cursor-pointer'
                     >
                         <FaVolumeHigh className='w-2.5 h-2.5' />
                     </button>

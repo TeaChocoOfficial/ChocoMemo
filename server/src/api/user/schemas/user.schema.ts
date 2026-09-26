@@ -11,6 +11,15 @@ export class User {
     @Prop({ required: true })
     name!: string;
 
+    /** Public handle used to find this user (e.g. `/profile/:nameTag`).
+     *  English letters/numbers/`_-` only, no spaces; stored lowercased. */
+    @Prop({ lowercase: true })
+    nameTag?: string;
+
+    /** Short self-description shown on the public profile. */
+    @Prop({ type: String, maxlength: 160, default: '' })
+    bio?: string;
+
     /** Sign-in email lives on each `identities[].providerEmail`, not here. */
     @Prop()
     avatar?: string;
@@ -50,6 +59,7 @@ export const UserSchema = SchemaFactory.createForClass(User);
 
 UserSchema.index({ createdAt: 1 });
 UserSchema.index({ 'identities.provider': 1, 'identities.providerUserId': 1 });
+UserSchema.index({ nameTag: 1 }, { unique: true, sparse: true });
 // A verified email is unique across accounts: it may appear on at most one
 // identity (local `providerEmail` = account email, or a linked provider).
 UserSchema.index({ 'identities.providerEmail': 1 }, { unique: true, sparse: true });

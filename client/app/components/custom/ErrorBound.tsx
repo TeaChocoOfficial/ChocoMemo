@@ -1,14 +1,12 @@
-// -Path: "vite-react-typescript/src/components/custom/ErrorBound.tsx"
-import { Component } from 'react';
-import toast from 'react-hot-toast';
-import { FaTriangleExclamation, FaCopy } from 'react-icons/fa6';
+import { useSwal } from '~/hooks/useSwal';
+import { Component, type ErrorInfo, type ReactNode } from 'react';
 
 interface Props {
     showToast?: boolean;
     onReset?: () => void;
-    children?: React.ReactNode;
-    fallback?: React.ReactNode;
-    onError?: (error: Error, errorInfo: React.ErrorInfo) => void;
+    children?: ReactNode;
+    fallback?: ReactNode;
+    onError?: (error: Error, errorInfo: ErrorInfo) => void;
 }
 
 interface State {
@@ -16,10 +14,15 @@ interface State {
     hasError: boolean;
 }
 
-class ErrorBoundary extends Component<Props, State> {
-    private toastId: string | undefined;
+interface InnerProps extends Props {
+    showError: (error: Error) => void;
+    notifySuccess: (message: string) => void;
+    notifyError: (message: string) => void;
+    closeAlert: () => void;
+}
 
-    constructor(props: Props) {
+class ErrorBoundaryInner extends Component<InnerProps, State> {
+    constructor(props: InnerProps) {
         super(props);
         this.state = { hasError: false };
         this.copyError = this.copyError.bind(this);
@@ -44,23 +47,19 @@ class ErrorBoundary extends Component<Props, State> {
             document.body.appendChild(textarea);
             textarea.focus();
             textarea.select();
-            const success = document.execCommand('copy');
+            const copied = document.execCommand('copy');
             document.body.removeChild(textarea);
-            return success;
+            return copied;
         };
 
         const onSuccess = () => {
-            toast.success('Error message copied!', {
-                duration: 2000,
-                position: 'top-center',
-            });
+            this.props.closeAlert();
+            this.props.notifySuccess('Error message copied!');
         };
 
         const onFail = () => {
-            toast.error('Copy failed. Please copy manually.', {
-                duration: 3000,
-                position: 'top-center',
-            });
+            this.props.closeAlert();
+            this.props.notifyError('Copy failed. Please copy manually.');
         };
 
         if (navigator.clipboard?.writeText) {
@@ -70,83 +69,30 @@ class ErrorBoundary extends Component<Props, State> {
                 .catch(() => {
                     if (!copyFallback(text)) onFail();
                 });
+        } else if (!copyFallback(text)) {
+            onFail();
         } else {
-            if (!copyFallback(text)) onFail();
-            else onSuccess();
+            onSuccess();
         }
     }
 
-    componentDidCatch(error: Error, errorInfo: React.ErrorInfo): void {
+    componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
         console.error('ErrorBoundary caught an error:', error, errorInfo);
 
         if (this.props.showToast !== false) {
-            // ปิด toast เดิมถ้ามี
-            if (this.toastId) toast.dismiss(this.toastId);
-            // สร้าง custom toast ที่มีปุ่ม
-            this.toastId = toast.custom(
-                (t) => (
-                    <div
-                        className={`${
-                            t.visible ? 'animate-enter' : 'animate-leave'
-                        } max-w-md w-full rounded-sm pointer-events-auto flex flex-col`}
-                        style={{
-                            background: 'var(--color-error)',
-                            border: '1px solid var(--color-error-muted)',
-                        }}
-                    >
-                        <div className='p-4'>
-                            <div className='flex items-start'>
-                                <div className='shrink-0 pt-0.5'>
-                                    <FaTriangleExclamation className='w-5 h-5 text-error-foreground' />
-                                </div>
-                                <div className='ml-3 flex-1'>
-                                    <p className='text-sm font-bold text-error-foreground'>Error Occurred</p>
-                                    <p className='mt-1 text-sm text-error-foreground/90 wrap-break-word'>
-                                        {error.message || 'Something went wrong!'}
-                                    </p>
-                                </div>
-                            </div>
-                            <div className='mt-3 flex gap-2 justify-end'>
-                                <button
-                                    onClick={() => {
-                                        this.copyError();
-                                        toast.dismiss(t.id);
-                                    }}
-                                    className='px-3 py-1.5 text-sm font-medium text-error-foreground bg-transparent border border-error-foreground/40 rounded-sm hover:bg-error-foreground/10 transition-colors'
-                                >
-                                    <FaCopy className='w-3.5 h-3.5 mr-1 inline' />
-                                    Copy
-                                </button>
-                                <button
-                                    onClick={() => toast.dismiss(t.id)}
-                                    className='px-3 py-1.5 text-sm font-medium text-error-foreground bg-error-foreground/10 rounded-sm hover:bg-error-foreground/20 transition-colors'
-                                >
-                                    Close
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                ),
-                {
-                    duration: Infinity, // ไม่หายอัตโนมัติ
-                    position: 'top-center',
-                },
-            );
+            this.props.showError(error);
         }
 
         this.props.onError?.(error, errorInfo);
     }
 
     resetError(): void {
-        if (this.toastId) {
-            toast.dismiss(this.toastId);
-            this.toastId = undefined;
-        }
+        this.props.closeAlert();
         this.setState({ hasError: false, error: undefined });
         this.props.onReset?.();
     }
 
-    render(): React.ReactNode {
+    render(): ReactNode {
         if (this.state.hasError) {
             if (this.props.fallback) {
                 return (
@@ -154,7 +100,7 @@ class ErrorBoundary extends Component<Props, State> {
                         {this.props.fallback}
                         <button
                             onClick={this.resetError}
-                            className='mt-4 px-4 py-2 bg-accent text-accent-foreground rounded-sm cursor-pointer'
+                            className='mt-4 px-4 py-2 bg-primary text-primary-foreground rounded-sm cursor-pointer'
                         >
                             Try Again
                         </button>
@@ -173,7 +119,7 @@ class ErrorBoundary extends Component<Props, State> {
                     </button>
                     <button
                         onClick={this.resetError}
-                        className='px-4 py-2 bg-accent text-accent-foreground rounded-sm hover:bg-accent-emphasis cursor-pointer'
+                        className='px-4 py-2 bg-primary text-primary-foreground rounded-sm hover:bg-primary-emphasis cursor-pointer'
                     >
                         Try Again
                     </button>
@@ -185,4 +131,27 @@ class ErrorBoundary extends Component<Props, State> {
     }
 }
 
-export default ErrorBoundary;
+export default function ErrorBoundary(props: Props) {
+    const swal = useSwal();
+
+    const showError = (error: Error) => {
+        void swal.fire({
+            icon: 'error',
+            title: 'Error Occurred',
+            showConfirmButton: true,
+            allowOutsideClick: false,
+            confirmButtonText: 'Close',
+            text: error.message || 'Something went wrong!',
+        });
+    };
+
+    return (
+        <ErrorBoundaryInner
+            {...props}
+            showError={showError}
+            notifyError={swal.error}
+            closeAlert={swal.swal.close}
+            notifySuccess={swal.success}
+        />
+    );
+}

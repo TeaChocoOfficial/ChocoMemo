@@ -30,6 +30,27 @@ export class UserController {
         return this.userService.findAll();
     }
 
+    @Get('tag/:nameTag')
+    @ApiResponse({
+        status: 200,
+        type: ResponseUserDto,
+        description: 'Success',
+    })
+    @ApiResponse({
+        status: 404,
+        type: ResponseUserDto,
+        description: 'Not Found',
+    })
+    @ApiOperation({
+        summary: 'Get user by name tag',
+        description: 'Get user by name tag',
+    })
+    async findOneByNameTag(@Param('nameTag') nameTag: string) {
+        const user = await this.userService.findUserByNameTag(nameTag);
+        if (user === null) throw new NotFoundException(`User with tag ${nameTag} not found.`);
+        return user;
+    }
+
     @Get('id/:id')
     @ApiResponse({
         status: 200,

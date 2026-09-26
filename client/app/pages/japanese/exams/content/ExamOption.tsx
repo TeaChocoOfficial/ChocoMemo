@@ -19,7 +19,7 @@ export default function ExamOption({
     answered,
     onClick,
 }: ExamOptionProps) {
-    let stateClass = 'border-line hover:border-accent hover:bg-accent-subtle';
+    let stateClass = 'border-line hover:border-primary hover:bg-primary-subtle';
     if (answered && isCorrect) stateClass = 'border-success bg-success-subtle text-success-emphasis';
     else if (answered && isSelected && !isCorrect)
         stateClass = 'border-error bg-error-subtle text-error-emphasis';

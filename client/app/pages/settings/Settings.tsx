@@ -1,24 +1,20 @@
 import { motion } from 'framer-motion';
-import { useState } from 'react';
 import { Link } from '~/i18n/routing';
 import { useTranslation } from 'react-i18next';
 import Section from '~/components/custom/Section';
 import LanguageSwitcher from '~/components/config/LanguageSwitcher';
 import VoicePicker from '~/components/config/VoicePicker';
-import AuthModal from '~/components/auth/AuthModal';
 import Switch from '~/components/custom/Switch';
-import Button from '~/components/custom/Button';
+
 import ThemeGrid from './ThemeGrid';
 import { useChromeStore } from '~/stores/chrome.store';
-import { useAuthStore } from '~/stores/auth.store';
-import { FaArrowLeft, FaUser, FaRightFromBracket, FaSliders } from 'react-icons/fa6';
-import { useSignOut } from '~/components/layout/navbar/useSignOut';
+import { FaArrowLeft, FaSliders } from 'react-icons/fa6';
 
 function SectionHeading({ step, label, hint }: { step: string; label: string; hint: string }) {
     return (
         <div className='mb-5'>
             <div className='flex items-center gap-3'>
-                <span className='font-mono text-xs font-bold tracking-[0.14em] text-accent'>
+                <span className='font-mono text-xs font-bold tracking-[0.14em] text-primary'>
                     {step}
                 </span>
                 <span className='h-px w-10 bg-line-strong' />
@@ -32,13 +28,9 @@ function SectionHeading({ step, label, hint }: { step: string; label: string; hi
 }
 
 export default function SettingsPage() {
-    const signOut = useSignOut();
     const { t } = useTranslation();
-    const { user } = useAuthStore();
-    const isAuthenticated = Boolean(user);
-    const { showChrome, setShowChrome } = useChromeStore();
 
-    const [authModalOpen, setAuthModalOpen] = useState(false);
+    const { showChrome, setShowChrome } = useChromeStore();
 
     const sections = [
         { id: 'appearance', label: t('settings.nav.appearance') },
@@ -58,18 +50,18 @@ export default function SettingsPage() {
             <div className='mx-auto max-w-5xl px-4 sm:px-6 w-full'>
                 <Link
                     to='/'
-                    className='inline-flex items-center gap-2 mb-6 text-sm font-medium text-surface-muted hover:text-accent transition-colors'
+                    className='inline-flex items-center gap-2 mb-6 text-sm font-medium text-surface-muted hover:text-primary transition-colors'
                 >
                     <FaArrowLeft className='w-3.5 h-3.5' />
                     {t('settings.back')}
                 </Link>
 
                 <div className='mb-10 flex items-center gap-4'>
-                    <span className='flex h-12 w-12 items-center justify-center rounded-sm bg-accent/12 text-accent'>
+                    <span className='flex h-12 w-12 items-center justify-center rounded-sm bg-primary/12 text-primary'>
                         <FaSliders className='h-5 w-5' />
                     </span>
                     <div>
-                        <span className='font-mono text-xs font-bold tracking-[0.14em] text-accent'>
+                        <span className='font-mono text-xs font-bold tracking-[0.14em] text-primary'>
                             {t('settings.nav.settings')}
                         </span>
                         <h1 className='text-2xl sm:text-3xl font-black tracking-tight text-surface-foreground'>
@@ -165,49 +157,9 @@ export default function SettingsPage() {
                                 description={t('settings.interface.chromeDescription')}
                             />
                         </motion.section>
-
-                        <motion.section
-                            id='settings-account'
-                            initial={{ opacity: 0, y: 16 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.4, delay: 0.25 }}
-                            className='rounded-sm border border-line bg-surface p-5 sm:p-6'
-                        >
-                            <SectionHeading
-                                step='05'
-                                label={t('settings.nav.account')}
-                                hint={
-                                    isAuthenticated
-                                        ? t('settings.account.signedInHint', {
-                                              name: user?.name ?? '',
-                                          })
-                                        : t('settings.account.signedOutHint')
-                                }
-                            />
-                            {isAuthenticated ? (
-                                <div className='flex flex-wrap items-center gap-3'>
-                                    <Link
-                                        to='/profile'
-                                        className='inline-flex items-center gap-2 rounded-sm border border-line-strong px-4 py-2 text-sm font-semibold text-surface-foreground transition-colors cursor-pointer hover:border-accent hover:bg-accent-subtle'
-                                    >
-                                        <FaUser className='h-3.5 w-3.5' />
-                                        {t('settings.account.goToProfile')}
-                                    </Link>
-                                    <Button variant='ghost' onClick={signOut}>
-                                        <FaRightFromBracket className='h-3.5 w-3.5 text-error' />
-                                        <span className='text-error'>{t('auth.signOut')}</span>
-                                    </Button>
-                                </div>
-                            ) : (
-                                <Button variant='primary' onClick={() => setAuthModalOpen(true)}>
-                                    {t('settings.account.signIn')}
-                                </Button>
-                            )}
-                        </motion.section>
                     </div>
                 </div>
             </div>
-            <AuthModal isOpen={authModalOpen} onClose={() => setAuthModalOpen(false)} />
         </Section>
     );
 }

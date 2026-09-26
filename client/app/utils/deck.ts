@@ -1,7 +1,6 @@
 // -Path: 'client/app/utils/deck.ts'
 import { z } from 'zod';
-import type { LangText } from '~/types/type';
-import type { VocabDeck } from '~/types/vocabulary';
+import type { DeckData, LangText } from '~/types/type';
 
 // A name/description is either a plain string or a per-locale record,
 // matching LangText used everywhere else in the app.
@@ -25,7 +24,7 @@ function firstText(text: LangText): string {
 }
 
 /** Downloads a deck as a .json file that `importDeck` can read back. */
-export function exportDeck(deck: VocabDeck) {
+export function exportDeck(deck: DeckData) {
     const payload: { name: LangText; description?: LangText; wordIds: string[] } = {
         name: deck.name,
         description: deck.description,

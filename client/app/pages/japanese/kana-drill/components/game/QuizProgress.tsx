@@ -20,7 +20,7 @@ export default function QuizProgress({ current, total, label }: QuizProgressProp
             </div>
             <div className='h-2 w-full bg-surface-overlay border border-line overflow-hidden'>
                 <motion.div
-                    className='h-full bg-accent'
+                    className='h-full bg-primary'
                     initial={false}
                     animate={{ width: `${progress}%` }}
                     transition={{ duration: 0.4, ease: 'easeOut' }}

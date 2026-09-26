@@ -15,46 +15,117 @@
         "toggleLabel": "Oberfläche anzeigen"
     },
     "home": {
-        "badge": "ChocoMemo",
-        "title": "Mach dein Japanisch warm,",
-        "titleAccent": "eine Kana nach der anderen.",
-        "subtitle": "Kleine Häppchen aus Hiragana, Katakana und Vokabel-Quizzen, gebraut zu einem gemütlichen täglichen Ritual – wähle ein Design, schenk dir eine Tasse ein und lerne.",
+        "badge": "ChocoMemo · Sprachbibliothek der Community",
+        "title": "Lerne jede Sprache,",
+        "titleAccent": "ein geteiltes Deck nach dem anderen.",
+        "subtitle": "Japanisch, Englisch, Thai, Koreanisch und Chinesisch – jedes aus Decks, Übungen und Quizzen, die echte Lernende schreiben und miteinander teilen. Frei, offen und erweiterbar.",
         "ctaStart": "Jetzt lernen",
+        "ctaCreate": "Deck veröffentlichen",
         "ctaHow": "So funktioniert's",
+        "scriptsLabel": "Gerade am Ziehen",
+        "scripts": [
+            "A",
+            "あ",
+            "한",
+            "ก",
+            "字"
+        ],
         "stats": {
-            "badge": "Auf einen Blick",
+            "badge": "Im Regal",
+            "languages": "Sprachen",
             "kana": "Kana-Zeichen",
             "vocabulary": "Vokabeln",
-            "modes": "Übungsmodi",
-            "themes": "Designs"
+            "shelves": "Decks & Quizze"
+        },
+        "languages": {
+            "badge": "Das Regal",
+            "title": "Fünf Sprachen, eine warme Gewohnheit",
+            "hint": "Fang mit dem Tablett an, das heute fertig ist – der Rest zieht noch.",
+            "available": "Bereit zum Ausschenken",
+            "comingSoon": "Zieht noch",
+            "toAll": "Alle Sprachen ansehen",
+            "items": {
+                "japanese": {
+                    "name": "Japanisch",
+                    "description": "Hiragana, Katakana und Kanji mit Übungen und verteiltem Wiederholen."
+                },
+                "english": {
+                    "name": "Englisch",
+                    "description": "Alltagsvokabeln und Redewendungen, sortiert von denen, die sie benutzen."
+                },
+                "thai": {
+                    "name": "Thailändisch",
+                    "description": "Töne, Schrift und die Wörter, die dir draußen wirklich begegnen."
+                },
+                "korean": {
+                    "name": "Koreanisch",
+                    "description": "Hangul in einer Sitzung, danach Gesprächsdecks, die hängen bleiben."
+                },
+                "chinese": {
+                    "name": "Chinesisch",
+                    "description": "Zeichen, Pinyin und Tonpaare – in kurzen Runden geübt."
+                }
+            }
+        },
+        "library": {
+            "badge": "Das Community-Regal",
+            "title": "Ein Deck schreiben. Teilen. Beim Lehren zusehen.",
+            "hint": "Jedes Lernset in ChocoMemo schreibt ein Mensch, kein Verlag. Räum eines auf, veröffentliche es, und jemand anderes bekommt daraus einen ganzen Kurs.",
+            "cta": "Wiederholungsregal öffnen",
+            "items": {
+                "decks": {
+                    "title": "Vokabeldecks",
+                    "hint": "Fass Wörter in ein thematisches Deck – Natur, Tiere, Alltag – und wiederhole es wie ein kleines E-Book."
+                },
+                "exams": {
+                    "title": "Quiz-Sets",
+                    "hint": "Mach aus einem Deck eine Prüfung unter Zeitdruck und sieh genau, welche Wörter noch ziehen müssen."
+                },
+                "kana": {
+                    "title": "Kana-Übungen",
+                    "hint": "Schnelle Runden durch beide Silbentabellen, bis die Formen ohne Nachdenken kommen."
+                },
+                "review": {
+                    "title": "Verteiltes Wiederholen",
+                    "hint": "Heruntergeladene Decks kommen nach eigenem Plan zurück, nichts wird kalt."
+                }
+            }
         },
         "how": {
             "badge": "So funktioniert's",
-            "title": "Ein gemütliches tägliches Ritual",
+            "title": "Dein täglicher Aufguss",
             "hint": "Vier kleine Schritte, jeden Tag wiederholt – mehr brauchst du nicht.",
             "step1": {
-                "title": "Wähle deine Sprache",
-                "hint": "Entscheide, was du heute lernst."
+                "title": "Sprache wählen",
+                "hint": "Wähle das Tablett, das du heute lernst."
             },
             "step2": {
-                "title": "Lerne das Kana",
-                "hint": "Hiragana und Katakana, Schluck für Schluck."
+                "title": "Deck ausleihen",
+                "hint": "Nimm ein Deck von jemand anderem oder starte mit dem eingebauten Regal."
             },
             "step3": {
                 "title": "Üben und quizzen",
-                "hint": "Schnelle Kana-Übungen und Vokabelprüfungen."
+                "hint": "Kurze Kana-Übungen und Vokabeltests, fünf Minuten am Stück."
             },
             "step4": {
-                "title": "Täglich wiederholen",
-                "hint": "Wiederholungen halten Wörter frisch."
+                "title": "Veröffentliche deins",
+                "hint": "Füge die Wörter hinzu, die du vergisst, und teil sie mit dem Regal."
             }
+        },
+        "cta": {
+            "title": "Der Kessel steht schon auf.",
+            "hint": "Keine Anmeldesperre zwischen dir und dem ersten Deck. Melde dich erst an, wenn deine Wörter synchronisieren sollen.",
+            "primary": "Jetzt lernen",
+            "secondary": "Deck veröffentlichen"
         }
     },
     "theme": {
         "pickerLabel": "Thema wechseln",
         "names": {
-            "dark": "Dunkel",
-            "light": "Hell",
+            "lightChoco": "Helle Schoko",
+            "darkChoco": "Dunkle Schoko",
+            "darkGalaxy": "Dunkle Galaxie",
+            "lightGalaxy": "Helle Galaxie",
             "darkSakura": "Dunkle Sakura",
             "lightSakura": "Helle Sakura",
             "darkPaper": "Dunkles Papier",
@@ -92,7 +163,7 @@
     "languageSelect": {
         "badge": "Sprachauswahl",
         "title": "Wähle eine Sprache zum Lernen",
-        "description": "Wähle die Sprache, die du lernen möchtest. Weitere Sprachen folgen bald.",
+        "description": "Wähle die Sprache, die du lernen willst. Japanisch ist heute fertig, der Rest zieht noch.",
         "back_home": "Zurück zur Startseite",
         "status": {
             "available": "Verfügbar",
@@ -105,19 +176,23 @@
         "languages": {
             "japanese": {
                 "name": "Japanisch",
-                "description": "Lerne Hiragana, Katakana und wichtigen Wortschatz mit interaktiven Quizzen."
+                "description": "Hiragana, Katakana und Kanji – in kurzen Runden geübt und mit verteiltem Wiederholen warm gehalten."
             },
             "english": {
                 "name": "Englisch",
-                "description": "Englischkurse sind derzeit in Vorbereitung."
+                "description": "Alltagsvokabeln und Redewendungen, von denen, die sie wirklich benutzen, in Decks sortiert."
             },
             "thai": {
                 "name": "Thailändisch",
-                "description": "Thailändischkurse kommen bald."
+                "description": "Töne und Schrift nebeneinander, dazu die Wörter, die dir draußen begegnen."
             },
             "korean": {
                 "name": "Koreanisch",
-                "description": "Koreanischkurse kommen bald."
+                "description": "Hangul in einer Sitzung, danach Gesprächsdecks, die nicht kalt werden wollen."
+            },
+            "chinese": {
+                "name": "Chinesisch",
+                "description": "Zeichen, Pinyin und Tonpaare – ein paar Minuten am Stück geübt."
             }
         }
     },
@@ -391,6 +466,8 @@
         "email": "E-Mail",
         "password": "Passwort",
         "name": "Name",
+        "nameTag": "Benutzername",
+        "nameTagHint": "3-30 Zeichen. Nur englische Buchstaben, Zahlen, Unterstriche (_) oder Bindestriche (-), keine Leerzeichen. Dein öffentlicher Benutzername.",
         "confirmPassword": "Passwort bestätigen",
         "forgotPassword": "Passwort vergessen?",
         "resetPassword": "Passwort zurücksetzen",
@@ -414,6 +491,8 @@
         "error": {
             "invalidCredentials": "Ungültige E-Mail oder Passwort",
             "emailInUse": "E-Mail-Adresse bereits vergeben",
+            "nameTagTaken": "Dieser Benutzername ist bereits vergeben.",
+            "nameTagInvalid": "Der Benutzername muss 3-30 Zeichen lang sein: nur englische Buchstaben, Zahlen, Unterstriche oder Bindestriche (ohne Leerzeichen).",
             "passwordMismatch": "Die Passwörter stimmen nicht überein.",
             "invalidOtp": "Ungültiger oder abgelaufener Code. Bitte versuche es erneut.",
             "resendFailed": "Neuer Code konnte nicht gesendet werden. Bitte versuche es erneut.",
@@ -511,7 +590,15 @@
             "namePlaceholder": "Dein Name",
             "saving": "Speichern…",
             "saved": "Profil aktualisiert",
-            "updateError": "Profil konnte nicht aktualisiert werden."
+            "updateError": "Profil konnte nicht aktualisiert werden.",
+            "editProfile": "Profil bearbeiten",
+            "nameTag": "Benutzername",
+            "nameTagHint": "3-30 Zeichen. Nur englische Buchstaben, Zahlen, Unterstriche (_) oder Bindestriche (-), keine Leerzeichen. Dein öffentlicher Benutzername.",
+            "nameTagTaken": "Dieser Benutzername ist bereits vergeben.",
+            "nameTagInvalid": "Der Benutzername muss 3-30 Zeichen lang sein: nur englische Buchstaben, Zahlen, Unterstriche oder Bindestriche (ohne Leerzeichen).",
+            "noNameTag": "Noch kein Benutzername",
+            "bio": "Bio",
+            "bioPlaceholder": "Erzähl anderen ein bisschen über dich…"
         },
         "email": {
             "label": "Change email",

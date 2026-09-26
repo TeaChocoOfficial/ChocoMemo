@@ -29,7 +29,7 @@ export default function PasswordInput({
             <button
                 type='button'
                 onClick={() => onToggle()}
-                className='absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer text-surface-muted hover:text-accent'
+                className='absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer text-surface-muted hover:text-primary'
                 aria-label={visible ? 'Hide password' : 'Show password'}
             >
                 {visible ? <FaEyeSlash className='h-4 w-4' /> : <FaEye className='h-4 w-4' />}

@@ -40,12 +40,12 @@ export default function LanguageCard({ language, index }: LanguageCardProps) {
             <h3 className='text-2xl font-black tracking-tight text-surface-foreground mb-1'>
                 {name}
             </h3>
-            <p className='text-sm font-mono uppercase tracking-widest text-accent mb-4'>{code}</p>
+            <p className='text-sm font-mono uppercase tracking-widest text-primary mb-4'>{code}</p>
             <p className='text-sm leading-relaxed text-surface-muted flex-1'>{description}</p>
 
             <div className='mt-8'>
                 {available ? (
-                    <span className='inline-flex items-center gap-2 px-5 py-2.5 rounded-sm bg-accent text-accent-foreground text-sm font-semibold group-hover:bg-accent-emphasis transition-colors duration-200'>
+                    <span className='inline-flex items-center gap-2 px-5 py-2.5 rounded-sm bg-primary text-primary-foreground text-sm font-semibold group-hover:bg-primary-emphasis transition-colors duration-200'>
                         {t('languageSelect.cta.start')}
                     </span>
                 ) : (
@@ -81,7 +81,7 @@ export default function LanguageCard({ language, index }: LanguageCardProps) {
         >
             <Link
                 to={to!}
-                className={`${className} border-line bg-surface hover:border-accent hover:bg-surface-overlay`}
+                className={`${className} border-line bg-surface hover:border-primary hover:bg-surface-overlay`}
             >
                 {inner}
             </Link>

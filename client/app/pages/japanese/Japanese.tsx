@@ -2,20 +2,22 @@
 import { motion } from 'framer-motion';
 import { Link } from '~/i18n/routing';
 import JapaneseHero from './JapaneseHero';
+import { useTranslation } from 'react-i18next';
+import Section from '~/components/custom/Section';
+import { KANA_CHARS } from '~/data/japanese/kana';
+import { useVocabularyStore } from '~/stores/vocabulary.store';
+import { DEFAULT_VOCABULARY } from '~/data/japanese/vocabulary';
+import { useVocabProgressStore } from '~/stores/vocabProgress.store';
 import JapaneseNavCard, { type JapaneseNavItem } from './JapaneseNavCard';
 import { FaArrowLeft, FaArrowsRotate, FaBolt, FaClipboardCheck } from 'react-icons/fa6';
-import { useTranslation } from 'react-i18next';
-import { KANA_CHARS } from '~/data/japanese/kana';
-import { DEFAULT_VOCABULARY } from '~/data/japanese/vocabulary';
-import { useVocabularyStore } from '~/stores/vocabulary.store';
-import { useVocabProgressStore } from '~/stores/vocabProgress.store';
-import Section from '~/components/custom/Section';
 
 function SectionHeading({ step, label, hint }: { step: string; label: string; hint: string }) {
     return (
         <div className='mb-6'>
             <div className='flex items-center gap-3'>
-                <span className='font-mono text-xs font-bold tracking-[0.14em] text-accent'>{step}</span>
+                <span className='font-mono text-xs font-bold tracking-[0.14em] text-primary'>
+                    {step}
+                </span>
                 <span className='h-px w-10 bg-line-strong' />
                 <h2 className='text-xl sm:text-2xl font-bold tracking-tight text-surface-foreground'>
                     {label}
@@ -89,7 +91,7 @@ export default function JapanesePage() {
             <div className='mx-auto max-w-5xl px-4 sm:px-6 w-full'>
                 <Link
                     to='/language-select'
-                    className='inline-flex items-center gap-2 mb-6 text-sm font-medium text-surface-muted hover:text-accent transition-colors'
+                    className='inline-flex items-center gap-2 mb-6 text-sm font-medium text-surface-muted hover:text-primary transition-colors'
                 >
                     <FaArrowLeft className='w-3.5 h-3.5' />
                     {t('japanese.back_language')}

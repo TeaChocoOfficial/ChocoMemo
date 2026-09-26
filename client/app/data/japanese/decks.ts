@@ -1,6 +1,6 @@
 // -Path: 'client/app/data/japanese/decks.ts'
+import type { DeckData } from '~/types/type';
 import { DEFAULT_VOCABULARY } from './vocabulary';
-import type { VocabDeck } from '~/types/vocabulary';
 
 /**
  * Built-in themed decks derived from DEFAULT_VOCABULARY.
@@ -16,7 +16,7 @@ const ANIMALS = ['v9', 'v10', 'v11', 'v12'];
 const THINGS = ['v13', 'v14', 'v15', 'v16', 'v17'];
 const ACTIONS = ['v18', 'v19', 'v20'];
 
-export const DEFAULT_DECKS: VocabDeck[] = [
+export const DEFAULT_DECKS: DeckData[] = [
     {
         id: 'deck-nature',
         name: 'Nature',
@@ -48,7 +48,7 @@ export const DEFAULT_DECKS: VocabDeck[] = [
 ];
 
 /** Resolve the words for any deck from the default set. */
-export function wordsForDeck(deck: VocabDeck) {
+export function wordsForDeck(deck: DeckData) {
     if (deck.source === 'default') {
         return deck.wordIds
             .map((id) => DEFAULT_VOCABULARY.find((w) => w.id === id))
@@ -58,6 +58,6 @@ export function wordsForDeck(deck: VocabDeck) {
 }
 
 /** Look up a deck by id across the default set. */
-export function findDefaultDeck(id: string): VocabDeck | undefined {
+export function findDefaultDeck(id: string): DeckData | undefined {
     return DEFAULT_DECKS.find((d) => d.id === id);
 }

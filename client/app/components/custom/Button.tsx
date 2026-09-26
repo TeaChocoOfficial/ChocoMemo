@@ -8,9 +8,9 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variantClasses: Record<string, string> = {
     ghost: 'bg-transparent hover:bg-surface-overlay text-surface-foreground',
-    outline: 'border border-line-strong text-accent hover:border-accent hover:bg-accent-subtle',
+    outline: 'border border-line-strong text-primary hover:border-primary hover:bg-primary-subtle',
     surface: 'bg-surface text-surface-foreground border border-line hover:bg-surface-overlay',
-    primary: 'bg-accent text-accent-foreground hover:bg-accent-emphasis',
+    primary: 'bg-primary text-primary-foreground hover:bg-primary-emphasis',
     secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary-emphasis',
 };
 
@@ -29,7 +29,7 @@ export default function Button({
 }: ButtonProps) {
     return (
         <button
-            className={`inline-flex items-center justify-center gap-2 rounded-sm font-semibold transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 active:translate-y-px disabled:opacity-50 disabled:pointer-events-none cursor-pointer ${variantClasses[variant]} ${sizeClasses[size]} ${className || ''}`}
+            className={`inline-flex items-center justify-center gap-2 rounded-sm font-semibold transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2 active:translate-y-px disabled:opacity-50 disabled:pointer-events-none cursor-pointer ${variantClasses[variant]} ${sizeClasses[size]} ${className || ''}`}
             {...props}
         >
             {children}

@@ -10,9 +10,9 @@ import ExamSetCard from './components/ExamSetCard';
 import ImportExamButton from './ImportExamButton';
 import AddCustomExamButton from './AddCustomExamButton';
 
-export default function ExamSetList() {
+export default function DeckListPage() {
     const { t } = useTranslation();
-    const allSets = useAllExamSets(defaultExamSets);
+    const decks = useAllExamSets(defaultExamSets);
     const removeCustomSet = useExamSetsStore((s) => s.removeCustomSet);
     const removeImportedSet = useExamSetsStore((s) => s.removeImportedSet);
 
@@ -21,18 +21,18 @@ export default function ExamSetList() {
             <div className='mx-auto max-w-5xl px-4 sm:px-6 w-full'>
                 <Link
                     to='/japanese'
-                    className='inline-flex items-center gap-2 mb-6 text-sm font-medium text-surface-muted hover:text-accent transition-colors'
+                    className='inline-flex items-center gap-2 mb-6 text-sm font-medium text-surface-muted hover:text-primary transition-colors'
                 >
                     <FaArrowLeft className='w-3.5 h-3.5' />
                     {t('japanese.exams.back_hub')}
                 </Link>
 
                 <DecksList
+                    localItems={decks}
                     eyebrow='Exam desk'
                     title={t('japanese.exams.title')}
                     description={t('japanese.exams.description')}
                     searchPlaceholder={t('japanese.exams.search')}
-                    localItems={allSets}
                     cloudItems={null}
                     communityItems={null}
                     getSearchText={(set) => set.title + ' ' + (set.description ?? '')}
@@ -43,9 +43,10 @@ export default function ExamSetList() {
                             <AddCustomExamButton />
                         </div>
                     }
-                    renderItem={(set) => (
+                    renderItem={(set, index) => (
                         <ExamSetCard
                             examSet={set}
+                            index={index}
                             onDelete={
                                 set.source === 'custom'
                                     ? () => removeCustomSet(set.id)

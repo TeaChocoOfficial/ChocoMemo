@@ -22,13 +22,10 @@ export default function Footer() {
                     <div className='flex flex-col gap-3'>
                         <Link to='/' className='flex items-center gap-3'>
                             <img
-                                src={getAssetUrl('/icon.svg')}
-                                alt='Choco'
-                                className='h-12 w-12 shrink-0'
+                                alt='ChocoMemo'
+                                src={getAssetUrl('/icon.png')}
+                                className='h-12 shrink-0'
                             />
-                            <span className='text-lg font-extrabold tracking-tight text-accent'>
-                                ChocoMemo
-                            </span>
                         </Link>
                         <p className='max-w-xs text-sm text-surface-muted'>{t('footer.tagline')}</p>
                     </div>
@@ -42,7 +39,7 @@ export default function Footer() {
                             <li>
                                 <Link
                                     to='/'
-                                    className='text-surface-foreground hover:text-accent transition-colors'
+                                    className='text-surface-foreground hover:text-primary transition-colors'
                                 >
                                     {t('nav.home')}
                                 </Link>
@@ -50,7 +47,7 @@ export default function Footer() {
                             <li>
                                 <Link
                                     to='/language-select'
-                                    className='text-surface-foreground hover:text-accent transition-colors'
+                                    className='text-surface-foreground hover:text-primary transition-colors'
                                 >
                                     {t('nav.languages')}
                                 </Link>
@@ -58,7 +55,7 @@ export default function Footer() {
                             <li>
                                 <Link
                                     to='/japanese'
-                                    className='text-surface-foreground hover:text-accent transition-colors'
+                                    className='text-surface-foreground hover:text-primary transition-colors'
                                 >
                                     {t('nav.japanese')}
                                 </Link>
@@ -85,14 +82,12 @@ export default function Footer() {
                 </div>
 
                 <div className='mt-10 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-line pt-6'>
-                    <p className='text-sm text-surface-muted'>
-                        © 2026 {t('footer.rights')}
-                    </p>
+                    <p className='text-sm text-surface-muted'>© 2026 {t('footer.rights')}</p>
                     <a
                         href='https://github.com/TeaChoco'
                         target='_blank'
                         rel='noopener noreferrer'
-                        className='flex items-center gap-2 text-sm text-surface-subtle hover:text-accent transition-colors'
+                        className='flex items-center gap-2 text-sm text-surface-subtle hover:text-primary transition-colors'
                     >
                         <FaGithub className='h-4 w-4' />
                         TeaChoco

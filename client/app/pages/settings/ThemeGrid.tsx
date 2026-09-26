@@ -11,6 +11,7 @@ export default function ThemeGrid() {
         <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3'>
             {THEMES.map((item, index) => {
                 const active = theme === item.id;
+                const Icon = item.icon;
                 return (
                     <motion.button
                         key={item.id}
@@ -25,7 +26,7 @@ export default function ThemeGrid() {
                         aria-label={t(`theme.names.${item.labelKey}`)}
                         className={`group cursor-pointer overflow-hidden rounded-sm border text-left transition-colors ${
                             active
-                                ? 'border-accent ring-1 ring-accent'
+                                ? 'border-primary ring-1 ring-primary'
                                 : 'border-line hover:border-line-strong'
                         }`}
                     >
@@ -39,12 +40,12 @@ export default function ThemeGrid() {
                                     item.dark ? 'text-white/90' : 'text-black/50'
                                 }`}
                             >
-                                {item.kanji}
+                                <Icon className='h-4 w-4' />
                             </span>
                             <span
                                 className={`absolute bottom-2 left-2 flex h-5 w-5 items-center justify-center rounded-full transition-all ${
                                     active
-                                        ? 'bg-accent text-accent-foreground'
+                                        ? 'bg-primary text-primary-foreground'
                                         : 'bg-white/30 text-transparent group-hover:bg-white/50 group-hover:text-white/40'
                                 }`}
                             >
@@ -56,7 +57,7 @@ export default function ThemeGrid() {
                         </span>
                         <span
                             aria-hidden
-                            className={`block h-0.5 w-full ${active ? 'bg-accent' : 'bg-transparent'}`}
+                            className={`block h-0.5 w-full ${active ? 'bg-primary' : 'bg-transparent'}`}
                         />
                     </motion.button>
                 );

@@ -12,7 +12,7 @@ function Stat({ label, value }: { label: string; value: number }) {
             transition={{ duration: 0.3 }}
             className='rounded-sm border border-line bg-surface p-4 sm:p-5'
         >
-            <div className='font-mono text-2xl font-black tabular-nums text-accent sm:text-3xl'>
+            <div className='font-mono text-2xl font-black tabular-nums text-primary sm:text-3xl'>
                 {value.toLocaleString()}
             </div>
             <div className='mt-1 text-xs font-semibold uppercase tracking-[0.14em] text-surface-muted'>
@@ -38,7 +38,7 @@ export default function StatsSection() {
     return (
         <section>
             <div className='mb-5 flex items-center gap-3'>
-                <span className='font-mono text-xs font-bold tracking-[0.14em] text-accent'>01</span>
+                <span className='font-mono text-xs font-bold tracking-[0.14em] text-primary'>01</span>
                 <span className='h-px w-10 bg-line-strong' />
                 <h2 className='text-lg font-bold tracking-tight text-surface-foreground sm:text-xl'>
                     {t('profile.stats.label')}

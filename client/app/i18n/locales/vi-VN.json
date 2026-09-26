@@ -15,46 +15,117 @@
         "toggleLabel": "Hiển thị giao diện"
     },
     "home": {
-        "badge": "ChocoMemo",
-        "title": "Sưởi ấm tiếng Nhật của bạn,",
-        "titleAccent": "từng chữ kana một.",
-        "subtitle": "Hiragana, katakana và các bài kiểm tra từ vựng được pha thành nghi thức hằng ngày ấm áp — chọn chủ đề, rót một tách và học.",
+        "badge": "ChocoMemo · thư viện ngôn ngữ cộng đồng",
+        "title": "Học bất kỳ ngôn ngữ nào,",
+        "titleAccent": "mỗi lần một bộ thẻ chung.",
+        "subtitle": "Tiếng Nhật, Anh, Thái, Hàn và Trung — mỗi ngôn ngữ được xây từ các bộ thẻ, bài luyện và câu đố do chính người học viết và chia sẻ. Miễn phí, mở, và bạn muốn mở rộng cũng được.",
         "ctaStart": "Bắt đầu học",
+        "ctaCreate": "Đăng bộ thẻ",
         "ctaHow": "Cách hoạt động",
+        "scriptsLabel": "Đang pha",
+        "scripts": [
+            "A",
+            "あ",
+            "한",
+            "ก",
+            "字"
+        ],
         "stats": {
-            "badge": "Tổng quan",
+            "badge": "Trên kệ",
+            "languages": "Ngôn ngữ",
             "kana": "Ký tự kana",
             "vocabulary": "Từ vựng",
-            "modes": "Chế độ luyện tập",
-            "themes": "Chủ đề"
+            "shelves": "Bộ thẻ & câu đố"
+        },
+        "languages": {
+            "badge": "Kệ sách",
+            "title": "Năm ngôn ngữ, một thói quen ấm áp",
+            "hint": "Bắt đầu với khay nào đã sẵn sàng hôm nay — những cái còn lại đang ngâm.",
+            "available": "Sẵn sàng rót",
+            "comingSoon": "Đang ngâm",
+            "toAll": "Xem mọi ngôn ngữ",
+            "items": {
+                "japanese": {
+                    "name": "Tiếng Nhật",
+                    "description": "Hiragana, katakana và kanji cùng bài luyện và ôn tập giãn cách."
+                },
+                "english": {
+                    "name": "Tiếng Anh",
+                    "description": "Từ vựng và câu giao tiếp hằng ngày, do chính người dùng sắp xếp."
+                },
+                "thai": {
+                    "name": "Tiếng Thái",
+                    "description": "Thanh điệu, chữ viết và những từ bạn sẽ thực sự gặp ngoài đường."
+                },
+                "korean": {
+                    "name": "Tiếng Hàn",
+                    "description": "Hangul trong một buổi, rồi những bộ thẻ hội thoại bền lâu."
+                },
+                "chinese": {
+                    "name": "Tiếng Trung",
+                    "description": "Chữ Hán, pinyin và các cặp thanh điệu, luyện theo vòng ngắn."
+                }
+            }
+        },
+        "library": {
+            "badge": "Kệ của cộng đồng",
+            "title": "Viết một bộ thẻ. Chia sẻ. Xem nó dạy.",
+            "hint": "Mỗi bộ học trong ChocoMemo đều do một con người viết, không phải một nhà xuất bản. Chỉnh lại một bộ, đăng lên, và người khác sẽ có trọn một khóa học từ đó.",
+            "cta": "Mở kệ ôn tập",
+            "items": {
+                "decks": {
+                    "title": "Bộ thẻ từ vựng",
+                    "hint": "Nhóm từ theo chủ đề — thiên nhiên, động vật, đồ đạc hằng ngày — rồi ôn như một cuốn sách bỏ túi."
+                },
+                "exams": {
+                    "title": "Bộ câu đố",
+                    "hint": "Biến một bộ thẻ thành bài thi có đếm ngược, và sẽ thấy rõ từ nào còn cần ngâm."
+                },
+                "kana": {
+                    "title": "Bài luyện kana",
+                    "hint": "Lượt nhanh qua cả hai bảng âm đến khi hình dạng ra mà không cần nghĩ."
+                },
+                "review": {
+                    "title": "Ôn tập giãn cách",
+                    "hint": "Các bộ thẻ bạn đã tải sẽ tự quay lại đúng lịch riêng, nên không gì bị nguội."
+                }
+            }
         },
         "how": {
             "badge": "Cách hoạt động",
-            "title": "Nghi thức hằng ngày ấm áp",
-            "hint": "Bốn bước nhỏ lặp lại mỗi ngày — chỉ vậy thôi.",
+            "title": "Cốc rót mỗi ngày",
+            "hint": "Bốn bước nhỏ, lặp lại mỗi ngày — chỉ vậy thôi là đủ.",
             "step1": {
                 "title": "Chọn ngôn ngữ",
-                "hint": "Chọn thứ bạn muốn học hôm nay."
+                "hint": "Chọn khay bạn học hôm nay."
             },
             "step2": {
-                "title": "Học kana",
-                "hint": "Hiragana và katakana, từng chút một."
+                "title": "Mượn một bộ thẻ",
+                "hint": "Lấy bộ thẻ do người khác viết, hoặc bắt đầu từ kệ có sẵn."
             },
             "step3": {
-                "title": "Luyện tập và kiểm tra",
-                "hint": "Bài tập kana nhanh và bài kiểm tra từ vựng."
+                "title": "Luyện và đối",
+                "hint": "Bài luyện kana ngắn và thi từ vựng, mỗi lần năm phút."
             },
             "step4": {
-                "title": "Ôn mỗi ngày",
-                "hint": "Ôn tập ngắt quãng giúp ghi nhớ từ."
+                "title": "Đăng bộ thẻ của bạn",
+                "hint": "Thêm những từ bạn hay quên và chia sẻ lại với kệ."
             }
+        },
+        "cta": {
+            "title": "Ấm đã lên bếp rồi.",
+            "hint": "Không có bức tường đăng ký nào giữa bạn và bộ thẻ đầu tiên. Chỉ đăng nhập khi bạn muốn đồng bộ từ vựng.",
+            "primary": "Bắt đầu học",
+            "secondary": "Đăng bộ thẻ"
         }
     },
     "theme": {
         "pickerLabel": "Đổi chủ đề",
         "names": {
-            "dark": "Tối",
-            "light": "Sáng",
+            "lightChoco": "Sô cô la sáng",
+            "darkChoco": "Sô cô la tối",
+            "darkGalaxy": "Thiên hà tối",
+            "lightGalaxy": "Thiên hà sáng",
             "darkSakura": "Sakura tối",
             "lightSakura": "Sakura sáng",
             "darkPaper": "Giấy tối",
@@ -92,7 +163,7 @@
     "languageSelect": {
         "badge": "Chọn ngôn ngữ",
         "title": "Chọn ngôn ngữ để học",
-        "description": "Chọn ngôn ngữ bạn muốn học. Sẽ có thêm nhiều ngôn ngữ khác sắp tới.",
+        "description": "Chọn ngôn ngữ bạn muốn học. Tiếng Nhật đã sẵn sàng hôm nay; những ngôn ngữ còn lại đang ngâm.",
         "back_home": "Về trang chủ",
         "status": {
             "available": "Khả dụng",
@@ -105,19 +176,23 @@
         "languages": {
             "japanese": {
                 "name": "Tiếng Nhật",
-                "description": "Học Hiragana, Katakana và từ vựng thiết yếu qua các bài quiz tương tác."
+                "description": "Hiragana, katakana và kanji, luyện theo vòng ngắn và giữ ấm bằng ôn tập giãn cách."
             },
             "english": {
                 "name": "Tiếng Anh",
-                "description": "Các khóa học tiếng Anh đang được chuẩn bị."
+                "description": "Từ vựng và câu giao tiếp hằng ngày, do chính người dùng sắp vào từng bộ thẻ."
             },
             "thai": {
                 "name": "Tiếng Thái",
-                "description": "Các khóa học tiếng Thái sắp ra mắt."
+                "description": "Thanh điệu và chữ viết cạnh nhau, cùng những từ bạn sẽ gặp ngoài đường."
             },
             "korean": {
                 "name": "Tiếng Hàn",
-                "description": "Các khóa học tiếng Hàn sắp ra mắt."
+                "description": "Hangul trong một buổi, rồi những bộ thẻ hội thoại không chịu nguội."
+            },
+            "chinese": {
+                "name": "Tiếng Trung",
+                "description": "Chữ Hán, pinyin và các cặp thanh điệu, luyện mỗi lần vài phút."
             }
         }
     },
@@ -391,6 +466,8 @@
         "email": "Email",
         "password": "Mật khẩu",
         "name": "Tên",
+        "nameTag": "Tên người dùng",
+        "nameTagHint": "3-30 ký tự. Chỉ gồm chữ cái tiếng Anh, số, gạch dưới (_) hoặc dấu gạch ngang (-), không có khoảng trắng. Tên người dùng công khai của bạn.",
         "confirmPassword": "Xác nhận mật khẩu",
         "forgotPassword": "Quên mật khẩu?",
         "resetPassword": "Đặt lại mật khẩu",
@@ -414,6 +491,8 @@
         "error": {
             "invalidCredentials": "Email hoặc mật khẩu không đúng.",
             "emailInUse": "Tài khoản với email này đã tồn tại.",
+            "nameTagTaken": "Tên người dùng đó đã có người sử dụng.",
+            "nameTagInvalid": "Tên người dùng phải có 3-30 ký tự: chỉ gồm chữ cái tiếng Anh, số, gạch dưới hoặc dấu gạch ngang (không có khoảng trắng).",
             "passwordMismatch": "Mật khẩu không khớp.",
             "invalidOtp": "Mã không hợp lệ hoặc đã hết hạn. Vui lòng thử lại.",
             "resendFailed": "Không thể gửi mã mới. Vui lòng thử lại.",
@@ -511,7 +590,15 @@
             "namePlaceholder": "Tên của bạn",
             "saving": "Đang lưu…",
             "saved": "Đã cập nhật hồ sơ",
-            "updateError": "Không thể cập nhật hồ sơ của bạn."
+            "updateError": "Không thể cập nhật hồ sơ của bạn.",
+            "editProfile": "Chỉnh sửa hồ sơ",
+            "nameTag": "Tên người dùng",
+            "nameTagHint": "3-30 ký tự. Chỉ gồm chữ cái tiếng Anh, số, gạch dưới (_) hoặc dấu gạch ngang (-), không có khoảng trắng. Tên người dùng công khai của bạn.",
+            "nameTagTaken": "Tên người dùng đó đã có người sử dụng.",
+            "nameTagInvalid": "Tên người dùng phải có 3-30 ký tự: chỉ gồm chữ cái tiếng Anh, số, gạch dưới hoặc dấu gạch ngang (không có khoảng trắng).",
+            "noNameTag": "Chưa có tên người dùng",
+            "bio": "Giới thiệu",
+            "bioPlaceholder": "Hãy chia sẻ một chút về bản thân bạn…"
         },
         "email": {
             "label": "Change email",

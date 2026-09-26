@@ -3,7 +3,7 @@ import { getJapaneseNavItems } from './utils';
 import { useTranslation } from 'react-i18next';
 import { FaChevronDown } from 'react-icons/fa6';
 import { Link, usePathname } from '~/i18n/routing';
-import { useClickOutside } from './useClickOutside';
+import { useClickOutside } from './menu/useClickOutside';
 import { AnimatePresence, motion } from 'framer-motion';
 
 export default function DesktopNav() {
@@ -21,7 +21,7 @@ export default function DesktopNav() {
         <Link
             to={to}
             className={`relative px-3 py-1.5 text-sm font-medium transition-colors cursor-pointer rounded-sm ${
-                active ? 'text-accent' : 'text-surface-muted hover:text-surface-foreground hover:bg-surface-overlay'
+                active ? 'text-primary' : 'text-surface-muted hover:text-surface-foreground hover:bg-surface-overlay'
             }`}
         >
             {label}
@@ -44,7 +44,7 @@ export default function DesktopNav() {
                     onClick={() => setJapaneseOpen((o) => !o)}
                     className={`relative flex items-center gap-1 px-3 py-1.5 text-sm font-medium transition-colors cursor-pointer rounded-sm ${
                         isJapaneseActive
-                            ? 'text-accent'
+                            ? 'text-primary'
                             : 'text-surface-muted hover:text-surface-foreground hover:bg-surface-overlay'
                     }`}
                 >
@@ -75,7 +75,7 @@ export default function DesktopNav() {
                                         onClick={() => setJapaneseOpen(false)}
                                         className={`block px-3 py-2 text-sm transition-colors cursor-pointer ${
                                             active
-                                                ? 'bg-accent/8 font-medium text-accent'
+                                                ? 'bg-primary/8 font-medium text-primary'
                                                 : 'text-surface-foreground hover:bg-surface-overlay'
                                         }`}
                                     >

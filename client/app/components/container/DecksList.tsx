@@ -7,25 +7,34 @@
 // The visual language is a "tea tasting note" desk: a warm paper sheet with a
 // faint dot grid, a tea-label title, underline tabs and a ruled search line.
 // Cards are rendered by the caller (index cards with washi tape).
-import { Fragment, useState } from 'react';
+import { useState } from 'react';
+import DeckCard from './DeckCard';
+import type { DeckData } from '~/types/type';
 import { useTranslation } from 'react-i18next';
 import { FaMagnifyingGlass } from 'react-icons/fa6';
-import SetTabs, { type SetTabOption } from '~/components/custom/SetTabs';
-import { useCollectionFilter } from '~/hooks/useCollectionFilter';
 import type { CollectionTab } from '~/types/collection';
+import { useCollectionFilter } from '~/hooks/useCollectionFilter';
+import SetTabs, { type SetTabOption } from '~/components/custom/SetTabs';
 
-interface DecksListProps<T> {
-    eyebrow?: string;
+interface DecksListProps<Item> {
     title: string;
+    eyebrow?: string;
+    localItems: Item[];
     description?: string;
-    searchPlaceholder: string;
-    localItems: T[];
-    cloudItems: T[] | null;
-    communityItems: T[] | null;
-    getSearchText: (item: T) => string;
-    renderItem: (item: T) => React.ReactNode;
+    cloudItems: Item[] | null;
     emptyStateLabel: string;
+    searchPlaceholder: string;
+    communityItems: Item[] | null;
     headerAction?: React.ReactNode;
+    getSearchText: (item: Item) => string;
+    /** Renders one card. Defaults to the vocabulary DeckCard, which also
+     *  needs `to` + the three handlers; collections with their own card
+     *  (exam sets) pass `renderItem` instead. */
+    renderItem?: (item: Item, index: number) => React.ReactNode;
+    to?: string;
+    onExport?: (item: Item) => void;
+    onDelete?: (item: Item) => void;
+    onDownload?: (item: Item) => void;
 }
 
 const TAB_OPTIONS: SetTabOption<string, CollectionTab>[] = [
@@ -34,19 +43,23 @@ const TAB_OPTIONS: SetTabOption<string, CollectionTab>[] = [
     { id: 'community' },
 ];
 
-export default function DecksList<T>({
-    eyebrow,
+export default function DecksList<Item extends { id: string }>({
+    to,
     title,
-    description,
-    searchPlaceholder,
+    eyebrow,
+    onExport,
+    onDelete,
+    onDownload,
     localItems,
     cloudItems,
-    communityItems,
+    description,
+    headerAction,
     getSearchText,
     renderItem,
+    communityItems,
     emptyStateLabel,
-    headerAction,
-}: DecksListProps<T>) {
+    searchPlaceholder,
+}: DecksListProps<Item>) {
     const { t } = useTranslation();
     const [activeTab, setActiveTab] = useState<CollectionTab>('local');
 
@@ -74,7 +87,7 @@ export default function DecksList<T>({
                 <header className='flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between'>
                     <div className='max-w-2xl'>
                         {eyebrow && (
-                            <p className='font-mono text-[11px] font-bold uppercase tracking-[0.22em] text-accent'>
+                            <p className='font-mono text-[11px] font-bold uppercase tracking-[0.22em] text-primary'>
                                 {eyebrow}
                             </p>
                         )}
@@ -105,7 +118,7 @@ export default function DecksList<T>({
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
                         placeholder={searchPlaceholder}
-                        className='w-full border-b border-line-strong bg-transparent py-2 pl-6 pr-2 font-mono text-sm text-surface-foreground placeholder:text-surface-muted outline-none transition-colors focus:border-accent'
+                        className='w-full border-b border-line-strong bg-transparent py-2 pl-6 pr-2 font-mono text-sm text-surface-foreground placeholder:text-surface-muted outline-none transition-colors focus:border-primary'
                     />
                 </div>
 
@@ -120,7 +133,20 @@ export default function DecksList<T>({
                 ) : (
                     <div className='grid gap-6 sm:grid-cols-2'>
                         {filtered.map((item, index) => (
-                            <Fragment key={index}>{renderItem(item)}</Fragment>
+                            <div key={item.id} className='h-full'>
+                                {renderItem ? (
+                                    renderItem(item, index)
+                                ) : (
+                                    <DeckCard
+                                        to={to ?? ''}
+                                        deck={item as unknown as DeckData}
+                                        index={index}
+                                        onExport={() => onExport?.(item)}
+                                        onDelete={() => onDelete?.(item)}
+                                        onDownload={() => onDownload?.(item)}
+                                    />
+                                )}
+                            </div>
                         ))}
                     </div>
                 )}

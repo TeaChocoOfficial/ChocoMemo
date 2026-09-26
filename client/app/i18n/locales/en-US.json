@@ -1,7 +1,6 @@
 {
     "nav": {
         "home": "Home",
-        "tagline": "Language Learning",
         "languages": "Languages",
         "japanese": "Japanese",
         "menu": "Open menu",
@@ -15,46 +14,117 @@
         "toggleLabel": "Show interface"
     },
     "home": {
-        "badge": "ChocoMemo",
-        "title": "Warm up your Japanese,",
-        "titleAccent": "one kana at a time.",
-        "subtitle": "Bite-sized hiragana, katakana and vocabulary quizzes brewed into a cozy daily ritual — pick a theme, pour a cup, and learn.",
+        "badge": "ChocoMemo · community language library",
+        "title": "Learn any language,",
+        "titleAccent": "one shared deck at a time.",
+        "subtitle": "Japanese, English, Thai, Korean and Chinese — each one built from decks, drills and quizzes that real learners write, share and pour for each other. Free, open, and yours to extend.",
         "ctaStart": "Start learning",
+        "ctaCreate": "Publish a deck",
         "ctaHow": "See how it works",
+        "scriptsLabel": "Now brewing",
+        "scripts": [
+            "A",
+            "あ",
+            "한",
+            "ก",
+            "字"
+        ],
         "stats": {
-            "badge": "At a glance",
+            "badge": "On the shelf",
+            "languages": "Languages",
             "kana": "Kana characters",
             "vocabulary": "Vocabulary words",
-            "modes": "Practice modes",
-            "themes": "Themes"
+            "shelves": "Decks & quizzes"
+        },
+        "languages": {
+            "badge": "The shelf",
+            "title": "Five languages, one warm habit",
+            "hint": "Start with the tray that's ready today — the rest are steeping.",
+            "available": "Ready to pour",
+            "comingSoon": "Steeping",
+            "toAll": "Browse every language",
+            "items": {
+                "japanese": {
+                    "name": "Japanese",
+                    "description": "Hiragana, katakana and kanji with drills and spaced review."
+                },
+                "english": {
+                    "name": "English",
+                    "description": "Everyday vocabulary and phrases, sorted by the people who use them."
+                },
+                "thai": {
+                    "name": "Thai",
+                    "description": "Tones, script and the words you'll actually meet on the street."
+                },
+                "korean": {
+                    "name": "Korean",
+                    "description": "Hangul in one sitting, then conversation decks that stick."
+                },
+                "chinese": {
+                    "name": "Chinese",
+                    "description": "Characters, pinyin and tone pairs, drilled in short rounds."
+                }
+            }
+        },
+        "library": {
+            "badge": "The community shelf",
+            "title": "Write a deck. Share it. Watch it teach.",
+            "hint": "Every study set in ChocoMemo is written by a person, not a publisher. Tidy one up, publish it, and someone else gets a whole course from it.",
+            "cta": "Open the review shelf",
+            "items": {
+                "decks": {
+                    "title": "Vocabulary decks",
+                    "hint": "Group words into a themed deck — nature, animals, everyday things — and review it like a little e-book."
+                },
+                "exams": {
+                    "title": "Quiz sets",
+                    "hint": "Turn a deck into a timed exam and see exactly which words still need steeping."
+                },
+                "kana": {
+                    "title": "Kana drills",
+                    "hint": "Fast rounds through both syllabaries until the shapes come without thinking."
+                },
+                "review": {
+                    "title": "Spaced review",
+                    "hint": "Decks you downloaded come back on their own schedule, so nothing goes cold."
+                }
+            }
         },
         "how": {
             "badge": "How it works",
-            "title": "A cozy daily ritual",
+            "title": "Your daily pour",
             "hint": "Four small steps, repeated every day — that's all it takes.",
             "step1": {
                 "title": "Pick your language",
-                "hint": "Choose what you're studying today."
+                "hint": "Choose the tray you're studying today."
             },
             "step2": {
-                "title": "Learn the kana",
-                "hint": "Hiragana and katakana, one sip at a time."
+                "title": "Borrow a deck",
+                "hint": "Take a deck someone else wrote, or start from the built-in shelf."
             },
             "step3": {
                 "title": "Drill and quiz",
-                "hint": "Fast kana drills and vocabulary exams."
+                "hint": "Short kana drills and vocabulary exams, five minutes at a time."
             },
             "step4": {
-                "title": "Review daily",
-                "hint": "Spaced review keeps words warm."
+                "title": "Publish your own",
+                "hint": "Add the words you keep forgetting and share them back with the shelf."
             }
+        },
+        "cta": {
+            "title": "The pot's already on.",
+            "hint": "No sign-up walls between you and the first deck. Sign in only when you want your words to sync.",
+            "primary": "Start learning",
+            "secondary": "Publish a deck"
         }
     },
     "theme": {
         "pickerLabel": "Change theme",
         "names": {
-            "dark": "Dark",
-            "light": "Light",
+            "lightChoco": "Light Choco",
+            "darkChoco": "Dark Choco",
+            "darkGalaxy": "Dark Galaxy",
+            "lightGalaxy": "Light Galaxy",
             "darkSakura": "Dark Sakura",
             "lightSakura": "Light Sakura",
             "darkPaper": "Dark Paper",
@@ -92,7 +162,7 @@
     "languageSelect": {
         "badge": "Language Selection",
         "title": "Choose a Language to Learn",
-        "description": "Pick the language you want to study. More languages are coming soon.",
+        "description": "Pick the language you want to study. Japanese is ready today; the rest are steeping.",
         "back_home": "Back to Home",
         "status": {
             "available": "Available",
@@ -105,19 +175,23 @@
         "languages": {
             "japanese": {
                 "name": "Japanese",
-                "description": "Learn Hiragana, Katakana and essential vocabulary through interactive quizzes."
+                "description": "Hiragana, katakana and kanji, drilled in short rounds and kept warm with spaced review."
             },
             "english": {
                 "name": "English",
-                "description": "English courses are currently in preparation."
+                "description": "Everyday vocabulary and phrases, sorted into decks by the people who actually use them."
             },
             "thai": {
                 "name": "Thai",
-                "description": "Thai courses are coming soon."
+                "description": "Tones and script side by side, plus the words you will meet on the street."
             },
             "korean": {
                 "name": "Korean",
-                "description": "Korean courses are coming soon."
+                "description": "Hangul in one sitting, then conversation decks that refuse to go cold."
+            },
+            "chinese": {
+                "name": "Chinese",
+                "description": "Characters, pinyin and tone pairs, practised a few minutes at a time."
             }
         }
     },
@@ -391,6 +465,8 @@
         "email": "Email",
         "password": "Password",
         "name": "Name",
+        "nameTag": "Name tag",
+        "nameTagHint": "3-30 characters. English letters, numbers, underscores (_) or hyphens (-) only, no spaces. Your public handle.",
         "confirmPassword": "Confirm Password",
         "forgotPassword": "Forgot password?",
         "resetPassword": "Reset Password",
@@ -414,6 +490,8 @@
         "error": {
             "invalidCredentials": "Invalid email or password.",
             "emailInUse": "An account with this email already exists.",
+            "nameTagTaken": "That name tag is already taken.",
+            "nameTagInvalid": "Name tag must be 3-30 characters: English letters, numbers, underscores or hyphens only (no spaces).",
             "passwordMismatch": "Passwords do not match.",
             "invalidOtp": "Invalid or expired code. Please try again.",
             "resendFailed": "Couldn't send a new code. Please try again.",
@@ -511,7 +589,15 @@
             "namePlaceholder": "Your name",
             "saving": "Saving…",
             "saved": "Profile updated",
-            "updateError": "Could not update your profile."
+            "updateError": "Could not update your profile.",
+            "editProfile": "Edit profile",
+            "nameTag": "Name tag",
+            "nameTagHint": "3-30 characters. English letters, numbers, underscores (_) or hyphens (-) only, no spaces. Your public handle.",
+            "nameTagTaken": "That name tag is already taken.",
+            "nameTagInvalid": "Name tag must be 3-30 characters: English letters, numbers, underscores or hyphens only (no spaces).",
+            "noNameTag": "No name tag yet",
+            "bio": "Bio",
+            "bioPlaceholder": "Tell people a little about yourself…"
         },
         "email": {
             "label": "Change email",

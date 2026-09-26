@@ -44,7 +44,7 @@ export default function QuizFeedback({
                 <button
                     type='button'
                     onClick={onNext}
-                    className='px-8 py-3.5 rounded-sm bg-accent text-accent-foreground text-base font-semibold transition-colors duration-200 cursor-pointer hover:bg-accent-emphasis active:translate-y-px'
+                    className='px-8 py-3.5 rounded-sm bg-primary text-primary-foreground text-base font-semibold transition-colors duration-200 cursor-pointer hover:bg-primary-emphasis active:translate-y-px'
                 >
                     {t('japanese.kanaDrill.next')}
                 </button>

@@ -205,7 +205,7 @@ export default function QuizResult({
                 <button
                     type='button'
                     onClick={onRetry}
-                    className='inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-sm bg-accent text-accent-foreground text-base font-semibold transition-colors duration-200 cursor-pointer hover:bg-accent-emphasis active:translate-y-px'
+                    className='inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-sm bg-primary text-primary-foreground text-base font-semibold transition-colors duration-200 cursor-pointer hover:bg-primary-emphasis active:translate-y-px'
                 >
                     <FaRotateRight className='w-4 h-4' />
                     {t('japanese.kanaDrill.retry')}

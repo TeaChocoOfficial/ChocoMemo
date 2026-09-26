@@ -15,46 +15,117 @@
         "toggleLabel": "Afficher l'interface"
     },
     "home": {
-        "badge": "ChocoMemo",
-        "title": "Réchauffez votre japonais,",
-        "titleAccent": "un kana à la fois.",
-        "subtitle": "Des bouchées d'hiragana, de katakana et de vocabulaire, infusées dans un rituel quotidien chaleureux : choisissez un thème, versez une tasse et apprenez.",
+        "badge": "ChocoMemo · bibliothèque de langues communautaire",
+        "title": "Apprenez n'importe quelle langue,",
+        "titleAccent": "un deck partagé à la fois.",
+        "subtitle": "Japonais, anglais, thaï, coréen et chinois — chacun bâti sur des decks, des drills et des quiz écrits et partagés par de vrais apprenants. Gratuit, ouvert, à vous de l'étendre.",
         "ctaStart": "Commencer à apprendre",
+        "ctaCreate": "Publier un deck",
         "ctaHow": "Comment ça marche",
+        "scriptsLabel": "En infusion",
+        "scripts": [
+            "A",
+            "あ",
+            "한",
+            "ก",
+            "字"
+        ],
         "stats": {
-            "badge": "En un coup d'œil",
+            "badge": "Sur l'étagère",
+            "languages": "Langues",
             "kana": "Caractères kana",
             "vocabulary": "Mots de vocabulaire",
-            "modes": "Modes d'entraînement",
-            "themes": "Thèmes"
+            "shelves": "Decks et quiz"
+        },
+        "languages": {
+            "badge": "L'étagère",
+            "title": "Cinq langues, une habitude douillette",
+            "hint": "Commencez par le plateau prêt aujourd'hui — les autres sont en infusion.",
+            "available": "Prêt à servir",
+            "comingSoon": "En infusion",
+            "toAll": "Parcourir toutes les langues",
+            "items": {
+                "japanese": {
+                    "name": "Japonais",
+                    "description": "Hiragana, katakana et kanji, avec drills et révision espacée."
+                },
+                "english": {
+                    "name": "Anglais",
+                    "description": "Vocabulaire et expressions du quotidien, triés par ceux qui les utilisent."
+                },
+                "thai": {
+                    "name": "Thaï",
+                    "description": "Les tons, l'écriture et les mots que vous croiserez vraiment dans la rue."
+                },
+                "korean": {
+                    "name": "Coréen",
+                    "description": "Le hangeul en une seule fois, puis des decks de conversation qui restent."
+                },
+                "chinese": {
+                    "name": "Chinois",
+                    "description": "Caractères, pinyin et paires de tons, drillés en courtes rondes."
+                }
+            }
+        },
+        "library": {
+            "badge": "L'étagère communautaire",
+            "title": "Écrivez un deck. Partagez-le. Regardez-le enseigner.",
+            "hint": "Chaque set d'étude de ChocoMemo est écrit par une personne, pas par un éditeur. Rangez-en un, publiez-le, et quelqu'un d'autre en tire tout un cours.",
+            "cta": "Ouvrir l'étagère de révision",
+            "items": {
+                "decks": {
+                    "title": "Decks de vocabulaire",
+                    "hint": "Regroupez des mots dans un deck thématique — nature, animaux, quotidien — et révisez-le comme un petit livre."
+                },
+                "exams": {
+                    "title": "Sets de quiz",
+                    "hint": "Transformez un deck en examen chronométré et voyez exactement quels mots doivent encore infuser."
+                },
+                "kana": {
+                    "title": "Drills de kana",
+                    "hint": "Des rondes rapides sur les deux syllabaires jusqu'à ce que les formes viennent sans réfléchir."
+                },
+                "review": {
+                    "title": "Révision espacée",
+                    "hint": "Les decks téléchargés reviennent selon leur propre calendrier, donc rien ne refroidit."
+                }
+            }
         },
         "how": {
             "badge": "Comment ça marche",
-            "title": "Un rituel quotidien chaleureux",
-            "hint": "Quatre petites étapes répétées chaque jour, c'est tout.",
+            "title": "Votre infusion du jour",
+            "hint": "Quatre petits pas, répétés chaque jour — c'est tout ce qu'il faut.",
             "step1": {
                 "title": "Choisissez votre langue",
-                "hint": "Choisissez ce que vous étudiez aujourd'hui."
+                "hint": "Prenez le plateau que vous révisez aujourd'hui."
             },
             "step2": {
-                "title": "Apprenez les kana",
-                "hint": "Hiragana et katakana, une gorgée à la fois."
+                "title": "Empruntez un deck",
+                "hint": "Prenez un deck écrit par quelqu'un d'autre, ou partez du rayon fourni."
             },
             "step3": {
-                "title": "Entraînez-vous et testez",
-                "hint": "Exercices rapides et examens de vocabulaire."
+                "title": "Drills et quiz",
+                "hint": "De courts drills de kana et des examens de vocabulaire, cinq minutes à la fois."
             },
             "step4": {
-                "title": "Révisez chaque jour",
-                "hint": "La révision espacée garde les mots vivants."
+                "title": "Publiez le vôtre",
+                "hint": "Ajoutez les mots que vous oubliez toujours et rendez-les à l'étagère."
             }
+        },
+        "cta": {
+            "title": "La bouilloire est déjà chaude.",
+            "hint": "Aucun mur d'inscription entre vous et le premier deck. Connectez-vous seulement pour synchroniser vos mots.",
+            "primary": "Commencer à apprendre",
+            "secondary": "Publier un deck"
         }
     },
     "theme": {
         "pickerLabel": "Changer de thème",
         "names": {
-            "dark": "Sombre",
-            "light": "Clair",
+            "lightChoco": "Choco Clair",
+            "darkChoco": "Choco Sombre",
+            "darkGalaxy": "Galaxie Sombre",
+            "lightGalaxy": "Galaxie Claire",
             "darkSakura": "Sakura Sombre",
             "lightSakura": "Sakura Clair",
             "darkPaper": "Papier Sombre",
@@ -92,7 +163,7 @@
     "languageSelect": {
         "badge": "Sélection de la Langue",
         "title": "Choisissez une Langue à Apprendre",
-        "description": "Choisissez la langue que vous souhaitez étudier. D'autres langues arrivent bientôt.",
+        "description": "Choisissez la langue que vous voulez étudier. Le japonais est prêt aujourd'hui ; le reste est en infusion.",
         "back_home": "Retour à l'Accueil",
         "status": {
             "available": "Disponible",
@@ -105,19 +176,23 @@
         "languages": {
             "japanese": {
                 "name": "Japonais",
-                "description": "Apprenez le hiragana, le katakana et le vocabulaire essentiel grâce à des quiz interactifs."
+                "description": "Hiragana, katakana et kanji, drillés en courtes rondes et gardés au chaud par la révision espacée."
             },
             "english": {
                 "name": "Anglais",
-                "description": "Les cours d'anglais sont en préparation."
+                "description": "Vocabulaire et expressions du quotidien, triés en decks par ceux qui les utilisent vraiment."
             },
             "thai": {
                 "name": "Thaï",
-                "description": "Les cours de thaï arrivent bientôt."
+                "description": "Les tons et l'écriture côte à côte, plus les mots que vous croiserez dans la rue."
             },
             "korean": {
                 "name": "Coréen",
-                "description": "Les cours de coréen arrivent bientôt."
+                "description": "Le hangeul en une seule fois, puis des decks de conversation qui refusent de refroidir."
+            },
+            "chinese": {
+                "name": "Chinois",
+                "description": "Caractères, pinyin et paires de tons, pratiqués quelques minutes à la fois."
             }
         }
     },
@@ -391,6 +466,8 @@
         "email": "E-mail",
         "password": "Mot de passe",
         "name": "Nom",
+        "nameTag": "Nom d'utilisateur",
+        "nameTagHint": "3 à 30 caractères. Uniquement des lettres anglaises, des chiffres, des underscores (_) ou des tirets (-), sans espaces. Votre identifiant public.",
         "confirmPassword": "Confirmer le mot de passe",
         "forgotPassword": "Mot de passe oublié ?",
         "resetPassword": "Réinitialiser le mot de passe",
@@ -414,6 +491,8 @@
         "error": {
             "invalidCredentials": "E-mail ou mot de passe incorrect",
             "emailInUse": "Cet e-mail est déjà utilisé",
+            "nameTagTaken": "Ce nom d'utilisateur est déjà pris.",
+            "nameTagInvalid": "Le nom d'utilisateur doit comporter 3 à 30 caractères : uniquement des lettres anglaises, des chiffres, des underscores ou des tirets (sans espaces).",
             "passwordMismatch": "Les mots de passe ne correspondent pas.",
             "invalidOtp": "Code invalide ou expiré. Veuillez réessayer.",
             "resendFailed": "Impossible d'envoyer un nouveau code. Veuillez réessayer.",
@@ -511,7 +590,15 @@
             "namePlaceholder": "Votre nom",
             "saving": "Enregistrement…",
             "saved": "Profil mis à jour",
-            "updateError": "Impossible de mettre à jour votre profil."
+            "updateError": "Impossible de mettre à jour votre profil.",
+            "editProfile": "Modifier le profil",
+            "nameTag": "Nom d'utilisateur",
+            "nameTagHint": "3 à 30 caractères. Uniquement des lettres anglaises, des chiffres, des underscores (_) ou des tirets (-), sans espaces. Votre identifiant public.",
+            "nameTagTaken": "Ce nom d'utilisateur est déjà pris.",
+            "nameTagInvalid": "Le nom d'utilisateur doit comporter 3 à 30 caractères : uniquement des lettres anglaises, des chiffres, des underscores ou des tirets (sans espaces).",
+            "noNameTag": "Pas encore de nom d'utilisateur",
+            "bio": "Bio",
+            "bioPlaceholder": "Parlez un peu de vous aux autres…"
         },
         "email": {
             "label": "Change email",

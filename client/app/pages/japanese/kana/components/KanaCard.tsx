@@ -27,16 +27,16 @@ export default function KanaCard({ kana, index, active = false, onRead }: KanaCa
             transition={{ duration: 0.3, delay: index * 0.02 }}
             className={`group flex flex-col items-center justify-center rounded-sm border p-3 sm:p-4 aspect-square transition-colors duration-200 cursor-pointer ${
                 active
-                    ? 'border-accent bg-accent-subtle'
-                    : 'border-line bg-surface hover:border-accent hover:bg-surface-overlay'
+                    ? 'border-primary bg-primary-subtle'
+                    : 'border-line bg-surface hover:border-primary hover:bg-surface-overlay'
             }`}
         >
             <span className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-1 sm:mb-3 leading-none transition-colors duration-200 ${
-                active ? 'text-accent' : 'text-surface-foreground group-hover:text-accent'
+                active ? 'text-primary' : 'text-surface-foreground group-hover:text-primary'
             }`}>
                 {kana.char}
             </span>
-            <span className='flex items-center gap-1.5 text-[10px] sm:text-sm font-mono uppercase tracking-wider text-accent whitespace-nowrap'>
+            <span className='flex items-center gap-1.5 text-[10px] sm:text-sm font-mono uppercase tracking-wider text-primary whitespace-nowrap'>
                 <FaVolumeHigh className='w-2.5 h-2.5 sm:w-3.5 sm:h-3.5' />
                 {kana.romaji}
             </span>

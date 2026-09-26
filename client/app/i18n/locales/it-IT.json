@@ -15,46 +15,117 @@
         "toggleLabel": "Mostra interfaccia"
     },
     "home": {
-        "badge": "ChocoMemo",
-        "title": "Scalda il tuo giapponese,",
-        "titleAccent": "un kana alla volta.",
-        "subtitle": "Hiragana, katakana e quiz di vocabolario preparati in un rituale quotidiano accogliente: scegli un tema, versa una tazza e impara.",
+        "badge": "ChocoMemo · libreria di lingue della comunità",
+        "title": "Impara qualsiasi lingua,",
+        "titleAccent": "un mazzo condiviso alla volta.",
+        "subtitle": "Giapponese, inglese, thai, coreano e cinese: ognuno costruito su mazzi, esercizi e quiz scritti e condivisi da chi sta davvero imparando. Gratuito, aperto e da estendere.",
         "ctaStart": "Inizia a imparare",
+        "ctaCreate": "Pubblica un mazzo",
         "ctaHow": "Come funziona",
+        "scriptsLabel": "In infusione",
+        "scripts": [
+            "A",
+            "あ",
+            "한",
+            "ก",
+            "字"
+        ],
         "stats": {
-            "badge": "A colpo d'occhio",
+            "badge": "Sullo scaffale",
+            "languages": "Lingue",
             "kana": "Caratteri kana",
             "vocabulary": "Parole di vocabolario",
-            "modes": "Modalità di pratica",
-            "themes": "Temi"
+            "shelves": "Mazzi e quiz"
+        },
+        "languages": {
+            "badge": "Lo scaffale",
+            "title": "Cinque lingue, un'abitudine calda",
+            "hint": "Inizia dal vassoio pronto di oggi — gli altri sono in infusione.",
+            "available": "Pronto da servire",
+            "comingSoon": "In infusione",
+            "toAll": "Sfoglia tutte le lingue",
+            "items": {
+                "japanese": {
+                    "name": "Giapponese",
+                    "description": "Hiragana, katakana e kanji con esercizi e ripasso distanziato."
+                },
+                "english": {
+                    "name": "Inglese",
+                    "description": "Parole e frasi di ogni giorno, ordinate da chi le usa."
+                },
+                "thai": {
+                    "name": "Thai",
+                    "description": "Toni, scrittura e le parole che incontrerai davvero per strada."
+                },
+                "korean": {
+                    "name": "Coreano",
+                    "description": "Hangul in una sola seduta, poi mazzi di conversazione che restano."
+                },
+                "chinese": {
+                    "name": "Cinese",
+                    "description": "Caratteri, pinyin e coppie di toni, esercitati in round brevi."
+                }
+            }
+        },
+        "library": {
+            "badge": "Lo scaffale della comunità",
+            "title": "Scrivi un mazzo. Condividilo. Guardalo insegnare.",
+            "hint": "Ogni set di studio di ChocoMemo lo scrive una persona, non un editore. Metti in ordine uno, pubblicalo e qualcun altro ne ricava un intero corso.",
+            "cta": "Apri lo scaffale di ripasso",
+            "items": {
+                "decks": {
+                    "title": "Mazzi di vocabolario",
+                    "hint": "Raggruppa le parole in un mazzo a tema — natura, animali, cose di tutti i giorni — e ripassalo come un piccolo e-book."
+                },
+                "exams": {
+                    "title": "Set di quiz",
+                    "hint": "Trasforma un mazzo in un esame a tempo e vedi quali parole devono ancora mettersi a infusione."
+                },
+                "kana": {
+                    "title": "Esercizi di kana",
+                    "hint": "Round veloci su entrambe le sillabarie finché le forme escono senza pensarci."
+                },
+                "review": {
+                    "title": "Ripasso distanziato",
+                    "hint": "I mazzi che scarichi tornano secondo il loro calendario, così nulla si raffredda."
+                }
+            }
         },
         "how": {
             "badge": "Come funziona",
-            "title": "Un rituale quotidiano accogliente",
-            "hint": "Quattro piccoli passi ripetuti ogni giorno: basta questo.",
+            "title": "La tua infusione quotidiana",
+            "hint": "Quattro piccoli passi, ripetuti ogni giorno: basta questo.",
             "step1": {
                 "title": "Scegli la tua lingua",
-                "hint": "Scegli cosa studiare oggi."
+                "hint": "Prendi il vassoio che studi oggi."
             },
             "step2": {
-                "title": "Impara i kana",
-                "hint": "Hiragana e katakana, un sorso alla volta."
+                "title": "Prendi in presto un mazzo",
+                "hint": "Prendi un mazzo scritto da qualcun altro, o parti dallo scaffale già pronto."
             },
             "step3": {
-                "title": "Esercitati e mettiti alla prova",
-                "hint": "Esercizi rapidi di kana ed esami di vocabolario."
+                "title": "Esercitati e fai i quiz",
+                "hint": "Brevi esercizi di kana ed esami di vocabolario, cinque minuti alla volta."
             },
             "step4": {
-                "title": "Ripassa ogni giorno",
-                "hint": "La ripetizione dilazionata mantiene vive le parole."
+                "title": "Pubblica il tuo",
+                "hint": "Aggiungi le parole che dimentichi sempre e restituiscile allo scaffale."
             }
+        },
+        "cta": {
+            "title": "Il bollitore è già acceso.",
+            "hint": "Nessun muro di registrazione tra te e il primo mazzo. Accedi solo quando vuoi sincronizzare le tue parole.",
+            "primary": "Inizia a imparare",
+            "secondary": "Pubblica un mazzo"
         }
     },
     "theme": {
         "pickerLabel": "Cambia tema",
         "names": {
-            "dark": "Scuro",
-            "light": "Chiaro",
+            "lightChoco": "Cioccolato Chiaro",
+            "darkChoco": "Cioccolato Scuro",
+            "darkGalaxy": "Galassia Scura",
+            "lightGalaxy": "Galassia Chiara",
             "darkSakura": "Sakura Scuro",
             "lightSakura": "Sakura Chiaro",
             "darkPaper": "Carta Scura",
@@ -92,7 +163,7 @@
     "languageSelect": {
         "badge": "Selezione della Lingua",
         "title": "Scegli una Lingua da Imparare",
-        "description": "Scegli la lingua che vuoi studiare. Altre lingue arriveranno presto.",
+        "description": "Scegli la lingua che vuoi studiare. Il giapponese è pronto oggi; il resto è in infusione.",
         "back_home": "Torna alla Home",
         "status": {
             "available": "Disponibile",
@@ -105,19 +176,23 @@
         "languages": {
             "japanese": {
                 "name": "Giapponese",
-                "description": "Impara hiragana, katakana e vocaboli essenziali con quiz interattivi."
+                "description": "Hiragana, katakana e kanji, esercitati in round brevi e tenuti caldi dal ripasso distanziato."
             },
             "english": {
                 "name": "Inglese",
-                "description": "I corsi di inglese sono in preparazione."
+                "description": "Parole e frasi di ogni giorno, ordinate in mazzi da chi le usa davvero."
             },
             "thai": {
                 "name": "Thai",
-                "description": "I corsi di thai arriveranno presto."
+                "description": "Toni e scrittura fianco a fianco, più le parole che incontrerai per strada."
             },
             "korean": {
                 "name": "Coreano",
-                "description": "I corsi di coreano arriveranno presto."
+                "description": "Hangul in una sola seduta, poi mazzi di conversazione che si rifiutano di raffreddare."
+            },
+            "chinese": {
+                "name": "Cinese",
+                "description": "Caratteri, pinyin e coppie di toni, esercitati pochi minuti alla volta."
             }
         }
     },
@@ -391,6 +466,8 @@
         "email": "Email",
         "password": "Password",
         "name": "Nome",
+        "nameTag": "Nome utente",
+        "nameTagHint": "Da 3 a 30 caratteri. Solo lettere inglesi, numeri, underscore (_) o trattini (-), senza spazi. Il tuo identificativo pubblico.",
         "confirmPassword": "Conferma Password",
         "forgotPassword": "Password dimenticata?",
         "resetPassword": "Reimposta Password",
@@ -414,6 +491,8 @@
         "error": {
             "invalidCredentials": "Email o password non validi.",
             "emailInUse": "Esiste già un account con questa email.",
+            "nameTagTaken": "Questo nome utente è già in uso.",
+            "nameTagInvalid": "Il nome utente deve avere da 3 a 30 caratteri: solo lettere inglesi, numeri, underscore o trattini (senza spazi).",
             "passwordMismatch": "Le password non corrispondono.",
             "invalidOtp": "Codice non valido o scaduto. Riprova.",
             "resendFailed": "Impossibile inviare un nuovo codice. Riprova.",
@@ -511,7 +590,15 @@
             "namePlaceholder": "Il tuo nome",
             "saving": "Salvataggio…",
             "saved": "Profilo aggiornato",
-            "updateError": "Impossibile aggiornare il tuo profilo."
+            "updateError": "Impossibile aggiornare il tuo profilo.",
+            "editProfile": "Modifica profilo",
+            "nameTag": "Nome utente",
+            "nameTagHint": "Da 3 a 30 caratteri. Solo lettere inglesi, numeri, underscore (_) o trattini (-), senza spazi. Il tuo identificativo pubblico.",
+            "nameTagTaken": "Questo nome utente è già in uso.",
+            "nameTagInvalid": "Il nome utente deve avere da 3 a 30 caratteri: solo lettere inglesi, numeri, underscore o trattini (senza spazi).",
+            "noNameTag": "Nessun nome utente ancora",
+            "bio": "Biografia",
+            "bioPlaceholder": "Racconta qualcosa di te agli altri…"
         },
         "email": {
             "label": "Change email",

@@ -27,7 +27,7 @@ export default function ReviewCardFront({ word }: ReviewCardFrontProps) {
                     <div className='h-px w-16 bg-line-strong' />
                     <p className='max-w-md text-xl leading-relaxed text-surface-foreground/90 sm:text-2xl'>
                         {segmentsToText(word.example.before)}
-                        <span className='rounded-sm bg-accent/15 px-1 py-0.5 font-bold text-primary'>
+                        <span className='rounded-sm bg-primary/15 px-1 py-0.5 font-bold text-primary'>
                             {segmentsToText(displaySegments(word))}
                         </span>
                         {segmentsToText(word.example.after)}

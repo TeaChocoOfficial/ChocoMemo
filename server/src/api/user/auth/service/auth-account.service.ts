@@ -1,24 +1,26 @@
 // -Path: "server/src/api/user/auth/service/auth-account.service.ts"
 import type { Model } from 'mongoose';
+import { nameDB } from '~/hooks/mongodb';
 import { InjectModel } from '@nestjs/mongoose';
-import { nameDB } from '../../../../hooks/mongodb';
-import { UserService } from '../../user.service';
-import { UpdateUserDto } from '../../dto/update-user.dto';
-import type { SigninResultDto } from '../dto/signin.dto';
-import { AuthProvider } from '../enum/auth-provider.enum';
-import { ResponseUserDto } from '../../dto/response-user.dto';
-import type { ReqUserDto } from '../../dto/user.dto';
-import { AuthSessionService } from './auth-session.service';
-import { AuthHashService } from './auth-hash.service';
-import { User, type UserDocument } from '../../schemas/user.schema';
-import { BadRequestException, Injectable } from '@nestjs/common';
 import {
     PendingRegistration,
     type PendingRegistrationDocument,
 } from '../schemas/pending-registration.schema';
+import { UserService } from '../../user.service';
+import type { ReqUserDto } from '../../dto/user.dto';
+import { AuthHashService } from './auth-hash.service';
+import type { SigninResultDto } from '../dto/signin.dto';
+import { AuthProvider } from '../enum/auth-provider.enum';
+import { toNameTag } from '../../utils/name-tag.util';
+import { UpdateUserDto } from '../../dto/update-user.dto';
+import { AuthSessionService } from './auth-session.service';
+import { ResponseUserDto } from '../../dto/response-user.dto';
+import { User, type UserDocument } from '../../schemas/user.schema';
+import { BadRequestException, Injectable, Logger } from '@nestjs/common';
 
 @Injectable()
 export class AuthAccountService {
+    logger = new Logger();
     constructor(
         private readonly sessionService: AuthSessionService,
         private readonly hashService: AuthHashService,
@@ -30,7 +32,8 @@ export class AuthAccountService {
     ) {}
 
     async validateUser(email: string, password: string) {
-        if (email === '') throw new BadRequestException("Username can't be empty");
+        const normalizedEmail = email.trim().toLowerCase();
+        if (normalizedEmail === '') throw new BadRequestException("Username can't be empty");
         else if (password === '') throw new BadRequestException("Password can't be empty");
         else {
             // Local password lives on the `local` auth identity, keyed by its
@@ -38,7 +41,10 @@ export class AuthAccountService {
             const user = await this.userModel
                 .findOne({
                     identities: {
-                        $elemMatch: { provider: AuthProvider.LOCAL, providerEmail: email },
+                        $elemMatch: {
+                            provider: AuthProvider.LOCAL,
+                            providerEmail: normalizedEmail,
+                        },
                     },
                 })
                 .select('+identities.passwordHash')
@@ -51,7 +57,9 @@ export class AuthAccountService {
             if (!user || !localIdentity?.passwordHash) {
                 // No verified account yet, but a pending registration exists for
                 // this email — surface the same flow that kicks off a resend.
-                const pending = await this.pendingRegistrationModel.exists({ email }).exec();
+                const pending = await this.pendingRegistrationModel
+                    .exists({ email: normalizedEmail })
+                    .exec();
                 if (pending) throw new BadRequestException('EMAIL_NOT_VERIFIED');
                 throw new BadRequestException('Invalid username or password');
             }
@@ -67,7 +75,12 @@ export class AuthAccountService {
     }
 
     async signin(user: ReqUserDto): Promise<SigninResultDto> {
-        const identity = user.identities?.[0];
+        const identity = user.identities?.[0]
+            ? {
+                  ...user.identities[0],
+                  providerEmail: user.identities[0].providerEmail?.trim().toLowerCase() ?? null,
+              }
+            : undefined;
         let userDB: UserDocument | null = null;
 
         if (identity) {
@@ -127,6 +140,7 @@ export class AuthAccountService {
         const payload: ReqUserDto = {
             userId: userDB._id.toString(),
             name: userDB.name,
+            nameTag: userDB.nameTag,
             avatar: userDB.avatar,
             role: userDB.role,
             expiresAt,
@@ -139,33 +153,105 @@ export class AuthAccountService {
         return { access_token, user: responseUser } as SigninResultDto;
     }
 
+    private duplicateKeyField(error: unknown): 'nameTag' | 'providerEmail' | undefined {
+        if (typeof error !== 'object' || error === null) return;
+        const duplicate = error as {
+            code?: number;
+            keyPattern?: Record<string, unknown>;
+            keyValue?: Record<string, unknown>;
+        };
+        if (duplicate.code !== 11000) return;
+        const fields = new Set([
+            ...Object.keys(duplicate.keyPattern ?? {}),
+            ...Object.keys(duplicate.keyValue ?? {}),
+        ]);
+        if (fields.has('nameTag')) return 'nameTag';
+        if (fields.has('identities.providerEmail')) return 'providerEmail';
+        return;
+    }
+
     async signup(user: ReqUserDto, options?: { emailVerified?: boolean }): Promise<UserDocument> {
         const identity = user.identities?.[0];
         if (!identity) throw new BadRequestException('Missing auth identity for signup');
+        const normalizedIdentity = {
+            ...identity,
+            providerEmail: identity.providerEmail?.trim().toLowerCase() ?? null,
+        };
 
+        const fallbackId = user.userId || identity.providerUserId;
         const newUserData: User = {
-            name: user.name,
+            name: user.name.trim(),
+            nameTag: await this.resolveNameTag(user.nameTag, user.name, fallbackId),
+            bio: user.bio,
             role: user.role,
             avatar: user.avatar,
-            emailVerified: options?.emailVerified ?? identity.provider === AuthProvider.GOOGLE,
+            emailVerified:
+                options?.emailVerified ?? normalizedIdentity.provider === AuthProvider.GOOGLE,
             lastLoginAt: new Date(),
-            identities: [identity],
+            identities: [normalizedIdentity],
         };
         const newUser = new this.userModel(newUserData);
-        return newUser.save();
+        try {
+            return await newUser.save();
+        } catch (error) {
+            const duplicateField = this.duplicateKeyField(error);
+            if (duplicateField === 'nameTag') throw new BadRequestException('NAME_TAG_TAKEN');
+            if (duplicateField === 'providerEmail') throw new BadRequestException('EMAIL_IN_USE');
+            throw error;
+        }
+    }
+
+    private async resolveNameTag(
+        provided: string | undefined,
+        name: string,
+        fallbackId?: string,
+    ): Promise<string> {
+        if (provided) {
+            const chosen = toNameTag(provided);
+            if (!chosen) throw new BadRequestException('NAME_TAG_INVALID');
+            if (await this.userModel.exists({ nameTag: chosen }))
+                throw new BadRequestException('NAME_TAG_TAKEN');
+            return chosen;
+        }
+
+        const derived = toNameTag(name);
+        const fallback = derived || `user_${fallbackId || 'unknown'}`.slice(0, 30);
+        return this.uniqueNameTag(fallback);
+    }
+
+    private async uniqueNameTag(base: string): Promise<string> {
+        if (!base) throw new Error('uniqueNameTag: base is required');
+
+        let candidate = base;
+        for (let suffix = 2; ; suffix++) {
+            if (!(await this.userModel.exists({ nameTag: candidate }))) return candidate;
+            const suffixStr = `-${suffix}`;
+            candidate = `${base.slice(0, 30 - suffixStr.length)}${suffixStr}`;
+        }
     }
 
     async updateUser(user: ReqUserDto, body: UpdateUserDto): Promise<ResponseUserDto | null> {
         // The account email is owned by `identities[].providerEmail` and is only
         // changed through the verified change-email flow, so only mutable profile
         // fields are written here.
-        const updatedUser = await this.userModel
-            .findByIdAndUpdate(
-                user.userId,
-                { ...(body.name ? { name: body.name } : {}) },
-                { returnDocument: 'after' },
-            )
-            .exec();
+        const update: Record<string, unknown> = {};
+        if (body.name) update.name = body.name;
+        if (body.nameTag !== undefined) {
+            // DTO validation already guarantees a valid, non-empty tag here.
+            update.nameTag = body.nameTag;
+        }
+        if (body.bio !== undefined) update.bio = body.bio;
+
+        let updatedUser: UserDocument | null;
+        try {
+            updatedUser = await this.userModel
+                .findByIdAndUpdate(user.userId, update, { returnDocument: 'after' })
+                .exec();
+        } catch (error) {
+            if (this.duplicateKeyField(error) === 'nameTag')
+                throw new BadRequestException('NAME_TAG_TAKEN');
+            throw error;
+        }
         if (!updatedUser) throw new BadRequestException('User not found');
         const responseUser = await this.userService.responseUser(updatedUser, user.expiresAt);
         return responseUser;
@@ -228,7 +314,9 @@ export class AuthAccountService {
         // Selecting the built-in placeholder clears the active avatar.
         if (provider === 'default') {
             if (userDB.avatar) {
-                await this.userModel.updateOne({ _id: userDB._id }, { $unset: { avatar: 1 } }).exec();
+                await this.userModel
+                    .updateOne({ _id: userDB._id }, { $unset: { avatar: 1 } })
+                    .exec();
                 userDB.avatar = undefined;
             }
             return this.userService.responseUser(userDB, user.expiresAt);
@@ -256,11 +344,14 @@ export class AuthAccountService {
         // Removing the uploaded photo (no new URL) clears the local slot's avatar.
         // Only drop the active avatar if it actually came from this local identity.
         if (provider === AuthProvider.LOCAL && !url) {
-            const wasActive =
-                Boolean(userDB.avatar && identity.avatar && userDB.avatar === identity.avatar);
+            const wasActive = Boolean(
+                userDB.avatar && identity.avatar && userDB.avatar === identity.avatar,
+            );
             identity.avatar = null;
             if (wasActive) {
-                await this.userModel.updateOne({ _id: userDB._id }, { $unset: { avatar: 1 } }).exec();
+                await this.userModel
+                    .updateOne({ _id: userDB._id }, { $unset: { avatar: 1 } })
+                    .exec();
                 userDB.avatar = undefined;
             }
             await userDB.save();

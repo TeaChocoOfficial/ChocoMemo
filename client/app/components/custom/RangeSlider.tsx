@@ -94,12 +94,12 @@ export default function RangeSlider({
             <div className='group relative flex-1 h-4 flex items-center'>
                 <div className='absolute inset-x-0 h-px bg-line' />
                 <div
-                    className='absolute left-0 h-px bg-accent group-hover:bg-accent-emphasis transition-colors'
+                    className='absolute left-0 h-px bg-primary group-hover:bg-primary-emphasis transition-colors'
                     style={{ width: `${progress}%` }}
                 />
                 <div
-                    className='absolute top-1/2 w-[2px] h-3 -translate-y-1/2 -translate-x-1/2 bg-accent
-                        group-hover:bg-accent-emphasis transition-colors pointer-events-none'
+                    className='absolute top-1/2 w-[2px] h-3 -translate-y-1/2 -translate-x-1/2 bg-primary
+                        group-hover:bg-primary-emphasis transition-colors pointer-events-none'
                     style={{ left: `${progress}%` }}
                 />
                 {inputNode}
@@ -116,7 +116,7 @@ export default function RangeSlider({
                             key={i}
                             className={`flex-1 h-3 rounded-sm transition-colors ${
                                 filled
-                                    ? 'bg-accent group-hover:bg-accent-emphasis'
+                                    ? 'bg-primary group-hover:bg-primary-emphasis'
                                     : 'bg-surface-sunken'
                             }`}
                         />
@@ -131,12 +131,12 @@ export default function RangeSlider({
             <div className='group relative flex-1 h-6 flex items-center'>
                 <div className='absolute inset-x-0 h-2 rounded-sm bg-surface-sunken' />
                 <div
-                    className='absolute left-0 h-2 rounded-sm bg-accent group-hover:bg-accent-emphasis transition-colors'
+                    className='absolute left-0 h-2 rounded-sm bg-primary group-hover:bg-primary-emphasis transition-colors'
                     style={{ width: `${progress}%` }}
                 />
                 <div
                     className='absolute top-1/2 w-3 h-6 -translate-y-1/2 -translate-x-1/2 bg-surface
-                        border-2 border-accent group-hover:border-accent-emphasis rounded-sm
+                        border-2 border-primary group-hover:border-primary-emphasis rounded-sm
                         transition-colors pointer-events-none'
                     style={{ left: `${progress}%` }}
                 />

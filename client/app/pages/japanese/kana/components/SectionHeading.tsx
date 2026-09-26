@@ -4,7 +4,7 @@ export function SectionHeading({ step, label, hint }: { step: string; label: str
     return (
         <div className='mb-6'>
             <div className='flex items-center gap-3'>
-                <span className='font-mono text-xs font-bold tracking-[0.14em] text-accent'>
+                <span className='font-mono text-xs font-bold tracking-[0.14em] text-primary'>
                     {step}
                 </span>
                 <span className='h-px w-10 bg-line-strong' />
