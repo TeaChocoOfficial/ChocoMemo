@@ -6,4 +6,12 @@ export enum Role {
     USER = 'user',
 }
 
+export enum AuthProvider {
+    LOCAL = 'local',
+    GOOGLE = 'google',
+    DISCORD = 'discord',
+    LINE = 'line',
+    X = 'x',
+}
+
 export type Auth = ReqUserDto | null;

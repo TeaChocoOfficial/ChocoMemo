@@ -20,71 +20,84 @@ interface LanguageCardProps {
     index: number;
 }
 
+/**
+ * Row for a language that can be started.
+ *
+ * A horizontal band rather than a tile: the list is read top to bottom, so the
+ * glyph, the name and the call to action sit on one line and the whole row is
+ * the hit target.
+ */
 export default function LanguageCard({ language, index }: LanguageCardProps) {
     const { t } = useTranslation();
-    const { id, glyph, name, code, description, available, to } = language;
-
-    const inner = (
-        <>
-            <div className='flex items-start justify-between gap-4 mb-6'>
-                <span className='text-5xl font-black leading-none text-surface-subtle'>{glyph}</span>
-                {available ? (
-                    <Badge variant='success'>{t('languageSelect.status.available')}</Badge>
-                ) : (
-                    <span className='inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-[0.14em] text-surface-muted'>
-                        <FaLock className='w-3 h-3' /> {t('languageSelect.status.comingSoon')}
-                    </span>
-                )}
-            </div>
-
-            <h3 className='text-2xl font-black tracking-tight text-surface-foreground mb-1'>
-                {name}
-            </h3>
-            <p className='text-sm font-mono uppercase tracking-widest text-primary mb-4'>{code}</p>
-            <p className='text-sm leading-relaxed text-surface-muted flex-1'>{description}</p>
-
-            <div className='mt-8'>
-                {available ? (
-                    <span className='inline-flex items-center gap-2 px-5 py-2.5 rounded-sm bg-primary text-primary-foreground text-sm font-semibold group-hover:bg-primary-emphasis transition-colors duration-200'>
-                        {t('languageSelect.cta.start')}
-                    </span>
-                ) : (
-                    <span className='inline-flex items-center gap-2 px-5 py-2.5 rounded-sm border border-line text-surface-muted text-sm font-semibold cursor-not-allowed'>
-                        <FaLock className='w-3.5 h-3.5' /> {t('languageSelect.cta.unavailable')}
-                    </span>
-                )}
-            </div>
-        </>
-    );
-
-    const className =
-        'group relative flex flex-col rounded-sm border p-6 transition-colors duration-200 h-full';
-
-    if (!available) {
-        return (
-            <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`${className} border-line bg-surface opacity-70 cursor-not-allowed`}
-            >
-                {inner}
-            </motion.div>
-        );
-    }
+    const { glyph, name, code, description, to } = language;
 
     return (
         <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
+            transition={{ duration: 0.4, delay: index * 0.08 }}
         >
             <Link
                 to={to!}
-                className={`${className} border-line bg-surface hover:border-primary hover:bg-surface-overlay`}
+                className='group flex items-center gap-5 rounded-sm border border-line bg-surface p-5 transition-colors duration-200 hover:border-primary hover:bg-surface-overlay sm:gap-6 sm:p-6'
             >
-                {inner}
+                <span className='text-5xl font-black leading-none text-surface-subtle transition-colors duration-200 group-hover:text-primary sm:text-6xl'>
+                    {glyph}
+                </span>
+
+                <div className='min-w-0 flex-1'>
+                    <div className='flex flex-wrap items-center gap-x-3 gap-y-1'>
+                        <h3 className='text-xl font-black tracking-tight text-surface-foreground sm:text-2xl'>
+                            {name}
+                        </h3>
+                        <Badge variant='success'>{t('languageSelect.status.available')}</Badge>
+                    </div>
+                    <p className='mt-1 font-mono text-[11px] uppercase tracking-[0.14em] text-primary'>
+                        {code}
+                    </p>
+                    <p className='mt-2 text-sm leading-relaxed text-surface-muted'>{description}</p>
+                </div>
+
+                <span className='hidden shrink-0 items-center gap-2 rounded-sm bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-colors duration-200 group-hover:bg-primary-emphasis sm:inline-flex'>
+                    {t('languageSelect.cta.start')}
+                </span>
             </Link>
+        </motion.div>
+    );
+}
+
+/**
+ * Row for a language that isn't ready yet.
+ *
+ * Deliberately not interactive and far quieter than the available row: no
+ * border of its own, no description, no call to action. It sits inside the
+ * "Coming soon" group so the page reads as "one thing to do, four to wait for"
+ * rather than as a wall of locked tiles.
+ */
+export function LanguageLockedRow({ language, index }: LanguageCardProps) {
+    const { t } = useTranslation();
+    const { glyph, name, code } = language;
+
+    return (
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3, delay: index * 0.05 }}
+            className='flex items-center gap-4 px-4 py-3 sm:px-5'
+        >
+            <span className='w-8 shrink-0 text-center text-xl font-black text-surface-subtle/60'>
+                {glyph}
+            </span>
+            <span className='min-w-0 flex-1 truncate text-sm font-semibold text-surface-muted'>
+                {name}
+            </span>
+            <span className='shrink-0 font-mono text-[11px] uppercase tracking-[0.14em] text-surface-muted/70'>
+                {code}
+            </span>
+            <span className='inline-flex shrink-0 items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.14em] text-surface-muted'>
+                <FaLock className='h-3 w-3' />
+                <span className='hidden sm:inline'>{t('languageSelect.status.comingSoon')}</span>
+            </span>
         </motion.div>
     );
 }

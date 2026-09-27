@@ -130,3 +130,19 @@ export class ResponseUserDto {
         avatar: string | null;
     }>;
 }
+
+/**
+ * Public projection of a user.
+ *
+ * Drops `providerEmail` from the identities. The by-name-tag and by-id lookups
+ * are unauthenticated, so returning it would hand every account's email address
+ * to anyone who could guess a handle. `ResponseUserDto` keeps it because the
+ * signed-in account genuinely needs it.
+ */
+export type PublicUserDto = Omit<ResponseUserDto, 'identities'> & {
+    identities: Array<{
+        provider: string;
+        avatar: string | null;
+        hasPassword?: boolean;
+    }>;
+};

@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { useLangText } from '~/hooks/useLangText';
 import { WashiTape } from '../custom/TastingNotes';
-import type { DeckData, DeckSource } from '~/types/type';
+import type { DeckData, DeckSource } from '~/types/deck';
 import { FaArrowRight, FaDownload, FaTrash } from 'react-icons/fa6';
 
 const sourceLabel: Record<DeckSource, string> = {

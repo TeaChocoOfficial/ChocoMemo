@@ -62,4 +62,18 @@ UserSchema.index({ 'identities.provider': 1, 'identities.providerUserId': 1 });
 UserSchema.index({ nameTag: 1 }, { unique: true, sparse: true });
 // A verified email is unique across accounts: it may appear on at most one
 // identity (local `providerEmail` = account email, or a linked provider).
-UserSchema.index({ 'identities.providerEmail': 1 }, { unique: true, sparse: true });
+//
+// `partialFilterExpression` rather than `sparse`: providers that don't hand out
+// an email (LINE by default, X without the `users.email` grant) store an
+// explicit `null`, and a sparse index still indexes a present-but-null field —
+// so every email-less account collided on the single `null` key and the second
+// one failed to sign up with `EMAIL_IN_USE`. Restricting the index to strings
+// keeps the uniqueness guarantee for real emails while letting any number of
+// email-less identities coexist.
+UserSchema.index(
+    { 'identities.providerEmail': 1 },
+    {
+        unique: true,
+        partialFilterExpression: { 'identities.providerEmail': { $type: 'string' } },
+    },
+);

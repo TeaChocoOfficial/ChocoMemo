@@ -22,7 +22,10 @@ export const nameTagField = z
     .string()
     .trim()
     .toLowerCase()
-    .regex(/^[A-Za-z0-9_-]{3,30}$/, 'nameTag: English letters, numbers, "_" or "-" only (no spaces), 3-30 chars');
+    .regex(
+        /^[A-Za-z0-9_-]{3,30}$/,
+        'nameTag: English letters, numbers, "_" or "-" only (no spaces), 3-30 chars',
+    );
 
 /** Payload for the password sign-in endpoint. */
 export const loginPayloadSchema = z.object({
@@ -120,6 +123,19 @@ function currentLocale(): string | undefined {
     return lang || undefined;
 }
 
+/** Hand the browser off to a provider's OAuth entry point.
+ *  The provider redirects back to the server callback, which then forwards
+ *  to `path`. The server reads both params back out of HttpOnly cookies, so
+ *  nothing sensitive travels in the query string.
+ *  `mode=disconnect` re-verifies the account instead of linking it, which is
+ *  what authorises unlinking that provider. */
+function oauth(provider: string, path: string, mode?: 'disconnect') {
+    const redirectUri = getLocaleUrl(path);
+    const query = new URLSearchParams({ redirect_uri: redirectUri });
+    if (mode) query.set('mode', mode);
+    window.location.href = `${env.API_URL}/api/user/auth/${provider}?${query}`;
+}
+
 export const authAPI = {
     auth: () => schemaParse(userResponseSchema, serverRest.get<User>('/user/auth')),
     login: (data: LoginPayload) => {
@@ -156,24 +172,16 @@ export const authAPI = {
         );
     },
     logout: () => serverRest.get('/user/auth/signout'),
-    googleLogin: (path: string) => {
-        const redirectUri = getLocaleUrl(path);
-        window.location.href = `${env.API_URL}/api/user/auth/google?redirect_uri=${encodeURIComponent(redirectUri)}`;
-    },
-    /** Re-verify the linked Google account (real Google somehow) before unlinking it. */
-    googleDisconnect: (path: string) => {
-        const redirectUri = getLocaleUrl(path);
-        window.location.href = `${env.API_URL}/api/user/auth/google?redirect_uri=${encodeURIComponent(redirectUri)}&mode=disconnect`;
-    },
-    discordLogin: (path: string) => {
-        const redirectUri = getLocaleUrl(path);
-        window.location.href = `${env.API_URL}/api/user/auth/discord?redirect_uri=${encodeURIComponent(redirectUri)}`;
-    },
+    googleLogin: (path: string) => oauth('google', path),
+    /** Re-verify the linked Google account before unlinking it. */
+    googleDisconnect: (path: string) => oauth('google', path, 'disconnect'),
+    discordLogin: (path: string) => oauth('discord', path),
     /** Re-verify the linked Discord account before unlinking it. */
-    discordDisconnect: (path: string) => {
-        const redirectUri = getLocaleUrl(path);
-        window.location.href = `${env.API_URL}/api/user/auth/discord?redirect_uri=${encodeURIComponent(redirectUri)}&mode=disconnect`;
-    },
+    discordDisconnect: (path: string) => oauth('discord', path, 'disconnect'),
+    lineLogin: (path: string) => oauth('line', path),
+    lineDisconnect: (path: string) => oauth('line', path, 'disconnect'),
+    xLogin: (path: string) => oauth('x', path),
+    xDisconnect: (path: string) => oauth('x', path, 'disconnect'),
     updateUser: (data: UpdateUserPayload) => {
         const payload = updateUserPayloadSchema.parse(data);
         return schemaParse(userField, serverRest.put('/user/auth', payload));

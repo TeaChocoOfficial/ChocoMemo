@@ -10,6 +10,7 @@ import ProfileHero from './components/ProfileHero';
 import StatsSection from './components/StatsSection';
 import { FaArrowLeft, FaUser } from 'react-icons/fa6';
 import AccountIdentities from './components/AccountIdentities';
+import BioSection from './components/BioSection';
 
 /** Server error codes returned by the Google OAuth callback (`?error=...`). */
 const DISCONNECT_ERROR_KEYS: Record<string, string> = {
@@ -28,28 +29,21 @@ export default function ProfilePage() {
     const [searchParams] = useSearchParams();
     const { open, setOpen } = useAuthStore();
 
-    // Surfaced after a Google OAuth round trip (connect/disconnect re-auth):
-    // `?disconnected=1` on success, `?error=...` on failure. Every error code is
-    // mapped to a readable message; unknown codes still surface with the raw code
-    // so a failure is never silent.
+    // Surfaced after an OAuth round trip started from this page (connect or
+    // disconnect re-auth): `?disconnected=1` on success, `?error=...` on
+    // failure. Sign-in failures are handled globally by
+    // `useOAuthCallbackNotice`, so only `source=disconnect` is read here.
     useEffect(() => {
         const disconnected = searchParams.get('disconnected');
         const error = searchParams.get('error');
         const source = searchParams.get('source');
         if (disconnected === '1') {
             swal.success(t('profile.identities.disconnectSuccess'));
-        } else if (error) {
-            const isDisconnect = source === 'disconnect';
-            const messageKey = isDisconnect ? DISCONNECT_ERROR_KEYS[error] : undefined;
-            const message = isDisconnect
-                ? messageKey
-                    ? t(messageKey)
-                    : t('profile.identities.disconnectError', { reason: error })
-                : error.startsWith('NAME_TAG_TAKEN')
-                  ? t('auth.error.nameTagTaken')
-                  : error.startsWith('EMAIL_')
-                    ? t('auth.error.emailInUse')
-                    : t('auth.error.generic');
+        } else if (error && source === 'disconnect') {
+            const messageKey = DISCONNECT_ERROR_KEYS[error];
+            const message = messageKey
+                ? t(messageKey)
+                : t('profile.identities.disconnectError', { reason: error });
             swal.error(message, { error });
         }
         if (disconnected === '1' || error) {
@@ -80,6 +74,17 @@ export default function ProfilePage() {
                     {t('profile.back')}
                 </Link>
                 <ProfileHero memberSince={memberSince} />
+                {user?.nameTag && (
+                    <div className='mb-6'>
+                        <Link
+                            to={`/profile/${user.nameTag}`}
+                            className='inline-flex items-center gap-2 text-sm font-medium text-surface-muted transition-colors hover:text-primary'
+                        >
+                            <FaUser className='h-3.5 w-3.5' />
+                            {t('profile.public.viewPublic')}
+                        </Link>
+                    </div>
+                )}
                 {!user ? (
                     <div className='mx-auto flex max-w-xl flex-col items-center px-4 text-center sm:px-6'>
                         <span className='mb-6 flex h-16 w-16 items-center justify-center rounded-sm bg-primary/12 text-primary'>
@@ -97,6 +102,7 @@ export default function ProfilePage() {
                     </div>
                 ) : (
                     <div className='space-y-12'>
+                        <BioSection />
                         <StatsSection />
                         <AccountIdentities />
                     </div>

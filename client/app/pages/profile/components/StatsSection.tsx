@@ -38,7 +38,9 @@ export default function StatsSection() {
     return (
         <section>
             <div className='mb-5 flex items-center gap-3'>
-                <span className='font-mono text-xs font-bold tracking-[0.14em] text-primary'>01</span>
+                <span className='font-mono text-xs font-bold tracking-[0.14em] text-primary'>
+                    02
+                </span>
                 <span className='h-px w-10 bg-line-strong' />
                 <h2 className='text-lg font-bold tracking-tight text-surface-foreground sm:text-xl'>
                     {t('profile.stats.label')}

@@ -1,17 +1,17 @@
-import type { IconType } from 'react-icons';
-import { FaGoogle, FaKey, FaDiscord, FaLine, FaFacebook, FaXTwitter } from 'react-icons/fa6';
 import { AuthProvider } from '~/types/auth';
+import type { IconType } from 'react-icons';
+import { FaGoogle, FaKey, FaDiscord, FaLine, FaXTwitter } from 'react-icons/fa6';
 
 /**
  * Display metadata for a login provider.
- * `key` matches `AuthProvider` for providers the backend already supports
- * (local, google, discord). Providers not yet in `AuthProvider` are listed
- * here with `available: false` so the "linked accounts" UI is ready before
- * the backend ships them — add them to `AuthProvider` and flip `available`
- * to `true` once the OAuth flow exists.
+ *
+ * Every entry is keyed by `AuthProvider` and rendered from this list, so adding
+ * a provider means adding an enum member and one entry here. `available` marks
+ * whether the backend exposes the OAuth flow yet: unavailable providers are
+ * hidden from the "linked accounts" list rather than shown as dead buttons.
  */
 export interface ProviderMeta {
-    key: AuthProvider | 'discord' | 'line' | 'facebook' | 'x';
+    key: AuthProvider;
     labelKey: string;
     icon: IconType;
     color?: string;
@@ -41,28 +41,34 @@ export const PROVIDER_META: ProviderMeta[] = [
         available: true,
     },
     {
-        key: 'line',
+        key: AuthProvider.LINE,
         labelKey: 'profile.identities.line',
         icon: FaLine,
         color: '#06c755',
-        available: false,
+        available: true,
     },
     {
-        key: 'facebook',
-        labelKey: 'profile.identities.facebook',
-        icon: FaFacebook,
-        color: '#1877f2',
-        available: false,
-    },
-    {
-        key: 'x',
+        key: AuthProvider.X,
         labelKey: 'profile.identities.x',
         icon: FaXTwitter,
-        available: false,
+        // X's mark is monochrome, so it follows the theme rather than a hex.
+        color: 'foreground',
+        available: true,
     },
 ];
 
 /** Look up display metadata for a given provider key. */
 export function getProviderMeta(key: ProviderMeta['key']) {
     return PROVIDER_META.find((meta) => meta.key === key);
+}
+
+/**
+ * Brand color ready for inline `style`. `foreground` resolves to the active
+ * theme's text token so a monochrome mark follows light/dark, matching how
+ * `Button` resolves `brandColor`. Returns `null` when the provider has no
+ * color, so callers can skip the tint rather than emit invalid CSS.
+ */
+export function resolveProviderColor(color?: string): string | null {
+    if (!color) return null;
+    return color === 'foreground' ? 'var(--color-surface-foreground)' : color;
 }

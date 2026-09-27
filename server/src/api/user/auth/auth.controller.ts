@@ -20,19 +20,21 @@ import {
     ChangePasswordConfirmDto,
 } from './dto/security-change.dto';
 import type { Auth } from '~/types/auth';
+import { AuthProvider } from '~/types/auth';
 import { RegisterDto } from './dto/register.dto';
+import { XAuthGuard } from './guard/x-auth.guard';
 import { VerifyOtpDto } from './dto/verify-otp.dto';
 import { ResendOtpDto } from './dto/resend-otp.dto';
 import { JwtAuthGuard } from './guard/jwt-auth.guard';
 import { UpdateUserDto } from '../dto/update-user.dto';
-import { SecureService } from '~/secure/secure.service';
+import { LineAuthGuard } from './guard/line-auth.guard';
 import type { SigninResultDto } from './dto/signin.dto';
 import { LocalAuthGuard } from './guard/local-auth.guard';
 import { UpdateAvatarDto } from './dto/update-avatar.dto';
 import { GoogleAuthGuard } from './guard/google-auth.guard';
-import { AuthProvider } from './enum/auth-provider.enum';
 import { ResetPasswordDto } from './dto/reset-password.dto';
 import type { FastifyRequest, FastifyReply } from 'fastify';
+import { DiscordAuthGuard } from './guard/discord-auth.guard';
 import { ForgotPasswordDto } from './dto/forgot-password.dto';
 import { ChangePasswordDto } from './dto/change-password.dto';
 import type { ResponseUserDto } from '../dto/response-user.dto';
@@ -42,9 +44,8 @@ import { AuthAccountService } from './service/auth-account.service';
 import { AuthSessionService } from './service/auth-session.service';
 import { AuthRegistrationService } from './service/auth-registration.service';
 import { ApiBody, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { DiscordAuthGuard } from './guard/discord-auth.guard';
 
-interface AuthenticatedRequest extends FastifyRequest {
+export interface AuthenticatedRequest extends FastifyRequest {
     user?: Auth;
     oauthError?: string;
 }
@@ -55,7 +56,6 @@ export class AuthController {
     private readonly logger = new Logger(AuthController.name);
 
     constructor(
-        private readonly secureService: SecureService,
         private readonly changeService: AuthChangeService,
         private readonly accountService: AuthAccountService,
         private readonly sessionService: AuthSessionService,
@@ -282,42 +282,7 @@ export class AuthController {
         @Req() req: AuthenticatedRequest,
         @Res({ passthrough: true }) res: FastifyReply,
     ): Promise<{ url: string }> {
-        this.logger.log('Google OAuth callback received');
-        const { CLIENT_URL } = this.secureService.getEnvConfig();
-        const frontendUrl = CLIENT_URL || 'http://127.0.0.1:5001';
-        const redirect_uri = req.cookies?.oauth_redirect_uri || frontendUrl;
-        res.clearCookie('oauth_redirect_uri', { path: '/' });
-        const disconnectMode = req.cookies?.oauth_disconnect === '1';
-        res.clearCookie('oauth_disconnect', { path: '/' });
-        this.logger.log('redirect_uri', redirect_uri);
-        try {
-            const user = req.user as Auth;
-            if (!user) throw new Error('No user data received from Google');
-
-            // `mode=disconnect`: this round trip is a re-verification of the
-            // linked Google account, used to authorize unlinking it.
-            if (disconnectMode) {
-                await this.changeService.disconnectViaGoogleReauth(user);
-                return { url: `${redirect_uri}?disconnected=1` };
-            }
-
-            const result = await this.accountService.signin(user);
-            this.sessionService.setCookie(res, result.access_token, 7 * 24 * 60 * 60 * 1000);
-            const redirectUrl = `${redirect_uri}?token=${result.access_token}`;
-            return { url: redirectUrl };
-        } catch (error) {
-            this.logger.error('Error in Google callback:', error);
-            // Prefer the OAuth-specific reason (e.g. `access_denied`) recorded by
-            // the guard over the generic controller error.
-            const message =
-                req.oauthError ||
-                (error instanceof Error && error.message) ||
-                'Authentication failed';
-            const errorMessage = encodeURIComponent(message);
-            const errorSource = disconnectMode ? 'disconnect' : 'login';
-            const errorRedirect = `${redirect_uri}?error=${errorMessage}&source=${errorSource}`;
-            return { url: errorRedirect };
-        }
+        return this.accountService.handleOAuthCallback(AuthProvider.GOOGLE, req, res);
     }
 
     @Get('discord')
@@ -335,48 +300,45 @@ export class AuthController {
         @Req() req: AuthenticatedRequest,
         @Res({ passthrough: true }) res: FastifyReply,
     ): Promise<{ url: string }> {
-        this.logger.log('Discord OAuth callback received');
+        return this.accountService.handleOAuthCallback(AuthProvider.DISCORD, req, res);
+    }
 
-        // The guard stashed `?redirect_uri=` in a short-lived cookie so the
-        // client's locale + path survives the round trip through Discord.
-        const { CLIENT_URL } = this.secureService.getEnvConfig();
-        const frontendUrl = CLIENT_URL || 'http://127.0.0.1:5001';
-        const redirect_uri = req.cookies?.oauth_redirect_uri || frontendUrl;
-        res.clearCookie('oauth_redirect_uri', { path: '/' });
-        const disconnectMode = req.cookies?.oauth_disconnect === '1';
-        res.clearCookie('oauth_disconnect', { path: '/' });
+    // ==================== LINE ====================
+    @Get('line')
+    @UseGuards(LineAuthGuard)
+    @ApiOperation({ summary: 'Initiate LINE OAuth flow' })
+    async lineAuth() {
+        this.logger.log('LINE OAuth initiated');
+    }
 
-        try {
-            const user = req.user as Auth;
-            if (!user) throw new Error('No user data received from Discord');
+    @Get('line/callback')
+    @Redirect()
+    @UseGuards(LineAuthGuard)
+    @ApiOperation({ summary: 'LINE OAuth callback handler' })
+    async lineAuthCallback(
+        @Req() req: AuthenticatedRequest,
+        @Res({ passthrough: true }) res: FastifyReply,
+    ): Promise<{ url: string }> {
+        return this.accountService.handleOAuthCallback(AuthProvider.LINE, req, res);
+    }
 
-            // `mode=disconnect`: this round trip is a re-verification of the
-            // linked Discord account, used to authorize unlinking it.
-            if (disconnectMode) {
-                await this.changeService.disconnectViaProviderReauth(
-                    AuthProvider.DISCORD,
-                    user,
-                );
-                return { url: `${redirect_uri}?disconnected=1` };
-            }
+    // ==================== X (Twitter) ====================
+    @Get('x')
+    @UseGuards(XAuthGuard)
+    @ApiOperation({ summary: 'Initiate X OAuth flow' })
+    async xAuth() {
+        this.logger.log('X OAuth initiated');
+    }
 
-            const result = await this.accountService.signin(user);
-            this.sessionService.setCookie(res, result.access_token, 7 * 24 * 60 * 60 * 1000);
-            return { url: `${redirect_uri}?token=${result.access_token}` };
-        } catch (error) {
-            this.logger.error('Error in Discord callback:', error);
-            // Prefer the OAuth-specific reason (e.g. `access_denied`) recorded
-            // by the guard over the generic controller error.
-            const message =
-                req.oauthError ||
-                (error instanceof Error && error.message) ||
-                'Authentication failed';
-            const errorMessage = encodeURIComponent(message);
-            const errorSource = disconnectMode ? 'disconnect' : 'login';
-            return {
-                url: `${redirect_uri}?error=${errorMessage}&source=${errorSource}`,
-            };
-        }
+    @Get('x/callback')
+    @Redirect()
+    @UseGuards(XAuthGuard)
+    @ApiOperation({ summary: 'X OAuth callback handler' })
+    async xAuthCallback(
+        @Req() req: AuthenticatedRequest,
+        @Res({ passthrough: true }) res: FastifyReply,
+    ): Promise<{ url: string }> {
+        return this.accountService.handleOAuthCallback(AuthProvider.X, req, res);
     }
 
     @Get('profile')

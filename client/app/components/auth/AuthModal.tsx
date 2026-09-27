@@ -1,16 +1,8 @@
-import {
-    FaAt,
-    FaLock,
-    FaUser,
-    FaGoogle,
-    FaDiscord,
-    FaEnvelope,
-    FaShieldHalved,
-} from 'react-icons/fa6';
+import { FaAt, FaLock, FaUser, FaEnvelope, FaShieldHalved } from 'react-icons/fa6';
 import axios from 'axios';
 import { useSwal } from '~/hooks/useSwal';
 import PasswordInput from './PasswordInput';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { AuthProvider } from '~/types/auth';
 import { usePathname } from '~/i18n/routing';
 import { useTranslation } from 'react-i18next';
@@ -19,6 +11,7 @@ import { useAuthStore } from '~/stores/auth.store';
 import { authAPI, nameTagField } from '~/services/auth';
 import { getProviderMeta } from '~/constants/identityProviders';
 import { Modal, ModalHeader, ModalBody } from '~/components/custom/Modal';
+import { PROVIDER_ACTIONS } from './providerActions';
 
 const RESEND_COOLDOWN = 30;
 
@@ -139,19 +132,12 @@ export default function AuthModal() {
             setMode('verify');
             swal.success(t('auth.otpSent', { email: form.email }));
         } catch (err) {
+            console.error(err);
             if (isNameTagTaken(err)) swal.error(t('auth.error.nameTagTaken'), { error: err });
             else swal.error(t('auth.error.emailInUse'), { error: err });
         } finally {
             setLoading(false);
         }
-    };
-
-    const handleGoogle = () => {
-        authAPI.googleLogin(pathname);
-    };
-
-    const handleDiscord = () => {
-        authAPI.discordLogin(pathname);
     };
 
     const handleVerifyOtp = async (e: React.FormEvent) => {
@@ -596,34 +582,6 @@ export default function AuthModal() {
                             </Button>
                         </form>
 
-                        <div className='mt-4 flex items-center gap-3'>
-                            <div className='h-px flex-1 bg-line' />
-                            <span className='text-xs text-surface-muted'>
-                                {t('auth.orContinueWith')}
-                            </span>
-                            <div className='h-px flex-1 bg-line' />
-                        </div>
-
-                        <Button
-                            variant='outline'
-                            className='mt-4 w-full'
-                            onClick={handleGoogle}
-                            brandColor={getProviderMeta(AuthProvider.GOOGLE)?.color}
-                        >
-                            <FaGoogle className='h-4 w-4' />
-                            {t('auth.google')}
-                        </Button>
-
-                        <Button
-                            variant='outline'
-                            className='mt-4 w-full'
-                            onClick={handleDiscord}
-                            brandColor={getProviderMeta(AuthProvider.DISCORD)?.color}
-                        >
-                            <FaDiscord className='h-4 w-4' />
-                            {t('auth.discord')}
-                        </Button>
-
                         <p className='mt-4 text-center text-xs text-surface-muted'>
                             {mode === 'signin' ? t('auth.noAccount') : t('auth.hasAccount')}{' '}
                             <button
@@ -637,6 +595,32 @@ export default function AuthModal() {
                                 {mode === 'signin' ? t('auth.signUp') : t('auth.signIn')}
                             </button>
                         </p>
+
+                        <div className='mt-6 flex items-center gap-3'>
+                            <div className='h-px flex-1 bg-line' />
+                            <span className='text-xs text-surface-muted'>
+                                {t('auth.orContinueWith')}
+                            </span>
+                            <div className='h-px flex-1 bg-line' />
+                        </div>
+
+                        {Object.values(AuthProvider).map((value) => {
+                            const providerMeta = getProviderMeta(value);
+                            if (value !== AuthProvider.LOCAL && providerMeta)
+                                return (
+                                    <Button
+                                        variant='outline'
+                                        className='mt-4 w-full'
+                                        brandColor={providerMeta.color ?? 'foreground'}
+                                        onClick={() => PROVIDER_ACTIONS[value].login(pathname)}
+                                    >
+                                        {React.createElement(providerMeta.icon, {
+                                            className: 'h-4 w-4',
+                                        })}
+                                        {t(`auth.${value}`)}
+                                    </Button>
+                                );
+                        })}
                     </ModalBody>
                 </>
             )}

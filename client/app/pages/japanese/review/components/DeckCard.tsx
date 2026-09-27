@@ -1,13 +1,13 @@
 // -Path: 'client/app/pages/japanese/review/components/DeckCard.tsx'
 import { motion } from 'framer-motion';
-import { FaArrowRight, FaDownload } from 'react-icons/fa6';
-import { useTranslation } from 'react-i18next';
 import { Link } from '~/i18n/routing';
-import { useLangText } from '~/hooks/useLangText';
+import { useTranslation } from 'react-i18next';
 import { deckWords } from '~/stores/deck.store';
+import { useLangText } from '~/hooks/useLangText';
+import type { DeckData, DeckSource } from '~/types/deck';
+import { FaArrowRight, FaDownload } from 'react-icons/fa6';
 import { useVocabProgressStore } from '~/stores/vocabProgress.store';
 import { DueSeal, StrengthMeter, WashiTape } from '~/components/custom/TastingNotes';
-import type { DeckData, DeckSource } from '~/types/type';
 
 const sourceLabel: Record<DeckSource, string> = {
     default: 'japanese.decks.source.default',

@@ -2,6 +2,7 @@
 import { Role } from '~/types/auth';
 import type { Model } from 'mongoose';
 import { nameDB } from '~/hooks/mongodb';
+import { AuthProvider } from '~/types/auth';
 import { InjectModel } from '@nestjs/mongoose';
 import {
     PendingRegistration,
@@ -12,7 +13,6 @@ import { AuthHashService } from './auth-hash.service';
 import { SecureService } from '~/secure/secure.service';
 import { AuthTokenService } from './auth-token.service';
 import type { SigninResultDto } from '../dto/signin.dto';
-import { AuthProvider } from '../enum/auth-provider.enum';
 import { AuthAccountService } from './auth-account.service';
 import { BadRequestException, Injectable } from '@nestjs/common';
 import type { AuthIdentity } from '../schemas/auth-identity.schema';

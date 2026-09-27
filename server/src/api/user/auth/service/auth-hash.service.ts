@@ -1,7 +1,7 @@
 // -Path: "server/src/api/user/auth/service/auth-hash.service.ts"
 import * as argon2 from 'argon2';
 import { Injectable } from '@nestjs/common';
-import { SecureService } from '../../../../secure/secure.service';
+import { SecureService } from '~/secure/secure.service';
 
 @Injectable()
 export class AuthHashService {

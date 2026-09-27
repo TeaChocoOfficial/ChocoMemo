@@ -15,6 +15,7 @@ export default [
             route('japanese/review/:deckId', 'routes/page/japanese/review.$deckId.tsx'),
             route('settings', 'routes/page/settings.tsx'),
             route('profile', 'routes/page/profile.tsx'),
+            route('profile/:nameTag', 'routes/page/profile.$nameTag.tsx'),
             route('auth', 'routes/page/auth.tsx'),
             route('dev/swal', 'routes/page/dev/swal.tsx'),
             route('*', 'routes/not-found.tsx'),

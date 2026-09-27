@@ -3,7 +3,7 @@
 // user picks (default + custom vocabulary), then hands it to the store.
 import { FaPlus } from 'react-icons/fa6';
 import { useMemo, useState } from 'react';
-import type { DeckData } from '~/types/type';
+import type { DeckData } from '~/types/deck';
 import { useTranslation } from 'react-i18next';
 import Button from '~/components/custom/Button';
 import { useDeckStore } from '~/stores/deck.store';
@@ -49,6 +49,8 @@ export default function AddCustomDeckButton() {
             description: description.trim() || undefined,
             source: 'local',
             wordIds: selected,
+            tags: [],
+            nsfw: false,
         };
         addDeck(deck);
         reset();

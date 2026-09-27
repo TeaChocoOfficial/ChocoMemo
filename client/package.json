@@ -1,6 +1,6 @@
 {
     "name": "choco-memo-client",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "author": "TeaChoco",
     "private": true,
     "type": "module",

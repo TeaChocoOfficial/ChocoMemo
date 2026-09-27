@@ -1,7 +1,7 @@
 // -Path: "Nest TypeScript/src/user/auth/guard/google-auth.guard.ts"
-import type { FastifyReply, FastifyRequest } from 'fastify';
 import { AuthGuard } from '@nestjs/passport';
 import type { ServerResponse } from 'node:http';
+import type { FastifyReply, FastifyRequest } from 'fastify';
 import { Injectable, type ExecutionContext } from '@nestjs/common';
 
 @Injectable()

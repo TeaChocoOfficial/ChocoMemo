@@ -1,5 +1,6 @@
 // -Path: "server/src/api/user/auth/service/auth-account.service.ts"
 import type { Model } from 'mongoose';
+import { FastifyReply } from 'fastify';
 import { nameDB } from '~/hooks/mongodb';
 import { InjectModel } from '@nestjs/mongoose';
 import {
@@ -7,24 +8,33 @@ import {
     type PendingRegistrationDocument,
 } from '../schemas/pending-registration.schema';
 import { UserService } from '../../user.service';
+import { Auth, AuthProvider } from '~/types/auth';
 import type { ReqUserDto } from '../../dto/user.dto';
-import { AuthHashService } from './auth-hash.service';
-import type { SigninResultDto } from '../dto/signin.dto';
-import { AuthProvider } from '../enum/auth-provider.enum';
 import { toNameTag } from '../../utils/name-tag.util';
+import { AuthHashService } from './auth-hash.service';
+import { SecureService } from '~/secure/secure.service';
+import type { SigninResultDto } from '../dto/signin.dto';
+import { AuthenticatedRequest } from '../auth.controller';
 import { UpdateUserDto } from '../../dto/update-user.dto';
+import { AuthChangeService } from './auth-change.service';
 import { AuthSessionService } from './auth-session.service';
 import { ResponseUserDto } from '../../dto/response-user.dto';
 import { User, type UserDocument } from '../../schemas/user.schema';
-import { BadRequestException, Injectable, Logger } from '@nestjs/common';
+import { BadRequestException, forwardRef, Inject, Injectable, Logger } from '@nestjs/common';
 
 @Injectable()
 export class AuthAccountService {
     logger = new Logger();
+
     constructor(
-        private readonly sessionService: AuthSessionService,
-        private readonly hashService: AuthHashService,
         private readonly userService: UserService,
+        private readonly hashService: AuthHashService,
+        private readonly secureService: SecureService,
+        // Circular: AuthChangeService injects this service, so the back-edge
+        // needs deferring to break the cycle.
+        @Inject(forwardRef(() => AuthChangeService))
+        private readonly changeService: AuthChangeService,
+        private readonly sessionService: AuthSessionService,
         @InjectModel(User.name, nameDB)
         private readonly userModel: Model<UserDocument>,
         @InjectModel(PendingRegistration.name, nameDB)
@@ -367,5 +377,42 @@ export class AuthAccountService {
 
         const responseUser = await this.userService.responseUser(userDB, user.expiresAt);
         return responseUser;
+    }
+
+    async handleOAuthCallback(
+        provider: AuthProvider,
+        req: AuthenticatedRequest,
+        res: FastifyReply,
+    ): Promise<{ url: string }> {
+        this.logger.log(`${provider} OAuth callback received`);
+
+        const { CLIENT_URL } = this.secureService.getEnvConfig();
+        const redirect_uri = req.cookies?.oauth_redirect_uri || CLIENT_URL;
+        res.clearCookie('oauth_redirect_uri', { path: '/' });
+        const disconnectMode = req.cookies?.oauth_disconnect === '1';
+        res.clearCookie('oauth_disconnect', { path: '/' });
+
+        try {
+            const user = req.user as Auth;
+            if (!user) throw new Error(`No user data received from ${provider}`);
+
+            if (disconnectMode) {
+                await this.changeService.disconnectViaProviderReauth(provider, user);
+                return { url: `${redirect_uri}?disconnected=1` };
+            }
+
+            const result = await this.signin(user);
+            this.sessionService.setCookie(res, result.access_token, 7 * 24 * 60 * 60 * 1000);
+            return { url: redirect_uri };
+        } catch (error) {
+            this.logger.error(`Error in ${provider} callback:`, error);
+            const message =
+                req.oauthError ||
+                (error instanceof Error && error.message) ||
+                'Authentication failed';
+            const errorMessage = encodeURIComponent(message);
+            const errorSource = disconnectMode ? 'disconnect' : 'login';
+            return { url: `${redirect_uri}?error=${errorMessage}&source=${errorSource}` };
+        }
     }
 }

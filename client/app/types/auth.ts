@@ -1,4 +1,4 @@
-// -Path: "Vite-React-Router-TypeScript/src/types/auth.ts"
+// -Path: "src/types/auth.ts"
 
 export enum Role {
     ADMIN = 'admin',
@@ -9,6 +9,8 @@ export enum AuthProvider {
     LOCAL = 'local',
     GOOGLE = 'google',
     DISCORD = 'discord',
+    LINE = 'line',
+    X = 'x',
 }
 
 export interface AuthIdentity {
@@ -20,16 +22,16 @@ export interface AuthIdentity {
 
 export interface User {
     userId: string;
-    name?: string;
+    name: string;
     /** Public handle used to find this user. English only, no spaces. */
     nameTag: string;
     /** Short self-description shown on the public profile. */
     bio?: string;
     avatar?: string;
-    role?: Role;
+    role: Role;
     emailVerified?: boolean;
-    lastLoginAt?: Date;
-    createdAt?: Date;
-    updatedAt?: Date;
-    identities?: AuthIdentity[];
+    lastLoginAt: Date;
+    createdAt: Date;
+    updatedAt: Date;
+    identities: AuthIdentity[];
 }

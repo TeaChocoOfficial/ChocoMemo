@@ -1,6 +1,7 @@
 // -Path: 'client/app/utils/deck.ts'
 import { z } from 'zod';
-import type { DeckData, LangText } from '~/types/type';
+import type { DeckData } from '~/types/deck';
+import type { LangText } from '~/types/type';
 
 // A name/description is either a plain string or a per-locale record,
 // matching LangText used everywhere else in the app.

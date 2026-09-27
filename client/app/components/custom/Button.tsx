@@ -21,6 +21,20 @@ const sizeClasses: Record<string, string> = {
     lg: 'px-7 py-3.5 text-base',
 };
 
+/** `foreground` defers to the active theme's text token so a brand tint can
+ *  follow light/dark instead of being pinned to one theme's hex. */
+function resolveBrandColor(brandColor: string) {
+    return brandColor === 'foreground' ? 'var(--color-surface-foreground)' : brandColor;
+}
+
+/** Translucent fill for the hover state. Hex colors take the 8-digit `#rrggbbaa`
+ *  form; a resolved `var()` cannot take an alpha suffix, so it mixes instead. */
+function brandColorHover(brandColor: string) {
+    return brandColor.startsWith('#')
+        ? `${brandColor}20`
+        : `color-mix(in srgb, ${brandColor} 12%, transparent)`;
+}
+
 export default function Button({
     size = 'md',
     children,
@@ -30,16 +44,18 @@ export default function Button({
     style,
     ...props
 }: ButtonProps) {
-    const customStyle = brandColor
+    const brand = brandColor && resolveBrandColor(brandColor);
+
+    const customStyle = brand
         ? ({
               ...style,
-              '--btn-color': brandColor,
-              '--btn-color-hover': `${brandColor}20`, // สีพื้นหลังตอน hover (ใส่ความโปร่งใส 20%)
-              '--btn-border-hover': brandColor,
+              '--btn-color': brand,
+              '--btn-color-hover': brandColorHover(brand),
+              '--btn-border-hover': brand,
           } as React.CSSProperties)
         : style;
 
-    const brandClass = brandColor
+    const brandClass = brand
         ? 'text-[var(--btn-color)]! border-[var(--btn-color)]! hover:border-[var(--btn-border-hover)]! hover:bg-[var(--btn-color-hover)]!'
         : '';
     return (

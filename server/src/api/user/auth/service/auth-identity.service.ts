@@ -1,9 +1,9 @@
 // -Path: "server/src/api/user/auth/service/auth-identity.service.ts"
 import type { Model } from 'mongoose';
+import { nameDB } from '~/hooks/mongodb';
+import { AuthProvider } from '~/types/auth';
 import { InjectModel } from '@nestjs/mongoose';
-import { nameDB } from '../../../../hooks/mongodb';
 import type { ReqUserDto } from '../../dto/user.dto';
-import { AuthProvider } from '../enum/auth-provider.enum';
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { User, type UserDocument } from '../../schemas/user.schema';
 

@@ -1,5 +1,5 @@
 // -Path: 'client/app/data/japanese/decks.ts'
-import type { DeckData } from '~/types/type';
+import type { DeckData } from '~/types/deck';
 import { DEFAULT_VOCABULARY } from './vocabulary';
 
 /**
@@ -23,6 +23,8 @@ export const DEFAULT_DECKS: DeckData[] = [
         description: 'Water, fire, mountains — the natural world in kanji.',
         source: 'default',
         wordIds: NATURE,
+        tags: ['nature'],
+        nsfw: false,
     },
     {
         id: 'deck-animals',
@@ -30,6 +32,8 @@ export const DEFAULT_DECKS: DeckData[] = [
         description: 'Dogs, cats, birds and fish to get you started.',
         source: 'default',
         wordIds: ANIMALS,
+        tags: ['animals'],
+        nsfw: false,
     },
     {
         id: 'deck-things',
@@ -37,6 +41,8 @@ export const DEFAULT_DECKS: DeckData[] = [
         description: 'Books, trains, school and friends — daily-life essentials.',
         source: 'default',
         wordIds: THINGS,
+        tags: ['everyday'],
+        nsfw: false,
     },
     {
         id: 'deck-actions',
@@ -44,6 +50,8 @@ export const DEFAULT_DECKS: DeckData[] = [
         description: 'Eating, drinking, going — common everyday verbs.',
         source: 'default',
         wordIds: ACTIONS,
+        tags: ['actions'],
+        nsfw: false,
     },
 ];
 

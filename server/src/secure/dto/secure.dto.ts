@@ -24,8 +24,17 @@ export const envConfigs = [
     'DISCORD_CLIENT_ID',
     'DISCORD_CLIENT_SECRET',
     'DISCORD_CALLBACK_URL',
+    'FACEBOOK_APP_ID',
+    'FACEBOOK_APP_SECRET',
+    'FACEBOOK_CALLBACK_URL',
+    'LINE_CHANNEL_ID',
+    'LINE_CHANNEL_SECRET',
+    'LINE_CALLBACK_URL',
+    'X_CLIENT_ID',
+    'X_CLIENT_SECRET',
+    'X_CALLBACK_URL',
 ] as const;
 
 export type EnvConfig = {
-    [key in (typeof envConfigs)[number]]?: string;
+    [key in (typeof envConfigs)[number]]: string;
 };

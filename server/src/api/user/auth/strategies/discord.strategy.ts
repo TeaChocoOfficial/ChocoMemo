@@ -1,10 +1,10 @@
 // -Path: "src/user/auth/strategies/discord.strategy.ts"
 import { Role } from '~/types/auth';
+import { AuthProvider } from '~/types/auth';
 import { PassportStrategy } from '@nestjs/passport';
 import { Injectable, Logger } from '@nestjs/common';
 import { SecureService } from '~/secure/secure.service';
 import type { UserType } from '../../dto/create-user.dto';
-import { AuthProvider } from '../enum/auth-provider.enum';
 import { Scope, Strategy, type Profile } from 'passport-discord-auth';
 import type { AuthIdentity } from '../schemas/auth-identity.schema';
 

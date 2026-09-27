@@ -3,18 +3,19 @@
 // localStorage and can be created from custom words, or (in the future)
 // synced from cloud data or downloaded from other users.
 import { create } from 'zustand';
+import type { DeckData } from '~/types/deck';
+import { importedDeckSchema } from '~/utils/deck';
+import type { VocabWord } from '~/types/vocabulary';
+import { useVocabularyStore } from './vocabulary.store';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { DEFAULT_DECKS, findDefaultDeck } from '~/data/japanese/decks';
-import type { VocabWord } from '~/types/vocabulary';
-import { importedDeckSchema } from '~/utils/deck';
-import { useVocabularyStore } from './vocabulary.store';
-import type { DeckData } from '~/types/type';
 
 interface DeckState {
     /** User-created / downloaded decks, persisted to localStorage. */
     userDecks: DeckData[];
     addDeck: (deck: DeckData) => void;
     removeDeck: (id: string) => void;
+    updateDeck: (id: string, patch: Partial<Pick<DeckData, 'wordIds' | 'name' | 'description'>>) => void;
     clearDecks: () => void;
     /** Parses + validates a raw JSON payload (already JSON.parse'd) and adds
      *  it as a user deck. Returns an error message on failure instead of
@@ -40,6 +41,11 @@ export const useDeckStore = create<DeckState>()(
                     if (exists) return state;
                     return { userDecks: [...state.userDecks, deck] };
                 }),
+            // Only user decks can be patched; built-in decks are static data.
+            updateDeck: (id, patch) =>
+                set((state) => ({
+                    userDecks: state.userDecks.map((d) => (d.id === id ? { ...d, ...patch } : d)),
+                })),
             removeDeck: (id) =>
                 set((state) => ({
                     userDecks: state.userDecks.filter((d) => d.id !== id),
@@ -55,6 +61,10 @@ export const useDeckStore = create<DeckState>()(
                 const deck: DeckData = {
                     id: newDeckId(),
                     source: 'local',
+                    // Not part of the import payload: an imported file can't
+                    // declare itself safe or tag itself.
+                    tags: [],
+                    nsfw: false,
                     ...result.data,
                 };
                 set((state) => ({ userDecks: [...state.userDecks, deck] }));
@@ -80,6 +90,8 @@ export function myWordsDeck(): DeckData | null {
         description: 'All vocabulary you added yourself.',
         source: 'local',
         wordIds: custom.map((w: VocabWord) => w.id),
+        tags: [],
+        nsfw: false,
     };
 }
 

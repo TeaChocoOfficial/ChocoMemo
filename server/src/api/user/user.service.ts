@@ -1,15 +1,15 @@
 // -Path: "Nest TypeScript/src/user/user.service.ts"
 import { nameDB } from '~/hooks/mongodb';
+import { AuthProvider } from '~/types/auth';
 import { type Model, Types } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 import { toNameTag } from './utils/name-tag.util';
-import { AuthProvider } from './auth/enum/auth-provider.enum';
-import { Injectable, Logger, type OnModuleInit } from '@nestjs/common';
 import type { UserJWTPayload } from './dto/user.dto';
 import type { CreateUserDto } from './dto/create-user.dto';
 import type { UpdateUserDto } from './dto/update-user.dto';
-import type { ResponseUserDto } from './dto/response-user.dto';
+import type { PublicUserDto, ResponseUserDto } from './dto/response-user.dto';
 import { User, type UserDocument } from './schemas/user.schema';
+import { Injectable, Logger, type OnModuleInit } from '@nestjs/common';
 
 @Injectable()
 export class UserService implements OnModuleInit {
@@ -72,28 +72,44 @@ export class UserService implements OnModuleInit {
         return null;
     }
 
+    /** Public, unauthenticated view of a user: same as `responseUser` but with
+     *  identity emails stripped. Used by the by-name-tag and by-id lookups. */
+    async publicUser(user?: UserJWTPayload | UserDocument | null): Promise<PublicUserDto | null> {
+        const full = await this.responseUser(user);
+        if (!full) return null;
+        const { identities, ...rest } = full;
+        return {
+            ...rest,
+            identities: (identities ?? []).map(({ provider, avatar, hasPassword }) => ({
+                provider,
+                avatar: avatar ?? null,
+                hasPassword,
+            })),
+        };
+    }
+
     async findAll(): Promise<(ResponseUserDto | null)[]> {
         const users = await this.userModel.find().exec();
         return Promise.all(users.map((user) => this.responseUser(user)));
     }
 
-    async findUser(user_id: string): Promise<ResponseUserDto | null> {
+    async findUser(user_id: string): Promise<PublicUserDto | null> {
         try {
             const id = new Types.ObjectId(user_id);
             const user = await this.userModel.findById(id).exec();
-            return this.responseUser(user);
+            return this.publicUser(user);
         } catch {
             return null;
         }
     }
 
     /** Find a user by their public nameTag (case-insensitive, stored lowercase). */
-    async findUserByNameTag(nameTag: string): Promise<ResponseUserDto | null> {
+    async findUserByNameTag(nameTag: string): Promise<PublicUserDto | null> {
         const tag = nameTag.trim().toLowerCase();
         if (!tag) return null;
         const user = await this.userModel.findOne({ nameTag: tag }).exec();
         if (!user) return null;
-        return this.responseUser(user);
+        return this.publicUser(user);
     }
 
     async create(user: CreateUserDto): Promise<User> {

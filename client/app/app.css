@@ -30,8 +30,6 @@
     --color-secondary-muted: hsl(28 18% 85%);
     --color-secondary-emphasis: hsl(26 20% 26%);
 
-    /* --- Accent (the one hue of the theme) --- */
-
     /* --- Feedback: Error --- */
     --color-error: hsl(357.2 68.3% 47.6%);
     --color-error-foreground: hsl(0 0% 98.7%);

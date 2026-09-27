@@ -9,7 +9,7 @@
 // Cards are rendered by the caller (index cards with washi tape).
 import { useState } from 'react';
 import DeckCard from './DeckCard';
-import type { DeckData } from '~/types/type';
+import type { DeckData } from '~/types/deck';
 import { useTranslation } from 'react-i18next';
 import { FaMagnifyingGlass } from 'react-icons/fa6';
 import type { CollectionTab } from '~/types/collection';

@@ -1,6 +1,6 @@
 // -Path: "src/user/auth/schemas/auth-identity.schema.ts"
+import { AuthProvider } from '~/types/auth';
 import { HydratedDocument } from 'mongoose';
-import { AuthProvider } from '../enum/auth-provider.enum';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 
 export type AuthIdentityDocument = HydratedDocument<AuthIdentity>;

@@ -1,19 +1,19 @@
 // -Path: "server/src/api/user/auth/service/auth-change.service.ts"
 import type { Model } from 'mongoose';
+import { nameDB } from '~/hooks/mongodb';
+import { type Auth } from '~/types/auth';
+import { AuthProvider } from '~/types/auth';
 import { InjectModel } from '@nestjs/mongoose';
 import { UserService } from '../../user.service';
-import { nameDB } from '../../../../hooks/mongodb';
-import { type Auth } from '../../../../types/auth';
 import { AuthOtpService } from './auth-otp.service';
 import type { ReqUserDto } from '../../dto/user.dto';
 import { AuthHashService } from './auth-hash.service';
 import { AuthTokenService } from './auth-token.service';
 import type { SigninResultDto } from '../dto/signin.dto';
-import { AuthProvider } from '../enum/auth-provider.enum';
 import { AuthSessionService } from './auth-session.service';
 import { AuthAccountService } from './auth-account.service';
 import { AuthIdentityService } from './auth-identity.service';
-import { BadRequestException, Injectable, Logger } from '@nestjs/common';
+import { BadRequestException, forwardRef, Inject, Injectable, Logger } from '@nestjs/common';
 import { User, type UserDocument } from '../../schemas/user.schema';
 
 @Injectable()
@@ -26,6 +26,9 @@ export class AuthChangeService {
         private readonly otpService: AuthOtpService,
         private readonly tokenService: AuthTokenService,
         private readonly identityService: AuthIdentityService,
+        // Circular: AuthAccountService injects this service for its OAuth
+        // callback, so the back-edge needs deferring to break the cycle.
+        @Inject(forwardRef(() => AuthAccountService))
         private readonly accountService: AuthAccountService,
         @InjectModel(User.name, nameDB)
         private readonly userModel: Model<UserDocument>,
@@ -171,10 +174,7 @@ export class AuthChangeService {
      * The caller must have completed the provider's OAuth flow in `mode=disconnect`
      * so the identity in `oauthUser` is proof the signed-in account still owns it.
      */
-    async disconnectViaProviderReauth(
-        provider: AuthProvider.GOOGLE | AuthProvider.DISCORD,
-        oauthUser: Auth,
-    ): Promise<void> {
+    async disconnectViaProviderReauth(provider: AuthProvider, oauthUser: Auth): Promise<void> {
         const failCode = `${provider.toUpperCase()}_VERIFY_FAILED`;
         const identity = (oauthUser as ReqUserDto)?.identities?.find(
             (entry) => entry.provider === provider,

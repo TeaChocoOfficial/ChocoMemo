@@ -1,9 +1,9 @@
 // -Path: 'src/user/auth/strategies/google.strategy.ts'
 import { Role } from '~/types/auth';
+import { AuthProvider } from '~/types/auth';
 import { Injectable, Logger } from '@nestjs/common';
 import { PassportStrategy } from '@nestjs/passport';
 import { SecureService } from '~/secure/secure.service';
-import { AuthProvider } from '../enum/auth-provider.enum';
 import type { UserType } from '../../dto/create-user.dto';
 import type { AuthIdentity } from '../schemas/auth-identity.schema';
 import { Strategy, type VerifyCallback } from 'passport-google-oauth20';

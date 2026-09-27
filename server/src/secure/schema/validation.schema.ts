@@ -57,11 +57,23 @@ export const validationSchema = Joi.object({
 
     GOOGLE_CLIENT_ID: Joi.string().required(),
     GOOGLE_CLIENT_SECRET: Joi.string().required(),
-    GOOGLE_CALLBACK_URL: Joi.string().required(),
+    GOOGLE_CALLBACK_URL: Joi.string().uri().required(),
 
     DISCORD_CLIENT_ID: Joi.string().required(),
     DISCORD_CLIENT_SECRET: Joi.string().required(),
     DISCORD_CALLBACK_URL: Joi.string().uri().required(),
+
+    FACEBOOK_APP_ID: Joi.string().required(),
+    FACEBOOK_APP_SECRET: Joi.string().required(),
+    FACEBOOK_CALLBACK_URL: Joi.string().uri().required(),
+
+    LINE_CHANNEL_ID: Joi.string().required(),
+    LINE_CHANNEL_SECRET: Joi.string().required(),
+    LINE_CALLBACK_URL: Joi.string().uri().required(),
+
+    X_CLIENT_ID: Joi.string().required(),
+    X_CLIENT_SECRET: Joi.string().required(),
+    X_CALLBACK_URL: Joi.string().uri().required(),
 })
     // ใช้ unknown() เพื่อให้ validation ไม่ error เมื่อมี env variables อื่นๆ ที่ไม่ได้กำหนด
     .unknown(true);

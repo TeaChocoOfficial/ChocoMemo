@@ -17,6 +17,7 @@ import env, { isDev } from '~/secure/env';
 import type { Route } from './+types/root';
 import { useTranslation } from 'react-i18next';
 import { SUPPORTED_LANGS, type Lang } from '~/i18n/locales';
+import { useOAuthCallbackNotice } from '~/hooks/useOAuthCallbackNotice';
 
 export async function loader({ request }: LoaderFunctionArgs) {
     const url = new URL(request.url);
@@ -118,6 +119,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
+    useOAuthCallbackNotice();
     return <Outlet />;
 }
 

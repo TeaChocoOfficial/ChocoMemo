@@ -356,11 +356,6 @@ export default function ProfileHero({ memberSince }: ProfileHeroProps) {
                                     </span>
                                 )}
                             </p>
-                            {!!user?.bio && (
-                                <p className='max-w-md text-sm text-surface-foreground/90'>
-                                    {user.bio}
-                                </p>
-                            )}
                             <Button size='sm' variant='ghost' onClick={openProfileModal}>
                                 {t('profile.details.editProfile')}
                             </Button>

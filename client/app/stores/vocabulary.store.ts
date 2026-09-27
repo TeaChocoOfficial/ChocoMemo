@@ -7,7 +7,9 @@ import { persist, createJSONStorage } from 'zustand/middleware';
 
 interface VocabularyState {
     custom: VocabWord[];
-    addCustom: (word: Omit<VocabWord, 'id'>) => void;
+    /** Returns the generated id so callers can link the word to a deck. */
+    addCustom: (word: Omit<VocabWord, 'id'>) => string;
+    updateCustom: (id: string, word: Omit<VocabWord, 'id'>) => void;
     removeCustom: (id: string) => void;
     clearCustom: () => void;
     /**
@@ -26,16 +28,21 @@ export const useVocabularyStore = create<VocabularyState>()(
     persist(
         (set, get) => ({
             custom: [],
-            addCustom: (word) =>
-                set((state) => ({
-                    custom: [
-                        ...state.custom,
-                        { ...word, id: `c-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 7)}` },
-                    ],
-                })),
+            addCustom: (word) => {
+                const id = `c-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 7)}`;
+                set((state) => ({ custom: [...state.custom, { ...word, id }] }));
+                return id;
+            },
             removeCustom: (id) =>
                 set((state) => ({
                     custom: state.custom.filter((w) => w.id !== id),
+                })),
+            // Only user words are editable; the built-in defaults ship with the
+            // app. Silently ignoring an unknown id keeps a stale browser tab
+            // from throwing when the word was deleted in another one.
+            updateCustom: (id, word) =>
+                set((state) => ({
+                    custom: state.custom.map((w) => (w.id === id ? { ...word, id } : w)),
                 })),
             clearCustom: () => set({ custom: [] }),
             all: () => [...DEFAULT_VOCABULARY, ...get().custom],

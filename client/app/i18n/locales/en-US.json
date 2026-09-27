@@ -138,6 +138,7 @@
         }
     },
     "common": {
+        "loading": "Loading…",
         "error": {
             "oops": "Oops!",
             "unexpected": "An unexpected error occurred.",
@@ -425,7 +426,39 @@
             }
         },
         "vocabulary": {
+            "back_hub": "Back to hub",
+            "eyebrow": "Vocabulary",
+            "title": "Vocabulary",
+            "description": "Browse a deck's words with readings, meanings, and example sentences.",
+            "search": "Search decks",
+            "empty": "No decks yet.",
+            "words": "words",
+            "read": "Read",
+            "edit": "Edit",
+            "addWord": "Add word",
+            "delete": "Delete",
+            "save": "Save",
+            "cancel": "Cancel",
+            "word": "Word",
+            "reading": "Reading",
+            "meaning": "Meaning",
+            "example": "Example",
+            "required": "Word and meaning are required.",
+            "builtIn": "Built-in words can't be edited.",
             "available": "{{count}} words total"
+        },
+        "render": {
+            "back_hub": "Back to hub",
+            "eyebrow": "Render",
+            "title": "Render",
+            "description": "Read short passages with furigana and a translation to check against.",
+            "search": "Search decks",
+            "empty": "No reading decks yet.",
+            "passages": "passages",
+            "read": "Read",
+            "showTranslation": "Show translation",
+            "hideTranslation": "Hide translation",
+            "speak": "Listen"
         },
         "vocabularyReview": {
             "badge": "Review",
@@ -474,6 +507,8 @@
         "orContinueWith": "Or continue with",
         "google": "Google",
         "discord": "Discord",
+        "line": "LINE",
+        "x": "X (Twitter)",
         "noAccount": "Don't have an account?",
         "hasAccount": "Already have an account?",
         "verifyEmail": "Verify Email",
@@ -498,7 +533,8 @@
             "resendFailed": "Couldn't send a new code. Please try again.",
             "generic": "Something went wrong. Please try again.",
             "emailNotFound": "No account found with that email.",
-            "resetFailed": "Password reset failed. Please try again."
+            "resetFailed": "Password reset failed. Please try again.",
+            "oauth": "Sign-in failed: {{reason}}"
         },
         "resetCodeSent": "We sent a reset code to {{email}}.",
         "resetHint": "Enter the code sent to {{email}} and choose a new password.",
@@ -541,6 +577,12 @@
         }
     },
     "profile": {
+        "public": {
+            "notFoundTitle": "Profile not found",
+            "notFoundHint": "Nobody is using this name tag. It may have been changed or removed.",
+            "yourDashboard": "Go to your profile",
+            "viewPublic": "View public profile"
+        },
         "title": "Profile",
         "subtitle": "Your learning story with ChocoMemo.",
         "back": "Back",
@@ -566,7 +608,6 @@
             "google": "Google",
             "discord": "Discord",
             "line": "LINE",
-            "facebook": "Facebook",
             "x": "X (Twitter)",
             "connected": "Connected",
             "notConnected": "Not connected",

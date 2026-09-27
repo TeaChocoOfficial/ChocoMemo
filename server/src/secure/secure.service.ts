@@ -14,7 +14,7 @@ export class SecureService {
             const value = this.configService.get<string>(key);
             if (value === undefined) throw new Error(`Missing ${key}`); // ⚠️
             return { ...acc, [key]: value };
-        }, {});
+        }, {} as EnvConfig);
 
     getAllowedUrls(): string[] {
         const env = this.getEnvConfig();
