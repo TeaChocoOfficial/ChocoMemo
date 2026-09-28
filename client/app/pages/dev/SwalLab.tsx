@@ -5,7 +5,7 @@
 import { useState } from 'react';
 import Swal from 'sweetalert2';
 import { useSwal } from '~/hooks/useSwal';
-import { THEMES, useThemeStore } from '~/stores/theme.store';
+import { THEMES, useThemeStore } from '~/stores/config/theme.store';
 import Section from '~/components/custom/Section';
 import { useTranslation } from 'react-i18next';
 import { FaArrowLeft } from 'react-icons/fa6';

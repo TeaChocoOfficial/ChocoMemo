@@ -13,7 +13,7 @@ const rawEnv = createEnv({
         VITE_CLIENT_PORT: z.coerce.number().int().positive().default(8000),
         VITE_API_URL: z.string().url().default('http://127.0.0.1:3000'),
         VITE_API_TOKEN_KEY: z.string().default(''),
-        VITE_DEFAULT_LANG: z.enum(SUPPORTED_LANGS).default('en-US'),
+        VITE_DEFAULT_LANG: z.enum(SUPPORTED_LANGS).default('en'),
     },
     clientPrefix: 'VITE_',
     runtimeEnv: import.meta.env,

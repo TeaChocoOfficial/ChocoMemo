@@ -1,6 +1,6 @@
 import { FaEyeSlash } from 'react-icons/fa6';
 import { useTranslation } from 'react-i18next';
-import { useChromeStore } from '~/stores/chrome.store';
+import { useChromeStore } from '~/stores/config/chrome.store';
 
 type HideChromeButtonProps = {
     onHide: () => void;

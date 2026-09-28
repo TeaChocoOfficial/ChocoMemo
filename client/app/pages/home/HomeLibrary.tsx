@@ -13,14 +13,14 @@ const ITEMS = [
         tone: '#e8c47a',
     },
     {
-        id: 'exams',
-        to: '/japanese/exams',
+        id: 'exam',
+        to: '/japanese/exam',
         icon: <FaListCheck className='h-5 w-5' />,
         tone: '#b8d8af',
     },
     {
         id: 'kana',
-        to: '/japanese/kana-drill',
+        to: '/japanese/drill',
         icon: <FaBolt className='h-5 w-5' />,
         tone: '#9ec8e0',
     },

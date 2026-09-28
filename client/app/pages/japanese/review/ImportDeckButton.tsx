@@ -3,7 +3,7 @@ import { useRef, useState } from 'react';
 import { FaDownload } from 'react-icons/fa6';
 import { useTranslation } from 'react-i18next';
 import Button from '~/components/custom/Button';
-import { useDeckStore } from '~/stores/deck.store';
+import { useDeckStore } from '~/stores/japanese/deck.store';
 
 /** Reads a .json deck file from disk and hands it to the store for
  *  validation. Local-only for now, mirroring the exam import flow. */

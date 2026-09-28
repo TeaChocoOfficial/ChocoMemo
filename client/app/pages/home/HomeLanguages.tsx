@@ -1,18 +1,10 @@
 // -Path: 'client/app/pages/home/HomeLanguages.tsx'
 import { Link } from '~/i18n/routing';
 import { motion } from 'framer-motion';
+import { languages } from '~/data/language';
 import { useTranslation } from 'react-i18next';
 import Section from '~/components/custom/Section';
 import { FaArrowRight, FaCircleRight, FaLock } from 'react-icons/fa6';
-
-/** Alphabetical by language code, matching the hero's script band. */
-const LANGUAGES = [
-    { id: 'english', code: 'en', glyph: 'A', scriptLang: 'en', available: false },
-    { id: 'japanese', code: 'ja', glyph: 'あ', scriptLang: 'ja', available: true },
-    { id: 'korean', code: 'ko', glyph: '한', scriptLang: 'ko', available: false },
-    { id: 'thai', code: 'th', glyph: 'ก', scriptLang: 'th', available: false },
-    { id: 'chinese', code: 'zh', glyph: '字', scriptLang: 'zh', available: false },
-] as const;
 
 export default function HomeLanguages() {
     const { t } = useTranslation();
@@ -42,12 +34,12 @@ export default function HomeLanguages() {
                 </motion.div>
 
                 <div className='grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-5'>
-                    {LANGUAGES.map((language, index) => {
+                    {languages.map((language, index) => {
                         const body = (
                             <>
                                 <div className='flex items-start justify-between gap-2'>
                                     <span
-                                        lang={language.scriptLang}
+                                        lang={language.code}
                                         className='text-4xl font-black leading-none text-surface-subtle'
                                     >
                                         {language.glyph}

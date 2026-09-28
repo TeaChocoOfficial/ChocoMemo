@@ -1,8 +1,8 @@
 import { useLayoutEffect } from 'react';
 import { authAPI } from '~/services/auth';
-import { useAuthStore } from '~/stores/auth.store';
-import { useSocketStore } from '~/stores/socket.store';
-import { applyTheme, useThemeStore } from '~/stores/theme.store';
+import { useAuthStore } from '~/stores/config/auth.store';
+import { useSocketStore } from '~/stores/config/socket.store';
+import { applyTheme, useThemeStore } from '~/stores/config/theme.store';
 
 export default function Setup({ children }: { children: React.ReactNode }) {
     const { theme } = useThemeStore();

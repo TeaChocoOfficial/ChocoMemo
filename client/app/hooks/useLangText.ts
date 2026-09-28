@@ -3,7 +3,7 @@ import type { LangText } from '~/types/type';
 import { useTranslation } from 'react-i18next';
 import { SUPPORTED_LANGS, type Lang } from '~/i18n/locales';
 
-const FALLBACK_ORDER: Lang[] = ['en-US', ...SUPPORTED_LANGS.filter((l) => l !== 'en-US')];
+const FALLBACK_ORDER: Lang[] = ['en', ...SUPPORTED_LANGS.filter((l) => l !== 'en')];
 
 /** Map any detected language string to a supported locale by exact code or
  *  language subtag, falling back to English. */
@@ -12,11 +12,11 @@ function normalizeLang(lang: string): Lang {
     if (exact) return exact;
     const base = lang.toLowerCase().split('-')[0];
     const bySubtag = SUPPORTED_LANGS.find((l) => l.toLowerCase().startsWith(base));
-    return bySubtag ?? 'en-US';
+    return bySubtag ?? 'en';
 }
 
 /** Localized meaning: plain strings pass through; records pick the user's
- *  language, falling back to en-US then the first available key. */
+ *  language, falling back to English then the first available key. */
 export function resolveText(text: LangText, lang: string): string {
     if (typeof text === 'string') return text;
     const direct = text[normalizeLang(lang)];

@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router';
 import SessionReview from './content/SessionReview';
 import { useVocabularySession } from '~/hooks/useVocabularySession';
-import { findDeck, deckWords } from '~/stores/deck.store';
+import { findDeck, deckWords } from '~/stores/japanese/deck.store';
 import Section from '~/components/custom/Section';
 
 export default function VocabularyReviewPage() {

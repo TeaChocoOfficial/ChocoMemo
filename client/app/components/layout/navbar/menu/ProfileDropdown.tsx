@@ -7,7 +7,7 @@ import type { SetState } from '~/types/type';
 import { useTranslation } from 'react-i18next';
 import { getAccountEmail } from '~/utils/auth';
 import HideChromeButton from './HideChromeButton';
-import { useAuthStore } from '~/stores/auth.store';
+import { useAuthStore } from '~/stores/config/auth.store';
 import MenuDropdown from '~/components/custom/MenuDropdown';
 import { FaGear, FaRightFromBracket, FaUser } from 'react-icons/fa6';
 

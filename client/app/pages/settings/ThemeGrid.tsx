@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { THEMES, useThemeStore, type ThemeName } from '~/stores/theme.store';
+import { THEMES, useThemeStore, type ThemeName } from '~/stores/config/theme.store';
 import { FaCheck } from 'react-icons/fa6';
 
 export default function ThemeGrid() {

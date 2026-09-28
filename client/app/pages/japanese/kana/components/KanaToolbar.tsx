@@ -1,6 +1,6 @@
 // -Path: 'client/app/pages/japanese/kana/components/KanaToolbar.tsx'
 import { motion } from 'framer-motion';
-import { useChromeStore } from '~/stores/chrome.store';
+import { useChromeStore } from '~/stores/config/chrome.store';
 import SetTabs, { type SetTabOption } from '~/components/custom/SetTabs';
 import VoicePicker from '../../../../components/config/VoicePicker';
 import StickyToggle from './StickyToggle';

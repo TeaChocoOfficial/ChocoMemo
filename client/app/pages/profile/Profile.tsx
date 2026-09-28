@@ -4,7 +4,7 @@ import { useSearchParams } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import Button from '~/components/custom/Button';
 import Section from '~/components/custom/Section';
-import { useAuthStore } from '~/stores/auth.store';
+import { useAuthStore } from '~/stores/config/auth.store';
 import { useSwal } from '~/hooks/useSwal';
 import ProfileHero from './components/ProfileHero';
 import StatsSection from './components/StatsSection';

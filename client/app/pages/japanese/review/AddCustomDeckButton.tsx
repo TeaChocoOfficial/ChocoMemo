@@ -6,9 +6,9 @@ import { useMemo, useState } from 'react';
 import type { DeckData } from '~/types/deck';
 import { useTranslation } from 'react-i18next';
 import Button from '~/components/custom/Button';
-import { useDeckStore } from '~/stores/deck.store';
+import { useDeckStore } from '~/stores/japanese/deck.store';
 import WordPicker from '~/components/custom/WordPicker';
-import { useVocabularyStore } from '~/stores/vocabulary.store';
+import { useVocabularyStore } from '~/stores/japanese/vocabulary.store';
 import { DEFAULT_VOCABULARY } from '~/data/japanese/vocabulary';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from '~/components/custom/Modal';
 
@@ -48,7 +48,8 @@ export default function AddCustomDeckButton() {
             name: name.trim(),
             description: description.trim() || undefined,
             source: 'local',
-            wordIds: selected,
+            type: 'vocab',
+            contentIds: selected,
             tags: [],
             nsfw: false,
         };

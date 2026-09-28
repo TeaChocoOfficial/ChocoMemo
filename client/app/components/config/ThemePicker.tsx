@@ -1,6 +1,6 @@
 import Select from '../custom/Select';
 import { useTranslation } from 'react-i18next';
-import { THEMES, useThemeStore, type ThemeName } from '~/stores/theme.store';
+import { THEMES, useThemeStore, type ThemeName } from '~/stores/config/theme.store';
 
 export default function ThemePicker() {
     const { t } = useTranslation();

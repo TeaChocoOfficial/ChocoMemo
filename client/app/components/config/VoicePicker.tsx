@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import Select from '~/components/custom/Select';
 import RangeSlider from '~/components/custom/RangeSlider';
 import { useEffect, useMemo, useState } from 'react';
-import { useSpeechStore } from '~/stores/speech.store';
+import { useSpeechStore } from '~/stores/config/speech.store';
 
 const AUTO_VALUE = '__auto__';
 

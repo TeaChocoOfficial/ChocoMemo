@@ -4,7 +4,7 @@ import { FaCamera, FaCheck, FaUpload } from 'react-icons/fa6';
 import { AuthProvider, type AuthIdentity } from '~/types/auth';
 import { getProviderMeta } from '~/constants/identityProviders';
 import { getInitials } from '~/components/layout/navbar/utils';
-import { useAuthStore } from '~/stores/auth.store';
+import { useAuthStore } from '~/stores/config/auth.store';
 
 export type AvatarSource = AuthProvider | 'default';
 

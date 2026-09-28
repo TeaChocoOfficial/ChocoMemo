@@ -1,57 +1,14 @@
 // -Path: 'client/app/pages/language-select/LanguageSelect.tsx'
 import { Link } from '~/i18n/routing';
+import { languages } from '~/data/language';
 import { FaArrowLeft } from 'react-icons/fa6';
 import { useTranslation } from 'react-i18next';
 import Section from '~/components/custom/Section';
 import LanguageSelectHero from './LanguageSelectHero';
-import LanguageCard, { LanguageLockedRow, type AvailableLanguage } from './LanguageCard';
+import LanguageCard, { LanguageLockedRow } from './LanguageCard';
 
 export default function LanguageSelectPage() {
     const { t } = useTranslation();
-
-    const languages: AvailableLanguage[] = [
-        {
-            id: 'english',
-            code: 'en',
-            name: t('languageSelect.languages.english.name'),
-            glyph: 'A',
-            description: t('languageSelect.languages.english.description'),
-            available: false,
-        },
-        {
-            id: 'japanese',
-            code: 'ja',
-            name: t('languageSelect.languages.japanese.name'),
-            glyph: 'あ',
-            description: t('languageSelect.languages.japanese.description'),
-            available: true,
-            to: '/japanese',
-        },
-        {
-            id: 'korean',
-            code: 'ko',
-            name: t('languageSelect.languages.korean.name'),
-            glyph: '한',
-            description: t('languageSelect.languages.korean.description'),
-            available: false,
-        },
-        {
-            id: 'thai',
-            code: 'th',
-            name: t('languageSelect.languages.thai.name'),
-            glyph: 'ก',
-            description: t('languageSelect.languages.thai.description'),
-            available: false,
-        },
-        {
-            id: 'chinese',
-            code: 'zh',
-            name: t('languageSelect.languages.chinese.name'),
-            glyph: '字',
-            description: t('languageSelect.languages.chinese.description'),
-            available: false,
-        },
-    ];
 
     // Only one language ships today, so the page is a list: the ready ones get
     // full-width actionable rows, the rest collapse into one quiet group. A

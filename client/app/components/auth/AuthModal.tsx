@@ -7,7 +7,7 @@ import { AuthProvider } from '~/types/auth';
 import { usePathname } from '~/i18n/routing';
 import { useTranslation } from 'react-i18next';
 import Button from '~/components/custom/Button';
-import { useAuthStore } from '~/stores/auth.store';
+import { useAuthStore } from '~/stores/config/auth.store';
 import { authAPI, nameTagField } from '~/services/auth';
 import { getProviderMeta } from '~/constants/identityProviders';
 import { Modal, ModalHeader, ModalBody } from '~/components/custom/Modal';

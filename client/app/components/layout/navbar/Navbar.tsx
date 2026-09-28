@@ -4,7 +4,7 @@ import DesktopNav from './DesktopNav';
 import { useEffect, useState } from 'react';
 import NavbarMenus from './menu/NavbarMenus';
 import AuthModal from '../../auth/AuthModal';
-import { useAuthStore } from '~/stores/auth.store';
+import { useAuthStore } from '~/stores/config/auth.store';
 
 export default function Navbar() {
     const { user } = useAuthStore();

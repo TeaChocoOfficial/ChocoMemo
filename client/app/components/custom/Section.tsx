@@ -1,6 +1,6 @@
 // -Path: "TeaChoco-Portfolio/client/src/layout/Section.tsx"
 import { motion } from 'framer-motion';
-import { useChromeStore } from '~/stores/chrome.store';
+import { useChromeStore } from '~/stores/config/chrome.store';
 
 export default function Section({
     children,

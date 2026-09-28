@@ -7,7 +7,7 @@ import VoicePicker from '~/components/config/VoicePicker';
 import Switch from '~/components/custom/Switch';
 
 import ThemeGrid from './ThemeGrid';
-import { useChromeStore } from '~/stores/chrome.store';
+import { useChromeStore } from '~/stores/config/chrome.store';
 import { FaArrowLeft, FaSliders } from 'react-icons/fa6';
 
 function SectionHeading({ step, label, hint }: { step: string; label: string; hint: string }) {

@@ -13,7 +13,7 @@ import { useTranslation } from 'react-i18next';
 import { getAccountEmail } from '~/utils/auth';
 import Button from '~/components/custom/Button';
 import ChangeEmailModal from './ChangeEmailModal';
-import { useAuthStore } from '~/stores/auth.store';
+import { useAuthStore } from '~/stores/config/auth.store';
 import { FaEnvelope, FaPlug } from 'react-icons/fa6';
 import ChangePasswordModal from './ChangePasswordModal';
 import { PROVIDER_ACTIONS } from '~/components/auth/providerActions';

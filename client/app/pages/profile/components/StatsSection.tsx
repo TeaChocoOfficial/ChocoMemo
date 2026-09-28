@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { useKanaProgressStore } from '~/stores/kanaProgress.store';
-import { useVocabProgressStore } from '~/stores/vocabProgress.store';
-import { useVocabularyStore } from '~/stores/vocabulary.store';
+import { useKanaProgressStore } from '~/stores/japanese/kanaProgress.store';
+import { useVocabProgressStore } from '~/stores/japanese/vocabProgress.store';
+import { useVocabularyStore } from '~/stores/japanese/vocabulary.store';
 
 function Stat({ label, value }: { label: string; value: number }) {
     return (

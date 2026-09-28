@@ -24,7 +24,7 @@ export default function HomeHowItWorks() {
             step: '02',
         },
         {
-            to: '/japanese/kana-drill',
+            to: '/japanese/drill',
             icon: <FaBolt className='h-5 w-5' />,
             title: t('home.how.step3.title'),
             hint: t('home.how.step3.hint'),

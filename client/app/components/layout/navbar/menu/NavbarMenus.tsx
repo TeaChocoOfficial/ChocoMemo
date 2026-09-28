@@ -3,7 +3,7 @@ import GuestMenus from './GuestMenus';
 import { motion } from 'framer-motion';
 import ProfileDropdown from './ProfileDropdown';
 import ProfileMenu from './ProfileMenu';
-import { useAuthStore } from '~/stores/auth.store';
+import { useAuthStore } from '~/stores/config/auth.store';
 import { useClickOutside } from './useClickOutside';
 import { useRef, useState } from 'react';
 import MenuButton from './MenuButton';

@@ -1,6 +1,6 @@
 import Button from '../../../custom/Button';
 import { useTranslation } from 'react-i18next';
-import { useAuthStore } from '~/stores/auth.store';
+import { useAuthStore } from '~/stores/config/auth.store';
 
 export default function GuestMenus() {
     const { t } = useTranslation();

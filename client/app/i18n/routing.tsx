@@ -8,8 +8,8 @@ import { Link as RouterLink, type NavigateOptions } from 'react-router';
 /**
  * Prepends the lang prefix to a path.
  * @example
- * localizePath('th-TH', '/about') // → '/th-TH/about'
- * localizePath('th-TH', '/')      // → '/th-TH'
+ * localizePath('th', '/about') // → '/th/about'
+ * localizePath('th', '/')      // → '/th'
  */
 export function localizePath(lang: Lang, path: string) {
     if (path.startsWith('/')) return `/${lang}${path === '/' ? '' : path}`;
@@ -40,10 +40,10 @@ type LinkProps = Omit<ComponentProps<typeof RouterLink>, 'to'> & {
  * Link component that automatically prepends the lang prefix, similar to next-intl.
  * @example
  * <Link to="/about">About</Link>
- * // → <a href="/th-TH/about">
+ * // → <a href="/th/about">
  *
- * <Link to="/about" locale="en-US">About</Link>
- * // → <a href="/en-US/about">
+ * <Link to="/about" locale="en">About</Link>
+ * // → <a href="/en/about">
  */
 export function Link({ to, locale, ...props }: LinkProps) {
     const { lang } = useRouting();
@@ -54,7 +54,7 @@ export function Link({ to, locale, ...props }: LinkProps) {
 /**
  * Returns the current pathname without the lang prefix, similar to next-intl.
  * @example
- * // URL: /th-TH/about
+ * // URL: /th/about
  * usePathname() // → '/about'
  */
 export function usePathname(): string {
@@ -69,10 +69,10 @@ export function usePathname(): string {
  * Router with automatic lang prefix, similar to next-intl.
  * @example
  * const router = useRouter()
- * router.push('/about')            // → navigate to /th-TH/about
- * router.push('/about', 'en-US')   // → navigate to /en-US/about
+ * router.push('/about')            // → navigate to /th/about
+ * router.push('/about', 'en')      // → navigate to /en/about
  * router.replace('/about')
- * router.switchLocale('en-US')     // → navigate to /en-US/{currentPath}
+ * router.switchLocale('en')        // → navigate to /en/{currentPath}
  */
 export function useRouter() {
     const navigate = useNavigate();

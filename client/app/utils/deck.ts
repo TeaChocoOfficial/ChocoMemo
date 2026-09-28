@@ -8,9 +8,13 @@ import type { LangText } from '~/types/type';
 const langTextField = z.string().or(z.record(z.string(), z.string()));
 
 /** Validates the shape of an imported deck file. Doesn't trust the file's
- *  own `source`/`id` — those are reassigned by the caller so an imported
- *  file can't silently overwrite an existing deck. Word ids must be given;
- *  whether they resolve to actual vocabulary is checked by the store. */
+ *  own `id` / `source` / `type` — those are reassigned by the caller so an
+ *  imported file can't silently overwrite an existing deck or declare itself
+ *  as a type it isn't. Content ids must be given; whether they resolve to
+ *  real words/passages is checked by the store.
+ *
+ *  The field is `wordIds` here, not `contentIds`, so exported `.json` files
+ *  stay readable by older builds; the store maps it across. */
 export const importedDeckSchema = z.object({
     name: langTextField,
     description: langTextField.optional(),
@@ -29,7 +33,7 @@ export function exportDeck(deck: DeckData) {
     const payload: { name: LangText; description?: LangText; wordIds: string[] } = {
         name: deck.name,
         description: deck.description,
-        wordIds: deck.wordIds,
+        wordIds: deck.contentIds,
     };
     const slug = firstText(deck.name).replace(/\s+/g, '-').toLowerCase() || 'deck';
     const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });

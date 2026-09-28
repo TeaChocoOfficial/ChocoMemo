@@ -2,14 +2,8 @@
 import { Link } from '~/i18n/routing';
 import { getAssetUrl } from '~/utils/url';
 import { FaGithub } from 'react-icons/fa6';
+import { languages } from '~/data/language';
 import { useTranslation } from 'react-i18next';
-
-const languages = [
-    { code: 'ja', labelKey: 'footer.languages.ja' },
-    { code: 'en', labelKey: 'footer.languages.en' },
-    { code: 'ko', labelKey: 'footer.languages.ko' },
-    { code: 'th', labelKey: 'footer.languages.th' },
-];
 
 export default function Footer() {
     const { t } = useTranslation();
@@ -74,7 +68,7 @@ export default function Footer() {
                                     key={lang.code}
                                     className='border border-line px-3 py-1 text-sm text-surface-subtle'
                                 >
-                                    {t(lang.labelKey)}
+                                    {t(`footer.languages.${lang.code}`)}
                                 </li>
                             ))}
                         </ul>
@@ -83,15 +77,26 @@ export default function Footer() {
 
                 <div className='mt-10 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-line pt-6'>
                     <p className='text-sm text-surface-muted'>© 2026 {t('footer.rights')}</p>
-                    <a
-                        href='https://github.com/TeaChoco'
-                        target='_blank'
-                        rel='noopener noreferrer'
-                        className='flex items-center gap-2 text-sm text-surface-subtle hover:text-primary transition-colors'
-                    >
-                        <FaGithub className='h-4 w-4' />
-                        TeaChoco
-                    </a>
+                    <div className='flex gap-4'>
+                        <a
+                            href='https://github.com/TeaChocoOfficial'
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            className='flex items-center gap-2 text-sm text-surface-subtle hover:text-info transition-colors'
+                        >
+                            <FaGithub className='h-4 w-4' />
+                            TeaChoco Official
+                        </a>
+                        <a
+                            href='https://github.com/TeaChoco'
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            className='flex items-center gap-2 text-sm text-surface-subtle hover:text-info transition-colors'
+                        >
+                            <FaGithub className='h-4 w-4' />
+                            TeaChoco
+                        </a>
+                    </div>
                 </div>
             </div>
         </footer>

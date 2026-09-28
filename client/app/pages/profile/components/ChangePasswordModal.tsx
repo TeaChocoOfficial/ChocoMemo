@@ -7,7 +7,7 @@ import PasswordInput from '~/components/auth/PasswordInput';
 import OtpInput from '~/components/auth/OtpInput';
 import { Modal, ModalBody, ModalFooter, ModalHeader } from '~/components/custom/Modal';
 import { authAPI } from '~/services/auth';
-import { useAuthStore } from '~/stores/auth.store';
+import { useAuthStore } from '~/stores/config/auth.store';
 import { AuthProvider } from '~/types/auth';
 import { getAccountEmail } from '~/utils/auth';
 import { FaKey, FaShieldHalved } from 'react-icons/fa6';

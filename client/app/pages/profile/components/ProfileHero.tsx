@@ -8,7 +8,7 @@ import { AuthProvider } from '~/types/auth';
 import Badge from '~/components/custom/Badge';
 import { useTranslation } from 'react-i18next';
 import Button from '~/components/custom/Button';
-import { useAuthStore } from '~/stores/auth.store';
+import { useAuthStore } from '~/stores/config/auth.store';
 import { authAPI, nameTagField } from '~/services/auth';
 import { getInitials } from '~/components/layout/navbar/utils';
 import { FaImage, FaCamera, FaPen, FaAt } from 'react-icons/fa6';

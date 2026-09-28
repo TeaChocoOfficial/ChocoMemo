@@ -3,7 +3,7 @@ import { Outlet } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import Footer from '~/components/layout/Footer';
 import { FaCompassDrafting } from 'react-icons/fa6';
-import { useChromeStore } from '~/stores/chrome.store';
+import { useChromeStore } from '~/stores/config/chrome.store';
 import Navbar from '~/components/layout/navbar/Navbar';
 import { AnimatePresence, motion } from 'framer-motion';
 

@@ -1,42 +1,50 @@
 // -Path: 'Vite-React-Router-TypeScript/app/i18n/locales.ts'
-import enLocale from './locales/en-US.json';
-import thLocale from './locales/th-TH.json';
-import jaLocale from './locales/ja-JP.json';
-import zhLocale from './locales/zh-CN.json';
-import koLocale from './locales/ko-KR.json';
-import viLocale from './locales/vi-VN.json';
-import idLocale from './locales/id-ID.json';
-import esLocale from './locales/es-ES.json';
-import ptLocale from './locales/pt-BR.json';
-import frLocale from './locales/fr-FR.json';
-import deLocale from './locales/de-DE.json';
-import arLocale from './locales/ar-SA.json';
-import hiLocale from './locales/hi-IN.json';
-import ruLocale from './locales/ru-RU.json';
-import itLocale from './locales/it-IT.json';
-import trLocale from './locales/tr-TR.json';
-import filLocale from './locales/fil-PH.json';
-import msLocale from './locales/ms-MY.json';
+import enLocale from './locales/en.json';
+import thLocale from './locales/th.json';
+import jaLocale from './locales/ja.json';
+import zhLocale from './locales/zh.json';
+import koLocale from './locales/ko.json';
+import viLocale from './locales/vi.json';
+import idLocale from './locales/id.json';
+import esLocale from './locales/es.json';
+import ptLocale from './locales/pt.json';
+import frLocale from './locales/fr.json';
+import deLocale from './locales/de.json';
+import arLocale from './locales/ar.json';
+import hiLocale from './locales/hi.json';
+import ruLocale from './locales/ru.json';
+import itLocale from './locales/it.json';
+import trLocale from './locales/tr.json';
+import filLocale from './locales/fil.json';
+import msLocale from './locales/ms.json';
 
+/**
+ * UI locales, keyed by bare language subtag.
+ *
+ * Short codes are used rather than region tags (`en-US`) so they line up
+ * directly with what `navigator.language` reports: the browser says `th` or
+ * `ja`, and no conversion step is needed to match a supported locale. The
+ * `Lang` type is derived from these keys, so adding a locale here is enough.
+ */
 export const resources = {
-    'en-US': { translation: enLocale },
-    'th-TH': { translation: thLocale },
-    'ja-JP': { translation: jaLocale },
-    'zh-CN': { translation: zhLocale },
-    'ko-KR': { translation: koLocale },
-    'vi-VN': { translation: viLocale },
-    'id-ID': { translation: idLocale },
-    'es-ES': { translation: esLocale },
-    'pt-BR': { translation: ptLocale },
-    'fr-FR': { translation: frLocale },
-    'de-DE': { translation: deLocale },
-    'ar-SA': { translation: arLocale },
-    'hi-IN': { translation: hiLocale },
-    'ru-RU': { translation: ruLocale },
-    'it-IT': { translation: itLocale },
-    'tr-TR': { translation: trLocale },
-    'fil-PH': { translation: filLocale },
-    'ms-MY': { translation: msLocale },
+    en: { translation: enLocale },
+    th: { translation: thLocale },
+    ja: { translation: jaLocale },
+    zh: { translation: zhLocale },
+    ko: { translation: koLocale },
+    vi: { translation: viLocale },
+    id: { translation: idLocale },
+    es: { translation: esLocale },
+    pt: { translation: ptLocale },
+    fr: { translation: frLocale },
+    de: { translation: deLocale },
+    ar: { translation: arLocale },
+    hi: { translation: hiLocale },
+    ru: { translation: ruLocale },
+    it: { translation: itLocale },
+    tr: { translation: trLocale },
+    fil: { translation: filLocale },
+    ms: { translation: msLocale },
 } as const;
 
 export const SUPPORTED_LANGS = Object.keys(resources) as (keyof typeof resources)[];

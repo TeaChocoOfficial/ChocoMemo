@@ -1,6 +1,6 @@
 // -Path: 'client/app/hooks/useVocabularySession.ts'
 import { useState, useMemo, useCallback, useRef } from 'react';
-import { useVocabProgressStore } from '~/stores/vocabProgress.store';
+import { useVocabProgressStore } from '~/stores/japanese/vocabProgress.store';
 import type { VocabWord } from '~/types/vocabulary';
 
 // Failed words reappear soon; passed words reappear farther back in the

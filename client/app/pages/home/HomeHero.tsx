@@ -7,13 +7,10 @@ import Badge from '~/components/custom/Badge';
 import { useTranslation } from 'react-i18next';
 import Section from '~/components/custom/Section';
 import { FaCircleRight, FaGithub, FaPenNib } from 'react-icons/fa6';
-
-/** Alphabetical by language code; order matches `home.scripts` in the locale files. */
-const SCRIPT_CODES = ['en', 'ja', 'ko', 'th', 'zh'];
+import { languages } from '~/data/language';
 
 export default function HomeHero() {
     const { t } = useTranslation();
-    const scripts = t('home.scripts', { returnObjects: true }) as string[];
 
     return (
         <Section className='items-center justify-center'>
@@ -93,16 +90,16 @@ export default function HomeHero() {
                         {t('home.scriptsLabel')}
                     </p>
                     <ul className='mt-4 grid grid-cols-5 divide-x divide-line overflow-hidden rounded-sm border border-line'>
-                        {scripts.map((script, index) => (
-                            <li key={script} className='px-2 py-5'>
+                        {languages.map((language) => (
+                            <li key={language.code} className='px-2 py-5'>
                                 <span
-                                    lang={SCRIPT_CODES[index]}
+                                    lang={language.code}
                                     className='block text-2xl font-black leading-none text-surface-foreground sm:text-3xl'
                                 >
-                                    {script}
+                                    {language.glyph}
                                 </span>
                                 <span className='mt-2 block font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-primary'>
-                                    {SCRIPT_CODES[index]}
+                                    {language.code}
                                 </span>
                             </li>
                         ))}

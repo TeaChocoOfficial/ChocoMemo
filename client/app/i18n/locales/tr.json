@@ -1,0 +1,783 @@
+{
+    "nav": {
+        "home": "Ana Sayfa",
+        "tagline": "Dil Öğrenme",
+        "languages": "Diller",
+        "japanese": "Japonca",
+        "menu": "Menüyü aç",
+        "settings": "Ayarlar",
+        "language": "Dil",
+        "theme": "Tema",
+        "english": "English"
+    },
+    "chrome": {
+        "hide": "Gizle",
+        "show": "Göster",
+        "toggleLabel": "Arayüzü göster"
+    },
+    "home": {
+        "badge": "ChocoMemo · topluluk dil kitaplığı",
+        "title": "Herhangi bir dili öğren,",
+        "titleAccent": "her seferinde bir ortak deste.",
+        "subtitle": "Japonca, İngilizce, Tayca, Korece ve Çince — her biri gerçek öğrenenlerin yazdığı ve paylaştığı desteler, alıştırmalar ve quizlerden oluşur. Ücretsiz, açık ve genişletmeye açık.",
+        "ctaStart": "Öğrenmeye başla",
+        "ctaCreate": "Deste yayımla",
+        "ctaHow": "Nasıl çalışır",
+        "scriptsLabel": "Şimdi demleniyor",
+        "scripts": [
+            "A",
+            "あ",
+            "한",
+            "ก",
+            "字"
+        ],
+        "stats": {
+            "badge": "Rafta",
+            "languages": "Diller",
+            "kana": "Kana karakterleri",
+            "vocabulary": "Kelime sayısı",
+            "shelves": "Desteler ve quizler"
+        },
+        "languages": {
+            "badge": "Raf",
+            "title": "Beş dil, tek sıcak alışkanlık",
+            "hint": "Bugün hazır olan tepsiyle başla — gerisi hâlâ demleniyor.",
+            "available": "Dökmeye hazır",
+            "comingSoon": "Demleniyor",
+            "toAll": "Tüm dilleri gör",
+            "items": {
+                "japanese": {
+                    "name": "Japonca",
+                    "description": "Hiragana, katakana ve kanji; alıştırmalarla ve aralıklı tekrar ile."
+                },
+                "english": {
+                    "name": "İngilizce",
+                    "description": "Günlük kelimeler ve kalıplar, onları kullananların düzenlediği gibi."
+                },
+                "thai": {
+                    "name": "Tayca",
+                    "description": "Tonlar, yazı ve sokakta gerçekten karşılaşacağın kelimeler."
+                },
+                "korean": {
+                    "name": "Korece",
+                    "description": "Hangul tek oturuşta, ardından akılda kalan sohbet desteleri."
+                },
+                "chinese": {
+                    "name": "Çince",
+                    "description": "Karakterler, pinyin ve ton çiftleri; kısa turlarla."
+                }
+            }
+        },
+        "library": {
+            "badge": "Topluluk rafı",
+            "title": "Bir deste yaz. Paylaş. Onun öğretişini izle.",
+            "hint": "ChocoMemo'daki her çalışma seti bir yayıncı değil, bir insan tarafından yazılır. Birini düzelt, yayımla; başka biri ondan bir bütün kurs edinsin.",
+            "cta": "Tekrar rafını aç",
+            "items": {
+                "decks": {
+                    "title": "Kelime desteleri",
+                    "hint": "Kelimeleri temalı bir destede topla — doğa, hayvanlar, gündelik şeyler — ve küçük bir e-kitap gibi tekrar et."
+                },
+                "exam": {
+                    "title": "Quiz setleri",
+                    "hint": "Bir desteyi süreli bir sınava çevir ve hangi kelimelerin hâlâ demlenmesi gerektiğini gör."
+                },
+                "kana": {
+                    "title": "Kana alıştırmaları",
+                    "hint": "İki heceleme tablosunda hızlı turlar; biçimler düşünmeden gelene kadar."
+                },
+                "review": {
+                    "title": "Aralıklı tekrar",
+                    "hint": "İndirdiğin desteler kendi programlarıyla geri gelir, böylece hiçbiri soğumaz."
+                }
+            }
+        },
+        "how": {
+            "badge": "Nasıl çalışır",
+            "title": "Günlük demlemen",
+            "hint": "Her gün tekrarlanan dört küçük adım — hepsi bu kadar.",
+            "step1": {
+                "title": "Dilini seç",
+                "hint": "Bugün çalıştığın tepsiyi seç."
+            },
+            "step2": {
+                "title": "Bir deste ödünç al",
+                "hint": "Başkasının yazdığı bir desteyi al ya da hazır raftan başla."
+            },
+            "step3": {
+                "title": "Alıştır ve quiz çöz",
+                "hint": "Kısa kana alıştırmaları ve kelime sınavları, beşer dakika."
+            },
+            "step4": {
+                "title": "Kendi desteni yayımla",
+                "hint": "Sürekli unuttuğun kelimeleri ekle ve rafa geri paylaş."
+            }
+        },
+        "cta": {
+            "title": "Demlik zaten yanıyor.",
+            "hint": "Seninle ilk deste arasında kayıt duvarı yok. Kelimelerini eşitlemek istediğinde giriş yap.",
+            "primary": "Öğrenmeye başla",
+            "secondary": "Deste yayımla"
+        }
+    },
+    "theme": {
+        "pickerLabel": "Temayı değiştir",
+        "names": {
+            "lightChoco": "Açık Çikolata",
+            "darkChoco": "Koyu Çikolata",
+            "darkGalaxy": "Koyu Galaksi",
+            "lightGalaxy": "Açık Galaksi",
+            "darkSakura": "Koyu Sakura",
+            "lightSakura": "Açık Sakura",
+            "darkPaper": "Koyu Kağıt",
+            "lightPaper": "Açık Kağıt",
+            "darkNature": "Koyu Doğa",
+            "lightNature": "Açık Doğa",
+            "darkAutumn": "Koyu Sonbahar",
+            "lightAutumn": "Açık Sonbahar",
+            "darkWinter": "Koyu Kış",
+            "lightWinter": "Açık Kış"
+        }
+    },
+    "common": {
+        "error": {
+            "oops": "Hata!",
+            "unexpected": "Beklenmeyen bir hata oluştu.",
+            "notFound": "İstenen sayfa bulunamadı."
+        },
+        "tabs": {
+            "local": "Yerel",
+            "cloud": "Bulut",
+            "community": "Topluluk"
+        },
+        "comingSoon": {
+            "cloud": "Bulut senkronizasyonu yakında geliyor, giriş gereklidir",
+            "community": "Topluluk setlerine göz atma henüz mevcut değil"
+        },
+        "loading": "Loading…"
+    },
+    "notfound": {
+        "title": "Sayfa Bulunamadı",
+        "description": "Aradığınız sayfa mevcut değil veya taşınmış.",
+        "back_home": "Ana Sayfaya Dön",
+        "error_code": "404"
+    },
+    "languageSelect": {
+        "badge": "Dil Seçimi",
+        "title": "Öğreneceğiniz Dili Seçin",
+        "description": "Öğrenmek istediğin dili seç. Japonca bugün hazır; gerisi demleniyor.",
+        "back_home": "Ana Sayfaya Dön",
+        "status": {
+            "available": "Mevcut",
+            "comingSoon": "Yakında"
+        },
+        "cta": {
+            "start": "Öğrenmeye Başla",
+            "unavailable": "Mevcut Değil"
+        },
+        "languages": {
+            "japanese": {
+                "name": "Japonca",
+                "description": "Hiragana, Katakana ve kanji; kısa turlarla çalışılır ve aralıklı tekrar ile sıcak tutulur."
+            },
+            "english": {
+                "name": "İngilizce",
+                "description": "Günlük kelimeler ve kalıplar, onları gerçekten kullananlar tarafından destelere ayrılır."
+            },
+            "thai": {
+                "name": "Tayca",
+                "description": "Tonlar ve yazı yan yana, bir de sokakta karşılaşacağın kelimeler."
+            },
+            "korean": {
+                "name": "Korece",
+                "description": "Hangul tek oturuşta, ardından soğumakta ısrar eden sohbet desteleri."
+            },
+            "chinese": {
+                "name": "Çince",
+                "description": "Karakterler, pinyin ve ton çiftleri; her seferinde birkaç dakika çalışılır."
+            }
+        }
+    },
+    "japanese": {
+        "badge": "Japonca",
+        "title": "Japonca Öğren",
+        "description": "Kana, kelime bilgisi ve testlerle Japoncanın temellerini öğrenin.",
+        "back_language": "Dil Seçimine Dön",
+        "stats": {
+            "kana": "Kana karakterleri",
+            "vocabulary": "Kelime bilgisi",
+            "learned": "Öğrenilen kelimeler",
+            "due": "Tekrar zamanı gelen"
+        },
+        "sections": {
+            "kana": "Kana",
+            "kanaHint": "İki Japonca hece alfabesini öğrenin — her karakteri keşfedin ve tanıma becerinizi geliştirin.",
+            "vocabulary": "Kelime Bilgisi",
+            "vocabularyHint": "Kelime hazinenizi büyütün ve aralıklı bir programla tekrar edin.",
+            "learn": "Öğren",
+            "practice": "Pratik Yap"
+        },
+        "nav": {
+            "kana": {
+                "title": "Kana",
+                "description": "Tüm Hiragana ve Katakana'yı okunuşlarıyla keşfedin.",
+                "action": "Kana'yı Görüntüle"
+            },
+            "kanaDrill": {
+                "title": "Kana Alıştırması",
+                "description": "Hiragana ve Katakana tanıma becerinizi test edin.",
+                "action": "Kana Alıştırmasına Başla"
+            },
+            "vocabularyReview": {
+                "title": "Kelime Tekrarı",
+                "description": "Kelime bilgisini bilgi kartları ve aralıklı tekrarla gözden geçirin.",
+                "action": "Tekrara Başla"
+            },
+            "vocabularyexam": {
+                "title": "Kelime Sınavları",
+                "description": "Kelime dağarcığınızdan oluşturulan çoktan seçmeli sınavlarla kendinizi test edin.",
+                "action": "Sınava Girin"
+            },
+            "vocabularyBrowse": {
+                "title": "Browse Vocabulary",
+                "description": "Read through a deck's words with readings, meanings, and examples.",
+                "action": "Browse Words"
+            },
+            "render": {
+                "title": "Render",
+                "description": "Read short passages with furigana and check yourself against the translation.",
+                "action": "Start Reading"
+            }
+        },
+        "decks": {
+            "title": "Kelime Tekrarı Desteleri",
+            "description": "Tekrar etmek için bir deste seçin. Desteler yerleşik setten, kendi kelimelerinizden veya indirilen koleksiyonlardan gelir.",
+            "availableCount": "{{count}} deste mevcut",
+            "startReview": "Tekrara Başla",
+            "due": "zamanı geldi",
+            "byAuthor": "{{author}} tarafından",
+            "download": "İndir",
+            "note": "Tekrar",
+            "ready": "Hazır",
+            "words": "kelime",
+            "search": "Desteleri ara...",
+            "empty": "Henüz deste yok — bir tane içe aktarın veya özel bir deste oluşturun.",
+            "addCustom": "Özel deste ekle",
+            "importDeck": "Deste içe aktar",
+            "importErrorJson": "Bu dosya JSON olarak okunamadı.",
+            "form": {
+                "title": "Özel bir deste oluşturun",
+                "subtitle": "Kelime dağarcığınızdan bir tekrar destesinde gruplamak için kelimeler seçin.",
+                "nameLabel": "Ad",
+                "namePlaceholder": "örn. Favori kanjilerim",
+                "descriptionLabel": "Açıklama (isteğe bağlı)",
+                "descriptionPlaceholder": "Bu deste hakkında kısa bir not",
+                "wordsLabel": "Dahil edilecek kelimeler",
+                "wordsPlaceholder": "Kelime ara...",
+                "selectedCount": "{{count}} seçildi",
+                "nameError": "Destenize bir ad verin.",
+                "minWordsError": "En az bir kelime seçin.",
+                "cancel": "İptal",
+                "submit": "Deste oluştur"
+            },
+            "notFound": "Bu deste bulunamadı.",
+            "source": {
+                "default": "Yerleşik",
+                "custom": "Kendi kelimelerim",
+                "cloud": "Bulut",
+                "downloaded": "İndirildi"
+            },
+            "open": "Open",
+            "itemCount_one": "{{count}} item",
+            "itemCount_other": "{{count}} items",
+            "export": "Export",
+            "exportAria": "Export deck",
+            "downloadAria": "Download deck",
+            "delete": "Delete",
+            "deleteAria": "Delete deck",
+            "type": {
+                "vocab": "Vocabulary",
+                "render": "Reading",
+                "review": "Review",
+                "exam": "Exam",
+                "drill": "Drill"
+            }
+        },
+        "exam": {
+            "title": "Sınav",
+            "description": "Kelime dağarcığınızdan oluşturulan çoktan seçmeli sınavlarla kendinizi test edin. Bir set seçin, içe aktarın veya kendinizinkini oluşturun.",
+            "back_hub": "Japoncaya Dön",
+            "search": "Sınav setlerini ara...",
+            "empty": "Henüz sınav seti yok — bir tane içe aktarın veya özel bir set oluşturun.",
+            "import": "Sınav seti içe aktar",
+            "addCustom": "Özel set ekle",
+            "importErrorJson": "Bu dosya JSON olarak okunamadı.",
+            "form": {
+                "title": "Özel bir sınav seti oluşturun",
+                "subtitle": "Kelime dağarcığınızdan kelimeler seçin — set, yerleşik setler gibi anlamlarından oluşturulur.",
+                "titleLabel": "Başlık",
+                "titlePlaceholder": "örn. Günlük kelimelerim",
+                "descriptionLabel": "Açıklama (isteğe bağlı)",
+                "descriptionPlaceholder": "Bu set hakkında kısa bir not",
+                "wordsLabel": "Dahil edilecek kelimeler",
+                "wordsPlaceholder": "Kelime ara...",
+                "selectedCount": "{{count}} seçildi",
+                "titleError": "Setinize bir ad verin.",
+                "minWordsError": "En az iki kelime seçin.",
+                "cancel": "İptal",
+                "submit": "Set oluştur"
+            },
+            "card": {
+                "note": "Sınav notu",
+                "exportAria": "Sınav setini dışa aktar",
+                "deleteAria": "Sınav setini sil",
+                "export": "Dışa Aktar",
+                "delete": "Sil",
+                "byAuthor": "{{author}} tarafından",
+                "start": "Başla",
+                "question_one": "{{count}} soru",
+                "question_other": "{{count}} soru",
+                "source": {
+                    "default": "Varsayılan",
+                    "custom": "Benim setim",
+                    "imported": "İçe aktarıldı"
+                }
+            }
+        },
+        "kana": {
+            "badge": "Kana",
+            "title": "Japon Kana",
+            "description": "Hiragana ve Katakana, Japoncada iki hece alfabesidir. Değiştirmek için sekmelere dokunun.",
+            "tabs": {
+                "hiragana": "Hiragana",
+                "katakana": "Katakana"
+            },
+            "voiceless": "Sessiz",
+            "voiced": "Sesli",
+            "contracted": "Büzülmüş",
+            "voice_label": "Ses",
+            "voice_preview": "Önizle",
+            "voice_auto": "Otomatik",
+            "voice_choose": "Bir ses seçin",
+            "voice_ja": "Japonca",
+            "voice_volume": "Ses düzeyi",
+            "take_quiz": "Teste Gir",
+            "count": "kana",
+            "stats": {
+                "set": "Set içinde",
+                "group": "Grupta",
+                "read": "Okundu"
+            },
+            "readProgress": "{{read}} / {{total}}",
+            "gridHint": "Duymak için bir kanaya dokunun veya kaldığınız yerden grubu geçmek için Okumaya başla'ya basın.",
+            "readStart": "Okumaya başla",
+            "readContinue": "Okumaya devam et",
+            "readStop": "Durdur",
+            "nowReading": "şu an okunuyor",
+            "upNext": "sırada",
+            "pinToolbar": "Araç çubuğunu sabitle",
+            "unpinToolbar": "Araç çubuğunu sabitlemeyi kaldır",
+            "sticky": "Sabit",
+            "stickyOn": "Açık",
+            "stickyOff": "Kapalı",
+            "back_hub": "Japoncaya Dön"
+        },
+        "kanaDrill": {
+            "badge": "Kana Alıştırması",
+            "title": "Kana Alıştırması",
+            "intro": "Testinizi yapılandırın — hangi kana gruplarını dahil edeceğinizi, kaç soru olacağını ve her soru için ne kadar süre olacağını seçin.",
+            "start": "Teste Başla",
+            "progress": "Soru",
+            "score": "Skor",
+            "promptLabel": "Bu kananın okunuşu nedir?",
+            "promptLabelRomajiToChar": "Hangi kana bu okunuşla eşleşir?",
+            "promptLabelListen": "Hangi kanayı duydunuz?",
+            "listenAgain": "Tekrar dinle",
+            "correct": "Doğru!",
+            "wrong": "Pek sayılmaz.",
+            "timeout": "Süre doldu!",
+            "correctAnswer": "Doğru cevap",
+            "next": "Sonraki Soru",
+            "endGame": "Oyunu Bitir",
+            "resultTitle": "Test Tamamlandı!",
+            "result": {
+                "correctLabel": "Doğru",
+                "wrongLabel": "Yanlış",
+                "timeoutLabel": "Süre Doldu",
+                "settingsSummary": "Ayarlar",
+                "settingsButton": "Ayarlar",
+                "exitButton": "Çıkış",
+                "playAgain": "Tekrar Oyna",
+                "history": "Cevap Geçmişi",
+                "timeoutShort": "Süre Doldu",
+                "yes": "Evet",
+                "no": "Hayır"
+            },
+            "retry": "Tekrar Dene",
+            "back_characters": "Kana'ya Dön",
+            "settings": {
+                "setsLabel": "Kana Setleri",
+                "questionLabel": "Test Seçenekleri",
+                "modeLabel": "Soru Modu",
+                "mode": {
+                    "charToRomaji": "Kana → Okunuş",
+                    "charToRomajiHint": "Kanayı görün, romaji okunuşunu seçin.",
+                    "romajiToChar": "Okunuş → Kana",
+                    "romajiToCharHint": "Okunuşu görün, eşleşen kanayı seçin.",
+                    "listenToChar": "Dinle → Kana",
+                    "listenToCharHint": "Konuşulan kanayı dinleyin, duyduğunuzu seçin."
+                },
+                "sound": {
+                    "label": "Ses efekti",
+                    "voice": "Aria",
+                    "voiceHint": "Aria tarafından seslendirilen bir kayıt çalın.",
+                    "tone": "Ton",
+                    "toneHint": "Basit sentezlenmiş bir bip sesi çalın.",
+                    "volume": "Ses düzeyi"
+                },
+                "voiceLabel": "Ses",
+                "questionCount": "Soru sayısı",
+                "questions": "soru",
+                "choiceCount": "Cevap seçenekleri",
+                "choices": "seçenek",
+                "timeLimit": "Soru başına süre",
+                "autoAdvance": "Sonraki soruya otomatik geç",
+                "useAll": "Tüm kana",
+                "groups": {
+                    "voiceless": "Sessiz",
+                    "voiced": "Sesli",
+                    "contracted": "Büzülmüş"
+                },
+                "chars": "karakter",
+                "totalChars": "Toplam kana"
+            }
+        },
+        "vocab": {
+            "available": "Toplam {{count}} kelime",
+            "back_hub": "Back to hub",
+            "eyebrow": "Vocabulary",
+            "title": "Vocabulary",
+            "description": "Browse a deck's words with readings, meanings, and example sentences.",
+            "search": "Search decks",
+            "empty": "No decks yet.",
+            "words": "words",
+            "read": "Read",
+            "edit": "Edit",
+            "addWord": "Add word",
+            "delete": "Delete",
+            "save": "Save",
+            "cancel": "Cancel",
+            "word": "Word",
+            "reading": "Reading",
+            "meaning": "Meaning",
+            "example": "Example",
+            "required": "Word and meaning are required.",
+            "builtIn": "Built-in words can't be edited."
+        },
+        "vocabularyReview": {
+            "badge": "Tekrar",
+            "title": "Kelime Tekrarı",
+            "description": "Cevabı görmek için kartı çevirin, ardından Geçti veya Kaldı olarak işaretleyin.",
+            "complete": "Hepsi tamam!",
+            "completeDescription": "Şu anda tekrarı gelen başka kelime yok.",
+            "exit": "Tekrardan Çık",
+            "wordsLeft": "kelime kaldı",
+            "wordLeft": "kelime kaldı",
+            "showAnswer": "Cevabı göster",
+            "fail": "Kaldı",
+            "pass": "Geçti",
+            "failHint": "kaldı",
+            "passHint": "geçti",
+            "wordLabel": "Kelime",
+            "recallPrompt": "Bu kelime ne anlama geliyor?",
+            "back_hub": "Japoncaya Dön"
+        },
+        "render": {
+            "back_hub": "Back to hub",
+            "eyebrow": "Render",
+            "title": "Render",
+            "description": "Read short passages with furigana and a translation to check against.",
+            "search": "Search decks",
+            "empty": "No reading decks yet.",
+            "passages": "passages",
+            "read": "Read",
+            "showTranslation": "Show translation",
+            "hideTranslation": "Hide translation",
+            "speak": "Listen"
+        },
+        "drill": {
+            "title": "Kana Drill"
+        },
+        "review": {
+            "title": "Vocabulary Review"
+        }
+    },
+    "footer": {
+        "tagline": "Japon dilinde gezinmenin rahat ve tema zengini bir yolu.",
+        "explore": "Keşfet",
+        "learn": "Ne öğretiyoruz",
+        "rights": "TeaChoco · Tüm hakları saklıdır.",
+        "languages": {
+            "ja": "Japonca",
+            "en": "İngilizce",
+            "ko": "Korece",
+            "th": "Tayca"
+        }
+    },
+    "auth": {
+        "signIn": "Giriş Yap",
+        "signUp": "Kayıt Ol",
+        "signOut": "Çıkış Yap",
+        "email": "E-posta",
+        "password": "Şifre",
+        "name": "Ad",
+        "nameTag": "Kullanıcı adı",
+        "nameTagHint": "3-30 karakter. Yalnızca İngilizce harfler, sayılar, alt çizgi (_) veya kısa çizgi (-), boşluksuz. Herkese açık kullanıcı adın.",
+        "confirmPassword": "Şifreyi Onayla",
+        "forgotPassword": "Şifreni mi unuttun?",
+        "resetPassword": "Şifreyi Sıfırla",
+        "backToSignIn": "Girişe Dön",
+        "orContinueWith": "Veya şununla devam et",
+        "google": "Google",
+        "discord": "Discord",
+        "noAccount": "Hesabın yok mu?",
+        "hasAccount": "Zaten hesabın var mı?",
+        "verifyEmail": "E-postayı Doğrula",
+        "verificationCode": "Doğrulama kodu",
+        "verifyHint": "{{email}} adresine gönderdiğimiz 6 haneli kodu girin.",
+        "verify": "Doğrula",
+        "otpSent": "{{email}} adresine bir kod gönderdik.",
+        "otpResent": "Yeni bir kod gönderildi.",
+        "verifySuccess": "Hoş geldin, {{name}}!",
+        "resendCode": "Kodu yeniden gönder",
+        "resendInSeconds": "{{seconds}} sn sonra yeniden gönder",
+        "profile": "Profil",
+        "settings": "Ayarlar",
+        "welcome": "Hoş geldin, {{name}}",
+        "error": {
+            "invalidCredentials": "Geçersiz e-posta veya şifre.",
+            "emailInUse": "Bu e-posta ile zaten bir hesap mevcut.",
+            "nameTagTaken": "Bu kullanıcı adı zaten alınmış.",
+            "nameTagInvalid": "Kullanıcı adı 3-30 karakter olmalı: yalnızca İngilizce harfler, sayılar, alt çizgi veya kısa çizgi (boşluksuz).",
+            "passwordMismatch": "Şifreler eşleşmiyor.",
+            "invalidOtp": "Geçersiz veya süresi dolmuş kod. Lütfen tekrar deneyin.",
+            "resendFailed": "Yeni bir kod gönderilemedi. Lütfen tekrar deneyin.",
+            "generic": "Bir hata oluştu. Lütfen tekrar deneyin.",
+            "emailNotFound": "No account found with that email.",
+            "resetFailed": "Password reset failed. Please try again.",
+            "oauth": "Sign-in failed: {{reason}}"
+        },
+        "resetCodeSent": "We sent a reset code to {{email}}.",
+        "resetHint": "Enter the code sent to {{email}} and choose a new password.",
+        "forgotHint": "Enter your account email and we'll send you a reset code.",
+        "newPassword": "New Password",
+        "updatePassword": "Update Password",
+        "resetSuccess": "Password updated. Please sign in.",
+        "line": "LINE",
+        "x": "X (Twitter)"
+    },
+    "settings": {
+        "title": "Ayarlar",
+        "subtitle": "ChocoMemo'yu zevkine göre demle.",
+        "back": "Geri",
+        "nav": {
+            "settings": "Ayarlar",
+            "appearance": "Görünüm",
+            "language": "Dil",
+            "voice": "Ses ve seslendirme",
+            "interface": "Arayüz",
+            "account": "Hesap"
+        },
+        "appearance": {
+            "hint": "Fincanının ruh halini seç."
+        },
+        "language": {
+            "hint": "ChocoMemo'nun seninle konuştuğu dili seç."
+        },
+        "voice": {
+            "hint": "Kana ve kelimeleri sesli okuyan ses."
+        },
+        "interface": {
+            "hint": "Öğrenmeni çerçeveleyen şeyleri ayarla.",
+            "chromeLabel": "Arayüzü göster",
+            "chromeDescription": "Gezinmeyi ve alt bilgiyi gösterir veya gizler."
+        },
+        "account": {
+            "signedInHint": "{{name}} olarak giriş yapıldı",
+            "signedOutHint": "Öğrenme hikâyeni tüm cihazlarında korumak için giriş yap.",
+            "goToProfile": "Profili görüntüle",
+            "signIn": "Giriş yap"
+        }
+    },
+    "profile": {
+        "title": "Profil",
+        "subtitle": "ChocoMemo ile öğrenme hikâyen.",
+        "back": "Geri",
+        "anonymousName": "Choco Öğrenen",
+        "memberSince": "Üyelik başlangıcı",
+        "notSignedInTitle": "Giriş yapılmadı",
+        "notSignedInHint": "Profilini görmek, bilgilerini düzenlemek ve tüm cihazlarında ilerlemeni takip etmek için giriş yap.",
+        "signIn": "Giriş yap",
+        "stats": {
+            "label": "Bir bakışta",
+            "kana": "Okunan kana",
+            "vocabulary": "Kelime dağarcığı",
+            "learned": "Öğrenilen kelimeler",
+            "due": "Tekrar zamanı gelen"
+        },
+        "identities": {
+            "label": "Linked Accounts",
+            "email": "Email",
+            "verified": "Verified",
+            "unverified": "Not verified",
+            "primary": "Primary",
+            "local": "Password",
+            "google": "Google",
+            "discord": "Discord",
+            "line": "LINE",
+            "facebook": "Facebook",
+            "x": "X (Twitter)",
+            "connected": "Connected",
+            "notConnected": "Not connected",
+            "comingSoon": "Coming soon",
+            "passwordSet": "Password is set",
+            "passwordNotSet": "No password set yet",
+            "connect": "Connect",
+            "disconnect": "Disconnect",
+            "disconnectSuccess": "Google account disconnected",
+            "disconnectError": "Couldn't disconnect this account ({{reason}})",
+            "disconnectTitle": "Disconnect Google account?",
+            "disconnectHint": "You'll be asked to confirm with Google before the link is removed.",
+            "lastSigninMethod": "You need at least one sign-in method left",
+            "disconnectSession": "Your session expired. Sign in again and retry.",
+            "disconnectVerifyFailed": "Couldn't verify your Google account. Try again.",
+            "disconnectCancelled": "Google sign-in was cancelled.",
+            "change": "Change"
+        },
+        "details": {
+            "name": "Ad",
+            "namePlaceholder": "Adın",
+            "saving": "Kaydediliyor…",
+            "saved": "Profil güncellendi",
+            "updateError": "Profilin güncellenemedi.",
+            "editProfile": "Profili düzenle",
+            "nameTag": "Kullanıcı adı",
+            "nameTagHint": "3-30 karakter. Yalnızca İngilizce harfler, sayılar, alt çizgi (_) veya kısa çizgi (-), boşluksuz. Herkese açık kullanıcı adın.",
+            "nameTagTaken": "Bu kullanıcı adı zaten alınmış.",
+            "nameTagInvalid": "Kullanıcı adı 3-30 karakter olmalı: yalnızca İngilizce harfler, sayılar, alt çizgi veya kısa çizgi (boşluksuz).",
+            "noNameTag": "Henüz kullanıcı adı yok",
+            "bio": "Hakkımda",
+            "bioPlaceholder": "Kendinden biraz bahset…"
+        },
+        "email": {
+            "label": "Change email",
+            "hint": "Update the email address you use to sign in.",
+            "placeholder": "you@example.com",
+            "save": "Save",
+            "saving": "Saving…",
+            "saved": "Email updated",
+            "updateError": "Could not update your email.",
+            "invalid": "Please enter a valid email address"
+        },
+        "otp": {
+            "confirmEmail": "Confirm new email",
+            "confirmPassword": "Confirm change password",
+            "sendCode": "Send code",
+            "sending": "Sending…",
+            "codeSent": "Code sent",
+            "codeResent": "Code resent",
+            "sendFailed": "Couldn't send the code",
+            "codeSentTo": "Enter the 6-digit code we sent to {{email}}.",
+            "verifySave": "Verify & save",
+            "verifying": "Verifying…",
+            "invalidCode": "Invalid or expired code",
+            "resendFailed": "Couldn't resend the code",
+            "back": "Back",
+            "emailSame": "New email must be different from the current one",
+            "emailTaken": "That email is already in use",
+            "wrongCurrentPassword": "Current password is incorrect"
+        },
+        "password": {
+            "label": "Change password",
+            "hint": "Your current password is required to set a new one.",
+            "setHint": "Set a password for your account. We'll email a code to confirm.",
+            "current": "Current password",
+            "currentPlaceholder": "Enter current password",
+            "currentRequired": "Current password is required",
+            "new": "New password",
+            "newPlaceholder": "Enter new password (min. 6 characters)",
+            "newRequired": "New password is required",
+            "tooShort": "New password must be at least 6 characters",
+            "confirm": "Confirm new password",
+            "confirmPlaceholder": "Re-enter new password",
+            "mismatch": "Passwords do not match",
+            "incorrect": "Current password is incorrect",
+            "change": "Change password",
+            "changing": "Changing…",
+            "changed": "Password changed successfully",
+            "changeError": "Could not change password",
+            "noPasswordYetHint": "This account doesn't have a password set yet."
+        },
+        "avatar": {
+            "source": "Profil fotoğrafı",
+            "default": "Varsayılan",
+            "google": "Google",
+            "local": "Özel",
+            "updated": "Profil fotoğrafı güncellendi",
+            "updateError": "Profil fotoğrafı güncellenemedi",
+            "invalidType": "Lütfen bir görüntü dosyası seçin",
+            "tooLarge": "Görsel 5MB'tan küçük olmalı",
+            "previewReady": "Önizleme hazır — kaydetmek için bir kaynak seçin",
+            "remove": "Sil",
+            "removeError": "Profil fotoğrafı silinemedi",
+            "cancel": "İptal",
+            "saving": "Kaydediliyor…",
+            "confirm": "Onayla"
+        },
+        "public": {
+            "notFoundTitle": "Profile not found",
+            "notFoundHint": "Nobody is using this name tag. It may have been changed or removed.",
+            "yourDashboard": "Go to your profile",
+            "viewPublic": "View public profile"
+        }
+    },
+    "english": {
+        "badge": "English",
+        "title": "Learn English",
+        "description": "English is a new track. The deck features below work today; the character set and drill are still being built.",
+        "nav": {
+            "render": {
+                "title": "Render",
+                "description": "Read short passages and check yourself against the translation.",
+                "action": "Start Reading"
+            },
+            "review": {
+                "title": "Vocabulary Review",
+                "description": "Review vocabulary with flashcards and spaced repetition.",
+                "action": "Start Review"
+            },
+            "exam": {
+                "title": "Vocabulary exam",
+                "description": "Test yourself with multiple-choice exam built from your vocabulary.",
+                "action": "Take an Exam"
+            },
+            "vocab": {
+                "title": "Browse Vocabulary",
+                "description": "Read through a deck's words with readings, meanings, and examples.",
+                "action": "Browse Words"
+            }
+        },
+        "vocab": {
+            "title": "Vocabulary"
+        },
+        "render": {
+            "title": "Render"
+        },
+        "review": {
+            "title": "Vocabulary Review"
+        },
+        "exam": {
+            "title": "Sınav"
+        }
+    }
+}

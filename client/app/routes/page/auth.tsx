@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import { authAPI } from '~/services/auth';
-import { useAuthStore } from '~/stores/auth.store';
+import { useAuthStore } from '~/stores/config/auth.store';
 import { localizePath } from '~/i18n/routing';
 import type { Lang } from '~/i18n/locales';
 

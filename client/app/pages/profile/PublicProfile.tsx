@@ -9,7 +9,7 @@ import { Link } from '~/i18n/routing';
 import Section from '~/components/custom/Section';
 import Button from '~/components/custom/Button';
 import Badge from '~/components/custom/Badge';
-import { useAuthStore } from '~/stores/auth.store';
+import { useAuthStore } from '~/stores/config/auth.store';
 import { userAPI, type PublicUser } from '~/services/user';
 import { getInitials } from '~/components/layout/navbar/utils';
 import { getProviderMeta, resolveProviderColor } from '~/constants/identityProviders';

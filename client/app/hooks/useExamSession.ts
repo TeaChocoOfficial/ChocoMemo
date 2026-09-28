@@ -1,9 +1,11 @@
 // -Path: 'client/app/hooks/useExamSession.ts'
-import type { ExamSet } from '~/types/exam';
+import type { ExamQuestion } from '~/types/exam';
 import type { LangText } from '~/types/type';
 import { useState, useCallback } from 'react';
 
-export function useExamSession(examSet: ExamSet) {
+/** Drives one exam run. Takes just the questions, so it works for a whole
+ *  `ExamSet` and for a `DeckData` of `type: 'exam'` alike. */
+export function useExamSession(examSet: { questions: ExamQuestion[] }) {
     const [index, setIndex] = useState(0);
     const [selected, setSelected] = useState<LangText | null>(null);
     const [answered, setAnswered] = useState(false);

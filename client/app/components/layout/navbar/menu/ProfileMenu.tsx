@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useRef, useState } from 'react';
 import ProfileDropdown from './ProfileDropdown';
 import { FaChevronDown } from 'react-icons/fa6';
-import { useAuthStore } from '~/stores/auth.store';
+import { useAuthStore } from '~/stores/config/auth.store';
 import { useClickOutside } from './useClickOutside';
 
 export default function ProfileMenu() {

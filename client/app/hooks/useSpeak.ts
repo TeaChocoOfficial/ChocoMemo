@@ -8,7 +8,7 @@
 // back to speech synthesis if the file fails to load.
 
 import { useCallback } from 'react';
-import { useSpeechStore } from '~/stores/speech.store';
+import { useSpeechStore } from '~/stores/config/speech.store';
 
 // The most recently played static audio file, so any caller can stop the
 // current reading without holding onto its own Audio element.

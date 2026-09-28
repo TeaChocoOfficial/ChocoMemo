@@ -24,14 +24,12 @@ export default function WordEditor({ isOpen, word, onClose, onSave }: WordEditor
     const { t } = useTranslation();
     const [surface, setSurface] = useState(word?.word ?? '');
     const [reading, setReading] = useState(word?.reading ?? '');
-    const [meaning, setMeaning] = useState(
-        typeof word?.meaning === 'string' ? word.meaning : '',
-    );
+    const [meaning, setMeaning] = useState(typeof word?.meaning === 'string' ? word.meaning : '');
     const [error, setError] = useState<string | null>(null);
 
     const submit = () => {
         if (!surface.trim() || !meaning.trim()) {
-            setError(t('japanese.vocabulary.required'));
+            setError(t('japanese.vocab.required'));
             return;
         }
         setError(null);
@@ -51,14 +49,14 @@ export default function WordEditor({ isOpen, word, onClose, onSave }: WordEditor
     return (
         <Modal isOpen={isOpen} onClose={onClose} size='sm'>
             <ModalHeader
-                title={word ? t('japanese.vocabulary.edit') : t('japanese.vocabulary.addWord')}
+                title={word ? t('japanese.vocab.edit') : t('japanese.vocab.addWord')}
                 onClose={onClose}
             />
             <ModalBody>
                 <div className='space-y-4'>
                     <div>
                         <label className='mb-1 block text-xs font-medium text-surface-muted'>
-                            {t('japanese.vocabulary.word')}
+                            {t('japanese.vocab.word')}
                         </label>
                         <input
                             className={field}
@@ -69,7 +67,7 @@ export default function WordEditor({ isOpen, word, onClose, onSave }: WordEditor
                     </div>
                     <div>
                         <label className='mb-1 block text-xs font-medium text-surface-muted'>
-                            {t('japanese.vocabulary.reading')}
+                            {t('japanese.vocab.reading')}
                         </label>
                         <input
                             className={field}
@@ -79,7 +77,7 @@ export default function WordEditor({ isOpen, word, onClose, onSave }: WordEditor
                     </div>
                     <div>
                         <label className='mb-1 block text-xs font-medium text-surface-muted'>
-                            {t('japanese.vocabulary.meaning')}
+                            {t('japanese.vocab.meaning')}
                         </label>
                         <input
                             className={field}
@@ -92,10 +90,10 @@ export default function WordEditor({ isOpen, word, onClose, onSave }: WordEditor
             </ModalBody>
             <ModalFooter>
                 <Button variant='ghost' onClick={onClose}>
-                    {t('japanese.vocabulary.cancel')}
+                    {t('japanese.vocab.cancel')}
                 </Button>
                 <Button variant='primary' onClick={submit}>
-                    {t('japanese.vocabulary.save')}
+                    {t('japanese.vocab.save')}
                 </Button>
             </ModalFooter>
         </Modal>

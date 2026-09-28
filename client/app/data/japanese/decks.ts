@@ -22,7 +22,8 @@ export const DEFAULT_DECKS: DeckData[] = [
         name: 'Nature',
         description: 'Water, fire, mountains — the natural world in kanji.',
         source: 'default',
-        wordIds: NATURE,
+        type: 'vocab',
+        contentIds: NATURE,
         tags: ['nature'],
         nsfw: false,
     },
@@ -31,7 +32,8 @@ export const DEFAULT_DECKS: DeckData[] = [
         name: 'Animals',
         description: 'Dogs, cats, birds and fish to get you started.',
         source: 'default',
-        wordIds: ANIMALS,
+        type: 'vocab',
+        contentIds: ANIMALS,
         tags: ['animals'],
         nsfw: false,
     },
@@ -40,7 +42,8 @@ export const DEFAULT_DECKS: DeckData[] = [
         name: 'Everyday Things',
         description: 'Books, trains, school and friends — daily-life essentials.',
         source: 'default',
-        wordIds: THINGS,
+        type: 'vocab',
+        contentIds: THINGS,
         tags: ['everyday'],
         nsfw: false,
     },
@@ -49,7 +52,8 @@ export const DEFAULT_DECKS: DeckData[] = [
         name: 'Actions',
         description: 'Eating, drinking, going — common everyday verbs.',
         source: 'default',
-        wordIds: ACTIONS,
+        type: 'vocab',
+        contentIds: ACTIONS,
         tags: ['actions'],
         nsfw: false,
     },
@@ -58,7 +62,7 @@ export const DEFAULT_DECKS: DeckData[] = [
 /** Resolve the words for any deck from the default set. */
 export function wordsForDeck(deck: DeckData) {
     if (deck.source === 'default') {
-        return deck.wordIds
+        return deck.contentIds
             .map((id) => DEFAULT_VOCABULARY.find((w) => w.id === id))
             .filter((w): w is (typeof DEFAULT_VOCABULARY)[number] => w != null);
     }

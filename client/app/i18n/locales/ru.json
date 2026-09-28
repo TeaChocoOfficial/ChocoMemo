@@ -1,0 +1,783 @@
+{
+    "nav": {
+        "home": "Главная",
+        "tagline": "Изучение языков",
+        "languages": "Языки",
+        "japanese": "Японский",
+        "menu": "Открыть меню",
+        "settings": "Настройки",
+        "language": "Язык",
+        "theme": "Тема",
+        "english": "English"
+    },
+    "chrome": {
+        "hide": "Скрыть",
+        "show": "Показать",
+        "toggleLabel": "Показать интерфейс"
+    },
+    "home": {
+        "badge": "ChocoMemo · библиотека языков сообщества",
+        "title": "Выучите любой язык,",
+        "titleAccent": "одна общая колода за раз.",
+        "subtitle": "Японский, английский, тайский, корейский и китайский — каждый собран из колод, тренировок и квизов, которые пишут и делятся настоящие ученики. Бесплатно, открыто и доступно для доработки.",
+        "ctaStart": "Начать учиться",
+        "ctaCreate": "Опубликовать колоду",
+        "ctaHow": "Как это работает",
+        "scriptsLabel": "Сейчас заваривается",
+        "scripts": [
+            "A",
+            "あ",
+            "한",
+            "ก",
+            "字"
+        ],
+        "stats": {
+            "badge": "На полке",
+            "languages": "Языки",
+            "kana": "Символы каны",
+            "vocabulary": "Слов в словаре",
+            "shelves": "Колоды и квизы"
+        },
+        "languages": {
+            "badge": "Полка",
+            "title": "Пять языков, одна тёплая привычка",
+            "hint": "Начните с подноса, который готов сегодня, — остальные пока завариваются.",
+            "available": "Готово налить",
+            "comingSoon": "Заваривается",
+            "toAll": "Посмотреть все языки",
+            "items": {
+                "japanese": {
+                    "name": "Японский",
+                    "description": "Хирагана, катакана и кандзи с тренировками и интервальным повторением."
+                },
+                "english": {
+                    "name": "Английский",
+                    "description": "Бытовая лексика и фразы, разложенные теми, кто ими пользуется."
+                },
+                "thai": {
+                    "name": "Тайский",
+                    "description": "Тона, письмо и слова, которые вы действительно встретите на улице."
+                },
+                "korean": {
+                    "name": "Корейский",
+                    "description": "Хангль за один присест, а потом разговорные колоды, которые западают."
+                },
+                "chinese": {
+                    "name": "Китайский",
+                    "description": "Иероглифы, пиньинь и пары тонов — короткими кругами."
+                }
+            }
+        },
+        "library": {
+            "badge": "Полка сообщества",
+            "title": "Напишите колоду. Поделитесь. Смотрите, как она учит.",
+            "hint": "Каждый учебный набор в ChocoMemo написан человеком, а не издательством. Приберите один, опубликуйте — и кто-то получит из него целый курс.",
+            "cta": "Открыть полку повторения",
+            "items": {
+                "decks": {
+                    "title": "Словарные колоды",
+                    "hint": "Соберите слова в колоду по теме — природа, животные, бытовые вещи — и повторяйте как маленькую книжку."
+                },
+                "exam": {
+                    "title": "Наборы квизов",
+                    "hint": "Превратите колоду в экзамен на время и увидите, каким словам ещё нужно дойти."
+                },
+                "kana": {
+                    "title": "Тренировки каны",
+                    "hint": "Быстрые круги по обеим слоговым таблицам, пока форма не приходит без раздумий."
+                },
+                "review": {
+                    "title": "Интервальное повторение",
+                    "hint": "Скачанные колоды возвращаются по своему расписанию, поэтому ничто не остывает."
+                }
+            }
+        },
+        "how": {
+            "badge": "Как это работает",
+            "title": "Ваша ежедневная заварка",
+            "hint": "Четыре маленьких шага, повторяемых каждый день. Больше ничего не нужно.",
+            "step1": {
+                "title": "Выберите язык",
+                "hint": "Возьмите поднос, который изучаете сегодня."
+            },
+            "step2": {
+                "title": "Возьмите колоду",
+                "hint": "Возьмите колоду, написанную кем-то другим, или начните со встроенной полки."
+            },
+            "step3": {
+                "title": "Тренируйтесь и проходите квизы",
+                "hint": "Короткие тренировки каны и словарные экзамены, по пять минут за раз."
+            },
+            "step4": {
+                "title": "Опубликуйте свою",
+                "hint": "Добавьте слова, которые всё забываете, и верните их на полку."
+            }
+        },
+        "cta": {
+            "title": "Чайник уже на плите.",
+            "hint": "Никакой стены регистрации между вами и первой колодой. Входите, только когда захотите синхронизировать слова.",
+            "primary": "Начать учиться",
+            "secondary": "Опубликовать колоду"
+        }
+    },
+    "theme": {
+        "pickerLabel": "Сменить тему",
+        "names": {
+            "lightChoco": "Светлый шоколад",
+            "darkChoco": "Тёмный шоколад",
+            "darkGalaxy": "Тёмная галактика",
+            "lightGalaxy": "Светлая галактика",
+            "darkSakura": "Тёмная сакура",
+            "lightSakura": "Светлая сакура",
+            "darkPaper": "Тёмная бумага",
+            "lightPaper": "Светлая бумага",
+            "darkNature": "Тёмная природа",
+            "lightNature": "Светлая природа",
+            "darkAutumn": "Тёмная осень",
+            "lightAutumn": "Светлая осень",
+            "darkWinter": "Тёмная зима",
+            "lightWinter": "Светлая зима"
+        }
+    },
+    "common": {
+        "error": {
+            "oops": "Ой!",
+            "unexpected": "Произошла непредвиденная ошибка.",
+            "notFound": "Запрошенная страница не найдена."
+        },
+        "tabs": {
+            "local": "Локально",
+            "cloud": "Облако",
+            "community": "Сообщество"
+        },
+        "comingSoon": {
+            "cloud": "Облачная синхронизация скоро появится, требуется вход",
+            "community": "Просмотр наборов сообщества пока недоступен"
+        },
+        "loading": "Loading…"
+    },
+    "notfound": {
+        "title": "Страница не найдена",
+        "description": "Страница, которую вы ищете, не существует или была перемещена.",
+        "back_home": "На главную",
+        "error_code": "404"
+    },
+    "languageSelect": {
+        "badge": "Выбор языка",
+        "title": "Выберите язык для изучения",
+        "description": "Выберите язык, который хотите изучать. Японский готов сегодня, остальные завариваются.",
+        "back_home": "На главную",
+        "status": {
+            "available": "Доступно",
+            "comingSoon": "Скоро"
+        },
+        "cta": {
+            "start": "Начать обучение",
+            "unavailable": "Недоступно"
+        },
+        "languages": {
+            "japanese": {
+                "name": "Японский",
+                "description": "Хирагана, катакана и кандзи — короткими кругами и с интервальным повторением, чтобы не остывали."
+            },
+            "english": {
+                "name": "Английский",
+                "description": "Бытовая лексика и фразы, разложенные по колодам теми, кто действительно ими пользуется."
+            },
+            "thai": {
+                "name": "Тайский",
+                "description": "Тона и письмо рядом, а ещё слова, которые вы встретите на улице."
+            },
+            "korean": {
+                "name": "Корейский",
+                "description": "Хангль за один присест, а потом разговорные колоды, которые не хотят остывать."
+            },
+            "chinese": {
+                "name": "Китайский",
+                "description": "Иероглифы, пиньинь и пары тонов — по несколько минут за раз."
+            }
+        }
+    },
+    "japanese": {
+        "badge": "Японский",
+        "title": "Изучать японский",
+        "description": "Освойте основы японского с помощью каны, лексики и викторин.",
+        "back_language": "Назад к выбору языка",
+        "stats": {
+            "kana": "Символов каны",
+            "vocabulary": "Слов в словаре",
+            "learned": "Выучено слов",
+            "due": "К повторению"
+        },
+        "sections": {
+            "kana": "Кана",
+            "kanaHint": "Изучите две японские слоговые азбуки — просмотрите каждый символ и потренируйте их распознавание.",
+            "vocabulary": "Лексика",
+            "vocabularyHint": "Пополняйте свой словарный запас и повторяйте его по интервальному графику.",
+            "learn": "Учить",
+            "practice": "Практика"
+        },
+        "nav": {
+            "kana": {
+                "title": "Кана",
+                "description": "Просмотрите всю хирагану и катакану с их чтениями.",
+                "action": "Смотреть кану"
+            },
+            "kanaDrill": {
+                "title": "Тренажёр каны",
+                "description": "Проверьте, как вы распознаёте хирагану и катакану.",
+                "action": "Начать тренировку"
+            },
+            "vocabularyReview": {
+                "title": "Повторение лексики",
+                "description": "Повторяйте лексику с карточками и интервальным повторением.",
+                "action": "Начать повторение"
+            },
+            "vocabularyexam": {
+                "title": "Экзамены по лексике",
+                "description": "Проверьте себя экзаменами с выбором ответа, составленными из вашей лексики.",
+                "action": "Пройти экзамен"
+            },
+            "vocabularyBrowse": {
+                "title": "Browse Vocabulary",
+                "description": "Read through a deck's words with readings, meanings, and examples.",
+                "action": "Browse Words"
+            },
+            "render": {
+                "title": "Render",
+                "description": "Read short passages with furigana and check yourself against the translation.",
+                "action": "Start Reading"
+            }
+        },
+        "decks": {
+            "title": "Колоды для повторения лексики",
+            "description": "Выберите колоду для повторения. Колоды берутся из встроенного набора, ваших слов или загруженных коллекций.",
+            "availableCount": "{{count}} колод доступно",
+            "startReview": "Начать повторение",
+            "due": "к повторению",
+            "byAuthor": "автор {{author}}",
+            "download": "Скачать",
+            "note": "Повторение",
+            "ready": "Готово",
+            "words": "слов",
+            "search": "Поиск колод...",
+            "empty": "Колод пока нет — импортируйте одну или создайте свою колоду.",
+            "addCustom": "Добавить свою колоду",
+            "importDeck": "Импортировать колоду",
+            "importErrorJson": "Не удалось прочитать этот файл как JSON.",
+            "form": {
+                "title": "Создать свою колоду",
+                "subtitle": "Выберите слова из своей лексики, чтобы собрать их в колоду для повторения.",
+                "nameLabel": "Название",
+                "namePlaceholder": "например, Мои любимые кандзи",
+                "descriptionLabel": "Описание (необязательно)",
+                "descriptionPlaceholder": "Краткая заметка об этой колоде",
+                "wordsLabel": "Слова для включения",
+                "wordsPlaceholder": "Поиск слов...",
+                "selectedCount": "Выбрано: {{count}}",
+                "nameError": "Дайте колоде название.",
+                "minWordsError": "Выберите хотя бы одно слово.",
+                "cancel": "Отмена",
+                "submit": "Создать колоду"
+            },
+            "notFound": "Эта колода не найдена.",
+            "source": {
+                "default": "Встроенная",
+                "custom": "Мои слова",
+                "cloud": "Облако",
+                "downloaded": "Загружено"
+            },
+            "open": "Open",
+            "itemCount_one": "{{count}} item",
+            "itemCount_other": "{{count}} items",
+            "export": "Export",
+            "exportAria": "Export deck",
+            "downloadAria": "Download deck",
+            "delete": "Delete",
+            "deleteAria": "Delete deck",
+            "type": {
+                "vocab": "Vocabulary",
+                "render": "Reading",
+                "review": "Review",
+                "exam": "Exam",
+                "drill": "Drill"
+            }
+        },
+        "exam": {
+            "title": "Экзамен",
+            "description": "Проверьте себя экзаменами с выбором ответа, составленными из вашей лексики. Выберите набор, импортируйте его или создайте свой.",
+            "back_hub": "Вернуться к японскому",
+            "search": "Поиск наборов экзаменов...",
+            "empty": "Наборов экзаменов пока нет — импортируйте один или создайте свой.",
+            "import": "Импортировать набор экзамена",
+            "addCustom": "Добавить свой набор",
+            "importErrorJson": "Не удалось прочитать этот файл как JSON.",
+            "form": {
+                "title": "Создать свой набор экзамена",
+                "subtitle": "Выберите слова из своей лексики — набор строится из их значений, как встроенные наборы.",
+                "titleLabel": "Заголовок",
+                "titlePlaceholder": "например, Мои повседневные слова",
+                "descriptionLabel": "Описание (необязательно)",
+                "descriptionPlaceholder": "Краткая заметка об этом наборе",
+                "wordsLabel": "Слова для включения",
+                "wordsPlaceholder": "Поиск слов...",
+                "selectedCount": "Выбрано: {{count}}",
+                "titleError": "Дайте набору название.",
+                "minWordsError": "Выберите хотя бы два слова.",
+                "cancel": "Отмена",
+                "submit": "Создать набор"
+            },
+            "card": {
+                "note": "Заметка экзамена",
+                "exportAria": "Экспортировать набор экзамена",
+                "deleteAria": "Удалить набор экзамена",
+                "export": "Экспорт",
+                "delete": "Удалить",
+                "byAuthor": "автор {{author}}",
+                "start": "Начать",
+                "question_one": "{{count}} вопрос",
+                "question_other": "{{count}} вопросов",
+                "source": {
+                    "default": "По умолчанию",
+                    "custom": "Мой набор",
+                    "imported": "Импортировано"
+                }
+            }
+        },
+        "kana": {
+            "badge": "Кана",
+            "title": "Японская кана",
+            "description": "Хирагана и катакана — две японские слоговые азбуки. Нажмите на вкладки, чтобы переключаться.",
+            "tabs": {
+                "hiragana": "Хирагана",
+                "katakana": "Катакана"
+            },
+            "voiceless": "Глухие",
+            "voiced": "Звонкие",
+            "contracted": "Контракции",
+            "voice_label": "Голос",
+            "voice_preview": "Прослушать",
+            "voice_auto": "Авто",
+            "voice_choose": "Выберите голос",
+            "voice_ja": "Японский",
+            "voice_volume": "Громкость",
+            "take_quiz": "Пройти викторину",
+            "count": "кана",
+            "stats": {
+                "set": "В наборе",
+                "group": "В группе",
+                "read": "Прочитано"
+            },
+            "readProgress": "{{read}} / {{total}}",
+            "gridHint": "Нажмите на кану, чтобы услышать её, или нажмите «Начать чтение», чтобы пройти группу с того места, где вы остановились.",
+            "readStart": "Начать чтение",
+            "readContinue": "Продолжить чтение",
+            "readStop": "Стоп",
+            "nowReading": "читаем",
+            "upNext": "далее",
+            "pinToolbar": "Закрепить панель",
+            "unpinToolbar": "Открепить панель",
+            "sticky": "Закрепить",
+            "stickyOn": "Вкл",
+            "stickyOff": "Выкл",
+            "back_hub": "Назад к японскому"
+        },
+        "kanaDrill": {
+            "badge": "Тренажёр каны",
+            "title": "Тренажёр каны",
+            "intro": "Настройте викторину: выберите группы каны, количество вопросов и время на каждый вопрос.",
+            "start": "Начать викторину",
+            "progress": "Вопрос",
+            "score": "Счёт",
+            "promptLabel": "Какое чтение у этой каны?",
+            "promptLabelRomajiToChar": "Какая кана соответствует этому чтению?",
+            "promptLabelListen": "Какую кану вы услышали?",
+            "listenAgain": "Слушать ещё раз",
+            "correct": "Верно!",
+            "wrong": "Не совсем.",
+            "timeout": "Время вышло!",
+            "correctAnswer": "Правильный ответ",
+            "next": "Следующий вопрос",
+            "endGame": "Завершить игру",
+            "resultTitle": "Викторина завершена!",
+            "result": {
+                "correctLabel": "Верно",
+                "wrongLabel": "Неверно",
+                "timeoutLabel": "Время вышло",
+                "settingsSummary": "Настройки",
+                "settingsButton": "Настройки",
+                "exitButton": "Выход",
+                "playAgain": "Играть снова",
+                "history": "История ответов",
+                "timeoutShort": "Время вышло",
+                "yes": "Да",
+                "no": "Нет"
+            },
+            "retry": "Попробовать снова",
+            "back_characters": "Назад к кане",
+            "settings": {
+                "setsLabel": "Наборы каны",
+                "questionLabel": "Параметры викторины",
+                "modeLabel": "Режим вопроса",
+                "mode": {
+                    "charToRomaji": "Кана → чтение",
+                    "charToRomajiHint": "Посмотрите на кану и выберите её чтение ромадзи.",
+                    "romajiToChar": "Чтение → кана",
+                    "romajiToCharHint": "Посмотрите на чтение и выберите подходящую кану.",
+                    "listenToChar": "Слушать → кана",
+                    "listenToCharHint": "Услышьте произнесённую кану и выберите то, что услышали."
+                },
+                "sound": {
+                    "label": "Звуковой эффект",
+                    "voice": "Aria",
+                    "voiceHint": "Воспроизвести голосовую запись Aria.",
+                    "tone": "Тон",
+                    "toneHint": "Воспроизвести простой синтезированный сигнал.",
+                    "volume": "Громкость звука"
+                },
+                "voiceLabel": "Голос",
+                "questionCount": "Количество вопросов",
+                "questions": "вопросов",
+                "choiceCount": "Вариантов ответа",
+                "choices": "вариантов",
+                "timeLimit": "Время на вопрос",
+                "autoAdvance": "Автопереход к следующему вопросу",
+                "useAll": "Вся кана",
+                "groups": {
+                    "voiceless": "Глухие",
+                    "voiced": "Звонкие",
+                    "contracted": "Контракции"
+                },
+                "chars": "символов",
+                "totalChars": "Всего каны"
+            }
+        },
+        "vocab": {
+            "available": "{{count}} слов всего",
+            "back_hub": "Back to hub",
+            "eyebrow": "Vocabulary",
+            "title": "Vocabulary",
+            "description": "Browse a deck's words with readings, meanings, and example sentences.",
+            "search": "Search decks",
+            "empty": "No decks yet.",
+            "words": "words",
+            "read": "Read",
+            "edit": "Edit",
+            "addWord": "Add word",
+            "delete": "Delete",
+            "save": "Save",
+            "cancel": "Cancel",
+            "word": "Word",
+            "reading": "Reading",
+            "meaning": "Meaning",
+            "example": "Example",
+            "required": "Word and meaning are required.",
+            "builtIn": "Built-in words can't be edited."
+        },
+        "vocabularyReview": {
+            "badge": "Повторение",
+            "title": "Повторение лексики",
+            "description": "Переверните карточку, чтобы увидеть ответ, затем отметьте «Сдал» или «Не сдал».",
+            "complete": "Всё повторено!",
+            "completeDescription": "Сейчас нет слов, готовых к повторению.",
+            "exit": "Выйти из повторения",
+            "wordsLeft": "слов осталось",
+            "wordLeft": "слово осталось",
+            "showAnswer": "Показать ответ",
+            "fail": "Не сдал",
+            "pass": "Сдал",
+            "failHint": "не сдал",
+            "passHint": "сдал",
+            "wordLabel": "Слово",
+            "recallPrompt": "Что означает это слово?",
+            "back_hub": "Назад к японскому"
+        },
+        "render": {
+            "back_hub": "Back to hub",
+            "eyebrow": "Render",
+            "title": "Render",
+            "description": "Read short passages with furigana and a translation to check against.",
+            "search": "Search decks",
+            "empty": "No reading decks yet.",
+            "passages": "passages",
+            "read": "Read",
+            "showTranslation": "Show translation",
+            "hideTranslation": "Hide translation",
+            "speak": "Listen"
+        },
+        "drill": {
+            "title": "Kana Drill"
+        },
+        "review": {
+            "title": "Vocabulary Review"
+        }
+    },
+    "footer": {
+        "tagline": "Уютный способ с богатыми темами смаковать путь через японский язык.",
+        "explore": "Исследовать",
+        "learn": "Чему мы учим",
+        "rights": "TeaChoco · Все права защищены.",
+        "languages": {
+            "ja": "Японский",
+            "en": "Английский",
+            "ko": "Корейский",
+            "th": "Тайский"
+        }
+    },
+    "auth": {
+        "signIn": "Войти",
+        "signUp": "Регистрация",
+        "signOut": "Выйти",
+        "email": "Электронная почта",
+        "password": "Пароль",
+        "name": "Имя",
+        "nameTag": "Никнейм",
+        "nameTagHint": "От 3 до 30 символов. Только английские буквы, цифры, подчёркивания (_) или дефисы (-), без пробелов. Ваш публичный никнейм.",
+        "confirmPassword": "Подтвердите пароль",
+        "forgotPassword": "Забыли пароль?",
+        "resetPassword": "Сбросить пароль",
+        "backToSignIn": "Вернуться ко входу",
+        "orContinueWith": "Или продолжить с",
+        "google": "Google",
+        "discord": "Discord",
+        "noAccount": "Нет аккаунта?",
+        "hasAccount": "Уже есть аккаунт?",
+        "verifyEmail": "Подтвердить email",
+        "verificationCode": "Код подтверждения",
+        "verifyHint": "Введите 6-значный код, отправленный на {{email}}.",
+        "verify": "Подтвердить",
+        "otpSent": "Мы отправили код на {{email}}.",
+        "otpResent": "Отправлен новый код.",
+        "verifySuccess": "Добро пожаловать, {{name}}!",
+        "resendCode": "Отправить код снова",
+        "resendInSeconds": "Повторить через {{seconds}}с",
+        "profile": "Профиль",
+        "settings": "Настройки",
+        "welcome": "Добро пожаловать, {{name}}",
+        "error": {
+            "invalidCredentials": "Неверный адрес электронной почты или пароль.",
+            "emailInUse": "Аккаунт с таким адресом уже существует.",
+            "nameTagTaken": "Этот никнейм уже занят.",
+            "nameTagInvalid": "Никнейм должен содержать от 3 до 30 символов: только английские буквы, цифры, подчёркивания или дефисы (без пробелов).",
+            "passwordMismatch": "Пароли не совпадают.",
+            "invalidOtp": "Неверный или просроченный код. Попробуйте снова.",
+            "resendFailed": "Не удалось отправить новый код. Попробуйте снова.",
+            "generic": "Произошла ошибка. Пожалуйста, попробуйте снова.",
+            "emailNotFound": "No account found with that email.",
+            "resetFailed": "Password reset failed. Please try again.",
+            "oauth": "Sign-in failed: {{reason}}"
+        },
+        "resetCodeSent": "We sent a reset code to {{email}}.",
+        "resetHint": "Enter the code sent to {{email}} and choose a new password.",
+        "forgotHint": "Enter your account email and we'll send you a reset code.",
+        "newPassword": "New Password",
+        "updatePassword": "Update Password",
+        "resetSuccess": "Password updated. Please sign in.",
+        "line": "LINE",
+        "x": "X (Twitter)"
+    },
+    "settings": {
+        "title": "Настройки",
+        "subtitle": "Заварите ChocoMemo на свой вкус.",
+        "back": "Назад",
+        "nav": {
+            "settings": "Настройки",
+            "appearance": "Внешний вид",
+            "language": "Язык",
+            "voice": "Голос и звук",
+            "interface": "Интерфейс",
+            "account": "Аккаунт"
+        },
+        "appearance": {
+            "hint": "Выберите настроение своей чашки."
+        },
+        "language": {
+            "hint": "Выберите язык, на котором ChocoMemo говорит с вами."
+        },
+        "voice": {
+            "hint": "Голос, озвучивающий кану и слова."
+        },
+        "interface": {
+            "hint": "Настройте то, что обрамляет ваше обучение.",
+            "chromeLabel": "Показать интерфейс",
+            "chromeDescription": "Показать или скрыть навигацию и подвал."
+        },
+        "account": {
+            "signedInHint": "Вы вошли как {{name}}",
+            "signedOutHint": "Войдите, чтобы сохранять свою историю обучения на всех устройствах.",
+            "goToProfile": "Посмотреть профиль",
+            "signIn": "Войти"
+        }
+    },
+    "profile": {
+        "title": "Профиль",
+        "subtitle": "Ваша история обучения с ChocoMemo.",
+        "back": "Назад",
+        "anonymousName": "Ученик Choco",
+        "memberSince": "Пользователь с",
+        "notSignedInTitle": "Вы не вошли",
+        "notSignedInHint": "Войдите, чтобы видеть свой профиль, редактировать данные и отслеживать прогресс на всех устройствах.",
+        "signIn": "Войти",
+        "stats": {
+            "label": "На первый взгляд",
+            "kana": "Прочитано каны",
+            "vocabulary": "Словарь",
+            "learned": "Выучено слов",
+            "due": "К повторению"
+        },
+        "identities": {
+            "label": "Linked Accounts",
+            "email": "Email",
+            "verified": "Verified",
+            "unverified": "Not verified",
+            "primary": "Primary",
+            "local": "Password",
+            "google": "Google",
+            "discord": "Discord",
+            "line": "LINE",
+            "facebook": "Facebook",
+            "x": "X (Twitter)",
+            "connected": "Connected",
+            "notConnected": "Not connected",
+            "comingSoon": "Coming soon",
+            "passwordSet": "Password is set",
+            "passwordNotSet": "No password set yet",
+            "connect": "Connect",
+            "disconnect": "Disconnect",
+            "disconnectSuccess": "Google account disconnected",
+            "disconnectError": "Couldn't disconnect this account ({{reason}})",
+            "disconnectTitle": "Disconnect Google account?",
+            "disconnectHint": "You'll be asked to confirm with Google before the link is removed.",
+            "lastSigninMethod": "You need at least one sign-in method left",
+            "disconnectSession": "Your session expired. Sign in again and retry.",
+            "disconnectVerifyFailed": "Couldn't verify your Google account. Try again.",
+            "disconnectCancelled": "Google sign-in was cancelled.",
+            "change": "Change"
+        },
+        "details": {
+            "name": "Имя",
+            "namePlaceholder": "Ваше имя",
+            "saving": "Сохранение…",
+            "saved": "Профиль обновлён",
+            "updateError": "Не удалось обновить профиль.",
+            "editProfile": "Редактировать профиль",
+            "nameTag": "Никнейм",
+            "nameTagHint": "От 3 до 30 символов. Только английские буквы, цифры, подчёркивания (_) или дефисы (-), без пробелов. Ваш публичный никнейм.",
+            "nameTagTaken": "Этот никнейм уже занят.",
+            "nameTagInvalid": "Никнейм должен содержать от 3 до 30 символов: только английские буквы, цифры, подчёркивания или дефисы (без пробелов).",
+            "noNameTag": "Никнейм ещё не задан",
+            "bio": "О себе",
+            "bioPlaceholder": "Расскажите о себе немного…"
+        },
+        "email": {
+            "label": "Change email",
+            "hint": "Update the email address you use to sign in.",
+            "placeholder": "you@example.com",
+            "save": "Save",
+            "saving": "Saving…",
+            "saved": "Email updated",
+            "updateError": "Could not update your email.",
+            "invalid": "Please enter a valid email address"
+        },
+        "otp": {
+            "confirmEmail": "Confirm new email",
+            "confirmPassword": "Confirm change password",
+            "sendCode": "Send code",
+            "sending": "Sending…",
+            "codeSent": "Code sent",
+            "codeResent": "Code resent",
+            "sendFailed": "Couldn't send the code",
+            "codeSentTo": "Enter the 6-digit code we sent to {{email}}.",
+            "verifySave": "Verify & save",
+            "verifying": "Verifying…",
+            "invalidCode": "Invalid or expired code",
+            "resendFailed": "Couldn't resend the code",
+            "back": "Back",
+            "emailSame": "New email must be different from the current one",
+            "emailTaken": "That email is already in use",
+            "wrongCurrentPassword": "Current password is incorrect"
+        },
+        "password": {
+            "label": "Change password",
+            "hint": "Your current password is required to set a new one.",
+            "setHint": "Set a password for your account. We'll email a code to confirm.",
+            "current": "Current password",
+            "currentPlaceholder": "Enter current password",
+            "currentRequired": "Current password is required",
+            "new": "New password",
+            "newPlaceholder": "Enter new password (min. 6 characters)",
+            "newRequired": "New password is required",
+            "tooShort": "New password must be at least 6 characters",
+            "confirm": "Confirm new password",
+            "confirmPlaceholder": "Re-enter new password",
+            "mismatch": "Passwords do not match",
+            "incorrect": "Current password is incorrect",
+            "change": "Change password",
+            "changing": "Changing…",
+            "changed": "Password changed successfully",
+            "changeError": "Could not change password",
+            "noPasswordYetHint": "This account doesn't have a password set yet."
+        },
+        "avatar": {
+            "source": "Фото профиля",
+            "default": "По умолчанию",
+            "google": "Google",
+            "local": "Своё",
+            "updated": "Фото профиля обновлено",
+            "updateError": "Не удалось обновить фото профиля",
+            "invalidType": "Пожалуйста, выберите файл изображения",
+            "tooLarge": "Изображение должно быть меньше 5 МБ",
+            "previewReady": "Предпросмотр готов — выберите источник для сохранения",
+            "remove": "Удалить",
+            "removeError": "Не удалось удалить фото профиля",
+            "cancel": "Отмена",
+            "saving": "Сохранение…",
+            "confirm": "Подтвердить"
+        },
+        "public": {
+            "notFoundTitle": "Profile not found",
+            "notFoundHint": "Nobody is using this name tag. It may have been changed or removed.",
+            "yourDashboard": "Go to your profile",
+            "viewPublic": "View public profile"
+        }
+    },
+    "english": {
+        "badge": "English",
+        "title": "Learn English",
+        "description": "English is a new track. The deck features below work today; the character set and drill are still being built.",
+        "nav": {
+            "render": {
+                "title": "Render",
+                "description": "Read short passages and check yourself against the translation.",
+                "action": "Start Reading"
+            },
+            "review": {
+                "title": "Vocabulary Review",
+                "description": "Review vocabulary with flashcards and spaced repetition.",
+                "action": "Start Review"
+            },
+            "exam": {
+                "title": "Vocabulary exam",
+                "description": "Test yourself with multiple-choice exam built from your vocabulary.",
+                "action": "Take an Exam"
+            },
+            "vocab": {
+                "title": "Browse Vocabulary",
+                "description": "Read through a deck's words with readings, meanings, and examples.",
+                "action": "Browse Words"
+            }
+        },
+        "vocab": {
+            "title": "Vocabulary"
+        },
+        "render": {
+            "title": "Render"
+        },
+        "review": {
+            "title": "Vocabulary Review"
+        },
+        "exam": {
+            "title": "Экзамен"
+        }
+    }
+}

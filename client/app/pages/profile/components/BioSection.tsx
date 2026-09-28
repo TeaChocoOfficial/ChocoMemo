@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { useAuthStore } from '~/stores/auth.store';
+import { useAuthStore } from '~/stores/config/auth.store';
 
 /**
  * The profile bio as its own section.
