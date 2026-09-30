@@ -1,11 +1,11 @@
-import { useEffect, useRef, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { Languages } from '~/data/language';
+import { useTranslation } from 'react-i18next';
 import { FaChevronDown } from 'react-icons/fa6';
 import { Link, usePathname } from '~/i18n/routing';
-import { useTranslation } from 'react-i18next';
-import { Languages } from '~/data/language';
-import { getTrackNavItems, type NavItem } from './utils';
+import { useEffect, useRef, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { useClickOutside } from './menu/useClickOutside';
+import { getTrackNavItems, type NavItem } from './utils';
 
 interface TrackDropdownProps {
     language: Languages;
@@ -21,9 +21,11 @@ interface TrackDropdownProps {
 export default function TrackDropdown({ language, variant, onNavigate }: TrackDropdownProps) {
     const { t } = useTranslation();
     const pathname = usePathname();
+    const isDesktop = variant === 'desktop';
     const [open, setOpen] = useState(false);
     const ref = useRef<HTMLDivElement>(null);
     const links: NavItem[] = getTrackNavItems(language, t);
+    const { glyph } = links[0];
 
     useClickOutside(ref, () => setOpen(false), open);
 
@@ -31,18 +33,14 @@ export default function TrackDropdown({ language, variant, onNavigate }: TrackDr
     // collapse the list the user is moving through.
     const hasActive = links.some((link) => pathname === link.to);
     useEffect(() => {
-        if (hasActive && variant !== 'desktop') setOpen(true);
+        if (hasActive && !isDesktop) setOpen(true);
     }, [hasActive]);
-
-    const isDesktop = variant === 'desktop';
-    const label = language === Languages.ja ? t('nav.japanese') : t('nav.english');
-    const { glyph } = links[0];
 
     const trigger = (
         <button
             type='button'
-            onClick={() => setOpen((o) => !o)}
             aria-expanded={open}
+            onClick={() => setOpen((o) => !o)}
             className={
                 isDesktop
                     ? `relative flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium transition-colors cursor-pointer rounded-sm ${
@@ -64,7 +62,7 @@ export default function TrackDropdown({ language, variant, onNavigate }: TrackDr
                 >
                     {glyph}
                 </span>
-                {label}
+                {t(`nav.${language}`)}
             </span>
             {isDesktop ? (
                 <motion.span
@@ -112,7 +110,7 @@ export default function TrackDropdown({ language, variant, onNavigate }: TrackDr
                 {link.glyph ? (
                     <span
                         aria-hidden='true'
-                        className='w-5 shrink-0 text-center text-base leading-none font-black opacity-80'
+                        className='h-3.5 w-3.5 shrink-0 text-center text-base leading-none font-black opacity-80'
                     >
                         {link.glyph}
                     </span>

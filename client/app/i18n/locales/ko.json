@@ -1,7 +1,6 @@
 {
     "nav": {
         "home": "홈",
-        "tagline": "언어 학습",
         "languages": "언어",
         "japanese": "일본어",
         "menu": "메뉴 열기",
@@ -24,13 +23,6 @@
         "ctaCreate": "덱 게시하기",
         "ctaHow": "사용 방법",
         "scriptsLabel": "지금 우러나는 중",
-        "scripts": [
-            "A",
-            "あ",
-            "한",
-            "ก",
-            "字"
-        ],
         "stats": {
             "badge": "선반 위",
             "languages": "언어",
@@ -148,13 +140,15 @@
         "tabs": {
             "local": "로컬",
             "cloud": "클라우드",
-            "community": "커뮤니티"
+            "community": "커뮤니티",
+            "official": "공식"
         },
         "comingSoon": {
             "cloud": "클라우드 동기화 곧 제공 예정, 로그인 필요",
             "community": "커뮤니티 세트 탐색은 아직 사용할 수 없습니다"
         },
-        "loading": "Loading…"
+        "loading": "Loading…",
+        "select": "선택"
     },
     "notfound": {
         "title": "페이지를 찾을 수 없음",
@@ -196,7 +190,8 @@
                 "name": "중국어",
                 "description": "한자, 병음, 성조 짝을 몇 분씩씩 연습합니다."
             }
-        }
+        },
+        "back_language": "언어 선택으로 돌아가기"
     },
     "japanese": {
         "badge": "일본어",
@@ -223,30 +218,30 @@
                 "description": "모든 히라가나와 가타카나를 읽기와 함께 살펴보세요.",
                 "action": "가나 보기"
             },
-            "kanaDrill": {
-                "title": "가나 드릴",
-                "description": "히라가나와 가타카나를 얼마나 잘 인식하는지 테스트하세요.",
-                "action": "가나 드릴 시작"
-            },
-            "vocabularyReview": {
-                "title": "복습",
-                "description": "플래시카드와 간격 반복으로 어휘를 복습하세요.",
-                "action": "복습 시작"
-            },
-            "vocabularyexam": {
-                "title": "어휘 시험",
-                "description": "어휘로 만든 객관식 시험으로 실력을 테스트하세요.",
-                "action": "시험 보기"
-            },
-            "vocabularyBrowse": {
-                "title": "Browse Vocabulary",
-                "description": "Read through a deck's words with readings, meanings, and examples.",
-                "action": "Browse Words"
-            },
             "render": {
                 "title": "Render",
                 "description": "Read short passages with furigana and check yourself against the translation.",
                 "action": "Start Reading"
+            },
+            "vocab": {
+                "title": "어휘",
+                "description": "단어장을 늘리고 간격을 두고 반복 학습하세요.",
+                "action": "단어 보기"
+            },
+            "drill": {
+                "title": "카나 드릴",
+                "description": "히라가나와 카타카나를 구분해 봅니다.",
+                "action": "카나 드릴 시작"
+            },
+            "review": {
+                "title": "어휘 복습",
+                "description": "플래시카드로 어휘를 간격 반복 복습합니다.",
+                "action": "복습 시작"
+            },
+            "exam": {
+                "title": "어휘 시험",
+                "description": "내 어휘로 만든 객관식으로 실력을 확인합니다.",
+                "action": "시험 보기"
             }
         },
         "decks": {
@@ -301,14 +296,13 @@
                 "review": "Review",
                 "exam": "Exam",
                 "drill": "Drill"
-            }
+            },
+            "viewAuthor": "{{author}}님의 프로필 보기",
+            "favourite": "즐겨찾기에 추가",
+            "unfavourite": "즐겨찾기에서 제거"
         },
         "exam": {
             "title": "시험",
-            "description": "어휘로 만든 객관식 시험으로 실력을 테스트하세요. 세트를 고르거나, 가져오거나, 직접 만들 수 있습니다.",
-            "back_hub": "한국어로 돌아가기",
-            "search": "시험 세트 검색...",
-            "empty": "아직 시험 세트가 없습니다 — 가져오거나 커스텀 세트를 만들어 보세요.",
             "import": "시험 세트 가져오기",
             "addCustom": "커스텀 세트 만들기",
             "importErrorJson": "이 파일을 JSON으로 읽을 수 없습니다.",
@@ -321,27 +315,12 @@
                 "descriptionPlaceholder": "이 세트에 대한 짧은 메모",
                 "wordsLabel": "포함할 단어",
                 "wordsPlaceholder": "단어 검색...",
-                "selectedCount": "{{count}}개 선택됨",
                 "titleError": "세트 이름을 입력하세요.",
                 "minWordsError": "단어를 두 개 이상 선택하세요.",
                 "cancel": "취소",
-                "submit": "세트 만들기"
-            },
-            "card": {
-                "note": "시험 노트",
-                "exportAria": "시험 세트 내보내기",
-                "deleteAria": "시험 세트 삭제",
-                "export": "내보내기",
-                "delete": "삭제",
-                "byAuthor": "{{author}} 제공",
-                "start": "시작",
-                "question_one": "질문 {{count}}개",
-                "question_other": "질문 {{count}}개",
-                "source": {
-                    "default": "기본",
-                    "custom": "내 세트",
-                    "imported": "가져옴"
-                }
+                "submit": "세트 만들기",
+                "selectedCount_one": "{{count}}개 선택됨",
+                "selectedCount_other": "{{count}}개 선택됨"
             }
         },
         "kana": {
@@ -574,7 +553,8 @@
         "updatePassword": "Update Password",
         "resetSuccess": "Password updated. Please sign in.",
         "line": "LINE",
-        "x": "X (Twitter)"
+        "x": "X (Twitter)",
+        "sendResetCode": "재설정 코드 보내기"
     },
     "settings": {
         "title": "설정",
@@ -635,7 +615,6 @@
             "google": "Google",
             "discord": "Discord",
             "line": "LINE",
-            "facebook": "Facebook",
             "x": "X (Twitter)",
             "connected": "Connected",
             "notConnected": "Not connected",
@@ -732,7 +711,8 @@
             "removeError": "프로필 사진을 삭제할 수 없습니다",
             "cancel": "취소",
             "saving": "저장 중…",
-            "confirm": "확인"
+            "confirm": "확인",
+            "change": "프로필 사진 변경"
         },
         "public": {
             "notFoundTitle": "Profile not found",
@@ -742,42 +722,185 @@
         }
     },
     "english": {
-        "badge": "English",
-        "title": "Learn English",
-        "description": "English is a new track. The deck features below work today; the character set and drill are still being built.",
+        "badge": "영어",
+        "title": "영어 배우기",
+        "description": "영어는 새로운 트랙입니다. 아래 덱 기능은 지금 쓸 수 있고, 문자 세트와 드릴은 아직 개발 중입니다.",
         "nav": {
             "render": {
-                "title": "Render",
-                "description": "Read short passages and check yourself against the translation.",
-                "action": "Start Reading"
+                "title": "읽기",
+                "description": "짧은 글을 읽고 번역으로 확인합니다.",
+                "action": "읽기 시작"
             },
             "review": {
-                "title": "Vocabulary Review",
-                "description": "Review vocabulary with flashcards and spaced repetition.",
-                "action": "Start Review"
+                "title": "어휘 복습",
+                "description": "플래시카드와 간격 반복으로 어휘를 복습합니다.",
+                "action": "복습 시작"
             },
             "exam": {
-                "title": "Vocabulary exam",
-                "description": "Test yourself with multiple-choice exam built from your vocabulary.",
-                "action": "Take an Exam"
+                "title": "어휘 시험",
+                "description": "내 어휘로 만든 객관식으로 실력을 확인합니다.",
+                "action": "시험 보기"
             },
             "vocab": {
-                "title": "Browse Vocabulary",
-                "description": "Read through a deck's words with readings, meanings, and examples.",
-                "action": "Browse Words"
+                "title": "어휘 보기",
+                "description": "발음, 뜻, 예문과 함께 덱의 단어를 확인합니다.",
+                "action": "단어 보기"
             }
         },
         "vocab": {
-            "title": "Vocabulary"
+            "title": "어휘"
         },
         "render": {
-            "title": "Render"
+            "title": "읽기"
         },
         "review": {
-            "title": "Vocabulary Review"
+            "title": "어휘 복습"
         },
         "exam": {
             "title": "시험"
+        },
+        "sections": {
+            "learn": "학습",
+            "practice": "연습"
         }
+    },
+    "deck": {
+        "type": {
+            "vocab": "어휘",
+            "render": "읽기",
+            "review": "복습",
+            "exam": "시험",
+            "drill": "드릴"
+        },
+        "source": {
+            "official": "공식",
+            "community": "커뮤니티",
+            "local": "내 덱",
+            "cloud": "클라우드"
+        },
+        "visibility": {
+            "public": "공개",
+            "unlisted": "목록 비공개",
+            "private": "비공개"
+        },
+        "search": "덱 검색",
+        "searchAria": "이름으로 덱 검색",
+        "searchClear": "검색어 지우기",
+        "tallyAria": "출처별 덱",
+        "resultCount": "덱 {{total}}개 중 {{matched}}개 표시",
+        "loading": "덱을 불러오는 중…",
+        "itemCount_one": "{{count}}개",
+        "itemCount_other": "{{count}}개",
+        "byAuthor": "{{author}} 님이 만듦",
+        "openAria": "{{name}} 열기",
+        "export": "내보내기",
+        "exportAria": "덱 내보내기",
+        "download": "다운로드",
+        "downloadAria": "덱 다운로드",
+        "delete": "삭제",
+        "deleteAria": "덱 삭제",
+        "start": "시작",
+        "list": {
+            "backHub": "{{language}}(으)로 돌아가기",
+            "eyebrow": {
+                "vocab": "어휘",
+                "render": "읽기",
+                "exam": "시험",
+                "review": "복습"
+            },
+            "title": {
+                "vocab": "어휘 덱",
+                "render": "읽기 덱",
+                "exam": "시험 세트",
+                "review": "복습 덱"
+            },
+            "description": {
+                "vocab": "아는 단어를 덱으로 묶고 간격을 두고 반복 학습하세요.",
+                "render": "난이도별 짧은 지문을 읽고 번역으로 확인합니다.",
+                "exam": "내 어휘로 만든 객관식 문제 세트입니다.",
+                "review": "덱을 간격 반복 세션으로 복습합니다."
+            }
+        },
+        "empty": {
+            "local": {
+                "title": "아직 내 덱이 없습니다",
+                "body": "만들거나 가져온 덱이 여기에 모입니다. 공식 덱부터 시작해 보세요.",
+                "action": "공식 덱 둘러보기"
+            },
+            "official": {
+                "title": "이 종류의 공식 덱이 아직 없습니다",
+                "body": "공식 덱은 앱과 함께 제공됩니다. 이 종류는 아직 공개되지 않았습니다."
+            },
+            "filtered": {
+                "title": "필터와 맞는 덱이 없습니다",
+                "body": "이 탭에는 선택한 검색어·태그·조건에 맞는 덱이 없습니다. 하나를 완화하면 다시 보입니다.",
+                "action": "필터 지우기"
+            },
+            "cloud": {
+                "title": "클라우드 동기화 곧 제공",
+                "body": "로그인하면 덱이 기기를 따라다닙니다.",
+                "action": "로그인"
+            },
+            "cloudSignedIn": {
+                "title": "클라우드 동기화 곧 제공",
+                "body": "로그인되어 있습니다. 기기 간 덱 동기화 기능을 준비 중입니다."
+            },
+            "community": {
+                "title": "아직 커뮤니티 덱이 없습니다",
+                "body": "다른 학습자가 공개한 덱은 커뮤니티가 열리면 여기에 표시됩니다."
+            }
+        },
+        "noResults": {
+            "title": "검색과 일치하는 항목이 없습니다",
+            "body": "더 짧은 말을 쓰거나 검색을 지워 이 탭의 모든 덱을 보세요."
+        },
+        "details": {
+            "notFound": "해당 덱을 찾을 수 없습니다.",
+            "back": "덱 목록으로 돌아가기",
+            "contents": "내용",
+            "version": "버전",
+            "updated": "업데이트",
+            "noSession": "{{language}} 덱 세션은 아직 준비 중입니다."
+        },
+        "options": {
+            "sortAria": "덱 정렬",
+            "sort": {
+                "default": "기본 순서",
+                "name": "이름순",
+                "recent": "최근 업데이트순",
+                "popular": "다운로드 많은 순",
+                "size": "큰 순"
+            },
+            "density": {
+                "comfortable": "넓게",
+                "compact": "간결하게"
+            },
+            "nsfw": {
+                "label": "민감 콘텐츠",
+                "on": "민감 덱 표시 중",
+                "off": "민감 덱 숨김"
+            },
+            "importHeading": "가져오기",
+            "importHint": "전에 내보낸 덱 파일을 읽습니다.",
+            "importUnavailable": "이 종류 덱은 아직 파일 형식이 없습니다."
+        },
+        "tags": {
+            "clear": "태그 지우기",
+            "remove": "태그 {{tag}} 제거"
+        },
+        "actions": {
+            "create": {
+                "vocab": "새 덱",
+                "exam": "새 시험"
+            },
+            "importOnly": "가져오기"
+        },
+        "import": {
+            "action": "덱 파일 가져오기",
+            "invalidDeck": "유효한 덱 파일이 아닙니다.",
+            "invalidExam": "유효한 시험 세트 파일이 아닙니다.",
+            "invalidJson": "이 파일을 JSON으로 읽을 수 없습니다."
+        },
+        "viewAuthor": "{{author}}님의 프로필 보기"
     }
 }

@@ -53,7 +53,7 @@ export class LineAuthGuard extends AuthGuard('line') {
     handleRequest(err: any, user: any, info: any, context: ExecutionContext, status?: number) {
         if (err || !user) {
             const request = context.switchToHttp().getRequest<FastifyRequest>();
-            const message = (err instanceof Error && err.message) || (info as any)?.message;
+            const message = (err instanceof Error && err.message) || info?.message;
             (request as FastifyRequest & { oauthError?: string }).oauthError =
                 (message as string) || 'access_denied';
             return false;

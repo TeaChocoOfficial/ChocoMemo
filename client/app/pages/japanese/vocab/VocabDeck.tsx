@@ -2,20 +2,20 @@
 import { useState } from 'react';
 import { Link } from '~/i18n/routing';
 import { useParams } from 'react-router';
-import { useTranslation } from 'react-i18next';
-import { FaArrowLeft, FaPen, FaTrash, FaVolumeHigh } from 'react-icons/fa6';
-import Section from '~/components/custom/Section';
-import Button from '~/components/custom/Button';
-import { useLangText } from '~/hooks/useLangText';
 import { useSpeak } from '~/hooks/useSpeak';
-import { deckWords, findDeck, useDeckStore } from '~/stores/japanese/deck.store';
-import { useVocabularyStore } from '~/stores/japanese/vocabulary.store';
+import { useTranslation } from 'react-i18next';
+import Button from '~/components/custom/Button';
+import Section from '~/components/custom/Section';
+import { useLangText } from '~/hooks/useLangText';
 import WordEditor, { type WordDraft } from './components/WordEditor';
+import { useVocabularyStore } from '~/stores/japanese/vocabulary.store';
+import { FaArrowLeft, FaPen, FaTrash, FaVolumeHigh } from 'react-icons/fa6';
+import { deckWords, findDeck, useDeckStore } from '~/stores/japanese/deck.store';
 
 /** Browses one deck's words: surface form, reading, meaning and example, with
  *  tap-to-speak. Custom words can be added, edited, and deleted; the built-in
  *  defaults ship with the app and are shown read-only. */
-export default function VocabularyDeck() {
+export default function VocabDeck() {
     const { t } = useTranslation();
     const locale = useLangText();
     const speak = useSpeak();
@@ -58,7 +58,7 @@ export default function VocabularyDeck() {
         <Section className='items-start justify-center'>
             <div className='mx-auto max-w-5xl px-4 sm:px-6 w-full'>
                 <Link
-                    to='/japanese/vocabulary'
+                    to='/japanese/vocab'
                     className='inline-flex items-center gap-2 mb-6 text-sm font-medium text-surface-muted hover:text-primary transition-colors'
                 >
                     <FaArrowLeft className='w-3.5 h-3.5' />
@@ -143,9 +143,7 @@ export default function VocabularyDeck() {
                 </ul>
 
                 {!isCustomEditable(words, customIds) && (
-                    <p className='mt-6 text-xs text-surface-muted'>
-                        {t('japanese.vocab.builtIn')}
-                    </p>
+                    <p className='mt-6 text-xs text-surface-muted'>{t('japanese.vocab.builtIn')}</p>
                 )}
             </div>
 

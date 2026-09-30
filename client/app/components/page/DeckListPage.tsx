@@ -1,51 +1,58 @@
-// -Path: 'client/app/pages/japanese/render/DeckList.tsx'
-import { Link } from '~/i18n/routing';
-import type { DeckType } from '~/types/deck';
-import { FaArrowLeft } from 'react-icons/fa6';
+// -Path: 'client/app/components/page/DeckListPage.tsx'
+// Shell for every deck-list page. One component serves vocabulary, reading,
+// exam and review in every language, so all the variation arrives as props.
+//
+// Layout follows the track hubs — the shared `PageShell` frame and `PageHero`
+// header — with `DeckList` owning everything below it: the source selector, the
+// view controls, the filters and the grid. The shell's only real job beyond the
+// frame is holding the query in the URL, so that the source tab, the search and
+// every view option survive a reload and travel in a shared link.
+import PageHero from '~/components/custom/PageHero';
+import PageShell from '~/components/custom/PageShell';
+import DeckList from '~/components/container/DeckList/DeckList';
+import { useDeckListQuery } from '~/hooks/useDeckListQuery';
 import { useTranslation } from 'react-i18next';
+import type { DeckType } from '~/types/deck';
 import type { Languages } from '~/data/language';
-import Section from '~/components/custom/Section';
-import DecksList from '~/components/container/DecksList';
 
-export default function DeckListPage({ type, language }: { type: DeckType; language: Languages }) {
+/** The deck types that get a list page. `drill` is a single-session page of
+ *  its own, so it has no list — and therefore no per-type copy either. */
+type ListType = Exclude<DeckType, 'drill'>;
+
+export default function DeckListPage({ type, language }: { type: ListType; language: Languages }) {
     const { t } = useTranslation();
+    // The URL is the only storage for the view state, so the page shell and the
+    // list can never disagree about what tab is open.
+    const controls = useDeckListQuery();
+
+    /** Copy authored per language and type, falling back to the shared
+     *  per-type string. Japanese vocabulary and reading have hand-written
+     *  copy; exam, review and every English track fall back. */
+    const copy = (key: 'eyebrow' | 'title' | 'description') =>
+        t(`${language}.${type}.${key}`, { defaultValue: t(`deck.list.${key}.${type}`) });
 
     return (
-        <Section>
-            <div className='mx-auto max-w-5xl px-4 sm:px-6 w-full'>
-                <Link
-                    to={`/${language}`}
-                    className='inline-flex items-center gap-2 mb-6 text-sm font-medium text-surface-muted hover:text-primary transition-colors'
-                >
-                    <FaArrowLeft className='w-3.5 h-3.5' />
-                    {t(`${language}.${type}.back_hub`)}
-                </Link>
+        <PageShell
+            width='wide'
+            backTo={`/${language}`}
+            backLabel={t(`${language}.${type}.back_hub`, {
+                defaultValue: t('deck.list.backHub', {
+                    language: t(`languageSelect.languages.${language}.name`),
+                }),
+            })}
+        >
+            <PageHero
+                badge={copy('eyebrow')}
+                title={copy('title')}
+                description={copy('description')}
+            />
 
-                <div className='relative overflow-hidden rounded-sm border border-line bg-surface shadow-[0_18px_40px_-24px_rgba(0,0,0,0.35)]'>
-                    {/* Faint dot grid — reads as ruled paper in every theme */}
-                    <div
-                        aria-hidden='true'
-                        className='pointer-events-none absolute inset-0 bg-[radial-gradient(circle,var(--color-border)_1px,transparent_1px)] bg-size-[18px_18px] opacity-40'
-                    />
-
-                    <div className='relative px-5 py-8 sm:px-8 sm:py-10'>
-                        <header className='flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between'>
-                            <div className='max-w-2xl'>
-                                <p className='font-mono text-[11px] font-bold uppercase tracking-[0.22em] text-primary'>
-                                    {t(`${language}.${type}.eyebrow`)}
-                                </p>
-                                <h1 className='mt-2 font-sans text-3xl font-black tracking-tight text-surface-foreground sm:text-4xl'>
-                                    {t(`${language}.${type}.title`)}
-                                </h1>
-                                <p className='mt-2 text-sm leading-relaxed text-surface-subtle'>
-                                    {t(`${language}.${type}.description`)}
-                                </p>
-                            </div>
-                        </header>
-                        <DecksList type={type} language={language} />
-                    </div>
-                </div>
-            </div>
-        </Section>
+            <DeckList
+                type={type}
+                language={language}
+                query={controls.query}
+                controls={controls}
+            />
+        </PageShell>
     );
 }

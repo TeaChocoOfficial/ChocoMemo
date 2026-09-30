@@ -1,7 +1,6 @@
 {
     "nav": {
         "home": "Главная",
-        "tagline": "Изучение языков",
         "languages": "Языки",
         "japanese": "Японский",
         "menu": "Открыть меню",
@@ -24,13 +23,6 @@
         "ctaCreate": "Опубликовать колоду",
         "ctaHow": "Как это работает",
         "scriptsLabel": "Сейчас заваривается",
-        "scripts": [
-            "A",
-            "あ",
-            "한",
-            "ก",
-            "字"
-        ],
         "stats": {
             "badge": "На полке",
             "languages": "Языки",
@@ -148,13 +140,15 @@
         "tabs": {
             "local": "Локально",
             "cloud": "Облако",
-            "community": "Сообщество"
+            "community": "Сообщество",
+            "official": "Официальные"
         },
         "comingSoon": {
             "cloud": "Облачная синхронизация скоро появится, требуется вход",
             "community": "Просмотр наборов сообщества пока недоступен"
         },
-        "loading": "Loading…"
+        "loading": "Loading…",
+        "select": "Выбрать"
     },
     "notfound": {
         "title": "Страница не найдена",
@@ -196,7 +190,8 @@
                 "name": "Китайский",
                 "description": "Иероглифы, пиньинь и пары тонов — по несколько минут за раз."
             }
-        }
+        },
+        "back_language": "Назад к выбору языка"
     },
     "japanese": {
         "badge": "Японский",
@@ -223,30 +218,30 @@
                 "description": "Просмотрите всю хирагану и катакану с их чтениями.",
                 "action": "Смотреть кану"
             },
-            "kanaDrill": {
-                "title": "Тренажёр каны",
-                "description": "Проверьте, как вы распознаёте хирагану и катакану.",
-                "action": "Начать тренировку"
-            },
-            "vocabularyReview": {
-                "title": "Повторение лексики",
-                "description": "Повторяйте лексику с карточками и интервальным повторением.",
-                "action": "Начать повторение"
-            },
-            "vocabularyexam": {
-                "title": "Экзамены по лексике",
-                "description": "Проверьте себя экзаменами с выбором ответа, составленными из вашей лексики.",
-                "action": "Пройти экзамен"
-            },
-            "vocabularyBrowse": {
-                "title": "Browse Vocabulary",
-                "description": "Read through a deck's words with readings, meanings, and examples.",
-                "action": "Browse Words"
-            },
             "render": {
                 "title": "Render",
                 "description": "Read short passages with furigana and check yourself against the translation.",
                 "action": "Start Reading"
+            },
+            "vocab": {
+                "title": "Лексика",
+                "description": "Расширяйте словарь и повторяйте через интервалы.",
+                "action": "Смотреть слова"
+            },
+            "drill": {
+                "title": "Тренировка каны",
+                "description": "Проверьте, различаете ли вы хирагану и катакану.",
+                "action": "Начать тренировку"
+            },
+            "review": {
+                "title": "Повторение лексики",
+                "description": "Повторяйте лексику карточками и интервальным повторением.",
+                "action": "Начать повторение"
+            },
+            "exam": {
+                "title": "Экзамен по лексике",
+                "description": "Проверьте себя тестом с выбором из своей лексики.",
+                "action": "Пройти тест"
             }
         },
         "decks": {
@@ -288,8 +283,8 @@
                 "downloaded": "Загружено"
             },
             "open": "Open",
-            "itemCount_one": "{{count}} item",
-            "itemCount_other": "{{count}} items",
+            "itemCount_one": "{{count}} элемент",
+            "itemCount_other": "{{count}} элемента",
             "export": "Export",
             "exportAria": "Export deck",
             "downloadAria": "Download deck",
@@ -301,14 +296,15 @@
                 "review": "Review",
                 "exam": "Exam",
                 "drill": "Drill"
-            }
+            },
+            "viewAuthor": "Открыть профиль {{author}}",
+            "favourite": "В избранное",
+            "unfavourite": "Убрать из избранного",
+            "itemCount_few": "{{count}} элемента",
+            "itemCount_many": "{{count}} элементов"
         },
         "exam": {
             "title": "Экзамен",
-            "description": "Проверьте себя экзаменами с выбором ответа, составленными из вашей лексики. Выберите набор, импортируйте его или создайте свой.",
-            "back_hub": "Вернуться к японскому",
-            "search": "Поиск наборов экзаменов...",
-            "empty": "Наборов экзаменов пока нет — импортируйте один или создайте свой.",
             "import": "Импортировать набор экзамена",
             "addCustom": "Добавить свой набор",
             "importErrorJson": "Не удалось прочитать этот файл как JSON.",
@@ -321,27 +317,14 @@
                 "descriptionPlaceholder": "Краткая заметка об этом наборе",
                 "wordsLabel": "Слова для включения",
                 "wordsPlaceholder": "Поиск слов...",
-                "selectedCount": "Выбрано: {{count}}",
                 "titleError": "Дайте набору название.",
                 "minWordsError": "Выберите хотя бы два слова.",
                 "cancel": "Отмена",
-                "submit": "Создать набор"
-            },
-            "card": {
-                "note": "Заметка экзамена",
-                "exportAria": "Экспортировать набор экзамена",
-                "deleteAria": "Удалить набор экзамена",
-                "export": "Экспорт",
-                "delete": "Удалить",
-                "byAuthor": "автор {{author}}",
-                "start": "Начать",
-                "question_one": "{{count}} вопрос",
-                "question_other": "{{count}} вопросов",
-                "source": {
-                    "default": "По умолчанию",
-                    "custom": "Мой набор",
-                    "imported": "Импортировано"
-                }
+                "submit": "Создать набор",
+                "selectedCount_one": "выбрано {{count}}",
+                "selectedCount_other": "выбрано {{count}}",
+                "selectedCount_few": "выбрано {{count}}",
+                "selectedCount_many": "выбрано {{count}}"
             }
         },
         "kana": {
@@ -574,7 +557,8 @@
         "updatePassword": "Update Password",
         "resetSuccess": "Password updated. Please sign in.",
         "line": "LINE",
-        "x": "X (Twitter)"
+        "x": "X (Twitter)",
+        "sendResetCode": "Отправить код сброса"
     },
     "settings": {
         "title": "Настройки",
@@ -635,7 +619,6 @@
             "google": "Google",
             "discord": "Discord",
             "line": "LINE",
-            "facebook": "Facebook",
             "x": "X (Twitter)",
             "connected": "Connected",
             "notConnected": "Not connected",
@@ -732,7 +715,8 @@
             "removeError": "Не удалось удалить фото профиля",
             "cancel": "Отмена",
             "saving": "Сохранение…",
-            "confirm": "Подтвердить"
+            "confirm": "Подтвердить",
+            "change": "Сменить фото профиля"
         },
         "public": {
             "notFoundTitle": "Profile not found",
@@ -742,42 +726,187 @@
         }
     },
     "english": {
-        "badge": "English",
-        "title": "Learn English",
-        "description": "English is a new track. The deck features below work today; the character set and drill are still being built.",
+        "badge": "Английский",
+        "title": "Учить английский",
+        "description": "Английский — новая тема. Функции колод ниже уже работают; набор символов и тренировка ещё в разработке.",
         "nav": {
             "render": {
-                "title": "Render",
-                "description": "Read short passages and check yourself against the translation.",
-                "action": "Start Reading"
+                "title": "Чтение",
+                "description": "Читайте короткие тексты и сверяйтесь с переводом.",
+                "action": "Начать читать"
             },
             "review": {
-                "title": "Vocabulary Review",
-                "description": "Review vocabulary with flashcards and spaced repetition.",
-                "action": "Start Review"
+                "title": "Повторение лексики",
+                "description": "Повторяйте лексику карточками и интервальным повторением.",
+                "action": "Начать повторение"
             },
             "exam": {
-                "title": "Vocabulary exam",
-                "description": "Test yourself with multiple-choice exam built from your vocabulary.",
-                "action": "Take an Exam"
+                "title": "Экзамен по лексике",
+                "description": "Проверьте себя тестом с выбором из своей лексики.",
+                "action": "Пройти тест"
             },
             "vocab": {
-                "title": "Browse Vocabulary",
-                "description": "Read through a deck's words with readings, meanings, and examples.",
-                "action": "Browse Words"
+                "title": "Посмотреть лексику",
+                "description": "Просматривайте слова колоды с произношением, значением и примерами.",
+                "action": "Смотреть слова"
             }
         },
         "vocab": {
-            "title": "Vocabulary"
+            "title": "Лексика"
         },
         "render": {
-            "title": "Render"
+            "title": "Чтение"
         },
         "review": {
-            "title": "Vocabulary Review"
+            "title": "Повторение лексики"
         },
         "exam": {
             "title": "Экзамен"
+        },
+        "sections": {
+            "learn": "Учить",
+            "practice": "Практика"
         }
+    },
+    "deck": {
+        "type": {
+            "vocab": "Лексика",
+            "render": "Чтение",
+            "review": "Повторение",
+            "exam": "Экзамен",
+            "drill": "Тренировка"
+        },
+        "source": {
+            "official": "Официальные",
+            "community": "Сообщество",
+            "local": "Мои",
+            "cloud": "Облако"
+        },
+        "visibility": {
+            "public": "Публичная",
+            "unlisted": "Без списка",
+            "private": "Приватная"
+        },
+        "search": "Поиск колод",
+        "searchAria": "Поиск колод по названию",
+        "searchClear": "Очистить поиск",
+        "tallyAria": "Колоды по источнику",
+        "resultCount": "Показано {{matched}} из {{total}} колод",
+        "loading": "Загрузка колод…",
+        "itemCount_one": "{{count}} элемент",
+        "itemCount_other": "{{count}} элемента",
+        "byAuthor": "от {{author}}",
+        "openAria": "Открыть {{name}}",
+        "export": "Экспорт",
+        "exportAria": "Экспортировать колоду",
+        "download": "Скачать",
+        "downloadAria": "Скачать колоду",
+        "delete": "Удалить",
+        "deleteAria": "Удалить колоду",
+        "start": "Начать",
+        "list": {
+            "backHub": "Назад к {{language}}",
+            "eyebrow": {
+                "vocab": "Лексика",
+                "render": "Чтение",
+                "exam": "Экзамены",
+                "review": "Повторение"
+            },
+            "title": {
+                "vocab": "Колоды лексики",
+                "render": "Колоды для чтения",
+                "exam": "Наборы заданий",
+                "review": "Колоды для повторения"
+            },
+            "description": {
+                "vocab": "Соберите знакомые слова в колоду и повторяйте их через интервалы.",
+                "render": "Короткие тексты по уровню, с переводом для самопроверки.",
+                "exam": "Наборы с множественным выбором из вашей лексики.",
+                "review": "Проходите колоду в сессии с интервальным повторением."
+            }
+        },
+        "empty": {
+            "local": {
+                "title": "У вас пока нет своих колод",
+                "body": "Созданные и импортированные колоды появятся здесь. Начните с официальной.",
+                "action": "Смотреть официальные колоды"
+            },
+            "official": {
+                "title": "Официальных колод этого типа пока нет",
+                "body": "Официальные колоды входят в приложение. Для этого типа их ещё не выпустили."
+            },
+            "filtered": {
+                "title": "Ничего не подходит под фильтры",
+                "body": "В этой вкладке нет колод под ваш поиск, теги и параметры. Ослабьте что-нибудь одно.",
+                "action": "Сбросить фильтры"
+            },
+            "cloud": {
+                "title": "Облачная синхронизация скоро появится",
+                "body": "Войдите — и колоды будут с вами на всех устройствах.",
+                "action": "Войти"
+            },
+            "cloudSignedIn": {
+                "title": "Облачная синхронизация скоро появится",
+                "body": "Вы вошли в аккаунт. Синхронизация колод между устройствами уже в работе."
+            },
+            "community": {
+                "title": "Пока нет колод сообщества",
+                "body": "Колоды, опубликованные другими учениками, появятся здесь, когда откроется сообщество."
+            }
+        },
+        "noResults": {
+            "title": "По этому запросу ничего нет",
+            "body": "Попробуйте более короткое слово или очистите поиск, чтобы увидеть всё во вкладке."
+        },
+        "details": {
+            "notFound": "Такая колода не найдена.",
+            "back": "Назад к колодам",
+            "contents": "Что внутри",
+            "version": "Версия",
+            "updated": "Обновлено",
+            "noSession": "Сессии для колод {{language}} ещё не готовы."
+        },
+        "options": {
+            "sortAria": "Сортировать колоды",
+            "sort": {
+                "default": "Исходный порядок",
+                "name": "По названию А–Я",
+                "recent": "Недавно обновлённые",
+                "popular": "Чаще скачивают",
+                "size": "Сначала большие"
+            },
+            "density": {
+                "comfortable": "Просторно",
+                "compact": "Плотно"
+            },
+            "nsfw": {
+                "label": "Чувствительное",
+                "on": "Чувствительные колоды показаны",
+                "off": "Чувствительные колоды скрыты"
+            },
+            "importHeading": "Импорт",
+            "importHint": "Читает файл колоды, который вы раньше экспортировали.",
+            "importUnavailable": "Для этого типа колод формата файла пока нет."
+        },
+        "tags": {
+            "clear": "Очистить теги",
+            "remove": "Убрать тег {{tag}}"
+        },
+        "actions": {
+            "create": {
+                "vocab": "Новая колода",
+                "exam": "Новый экзамен"
+            },
+            "importOnly": "Импорт"
+        },
+        "import": {
+            "action": "Импортировать файл колоды",
+            "invalidDeck": "Этот файл не является корректной колодой.",
+            "invalidExam": "Этот файл не является корректным набором заданий.",
+            "invalidJson": "Не удалось прочитать этот файл как JSON."
+        },
+        "viewAuthor": "Открыть профиль {{author}}",
+        "itemCount_few": "{{count}} элемента",
+        "itemCount_many": "{{count}} элементов"
     }
 }

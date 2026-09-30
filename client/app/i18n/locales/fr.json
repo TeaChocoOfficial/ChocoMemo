@@ -1,7 +1,6 @@
 {
     "nav": {
         "home": "Accueil",
-        "tagline": "Apprentissage des Langues",
         "languages": "Langues",
         "japanese": "Japonais",
         "menu": "Ouvrir le menu",
@@ -24,13 +23,6 @@
         "ctaCreate": "Publier un deck",
         "ctaHow": "Comment ça marche",
         "scriptsLabel": "En infusion",
-        "scripts": [
-            "A",
-            "あ",
-            "한",
-            "ก",
-            "字"
-        ],
         "stats": {
             "badge": "Sur l'étagère",
             "languages": "Langues",
@@ -148,13 +140,15 @@
         "tabs": {
             "local": "Local",
             "cloud": "Cloud",
-            "community": "Communauté"
+            "community": "Communauté",
+            "official": "Officiel"
         },
         "comingSoon": {
             "cloud": "La synchronisation cloud arrive bientôt, connexion requise",
             "community": "Parcourir les ensembles communautaires n'est pas encore disponible"
         },
-        "loading": "Loading…"
+        "loading": "Loading…",
+        "select": "Sélectionner"
     },
     "notfound": {
         "title": "Page Introuvable",
@@ -196,7 +190,8 @@
                 "name": "Chinois",
                 "description": "Caractères, pinyin et paires de tons, pratiqués quelques minutes à la fois."
             }
-        }
+        },
+        "back_language": "Retour au choix de langue"
     },
     "japanese": {
         "badge": "Japonais",
@@ -223,30 +218,30 @@
                 "description": "Parcourez tous les hiragana et katakana avec leurs lectures.",
                 "action": "Voir les Kana"
             },
-            "kanaDrill": {
-                "title": "Exercice de Kana",
-                "description": "Testez votre reconnaissance des hiragana et katakana.",
-                "action": "Commencer l'Exercice de Kana"
-            },
-            "vocabularyReview": {
-                "title": "Révision de Vocabulaire",
-                "description": "Révisez le vocabulaire avec des cartes mémoire et la répétition espacée.",
-                "action": "Commencer la Révision"
-            },
-            "vocabularyexam": {
-                "title": "Examens de Vocabulaire",
-                "description": "Testez-vous avec des examens à choix multiples construits à partir de votre vocabulaire.",
-                "action": "Passer un Examen"
-            },
-            "vocabularyBrowse": {
-                "title": "Browse Vocabulary",
-                "description": "Read through a deck's words with readings, meanings, and examples.",
-                "action": "Browse Words"
-            },
             "render": {
                 "title": "Render",
                 "description": "Read short passages with furigana and check yourself against the translation.",
                 "action": "Start Reading"
+            },
+            "vocab": {
+                "title": "Vocabulaire",
+                "description": "Enrichis ton vocabulaire et entraîne-toi à intervalles réguliers.",
+                "action": "Voir les mots"
+            },
+            "drill": {
+                "title": "Drill de kana",
+                "description": "Teste ta reconnaissance des hiragana et katakana.",
+                "action": "Lancer le drill de kana"
+            },
+            "review": {
+                "title": "Révision de Vocabulaire",
+                "description": "Révise le vocabulaire avec des cartes et la répétition espacée.",
+                "action": "Commencer la révision"
+            },
+            "exam": {
+                "title": "Examen de vocabulaire",
+                "description": "Teste-toi avec un examen à choix multiple fait de ton vocabulaire.",
+                "action": "Passer l'examen"
             }
         },
         "decks": {
@@ -288,8 +283,8 @@
                 "downloaded": "Téléchargé"
             },
             "open": "Open",
-            "itemCount_one": "{{count}} item",
-            "itemCount_other": "{{count}} items",
+            "itemCount_one": "{{count}} élément",
+            "itemCount_other": "{{count}} éléments",
             "export": "Export",
             "exportAria": "Export deck",
             "downloadAria": "Download deck",
@@ -301,14 +296,14 @@
                 "review": "Review",
                 "exam": "Exam",
                 "drill": "Drill"
-            }
+            },
+            "viewAuthor": "Voir le profil de {{author}}",
+            "favourite": "Ajouter aux favoris",
+            "unfavourite": "Retirer des favoris",
+            "itemCount_many": "{{count}} éléments"
         },
         "exam": {
             "title": "Examen",
-            "description": "Testez-vous avec des examens à choix multiples construits à partir de votre vocabulaire. Choisissez un ensemble, importez-en un ou créez le vôtre.",
-            "back_hub": "Retour au japonais",
-            "search": "Rechercher des ensembles d'examens...",
-            "empty": "Aucun ensemble d'examens pour l'instant — importez-en un ou créez un ensemble personnalisé.",
             "import": "Importer un ensemble d'examens",
             "addCustom": "Ajouter un ensemble personnalisé",
             "importErrorJson": "Impossible de lire ce fichier en JSON.",
@@ -321,27 +316,13 @@
                 "descriptionPlaceholder": "Une courte note sur cet ensemble",
                 "wordsLabel": "Mots à inclure",
                 "wordsPlaceholder": "Rechercher des mots...",
-                "selectedCount": "{{count}} sélectionnés",
                 "titleError": "Donnez un nom à votre ensemble.",
                 "minWordsError": "Choisissez au moins deux mots.",
                 "cancel": "Annuler",
-                "submit": "Créer l'ensemble"
-            },
-            "card": {
-                "note": "Note d'examen",
-                "exportAria": "Exporter l'ensemble d'examens",
-                "deleteAria": "Supprimer l'ensemble d'examens",
-                "export": "Exporter",
-                "delete": "Supprimer",
-                "byAuthor": "par {{author}}",
-                "start": "Commencer",
-                "question_one": "{{count}} question",
-                "question_other": "{{count}} questions",
-                "source": {
-                    "default": "Par défaut",
-                    "custom": "Mon ensemble",
-                    "imported": "Importé"
-                }
+                "submit": "Créer l'ensemble",
+                "selectedCount_one": "{{count}} sélectionné",
+                "selectedCount_other": "{{count}} sélectionnés",
+                "selectedCount_many": "{{count}} sélectionnés"
             }
         },
         "kana": {
@@ -574,7 +555,8 @@
         "updatePassword": "Update Password",
         "resetSuccess": "Password updated. Please sign in.",
         "line": "LINE",
-        "x": "X (Twitter)"
+        "x": "X (Twitter)",
+        "sendResetCode": "Envoyer le code de réinitialisation"
     },
     "settings": {
         "title": "Paramètres",
@@ -635,7 +617,6 @@
             "google": "Google",
             "discord": "Discord",
             "line": "LINE",
-            "facebook": "Facebook",
             "x": "X (Twitter)",
             "connected": "Connected",
             "notConnected": "Not connected",
@@ -732,7 +713,8 @@
             "removeError": "Impossible de supprimer la photo de profil",
             "cancel": "Annuler",
             "saving": "Enregistrement…",
-            "confirm": "Confirmer"
+            "confirm": "Confirmer",
+            "change": "Changer la photo de profil"
         },
         "public": {
             "notFoundTitle": "Profile not found",
@@ -742,42 +724,186 @@
         }
     },
     "english": {
-        "badge": "English",
-        "title": "Learn English",
-        "description": "English is a new track. The deck features below work today; the character set and drill are still being built.",
+        "badge": "Anglais",
+        "title": "Apprendre l'anglais",
+        "description": "L'anglais est une nouvelle voie. Les fonctions de paquets ci-dessous fonctionnent déjà ; le jeu de caractères et le drill sont encore en cours.",
         "nav": {
             "render": {
-                "title": "Render",
-                "description": "Read short passages and check yourself against the translation.",
-                "action": "Start Reading"
+                "title": "Lecture",
+                "description": "Lisez de courts textes et vérifiez avec la traduction.",
+                "action": "Commencer à lire"
             },
             "review": {
-                "title": "Vocabulary Review",
-                "description": "Review vocabulary with flashcards and spaced repetition.",
-                "action": "Start Review"
+                "title": "Révision de vocabulaire",
+                "description": "Révisez le vocabulaire avec des cartes et la répétition espacée.",
+                "action": "Commencer la révision"
             },
             "exam": {
-                "title": "Vocabulary exam",
-                "description": "Test yourself with multiple-choice exam built from your vocabulary.",
-                "action": "Take an Exam"
+                "title": "Examen de vocabulaire",
+                "description": "Testez-vous avec un examen à choix multiple fait de ton vocabulaire.",
+                "action": "Passer l'examen"
             },
             "vocab": {
-                "title": "Browse Vocabulary",
-                "description": "Read through a deck's words with readings, meanings, and examples.",
-                "action": "Browse Words"
+                "title": "Parcourir le vocabulaire",
+                "description": "Parcourez les mots d'un paquet avec leur prononciation, leur sens et des exemples.",
+                "action": "Voir les mots"
             }
         },
         "vocab": {
-            "title": "Vocabulary"
+            "title": "Vocabulaire"
         },
         "render": {
-            "title": "Render"
+            "title": "Lecture"
         },
         "review": {
-            "title": "Vocabulary Review"
+            "title": "Révision de vocabulaire"
         },
         "exam": {
             "title": "Examen"
+        },
+        "sections": {
+            "learn": "Apprendre",
+            "practice": "S'entraîner"
         }
+    },
+    "deck": {
+        "type": {
+            "vocab": "Vocabulaire",
+            "render": "Lecture",
+            "review": "Révision",
+            "exam": "Examen",
+            "drill": "Drill"
+        },
+        "source": {
+            "official": "Officiel",
+            "community": "Communauté",
+            "local": "Les tiens",
+            "cloud": "Cloud"
+        },
+        "visibility": {
+            "public": "Public",
+            "unlisted": "Non répertorié",
+            "private": "Privé"
+        },
+        "search": "Rechercher des paquets",
+        "searchAria": "Rechercher des paquets par nom",
+        "searchClear": "Effacer la recherche",
+        "tallyAria": "Paquets par source",
+        "resultCount": "Affichage de {{matched}} paquets sur {{total}}",
+        "loading": "Chargement des paquets…",
+        "itemCount_one": "{{count}} élément",
+        "itemCount_other": "{{count}} éléments",
+        "byAuthor": "par {{author}}",
+        "openAria": "Ouvrir {{name}}",
+        "export": "Exporter",
+        "exportAria": "Exporter le paquet",
+        "download": "Télécharger",
+        "downloadAria": "Télécharger le paquet",
+        "delete": "Supprimer",
+        "deleteAria": "Supprimer le paquet",
+        "start": "Démarrer",
+        "list": {
+            "backHub": "Retour à {{language}}",
+            "eyebrow": {
+                "vocab": "Vocabulaire",
+                "render": "Lecture",
+                "exam": "Examens",
+                "review": "Révision"
+            },
+            "title": {
+                "vocab": "Paquets de vocabulaire",
+                "render": "Paquets de lecture",
+                "exam": "Séries d'examen",
+                "review": "Paquets de révision"
+            },
+            "description": {
+                "vocab": "Regroupe les mots que tu connais en un paquet, puis entraîne-toi à intervalles réguliers.",
+                "render": "De courts textes gradués, avec une traduction pour vérifier.",
+                "exam": "Des séries à choix multiple faites à partir de ton propre vocabulaire.",
+                "review": "Révise un paquet en répétition espacée."
+            }
+        },
+        "empty": {
+            "local": {
+                "title": "Tu n'as pas encore de paquets",
+                "body": "Les paquets que tu crées ou importes arrivent ici. Commence par un paquet officiel.",
+                "action": "Voir les paquets officiels"
+            },
+            "official": {
+                "title": "Aucun paquet officiel pour ce type",
+                "body": "Les paquets officiels sont fournis avec l'application. Aucun n'a encore été publié pour ce type."
+            },
+            "filtered": {
+                "title": "Aucun paquet ne correspond à ces filtres",
+                "body": "Aucun paquet de cet onglet ne correspond à la recherche, aux tags et aux options choisis. Assouplis-en un pour les revoir.",
+                "action": "Effacer les filtres"
+            },
+            "cloud": {
+                "title": "La synchronisation cloud arrive bientôt",
+                "body": "Connecte-toi et tes paquets te suivent d'un appareil à l'autre.",
+                "action": "Se connecter"
+            },
+            "cloudSignedIn": {
+                "title": "La synchronisation cloud arrive bientôt",
+                "body": "Tu es connecté. La synchronisation des paquets entre appareils est en cours."
+            },
+            "community": {
+                "title": "Aucun paquet communautaire",
+                "body": "Les paquets publiés par d'autres apprenants apparaîtront ici quand la communauté ouvrira."
+            }
+        },
+        "noResults": {
+            "title": "Rien ne correspond à cette recherche",
+            "body": "Essaie un mot plus court, ou efface la recherche pour tout voir dans cet onglet."
+        },
+        "details": {
+            "notFound": "Ce paquet est introuvable.",
+            "back": "Retour aux paquets",
+            "contents": "Ce qu'il contient",
+            "version": "Version",
+            "updated": "Mis à jour",
+            "noSession": "Les sessions de paquets {{language}} ne sont pas encore prêtes."
+        },
+        "options": {
+            "sortAria": "Trier les paquets",
+            "sort": {
+                "default": "Ordre d'origine",
+                "name": "Nom A–Z",
+                "recent": "Mises à jour récemment",
+                "popular": "Les plus téléchargés",
+                "size": "Les plus volumineux"
+            },
+            "density": {
+                "comfortable": "Confortable",
+                "compact": "Compact"
+            },
+            "nsfw": {
+                "label": "Sensible",
+                "on": "Les paquets sensibles sont affichés",
+                "off": "Les paquets sensibles sont masqués"
+            },
+            "importHeading": "Importer",
+            "importHint": "Lit un fichier de paquet que tu as exporté auparavant.",
+            "importUnavailable": "Pas encore de format de fichier pour ce type de paquet."
+        },
+        "tags": {
+            "clear": "Effacer les tags",
+            "remove": "Retirer le tag {{tag}}"
+        },
+        "actions": {
+            "create": {
+                "vocab": "Nouveau paquet",
+                "exam": "Nouvel examen"
+            },
+            "importOnly": "Importer"
+        },
+        "import": {
+            "action": "Importer un fichier de paquet",
+            "invalidDeck": "Ce fichier n'est pas un paquet valide.",
+            "invalidExam": "Ce fichier n'est pas une série d'examen valide.",
+            "invalidJson": "Impossible de lire ce fichier en JSON."
+        },
+        "viewAuthor": "Voir le profil de {{author}}",
+        "itemCount_many": "{{count}} éléments"
     }
 }

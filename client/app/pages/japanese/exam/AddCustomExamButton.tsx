@@ -12,7 +12,7 @@ import { DEFAULT_VOCABULARY } from '~/data/japanese/vocabulary';
 import { useDeckListLocalStore } from '~/stores/deck/deckListLocal.store';
 import { useVocabularyStore } from '~/stores/japanese/vocabulary.store';
 import { buildExamSetFromVocabulary } from '~/utils/exam';
-import type { ExamSet } from '~/types/exam';
+import type { ExamSet } from '~/types/deck/exam';
 
 export default function AddCustomExamButton() {
     const { t } = useTranslation();
@@ -51,7 +51,7 @@ export default function AddCustomExamButton() {
             id: `custom-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 7)}`,
             title: title.trim(),
             description: description.trim() || undefined,
-            source: 'custom',
+            source: 'local',
         });
         addExamSet(set);
         reset();

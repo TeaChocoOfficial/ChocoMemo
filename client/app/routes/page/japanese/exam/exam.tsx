@@ -1,6 +1,7 @@
 // -Path: 'client/app/routes/page/japanese/exam/exam.tsx'
 import type { Route } from './+types/exam';
-import DeckListPage from '~/pages/japanese/exam/DeckList';
+import { Languages } from '~/data/language';
+import DeckListPage from '~/components/page/DeckListPage';
 
 export function meta({}: Route.MetaArgs) {
     return [
@@ -13,5 +14,5 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function VocabularyExams() {
-    return <DeckListPage />;
+    return <DeckListPage type='exam' language={Languages.ja} />;
 }

@@ -1,7 +1,6 @@
 {
     "nav": {
         "home": "Ana Sayfa",
-        "tagline": "Dil Öğrenme",
         "languages": "Diller",
         "japanese": "Japonca",
         "menu": "Menüyü aç",
@@ -24,13 +23,6 @@
         "ctaCreate": "Deste yayımla",
         "ctaHow": "Nasıl çalışır",
         "scriptsLabel": "Şimdi demleniyor",
-        "scripts": [
-            "A",
-            "あ",
-            "한",
-            "ก",
-            "字"
-        ],
         "stats": {
             "badge": "Rafta",
             "languages": "Diller",
@@ -148,13 +140,15 @@
         "tabs": {
             "local": "Yerel",
             "cloud": "Bulut",
-            "community": "Topluluk"
+            "community": "Topluluk",
+            "official": "Resmî"
         },
         "comingSoon": {
             "cloud": "Bulut senkronizasyonu yakında geliyor, giriş gereklidir",
             "community": "Topluluk setlerine göz atma henüz mevcut değil"
         },
-        "loading": "Loading…"
+        "loading": "Loading…",
+        "select": "Seç"
     },
     "notfound": {
         "title": "Sayfa Bulunamadı",
@@ -196,7 +190,8 @@
                 "name": "Çince",
                 "description": "Karakterler, pinyin ve ton çiftleri; her seferinde birkaç dakika çalışılır."
             }
-        }
+        },
+        "back_language": "Dil seçimine dön"
     },
     "japanese": {
         "badge": "Japonca",
@@ -223,30 +218,30 @@
                 "description": "Tüm Hiragana ve Katakana'yı okunuşlarıyla keşfedin.",
                 "action": "Kana'yı Görüntüle"
             },
-            "kanaDrill": {
-                "title": "Kana Alıştırması",
-                "description": "Hiragana ve Katakana tanıma becerinizi test edin.",
-                "action": "Kana Alıştırmasına Başla"
-            },
-            "vocabularyReview": {
-                "title": "Kelime Tekrarı",
-                "description": "Kelime bilgisini bilgi kartları ve aralıklı tekrarla gözden geçirin.",
-                "action": "Tekrara Başla"
-            },
-            "vocabularyexam": {
-                "title": "Kelime Sınavları",
-                "description": "Kelime dağarcığınızdan oluşturulan çoktan seçmeli sınavlarla kendinizi test edin.",
-                "action": "Sınava Girin"
-            },
-            "vocabularyBrowse": {
-                "title": "Browse Vocabulary",
-                "description": "Read through a deck's words with readings, meanings, and examples.",
-                "action": "Browse Words"
-            },
             "render": {
                 "title": "Render",
                 "description": "Read short passages with furigana and check yourself against the translation.",
                 "action": "Start Reading"
+            },
+            "vocab": {
+                "title": "Kelime",
+                "description": "Kelime hazineni büyüt ve aralıklarla çalış.",
+                "action": "Kelimelere göz at"
+            },
+            "drill": {
+                "title": "Kana antrenmanı",
+                "description": "Hiragana ve Katakana ayrımını test et.",
+                "action": "Kana antrenmanını başlat"
+            },
+            "review": {
+                "title": "Kelime Tekrarı",
+                "description": "Kartlar ve aralıklı tekrar ile kelimeleri gözden geçir.",
+                "action": "Tekrarı başlat"
+            },
+            "exam": {
+                "title": "Kelime sınavı",
+                "description": "Kendi kelimelerinden oluşan çoktan seçmeli sınavla kendini dene.",
+                "action": "Sınava gir"
             }
         },
         "decks": {
@@ -301,14 +296,13 @@
                 "review": "Review",
                 "exam": "Exam",
                 "drill": "Drill"
-            }
+            },
+            "viewAuthor": "{{author}} profilini görüntüle",
+            "favourite": "Favorilere ekle",
+            "unfavourite": "Favorilerden çıkar"
         },
         "exam": {
             "title": "Sınav",
-            "description": "Kelime dağarcığınızdan oluşturulan çoktan seçmeli sınavlarla kendinizi test edin. Bir set seçin, içe aktarın veya kendinizinkini oluşturun.",
-            "back_hub": "Japoncaya Dön",
-            "search": "Sınav setlerini ara...",
-            "empty": "Henüz sınav seti yok — bir tane içe aktarın veya özel bir set oluşturun.",
             "import": "Sınav seti içe aktar",
             "addCustom": "Özel set ekle",
             "importErrorJson": "Bu dosya JSON olarak okunamadı.",
@@ -321,27 +315,12 @@
                 "descriptionPlaceholder": "Bu set hakkında kısa bir not",
                 "wordsLabel": "Dahil edilecek kelimeler",
                 "wordsPlaceholder": "Kelime ara...",
-                "selectedCount": "{{count}} seçildi",
                 "titleError": "Setinize bir ad verin.",
                 "minWordsError": "En az iki kelime seçin.",
                 "cancel": "İptal",
-                "submit": "Set oluştur"
-            },
-            "card": {
-                "note": "Sınav notu",
-                "exportAria": "Sınav setini dışa aktar",
-                "deleteAria": "Sınav setini sil",
-                "export": "Dışa Aktar",
-                "delete": "Sil",
-                "byAuthor": "{{author}} tarafından",
-                "start": "Başla",
-                "question_one": "{{count}} soru",
-                "question_other": "{{count}} soru",
-                "source": {
-                    "default": "Varsayılan",
-                    "custom": "Benim setim",
-                    "imported": "İçe aktarıldı"
-                }
+                "submit": "Set oluştur",
+                "selectedCount_one": "{{count}} seçildi",
+                "selectedCount_other": "{{count}} seçildi"
             }
         },
         "kana": {
@@ -574,7 +553,8 @@
         "updatePassword": "Update Password",
         "resetSuccess": "Password updated. Please sign in.",
         "line": "LINE",
-        "x": "X (Twitter)"
+        "x": "X (Twitter)",
+        "sendResetCode": "Sıfırlama kodu gönder"
     },
     "settings": {
         "title": "Ayarlar",
@@ -635,7 +615,6 @@
             "google": "Google",
             "discord": "Discord",
             "line": "LINE",
-            "facebook": "Facebook",
             "x": "X (Twitter)",
             "connected": "Connected",
             "notConnected": "Not connected",
@@ -732,7 +711,8 @@
             "removeError": "Profil fotoğrafı silinemedi",
             "cancel": "İptal",
             "saving": "Kaydediliyor…",
-            "confirm": "Onayla"
+            "confirm": "Onayla",
+            "change": "Profil fotoğrafını değiştir"
         },
         "public": {
             "notFoundTitle": "Profile not found",
@@ -742,42 +722,185 @@
         }
     },
     "english": {
-        "badge": "English",
-        "title": "Learn English",
-        "description": "English is a new track. The deck features below work today; the character set and drill are still being built.",
+        "badge": "İngilizce",
+        "title": "İngilizce öğren",
+        "description": "İngilizce yeni bir izlektir. Aşağıdaki deste özellikleri çalışıyor; karakter seti ve antrenman hâlâ hazırlanıyor.",
         "nav": {
             "render": {
-                "title": "Render",
-                "description": "Read short passages and check yourself against the translation.",
-                "action": "Start Reading"
+                "title": "Okuma",
+                "description": "Kısa metinleri okuyun ve çeviriyle karşılaştırın.",
+                "action": "Okumaya başla"
             },
             "review": {
-                "title": "Vocabulary Review",
-                "description": "Review vocabulary with flashcards and spaced repetition.",
-                "action": "Start Review"
+                "title": "Kelime Tekrarı",
+                "description": "Kartlar ve aralıklı tekrar ile kelimeleri gözden geçirin.",
+                "action": "Tekrarı başlat"
             },
             "exam": {
-                "title": "Vocabulary exam",
-                "description": "Test yourself with multiple-choice exam built from your vocabulary.",
-                "action": "Take an Exam"
+                "title": "Kelime sınavı",
+                "description": "Kendi kelimelerinizden oluşan çoktan seçmeli sınavla kendinizi deneyin.",
+                "action": "Sınava gir"
             },
             "vocab": {
-                "title": "Browse Vocabulary",
-                "description": "Read through a deck's words with readings, meanings, and examples.",
-                "action": "Browse Words"
+                "title": "Kelimelere göz at",
+                "description": "Bir destedeki kelimeleri okunuşları, anlamları ve örnekleriyle inceleyin.",
+                "action": "Kelimeleri gör"
             }
         },
         "vocab": {
-            "title": "Vocabulary"
+            "title": "Kelime"
         },
         "render": {
-            "title": "Render"
+            "title": "Okuma"
         },
         "review": {
-            "title": "Vocabulary Review"
+            "title": "Kelime Tekrarı"
         },
         "exam": {
             "title": "Sınav"
+        },
+        "sections": {
+            "learn": "Öğren",
+            "practice": "Pratik Yap"
         }
+    },
+    "deck": {
+        "type": {
+            "vocab": "Kelime",
+            "render": "Okuma",
+            "review": "Tekrar",
+            "exam": "Sınav",
+            "drill": "Antrenman"
+        },
+        "source": {
+            "official": "Resmî",
+            "community": "Topluluk",
+            "local": "Seninkiler",
+            "cloud": "Bulut"
+        },
+        "visibility": {
+            "public": "Herkese açık",
+            "unlisted": "Listede yok",
+            "private": "Gizli"
+        },
+        "search": "Deste ara",
+        "searchAria": "Adına göre deste ara",
+        "searchClear": "Aramayı temizle",
+        "tallyAria": "Kaynağa göre desteler",
+        "resultCount": "{{total}} desteden {{matched}} tanesi gösteriliyor",
+        "loading": "Desteler yükleniyor…",
+        "itemCount_one": "{{count}} öğe",
+        "itemCount_other": "{{count}} öğe",
+        "byAuthor": "{{author}} tarafından",
+        "openAria": "{{name}} kaydını aç",
+        "export": "Dışa aktar",
+        "exportAria": "Desteyi dışa aktar",
+        "download": "İndir",
+        "downloadAria": "Deste indir",
+        "delete": "Sil",
+        "deleteAria": "Deste sil",
+        "start": "Başla",
+        "list": {
+            "backHub": "{{language}} diline dön",
+            "eyebrow": {
+                "vocab": "Kelime",
+                "render": "Okuma",
+                "exam": "Sınavlar",
+                "review": "Tekrar"
+            },
+            "title": {
+                "vocab": "Kelime desteleri",
+                "render": "Okuma desteleri",
+                "exam": "Sınav setleri",
+                "review": "Tekrar desteleri"
+            },
+            "description": {
+                "vocab": "Bildiğin kelimeleri bir destede topla, sonra aralıklarla çalış.",
+                "render": "Seviyeye göre kısa metinler, karşılaştırma için çevirisiyle.",
+                "exam": "Kendi kelimelerinden oluşan çoktan seçmeli soru setleri.",
+                "review": "Bir desteyi aralıklı tekrar oturumunda gözden geçir."
+            }
+        },
+        "empty": {
+            "local": {
+                "title": "Henüz kendi desten yok",
+                "body": "Oluşturduğun veya içe aktardığın desteler buraya gelir. Resmî bir desteyle başlayabilirsin.",
+                "action": "Resmî destelere göz at"
+            },
+            "official": {
+                "title": "Bu tür için resmî deste henüz yok",
+                "body": "Resmî desteler uygulamayla birlikte gelir. Bu tür için henüz bir tane yayımlanmadı."
+            },
+            "filtered": {
+                "title": "Bu filtrelere uyan bir şey yok",
+                "body": "Bu sekmedeki hiçbir deste seçtiğin arama, etiket ve seçeneklere uymuyor. Birini gevşet.",
+                "action": "Filtreleri temizle"
+            },
+            "cloud": {
+                "title": "Bulut eşitleme yakında geliyor",
+                "body": "Giriş yap, destelerin cihazların arasında seninle gelsin.",
+                "action": "Giriş yap"
+            },
+            "cloudSignedIn": {
+                "title": "Bulut eşitleme yakında geliyor",
+                "body": "Giriş yaptın. Desteleri cihazlar arasında eşitleme üzerinde çalışılıyor."
+            },
+            "community": {
+                "title": "Henüz topluluk destesi yok",
+                "body": "Başka öğrencilerin yayımladığı desteler topluluk açıldığında burada görünecek."
+            }
+        },
+        "noResults": {
+            "title": "Bu aramayla eşleşen bir şey yok",
+            "body": "Daha kısa bir kelime dene ya da bu sekmedeki her şeyi görmek için aramayı temizle."
+        },
+        "details": {
+            "notFound": "Bu deste bulunamadı.",
+            "back": "Destelere dön",
+            "contents": "İçindekiler",
+            "version": "Sürüm",
+            "updated": "Güncellenme",
+            "noSession": "{{language}} deste oturumları henüz hazır değil."
+        },
+        "options": {
+            "sortAria": "Desteleri sırala",
+            "sort": {
+                "default": "Özgün sıra",
+                "name": "Ada göre A–Z",
+                "recent": "Yeni güncellenenler",
+                "popular": "En çok indirilen",
+                "size": "En büyük"
+            },
+            "density": {
+                "comfortable": "Ferah",
+                "compact": "Sıkışık"
+            },
+            "nsfw": {
+                "label": "Hassas",
+                "on": "Hassas desteler gösteriliyor",
+                "off": "Hassas desteler gizli"
+            },
+            "importHeading": "İçe aktar",
+            "importHint": "Daha önce dışa aktardığın bir deste dosyasını okur.",
+            "importUnavailable": "Bu tür deste için henüz dosya biçimi yok."
+        },
+        "tags": {
+            "clear": "Etiketleri temizle",
+            "remove": "{{tag}} etiketini kaldır"
+        },
+        "actions": {
+            "create": {
+                "vocab": "Yeni deste",
+                "exam": "Yeni sınav"
+            },
+            "importOnly": "İçe aktar"
+        },
+        "import": {
+            "action": "Deste dosyası içe aktar",
+            "invalidDeck": "Bu dosya geçerli bir deste değil.",
+            "invalidExam": "Bu dosya geçerli bir sınav seti değil.",
+            "invalidJson": "Bu dosya JSON olarak okunamadı."
+        },
+        "viewAuthor": "{{author}} profilini görüntüle"
     }
 }

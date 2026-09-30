@@ -8,10 +8,17 @@ interface PageShellProps {
     /** Back-link label; omit the link entirely when absent. */
     backLabel?: string;
     backTo?: string;
-    /** Page max width. Deck lists are wider than reading views. */
-    width?: 'default' | 'narrow';
+    /** Page max width. `wide` is for deck lists, which fit a 3-up card grid;
+     *  `narrow` is for reading views. */
+    width?: 'default' | 'wide' | 'narrow';
     className?: string;
 }
+
+const WIDTHS = {
+    default: 'max-w-5xl',
+    wide: 'max-w-6xl',
+    narrow: 'max-w-3xl',
+} as const;
 
 /**
  * Page frame shared by every routed page: the padded `Section` background, a
@@ -30,9 +37,7 @@ export default function PageShell({
 }: PageShellProps) {
     return (
         <Section className='items-start justify-center'>
-            <div
-                className={`mx-auto w-full px-4 sm:px-6 ${width === 'narrow' ? 'max-w-3xl' : 'max-w-5xl'} ${className}`}
-            >
+            <div className={`mx-auto w-full px-4 sm:px-6 ${WIDTHS[width]} ${className}`}>
                 {backLabel && (
                     <Link
                         to={backTo}

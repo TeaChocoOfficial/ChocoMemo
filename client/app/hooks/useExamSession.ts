@@ -1,5 +1,5 @@
 // -Path: 'client/app/hooks/useExamSession.ts'
-import type { ExamQuestion } from '~/types/exam';
+import type { ExamQuestion } from '~/types/deck/exam';
 import type { LangText } from '~/types/type';
 import { useState, useCallback } from 'react';
 

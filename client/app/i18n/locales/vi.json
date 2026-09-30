@@ -1,7 +1,6 @@
 {
     "nav": {
         "home": "Trang chủ",
-        "tagline": "Học ngôn ngữ",
         "languages": "Ngôn ngữ",
         "japanese": "Tiếng Nhật",
         "menu": "Mở menu",
@@ -24,13 +23,6 @@
         "ctaCreate": "Đăng bộ thẻ",
         "ctaHow": "Cách hoạt động",
         "scriptsLabel": "Đang pha",
-        "scripts": [
-            "A",
-            "あ",
-            "한",
-            "ก",
-            "字"
-        ],
         "stats": {
             "badge": "Trên kệ",
             "languages": "Ngôn ngữ",
@@ -148,13 +140,15 @@
         "tabs": {
             "local": "Trong máy",
             "cloud": "Đám mây",
-            "community": "Cộng đồng"
+            "community": "Cộng đồng",
+            "official": "Chính thức"
         },
         "comingSoon": {
             "cloud": "Đồng bộ đám mây sắp ra mắt, cần đăng nhập",
             "community": "Chưa thể duyệt bộ từ của cộng đồng"
         },
-        "loading": "Loading…"
+        "loading": "Loading…",
+        "select": "Chọn"
     },
     "notfound": {
         "title": "Không tìm thấy trang",
@@ -196,7 +190,8 @@
                 "name": "Tiếng Trung",
                 "description": "Chữ Hán, pinyin và các cặp thanh điệu, luyện mỗi lần vài phút."
             }
-        }
+        },
+        "back_language": "Quay lại chọn ngôn ngữ"
     },
     "japanese": {
         "badge": "Tiếng Nhật",
@@ -223,30 +218,30 @@
                 "description": "Xem toàn bộ Hiragana và Katakana kèm cách đọc.",
                 "action": "Xem Kana"
             },
-            "kanaDrill": {
-                "title": "Luyện Kana",
-                "description": "Kiểm tra khả năng nhận biết các ký tự Hiragana và Katakana.",
-                "action": "Bắt đầu luyện Kana"
-            },
-            "vocabularyReview": {
-                "title": "Ôn tập từ vựng",
-                "description": "Ôn tập từ vựng bằng thẻ ghi nhớ và lặp lại cách quãng.",
-                "action": "Bắt đầu ôn tập"
-            },
-            "vocabularyexam": {
-                "title": "Kiểm tra từ vựng",
-                "description": "Tự kiểm tra bằng các bài trắc nghiệm được xây dựng từ vốn từ của bạn.",
-                "action": "Làm bài kiểm tra"
-            },
-            "vocabularyBrowse": {
-                "title": "Browse Vocabulary",
-                "description": "Read through a deck's words with readings, meanings, and examples.",
-                "action": "Browse Words"
-            },
             "render": {
                 "title": "Render",
                 "description": "Read short passages with furigana and check yourself against the translation.",
                 "action": "Start Reading"
+            },
+            "vocab": {
+                "title": "Từ vựng",
+                "description": "Tích góp từ mới rồi luyện theo lịch giãn cách.",
+                "action": "Xem từ vựng"
+            },
+            "drill": {
+                "title": "Luyện kana",
+                "description": "Kiểm tra khả năng nhận biết Hiragana và Katakana.",
+                "action": "Bắt đầu luyện kana"
+            },
+            "review": {
+                "title": "Ôn tập từ vựng",
+                "description": "Ôn từ vựng bằng thẻ ghi nhớ và lặp lại ngắt quãng.",
+                "action": "Bắt đầu ôn tập"
+            },
+            "exam": {
+                "title": "Kiểm tra từ vựng",
+                "description": "Tự kiểm tra bằng bộ trắc nghiệm dựng từ từ vựng của bạn.",
+                "action": "Làm bài kiểm tra"
             }
         },
         "decks": {
@@ -301,14 +296,13 @@
                 "review": "Review",
                 "exam": "Exam",
                 "drill": "Drill"
-            }
+            },
+            "viewAuthor": "Xem trang cá nhân của {{author}}",
+            "favourite": "Thêm vào yêu thích",
+            "unfavourite": "Bỏ khỏi yêu thích"
         },
         "exam": {
             "title": "Bài kiểm tra",
-            "description": "Tự kiểm tra bằng các bài trắc nghiệm được xây dựng từ vốn từ của bạn. Chọn một bộ, nhập một bộ hoặc tự tạo bộ của riêng bạn.",
-            "back_hub": "Quay lại trung tâm tiếng Nhật",
-            "search": "Tìm bộ đề kiểm tra...",
-            "empty": "Chưa có bộ đề nào — hãy nhập một bộ hoặc tạo bộ tùy chỉnh.",
             "import": "Nhập bộ đề kiểm tra",
             "addCustom": "Thêm bộ đề tùy chỉnh",
             "importErrorJson": "Không thể đọc tệp này dưới dạng JSON.",
@@ -321,27 +315,12 @@
                 "descriptionPlaceholder": "Ghi chú ngắn về bộ đề này",
                 "wordsLabel": "Từ cần đưa vào",
                 "wordsPlaceholder": "Tìm từ...",
-                "selectedCount": "{{count}} từ đã chọn",
                 "titleError": "Hãy đặt tên cho bộ đề của bạn.",
                 "minWordsError": "Chọn ít nhất hai từ.",
                 "cancel": "Hủy",
-                "submit": "Tạo bộ đề"
-            },
-            "card": {
-                "note": "Ghi chú đề thi",
-                "exportAria": "Xuất bộ đề kiểm tra",
-                "deleteAria": "Xóa bộ đề kiểm tra",
-                "export": "Xuất",
-                "delete": "Xóa",
-                "byAuthor": "của {{author}}",
-                "start": "Bắt đầu",
-                "question_one": "{{count}} câu hỏi",
-                "question_other": "{{count}} câu hỏi",
-                "source": {
-                    "default": "Mặc định",
-                    "custom": "Bộ của tôi",
-                    "imported": "Đã nhập"
-                }
+                "submit": "Tạo bộ đề",
+                "selectedCount_one": "{{count}} từ đã chọn",
+                "selectedCount_other": "{{count}} từ đã chọn"
             }
         },
         "kana": {
@@ -574,7 +553,8 @@
         "updatePassword": "Update Password",
         "resetSuccess": "Password updated. Please sign in.",
         "line": "LINE",
-        "x": "X (Twitter)"
+        "x": "X (Twitter)",
+        "sendResetCode": "Gửi mã đặt lại"
     },
     "settings": {
         "title": "Cài đặt",
@@ -635,7 +615,6 @@
             "google": "Google",
             "discord": "Discord",
             "line": "LINE",
-            "facebook": "Facebook",
             "x": "X (Twitter)",
             "connected": "Connected",
             "notConnected": "Not connected",
@@ -732,7 +711,8 @@
             "removeError": "Không thể xóa ảnh hồ sơ",
             "cancel": "Hủy",
             "saving": "Đang lưu…",
-            "confirm": "Xác nhận"
+            "confirm": "Xác nhận",
+            "change": "Đổi ảnh hồ sơ"
         },
         "public": {
             "notFoundTitle": "Profile not found",
@@ -742,42 +722,185 @@
         }
     },
     "english": {
-        "badge": "English",
-        "title": "Learn English",
-        "description": "English is a new track. The deck features below work today; the character set and drill are still being built.",
+        "badge": "Tiếng Anh",
+        "title": "Học tiếng Anh",
+        "description": "Tiếng Anh là một bài học mới. Các tính năng bộ thẻ bên dưới đã dùng được; bộ ký tự và bài luyện vẫn đang được xây dựng.",
         "nav": {
             "render": {
-                "title": "Render",
-                "description": "Read short passages and check yourself against the translation.",
-                "action": "Start Reading"
+                "title": "Đọc hiểu",
+                "description": "Đọc đoạn văn ngắn và đối chiếu với bản dịch.",
+                "action": "Bắt đầu đọc"
             },
             "review": {
-                "title": "Vocabulary Review",
-                "description": "Review vocabulary with flashcards and spaced repetition.",
-                "action": "Start Review"
+                "title": "Ôn tập từ vựng",
+                "description": "Ôn từ vựng bằng thẻ ghi nhớ và lặp lại ngắt quãng.",
+                "action": "Bắt đầu ôn tập"
             },
             "exam": {
-                "title": "Vocabulary exam",
-                "description": "Test yourself with multiple-choice exam built from your vocabulary.",
-                "action": "Take an Exam"
+                "title": "Kiểm tra từ vựng",
+                "description": "Tự kiểm tra bằng bộ trắc nghiệm dựng từ từ vựng của bạn.",
+                "action": "Làm bài kiểm tra"
             },
             "vocab": {
-                "title": "Browse Vocabulary",
-                "description": "Read through a deck's words with readings, meanings, and examples.",
-                "action": "Browse Words"
+                "title": "Xem từ vựng",
+                "description": "Đọc từ trong bộ thẻ kèm cách đọc, nghĩa và ví dụ.",
+                "action": "Xem từ"
             }
         },
         "vocab": {
-            "title": "Vocabulary"
+            "title": "Từ vựng"
         },
         "render": {
-            "title": "Render"
+            "title": "Đọc hiểu"
         },
         "review": {
-            "title": "Vocabulary Review"
+            "title": "Ôn tập từ vựng"
         },
         "exam": {
             "title": "Bài kiểm tra"
+        },
+        "sections": {
+            "learn": "Học",
+            "practice": "Luyện tập"
         }
+    },
+    "deck": {
+        "type": {
+            "vocab": "Từ vựng",
+            "render": "Đọc hiểu",
+            "review": "Ôn tập",
+            "exam": "Kiểm tra",
+            "drill": "Luyện tập"
+        },
+        "source": {
+            "official": "Chính thức",
+            "community": "Cộng đồng",
+            "local": "Của bạn",
+            "cloud": "Đám mây"
+        },
+        "visibility": {
+            "public": "Công khai",
+            "unlisted": "Không hiển thị",
+            "private": "Riêng tư"
+        },
+        "search": "Tìm bộ thẻ",
+        "searchAria": "Tìm bộ thẻ theo tên",
+        "searchClear": "Xoá tìm kiếm",
+        "tallyAria": "Bộ thẻ theo nguồn",
+        "resultCount": "Hiển thị {{matched}} trong {{total}} bộ thẻ",
+        "loading": "Đang tải bộ thẻ…",
+        "itemCount_one": "{{count}} mục",
+        "itemCount_other": "{{count}} mục",
+        "byAuthor": "bởi {{author}}",
+        "openAria": "Mở {{name}}",
+        "export": "Xuất",
+        "exportAria": "Xuất bộ thẻ",
+        "download": "Tải xuống",
+        "downloadAria": "Tải bộ thẻ xuống",
+        "delete": "Xoá",
+        "deleteAria": "Xoá bộ thẻ",
+        "start": "Bắt đầu",
+        "list": {
+            "backHub": "Quay lại {{language}}",
+            "eyebrow": {
+                "vocab": "Từ vựng",
+                "render": "Đọc hiểu",
+                "exam": "Kiểm tra",
+                "review": "Ôn tập"
+            },
+            "title": {
+                "vocab": "Bộ thẻ từ vựng",
+                "render": "Bộ thẻ đọc hiểu",
+                "exam": "Bộ kiểm tra",
+                "review": "Bộ thẻ ôn tập"
+            },
+            "description": {
+                "vocab": "Nhóm các từ bạn biết thành bộ thẻ, rồi luyện theo lịch giãn cách.",
+                "render": "Đoạn văn ngắn phân cấp độ, có bản dịch để đối chiếu.",
+                "exam": "Bộ câu hỏi trắc nghiệm dựng từ từ vựng của chính bạn.",
+                "review": "Ôn một bộ thẻ bằng phiên lặp lại ngắt quãng."
+            }
+        },
+        "empty": {
+            "local": {
+                "title": "Bạn chưa có bộ thẻ nào",
+                "body": "Những bộ thẻ bạn tạo hoặc nhập sẽ nằm ở đây. Hãy bắt đầu từ một bộ thẻ chính thức.",
+                "action": "Xem bộ thẻ chính thức"
+            },
+            "official": {
+                "title": "Chưa có bộ thẻ chính thức cho loại này",
+                "body": "Bộ thẻ chính thức đi kèm ứng dụng. Chưa có bộ nào cho loại này."
+            },
+            "filtered": {
+                "title": "Không có bộ thẻ nào khớp bộ lọc",
+                "body": "Không có bộ thẻ nào trong tab này khớp tìm kiếm, thẻ và tuỳ chọn bạn chọn. Hãy nới lỏng một điều kiện.",
+                "action": "Xoá bộ lọc"
+            },
+            "cloud": {
+                "title": "Đồng bộ đám mây sắp ra mắt",
+                "body": "Đăng nhập và bộ thẻ của bạn sẽ theo bạn giữa các thiết bị.",
+                "action": "Đăng nhập"
+            },
+            "cloudSignedIn": {
+                "title": "Đồng bộ đám mây sắp ra mắt",
+                "body": "Bạn đã đăng nhập. Tính năng đồng bộ bộ thẻ giữa các thiết bị đang được phát triển."
+            },
+            "community": {
+                "title": "Chưa có bộ thẻ cộng đồng",
+                "body": "Bộ thẻ do người học khác đăng sẽ hiện ở đây khi cộng đồng mở."
+            }
+        },
+        "noResults": {
+            "title": "Không có kết quả phù hợp",
+            "body": "Thử một từ ngắn hơn, hoặc xoá tìm kiếm để xem mọi thứ trong tab này."
+        },
+        "details": {
+            "notFound": "Không tìm thấy bộ thẻ đó.",
+            "back": "Quay lại danh sách bộ thẻ",
+            "contents": "Bên trong gồm",
+            "version": "Phiên bản",
+            "updated": "Cập nhật",
+            "noSession": "Phiên học cho bộ thẻ {{language}} chưa sẵn sàng."
+        },
+        "options": {
+            "sortAria": "Sắp xếp bộ thẻ",
+            "sort": {
+                "default": "Thứ tự gốc",
+                "name": "Theo tên A–Z",
+                "recent": "Cập nhật gần nhất",
+                "popular": "Tải nhiều nhất",
+                "size": "Lớn nhất"
+            },
+            "density": {
+                "comfortable": "Rộng rãi",
+                "compact": "Gọn gàng"
+            },
+            "nsfw": {
+                "label": "Nhạy cảm",
+                "on": "Đang hiện bộ thẻ nhạy cảm",
+                "off": "Đang ẩn bộ thẻ nhạy cảm"
+            },
+            "importHeading": "Nhập",
+            "importHint": "Đọc tệp bộ thẻ bạn đã xuất trước đó.",
+            "importUnavailable": "Chưa có định dạng tệp cho loại bộ thẻ này."
+        },
+        "tags": {
+            "clear": "Xoá thẻ",
+            "remove": "Bỏ thẻ {{tag}}"
+        },
+        "actions": {
+            "create": {
+                "vocab": "Bộ thẻ mới",
+                "exam": "Bài kiểm tra mới"
+            },
+            "importOnly": "Nhập"
+        },
+        "import": {
+            "action": "Nhập tệp bộ thẻ",
+            "invalidDeck": "Tệp này không phải là một bộ thẻ hợp lệ.",
+            "invalidExam": "Tệp này không phải là một bộ kiểm tra hợp lệ.",
+            "invalidJson": "Không thể đọc tệp này dưới dạng JSON."
+        },
+        "viewAuthor": "Xem trang cá nhân của {{author}}"
     }
 }

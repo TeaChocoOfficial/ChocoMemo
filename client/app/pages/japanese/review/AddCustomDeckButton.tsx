@@ -3,18 +3,21 @@
 // user picks (default + custom vocabulary), then hands it to the store.
 import { FaPlus } from 'react-icons/fa6';
 import { useMemo, useState } from 'react';
-import type { DeckData } from '~/types/deck';
 import { useTranslation } from 'react-i18next';
 import Button from '~/components/custom/Button';
-import { useDeckStore } from '~/stores/japanese/deck.store';
+import { useDeckListLocalStore } from '~/stores/deck/deckListLocal.store';
 import WordPicker from '~/components/custom/WordPicker';
 import { useVocabularyStore } from '~/stores/japanese/vocabulary.store';
 import { DEFAULT_VOCABULARY } from '~/data/japanese/vocabulary';
+import { Languages } from '~/data/language';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from '~/components/custom/Modal';
 
 export default function AddCustomDeckButton() {
     const { t } = useTranslation();
-    const { addDeck } = useDeckStore();
+    // Writes through `deckListLocal.store` — the store the deck-list pages, the
+    // per-source counts and the source selector all read. Creating a deck into
+    // any other store would leave it invisible on the very list it was made on.
+    const addDeck = useDeckListLocalStore((state) => state.addDeck);
     const [name, setName] = useState('');
     const { custom } = useVocabularyStore();
     const [open, setOpen] = useState(false);
@@ -43,17 +46,17 @@ export default function AddCustomDeckButton() {
             setError(t('japanese.decks.form.minWordsError'));
             return;
         }
-        const deck: DeckData = {
-            id: `deck-custom-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 7)}`,
+        // The store mints the id, stamps `source: 'local'` and writes a fresh
+        // byline, so a deck can only enter through it carrying metadata that
+        // was true at the moment it was actually created.
+        addDeck(Languages.ja, {
             name: name.trim(),
             description: description.trim() || undefined,
-            source: 'local',
             type: 'vocab',
             contentIds: selected,
             tags: [],
             nsfw: false,
-        };
-        addDeck(deck);
+        });
         reset();
         setOpen(false);
     };

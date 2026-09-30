@@ -4,10 +4,10 @@ import type { VocabExample, VocabWord } from '~/types/vocabulary';
 import type {
     ExamQuestion,
     ExamSet,
-    ExamSetSource,
     FillBlankExamQuestion,
     MeaningExamQuestion,
-} from '~/types/exam';
+} from '~/types/deck/exam';
+import type { DeckSource } from '~/types/deck';
 
 function shuffle<T>(arr: T[]): T[] {
     return [...arr].sort(() => Math.random() - 0.5);
@@ -37,7 +37,7 @@ function sentenceReading(example: VocabExample): string | undefined {
  *  few options as the pool allows instead. */
 export function buildExamSetFromVocabulary(
     words: VocabWord[],
-    opts: { id: string; title: string; description?: string; source?: ExamSetSource },
+    opts: { id: string; title: string; description?: string; source?: DeckSource },
 ): ExamSet {
     const questions: ExamQuestion[] = words.map((word, i) => {
         const others = words.filter((w) => w.id !== word.id);
@@ -78,7 +78,7 @@ export function buildExamSetFromVocabulary(
         id: opts.id,
         title: opts.title,
         description: opts.description,
-        source: opts.source ?? 'default',
+        source: opts.source ?? 'local',
         questions,
         createdAt: Date.now(),
     };

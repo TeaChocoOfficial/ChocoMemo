@@ -1,7 +1,6 @@
 {
     "nav": {
         "home": "หน้าหลัก",
-        "tagline": "เรียนภาษา",
         "languages": "ภาษา",
         "japanese": "ภาษาญี่ปุ่น",
         "menu": "เปิดเมนู",
@@ -24,13 +23,6 @@
         "ctaCreate": "เผยแพร่ชุดคำ",
         "ctaHow": "ดูวิธีใช้งาน",
         "scriptsLabel": "กำลังต้มอยู่",
-        "scripts": [
-            "A",
-            "あ",
-            "한",
-            "ก",
-            "字"
-        ],
         "stats": {
             "badge": "บนชั้น",
             "languages": "ภาษา",
@@ -148,13 +140,15 @@
         "tabs": {
             "local": "ในเครื่อง",
             "cloud": "คลาวด์",
-            "community": "ชุมชน"
+            "community": "ชุมชน",
+            "official": "ทางการ"
         },
         "comingSoon": {
             "cloud": "การซิงค์คลาวด์กำลังจะมา ต้องลงชื่อเข้าใช้",
             "community": "การเรียกดูชุดของชุมชนยังไม่พร้อมใช้งาน"
         },
-        "loading": "Loading…"
+        "loading": "Loading…",
+        "select": "เลือก"
     },
     "notfound": {
         "title": "ไม่พบหน้า",
@@ -196,7 +190,8 @@
                 "name": "ภาษาจีน",
                 "description": "ตัวยืน พินอิน และคู่วรรณยุกต์ ฝึกทีละไม่กี่นาที"
             }
-        }
+        },
+        "back_language": "กลับไปหน้าเลือกภาษา"
     },
     "japanese": {
         "badge": "ภาษาญี่ปุ่น",
@@ -223,30 +218,30 @@
                 "description": "ดูฮิรางานะและคาตาคานะทั้งหมดพร้อมการอ่าน",
                 "action": "ดูตัวคะนะ"
             },
-            "kanaDrill": {
-                "title": "แบบฝึกคะนะ",
-                "description": "ทดสอบการจำตัวคะนะฮิรางานะและคาตาคานะ",
-                "action": "เริ่มแบบฝึกคะนะ"
-            },
-            "vocabularyReview": {
-                "title": "ทบทวน",
-                "description": "ทบทวนคำศัพท์ด้วยการ์ดคำศัพท์และการทบทวนแบบห่าง",
-                "action": "เริ่มทบทวน"
-            },
-            "vocabularyexam": {
-                "title": "แบบทดสอบคำศัพท์",
-                "description": "ทดสอบตัวเองด้วยแบบทดสอบแบบเลือกตอบที่สร้างจากคำศัพท์ของคุณ",
-                "action": "ทำแบบทดสอบ"
-            },
-            "vocabularyBrowse": {
-                "title": "Browse Vocabulary",
-                "description": "Read through a deck's words with readings, meanings, and examples.",
-                "action": "Browse Words"
-            },
             "render": {
                 "title": "Render",
                 "description": "Read short passages with furigana and check yourself against the translation.",
                 "action": "Start Reading"
+            },
+            "vocab": {
+                "title": "คำศัพท์",
+                "description": "สะสมคลังคำของคุณ แล้วซ้อมแบบห่างตามระยะเวลา",
+                "action": "ดูคำศัพท์"
+            },
+            "drill": {
+                "title": "ซ้อมคะนะ",
+                "description": "ทดสอบความจำของฮิรางานะและคาตาคานะ",
+                "action": "เริ่มซ้อมคะนะ"
+            },
+            "review": {
+                "title": "ทบทวนคำศัพท์",
+                "description": "ทบทวนคำศัพท์ด้วยการ์ดคำและการทบทวนแบบห่าง",
+                "action": "เริ่มทบทวน"
+            },
+            "exam": {
+                "title": "ข้อสอบคำศัพท์",
+                "description": "ทดสอบตัวเองด้วยข้อสอบแบบเลือกตอบที่สร้างจากคำศัพท์ของคุณ",
+                "action": "ทำข้อสอบ"
             }
         },
         "decks": {
@@ -301,14 +296,13 @@
                 "review": "Review",
                 "exam": "Exam",
                 "drill": "Drill"
-            }
+            },
+            "viewAuthor": "ดูโปรไฟล์ของ {{author}}",
+            "favourite": "เพิ่มในรายการโปรด",
+            "unfavourite": "เอาออกจากรายการโปรด"
         },
         "exam": {
             "title": "แบบทดสอบ",
-            "description": "ทดสอบตัวเองด้วยแบบทดสอบแบบเลือกตอบที่สร้างจากคำศัพท์ของคุณ เลือกชุด นำเข้า หรือสร้างชุดของคุณเอง",
-            "back_hub": "กลับไปหน้าหลักภาษาญี่ปุ่น",
-            "search": "ค้นหาชุดแบบทดสอบ...",
-            "empty": "ยังไม่มีชุดแบบทดสอบ — นำเข้าหรือสร้างชุดแบบกำหนดเอง",
             "import": "นำเข้าชุดแบบทดสอบ",
             "addCustom": "สร้างชุดแบบกำหนดเอง",
             "importErrorJson": "ไม่สามารถอ่านไฟล์นี้เป็น JSON ได้",
@@ -321,27 +315,12 @@
                 "descriptionPlaceholder": "หมายเหตุสั้นๆ เกี่ยวกับชุดนี้",
                 "wordsLabel": "คำศัพท์ที่จะรวม",
                 "wordsPlaceholder": "ค้นหาคำศัพท์...",
-                "selectedCount": "เลือก {{count}} คำ",
                 "titleError": "กรุณาใส่ชื่อชุด",
                 "minWordsError": "กรุณาเลือกอย่างน้อย 2 คำ",
                 "cancel": "ยกเลิก",
-                "submit": "สร้างชุด"
-            },
-            "card": {
-                "note": "โน้ตแบบทดสอบ",
-                "exportAria": "ส่งออกชุดแบบทดสอบ",
-                "deleteAria": "ลบชุดแบบทดสอบ",
-                "export": "ส่งออก",
-                "delete": "ลบ",
-                "byAuthor": "โดย {{author}}",
-                "start": "เริ่ม",
-                "question_one": "{{count}} ข้อ",
-                "question_other": "{{count}} ข้อ",
-                "source": {
-                    "default": "ชุดเริ่มต้น",
-                    "custom": "ชุดของฉัน",
-                    "imported": "นำเข้า"
-                }
+                "submit": "สร้างชุด",
+                "selectedCount_one": "เลือก {{count}} คำ",
+                "selectedCount_other": "เลือก {{count}} คำ"
             }
         },
         "kana": {
@@ -574,7 +553,8 @@
         "updatePassword": "Update Password",
         "resetSuccess": "Password updated. Please sign in.",
         "line": "LINE",
-        "x": "X (Twitter)"
+        "x": "X (Twitter)",
+        "sendResetCode": "ส่งรหัสรีเซ็ต"
     },
     "settings": {
         "title": "การตั้งค่า",
@@ -635,7 +615,6 @@
             "google": "Google",
             "discord": "Discord",
             "line": "LINE",
-            "facebook": "Facebook",
             "x": "X (Twitter)",
             "connected": "Connected",
             "notConnected": "Not connected",
@@ -732,7 +711,8 @@
             "removeError": "ไม่สามารถลบรูปโปรไฟล์ได้",
             "cancel": "ยกเลิก",
             "saving": "กำลังบันทึก…",
-            "confirm": "ยืนยัน"
+            "confirm": "ยืนยัน",
+            "change": "เปลี่ยนรูปโปรไฟล์"
         },
         "public": {
             "notFoundTitle": "Profile not found",
@@ -742,42 +722,185 @@
         }
     },
     "english": {
-        "badge": "English",
-        "title": "Learn English",
-        "description": "English is a new track. The deck features below work today; the character set and drill are still being built.",
+        "badge": "ภาษาอังกฤษ",
+        "title": "เรียนภาษาอังกฤษ",
+        "description": "ภาษาอังกฤษเป็นแทร็กใหม่ ฟีเจอร์ชุดด้านล่างใช้งานได้แล้ว ส่วนชุดอักษรและแบบฝึกยังอยู่ระหว่างพัฒนา",
         "nav": {
             "render": {
-                "title": "Render",
-                "description": "Read short passages and check yourself against the translation.",
-                "action": "Start Reading"
+                "title": "การอ่าน",
+                "description": "อ่านเรื่องสั้นแล้วเทียบกับคำแปล",
+                "action": "เริ่มอ่าน"
             },
             "review": {
-                "title": "Vocabulary Review",
-                "description": "Review vocabulary with flashcards and spaced repetition.",
-                "action": "Start Review"
+                "title": "ทบทวนคำศัพท์",
+                "description": "ทบทวนคำศัพท์ด้วยการ์ดคำและการทบทวนแบบห่าง",
+                "action": "เริ่มทบทวน"
             },
             "exam": {
-                "title": "Vocabulary exam",
-                "description": "Test yourself with multiple-choice exam built from your vocabulary.",
-                "action": "Take an Exam"
+                "title": "ข้อสอบคำศัพท์",
+                "description": "ทดสอบตัวเองด้วยข้อสอบแบบเลือกตอบที่สร้างจากคำศัพท์ของคุณ",
+                "action": "ทำข้อสอบ"
             },
             "vocab": {
-                "title": "Browse Vocabulary",
-                "description": "Read through a deck's words with readings, meanings, and examples.",
-                "action": "Browse Words"
+                "title": "ดูคำศัพท์",
+                "description": "อ่านคำในชุดพร้อมคำอ่าน ความหมาย และตัวอย่างประโยค",
+                "action": "เปิดดูคำศัพท์"
             }
         },
         "vocab": {
-            "title": "Vocabulary"
+            "title": "คำศัพท์"
         },
         "render": {
-            "title": "Render"
+            "title": "การอ่าน"
         },
         "review": {
-            "title": "Vocabulary Review"
+            "title": "ทบทวนคำศัพท์"
         },
         "exam": {
             "title": "แบบทดสอบ"
+        },
+        "sections": {
+            "learn": "เรียนรู้",
+            "practice": "ฝึกฝน"
         }
+    },
+    "deck": {
+        "type": {
+            "vocab": "คำศัพท์",
+            "render": "การอ่าน",
+            "review": "ทบทวน",
+            "exam": "ข้อสอบ",
+            "drill": "ซ้อม"
+        },
+        "source": {
+            "official": "ทางการ",
+            "community": "ชุมชน",
+            "local": "ของคุณ",
+            "cloud": "คลาวด์"
+        },
+        "visibility": {
+            "public": "สาธารณะ",
+            "unlisted": "ไม่แสดงในรายการ",
+            "private": "ส่วนตัว"
+        },
+        "search": "ค้นหาชุด",
+        "searchAria": "ค้นหาชุดด้วยชื่อ",
+        "searchClear": "ล้างคำค้น",
+        "tallyAria": "ชุดแยกตามแหล่งที่มา",
+        "resultCount": "แสดง {{matched}} จาก {{total}} ชุด",
+        "loading": "กำลังโหลดชุด…",
+        "itemCount_one": "{{count}} รายการ",
+        "itemCount_other": "{{count}} รายการ",
+        "byAuthor": "โดย {{author}}",
+        "openAria": "เปิด {{name}}",
+        "export": "ส่งออก",
+        "exportAria": "ส่งออกชุด",
+        "download": "ดาวน์โหลด",
+        "downloadAria": "ดาวน์โหลดชุด",
+        "delete": "ลบ",
+        "deleteAria": "ลบชุด",
+        "start": "เริ่ม",
+        "list": {
+            "backHub": "กลับไป{{language}}",
+            "eyebrow": {
+                "vocab": "คำศัพท์",
+                "render": "การอ่าน",
+                "exam": "ข้อสอบ",
+                "review": "ทบทวน"
+            },
+            "title": {
+                "vocab": "ชุดคำศัพท์",
+                "render": "ชุดอ่าน",
+                "exam": "ชุดข้อสอบ",
+                "review": "ชุดทบทวน"
+            },
+            "description": {
+                "vocab": "จัดกลุ่มคำที่คุณรู้เป็นชุด แล้วซ้อมแบบห่างตามระยะเวลา",
+                "render": "เรื่องสั้นจัดระดับความยากให้อ่าน พร้อมคำแปลไว้เทียบ",
+                "exam": "ชุดข้อสอบแบบเลือกตอบ สร้างจากคำศัพท์ของคุณเอง",
+                "review": "ฝึกทบทวนแบบการทบทวนแบบห่าง"
+            }
+        },
+        "empty": {
+            "local": {
+                "title": "ยังไม่มีชุดของคุณเอง",
+                "body": "ชุดที่คุณสร้างหรือนำเข้าจะมาอยู่ที่นี่ เริ่มจากชุดทางการแทนก็ได้",
+                "action": "ดูชุดทางการ"
+            },
+            "official": {
+                "title": "ยังไม่มีชุดทางการสำหรับประเภทนี้",
+                "body": "ชุดทางการมาพร้อมแอป ยังไม่มีชุดไหนเผยแพร่สำหรับประเภทนี้"
+            },
+            "filtered": {
+                "title": "ไม่มีชุดที่ตรงกับตัวกรอง",
+                "body": "ไม่มีชุดในแท็บนี้ที่ตรงกับคำค้น แท็ก และตัวเลือกที่คุณเลือก ลดข้อกำหนดลงสักอย่างเพื่อดูอีกครั้ง",
+                "action": "ล้างตัวกรอง"
+            },
+            "cloud": {
+                "title": "การซิงค์คลาวด์กำลังจะมา",
+                "body": "ลงชื่อเข้าใช้แล้วชุดของคุณจะตามคุณไปทุกเครื่อง",
+                "action": "ลงชื่อเข้าใช้"
+            },
+            "cloudSignedIn": {
+                "title": "การซิงค์คลาวด์กำลังจะมา",
+                "body": "คุณลงชื่อเข้าใช้แล้ว การเก็บชุดให้ตรงกันข้ามอุปกรณ์กำลังจะมา"
+            },
+            "community": {
+                "title": "ยังไม่มีชุดจากชุมชน",
+                "body": "ชุดที่ผู้เรียนคนอื่นเผยแพร่จะมาปรากฏที่นี่เมื่อเปิดให้ชุมชนใช้งาน"
+            }
+        },
+        "noResults": {
+            "title": "ไม่พบสิ่งที่ตรงกับคำค้นนี้",
+            "body": "ลองใช้คำที่สั้นลง หรือล้างคำค้นเพื่อดูทุกอย่างในแท็บนี้"
+        },
+        "details": {
+            "notFound": "ไม่พบชุดนั้น",
+            "back": "กลับไปชุดทั้งหมด",
+            "contents": "สิ่งที่อยู่ข้างใน",
+            "version": "เวอร์ชัน",
+            "updated": "อัปเดตเมื่อ",
+            "noSession": "เซสชันสำหรับชุด{{language}}ยังไม่พร้อมใช้งาน"
+        },
+        "options": {
+            "sortAria": "เรียงชุด",
+            "sort": {
+                "default": "ตามลำดับต้นทาง",
+                "name": "ชื่อ ก–ฮ",
+                "recent": "อัปเดตล่าสุด",
+                "popular": "ดาวน์โหลดมากที่สุด",
+                "size": "ขนาดใหญ่สุด"
+            },
+            "density": {
+                "comfortable": "สบายตา",
+                "compact": "กระชับ"
+            },
+            "nsfw": {
+                "label": "เนื้อหาอ่อนไหว",
+                "on": "แสดงชุดเนื้อหาอ่อนไหวแล้ว",
+                "off": "ซ่อนชุดเนื้อหาอ่อนไหว"
+            },
+            "importHeading": "นำเข้า",
+            "importHint": "อ่านไฟล์ชุดที่คุณเคยส่งออกไว้",
+            "importUnavailable": "ยังไม่มีรูปแบบไฟล์สำหรับชุดประเภทนี้"
+        },
+        "tags": {
+            "clear": "ล้างแท็ก",
+            "remove": "เอาแท็ก {{tag}} ออก"
+        },
+        "actions": {
+            "create": {
+                "vocab": "ชุดใหม่",
+                "exam": "ข้อสอบใหม่"
+            },
+            "importOnly": "นำเข้า"
+        },
+        "import": {
+            "action": "นำเข้าไฟล์ชุด",
+            "invalidDeck": "ไฟล์นี้ไม่ใช่ชุดที่ถูกต้อง",
+            "invalidExam": "ไฟล์นี้ไม่ใช่ชุดข้อสอบที่ถูกต้อง",
+            "invalidJson": "อ่านไฟล์นี้เป็น JSON ไม่ได้"
+        },
+        "viewAuthor": "ดูโปรไฟล์ของ {{author}}"
     }
 }

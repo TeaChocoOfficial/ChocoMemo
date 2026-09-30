@@ -1,5 +1,5 @@
 // -Path: 'client/app/data/japanese/renderPassages.ts'
-import type { RenderPassage } from '~/types/render';
+import type { RenderPassage } from '~/types/deck/render';
 
 /**
  * Sample reading material for the Render page.

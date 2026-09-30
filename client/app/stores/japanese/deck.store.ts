@@ -5,6 +5,7 @@
 import { create } from 'zustand';
 import type { DeckData } from '~/types/deck';
 import { importedDeckSchema } from '~/utils/deck';
+import { newDeckMeta } from '~/utils/deckMeta';
 import type { VocabWord } from '~/types/vocabulary';
 import { useVocabularyStore } from './vocabulary.store';
 import { persist, createJSONStorage } from 'zustand/middleware';
@@ -13,7 +14,9 @@ import { DEFAULT_DECKS, findDefaultDeck } from '~/data/japanese/decks';
 interface DeckState {
     /** User-created / downloaded decks, persisted to localStorage. */
     userDecks: DeckData[];
-    addDeck: (deck: DeckData) => void;
+    /** Adds a user deck. Meta is stamped by the store, not the caller, so a
+     *  deck can only enter through here carrying a fresh byline. */
+    addDeck: (deck: Omit<DeckData, 'meta'>) => void;
     removeDeck: (id: string) => void;
     updateDeck: (id: string, patch: Partial<Pick<DeckData, 'contentIds' | 'name' | 'description'>>) => void;
     clearDecks: () => void;
@@ -39,7 +42,8 @@ export const useDeckStore = create<DeckState>()(
                 set((state) => {
                     const exists = state.userDecks.some((d) => d.id === deck.id);
                     if (exists) return state;
-                    return { userDecks: [...state.userDecks, deck] };
+                    const stored: DeckData = { ...deck, meta: newDeckMeta() };
+                    return { userDecks: [...state.userDecks, stored] };
                 }),
             // Only user decks can be patched; built-in decks are static data.
             updateDeck: (id, patch) =>
@@ -70,6 +74,7 @@ export const useDeckStore = create<DeckState>()(
                     // Exported files carry `wordIds`; the model calls it
                     // `contentIds` because it spans every deck type.
                     contentIds: result.data.wordIds,
+                    meta: newDeckMeta(),
                 };
                 set((state) => ({ userDecks: [...state.userDecks, deck] }));
                 return { success: true };
@@ -97,6 +102,9 @@ export function myWordsDeck(): DeckData | null {
         contentIds: custom.map((w: VocabWord) => w.id),
         tags: [],
         nsfw: false,
+        // Derived on every read rather than stored, so it is stamped the same
+        // way a saved deck would be rather than inheriting a stale byline.
+        meta: newDeckMeta(),
     };
 }
 
@@ -112,7 +120,7 @@ export function allDecks(): DeckData[] {
 
 /** Resolve the words associated with a deck across all sources. */
 export function deckWords(deck: DeckData): VocabWord[] {
-    if (deck.source === 'default') {
+    if (deck.source === 'official') {
         return deck.contentIds
             .map((id) =>
                 useVocabularyStore

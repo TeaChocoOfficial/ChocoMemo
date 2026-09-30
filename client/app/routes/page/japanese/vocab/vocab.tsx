@@ -1,6 +1,6 @@
 // -Path: 'client/app/routes/page/japanese/vocabulary.tsx'
-import type { Route } from './+types/vocabulary';
-import VocabularyDeckList from '~/pages/japanese/vocabulary/DeckList';
+import type { Route } from './+types/vocab';
+import VocabularyDeckList from '~/pages/japanese/vocab/DeckList';
 
 export function meta({}: Route.MetaArgs) {
     return [

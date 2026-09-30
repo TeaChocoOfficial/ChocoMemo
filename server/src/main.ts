@@ -11,7 +11,9 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { SwaggerTheme, SwaggerThemeNameEnum } from 'swagger-themes';
 import fastifyCookie, { type FastifyCookieOptions } from '@fastify/cookie';
 import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
-import fastifyMultipart, { type FastifyMultipartAttachFieldsToBodyOptions } from '@fastify/multipart';
+import fastifyMultipart, {
+    type FastifyMultipartAttachFieldsToBodyOptions,
+} from '@fastify/multipart';
 
 async function bootstrap() {
     const time = Date.now();
@@ -30,14 +32,14 @@ async function bootstrap() {
     app.useGlobalPipes(new ValidationPipe({ transform: true }));
 
     // ลงทะเบียน Fastify plugins
-    await app.register(fastifyMultipart as FastifyPluginCallback<FastifyMultipartAttachFieldsToBodyOptions>, {
+    await app.register(fastifyMultipart, {
         limits: {
             fileSize: 50 * 1024 * 1024, // 50mb
         },
         attachFieldsToBody: true,
     });
 
-    await app.register(fastifyCookie as FastifyPluginCallback<FastifyCookieOptions>);
+    await app.register(fastifyCookie);
 
     // CORS configuration
     app.enableCors({

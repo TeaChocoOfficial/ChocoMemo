@@ -10,7 +10,6 @@ import Button from '~/components/custom/Button';
 import { useLangText } from '~/hooks/useLangText';
 import { useSpeak } from '~/hooks/useSpeak';
 import { deckPassages, localDecksOfType } from '~/stores/deck/deckListLocal.store';
-import { allDecksFor } from '~/data/japanese/deckDefaults';
 
 /** Renders one line of a passage. Kanji carry their own `rt`, so each gets its
  *  own furigana rather than a single reading spread across the run. */
@@ -98,9 +97,7 @@ export default function RenderDeckReader() {
     const locale = useLangText();
     const { deckId = '' } = useRouterParams();
 
-    const deck = allDecksFor(Languages.ja, localDecksOfType(Languages.ja, 'render')).find(
-        (d) => d.id === deckId,
-    );
+    const deck = localDecksOfType(Languages.ja, 'render').find((d) => d.id === deckId);
     const passages = deck ? deckPassages(deck) : [];
 
     return (

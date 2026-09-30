@@ -1,7 +1,6 @@
 {
     "nav": {
         "home": "Início",
-        "tagline": "Aprendizado de Idiomas",
         "languages": "Idiomas",
         "japanese": "Japonês",
         "menu": "Abrir menu",
@@ -24,13 +23,6 @@
         "ctaCreate": "Publicar um baralho",
         "ctaHow": "Como funciona",
         "scriptsLabel": "Infusionando agora",
-        "scripts": [
-            "A",
-            "あ",
-            "한",
-            "ก",
-            "字"
-        ],
         "stats": {
             "badge": "Na prateleira",
             "languages": "Idiomas",
@@ -148,13 +140,15 @@
         "tabs": {
             "local": "Local",
             "cloud": "Nuvem",
-            "community": "Comunidade"
+            "community": "Comunidade",
+            "official": "Oficial"
         },
         "comingSoon": {
             "cloud": "A sincronização na nuvem chega em breve, requer login",
             "community": "Explorar conjuntos da comunidade ainda não está disponível"
         },
-        "loading": "Loading…"
+        "loading": "Loading…",
+        "select": "Selecionar"
     },
     "notfound": {
         "title": "Página Não Encontrada",
@@ -196,7 +190,8 @@
                 "name": "Chinês",
                 "description": "Caracteres, pinyin e pares de tons, praticados a poucos minutos de cada vez."
             }
-        }
+        },
+        "back_language": "Voltar à seleção de idioma"
     },
     "japanese": {
         "badge": "Japonês",
@@ -223,30 +218,30 @@
                 "description": "Explore todo o hiragana e katakana com suas leituras.",
                 "action": "Ver Kana"
             },
-            "kanaDrill": {
-                "title": "Treino de Kana",
-                "description": "Teste seu reconhecimento de hiragana e katakana.",
-                "action": "Iniciar Treino de Kana"
-            },
-            "vocabularyReview": {
-                "title": "Revisão de Vocabulário",
-                "description": "Revise o vocabulário com flashcards e repetição espaçada.",
-                "action": "Iniciar Revisão"
-            },
-            "vocabularyexam": {
-                "title": "Exames de Vocabulário",
-                "description": "Teste-se com exames de múltipla escolha criados a partir do seu vocabulário.",
-                "action": "Fazer um Exame"
-            },
-            "vocabularyBrowse": {
-                "title": "Browse Vocabulary",
-                "description": "Read through a deck's words with readings, meanings, and examples.",
-                "action": "Browse Words"
-            },
             "render": {
                 "title": "Render",
                 "description": "Read short passages with furigana and check yourself against the translation.",
                 "action": "Start Reading"
+            },
+            "vocab": {
+                "title": "Vocabulário",
+                "description": "Amplie seu vocabulário e treine em intervalos.",
+                "action": "Ver palavras"
+            },
+            "drill": {
+                "title": "Treino de kana",
+                "description": "Teste seu reconhecimento de hiragana e katakana.",
+                "action": "Iniciar treino de kana"
+            },
+            "review": {
+                "title": "Revisão de Vocabulário",
+                "description": "Revise o vocabulário com cartões e repetição espaçada.",
+                "action": "Iniciar revisão"
+            },
+            "exam": {
+                "title": "Exame de vocabulário",
+                "description": "Teste-se com um exame de múltipla escolha feito do seu vocabulário.",
+                "action": "Fazer o exame"
             }
         },
         "decks": {
@@ -289,7 +284,7 @@
             },
             "open": "Open",
             "itemCount_one": "{{count}} item",
-            "itemCount_other": "{{count}} items",
+            "itemCount_other": "{{count}} itens",
             "export": "Export",
             "exportAria": "Export deck",
             "downloadAria": "Download deck",
@@ -301,14 +296,14 @@
                 "review": "Review",
                 "exam": "Exam",
                 "drill": "Drill"
-            }
+            },
+            "viewAuthor": "Ver o perfil de {{author}}",
+            "favourite": "Adicionar aos favoritos",
+            "unfavourite": "Remover dos favoritos",
+            "itemCount_many": "{{count}} itens"
         },
         "exam": {
             "title": "Exame",
-            "description": "Teste-se com exames de múltipla escolha criados a partir do seu vocabulário. Escolha um conjunto, importe um ou crie o seu.",
-            "back_hub": "Voltar ao Japonês",
-            "search": "Buscar conjuntos de exames...",
-            "empty": "Ainda não há conjuntos de exames: importe um ou crie um personalizado.",
             "import": "Importar conjunto de exame",
             "addCustom": "Adicionar conjunto personalizado",
             "importErrorJson": "Não foi possível ler este arquivo como JSON.",
@@ -321,27 +316,13 @@
                 "descriptionPlaceholder": "Uma breve nota sobre este conjunto",
                 "wordsLabel": "Palavras a incluir",
                 "wordsPlaceholder": "Buscar palavras...",
-                "selectedCount": "{{count}} selecionadas",
                 "titleError": "Dê um nome ao seu conjunto.",
                 "minWordsError": "Escolha pelo menos duas palavras.",
                 "cancel": "Cancelar",
-                "submit": "Criar conjunto"
-            },
-            "card": {
-                "note": "Nota do exame",
-                "exportAria": "Exportar conjunto de exame",
-                "deleteAria": "Excluir conjunto de exame",
-                "export": "Exportar",
-                "delete": "Excluir",
-                "byAuthor": "por {{author}}",
-                "start": "Iniciar",
-                "question_one": "{{count}} pergunta",
-                "question_other": "{{count}} perguntas",
-                "source": {
-                    "default": "Padrão",
-                    "custom": "Meu conjunto",
-                    "imported": "Importado"
-                }
+                "submit": "Criar conjunto",
+                "selectedCount_one": "{{count}} selecionada",
+                "selectedCount_other": "{{count}} selecionadas",
+                "selectedCount_many": "{{count}} selecionadas"
             }
         },
         "kana": {
@@ -574,7 +555,8 @@
         "updatePassword": "Update Password",
         "resetSuccess": "Password updated. Please sign in.",
         "line": "LINE",
-        "x": "X (Twitter)"
+        "x": "X (Twitter)",
+        "sendResetCode": "Enviar código de redefinição"
     },
     "settings": {
         "title": "Configurações",
@@ -635,7 +617,6 @@
             "google": "Google",
             "discord": "Discord",
             "line": "LINE",
-            "facebook": "Facebook",
             "x": "X (Twitter)",
             "connected": "Connected",
             "notConnected": "Not connected",
@@ -732,7 +713,8 @@
             "removeError": "Não foi possível excluir a foto do perfil",
             "cancel": "Cancelar",
             "saving": "Salvando…",
-            "confirm": "Confirmar"
+            "confirm": "Confirmar",
+            "change": "Alterar foto de perfil"
         },
         "public": {
             "notFoundTitle": "Profile not found",
@@ -742,42 +724,186 @@
         }
     },
     "english": {
-        "badge": "English",
-        "title": "Learn English",
-        "description": "English is a new track. The deck features below work today; the character set and drill are still being built.",
+        "badge": "Inglês",
+        "title": "Aprender inglês",
+        "description": "O inglês é uma trilha nova. Os recursos de baralho abaixo já funcionam; o conjunto de caracteres e o treino ainda estão em construção.",
         "nav": {
             "render": {
-                "title": "Render",
-                "description": "Read short passages and check yourself against the translation.",
-                "action": "Start Reading"
+                "title": "Leitura",
+                "description": "Leia textos curtos e confira com a tradução.",
+                "action": "Começar a ler"
             },
             "review": {
-                "title": "Vocabulary Review",
-                "description": "Review vocabulary with flashcards and spaced repetition.",
-                "action": "Start Review"
+                "title": "Revisão de vocabulário",
+                "description": "Revise o vocabulário com cartões e repetição espaçada.",
+                "action": "Começar a revisão"
             },
             "exam": {
-                "title": "Vocabulary exam",
-                "description": "Test yourself with multiple-choice exam built from your vocabulary.",
-                "action": "Take an Exam"
+                "title": "Exame de vocabulário",
+                "description": "Teste-se com um exame de múltipla escolha feito do seu vocabulário.",
+                "action": "Fazer o exame"
             },
             "vocab": {
-                "title": "Browse Vocabulary",
-                "description": "Read through a deck's words with readings, meanings, and examples.",
-                "action": "Browse Words"
+                "title": "Explorar vocabulário",
+                "description": "Veja as palavras de um baralho com pronúncia, significado e exemplos.",
+                "action": "Ver palavras"
             }
         },
         "vocab": {
-            "title": "Vocabulary"
+            "title": "Vocabulário"
         },
         "render": {
-            "title": "Render"
+            "title": "Leitura"
         },
         "review": {
-            "title": "Vocabulary Review"
+            "title": "Revisão de vocabulário"
         },
         "exam": {
             "title": "Exame"
+        },
+        "sections": {
+            "learn": "Aprender",
+            "practice": "Praticar"
         }
+    },
+    "deck": {
+        "type": {
+            "vocab": "Vocabulário",
+            "render": "Leitura",
+            "review": "Revisão",
+            "exam": "Exame",
+            "drill": "Treino"
+        },
+        "source": {
+            "official": "Oficial",
+            "community": "Comunidade",
+            "local": "Seus",
+            "cloud": "Nuvem"
+        },
+        "visibility": {
+            "public": "Público",
+            "unlisted": "Não listado",
+            "private": "Privado"
+        },
+        "search": "Buscar baralhos",
+        "searchAria": "Buscar baralhos por nome",
+        "searchClear": "Limpar busca",
+        "tallyAria": "Baralhos por origem",
+        "resultCount": "Mostrando {{matched}} de {{total}} baralhos",
+        "loading": "Carregando baralhos…",
+        "itemCount_one": "{{count}} item",
+        "itemCount_other": "{{count}} itens",
+        "byAuthor": "por {{author}}",
+        "openAria": "Abrir {{name}}",
+        "export": "Exportar",
+        "exportAria": "Exportar baralho",
+        "download": "Baixar",
+        "downloadAria": "Baixar baralho",
+        "delete": "Excluir",
+        "deleteAria": "Excluir baralho",
+        "start": "Iniciar",
+        "list": {
+            "backHub": "Voltar a {{language}}",
+            "eyebrow": {
+                "vocab": "Vocabulário",
+                "render": "Leitura",
+                "exam": "Exames",
+                "review": "Revisão"
+            },
+            "title": {
+                "vocab": "Baralhos de vocabulário",
+                "render": "Baralhos de leitura",
+                "exam": "Conjuntos de exame",
+                "review": "Baralhos de revisão"
+            },
+            "description": {
+                "vocab": "Agrupe as palavras que já conhece num baralho e treine em intervalos.",
+                "render": "Textos curtos por nível, com uma tradução para conferir.",
+                "exam": "Conjuntos de múltipla escolha feitos do seu próprio vocabulário.",
+                "review": "Revise um baralho numa sessão de repetição espaçada."
+            }
+        },
+        "empty": {
+            "local": {
+                "title": "Você ainda não tem baralhos",
+                "body": "Os baralhos que você criar ou importar aparecem aqui. Comece por um oficial.",
+                "action": "Ver baralhos oficiais"
+            },
+            "official": {
+                "title": "Ainda não há baralhos oficiais deste tipo",
+                "body": "Baralhos oficiais vêm com o app. Nenhum foi publicado para este tipo ainda."
+            },
+            "filtered": {
+                "title": "Nada corresponde a esses filtros",
+                "body": "Nenhum baralho nesta aba combina com a busca, as etiquetas e as opções que você escolheu. Afrouxe alguma para vê-los de novo.",
+                "action": "Limpar filtros"
+            },
+            "cloud": {
+                "title": "A sincronização na nuvem chega em breve",
+                "body": "Entre e seus baralhos vão te acompanhar entre dispositivos.",
+                "action": "Entrar"
+            },
+            "cloudSignedIn": {
+                "title": "A sincronização na nuvem chega em breve",
+                "body": "Você entrou. Manter os baralhos sincronizados entre dispositivos está a caminho."
+            },
+            "community": {
+                "title": "Ainda não há baralhos da comunidade",
+                "body": "Baralhos publicados por outros estudantes aparecerão aqui quando a comunidade abrir."
+            }
+        },
+        "noResults": {
+            "title": "Nada corresponde a essa busca",
+            "body": "Tente uma palavra mais curta ou limpe a busca para ver tudo nesta aba."
+        },
+        "details": {
+            "notFound": "Esse baralho não foi encontrado.",
+            "back": "Voltar aos baralhos",
+            "contents": "O que tem dentro",
+            "version": "Versão",
+            "updated": "Atualizado",
+            "noSession": "As sessões de baralhos de {{language}} ainda não estão prontas."
+        },
+        "options": {
+            "sortAria": "Ordenar baralhos",
+            "sort": {
+                "default": "Ordem original",
+                "name": "Nome A–Z",
+                "recent": "Atualizados recentemente",
+                "popular": "Mais baixados",
+                "size": "Maiores"
+            },
+            "density": {
+                "comfortable": "Confortável",
+                "compact": "Compacta"
+            },
+            "nsfw": {
+                "label": "Sensível",
+                "on": "Baralhos sensíveis visíveis",
+                "off": "Baralhos sensíveis ocultos"
+            },
+            "importHeading": "Importar",
+            "importHint": "Lê um arquivo de baralho que você exportou antes.",
+            "importUnavailable": "Ainda não há formato de arquivo para este tipo de baralho."
+        },
+        "tags": {
+            "clear": "Limpar etiquetas",
+            "remove": "Remover a etiqueta {{tag}}"
+        },
+        "actions": {
+            "create": {
+                "vocab": "Novo baralho",
+                "exam": "Novo exame"
+            },
+            "importOnly": "Importar"
+        },
+        "import": {
+            "action": "Importar arquivo de baralho",
+            "invalidDeck": "Esse arquivo não é um baralho válido.",
+            "invalidExam": "Esse arquivo não é um conjunto de exame válido.",
+            "invalidJson": "Não foi possível ler esse arquivo como JSON."
+        },
+        "viewAuthor": "Ver o perfil de {{author}}",
+        "itemCount_many": "{{count}} itens"
     }
 }

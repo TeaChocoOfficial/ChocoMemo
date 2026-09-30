@@ -1,7 +1,6 @@
 {
     "nav": {
         "home": "Home",
-        "tagline": "Apprendimento delle Lingue",
         "languages": "Lingue",
         "japanese": "Giapponese",
         "menu": "Apri il menu",
@@ -24,13 +23,6 @@
         "ctaCreate": "Pubblica un mazzo",
         "ctaHow": "Come funziona",
         "scriptsLabel": "In infusione",
-        "scripts": [
-            "A",
-            "あ",
-            "한",
-            "ก",
-            "字"
-        ],
         "stats": {
             "badge": "Sullo scaffale",
             "languages": "Lingue",
@@ -148,13 +140,15 @@
         "tabs": {
             "local": "Locale",
             "cloud": "Cloud",
-            "community": "Community"
+            "community": "Community",
+            "official": "Ufficiali"
         },
         "comingSoon": {
             "cloud": "La sincronizzazione cloud arriverà presto, richiede l'accesso",
             "community": "La navigazione dei set della community non è ancora disponibile"
         },
-        "loading": "Loading…"
+        "loading": "Loading…",
+        "select": "Seleziona"
     },
     "notfound": {
         "title": "Pagina Non Trovata",
@@ -196,7 +190,8 @@
                 "name": "Cinese",
                 "description": "Caratteri, pinyin e coppie di toni, esercitati pochi minuti alla volta."
             }
-        }
+        },
+        "back_language": "Torna alla scelta della lingua"
     },
     "japanese": {
         "badge": "Giapponese",
@@ -223,30 +218,30 @@
                 "description": "Esplora tutti gli hiragana e i katakana con le loro letture.",
                 "action": "Vedi i Kana"
             },
-            "kanaDrill": {
-                "title": "Esercizio Kana",
-                "description": "Metti alla prova il tuo riconoscimento di hiragana e katakana.",
-                "action": "Inizia l'Esercizio Kana"
-            },
-            "vocabularyReview": {
-                "title": "Ripasso del Vocabolario",
-                "description": "Ripassa il vocabolario con flashcard e ripetizione dilazionata.",
-                "action": "Inizia il Ripasso"
-            },
-            "vocabularyexam": {
-                "title": "Esami di Vocabolario",
-                "description": "Mettiti alla prova con esami a scelta multipla creati dal tuo vocabolario.",
-                "action": "Sostieni un Esame"
-            },
-            "vocabularyBrowse": {
-                "title": "Browse Vocabulary",
-                "description": "Read through a deck's words with readings, meanings, and examples.",
-                "action": "Browse Words"
-            },
             "render": {
                 "title": "Render",
                 "description": "Read short passages with furigana and check yourself against the translation.",
                 "action": "Start Reading"
+            },
+            "vocab": {
+                "title": "Vocabolario",
+                "description": "Amplia il vocabolario e allenati a intervalli.",
+                "action": "Vedi le parole"
+            },
+            "drill": {
+                "title": "Allenamento kana",
+                "description": "Metti alla prova la distinzione fra hiragana e katakana.",
+                "action": "Inizia l'allenamento"
+            },
+            "review": {
+                "title": "Ripasso del Vocabolario",
+                "description": "Ripassa il vocabolario con schede e ripetizione dilazionata.",
+                "action": "Inizia il ripasso"
+            },
+            "exam": {
+                "title": "Esame di vocabolario",
+                "description": "Metti alla prova te stesso con un esame a scelta multipla sul tuo vocabolario.",
+                "action": "Svolgi l'esame"
             }
         },
         "decks": {
@@ -288,8 +283,8 @@
                 "downloaded": "Scaricato"
             },
             "open": "Open",
-            "itemCount_one": "{{count}} item",
-            "itemCount_other": "{{count}} items",
+            "itemCount_one": "{{count}} elemento",
+            "itemCount_other": "{{count}} elementi",
             "export": "Export",
             "exportAria": "Export deck",
             "downloadAria": "Download deck",
@@ -301,14 +296,14 @@
                 "review": "Review",
                 "exam": "Exam",
                 "drill": "Drill"
-            }
+            },
+            "viewAuthor": "Vedi il profilo di {{author}}",
+            "favourite": "Aggiungi ai preferiti",
+            "unfavourite": "Rimuovi dai preferiti",
+            "itemCount_many": "{{count}} elementi"
         },
         "exam": {
             "title": "Esame",
-            "description": "Mettiti alla prova con esami a scelta multipla creati dal tuo vocabolario. Scegli un set, importane uno o creane uno tuo.",
-            "back_hub": "Tornа al Giapponese",
-            "search": "Cerca set di esami...",
-            "empty": "Nessun set di esami disponibile: importane uno o crea un set personalizzato.",
             "import": "Importa set di esami",
             "addCustom": "Aggiungi set personalizzato",
             "importErrorJson": "Impossibile leggere questo file come JSON.",
@@ -321,27 +316,13 @@
                 "descriptionPlaceholder": "Una breve nota su questo set",
                 "wordsLabel": "Parole da includere",
                 "wordsPlaceholder": "Cerca parole...",
-                "selectedCount": "{{count}} selezionate",
                 "titleError": "Dai un nome al tuo set.",
                 "minWordsError": "Scegli almeno due parole.",
                 "cancel": "Annulla",
-                "submit": "Crea set"
-            },
-            "card": {
-                "note": "Nota esame",
-                "exportAria": "Esporta set di esami",
-                "deleteAria": "Elimina set di esami",
-                "export": "Esporta",
-                "delete": "Elimina",
-                "byAuthor": "di {{author}}",
-                "start": "Inizia",
-                "question_one": "{{count}} domanda",
-                "question_other": "{{count}} domande",
-                "source": {
-                    "default": "Predefinito",
-                    "custom": "Il mio set",
-                    "imported": "Importato"
-                }
+                "submit": "Crea set",
+                "selectedCount_one": "{{count}} selezionata",
+                "selectedCount_other": "{{count}} selezionate",
+                "selectedCount_many": "{{count}} selezionate"
             }
         },
         "kana": {
@@ -574,7 +555,8 @@
         "updatePassword": "Update Password",
         "resetSuccess": "Password updated. Please sign in.",
         "line": "LINE",
-        "x": "X (Twitter)"
+        "x": "X (Twitter)",
+        "sendResetCode": "Invia il codice di reimpostazione"
     },
     "settings": {
         "title": "Impostazioni",
@@ -635,7 +617,6 @@
             "google": "Google",
             "discord": "Discord",
             "line": "LINE",
-            "facebook": "Facebook",
             "x": "X (Twitter)",
             "connected": "Connected",
             "notConnected": "Not connected",
@@ -732,7 +713,8 @@
             "removeError": "Impossibile eliminare la foto del profilo",
             "cancel": "Annulla",
             "saving": "Salvataggio…",
-            "confirm": "Conferma"
+            "confirm": "Conferma",
+            "change": "Cambia foto del profilo"
         },
         "public": {
             "notFoundTitle": "Profile not found",
@@ -742,42 +724,186 @@
         }
     },
     "english": {
-        "badge": "English",
-        "title": "Learn English",
-        "description": "English is a new track. The deck features below work today; the character set and drill are still being built.",
+        "badge": "Inglese",
+        "title": "Impara l'inglese",
+        "description": "L'inglese è un percorso nuovo. Le funzioni sui mazzi qui sotto funzionano già; il set di caratteri e il drill sono in costruzione.",
         "nav": {
             "render": {
-                "title": "Render",
-                "description": "Read short passages and check yourself against the translation.",
-                "action": "Start Reading"
+                "title": "Lettura",
+                "description": "Leggi brevi testi e verifica con la traduzione.",
+                "action": "Inizia a leggere"
             },
             "review": {
-                "title": "Vocabulary Review",
-                "description": "Review vocabulary with flashcards and spaced repetition.",
-                "action": "Start Review"
+                "title": "Ripasso del vocabolario",
+                "description": "Ripassa il vocabolario con schede e ripetizione dilazionata.",
+                "action": "Inizia il ripasso"
             },
             "exam": {
-                "title": "Vocabulary exam",
-                "description": "Test yourself with multiple-choice exam built from your vocabulary.",
-                "action": "Take an Exam"
+                "title": "Esame di vocabolario",
+                "description": "Metti alla prova te stesso con un esame a scelta multipla sul tuo vocabolario.",
+                "action": "Svolgi l'esame"
             },
             "vocab": {
-                "title": "Browse Vocabulary",
-                "description": "Read through a deck's words with readings, meanings, and examples.",
-                "action": "Browse Words"
+                "title": "Sfoglia il vocabolario",
+                "description": "Scorri le parole di un mazzo con pronuncia, significato ed esempi.",
+                "action": "Vedi le parole"
             }
         },
         "vocab": {
-            "title": "Vocabulary"
+            "title": "Vocabolario"
         },
         "render": {
-            "title": "Render"
+            "title": "Lettura"
         },
         "review": {
-            "title": "Vocabulary Review"
+            "title": "Ripasso del vocabolario"
         },
         "exam": {
             "title": "Esame"
+        },
+        "sections": {
+            "learn": "Impara",
+            "practice": "Esercitati"
         }
+    },
+    "deck": {
+        "type": {
+            "vocab": "Vocabolario",
+            "render": "Lettura",
+            "review": "Ripasso",
+            "exam": "Esame",
+            "drill": "Allenamento"
+        },
+        "source": {
+            "official": "Ufficiali",
+            "community": "Community",
+            "local": "Tuoi",
+            "cloud": "Cloud"
+        },
+        "visibility": {
+            "public": "Pubblico",
+            "unlisted": "Non in elenco",
+            "private": "Privato"
+        },
+        "search": "Cerca mazzi",
+        "searchAria": "Cerca mazzi per nome",
+        "searchClear": "Cancella ricerca",
+        "tallyAria": "Mazzi per origine",
+        "resultCount": "Visualizzati {{matched}} di {{total}} mazzi",
+        "loading": "Caricamento mazzi…",
+        "itemCount_one": "{{count}} elemento",
+        "itemCount_other": "{{count}} elementi",
+        "byAuthor": "di {{author}}",
+        "openAria": "Apri {{name}}",
+        "export": "Esporta",
+        "exportAria": "Esporta il mazzo",
+        "download": "Scarica",
+        "downloadAria": "Scarica il mazzo",
+        "delete": "Elimina",
+        "deleteAria": "Elimina il mazzo",
+        "start": "Inizia",
+        "list": {
+            "backHub": "Torna a {{language}}",
+            "eyebrow": {
+                "vocab": "Vocabolario",
+                "render": "Lettura",
+                "exam": "Esami",
+                "review": "Ripasso"
+            },
+            "title": {
+                "vocab": "Mazzi di vocabolario",
+                "render": "Mazzi di lettura",
+                "exam": "Set di esami",
+                "review": "Mazzi di ripasso"
+            },
+            "description": {
+                "vocab": "Raggruppa le parole che conosci in un mazzo e allenati a intervalli.",
+                "render": "Brevi testi per livello, con una traduzione per il confronto.",
+                "exam": "Set a scelta multipla costruiti sul tuo vocabolario.",
+                "review": "Ripassa un mazzo in una sessione a ripetizione dilazionata."
+            }
+        },
+        "empty": {
+            "local": {
+                "title": "Non hai ancora mazzi",
+                "body": "I mazzi che crei o importi finiscono qui. Parti da uno ufficiale.",
+                "action": "Vedi i mazzi ufficiali"
+            },
+            "official": {
+                "title": "Non ci sono ancora mazzi ufficiali di questo tipo",
+                "body": "I mazzi ufficiali arrivano con l'app. Per questo tipo non ne è stato pubblicato nessuno."
+            },
+            "filtered": {
+                "title": "Niente corrisponde a questi filtri",
+                "body": "Nessun mazzo in questa scheda corrisponde alla ricerca, ai tag e alle opzioni che hai scelto. Allenta qualcosa.",
+                "action": "Azzera i filtri"
+            },
+            "cloud": {
+                "title": "La sincronizzazione cloud arriverà presto",
+                "body": "Accedi e i tuoi mazzi ti seguiranno su ogni dispositivo.",
+                "action": "Accedi"
+            },
+            "cloudSignedIn": {
+                "title": "La sincronizzazione cloud arriverà presto",
+                "body": "Hai effettuato l'accesso. La sincronizzazione dei mazzi tra dispositivi è in arrivo."
+            },
+            "community": {
+                "title": "Non ci sono ancora mazzi della community",
+                "body": "I mazzi pubblicati da altri studenti appariranno qui quando la community aprirà."
+            }
+        },
+        "noResults": {
+            "title": "Nessun risultato per questa ricerca",
+            "body": "Prova con una parola più corta, oppure cancella la ricerca per vedere tutto in questa scheda."
+        },
+        "details": {
+            "notFound": "Questo mazzo non è stato trovato.",
+            "back": "Torna ai mazzi",
+            "contents": "Cosa contiene",
+            "version": "Versione",
+            "updated": "Aggiornato",
+            "noSession": "Le sessioni per i mazzi {{language}} non sono ancora pronte."
+        },
+        "options": {
+            "sortAria": "Ordina i mazzi",
+            "sort": {
+                "default": "Ordine originale",
+                "name": "Nome A–Z",
+                "recent": "Aggiornati di recente",
+                "popular": "Più scaricati",
+                "size": "Più grandi"
+            },
+            "density": {
+                "comfortable": "Comoda",
+                "compact": "Compatta"
+            },
+            "nsfw": {
+                "label": "Sensibili",
+                "on": "Mazzi sensibili mostrati",
+                "off": "Mazzi sensibili nascosti"
+            },
+            "importHeading": "Importa",
+            "importHint": "Legge un file di mazzo che hai esportato in precedenza.",
+            "importUnavailable": "Per questo tipo di mazzo non c'è ancora un formato file."
+        },
+        "tags": {
+            "clear": "Azzera i tag",
+            "remove": "Rimuovi il tag {{tag}}"
+        },
+        "actions": {
+            "create": {
+                "vocab": "Nuovo mazzo",
+                "exam": "Nuovo esame"
+            },
+            "importOnly": "Importa"
+        },
+        "import": {
+            "action": "Importa un file di mazzo",
+            "invalidDeck": "Questo file non è un mazzo valido.",
+            "invalidExam": "Questo file non è un set di esami valido.",
+            "invalidJson": "Impossibile leggere questo file come JSON."
+        },
+        "viewAuthor": "Vedi il profilo di {{author}}",
+        "itemCount_many": "{{count}} elementi"
     }
 }

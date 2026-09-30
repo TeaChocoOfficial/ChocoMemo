@@ -67,7 +67,7 @@ All account routes are locale-scoped, so these are reached as `/:lang/...`:
 
 ## 🧭 Routes
 
-> Every route is nested under `:lang`, the active i18n locale segment — one of 18 (`en-US`, `th-TH`, `ja-JP`, `ko-KR`, `zh-CN`, …). Visiting the bare `/` redirects to your locale.
+> Every route is nested under `:lang`, the active i18n locale segment — currently one of 3 (`en`, `th`, `ja`). Visiting the bare `/` redirects to your locale.
 
 ### Core
 

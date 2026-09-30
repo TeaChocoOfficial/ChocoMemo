@@ -5,11 +5,12 @@
 // reference (words, passages) lives in its own store.
 import { create } from 'zustand';
 import { Languages } from '~/data/language';
-import type { ExamSet } from '~/types/exam';
+import type { ExamSet } from '~/types/deck/exam';
 import { importedDeckSchema } from '~/utils/deck';
-import type { RenderPassage } from '~/types/render';
-import type { ExamQuestion } from '~/types/exam';
+import type { RenderPassage } from '~/types/deck/render';
+import type { ExamQuestion } from '~/types/deck/exam';
 import { importedExamSetSchema } from '~/utils/exam';
+import { newDeckMeta } from '~/utils/deckMeta';
 import type { DeckData, DeckLists } from '~/types/deck';
 import { createJSONStorage, persist } from 'zustand/middleware';
 import { DEFAULT_PASSAGES } from '~/data/japanese/renderPassages';
@@ -42,7 +43,7 @@ interface DeckListLocalState {
         language: Languages,
         raw: unknown,
     ) => { success: true; id: string } | { success: false; error: string };
-    addDeck: (language: Languages, deck: Omit<DeckData, 'id' | 'source'>) => string;
+    addDeck: (language: Languages, deck: Omit<DeckData, 'id' | 'source' | 'meta'>) => string;
     updateDeck: (language: Languages, id: string, patch: Partial<DeckData>) => void;
     removeDeck: (language: Languages, id: string) => void;
     clearDecks: (language: Languages) => void;
@@ -68,7 +69,10 @@ export const useDeckListLocalStore = create<DeckListLocalState>()(
 
             addDeck: (language, deck) => {
                 const id = newId(deck.type);
-                const stored: DeckData = { ...deck, id, source: 'local' };
+                // Meta is stamped here rather than by the caller: the store is
+                // the only place that knows a deck was just created, so no
+                // caller can hand in a stale or borrowed byline.
+                const stored: DeckData = { ...deck, id, source: 'local', meta: newDeckMeta() };
                 set((state) =>
                     withDecks(state, language, [...(state.deckLists[language] ?? []), stored]),
                 );
@@ -126,11 +130,9 @@ export const useDeckListLocalStore = create<DeckListLocalState>()(
 
             addExamSet: (set_) => {
                 const id = newId('exam');
-                const deck: DeckData = {
-                    id,
+                const deck: Omit<DeckData, 'id' | 'source' | 'meta'> = {
                     name: set_.title,
                     description: set_.description,
-                    source: 'local',
                     type: 'exam',
                     tags: [],
                     nsfw: false,
@@ -163,9 +165,9 @@ export const useDeckListLocalStore = create<DeckListLocalState>()(
                     return { success: false, error: 'This file is not a valid deck.' };
                 }
                 const id = newId('imported');
-                // `source` and `id` are assigned here, never taken from the
-                // file, so an import can't overwrite an existing deck or claim
-                // a source it has no rights to.
+                // `source`, `id` and `meta` are assigned here, never taken from
+                // the file, so an import can't overwrite an existing deck or
+                // claim authorship, a timestamp or a visibility it never had.
                 const stored: DeckData = {
                     ...result.data,
                     id,
@@ -176,6 +178,7 @@ export const useDeckListLocalStore = create<DeckListLocalState>()(
                     // Exported files carry `wordIds`; the deck model calls the
                     // same field `contentIds` because it spans all deck types.
                     contentIds: result.data.wordIds,
+                    meta: newDeckMeta(),
                 };
                 set((state) =>
                     withDecks(state, language, [...(state.deckLists[language] ?? []), stored]),

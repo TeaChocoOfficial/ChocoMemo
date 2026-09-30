@@ -17,7 +17,9 @@ export class LocaleDto {
     @IsOptional()
     @IsString()
     @MaxLength(35)
-    @Matches(LOCALE_PATTERN, { message: 'locale must be a BCP-47 language tag, e.g. "en" or "th-TH"' })
+    @Matches(LOCALE_PATTERN, {
+        message: 'locale must be a BCP-47 language tag, e.g. "en" or "th-TH"',
+    })
     @ApiProperty({
         type: String,
         required: false,

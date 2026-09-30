@@ -43,18 +43,18 @@ export interface ThemeDefinition {
 
 export const THEMES: ThemeDefinition[] = [
     {
-        id: 'light-choco',
-        dark: false,
-        icon: TbCookieFilled,
-        labelKey: 'lightChoco',
-        swatch: 'linear-gradient(135deg, #f6ece0, #7b4a2a 45%, #c98a4b 65%, #f6ece0)',
-    },
-    {
         id: 'dark-choco',
         dark: true,
         icon: TbCookieFilled,
         labelKey: 'darkChoco',
         swatch: 'linear-gradient(135deg, #1a1008, #a9713f 45%, #e0a765 65%, #1a1008)',
+    },
+    {
+        id: 'light-choco',
+        dark: false,
+        icon: TbCookieFilled,
+        labelKey: 'lightChoco',
+        swatch: 'linear-gradient(135deg, #f6ece0, #7b4a2a 45%, #c98a4b 65%, #f6ece0)',
     },
     {
         id: 'dark-galaxy',

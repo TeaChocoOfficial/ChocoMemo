@@ -1,5 +1,6 @@
 // -Path: 'client/app/types/exam.ts'
-import type { LangText } from './type';
+import type { DeckSource } from '../deck';
+import type { LangText } from '../type';
 
 export type ExamQuestionType = 'meaning' | 'fillBlank';
 
@@ -28,13 +29,11 @@ export interface FillBlankExamQuestion extends BaseExamQuestion {
 
 export type ExamQuestion = MeaningExamQuestion | FillBlankExamQuestion;
 
-export type ExamSetSource = 'default' | 'custom' | 'imported';
-
 export interface ExamSet {
     id: string;
     title: string;
     description?: string;
-    source: ExamSetSource;
+    source: DeckSource;
     authorName?: string; // only meaningful for 'imported'
     questions: ExamQuestion[];
     createdAt: number;

@@ -9,16 +9,15 @@ import ExamOption from './ExamOption';
 import { useExamSession } from '~/hooks/useExamSession';
 import { useLangText } from '~/hooks/useLangText';
 import { deckQuestions, localDecksOfType } from '~/stores/deck/deckListLocal.store';
-import { allDecksFor } from '~/data/japanese/deckDefaults';
-import type { ExamQuestion } from '~/types/exam';
+import type { ExamQuestion } from '~/types/deck/exam';
 import type { LangText } from '~/types/type';
 
 export default function ExamSession() {
     const { examId } = useParams<{ examId: string }>();
-    const allSets = allDecksFor(Languages.ja, localDecksOfType(Languages.ja, 'exam')).filter(
+    const allSets = localDecksOfType(Languages.ja, 'exam').filter(
         // A deck whose questions were deleted resolves to none, so drop it
         // here and let the not-found branch below handle it.
-        (deck) => deck.type === 'exam' && deckQuestions(deck).length > 0,
+        (deck) => deckQuestions(deck).length > 0,
     );
     const examSet = examId ? allSets.find((s) => s.id === examId) : undefined;
 

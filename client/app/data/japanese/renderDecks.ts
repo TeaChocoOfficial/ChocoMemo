@@ -1,5 +1,5 @@
 // -Path: 'client/app/data/japanese/renderDecks.ts'
-import type { RenderDeck } from '~/types/render';
+import type { RenderDeck } from '~/types/deck/render';
 
 /**
  * Built-in reading decks.
@@ -16,7 +16,7 @@ export const DEFAULT_RENDER_DECKS: RenderDeck[] = [
         id: 'render-daily',
         name: 'Daily Life',
         description: 'Short everyday scenes — stations, shops, and the weather.',
-        source: 'default',
+        source: 'official',
         focus: '〜ます / 〜です',
         tags: ['daily'],
         nsfw: false,
@@ -26,7 +26,7 @@ export const DEFAULT_RENDER_DECKS: RenderDeck[] = [
         id: 'render-numbers',
         name: 'Numbers & Prices',
         description: 'Counting, prices, and asking about cost.',
-        source: 'default',
+        source: 'official',
         focus: 'counters',
         tags: ['numbers'],
         nsfw: false,

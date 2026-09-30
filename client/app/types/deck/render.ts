@@ -1,6 +1,7 @@
 // -Path: 'client/app/types/render.ts'
-import type { LangText } from './type';
-import type { VocabSegment } from './vocabulary';
+import type { DeckSource } from '../deck';
+import type { LangText } from '../type';
+import type { VocabSegment } from '../vocabulary';
 
 /** One line of a reading passage. Segments carry per-kanji furigana (`rt`) and
  *  an optional gloss (`mn`), so a reader can hover or tap a run for its
@@ -19,8 +20,6 @@ export interface RenderPassage {
     translation: LangText;
 }
 
-export type RenderSource = 'default' | 'local';
-
 /** Metadata shared with the other deck lists so one card can render any of
  *  them. `count` is passages for a render deck and words elsewhere. */
 export interface RenderDeckMeta {
@@ -32,7 +31,7 @@ export interface RenderDeck {
     id: string;
     name: LangText;
     description?: LangText;
-    source: RenderSource;
+    source: DeckSource;
     /** Furigana-level focus of the deck, shown as a tape label. */
     focus?: string;
     tags: string[];

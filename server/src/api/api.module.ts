@@ -5,10 +5,11 @@ import { ImgModule } from './img/img.module';
 import { AvatarModule } from './img/avatar/avatar.module';
 import { UserModule } from './user/user.module';
 import { SocketModule } from './socket/socket.module';
+import { DeckModule } from './deck/deck.module';
 
 @Module({
     exports: [ApiService],
     providers: [ApiService],
-    imports: [SocketModule, ImgModule, AvatarModule, UserModule],
+    imports: [SocketModule, ImgModule, AvatarModule, UserModule, DeckModule],
 })
 export class ApiModule {}

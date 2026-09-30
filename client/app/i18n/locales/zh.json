@@ -1,7 +1,6 @@
 {
     "nav": {
         "home": "首页",
-        "tagline": "语言学习",
         "languages": "语言",
         "japanese": "日语",
         "menu": "打开菜单",
@@ -24,13 +23,6 @@
         "ctaCreate": "发布卡组",
         "ctaHow": "使用方法",
         "scriptsLabel": "正在冲泡",
-        "scripts": [
-            "A",
-            "あ",
-            "한",
-            "ก",
-            "字"
-        ],
         "stats": {
             "badge": "在架上",
             "languages": "语言",
@@ -148,13 +140,15 @@
         "tabs": {
             "local": "本地",
             "cloud": "云端",
-            "community": "社区"
+            "community": "社区",
+            "official": "官方"
         },
         "comingSoon": {
             "cloud": "云同步即将推出，需登录",
             "community": "浏览社区词集的功能尚不可用"
         },
-        "loading": "Loading…"
+        "loading": "Loading…",
+        "select": "选择"
     },
     "notfound": {
         "title": "页面未找到",
@@ -196,7 +190,8 @@
                 "name": "中文",
                 "description": "汉字、拼音和声调配对，每次只练几分钟。"
             }
-        }
+        },
+        "back_language": "返回语言选择"
     },
     "japanese": {
         "badge": "日语",
@@ -223,30 +218,30 @@
                 "description": "浏览全部平假名和片假名及其读音。",
                 "action": "查看假名"
             },
-            "kanaDrill": {
-                "title": "假名练习",
-                "description": "测试你对平假名和片假名的识别能力。",
-                "action": "开始假名练习"
-            },
-            "vocabularyReview": {
-                "title": "复习",
-                "description": "用闪卡和间隔重复法复习词汇。",
-                "action": "开始复习"
-            },
-            "vocabularyexam": {
-                "title": "词汇测验",
-                "description": "用基于词汇构建的选择题来测验自己。",
-                "action": "参加测验"
-            },
-            "vocabularyBrowse": {
-                "title": "Browse Vocabulary",
-                "description": "Read through a deck's words with readings, meanings, and examples.",
-                "action": "Browse Words"
-            },
             "render": {
                 "title": "Render",
                 "description": "Read short passages with furigana and check yourself against the translation.",
                 "action": "Start Reading"
+            },
+            "vocab": {
+                "title": "词汇",
+                "description": "扩充你的词库，再按间隔重复训练。",
+                "action": "浏览词汇"
+            },
+            "drill": {
+                "title": "假名练习",
+                "description": "测试你对平假名和片假名的辨认能力。",
+                "action": "开始假名练习"
+            },
+            "review": {
+                "title": "词汇复习",
+                "description": "用单词卡和间隔重复复习词汇。",
+                "action": "开始复习"
+            },
+            "exam": {
+                "title": "词汇测验",
+                "description": "用自己词汇生成的单选题测试自己。",
+                "action": "参加测验"
             }
         },
         "decks": {
@@ -301,14 +296,13 @@
                 "review": "Review",
                 "exam": "Exam",
                 "drill": "Drill"
-            }
+            },
+            "viewAuthor": "查看 {{author}} 的主页",
+            "favourite": "加入收藏",
+            "unfavourite": "取消收藏"
         },
         "exam": {
             "title": "考试",
-            "description": "用你的词汇构建的多项选择题考试来测试自己。选择一个卡组、导入一个，或创建自己的卡组。",
-            "back_hub": "返回日语主页",
-            "search": "搜索考试卡组...",
-            "empty": "还没有考试卡组 — 导入一个或创建一个自定义卡组。",
             "import": "导入考试卡组",
             "addCustom": "创建自定义卡组",
             "importErrorJson": "无法将此文件作为 JSON 读取。",
@@ -321,27 +315,12 @@
                 "descriptionPlaceholder": "关于此卡组的简短说明",
                 "wordsLabel": "包含的单词",
                 "wordsPlaceholder": "搜索单词...",
-                "selectedCount": "已选 {{count}} 个",
                 "titleError": "请输入卡组名称。",
                 "minWordsError": "请至少选择两个单词。",
                 "cancel": "取消",
-                "submit": "创建卡组"
-            },
-            "card": {
-                "note": "考试笔记",
-                "exportAria": "导出考试卡组",
-                "deleteAria": "删除考试卡组",
-                "export": "导出",
-                "delete": "删除",
-                "byAuthor": "由 {{author}} 提供",
-                "start": "开始",
-                "question_one": "{{count}} 道题",
-                "question_other": "{{count}} 道题",
-                "source": {
-                    "default": "默认",
-                    "custom": "我的卡组",
-                    "imported": "已导入"
-                }
+                "submit": "创建卡组",
+                "selectedCount_one": "已选 {{count}} 个",
+                "selectedCount_other": "已选 {{count}} 个"
             }
         },
         "kana": {
@@ -574,7 +553,8 @@
         "updatePassword": "Update Password",
         "resetSuccess": "Password updated. Please sign in.",
         "line": "LINE",
-        "x": "X (Twitter)"
+        "x": "X (Twitter)",
+        "sendResetCode": "发送重置码"
     },
     "settings": {
         "title": "设置",
@@ -635,7 +615,6 @@
             "google": "Google",
             "discord": "Discord",
             "line": "LINE",
-            "facebook": "Facebook",
             "x": "X (Twitter)",
             "connected": "Connected",
             "notConnected": "Not connected",
@@ -732,7 +711,8 @@
             "removeError": "无法删除头像",
             "cancel": "取消",
             "saving": "保存中…",
-            "confirm": "确认"
+            "confirm": "确认",
+            "change": "更换头像"
         },
         "public": {
             "notFoundTitle": "Profile not found",
@@ -742,42 +722,185 @@
         }
     },
     "english": {
-        "badge": "English",
-        "title": "Learn English",
-        "description": "English is a new track. The deck features below work today; the character set and drill are still being built.",
+        "badge": "英语",
+        "title": "学习英语",
+        "description": "英语是一门新课程。下面这些卡组功能已经可用，字符集和练习仍在开发中。",
         "nav": {
             "render": {
-                "title": "Render",
-                "description": "Read short passages and check yourself against the translation.",
-                "action": "Start Reading"
+                "title": "阅读",
+                "description": "读短文并对照译文检查自己。",
+                "action": "开始阅读"
             },
             "review": {
-                "title": "Vocabulary Review",
-                "description": "Review vocabulary with flashcards and spaced repetition.",
-                "action": "Start Review"
+                "title": "词汇复习",
+                "description": "用单词卡和间隔重复复习词汇。",
+                "action": "开始复习"
             },
             "exam": {
-                "title": "Vocabulary exam",
-                "description": "Test yourself with multiple-choice exam built from your vocabulary.",
-                "action": "Take an Exam"
+                "title": "词汇测验",
+                "description": "用自己词汇生成的单选题测试自己。",
+                "action": "参加测验"
             },
             "vocab": {
-                "title": "Browse Vocabulary",
-                "description": "Read through a deck's words with readings, meanings, and examples.",
-                "action": "Browse Words"
+                "title": "浏览词汇",
+                "description": "浏览卡组中的单词，含读音、释义和例句。",
+                "action": "查看单词"
             }
         },
         "vocab": {
-            "title": "Vocabulary"
+            "title": "词汇"
         },
         "render": {
-            "title": "Render"
+            "title": "阅读"
         },
         "review": {
-            "title": "Vocabulary Review"
+            "title": "词汇复习"
         },
         "exam": {
             "title": "考试"
+        },
+        "sections": {
+            "learn": "学习",
+            "practice": "练习"
         }
+    },
+    "deck": {
+        "type": {
+            "vocab": "词汇",
+            "render": "阅读",
+            "review": "复习",
+            "exam": "测验",
+            "drill": "练习"
+        },
+        "source": {
+            "official": "官方",
+            "community": "社区",
+            "local": "我的",
+            "cloud": "云端"
+        },
+        "visibility": {
+            "public": "公开",
+            "unlisted": "不公开列出",
+            "private": "私密"
+        },
+        "search": "搜索卡组",
+        "searchAria": "按名称搜索卡组",
+        "searchClear": "清除搜索",
+        "tallyAria": "按来源划分的卡组",
+        "resultCount": "显示 {{total}} 个卡组中的 {{matched}} 个",
+        "loading": "正在加载卡组…",
+        "itemCount_one": "{{count}} 项",
+        "itemCount_other": "{{count}} 项",
+        "byAuthor": "由 {{author}} 创建",
+        "openAria": "打开 {{name}}",
+        "export": "导出",
+        "exportAria": "导出卡组",
+        "download": "下载",
+        "downloadAria": "下载卡组",
+        "delete": "删除",
+        "deleteAria": "删除卡组",
+        "start": "开始",
+        "list": {
+            "backHub": "返回{{language}}",
+            "eyebrow": {
+                "vocab": "词汇",
+                "render": "阅读",
+                "exam": "测验",
+                "review": "复习"
+            },
+            "title": {
+                "vocab": "词汇卡组",
+                "render": "阅读卡组",
+                "exam": "测验集",
+                "review": "复习卡组"
+            },
+            "description": {
+                "vocab": "把已掌握的词归入卡组，再按间隔重复训练。",
+                "render": "难度分级的小短文，附译文供对照。",
+                "exam": "用你自己的词汇生成的单选题集。",
+                "review": "以间隔重复的方式复习卡组。"
+            }
+        },
+        "empty": {
+            "local": {
+                "title": "你还没有自己的卡组",
+                "body": "你创建或导入的卡组会出现在这里。不如先从官方卡组开始。",
+                "action": "浏览官方卡组"
+            },
+            "official": {
+                "title": "这个类型还没有官方卡组",
+                "body": "官方卡组随应用一起提供，但这个类型尚未发布。"
+            },
+            "filtered": {
+                "title": "没有符合筛选条件的卡组",
+                "body": "此标签页中没有卡组符合你选择的搜索、标签和选项。放宽其中一项即可看到。",
+                "action": "清除筛选"
+            },
+            "cloud": {
+                "title": "云同步即将推出",
+                "body": "登录后，你的卡组将跟随你到每台设备。",
+                "action": "登录"
+            },
+            "cloudSignedIn": {
+                "title": "云同步即将推出",
+                "body": "你已登录。跨设备保持卡组同步的功能正在开发中。"
+            },
+            "community": {
+                "title": "还没有社区卡组",
+                "body": "其他学习者发布的卡组会在社区开放后显示在这里。"
+            }
+        },
+        "noResults": {
+            "title": "没有符合搜索的内容",
+            "body": "试试更短的词，或清除搜索以查看此标签页的全部内容。"
+        },
+        "details": {
+            "notFound": "未找到该卡组。",
+            "back": "返回卡组列表",
+            "contents": "包含内容",
+            "version": "版本",
+            "updated": "更新时间",
+            "noSession": "{{language}}卡组的练习尚未就绪。"
+        },
+        "options": {
+            "sortAria": "排序卡组",
+            "sort": {
+                "default": "默认顺序",
+                "name": "名称 A–Z",
+                "recent": "最近更新",
+                "popular": "下载最多",
+                "size": "体积最大"
+            },
+            "density": {
+                "comfortable": "宽松",
+                "compact": "紧凑"
+            },
+            "nsfw": {
+                "label": "敏感内容",
+                "on": "已显示敏感卡组",
+                "off": "已隐藏敏感卡组"
+            },
+            "importHeading": "导入",
+            "importHint": "读取你之前导出的卡组文件。",
+            "importUnavailable": "此类卡组尚无文件格式。"
+        },
+        "tags": {
+            "clear": "清除标签",
+            "remove": "移除标签 {{tag}}"
+        },
+        "actions": {
+            "create": {
+                "vocab": "新建卡组",
+                "exam": "新建测验"
+            },
+            "importOnly": "导入"
+        },
+        "import": {
+            "action": "导入卡组文件",
+            "invalidDeck": "该文件不是有效的卡组。",
+            "invalidExam": "该文件不是有效的测验集。",
+            "invalidJson": "无法将该文件作为 JSON 读取。"
+        },
+        "viewAuthor": "查看 {{author}} 的主页"
     }
 }

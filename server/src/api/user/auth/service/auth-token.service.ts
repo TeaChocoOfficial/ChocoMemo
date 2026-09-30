@@ -13,10 +13,9 @@ export class AuthTokenService {
 
     /** Sign a purpose-bound token (OTP verification, account changes). */
     sign(userId: string, purpose: TokenPurpose, extra?: { newEmail?: string }): string {
-        return this.jwtService.sign(
-            { userId, purpose, ...(extra ?? {}) } as object,
-            { expiresIn: purpose === 'signup' ? SIGNUP_TOKEN_EXPIRES : ACTION_TOKEN_EXPIRES },
-        );
+        return this.jwtService.sign({ userId, purpose, ...(extra ?? {}) } as object, {
+            expiresIn: purpose === 'signup' ? SIGNUP_TOKEN_EXPIRES : ACTION_TOKEN_EXPIRES,
+        });
     }
 
     /** Verify a purpose-bound token; throws when invalid or used for another purpose. */
