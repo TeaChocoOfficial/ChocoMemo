@@ -1,6 +1,6 @@
 // -Path: 'client/app/types/render.ts'
-import type { DeckSource } from '../deck';
 import type { LangText } from '../type';
+import type { DeckSource } from '../deck';
 import type { VocabSegment } from '../vocabulary';
 
 /** One line of a reading passage. Segments carry per-kanji furigana (`rt`) and

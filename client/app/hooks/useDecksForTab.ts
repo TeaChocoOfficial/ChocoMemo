@@ -5,21 +5,19 @@
 // read. `official` is the odd one out — its decks ship in the bundle, so it
 // reads static data while the other three read stores.
 import { useMemo } from 'react';
-import type { DeckData, DeckType } from '~/types/deck';
+import type { DeckData, DeckSource, DeckType } from '~/types/deck';
 import type { Languages } from '~/data/language';
 import { officialDecksOfType } from '~/data/japanese/officialDecks';
 import { useDeckListLocalStore } from '~/stores/deck/deckListLocal.store';
 import { useDeckListCloudStore } from '~/stores/deck/deckListCloud.store';
 import { useDeckListCommunityStore } from '~/stores/deck/deckListCommunity.store';
-import type { DeckSourceTab } from '~/hooks/useDeckSourceReady';
 
-export type { DeckSourceTab };
 
 /** The decks one tab shows, or an empty list while its store rehydrates. */
 export function useDecksForTab(
     language: Languages,
     type: DeckType,
-    tab: DeckSourceTab,
+    tab: DeckSource,
 ): DeckData[] {
     const localLists = useDeckListLocalStore((state) => state.deckLists);
     const cloudLists = useDeckListCloudStore((state) => state.deckLists);
@@ -38,7 +36,7 @@ export function useDecksForTab(
 export function useDeckCounts(
     language: Languages,
     type: DeckType,
-): Record<DeckSourceTab, number> {
+): Record<DeckSource, number> {
     const localLists = useDeckListLocalStore((state) => state.deckLists);
     const cloudLists = useDeckListCloudStore((state) => state.deckLists);
     const communityLists = useDeckListCommunityStore((state) => state.deckLists);

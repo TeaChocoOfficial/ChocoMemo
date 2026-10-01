@@ -1,8 +1,8 @@
+import { Languages } from '~/data/language';
+import TrackDropdown from './TrackDropdown';
+import { getPrimaryNavItems } from './utils';
 import { useTranslation } from 'react-i18next';
 import { Link, usePathname } from '~/i18n/routing';
-import { Languages } from '~/data/language';
-import { getPrimaryNavItems } from './utils';
-import TrackDropdown from './TrackDropdown';
 
 export default function DesktopNav() {
     const { t } = useTranslation();

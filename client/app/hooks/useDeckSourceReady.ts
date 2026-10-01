@@ -7,18 +7,17 @@
 //
 // Derived state only: this reads the stores, it never writes to them.
 import { useEffect } from 'react';
-import type { DeckSourceTab } from '~/types/deck';
+import type { DeckSource } from '~/types/deck';
 import type { Languages } from '~/data/language';
 import { useDeckListCloudStore } from '~/stores/deck/deckListCloud.store';
 import { useDeckListCommunityStore } from '~/stores/deck/deckListCommunity.store';
 
-export type { DeckSourceTab };
 
 /**
  * @returns `true` while the source still owes the UI its decks, so the caller
  * should show a skeleton instead of an empty state.
  */
-export function useDeckSourceReady(language: Languages, source: DeckSourceTab): boolean {
+export function useDeckSourceReady(language: Languages, source: DeckSource): boolean {
     const cloudStatus = useDeckListCloudStore((state) => state.status[language]);
     const communityStatus = useDeckListCommunityStore((state) => state.status[language]);
 
@@ -40,9 +39,10 @@ export function useDeckSourceReady(language: Languages, source: DeckSourceTab): 
         case 'community':
             return communityStatus !== 'ready';
         default:
-            // local and official are synchronous. Defaulting to "not loading"
-            // rather than adding cases keeps a future source safe: a skeleton
-            // that never goes away is worse than one that never appeared.
+            // `local` and `official` are synchronous, and so is any source added
+            // later until somebody says otherwise. Defaulting to "not loading"
+            // keeps a new source safe: a skeleton that never goes away is worse
+            // than one that never appeared.
             return false;
     }
 }

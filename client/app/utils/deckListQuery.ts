@@ -14,7 +14,8 @@
 //     actually chose, so the common case stays `/japanese/vocab` and a shared
 //     link never pins a preference that used to be the implicit one.
 import { DEFAULT_DECK_LIST_QUERY } from '~/types/deckList';
-import type { DeckDensity, DeckListQuery, DeckSort, DeckSourceTab } from '~/types/deckList';
+import type { DeckDensity, DeckListQuery, DeckSort } from '~/types/deckList';
+import type { DeckSource } from '~/types/deck';
 import type { DeckData } from '~/types/deck';
 
 /** Query-string keys, named once so parsing and writing cannot drift. */
@@ -29,7 +30,7 @@ export const DECK_LIST_PARAMS = {
 
 /** Tab order. What the viewer made, then what the app ships, then the two
  *  sources still waiting on a server — the same order the tally used to list. */
-export const DECK_SOURCE_TABS: readonly DeckSourceTab[] = [
+export const DECK_SOURCE_TABS: readonly DeckSource[] = [
     'local',
     'official',
     'cloud',

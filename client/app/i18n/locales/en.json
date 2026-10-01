@@ -230,25 +230,7 @@
         "deleteAria": "Delete deck",
         "start": "Start",
         "list": {
-            "backHub": "Back to {{language}}",
-            "eyebrow": {
-                "vocab": "Vocabulary",
-                "render": "Reading",
-                "exam": "Exams",
-                "review": "Review"
-            },
-            "title": {
-                "vocab": "Vocabulary decks",
-                "render": "Reading decks",
-                "exam": "Exam sets",
-                "review": "Review decks"
-            },
-            "description": {
-                "vocab": "Group the words you know into a deck, then drill them on a spaced schedule.",
-                "render": "Short graded passages to read, with a translation to check against.",
-                "exam": "Multiple-choice sets built from your own vocabulary.",
-                "review": "Run a deck as a spaced-repetition session."
-            }
+            "backHub": "Back to {{language}}"
         },
         "empty": {
             "local": {

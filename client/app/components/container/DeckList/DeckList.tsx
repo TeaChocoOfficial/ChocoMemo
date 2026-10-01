@@ -101,7 +101,7 @@ export default function DeckList({
             : undefined;
 
     return (
-        <div className='mt-8'>
+        <>
             <SourceTally counts={counts} active={query.tab} onSelect={setTab} />
 
             <div className='my-4 flex flex-col gap-3'>
@@ -144,6 +144,6 @@ export default function DeckList({
                     {sentinelRef && <div ref={sentinelRef} aria-hidden='true' className='h-px w-full' />}
                 </>
             )}
-        </div>
+        </>
     );
 }

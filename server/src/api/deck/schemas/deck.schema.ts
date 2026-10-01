@@ -1,17 +1,17 @@
-// -Path: "src/api/deck/schemas/deck.schema.ts"
-import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import type { HydratedDocument } from 'mongoose';
+// -Path: 'src/api/deck/schemas/deck.schema.ts'
 import { ApiMetaSchema } from '~/types/dto';
+import type { HydratedDocument } from 'mongoose';
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { DeckType, DeckVisibility, Language } from '~/types/deck';
 
 export type DeckDocument = HydratedDocument<Deck>;
 
-/** A deck published to an account: its metadata, and an ordered list of the
- *  content it points at.
+/** A published deck: its metadata, and the ids of the content it points at.
  *
- *  The content itself lives in one of three collections keyed by `deckId`, and
- *  `contentIds` is the deck's running order — so reordering a deck is a single
- *  array write, and reading a deck is one indexed lookup plus one ordered read.
+ *  The content itself lives in its own collections, which this phase does not
+ *  serve yet — so `contentIds` is present and ordered, but empty until decks
+ *  gain items. Kept because it is part of the model the client stores, and a
+ *  deck that never had one would otherwise be a lie about its shape.
  *
  *  Nothing about the author is stored here. The response joins `users`, because
  *  a copied snapshot would go stale the moment somebody renames themselves. */
@@ -23,7 +23,7 @@ export class Deck extends ApiMetaSchema {
     @Prop({ type: String, enum: Language, required: true })
     language!: Language;
 
-    /** Always stored as a map, even when the client sent a bare string. */
+    /** Always stored as a map, even when a client sends a bare string. */
     @Prop({ type: Object, required: true })
     name!: Record<string, string>;
 
@@ -36,11 +36,11 @@ export class Deck extends ApiMetaSchema {
     @Prop({ default: false })
     nsfw!: boolean;
 
-    @Prop({ type: String, enum: DeckVisibility, default: DeckVisibility.PRIVATE })
+    @Prop({ type: String, enum: DeckVisibility, default: DeckVisibility.PUBLIC })
     visibility!: DeckVisibility;
 
-    /** Ordered: this is the deck's running order, which is why the content
-     *  documents need no ordinal of their own. */
+    /** Ordered: this is the deck's running order. Empty until decks carry
+     *  content — see the note on the class. */
     @Prop({ type: [String], required: true, default: [] })
     contentIds!: string[];
 
@@ -49,9 +49,13 @@ export class Deck extends ApiMetaSchema {
     coverImageId?: string;
 
     /**
-     * Heart count. Denormalised for the popular sort; `deck_heart_totals` is
-     * the authority and a recount migration repairs drift. Bundled official
-     * decks have no document here, so their counts live only in that table.
+     * Heart count, denormalised for the `popular` sort.
+     *
+     * @todo Nothing writes this yet. A heart is server state for a published
+     * deck but client state for a bundled one, so the authority is still to be
+     * decided; see the plan. Until then it is always 0 and the response leaves
+     * `meta.heart` out entirely, which the client reads as "nobody has hearted
+     * this" rather than inventing a number.
      */
     @Prop({ default: 0, min: 0 })
     heart!: number;
@@ -59,17 +63,8 @@ export class Deck extends ApiMetaSchema {
     @Prop({ default: 0, min: 0 })
     downloadCount!: number;
 
-    /** Bumped on every content change, so a client can tell whether its cached
-     *  copy is stale. */
     @Prop({ default: '0.0.1' })
     version!: string;
-
-    /** Normalised, lowercased `name` + `description` + `tags` across every
-     *  language, so a deck titled in Japanese is searchable in Japanese.
-     *  Excluded from reads by default: the list endpoints filter on it but
-     *  never return it. */
-    @Prop({ select: false })
-    searchText?: string;
 
     /** Added by `timestamps: true`; declared so the document type carries them. */
     @Prop()
@@ -81,7 +76,7 @@ export class Deck extends ApiMetaSchema {
 
 export const DeckSchema = SchemaFactory.createForClass(Deck);
 
-// Browse: the deck-list query, and the popular sort when there is no search.
+// The deck-list query, and the popular sort when there is no search.
 DeckSchema.index({ visibility: 1, language: 1, type: 1, heart: -1, createdAt: -1 });
 // Cursor pagination over a feed that only ever grows. `skip` would scan further
 // on every page; this walks the index instead.

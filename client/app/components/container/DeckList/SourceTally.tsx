@@ -12,7 +12,7 @@
 // number is what tells the viewer the tab is worth clicking at all.
 import { useTranslation } from 'react-i18next';
 import { DECK_SOURCE_TABS } from '~/utils/deckListQuery';
-import type { DeckSource, DeckSourceTab } from '~/types/deck';
+import type { DeckSource } from '~/types/deck';
 
 export default function SourceTally({
     counts,
@@ -22,8 +22,8 @@ export default function SourceTally({
     /** Deck count per source, from `useDeckCounts`. */
     counts: Record<DeckSource, number>;
     /** The source currently on screen. */
-    active: DeckSourceTab;
-    onSelect: (source: DeckSourceTab) => void;
+    active: DeckSource;
+    onSelect: (source: DeckSource) => void;
 }) {
     const { t } = useTranslation();
 

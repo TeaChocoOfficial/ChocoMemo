@@ -11,19 +11,11 @@ export type Version = `${number}.${number}.${number}`;
  *  - `community`: published by other users, fetched rather than owned. */
 export type DeckSource = 'official' | 'local' | 'cloud' | 'community';
 
-/** The sources a deck-list page shows as separate tabs.
- *
- *  Same members as `DeckSource`, but spelled out separately because the tab
- *  order is a deliberate product decision (what the viewer made first, what the
- *  app ships next, then the two waiting on a server) rather than a property of
- *  the data — naming it independently lets that order change without implying
- *  the sources themselves did. */
-export type DeckSourceTab = DeckSource;
-
 /** Who may see a deck. `unlisted` is reachable by link but absent from
  *  listings; `private` is the viewer's alone. */
 export type DeckVisibility = 'public' | 'unlisted' | 'private';
 export type DeckType = 'vocab' | 'render' | 'drill' | 'review' | 'exam';
+export type DeckListStatus = 'idle' | 'loading' | 'ready' | 'error';
 
 /** How a downloaded copy relates to the deck it came from.
  *  - `tracking`: read-only mirror. When the author updates the origin
@@ -54,7 +46,7 @@ export interface DeckMeta {
      *  viewers can only download a `tracking` copy — never fork it into
      *  an independently editable deck. Meaningless on `private` decks. */
     allowFork?: boolean;
-        /** Total size, in bytes, of this deck's resolved content — the words,
+    /** Total size, in bytes, of this deck's resolved content — the words,
      *  passages, images and audio that `contentIds` points to — not the
      *  size of this `DeckData`/`DeckMeta` object itself, which is tiny
      *  since it only carries id references. Lets a deck list show a size
@@ -80,8 +72,14 @@ export interface DeckOrigin {
 
 /** A deck data: a named, reviewable collection of words.
  *  Words are referenced by id; resolution depends on the source. */
-export interface DeckData {
+export interface DeckData extends CreateDeckData {
     id: string;
+}
+
+export interface CreateDeckData {
+    id?: string;
+    /** The deck's title. Required: a deck is named on every card, in every
+     *  list, and in the details page. */
     name: LangText;
     description?: LangText;
     source: DeckSource;

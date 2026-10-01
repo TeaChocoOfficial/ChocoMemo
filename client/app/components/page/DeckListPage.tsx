@@ -2,12 +2,15 @@
 // Shell for every deck-list page. One component serves vocabulary, reading,
 // exam and review in every language, so all the variation arrives as props.
 //
-// Layout follows the track hubs — the shared `PageShell` frame and `PageHero`
-// header — with `DeckList` owning everything below it: the source selector, the
-// view controls, the filters and the grid. The shell's only real job beyond the
-// frame is holding the query in the URL, so that the source tab, the search and
-// every view option survive a reload and travel in a shared link.
-import PageHero from '~/components/custom/PageHero';
+// No title block of its own: a deck list is only ever reached from its track
+// hub, which has already said what the feature is, so a hero here would repeat
+// it one click later. What is left is the shared `PageShell` frame and
+// `DeckList`, which owns the source selector, the view controls, the filters
+// and the grid.
+//
+// The shell's one real job beyond the frame is holding the view state in the
+// URL, so the source tab, the search and every view option survive a reload and
+// travel in a shared link.
 import PageShell from '~/components/custom/PageShell';
 import DeckList from '~/components/container/DeckList/DeckList';
 import { useDeckListQuery } from '~/hooks/useDeckListQuery';
@@ -25,12 +28,6 @@ export default function DeckListPage({ type, language }: { type: ListType; langu
     // list can never disagree about what tab is open.
     const controls = useDeckListQuery();
 
-    /** Copy authored per language and type, falling back to the shared
-     *  per-type string. Japanese vocabulary and reading have hand-written
-     *  copy; exam, review and every English track fall back. */
-    const copy = (key: 'eyebrow' | 'title' | 'description') =>
-        t(`${language}.${type}.${key}`, { defaultValue: t(`deck.list.${key}.${type}`) });
-
     return (
         <PageShell
             width='wide'
@@ -41,12 +38,6 @@ export default function DeckListPage({ type, language }: { type: ListType; langu
                 }),
             })}
         >
-            <PageHero
-                badge={copy('eyebrow')}
-                title={copy('title')}
-                description={copy('description')}
-            />
-
             <DeckList
                 type={type}
                 language={language}

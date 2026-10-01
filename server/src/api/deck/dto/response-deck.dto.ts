@@ -5,7 +5,7 @@
 // `deckWords` / `deckPassages` / `deckQuestions` resolvers keep working.
 import { ApiProperty } from '@nestjs/swagger';
 import { Role } from '~/types/auth';
-import { DeckContentKind, DeckType, DeckVisibility, Language } from '~/types/deck';
+import { DeckType, DeckVisibility, Language } from '~/types/deck';
 
 export class DeckAuthorDto {
     @ApiProperty({ type: String, example: '67f1c2a4e1b2c3d4e5f60718' })
@@ -33,9 +33,6 @@ export class DeckMetaDto {
 
     @ApiProperty({ type: String, format: 'date-time' })
     updatedAt!: string;
-
-    @ApiProperty({ type: String, required: false, example: '/api/img/67f1c2a4e1b2c3d4e5f60718' })
-    downloadUrl?: string;
 
     @ApiProperty({ type: Number, default: 0 })
     downloadCount!: number;
@@ -93,31 +90,12 @@ export class ResponseDeckDto {
     meta!: DeckMetaDto;
 }
 
-export class ResponseDeckDetailDto extends ResponseDeckDto {
-    @ApiProperty({
-        required: false,
-        description: "The deck's items, when requested with `include=content`",
-    })
-    content?: unknown[];
-}
-
 /** One page of decks, plus the cursor for the next. `nextCursor` is `null` on
- *  the last page, which is the client\'s signal to stop asking. */
+ *  the last page, which is the client's signal to stop asking. */
 export class ResponseDeckPageDto {
     @ApiProperty({ type: [ResponseDeckDto] })
     items!: ResponseDeckDto[];
 
     @ApiProperty({ type: String, nullable: true, description: 'Cursor for the next page, or null' })
     nextCursor!: string | null;
-}
-
-export class ResponseContentDto {
-    @ApiProperty({ type: String, enum: DeckContentKind, example: DeckContentKind.WORD })
-    kind!: DeckContentKind;
-
-    @ApiProperty({ type: [String], description: "Content ids, in the deck's running order" })
-    ids!: string[];
-
-    @ApiProperty({ description: 'The items themselves, in the same order as `ids`' })
-    items!: unknown[];
 }

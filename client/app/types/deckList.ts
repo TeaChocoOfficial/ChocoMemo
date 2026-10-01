@@ -6,9 +6,7 @@
 // is the whole reason it is a single object rather than scattered `useState`
 // calls: one shape in, one shape out, and the default values below define what
 // "no query string" means.
-import type { DeckSourceTab } from './deck';
-
-export type { DeckSourceTab };
+import type { DeckSource } from './deck';
 
 /** How the grid is ordered.
  *  - `default`: whatever the source produced — store order, or the order the
@@ -28,7 +26,7 @@ export type DeckDensity = 'comfortable' | 'compact';
 /** A single view of a deck list: which source, narrowed by how. */
 export interface DeckListQuery {
     /** Which source tab is showing. */
-    tab: DeckSourceTab;
+    tab: DeckSource;
     /** Free-text match over name, description and tags. */
     search: string;
     sort: DeckSort;

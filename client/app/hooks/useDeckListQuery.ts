@@ -18,7 +18,8 @@
 import { useCallback, useMemo } from 'react';
 import { useSearchParams } from 'react-router';
 import { DEFAULT_DECK_LIST_QUERY } from '~/types/deckList';
-import type { DeckDensity, DeckListQuery, DeckSort, DeckSourceTab } from '~/types/deckList';
+import type { DeckDensity, DeckListQuery, DeckSort } from '~/types/deckList';
+import type { DeckSource } from '~/types/deck';
 import {
     deckListQueryToParams,
     isDeckListQueryDefault,
@@ -41,7 +42,7 @@ export interface DeckListQueryControls {
     push: (update: QueryUpdate) => void;
     /** A refinement happening too fast to be worth a history entry. */
     replace: (update: QueryUpdate) => void;
-    setTab: (tab: DeckSourceTab) => void;
+    setTab: (tab: DeckSource) => void;
     setSearch: (search: string) => void;
     setSort: (sort: DeckSort) => void;
     setDensity: (density: DeckDensity) => void;
@@ -89,7 +90,7 @@ export function useDeckListQuery(): DeckListQueryControls {
     const push = useCallback((update: QueryUpdate) => commit(update, 'push'), [commit]);
     const replace = useCallback((update: QueryUpdate) => commit(update, 'replace'), [commit]);
 
-    const setTab = useCallback((tab: DeckSourceTab) => push({ tab }), [push]);
+    const setTab = useCallback((tab: DeckSource) => push({ tab }), [push]);
     const setSort = useCallback((sort: DeckSort) => push({ sort }), [push]);
     const setDensity = useCallback((density: DeckDensity) => push({ density }), [push]);
     const setNsfw = useCallback((nsfw: boolean) => push({ nsfw }), [push]);
