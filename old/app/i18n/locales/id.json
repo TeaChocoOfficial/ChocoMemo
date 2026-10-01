@@ -1,0 +1,906 @@
+{
+    "nav": {
+        "home": "Beranda",
+        "languages": "Bahasa",
+        "japanese": "Bahasa Jepang",
+        "menu": "Buka menu",
+        "settings": "Pengaturan",
+        "language": "Bahasa",
+        "theme": "Tema",
+        "english": "English"
+    },
+    "chrome": {
+        "hide": "Sembunyikan",
+        "show": "Tampilkan",
+        "toggleLabel": "Tampilkan antarmuka"
+    },
+    "home": {
+        "badge": "ChocoMemo · pustaka bahasa komunitas",
+        "title": "Pelajari bahasa apa pun,",
+        "titleAccent": "satu deck bersama setiap kali.",
+        "subtitle": "Jepang, Inggris, Thai, Korea, dan Tionghoa — masing-masing dibangun dari deck, drill, dan kuis yang ditulis dan dibagikan oleh fellow learner sungguhan. Gratis, terbuka, dan bebas kamu perluas.",
+        "ctaStart": "Mulai belajar",
+        "ctaCreate": "Terbitkan deck",
+        "ctaHow": "Cara kerja",
+        "scriptsLabel": "Sedang diseduh",
+        "stats": {
+            "badge": "Di rak",
+            "languages": "Bahasa",
+            "kana": "Huruf kana",
+            "vocabulary": "Kosakata",
+            "shelves": "Deck & kuis"
+        },
+        "languages": {
+            "badge": "Rak itu",
+            "title": "Lima bahasa, satu kebiasaan hangat",
+            "hint": "Mulai dari baki yang sudah siap hari ini — sisanya masih diseduh.",
+            "available": "Siap dituang",
+            "comingSoon": "Diseduh",
+            "toAll": "Jelajahi semua bahasa",
+            "items": {
+                "japanese": {
+                    "name": "Jepang",
+                    "description": "Hiragana, katakana, dan kanji dengan drill dan tinjauan berjarak."
+                },
+                "english": {
+                    "name": "Inggris",
+                    "description": "Kosakata dan frasa sehari-hari, diurutkan oleh orang yang memakainya."
+                },
+                "thai": {
+                    "name": "Thai",
+                    "description": "Nada, aksara, dan kata-kata yang benar-benar akan kamu temui di jalan."
+                },
+                "korean": {
+                    "name": "Korea",
+                    "description": "Hangul dalam satu sesi, lalu deck percakapan yang nempel."
+                },
+                "chinese": {
+                    "name": "Tionghoa",
+                    "description": "Aksara, pinyin, dan pasangan nada, dilatih dalam putaran singkat."
+                }
+            }
+        },
+        "library": {
+            "badge": "Rak komunitas",
+            "title": "Tulis deck. Bagikan. Lihat dia mengajar.",
+            "hint": "Setiap set belajar di ChocoMemo ditulis oleh orang, bukan penerbit. Rapikan satu, terbitkan, dan orang lain mendapat satu kursus utuh darinya.",
+            "cta": "Buka rak tinjauan",
+            "items": {
+                "decks": {
+                    "title": "Deck kosakata",
+                    "hint": "Kelompokkan kata ke deck bertema — alam, hewan, hal sehari-hari — dan tinjau seperti e-book kecil."
+                },
+                "exam": {
+                    "title": "Set kuis",
+                    "hint": "Ubah deck jadi ujian berdurasi tetap dan lihat kata mana yang masih perlu diseduh."
+                },
+                "kana": {
+                    "title": "Drill kana",
+                    "hint": "Putaran cepat di kedua silabarium sampai bentuknya keluar tanpa berpikir."
+                },
+                "review": {
+                    "title": "Tinjauan berjarak",
+                    "hint": "Deck yang kamu unduh kembali muncul sesuai jadwalnya sendiri, jadi tak ada yang mendingin."
+                }
+            }
+        },
+        "how": {
+            "badge": "Cara kerja",
+            "title": "Tuang harianmu",
+            "hint": "Empat langkah kecil, diulang tiap hari — itu saja yang dibutuhkan.",
+            "step1": {
+                "title": "Pilih bahasamu",
+                "hint": "Pilih baki yang kamu pelajari hari ini."
+            },
+            "step2": {
+                "title": "Pinjam deck",
+                "hint": "Ambil deck buatan orang lain, atau mulai dari rak bawaan."
+            },
+            "step3": {
+                "title": "Drill dan kuis",
+                "hint": "Drill kana singkat dan ujian kosakata, lima menit sekali jalan."
+            },
+            "step4": {
+                "title": "Terbitkan milikmu",
+                "hint": "Tambahkan kata yang selalu kamu lupakan dan bagikan kembali ke rak."
+            }
+        },
+        "cta": {
+            "title": "Panci tehnya sudah menyala.",
+            "hint": "Tidak ada dinding pendaftaran antara kamu dan deck pertama. Masuk saja saat ingin menyinkronkan katamu.",
+            "primary": "Mulai belajar",
+            "secondary": "Terbitkan deck"
+        }
+    },
+    "theme": {
+        "pickerLabel": "Ganti tema",
+        "names": {
+            "lightChoco": "Cokelat Terang",
+            "darkChoco": "Cokelat Gelap",
+            "darkGalaxy": "Galaksi Gelap",
+            "lightGalaxy": "Galaksi Terang",
+            "darkSakura": "Sakura Gelap",
+            "lightSakura": "Sakura Terang",
+            "darkPaper": "Kertas Gelap",
+            "lightPaper": "Kertas Terang",
+            "darkNature": "Alam Gelap",
+            "lightNature": "Alam Terang",
+            "darkAutumn": "Musim Gugur Gelap",
+            "lightAutumn": "Musim Gugur Terang",
+            "darkWinter": "Musim Dingin Gelap",
+            "lightWinter": "Musim Dingin Terang"
+        }
+    },
+    "common": {
+        "error": {
+            "oops": "Ups!",
+            "unexpected": "Terjadi kesalahan yang tidak terduga.",
+            "notFound": "Halaman yang diminta tidak dapat ditemukan."
+        },
+        "tabs": {
+            "local": "Lokal",
+            "cloud": "Cloud",
+            "community": "Komunitas",
+            "official": "Resmi"
+        },
+        "comingSoon": {
+            "cloud": "Sinkronisasi cloud segera hadir, diperlukan masuk",
+            "community": "Menjelajahi set komunitas belum tersedia"
+        },
+        "loading": "Loading…",
+        "select": "Pilih"
+    },
+    "notfound": {
+        "title": "Halaman Tidak Ditemukan",
+        "description": "Halaman yang Anda cari tidak ada atau telah dipindahkan.",
+        "back_home": "Kembali ke Beranda",
+        "error_code": "404"
+    },
+    "languageSelect": {
+        "badge": "Pilihan Bahasa",
+        "title": "Pilih Bahasa untuk Dipelajari",
+        "description": "Pilih bahasa yang ingin kamu pelajari. Jepang siap hari ini; sisanya masih diseduh.",
+        "back_home": "Kembali ke Beranda",
+        "status": {
+            "available": "Tersedia",
+            "comingSoon": "Segera Hadir"
+        },
+        "cta": {
+            "start": "Mulai Belajar",
+            "unavailable": "Tidak Tersedia"
+        },
+        "languages": {
+            "japanese": {
+                "name": "Bahasa Jepang",
+                "description": "Hiragana, katakana, dan kanji, dilatih dalam putaran pendek dan tetap hangat lewat tinjauan berjarak."
+            },
+            "english": {
+                "name": "Bahasa Inggris",
+                "description": "Kosakata dan frasa sehari-hari, diurutkan menjadi deck oleh orang yang benar-benar memakainya."
+            },
+            "thai": {
+                "name": "Bahasa Thai",
+                "description": "Nada dan aksara berdampingan, plus kata-kata yang akan kamu temui di jalan."
+            },
+            "korean": {
+                "name": "Bahasa Korea",
+                "description": "Hangul dalam satu sesi, lalu deck percakapan yang enggan menjadi dingin."
+            },
+            "chinese": {
+                "name": "Tionghoa",
+                "description": "Aksara, pinyin, dan pasangan nada, dilatih beberapa menit sekali jalan."
+            }
+        },
+        "back_language": "Kembali ke pilihan bahasa"
+    },
+    "japanese": {
+        "badge": "Bahasa Jepang",
+        "title": "Belajar Bahasa Jepang",
+        "description": "Kuasai dasar-dasar bahasa Jepang melalui kana, kosakata, dan kuis.",
+        "back_language": "Kembali ke Pilihan Bahasa",
+        "stats": {
+            "kana": "Karakter kana",
+            "vocabulary": "Kata kosakata",
+            "learned": "Kata dipelajari",
+            "due": "Jatuh tempo untuk ditinjau"
+        },
+        "sections": {
+            "kana": "Kana",
+            "kanaHint": "Pelajari dua silabari Jepang — telusuri setiap karakter dan latih pengenalanmu.",
+            "vocabulary": "Kosakata",
+            "vocabularyHint": "Kembangkan bank kata dan tinjau dengan jadwal teratur.",
+            "learn": "Belajar",
+            "practice": "Latihan"
+        },
+        "nav": {
+            "kana": {
+                "title": "Kana",
+                "description": "Telusuri semua Hiragana dan Katakana beserta bacaannya.",
+                "action": "Lihat Kana"
+            },
+            "render": {
+                "title": "Render",
+                "description": "Read short passages with furigana and check yourself against the translation.",
+                "action": "Start Reading"
+            },
+            "vocab": {
+                "title": "Kosakata",
+                "description": "Kumpulkan kata lalu latih dengan jarak terjadwal.",
+                "action": "Lihat kosakata"
+            },
+            "drill": {
+                "title": "Latihan Kana",
+                "description": "Uji kemampuan mengenali Hiragana dan Katakana.",
+                "action": "Mulai latihan kana"
+            },
+            "review": {
+                "title": "Tinjauan Kosakata",
+                "description": "Tinjau kosakata dengan kartu dan pengulangan berjarak.",
+                "action": "Mulai tinjauan"
+            },
+            "exam": {
+                "title": "Ujian Kosakata",
+                "description": "Uji diri dengan soal pilihan ganda dari kosakatamu sendiri.",
+                "action": "Kerjakan ujian"
+            }
+        },
+        "decks": {
+            "title": "Dek Tinjauan Kosakata",
+            "description": "Pilih dek untuk ditinjau. Dek berasal dari set bawaan, kata-katamu sendiri, atau koleksi yang diunduh.",
+            "availableCount": "{{count}} dek tersedia",
+            "startReview": "Mulai Tinjauan",
+            "due": "jatuh tempo",
+            "byAuthor": "oleh {{author}}",
+            "download": "Unduh",
+            "note": "Tinjauan",
+            "ready": "Siap",
+            "words": "kata",
+            "search": "Cari dek...",
+            "empty": "Belum ada dek — impor satu atau buat dek khusus.",
+            "addCustom": "Tambah dek khusus",
+            "importDeck": "Impor dek",
+            "importErrorJson": "Tidak dapat membaca berkas ini sebagai JSON.",
+            "form": {
+                "title": "Buat dek khusus",
+                "subtitle": "Pilih kata dari kosakata untuk dikelompokkan menjadi dek tinjauan.",
+                "nameLabel": "Nama",
+                "namePlaceholder": "mis. Kanji favorit saya",
+                "descriptionLabel": "Deskripsi (opsional)",
+                "descriptionPlaceholder": "Catatan singkat tentang dek ini",
+                "wordsLabel": "Kata untuk disertakan",
+                "wordsPlaceholder": "Cari kata...",
+                "selectedCount": "{{count}} dipilih",
+                "nameError": "Beri nama dek-mu.",
+                "minWordsError": "Pilih setidaknya satu kata.",
+                "cancel": "Batal",
+                "submit": "Buat dek"
+            },
+            "notFound": "Dek itu tidak ditemukan.",
+            "source": {
+                "default": "Bawaan",
+                "custom": "Kata-kataku",
+                "cloud": "Cloud",
+                "downloaded": "Diunduh"
+            },
+            "open": "Open",
+            "itemCount_one": "{{count}} item",
+            "itemCount_other": "{{count}} items",
+            "export": "Export",
+            "exportAria": "Export deck",
+            "downloadAria": "Download deck",
+            "delete": "Delete",
+            "deleteAria": "Delete deck",
+            "type": {
+                "vocab": "Vocabulary",
+                "render": "Reading",
+                "review": "Review",
+                "exam": "Exam",
+                "drill": "Drill"
+            },
+            "viewAuthor": "Lihat profil {{author}}",
+            "favourite": "Tambah ke favorit",
+            "unfavourite": "Hapus dari favorit"
+        },
+        "exam": {
+            "title": "Ujian",
+            "import": "Impor set ujian",
+            "addCustom": "Tambah set khusus",
+            "importErrorJson": "Tidak dapat membaca berkas ini sebagai JSON.",
+            "form": {
+                "title": "Buat set ujian khusus",
+                "subtitle": "Pilih kata dari kosakata — set disusun dari artinya, sama seperti set bawaan.",
+                "titleLabel": "Judul",
+                "titlePlaceholder": "mis. Kata sehari-hari saya",
+                "descriptionLabel": "Deskripsi (opsional)",
+                "descriptionPlaceholder": "Catatan singkat tentang set ini",
+                "wordsLabel": "Kata untuk disertakan",
+                "wordsPlaceholder": "Cari kata...",
+                "titleError": "Beri nama set-mu.",
+                "minWordsError": "Pilih setidaknya dua kata.",
+                "cancel": "Batal",
+                "submit": "Buat set",
+                "selectedCount_one": "{{count}} dipilih",
+                "selectedCount_other": "{{count}} dipilih"
+            }
+        },
+        "kana": {
+            "badge": "Kana",
+            "title": "Kana Bahasa Jepang",
+            "description": "Hiragana dan Katakana adalah dua silabari bahasa Jepang. Ketuk tab untuk berpindah.",
+            "tabs": {
+                "hiragana": "Hiragana",
+                "katakana": "Katakana"
+            },
+            "voiceless": "Tanpa suara",
+            "voiced": "Bersuara",
+            "contracted": "Kontraksi",
+            "voice_label": "Suara",
+            "voice_preview": "Pratinjau",
+            "voice_auto": "Otomatis",
+            "voice_choose": "Pilih suara",
+            "voice_ja": "Jepang",
+            "voice_volume": "Volume",
+            "take_quiz": "Ikuti Kuis",
+            "count": "kana",
+            "stats": {
+                "set": "Dalam set",
+                "group": "Dalam grup",
+                "read": "Dibaca"
+            },
+            "readProgress": "{{read}} / {{total}}",
+            "gridHint": "Ketuk kana untuk mendengarnya, atau tekan Mulai membaca untuk berjalan melalui grup dari tempat terakhir.",
+            "readStart": "Mulai membaca",
+            "readContinue": "Lanjutkan membaca",
+            "readStop": "Berhenti",
+            "nowReading": "sedang membaca",
+            "upNext": "berikutnya",
+            "pinToolbar": "Sematkan toolbar",
+            "unpinToolbar": "Lepas sematan toolbar",
+            "sticky": "Lengket",
+            "stickyOn": "Aktif",
+            "stickyOff": "Nonaktif",
+            "back_hub": "Kembali ke Bahasa Jepang"
+        },
+        "kanaDrill": {
+            "badge": "Latihan Kana",
+            "title": "Latihan Kana",
+            "intro": "Konfigurasikan kuis-mu — pilih grup kana yang disertakan, jumlah pertanyaan, dan waktu per pertanyaan.",
+            "start": "Mulai Kuis",
+            "progress": "Pertanyaan",
+            "score": "Skor",
+            "promptLabel": "Apa bacaan dari kana ini?",
+            "promptLabelRomajiToChar": "Kana mana yang cocok dengan bacaan ini?",
+            "promptLabelListen": "Kana mana yang kamu dengar?",
+            "listenAgain": "Dengarkan lagi",
+            "correct": "Benar!",
+            "wrong": "Belum tepat.",
+            "timeout": "Waktu habis!",
+            "correctAnswer": "Jawaban benar",
+            "next": "Pertanyaan Berikutnya",
+            "endGame": "Akhiri Permainan",
+            "resultTitle": "Kuis Selesai!",
+            "result": {
+                "correctLabel": "Benar",
+                "wrongLabel": "Salah",
+                "timeoutLabel": "Waktu Habis",
+                "settingsSummary": "Pengaturan",
+                "settingsButton": "Pengaturan",
+                "exitButton": "Keluar",
+                "playAgain": "Main Lagi",
+                "history": "Riwayat Jawaban",
+                "timeoutShort": "Waktu Habis",
+                "yes": "Ya",
+                "no": "Tidak"
+            },
+            "retry": "Coba Lagi",
+            "back_characters": "Kembali ke Kana",
+            "settings": {
+                "setsLabel": "Set Kana",
+                "questionLabel": "Opsi Kuis",
+                "modeLabel": "Mode Pertanyaan",
+                "mode": {
+                    "charToRomaji": "Kana → Bacaan",
+                    "charToRomajiHint": "Lihat kana, pilih bacaan romaji-nya.",
+                    "romajiToChar": "Bacaan → Kana",
+                    "romajiToCharHint": "Lihat bacaan, pilih kana yang cocok.",
+                    "listenToChar": "Dengar → Kana",
+                    "listenToCharHint": "Dengar kana diucapkan, pilih yang kamu dengar."
+                },
+                "sound": {
+                    "label": "Efek suara",
+                    "voice": "Aria",
+                    "voiceHint": "Putar rekaman suara oleh Aria.",
+                    "tone": "Nada",
+                    "toneHint": "Putar bunyi bip sintesis sederhana.",
+                    "volume": "Volume suara"
+                },
+                "voiceLabel": "Suara",
+                "questionCount": "Jumlah pertanyaan",
+                "questions": "pertanyaan",
+                "choiceCount": "Pilihan jawaban",
+                "choices": "pilihan",
+                "timeLimit": "Waktu per pertanyaan",
+                "autoAdvance": "Lanjut otomatis ke pertanyaan berikutnya",
+                "useAll": "Semua kana",
+                "groups": {
+                    "voiceless": "Tanpa suara",
+                    "voiced": "Bersuara",
+                    "contracted": "Kontraksi"
+                },
+                "chars": "karakter",
+                "totalChars": "Total kana"
+            }
+        },
+        "vocab": {
+            "available": "{{count}} kata total",
+            "back_hub": "Back to hub",
+            "eyebrow": "Vocabulary",
+            "title": "Vocabulary",
+            "description": "Browse a deck's words with readings, meanings, and example sentences.",
+            "search": "Search decks",
+            "empty": "No decks yet.",
+            "words": "words",
+            "read": "Read",
+            "edit": "Edit",
+            "addWord": "Add word",
+            "delete": "Delete",
+            "save": "Save",
+            "cancel": "Cancel",
+            "word": "Word",
+            "reading": "Reading",
+            "meaning": "Meaning",
+            "example": "Example",
+            "required": "Word and meaning are required.",
+            "builtIn": "Built-in words can't be edited."
+        },
+        "vocabularyReview": {
+            "badge": "Tinjauan",
+            "title": "Tinjauan Kosakata",
+            "description": "Balik kartu untuk melihat jawaban, lalu tandai Lulus atau Gagal.",
+            "complete": "Semua selesai!",
+            "completeDescription": "Tidak ada kata yang jatuh tempo untuk ditinjau saat ini.",
+            "exit": "Keluar Tinjauan",
+            "wordsLeft": "kata tersisa",
+            "wordLeft": "kata tersisa",
+            "showAnswer": "Lihat jawaban",
+            "fail": "Gagal",
+            "pass": "Lulus",
+            "failHint": "gagal",
+            "passHint": "lulus",
+            "wordLabel": "Kata",
+            "recallPrompt": "Apa arti kata ini?",
+            "back_hub": "Kembali ke Bahasa Jepang"
+        },
+        "render": {
+            "back_hub": "Back to hub",
+            "eyebrow": "Render",
+            "title": "Render",
+            "description": "Read short passages with furigana and a translation to check against.",
+            "search": "Search decks",
+            "empty": "No reading decks yet.",
+            "passages": "passages",
+            "read": "Read",
+            "showTranslation": "Show translation",
+            "hideTranslation": "Hide translation",
+            "speak": "Listen"
+        },
+        "drill": {
+            "title": "Kana Drill"
+        },
+        "review": {
+            "title": "Vocabulary Review"
+        }
+    },
+    "footer": {
+        "tagline": "Cara yang nyaman dan kaya tema untuk menyeruput jalanmu menelusuri bahasa Jepang.",
+        "explore": "Jelajahi",
+        "learn": "Yang kami ajarkan",
+        "rights": "TeaChoco · Semua hak dilindungi.",
+        "languages": {
+            "ja": "Jepang",
+            "en": "Inggris",
+            "ko": "Korea",
+            "th": "Thai"
+        }
+    },
+    "auth": {
+        "signIn": "Masuk",
+        "signUp": "Daftar",
+        "signOut": "Keluar",
+        "email": "Surel",
+        "password": "Kata sandi",
+        "name": "Nama",
+        "nameTag": "Nama pengguna",
+        "nameTagHint": "3-30 karakter. Hanya huruf Inggris, angka, garis bawah (_) atau tanda hubung (-), tanpa spasi. Nama pengguna publik Anda.",
+        "confirmPassword": "Konfirmasi Kata Sandi",
+        "forgotPassword": "Lupa kata sandi?",
+        "resetPassword": "Atur Ulang Kata Sandi",
+        "backToSignIn": "Kembali ke Masuk",
+        "orContinueWith": "Atau lanjutkan dengan",
+        "google": "Google",
+        "discord": "Discord",
+        "noAccount": "Belum punya akun?",
+        "hasAccount": "Sudah punya akun?",
+        "verifyEmail": "Verifikasi Email",
+        "verificationCode": "Kode verifikasi",
+        "verifyHint": "Masukkan kode 6 digit yang kami kirim ke {{email}}.",
+        "verify": "Verifikasi",
+        "otpSent": "Kami telah mengirim kode ke {{email}}.",
+        "otpResent": "Kode baru telah dikirim.",
+        "verifySuccess": "Selamat datang, {{name}}!",
+        "resendCode": "Kirim ulang kode",
+        "resendInSeconds": "Kirim ulang dalam {{seconds}}d",
+        "profile": "Profil",
+        "settings": "Pengaturan",
+        "welcome": "Selamat datang, {{name}}",
+        "error": {
+            "invalidCredentials": "Surel atau kata sandi salah.",
+            "emailInUse": "Akun dengan surel ini sudah ada.",
+            "nameTagTaken": "Nama pengguna itu sudah digunakan.",
+            "nameTagInvalid": "Nama pengguna harus 3-30 karakter: hanya huruf Inggris, angka, garis bawah, atau tanda hubung (tanpa spasi).",
+            "passwordMismatch": "Kata sandi tidak cocok.",
+            "invalidOtp": "Kode tidak valid atau kedaluwarsa. Silakan coba lagi.",
+            "resendFailed": "Tidak dapat mengirim kode baru. Silakan coba lagi.",
+            "generic": "Terjadi kesalahan. Silakan coba lagi.",
+            "emailNotFound": "No account found with that email.",
+            "resetFailed": "Password reset failed. Please try again.",
+            "oauth": "Sign-in failed: {{reason}}"
+        },
+        "resetCodeSent": "We sent a reset code to {{email}}.",
+        "resetHint": "Enter the code sent to {{email}} and choose a new password.",
+        "forgotHint": "Enter your account email and we'll send you a reset code.",
+        "newPassword": "New Password",
+        "updatePassword": "Update Password",
+        "resetSuccess": "Password updated. Please sign in.",
+        "line": "LINE",
+        "x": "X (Twitter)",
+        "sendResetCode": "Kirim kode reset"
+    },
+    "settings": {
+        "title": "Pengaturan",
+        "subtitle": "Racik ChocoMemo sesuai seleramu.",
+        "back": "Kembali",
+        "nav": {
+            "settings": "Pengaturan",
+            "appearance": "Tampilan",
+            "language": "Bahasa",
+            "voice": "Suara & audio",
+            "interface": "Antarmuka",
+            "account": "Akun"
+        },
+        "appearance": {
+            "hint": "Pilih suasana cangkirmu."
+        },
+        "language": {
+            "hint": "Pilih bahasa yang ChocoMemo gunakan untukmu."
+        },
+        "voice": {
+            "hint": "Suara yang membacakan kana dan kata dengan lantang."
+        },
+        "interface": {
+            "hint": "Sesuaikan hal-hal yang membingkai belajarmu.",
+            "chromeLabel": "Tampilkan antarmuka",
+            "chromeDescription": "Tampilkan atau sembunyikan navigasi dan footer."
+        },
+        "account": {
+            "signedInHint": "Masuk sebagai {{name}}",
+            "signedOutHint": "Masuk untuk menjaga cerita belajarmu di semua perangkat.",
+            "goToProfile": "Lihat profil",
+            "signIn": "Masuk"
+        }
+    },
+    "profile": {
+        "title": "Profil",
+        "subtitle": "Cerita belajarmu bersama ChocoMemo.",
+        "back": "Kembali",
+        "anonymousName": "Pelajar Choco",
+        "memberSince": "Anggota sejak",
+        "notSignedInTitle": "Belum masuk",
+        "notSignedInHint": "Masuk untuk melihat profil, mengedit detail, dan melacak kemajuan di semua perangkat.",
+        "signIn": "Masuk",
+        "stats": {
+            "label": "Sekilas",
+            "kana": "Kana dibaca",
+            "vocabulary": "Kosakata",
+            "learned": "Kata dipelajari",
+            "due": "Jatuh tempo tinjau"
+        },
+        "identities": {
+            "label": "Linked Accounts",
+            "email": "Email",
+            "verified": "Verified",
+            "unverified": "Not verified",
+            "primary": "Primary",
+            "local": "Password",
+            "google": "Google",
+            "discord": "Discord",
+            "line": "LINE",
+            "x": "X (Twitter)",
+            "connected": "Connected",
+            "notConnected": "Not connected",
+            "comingSoon": "Coming soon",
+            "passwordSet": "Password is set",
+            "passwordNotSet": "No password set yet",
+            "connect": "Connect",
+            "disconnect": "Disconnect",
+            "disconnectSuccess": "Google account disconnected",
+            "disconnectError": "Couldn't disconnect this account ({{reason}})",
+            "disconnectTitle": "Disconnect Google account?",
+            "disconnectHint": "You'll be asked to confirm with Google before the link is removed.",
+            "lastSigninMethod": "You need at least one sign-in method left",
+            "disconnectSession": "Your session expired. Sign in again and retry.",
+            "disconnectVerifyFailed": "Couldn't verify your Google account. Try again.",
+            "disconnectCancelled": "Google sign-in was cancelled.",
+            "change": "Change"
+        },
+        "details": {
+            "name": "Nama",
+            "namePlaceholder": "Namamu",
+            "saving": "Menyimpan…",
+            "saved": "Profil diperbarui",
+            "updateError": "Tidak dapat memperbarui profilmu.",
+            "editProfile": "Edit profil",
+            "nameTag": "Nama pengguna",
+            "nameTagHint": "3-30 karakter. Hanya huruf Inggris, angka, garis bawah (_) atau tanda hubung (-), tanpa spasi. Nama pengguna publik Anda.",
+            "nameTagTaken": "Nama pengguna itu sudah digunakan.",
+            "nameTagInvalid": "Nama pengguna harus 3-30 karakter: hanya huruf Inggris, angka, garis bawah, atau tanda hubung (tanpa spasi).",
+            "noNameTag": "Belum ada nama pengguna",
+            "bio": "Bio",
+            "bioPlaceholder": "Ceritakan sedikit tentang dirimu kepada orang lain…"
+        },
+        "email": {
+            "label": "Change email",
+            "hint": "Update the email address you use to sign in.",
+            "placeholder": "you@example.com",
+            "save": "Save",
+            "saving": "Saving…",
+            "saved": "Email updated",
+            "updateError": "Could not update your email.",
+            "invalid": "Please enter a valid email address"
+        },
+        "otp": {
+            "confirmEmail": "Confirm new email",
+            "confirmPassword": "Confirm change password",
+            "sendCode": "Send code",
+            "sending": "Sending…",
+            "codeSent": "Code sent",
+            "codeResent": "Code resent",
+            "sendFailed": "Couldn't send the code",
+            "codeSentTo": "Enter the 6-digit code we sent to {{email}}.",
+            "verifySave": "Verify & save",
+            "verifying": "Verifying…",
+            "invalidCode": "Invalid or expired code",
+            "resendFailed": "Couldn't resend the code",
+            "back": "Back",
+            "emailSame": "New email must be different from the current one",
+            "emailTaken": "That email is already in use",
+            "wrongCurrentPassword": "Current password is incorrect"
+        },
+        "password": {
+            "label": "Change password",
+            "hint": "Your current password is required to set a new one.",
+            "setHint": "Set a password for your account. We'll email a code to confirm.",
+            "current": "Current password",
+            "currentPlaceholder": "Enter current password",
+            "currentRequired": "Current password is required",
+            "new": "New password",
+            "newPlaceholder": "Enter new password (min. 6 characters)",
+            "newRequired": "New password is required",
+            "tooShort": "New password must be at least 6 characters",
+            "confirm": "Confirm new password",
+            "confirmPlaceholder": "Re-enter new password",
+            "mismatch": "Passwords do not match",
+            "incorrect": "Current password is incorrect",
+            "change": "Change password",
+            "changing": "Changing…",
+            "changed": "Password changed successfully",
+            "changeError": "Could not change password",
+            "noPasswordYetHint": "This account doesn't have a password set yet."
+        },
+        "avatar": {
+            "source": "Foto profil",
+            "default": "Bawaan",
+            "google": "Google",
+            "local": "Kustom",
+            "updated": "Foto profil diperbarui",
+            "updateError": "Tidak dapat memperbarui foto profil",
+            "invalidType": "Silakan pilih file gambar",
+            "tooLarge": "Gambar harus lebih kecil dari 5MB",
+            "previewReady": "Pratinjau siap — pilih sumber untuk disimpan",
+            "remove": "Hapus",
+            "removeError": "Tidak dapat menghapus foto profil",
+            "cancel": "Batal",
+            "saving": "Menyimpan…",
+            "confirm": "Konfirmasi",
+            "change": "Ganti foto profil"
+        },
+        "public": {
+            "notFoundTitle": "Profile not found",
+            "notFoundHint": "Nobody is using this name tag. It may have been changed or removed.",
+            "yourDashboard": "Go to your profile",
+            "viewPublic": "View public profile"
+        }
+    },
+    "english": {
+        "badge": "Bahasa Inggris",
+        "title": "Belajar Bahasa Inggris",
+        "description": "Bahasa Inggris adalah jalur baru. Fitur dek di bawah ini sudah bisa dipakai; set karakter dan drill masih dikerjakan.",
+        "nav": {
+            "render": {
+                "title": "Membaca",
+                "description": "Baca teks pendek lalu cek dengan terjemahannya.",
+                "action": "Mulai membaca"
+            },
+            "review": {
+                "title": "Tinjauan Kosakata",
+                "description": "Tinjau kosakata dengan kartu dan pengulangan berjarak.",
+                "action": "Mulai tinjauan"
+            },
+            "exam": {
+                "title": "Ujian Kosakata",
+                "description": "Uji diri dengan soal pilihan ganda dari kosakatamu sendiri.",
+                "action": "Kerjakan ujian"
+            },
+            "vocab": {
+                "title": "Lihat kosakata",
+                "description": "Baca kata-kata dalam dek beserta laja, arti, dan contohnya.",
+                "action": "Lihat kata"
+            }
+        },
+        "vocab": {
+            "title": "Kosakata"
+        },
+        "render": {
+            "title": "Membaca"
+        },
+        "review": {
+            "title": "Tinjauan Kosakata"
+        },
+        "exam": {
+            "title": "Ujian"
+        },
+        "sections": {
+            "learn": "Belajar",
+            "practice": "Latihan"
+        }
+    },
+    "deck": {
+        "type": {
+            "vocab": "Kosakata",
+            "render": "Membaca",
+            "review": "Tinjauan",
+            "exam": "Ujian",
+            "drill": "Latihan"
+        },
+        "source": {
+            "official": "Resmi",
+            "community": "Komunitas",
+            "local": "Milikmu",
+            "cloud": "Cloud"
+        },
+        "visibility": {
+            "public": "Publik",
+            "unlisted": "Tidak terdaftar",
+            "private": "Privat"
+        },
+        "search": "Cari dek",
+        "searchAria": "Cari dek berdasarkan nama",
+        "searchClear": "Hapus pencarian",
+        "tallyAria": "Dek berdasarkan sumber",
+        "resultCount": "Menampilkan {{matched}} dari {{total}} dek",
+        "loading": "Memuat dek…",
+        "itemCount_one": "{{count}} item",
+        "itemCount_other": "{{count}} item",
+        "byAuthor": "oleh {{author}}",
+        "openAria": "Buka {{name}}",
+        "export": "Ekspor",
+        "exportAria": "Ekspor dek",
+        "download": "Unduh",
+        "downloadAria": "Unduh dek",
+        "delete": "Hapus",
+        "deleteAria": "Hapus dek",
+        "start": "Mulai",
+        "list": {
+            "backHub": "Kembali ke {{language}}",
+            "eyebrow": {
+                "vocab": "Kosakata",
+                "render": "Membaca",
+                "exam": "Ujian",
+                "review": "Tinjauan"
+            },
+            "title": {
+                "vocab": "Dek kosakata",
+                "render": "Dek bacaan",
+                "exam": "Set ujian",
+                "review": "Dek tinjauan"
+            },
+            "description": {
+                "vocab": "Kelompokkan kata yang kamu kuasai jadi satu dek, lalu latih dengan jarak terjadwal.",
+                "render": "Teks pendek berjenjang untuk dibaca, lengkap dengan terjemahan sebagai pembanding.",
+                "exam": "Set soal pilihan ganda yang dibuat dari kosakatamu sendiri.",
+                "review": "Jalankan dek sebagai sesi pengulangan berjarak."
+            }
+        },
+        "empty": {
+            "local": {
+                "title": "Belum ada dek milikmu",
+                "body": "Dek yang kamu buat atau impor akan muncul di sini. Mulai dari salah satu dek resmi.",
+                "action": "Lihat dek resmi"
+            },
+            "official": {
+                "title": "Belum ada dek resmi untuk tipe ini",
+                "body": "Dek resmi disertakan dalam aplikasi. Belum ada yang diterbitkan untuk tipe ini."
+            },
+            "filtered": {
+                "title": "Tidak ada dek yang cocok dengan filter",
+                "body": "Tidak ada dek di tab ini yang cocok dengan pencarian, tag, dan opsi yang kamu pilih. Longgarkan salah satunya.",
+                "action": "Hapus filter"
+            },
+            "cloud": {
+                "title": "Sinkronisasi cloud segera hadir",
+                "body": "Masuk dan dekmu akan mengikuti kamu di semua perangkat.",
+                "action": "Masuk"
+            },
+            "cloudSignedIn": {
+                "title": "Sinkronisasi cloud segera hadir",
+                "body": "Kamu sudah masuk. Menyinkronkan dek antar perangkat sedang dikerjakan."
+            },
+            "community": {
+                "title": "Belum ada dek komunitas",
+                "body": "Dek yang diterbitkan pembelajar lain akan muncul di sini setelah komunitas dibuka."
+            }
+        },
+        "noResults": {
+            "title": "Tidak ada yang cocok dengan pencarian itu",
+            "body": "Coba kata yang lebih pendek, atau hapus pencarian untuk melihat semua dek di tab ini."
+        },
+        "details": {
+            "notFound": "Dek itu tidak ditemukan.",
+            "back": "Kembali ke daftar dek",
+            "contents": "Isi di dalamnya",
+            "version": "Versi",
+            "updated": "Diperbarui",
+            "noSession": "Sesi untuk dek {{language}} belum siap."
+        },
+        "options": {
+            "sortAria": "Urutkan dek",
+            "sort": {
+                "default": "Urutan asal",
+                "name": "Nama A–Z",
+                "recent": "Baru diperbarui",
+                "popular": "Paling banyak diunduh",
+                "size": "Terlargest"
+            },
+            "density": {
+                "comfortable": "Longgar",
+                "compact": "Padat"
+            },
+            "nsfw": {
+                "label": "Sensitif",
+                "on": "Dek sensitif ditampilkan",
+                "off": "Dek sensitif disembunyikan"
+            },
+            "importHeading": "Impor",
+            "importHint": "Membaca file dek yang pernah kamu ekspor.",
+            "importUnavailable": "Belum ada format file untuk tipe dek ini."
+        },
+        "tags": {
+            "clear": "Hapus tag",
+            "remove": "Hapus tag {{tag}}"
+        },
+        "actions": {
+            "create": {
+                "vocab": "Dek baru",
+                "exam": "Ujian baru"
+            },
+            "importOnly": "Impor"
+        },
+        "import": {
+            "action": "Impor file dek",
+            "invalidDeck": "File itu bukan dek yang valid.",
+            "invalidExam": "File itu bukan set ujian yang valid.",
+            "invalidJson": "File itu tidak terbaca sebagai JSON."
+        },
+        "viewAuthor": "Lihat profil {{author}}"
+    }
+}

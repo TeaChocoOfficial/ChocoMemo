@@ -1,0 +1,906 @@
+{
+    "nav": {
+        "home": "홈",
+        "languages": "언어",
+        "japanese": "일본어",
+        "menu": "메뉴 열기",
+        "settings": "설정",
+        "language": "언어",
+        "theme": "테마",
+        "english": "English"
+    },
+    "chrome": {
+        "hide": "숨기기",
+        "show": "표시",
+        "toggleLabel": "인터페이스 표시"
+    },
+    "home": {
+        "badge": "ChocoMemo · 커뮤니티 언어 라이브러리",
+        "title": "어떤 언어든,",
+        "titleAccent": "한 번에 하나의 공유 덱으로.",
+        "subtitle": "일본어, 영어, 태국어, 한국어, 중국어 — 모두 실제로 배우는 사람들이 쓰고 나눈 덱과 드릴, 퀴즈로 지어졌습니다. 무료이고, 공개되며, 마음대로 넓혀 쓸 수 있습니다.",
+        "ctaStart": "학습 시작",
+        "ctaCreate": "덱 게시하기",
+        "ctaHow": "사용 방법",
+        "scriptsLabel": "지금 우러나는 중",
+        "stats": {
+            "badge": "선반 위",
+            "languages": "언어",
+            "kana": "가나 문자",
+            "vocabulary": "어휘 단어",
+            "shelves": "덱과 퀴즈"
+        },
+        "languages": {
+            "badge": "그 선반",
+            "title": "다섯 언어, 하나의 따뜻한 습관",
+            "hint": "오늘 준비된 쟁반부터 시작하세요 — 나머지는 아직 우러납니다.",
+            "available": "바로 푸실 수 있음",
+            "comingSoon": "우러나는 중",
+            "toAll": "모든 언어 둘러보기",
+            "items": {
+                "japanese": {
+                    "name": "일본어",
+                    "description": "히라가나, 가타카나, 한자를 드릴과 간격 반복으로 배웁니다."
+                },
+                "english": {
+                    "name": "영어",
+                    "description": "실제로 쓰는 사람들이 정리한 일상 어휘와 표현."
+                },
+                "thai": {
+                    "name": "태국어",
+                    "description": "성조와 글자, 그리고 길에서 실제로 만나게 될 단어들."
+                },
+                "korean": {
+                    "name": "한국어",
+                    "description": "한글은 한 번에, 그다음은 오래 남는 대화 덱."
+                },
+                "chinese": {
+                    "name": "중국어",
+                    "description": "한자, 병음, 성조 짝을 짧은 라운드로."
+                }
+            }
+        },
+        "library": {
+            "badge": "커뮤니티 선반",
+            "title": "덱을 쓰고, 나누고, 가르치는 걸 지켜보세요.",
+            "hint": "ChocoMemo의 모든 학습 세트는 출판사가 아니라 사람이 씁니다. 하나를 다듬어 올리면, 다른 누군가는 그것만으로 온전한 강좌를 얻게 됩니다.",
+            "cta": "복습 선반 열기",
+            "items": {
+                "decks": {
+                    "title": "어휘 덱",
+                    "hint": "자연, 동물, 일상적인 것들로 주제 덱을 묶고, 작은 전자책처럼 복습하세요."
+                },
+                "exam": {
+                    "title": "퀴즈 세트",
+                    "hint": "덱을 시간제 시험으로 바꿔 아직 우러날 단어를 정확히 확인하세요."
+                },
+                "kana": {
+                    "title": "가나 드릴",
+                    "hint": "두 가지 자모판을 빠르게 돌려 형태가 생각 없이 나오게 합니다."
+                },
+                "review": {
+                    "title": "간격 반복",
+                    "hint": "내려받은 덱은 자기 일정대로 돌아오니 하나도 식지 않습니다."
+                }
+            }
+        },
+        "how": {
+            "badge": "사용 방법",
+            "title": "매일의 한 잔",
+            "hint": "작은 네 걸음, 매일 반복하면 됩니다. 그게 전부입니다.",
+            "step1": {
+                "title": "언어 고르기",
+                "hint": "오늘 공부할 쟁반을 고르세요."
+            },
+            "step2": {
+                "title": "덱 빌리기",
+                "hint": "누군가 쓴 덱을 가져오거나, 기본 선반에서 시작하세요."
+            },
+            "step3": {
+                "title": "드릴과 퀴즈",
+                "hint": "짧은 가나 드릴과 어휘 시험을 한 번에 오 분씩."
+            },
+            "step4": {
+                "title": "나만의 덱 게시하기",
+                "hint": "자꾸 까먹는 단어를 더해 선반에 나눠주세요."
+            }
+        },
+        "cta": {
+            "title": "찻솥은 이미 올려뒀습니다.",
+            "hint": "첫 덱 앞에 가입 벽은 없습니다. 단어를 동기화하고 싶을 때만 로그인하세요.",
+            "primary": "학습 시작",
+            "secondary": "덱 게시하기"
+        }
+    },
+    "theme": {
+        "pickerLabel": "테마 변경",
+        "names": {
+            "lightChoco": "라이트 초코",
+            "darkChoco": "다크 초코",
+            "darkGalaxy": "다크 은하수",
+            "lightGalaxy": "라이트 은하수",
+            "darkSakura": "다크 사쿠라",
+            "lightSakura": "라이트 사쿠라",
+            "darkPaper": "다크 페이퍼",
+            "lightPaper": "라이트 페이퍼",
+            "darkNature": "다크 네이처",
+            "lightNature": "라이트 네이처",
+            "darkAutumn": "다크 가을",
+            "lightAutumn": "라이트 가을",
+            "darkWinter": "다크 겨울",
+            "lightWinter": "라이트 겨울"
+        }
+    },
+    "common": {
+        "error": {
+            "oops": "앗!",
+            "unexpected": "예상치 못한 오류가 발생했습니다.",
+            "notFound": "요청한 페이지를 찾을 수 없습니다."
+        },
+        "tabs": {
+            "local": "로컬",
+            "cloud": "클라우드",
+            "community": "커뮤니티",
+            "official": "공식"
+        },
+        "comingSoon": {
+            "cloud": "클라우드 동기화 곧 제공 예정, 로그인 필요",
+            "community": "커뮤니티 세트 탐색은 아직 사용할 수 없습니다"
+        },
+        "loading": "Loading…",
+        "select": "선택"
+    },
+    "notfound": {
+        "title": "페이지를 찾을 수 없음",
+        "description": "찾으시는 페이지가 존재하지 않거나 이동되었습니다.",
+        "back_home": "홈으로 돌아가기",
+        "error_code": "404"
+    },
+    "languageSelect": {
+        "badge": "언어 선택",
+        "title": "학습할 언어를 선택하세요",
+        "description": "공부하고 싶은 언어를 고르세요. 일본어는 지금 쓸 수 있고, 나머지는 우러나는 중입니다.",
+        "back_home": "홈으로 돌아가기",
+        "status": {
+            "available": "사용 가능",
+            "comingSoon": "지원 예정"
+        },
+        "cta": {
+            "start": "학습 시작",
+            "unavailable": "사용 불가"
+        },
+        "languages": {
+            "japanese": {
+                "name": "일본어",
+                "description": "히라가나, 가타카나, 한자를 짧은 라운드로 연습하고, 간격 반복으로 오래 따뜻하게 유지해요."
+            },
+            "english": {
+                "name": "영어",
+                "description": "실제로 쓰는 사람들이 데크로 정리해 둔 일상 어휘와 표현."
+            },
+            "thai": {
+                "name": "태국어",
+                "description": "성조와 글자를 나란히 두르고, 길에서 실제로 만나게 될 단어까지."
+            },
+            "korean": {
+                "name": "한국어",
+                "description": "한글은 한 번에, 그다음은 식지 않겠다는 대화 덱."
+            },
+            "chinese": {
+                "name": "중국어",
+                "description": "한자, 병음, 성조 짝을 몇 분씩씩 연습합니다."
+            }
+        },
+        "back_language": "언어 선택으로 돌아가기"
+    },
+    "japanese": {
+        "badge": "일본어",
+        "title": "일본어 배우기",
+        "description": "가나, 어휘, 퀴즈를 통해 일본어의 기초를 마스터하세요.",
+        "back_language": "언어 선택으로 돌아가기",
+        "stats": {
+            "kana": "가나 문자",
+            "vocabulary": "어휘 단어",
+            "learned": "학습한 단어",
+            "due": "복습 예정"
+        },
+        "sections": {
+            "kana": "가나",
+            "kanaHint": "일본어의 두 음절 문자를 배우세요 — 모든 문자를 살펴보고 인지력을 연습하세요.",
+            "vocabulary": "어휘",
+            "vocabularyHint": "어휘를 늘리고 간격을 두고 복습하세요.",
+            "learn": "학습",
+            "practice": "연습"
+        },
+        "nav": {
+            "kana": {
+                "title": "가나",
+                "description": "모든 히라가나와 가타카나를 읽기와 함께 살펴보세요.",
+                "action": "가나 보기"
+            },
+            "render": {
+                "title": "Render",
+                "description": "Read short passages with furigana and check yourself against the translation.",
+                "action": "Start Reading"
+            },
+            "vocab": {
+                "title": "어휘",
+                "description": "단어장을 늘리고 간격을 두고 반복 학습하세요.",
+                "action": "단어 보기"
+            },
+            "drill": {
+                "title": "카나 드릴",
+                "description": "히라가나와 카타카나를 구분해 봅니다.",
+                "action": "카나 드릴 시작"
+            },
+            "review": {
+                "title": "어휘 복습",
+                "description": "플래시카드로 어휘를 간격 반복 복습합니다.",
+                "action": "복습 시작"
+            },
+            "exam": {
+                "title": "어휘 시험",
+                "description": "내 어휘로 만든 객관식으로 실력을 확인합니다.",
+                "action": "시험 보기"
+            }
+        },
+        "decks": {
+            "title": "어휘 복습 덱",
+            "description": "복습할 덱을 고르세요. 덱은 기본 세트, 직접 추가한 단어, 또는 다운로드한 모음집에서 제공됩니다.",
+            "availableCount": "사용 가능한 덱 {{count}}개",
+            "startReview": "복습 시작",
+            "due": "예정",
+            "byAuthor": "{{author}} 제작",
+            "download": "다운로드",
+            "note": "복습",
+            "ready": "준비됨",
+            "words": "단어",
+            "search": "덱 검색...",
+            "empty": "아직 덱이 없습니다 — 가져오거나 커스텀 덱을 만들어 보세요.",
+            "addCustom": "커스텀 덱 만들기",
+            "importDeck": "덱 가져오기",
+            "importErrorJson": "이 파일을 JSON으로 읽을 수 없습니다.",
+            "form": {
+                "title": "커스텀 덱 만들기",
+                "subtitle": "어휘에서 단어를 골라 복습 덱으로 묶어보세요.",
+                "nameLabel": "이름",
+                "namePlaceholder": "예: 좋아하는 한자",
+                "descriptionLabel": "설명 (선택)",
+                "descriptionPlaceholder": "이 덱에 대한 짧은 메모",
+                "wordsLabel": "포함할 단어",
+                "wordsPlaceholder": "단어 검색...",
+                "selectedCount": "{{count}}개 선택됨",
+                "nameError": "덱 이름을 입력하세요.",
+                "minWordsError": "단어를 하나 이상 선택하세요.",
+                "cancel": "취소",
+                "submit": "덱 만들기"
+            },
+            "notFound": "덱을 찾을 수 없습니다.",
+            "source": {
+                "default": "기본",
+                "custom": "내 단어",
+                "cloud": "클라우드",
+                "downloaded": "다운로드"
+            },
+            "open": "Open",
+            "itemCount_one": "{{count}} item",
+            "itemCount_other": "{{count}} items",
+            "export": "Export",
+            "exportAria": "Export deck",
+            "downloadAria": "Download deck",
+            "delete": "Delete",
+            "deleteAria": "Delete deck",
+            "type": {
+                "vocab": "Vocabulary",
+                "render": "Reading",
+                "review": "Review",
+                "exam": "Exam",
+                "drill": "Drill"
+            },
+            "viewAuthor": "{{author}}님의 프로필 보기",
+            "favourite": "즐겨찾기에 추가",
+            "unfavourite": "즐겨찾기에서 제거"
+        },
+        "exam": {
+            "title": "시험",
+            "import": "시험 세트 가져오기",
+            "addCustom": "커스텀 세트 만들기",
+            "importErrorJson": "이 파일을 JSON으로 읽을 수 없습니다.",
+            "form": {
+                "title": "커스텀 시험 세트 만들기",
+                "subtitle": "어휘에서 단어를 고르면 내장 세트처럼 뜻을 바탕으로 문제가 자동 생성됩니다.",
+                "titleLabel": "제목",
+                "titlePlaceholder": "예: 일상 단어",
+                "descriptionLabel": "설명 (선택)",
+                "descriptionPlaceholder": "이 세트에 대한 짧은 메모",
+                "wordsLabel": "포함할 단어",
+                "wordsPlaceholder": "단어 검색...",
+                "titleError": "세트 이름을 입력하세요.",
+                "minWordsError": "단어를 두 개 이상 선택하세요.",
+                "cancel": "취소",
+                "submit": "세트 만들기",
+                "selectedCount_one": "{{count}}개 선택됨",
+                "selectedCount_other": "{{count}}개 선택됨"
+            }
+        },
+        "kana": {
+            "badge": "문자",
+            "title": "일본어 가나",
+            "description": "히라가나와 가타카나는 일본어의 두 음절 문자입니다. 탭을 눌러 전환하세요.",
+            "tabs": {
+                "hiragana": "히라가나",
+                "katakana": "가타카나"
+            },
+            "voiceless": "청음",
+            "voiced": "탁음",
+            "contracted": "요음",
+            "voice_label": "음성",
+            "voice_preview": "미리 듣기",
+            "voice_auto": "자동",
+            "voice_choose": "음성 선택",
+            "voice_ja": "일본어",
+            "voice_volume": "음량",
+            "take_quiz": "퀴즈 보기",
+            "count": "가나",
+            "stats": {
+                "set": "세트 내",
+                "group": "그룹 내",
+                "read": "읽음"
+            },
+            "readProgress": "{{read}} / {{total}}",
+            "gridHint": "가나를 눌러 들어보거나, 읽기 시작을 눌러 중단한 위치부터 하나씩 읽어보세요.",
+            "readStart": "읽기 시작",
+            "readContinue": "이어서 읽기",
+            "readStop": "중지",
+            "nowReading": "읽는 중",
+            "upNext": "다음",
+            "pinToolbar": "툴바 고정",
+            "unpinToolbar": "고정 해제",
+            "sticky": "고정",
+            "stickyOn": "켬",
+            "stickyOff": "끔",
+            "back_hub": "일본어로 돌아가기"
+        },
+        "kanaDrill": {
+            "badge": "가나 드릴",
+            "title": "가나 드릴",
+            "intro": "퀴즈를 구성하세요 — 포함할 가나 그룹, 문제 수, 문제당 시간을 선택하세요.",
+            "start": "퀴즈 시작",
+            "progress": "문제",
+            "score": "점수",
+            "promptLabel": "이 가나의 읽기는 무엇인가요?",
+            "promptLabelRomajiToChar": "이 읽기에 해당하는 가나는 무엇인가요?",
+            "promptLabelListen": "어떤 가나를 들으셨나요?",
+            "listenAgain": "다시 듣기",
+            "correct": "정답!",
+            "wrong": "아쉽네요.",
+            "timeout": "시간이 끝났어요!",
+            "correctAnswer": "정답",
+            "next": "다음 문제",
+            "endGame": "게임 종료",
+            "resultTitle": "퀴즈 완료!",
+            "result": {
+                "correctLabel": "정답",
+                "wrongLabel": "오답",
+                "timeoutLabel": "시간 초과",
+                "settingsSummary": "설정",
+                "settingsButton": "설정",
+                "exitButton": "종료",
+                "playAgain": "다시 풀기",
+                "history": "답변 기록",
+                "timeoutShort": "시간 초과",
+                "yes": "예",
+                "no": "아니요"
+            },
+            "retry": "다시 시도",
+            "back_characters": "가나로 돌아가기",
+            "settings": {
+                "setsLabel": "가나 집합",
+                "questionLabel": "퀴즈 옵션",
+                "modeLabel": "문제 모드",
+                "mode": {
+                    "charToRomaji": "가나 → 읽기",
+                    "charToRomajiHint": "가나를 보고 로마자 읽기를 고르세요.",
+                    "romajiToChar": "읽기 → 가나",
+                    "romajiToCharHint": "읽기를 보고 해당 가나를 고르세요.",
+                    "listenToChar": "듣기 → 가나",
+                    "listenToCharHint": "가나 발음을 듣고 들은 가나를 고르세요."
+                },
+                "sound": {
+                    "label": "효과음",
+                    "voice": "Aria",
+                    "voiceHint": "아리아의 녹음된 음성을 재생합니다.",
+                    "tone": "톤",
+                    "toneHint": "간단한 합성음을 재생합니다.",
+                    "volume": "효과음 볼륨"
+                },
+                "voiceLabel": "음성",
+                "questionCount": "문제 수",
+                "questions": "문제",
+                "choiceCount": "답변 선택지",
+                "choices": "개의 선택지",
+                "timeLimit": "문제당 시간",
+                "autoAdvance": "다음 문제로 자동 진행",
+                "useAll": "모든 가나",
+                "groups": {
+                    "voiceless": "청음",
+                    "voiced": "탁음",
+                    "contracted": "요음"
+                },
+                "chars": "가나",
+                "totalChars": "전체 가나"
+            }
+        },
+        "vocab": {
+            "available": "전체 {{count}} 단어",
+            "back_hub": "Back to hub",
+            "eyebrow": "Vocabulary",
+            "title": "Vocabulary",
+            "description": "Browse a deck's words with readings, meanings, and example sentences.",
+            "search": "Search decks",
+            "empty": "No decks yet.",
+            "words": "words",
+            "read": "Read",
+            "edit": "Edit",
+            "addWord": "Add word",
+            "delete": "Delete",
+            "save": "Save",
+            "cancel": "Cancel",
+            "word": "Word",
+            "reading": "Reading",
+            "meaning": "Meaning",
+            "example": "Example",
+            "required": "Word and meaning are required.",
+            "builtIn": "Built-in words can't be edited."
+        },
+        "vocabularyReview": {
+            "badge": "복습",
+            "title": "어휘 복습",
+            "description": "카드를 뒤집어 정답을 확인한 후, 합격 또는 불합격으로 표시하세요.",
+            "complete": "모두 완료!",
+            "completeDescription": "지금 복습할 단어가 없습니다.",
+            "exit": "복습 종료",
+            "wordsLeft": "단어 남음",
+            "wordLeft": "단어 남음",
+            "showAnswer": "정답 보기",
+            "fail": "불합격",
+            "pass": "합격",
+            "failHint": "불합격",
+            "passHint": "합격",
+            "wordLabel": "단어",
+            "recallPrompt": "이 단어의 뜻은 무엇인가요?",
+            "back_hub": "일본어로 돌아가기"
+        },
+        "render": {
+            "back_hub": "Back to hub",
+            "eyebrow": "Render",
+            "title": "Render",
+            "description": "Read short passages with furigana and a translation to check against.",
+            "search": "Search decks",
+            "empty": "No reading decks yet.",
+            "passages": "passages",
+            "read": "Read",
+            "showTranslation": "Show translation",
+            "hideTranslation": "Hide translation",
+            "speak": "Listen"
+        },
+        "drill": {
+            "title": "Kana Drill"
+        },
+        "review": {
+            "title": "Vocabulary Review"
+        }
+    },
+    "footer": {
+        "tagline": "테마가 가득한 아늑한 방식으로 일본어를 한 모금씩 즐겨보세요.",
+        "explore": "탐색",
+        "learn": "가르치는 내용",
+        "rights": "TeaChoco · 모든 권리 보유.",
+        "languages": {
+            "ja": "일본어",
+            "en": "영어",
+            "ko": "한국어",
+            "th": "태국어"
+        }
+    },
+    "auth": {
+        "signIn": "로그인",
+        "signUp": "회원가입",
+        "signOut": "로그아웃",
+        "email": "이메일",
+        "password": "비밀번호",
+        "name": "이름",
+        "nameTag": "닉네임",
+        "nameTagHint": "3-30자. 영문자, 숫자, 밑줄(_) 또는 하이픈(-)만 사용할 수 있고 공백은 사용할 수 없습니다. 공개 닉네임입니다.",
+        "confirmPassword": "비밀번호 확인",
+        "forgotPassword": "비밀번호를 잊으셨나요?",
+        "resetPassword": "비밀번호 재설정",
+        "backToSignIn": "로그인으로 돌아가기",
+        "orContinueWith": "또는 다음으로 계속",
+        "google": "Google",
+        "discord": "Discord",
+        "noAccount": "계정이 없으신가요?",
+        "hasAccount": "이미 계정이 있으신가요?",
+        "verifyEmail": "이메일 인증",
+        "verificationCode": "인증 코드",
+        "verifyHint": "{{email}}로 보낸 6자리 코드를 입력하세요.",
+        "verify": "인증",
+        "otpSent": "{{email}}로 코드를 보냈습니다.",
+        "otpResent": "새 코드가 전송되었습니다.",
+        "verifySuccess": "환영합니다, {{name}}님!",
+        "resendCode": "코드 재전송",
+        "resendInSeconds": "{{seconds}}초 후 재전송",
+        "profile": "프로필",
+        "settings": "설정",
+        "welcome": "환영합니다, {{name}}님",
+        "error": {
+            "invalidCredentials": "이메일 또는 비밀번호가 올바르지 않습니다.",
+            "emailInUse": "이 이메일로 등록된 계정이 이미 존재합니다.",
+            "nameTagTaken": "이미 사용 중인 닉네임입니다.",
+            "nameTagInvalid": "닉네임은 3-30자여야 합니다: 영문자, 숫자, 밑줄 또는 하이픈만 허용됩니다(공백 없음).",
+            "passwordMismatch": "비밀번호가 일치하지 않습니다.",
+            "invalidOtp": "잘못되었거나 만료된 코드입니다. 다시 시도해 주세요.",
+            "resendFailed": "새 코드를 보낼 수 없습니다. 다시 시도해 주세요.",
+            "generic": "오류가 발생했습니다. 다시 시도해 주세요.",
+            "emailNotFound": "No account found with that email.",
+            "resetFailed": "Password reset failed. Please try again.",
+            "oauth": "Sign-in failed: {{reason}}"
+        },
+        "resetCodeSent": "We sent a reset code to {{email}}.",
+        "resetHint": "Enter the code sent to {{email}} and choose a new password.",
+        "forgotHint": "Enter your account email and we'll send you a reset code.",
+        "newPassword": "New Password",
+        "updatePassword": "Update Password",
+        "resetSuccess": "Password updated. Please sign in.",
+        "line": "LINE",
+        "x": "X (Twitter)",
+        "sendResetCode": "재설정 코드 보내기"
+    },
+    "settings": {
+        "title": "설정",
+        "subtitle": "원하는 취향대로 ChocoMemo를 끓여 보세요.",
+        "back": "뒤로",
+        "nav": {
+            "settings": "설정",
+            "appearance": "모양",
+            "language": "언어",
+            "voice": "음성 및 오디오",
+            "interface": "인터페이스",
+            "account": "계정"
+        },
+        "appearance": {
+            "hint": "당신의 컵 분위기를 고르세요."
+        },
+        "language": {
+            "hint": "ChocoMemo가 당신과 대화할 언어를 선택하세요."
+        },
+        "voice": {
+            "hint": "가나와 단어를 소리 내어 읽어 주는 음성입니다."
+        },
+        "interface": {
+            "hint": "학습을 둘러싼 표시를 조정하세요.",
+            "chromeLabel": "인터페이스 표시",
+            "chromeDescription": "내비게이션과 바닥글을 표시하거나 숨깁니다."
+        },
+        "account": {
+            "signedInHint": "{{name}}(으)로 로그인됨",
+            "signedOutHint": "여러 기기에서 학습 기록을 유지하려면 로그인하세요.",
+            "goToProfile": "프로필 보기",
+            "signIn": "로그인"
+        }
+    },
+    "profile": {
+        "title": "프로필",
+        "subtitle": "ChocoMemo와 함께하는 나의 학습 기록.",
+        "back": "뒤로",
+        "anonymousName": "초코 학습자",
+        "memberSince": "가입일",
+        "notSignedInTitle": "로그인하지 않음",
+        "notSignedInHint": "로그인하면 프로필을 보고, 정보를 수정하고, 여러 기기에서 진행 상황을 추적할 수 있습니다.",
+        "signIn": "로그인",
+        "stats": {
+            "label": "한눈에 보기",
+            "kana": "읽은 가나",
+            "vocabulary": "어휘",
+            "learned": "배운 단어",
+            "due": "복습 예정"
+        },
+        "identities": {
+            "label": "Linked Accounts",
+            "email": "Email",
+            "verified": "Verified",
+            "unverified": "Not verified",
+            "primary": "Primary",
+            "local": "Password",
+            "google": "Google",
+            "discord": "Discord",
+            "line": "LINE",
+            "x": "X (Twitter)",
+            "connected": "Connected",
+            "notConnected": "Not connected",
+            "comingSoon": "Coming soon",
+            "passwordSet": "Password is set",
+            "passwordNotSet": "No password set yet",
+            "connect": "Connect",
+            "disconnect": "Disconnect",
+            "disconnectSuccess": "Google account disconnected",
+            "disconnectError": "Couldn't disconnect this account ({{reason}})",
+            "disconnectTitle": "Disconnect Google account?",
+            "disconnectHint": "You'll be asked to confirm with Google before the link is removed.",
+            "lastSigninMethod": "You need at least one sign-in method left",
+            "disconnectSession": "Your session expired. Sign in again and retry.",
+            "disconnectVerifyFailed": "Couldn't verify your Google account. Try again.",
+            "disconnectCancelled": "Google sign-in was cancelled.",
+            "change": "Change"
+        },
+        "details": {
+            "name": "이름",
+            "namePlaceholder": "당신의 이름",
+            "saving": "저장 중…",
+            "saved": "프로필이 업데이트되었습니다",
+            "updateError": "프로필을 업데이트할 수 없습니다.",
+            "editProfile": "프로필 편집",
+            "nameTag": "닉네임",
+            "nameTagHint": "3-30자. 영문자, 숫자, 밑줄(_) 또는 하이픈(-)만 사용할 수 있고 공백은 사용할 수 없습니다. 공개 닉네임입니다.",
+            "nameTagTaken": "이미 사용 중인 닉네임입니다.",
+            "nameTagInvalid": "닉네임은 3-30자여야 합니다: 영문자, 숫자, 밑줄 또는 하이픈만 허용됩니다(공백 없음).",
+            "noNameTag": "아직 닉네임이 없습니다",
+            "bio": "소개",
+            "bioPlaceholder": "다른 사람들에게 자신에 대해 조금 알려주세요…"
+        },
+        "email": {
+            "label": "Change email",
+            "hint": "Update the email address you use to sign in.",
+            "placeholder": "you@example.com",
+            "save": "Save",
+            "saving": "Saving…",
+            "saved": "Email updated",
+            "updateError": "Could not update your email.",
+            "invalid": "Please enter a valid email address"
+        },
+        "otp": {
+            "confirmEmail": "Confirm new email",
+            "confirmPassword": "Confirm change password",
+            "sendCode": "Send code",
+            "sending": "Sending…",
+            "codeSent": "Code sent",
+            "codeResent": "Code resent",
+            "sendFailed": "Couldn't send the code",
+            "codeSentTo": "Enter the 6-digit code we sent to {{email}}.",
+            "verifySave": "Verify & save",
+            "verifying": "Verifying…",
+            "invalidCode": "Invalid or expired code",
+            "resendFailed": "Couldn't resend the code",
+            "back": "Back",
+            "emailSame": "New email must be different from the current one",
+            "emailTaken": "That email is already in use",
+            "wrongCurrentPassword": "Current password is incorrect"
+        },
+        "password": {
+            "label": "Change password",
+            "hint": "Your current password is required to set a new one.",
+            "setHint": "Set a password for your account. We'll email a code to confirm.",
+            "current": "Current password",
+            "currentPlaceholder": "Enter current password",
+            "currentRequired": "Current password is required",
+            "new": "New password",
+            "newPlaceholder": "Enter new password (min. 6 characters)",
+            "newRequired": "New password is required",
+            "tooShort": "New password must be at least 6 characters",
+            "confirm": "Confirm new password",
+            "confirmPlaceholder": "Re-enter new password",
+            "mismatch": "Passwords do not match",
+            "incorrect": "Current password is incorrect",
+            "change": "Change password",
+            "changing": "Changing…",
+            "changed": "Password changed successfully",
+            "changeError": "Could not change password",
+            "noPasswordYetHint": "This account doesn't have a password set yet."
+        },
+        "avatar": {
+            "source": "프로필 사진",
+            "default": "기본",
+            "google": "Google",
+            "local": "사용자 지정",
+            "updated": "프로필 사진이 업데이트되었습니다",
+            "updateError": "프로필 사진을 업데이트할 수 없습니다",
+            "invalidType": "이미지 파일을 선택해 주세요",
+            "tooLarge": "이미지는 5MB보다 작아야 합니다",
+            "previewReady": "미리보기 준비됨 — 저장할 소스를 선택하세요",
+            "remove": "삭제",
+            "removeError": "프로필 사진을 삭제할 수 없습니다",
+            "cancel": "취소",
+            "saving": "저장 중…",
+            "confirm": "확인",
+            "change": "프로필 사진 변경"
+        },
+        "public": {
+            "notFoundTitle": "Profile not found",
+            "notFoundHint": "Nobody is using this name tag. It may have been changed or removed.",
+            "yourDashboard": "Go to your profile",
+            "viewPublic": "View public profile"
+        }
+    },
+    "english": {
+        "badge": "영어",
+        "title": "영어 배우기",
+        "description": "영어는 새로운 트랙입니다. 아래 덱 기능은 지금 쓸 수 있고, 문자 세트와 드릴은 아직 개발 중입니다.",
+        "nav": {
+            "render": {
+                "title": "읽기",
+                "description": "짧은 글을 읽고 번역으로 확인합니다.",
+                "action": "읽기 시작"
+            },
+            "review": {
+                "title": "어휘 복습",
+                "description": "플래시카드와 간격 반복으로 어휘를 복습합니다.",
+                "action": "복습 시작"
+            },
+            "exam": {
+                "title": "어휘 시험",
+                "description": "내 어휘로 만든 객관식으로 실력을 확인합니다.",
+                "action": "시험 보기"
+            },
+            "vocab": {
+                "title": "어휘 보기",
+                "description": "발음, 뜻, 예문과 함께 덱의 단어를 확인합니다.",
+                "action": "단어 보기"
+            }
+        },
+        "vocab": {
+            "title": "어휘"
+        },
+        "render": {
+            "title": "읽기"
+        },
+        "review": {
+            "title": "어휘 복습"
+        },
+        "exam": {
+            "title": "시험"
+        },
+        "sections": {
+            "learn": "학습",
+            "practice": "연습"
+        }
+    },
+    "deck": {
+        "type": {
+            "vocab": "어휘",
+            "render": "읽기",
+            "review": "복습",
+            "exam": "시험",
+            "drill": "드릴"
+        },
+        "source": {
+            "official": "공식",
+            "community": "커뮤니티",
+            "local": "내 덱",
+            "cloud": "클라우드"
+        },
+        "visibility": {
+            "public": "공개",
+            "unlisted": "목록 비공개",
+            "private": "비공개"
+        },
+        "search": "덱 검색",
+        "searchAria": "이름으로 덱 검색",
+        "searchClear": "검색어 지우기",
+        "tallyAria": "출처별 덱",
+        "resultCount": "덱 {{total}}개 중 {{matched}}개 표시",
+        "loading": "덱을 불러오는 중…",
+        "itemCount_one": "{{count}}개",
+        "itemCount_other": "{{count}}개",
+        "byAuthor": "{{author}} 님이 만듦",
+        "openAria": "{{name}} 열기",
+        "export": "내보내기",
+        "exportAria": "덱 내보내기",
+        "download": "다운로드",
+        "downloadAria": "덱 다운로드",
+        "delete": "삭제",
+        "deleteAria": "덱 삭제",
+        "start": "시작",
+        "list": {
+            "backHub": "{{language}}(으)로 돌아가기",
+            "eyebrow": {
+                "vocab": "어휘",
+                "render": "읽기",
+                "exam": "시험",
+                "review": "복습"
+            },
+            "title": {
+                "vocab": "어휘 덱",
+                "render": "읽기 덱",
+                "exam": "시험 세트",
+                "review": "복습 덱"
+            },
+            "description": {
+                "vocab": "아는 단어를 덱으로 묶고 간격을 두고 반복 학습하세요.",
+                "render": "난이도별 짧은 지문을 읽고 번역으로 확인합니다.",
+                "exam": "내 어휘로 만든 객관식 문제 세트입니다.",
+                "review": "덱을 간격 반복 세션으로 복습합니다."
+            }
+        },
+        "empty": {
+            "local": {
+                "title": "아직 내 덱이 없습니다",
+                "body": "만들거나 가져온 덱이 여기에 모입니다. 공식 덱부터 시작해 보세요.",
+                "action": "공식 덱 둘러보기"
+            },
+            "official": {
+                "title": "이 종류의 공식 덱이 아직 없습니다",
+                "body": "공식 덱은 앱과 함께 제공됩니다. 이 종류는 아직 공개되지 않았습니다."
+            },
+            "filtered": {
+                "title": "필터와 맞는 덱이 없습니다",
+                "body": "이 탭에는 선택한 검색어·태그·조건에 맞는 덱이 없습니다. 하나를 완화하면 다시 보입니다.",
+                "action": "필터 지우기"
+            },
+            "cloud": {
+                "title": "클라우드 동기화 곧 제공",
+                "body": "로그인하면 덱이 기기를 따라다닙니다.",
+                "action": "로그인"
+            },
+            "cloudSignedIn": {
+                "title": "클라우드 동기화 곧 제공",
+                "body": "로그인되어 있습니다. 기기 간 덱 동기화 기능을 준비 중입니다."
+            },
+            "community": {
+                "title": "아직 커뮤니티 덱이 없습니다",
+                "body": "다른 학습자가 공개한 덱은 커뮤니티가 열리면 여기에 표시됩니다."
+            }
+        },
+        "noResults": {
+            "title": "검색과 일치하는 항목이 없습니다",
+            "body": "더 짧은 말을 쓰거나 검색을 지워 이 탭의 모든 덱을 보세요."
+        },
+        "details": {
+            "notFound": "해당 덱을 찾을 수 없습니다.",
+            "back": "덱 목록으로 돌아가기",
+            "contents": "내용",
+            "version": "버전",
+            "updated": "업데이트",
+            "noSession": "{{language}} 덱 세션은 아직 준비 중입니다."
+        },
+        "options": {
+            "sortAria": "덱 정렬",
+            "sort": {
+                "default": "기본 순서",
+                "name": "이름순",
+                "recent": "최근 업데이트순",
+                "popular": "다운로드 많은 순",
+                "size": "큰 순"
+            },
+            "density": {
+                "comfortable": "넓게",
+                "compact": "간결하게"
+            },
+            "nsfw": {
+                "label": "민감 콘텐츠",
+                "on": "민감 덱 표시 중",
+                "off": "민감 덱 숨김"
+            },
+            "importHeading": "가져오기",
+            "importHint": "전에 내보낸 덱 파일을 읽습니다.",
+            "importUnavailable": "이 종류 덱은 아직 파일 형식이 없습니다."
+        },
+        "tags": {
+            "clear": "태그 지우기",
+            "remove": "태그 {{tag}} 제거"
+        },
+        "actions": {
+            "create": {
+                "vocab": "새 덱",
+                "exam": "새 시험"
+            },
+            "importOnly": "가져오기"
+        },
+        "import": {
+            "action": "덱 파일 가져오기",
+            "invalidDeck": "유효한 덱 파일이 아닙니다.",
+            "invalidExam": "유효한 시험 세트 파일이 아닙니다.",
+            "invalidJson": "이 파일을 JSON으로 읽을 수 없습니다."
+        },
+        "viewAuthor": "{{author}}님의 프로필 보기"
+    }
+}

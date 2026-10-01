@@ -14,7 +14,7 @@ import { newDeckMeta } from '~/utils/deckMeta';
 import type { DeckData, DeckLists } from '~/types/deck';
 import { createJSONStorage, persist } from 'zustand/middleware';
 import { DEFAULT_PASSAGES } from '~/data/japanese/renderPassages';
-import { defaultExamSets } from '~/data/japanese/defaultExamSets';
+import { defaultExamSets } from '~/data/temp/defaultExamSets';
 
 const storage = typeof window !== 'undefined' ? createJSONStorage(() => localStorage) : undefined;
 

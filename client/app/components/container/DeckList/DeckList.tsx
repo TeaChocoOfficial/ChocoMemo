@@ -52,18 +52,11 @@ export default function DeckList({
     controls: DeckListQueryControls;
 }) {
     const { t } = useTranslation();
-    const { setTab, setSearch, setSort, setDensity, setNsfw, toggleTag, reset } = controls;
     const counts = useDeckCounts(language, type);
     const actions = useDeckListActions(language, type);
-    const {
-        visible,
-        matched,
-        total,
-        availableTags,
-        isLoading,
-        isNarrowedEmpty,
-        sentinelRef,
-    } = useDeckListDecks(language, type, query);
+    const { setTab, setSearch, setSort, setDensity, setNsfw, toggleTag, reset } = controls;
+    const { visible, matched, total, availableTags, isLoading, isNarrowedEmpty, sentinelRef } =
+        useDeckListDecks(language, type, query);
 
     // `user` is `undefined` while the session is still being fetched, which
     // reads as signed out — the same as the server, so the first render on
@@ -112,10 +105,10 @@ export default function DeckList({
                 />
                 <DeckListOptions
                     query={query}
-                    onSortChange={setSort}
-                    onDensityChange={setDensity}
-                    onNsfwChange={setNsfw}
                     actions={actions}
+                    onSortChange={setSort}
+                    onNsfwChange={setNsfw}
+                    onDensityChange={setDensity}
                 />
                 <DeckTagFilter
                     tags={availableTags}
@@ -136,12 +129,19 @@ export default function DeckList({
                     </p>
                     <div className={`grid ${GRID[query.density]}`}>
                         {visible.map((deck, index) => (
-                            <DeckCard key={deck.id} to={deckPath(language)} deck={deck} index={index} />
+                            <DeckCard
+                                key={deck.id}
+                                to={deckPath(language)}
+                                deck={deck}
+                                index={index}
+                            />
                         ))}
                     </div>
                     {/* The sentinel is what the observer watches: as it nears the
                         viewport, the next page is appended. */}
-                    {sentinelRef && <div ref={sentinelRef} aria-hidden='true' className='h-px w-full' />}
+                    {sentinelRef && (
+                        <div ref={sentinelRef} aria-hidden='true' className='h-px w-full' />
+                    )}
                 </>
             )}
         </>

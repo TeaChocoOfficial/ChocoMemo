@@ -1,6 +1,7 @@
 // -Path: 'client/app/routes/page/japanese/review.tsx'
+import { Languages } from '~/data/language';
 import type { Route } from './+types/review';
-import DeckListPage from '~/pages/japanese/review/DeckList';
+import DeckListPage from '~/components/page/DeckListPage';
 
 export function meta({}: Route.MetaArgs) {
     return [
@@ -12,6 +13,6 @@ export function meta({}: Route.MetaArgs) {
     ];
 }
 
-export default function VocabularyReview() {
-    return <DeckListPage />;
+export default function JapaneseReview() {
+    return <DeckListPage type='review' language={Languages.ja} />;
 }

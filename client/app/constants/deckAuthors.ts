@@ -8,3 +8,4 @@
 // importing the store that module pulls in.
 export const APP_AUTHOR_ID = 'chocomemo';
 export const GUEST_AUTHOR_ID = 'guest';
+export const UPDATED_AT = '2026-09-30T00:00:00.000Z';

@@ -12,13 +12,13 @@ import { FaMagnifyingGlass, FaXmark } from 'react-icons/fa6';
 
 export default function DeckListSearch({
     value,
-    onChange,
     onClear,
+    onChange,
 }: {
     /** The trimmed query in the URL. */
     value: string;
-    onChange: (value: string) => void;
     onClear: () => void;
+    onChange: (value: string) => void;
 }) {
     const { t } = useTranslation();
     const inputRef = useRef<HTMLInputElement>(null);
@@ -48,11 +48,10 @@ export default function DeckListSearch({
             <FaMagnifyingGlass className='pointer-events-none absolute left-0 top-1/2 h-4 w-4 -translate-y-1/2 text-surface-muted' />
             <input
                 ref={inputRef}
-                type='search'
                 value={value}
-                onChange={(event) => onChange(event.target.value)}
-                aria-label={t('deck.searchAria')}
                 placeholder={t('deck.search')}
+                aria-label={t('deck.searchAria')}
+                onChange={(event) => onChange(event.target.value)}
                 className='w-full border-b border-line-strong bg-transparent py-2 pl-6 pr-8 font-mono text-sm text-surface-foreground placeholder:text-surface-muted outline-none transition-colors focus:border-primary'
             />
             {value && (

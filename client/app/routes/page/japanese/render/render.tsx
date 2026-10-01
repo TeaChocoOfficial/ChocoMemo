@@ -1,6 +1,7 @@
 // -Path: 'client/app/routes/page/japanese/render.tsx'
+import { Languages } from '~/data/language';
 import type { Route } from './+types/render';
-import RenderDeckList from '~/pages/japanese/render/DeckList';
+import DeckListPage from '~/components/page/DeckListPage';
 
 export function meta({}: Route.MetaArgs) {
     return [
@@ -9,6 +10,6 @@ export function meta({}: Route.MetaArgs) {
     ];
 }
 
-export default function Render() {
-    return <RenderDeckList />;
+export default function JapaneseRender() {
+    return <DeckListPage type='render' language={Languages.ja} />;
 }

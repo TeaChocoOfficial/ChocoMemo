@@ -1,6 +1,5 @@
 // -Path: 'client/app/routes/page/japanese/exam/exam.$examId.tsx'
 import type { Route } from './+types/exam.$examId';
-import ExamSessionPage from '~/pages/japanese/exam/content/ExamSession';
 
 export function meta({ params }: Route.MetaArgs) {
     return [
@@ -12,6 +11,6 @@ export function meta({ params }: Route.MetaArgs) {
     ];
 }
 
-export default function VocabularyExam() {
-    return <ExamSessionPage />;
+export default function JapaneseExamById() {
+    return <></>;
 }

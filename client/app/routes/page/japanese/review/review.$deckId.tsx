@@ -1,6 +1,5 @@
 // -Path: 'client/app/routes/page/japanese/review.$deckId.tsx'
 import type { Route } from './+types/review.$deckId';
-import VocabularyReviewPage from '~/pages/japanese/review/VocabularyReview';
 
 export function meta({ params }: Route.MetaArgs) {
     return [
@@ -12,6 +11,6 @@ export function meta({ params }: Route.MetaArgs) {
     ];
 }
 
-export default function VocabularyReviewDeck() {
-    return <VocabularyReviewPage />;
+export default function JapaneseReviewById() {
+    return <></>;
 }

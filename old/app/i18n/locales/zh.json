@@ -1,0 +1,906 @@
+{
+    "nav": {
+        "home": "首页",
+        "languages": "语言",
+        "japanese": "日语",
+        "menu": "打开菜单",
+        "settings": "设置",
+        "language": "语言",
+        "theme": "主题",
+        "english": "English"
+    },
+    "chrome": {
+        "hide": "隐藏",
+        "show": "显示",
+        "toggleLabel": "显示界面"
+    },
+    "home": {
+        "badge": "ChocoMemo · 社区语言库",
+        "title": "学任何语言，",
+        "titleAccent": "一次一张共享卡组。",
+        "subtitle": "日语、英语、泰语、韩语和中文——每一种都由真实学习者编写并分享的卡组、练习和测验构成。免费、开放，你也可以继续扩展。",
+        "ctaStart": "开始学习",
+        "ctaCreate": "发布卡组",
+        "ctaHow": "使用方法",
+        "scriptsLabel": "正在冲泡",
+        "stats": {
+            "badge": "在架上",
+            "languages": "语言",
+            "kana": "假名字符",
+            "vocabulary": "词汇量",
+            "shelves": "卡组与测验"
+        },
+        "languages": {
+            "badge": "书架",
+            "title": "五种语言，一个温暖的习惯",
+            "hint": "从今天就绪的那一盘开始——其余的还在浸泡。",
+            "available": "可以冲泡",
+            "comingSoon": "浸泡中",
+            "toAll": "浏览全部语言",
+            "items": {
+                "japanese": {
+                    "name": "日语",
+                    "description": "平假名、片假名和汉字，配上练习与间隔复习。"
+                },
+                "english": {
+                    "name": "英语",
+                    "description": "日常词汇和短句，由真正使用它们的人整理。"
+                },
+                "thai": {
+                    "name": "泰语",
+                    "description": "声调、文字，以及你在街头真正会遇到的词。"
+                },
+                "korean": {
+                    "name": "韩语",
+                    "description": "一节课学完韩文，之后是记得住的会话卡组。"
+                },
+                "chinese": {
+                    "name": "中文",
+                    "description": "汉字、拼音和声调配对，用短回合反复操练。"
+                }
+            }
+        },
+        "library": {
+            "badge": "社区书架",
+            "title": "写一张卡组，分享它，看它教人。",
+            "hint": "ChocoMemo 的每一套学习内容都由真人书写，而非出版商。整理好并发布，别人就能从中得到一整门课程。",
+            "cta": "打开复习书架",
+            "items": {
+                "decks": {
+                    "title": "词汇卡组",
+                    "hint": "把词归进一个主题卡组——自然、动物、日常事物——像读一本小电子书那样复习。"
+                },
+                "exam": {
+                    "title": "测验套装",
+                    "hint": "把卡组变成限时考试，正好看看哪些词还需要继续浸泡。"
+                },
+                "kana": {
+                    "title": "假名练习",
+                    "hint": "在两套音节表中快速轮转，直到字形不经思考就能写出来。"
+                },
+                "review": {
+                    "title": "间隔复习",
+                    "hint": "你下载的卡组会按自己的节奏回来，所以没有任何内容会变凉。"
+                }
+            }
+        },
+        "how": {
+            "badge": "使用方法",
+            "title": "你每天的一杯",
+            "hint": "四个小步骤，每天重复——仅此而已。",
+            "step1": {
+                "title": "选择语言",
+                "hint": "选今天要学的那一盘。"
+            },
+            "step2": {
+                "title": "借一张卡组",
+                "hint": "拿一张别人写的卡组，或从内置书架开始。"
+            },
+            "step3": {
+                "title": "练习与测验",
+                "hint": "短促的假名练习和词汇考试，每次五分钟。"
+            },
+            "step4": {
+                "title": "发布你自己的",
+                "hint": "补上你总记不住的词，再分享回书架。"
+            }
+        },
+        "cta": {
+            "title": "茶壶已经烧上了。",
+            "hint": "第一张卡组之前没有注册门槛。只有想同步你的词时才需要登录。",
+            "primary": "开始学习",
+            "secondary": "发布卡组"
+        }
+    },
+    "theme": {
+        "pickerLabel": "切换主题",
+        "names": {
+            "lightChoco": "浅巧克力",
+            "darkChoco": "暗巧克力",
+            "darkGalaxy": "暗银河",
+            "lightGalaxy": "浅银河",
+            "darkSakura": "暗樱花",
+            "lightSakura": "浅樱花",
+            "darkPaper": "暗纸张",
+            "lightPaper": "浅纸张",
+            "darkNature": "暗抹茶",
+            "lightNature": "浅抹茶",
+            "darkAutumn": "暗红叶",
+            "lightAutumn": "浅红叶",
+            "darkWinter": "暗冬雪",
+            "lightWinter": "浅冬雪"
+        }
+    },
+    "common": {
+        "error": {
+            "oops": "哎呀！",
+            "unexpected": "发生了意外错误。",
+            "notFound": "请求的页面未找到。"
+        },
+        "tabs": {
+            "local": "本地",
+            "cloud": "云端",
+            "community": "社区",
+            "official": "官方"
+        },
+        "comingSoon": {
+            "cloud": "云同步即将推出，需登录",
+            "community": "浏览社区词集的功能尚不可用"
+        },
+        "loading": "Loading…",
+        "select": "选择"
+    },
+    "notfound": {
+        "title": "页面未找到",
+        "description": "您要找的页面不存在或已被移动。",
+        "back_home": "返回首页",
+        "error_code": "404"
+    },
+    "languageSelect": {
+        "badge": "选择语言",
+        "title": "选择要学习的语言",
+        "description": "选择你想学的语言。日语今天就能用，其余的还在浸泡。",
+        "back_home": "返回首页",
+        "status": {
+            "available": "可用",
+            "comingSoon": "即将推出"
+        },
+        "cta": {
+            "start": "开始学习",
+            "unavailable": "暂不可用"
+        },
+        "languages": {
+            "japanese": {
+                "name": "日语",
+                "description": "平假名、片假名和汉字，短回合反复练，用间隔复习保持温热。"
+            },
+            "english": {
+                "name": "英语",
+                "description": "日常词汇和短句，由真正使用它们的人整理成卡组。"
+            },
+            "thai": {
+                "name": "泰语",
+                "description": "声调与文字并排，外加你在街头会遇到的词。"
+            },
+            "korean": {
+                "name": "韩语",
+                "description": "一节课学完韩文，之后是不肯放凉的会话卡组。"
+            },
+            "chinese": {
+                "name": "中文",
+                "description": "汉字、拼音和声调配对，每次只练几分钟。"
+            }
+        },
+        "back_language": "返回语言选择"
+    },
+    "japanese": {
+        "badge": "日语",
+        "title": "学习日语",
+        "description": "通过假名、词汇和测验掌握日语基础。",
+        "back_language": "返回语言选择",
+        "stats": {
+            "kana": "假名字符",
+            "vocabulary": "词汇单词",
+            "learned": "已学单词",
+            "due": "待复习"
+        },
+        "sections": {
+            "kana": "假名",
+            "kanaHint": "学习日语的两种音节文字 — 浏览全部字符并练习识别。",
+            "vocabulary": "词汇",
+            "vocabularyHint": "扩充你的词库并按间隔时间复习。",
+            "learn": "学习",
+            "practice": "练习"
+        },
+        "nav": {
+            "kana": {
+                "title": "假名",
+                "description": "浏览全部平假名和片假名及其读音。",
+                "action": "查看假名"
+            },
+            "render": {
+                "title": "Render",
+                "description": "Read short passages with furigana and check yourself against the translation.",
+                "action": "Start Reading"
+            },
+            "vocab": {
+                "title": "词汇",
+                "description": "扩充你的词库，再按间隔重复训练。",
+                "action": "浏览词汇"
+            },
+            "drill": {
+                "title": "假名练习",
+                "description": "测试你对平假名和片假名的辨认能力。",
+                "action": "开始假名练习"
+            },
+            "review": {
+                "title": "词汇复习",
+                "description": "用单词卡和间隔重复复习词汇。",
+                "action": "开始复习"
+            },
+            "exam": {
+                "title": "词汇测验",
+                "description": "用自己词汇生成的单选题测试自己。",
+                "action": "参加测验"
+            }
+        },
+        "decks": {
+            "title": "词汇复习卡组",
+            "description": "选择要复习的卡组。卡组来自内置集合、你自己添加的单词，或下载的合集。",
+            "availableCount": "可用卡组 {{count}} 个",
+            "startReview": "开始复习",
+            "due": "到期",
+            "byAuthor": "作者 {{author}}",
+            "download": "下载",
+            "note": "复习",
+            "ready": "就绪",
+            "words": "单词",
+            "search": "搜索卡组...",
+            "empty": "还没有卡组 — 导入一个或创建一个自定义卡组。",
+            "addCustom": "创建自定义卡组",
+            "importDeck": "导入卡组",
+            "importErrorJson": "无法将此文件作为 JSON 读取。",
+            "form": {
+                "title": "创建自定义卡组",
+                "subtitle": "从你的词汇中选择单词，组合成复习卡组。",
+                "nameLabel": "名称",
+                "namePlaceholder": "例如：喜欢的汉字",
+                "descriptionLabel": "描述（可选）",
+                "descriptionPlaceholder": "关于此卡组的简短说明",
+                "wordsLabel": "包含的单词",
+                "wordsPlaceholder": "搜索单词...",
+                "selectedCount": "已选 {{count}} 个",
+                "nameError": "请输入卡组名称。",
+                "minWordsError": "请至少选择一个单词。",
+                "cancel": "取消",
+                "submit": "创建卡组"
+            },
+            "notFound": "未找到该卡组。",
+            "source": {
+                "default": "内置",
+                "custom": "我的单词",
+                "cloud": "云",
+                "downloaded": "已下载"
+            },
+            "open": "Open",
+            "itemCount_one": "{{count}} item",
+            "itemCount_other": "{{count}} items",
+            "export": "Export",
+            "exportAria": "Export deck",
+            "downloadAria": "Download deck",
+            "delete": "Delete",
+            "deleteAria": "Delete deck",
+            "type": {
+                "vocab": "Vocabulary",
+                "render": "Reading",
+                "review": "Review",
+                "exam": "Exam",
+                "drill": "Drill"
+            },
+            "viewAuthor": "查看 {{author}} 的主页",
+            "favourite": "加入收藏",
+            "unfavourite": "取消收藏"
+        },
+        "exam": {
+            "title": "考试",
+            "import": "导入考试卡组",
+            "addCustom": "创建自定义卡组",
+            "importErrorJson": "无法将此文件作为 JSON 读取。",
+            "form": {
+                "title": "创建自定义考试卡组",
+                "subtitle": "从你的词汇中选择单词 — 与内置卡组一样，题目会根据单词释义自动生成。",
+                "titleLabel": "标题",
+                "titlePlaceholder": "例如：日常词汇",
+                "descriptionLabel": "描述（可选）",
+                "descriptionPlaceholder": "关于此卡组的简短说明",
+                "wordsLabel": "包含的单词",
+                "wordsPlaceholder": "搜索单词...",
+                "titleError": "请输入卡组名称。",
+                "minWordsError": "请至少选择两个单词。",
+                "cancel": "取消",
+                "submit": "创建卡组",
+                "selectedCount_one": "已选 {{count}} 个",
+                "selectedCount_other": "已选 {{count}} 个"
+            }
+        },
+        "kana": {
+            "badge": "假名",
+            "title": "日语假名",
+            "description": "平假名和片假名是日语的两种音节文字。点击选项卡进行切换。",
+            "tabs": {
+                "hiragana": "平假名",
+                "katakana": "片假名"
+            },
+            "voiceless": "清音",
+            "voiced": "浊音",
+            "contracted": "拗音",
+            "voice_label": "语音",
+            "voice_preview": "试听",
+            "voice_auto": "自动",
+            "voice_choose": "选择语音",
+            "voice_ja": "日语",
+            "voice_volume": "音量",
+            "take_quiz": "开始测验",
+            "count": "个假名",
+            "stats": {
+                "set": "当前表",
+                "group": "当前组",
+                "read": "已读"
+            },
+            "readProgress": "{{read}} / {{total}}",
+            "gridHint": "点按假名即可发音，或按「开始朗读」从上次位置逐字朗读。",
+            "readStart": "开始朗读",
+            "readContinue": "继续朗读",
+            "readStop": "停止",
+            "nowReading": "正在朗读",
+            "upNext": "下一个",
+            "pinToolbar": "固定工具栏",
+            "unpinToolbar": "取消固定",
+            "sticky": "固定",
+            "stickyOn": "开",
+            "stickyOff": "关",
+            "back_hub": "返回日语"
+        },
+        "kanaDrill": {
+            "badge": "假名练习",
+            "title": "假名练习",
+            "intro": "配置测验——选择要包含的假名组、题目数量以及每题的时间限制。",
+            "start": "开始测验",
+            "progress": "题目",
+            "score": "得分",
+            "promptLabel": "这个假名的读音是什么？",
+            "promptLabelRomajiToChar": "哪个假名匹配这个读音？",
+            "promptLabelListen": "你听到的是哪个假名？",
+            "listenAgain": "再听一遍",
+            "correct": "正确！",
+            "wrong": "不正确",
+            "timeout": "时间到！",
+            "correctAnswer": "正确答案",
+            "next": "下一题",
+            "endGame": "结束游戏",
+            "resultTitle": "测验完成！",
+            "result": {
+                "correctLabel": "正确",
+                "wrongLabel": "错误",
+                "timeoutLabel": "超时",
+                "settingsSummary": "设置",
+                "settingsButton": "设置",
+                "exitButton": "退出",
+                "playAgain": "再玩一次",
+                "history": "答题历史",
+                "timeoutShort": "超时",
+                "yes": "是",
+                "no": "否"
+            },
+            "retry": "再试一次",
+            "back_characters": "返回假名",
+            "settings": {
+                "setsLabel": "假名组",
+                "questionLabel": "测验选项",
+                "modeLabel": "题目模式",
+                "mode": {
+                    "charToRomaji": "假名 → 读音",
+                    "charToRomajiHint": "看到假名，选择它的读音。",
+                    "romajiToChar": "读音 → 假名",
+                    "romajiToCharHint": "看到读音，选择匹配的假名。",
+                    "listenToChar": "听力 → 假名",
+                    "listenToCharHint": "听假名的发音，选择你听到的假名。"
+                },
+                "sound": {
+                    "label": "音效",
+                    "voice": "Aria",
+                    "voiceHint": "播放 Aria 的录音人声。",
+                    "tone": "提示音",
+                    "toneHint": "播放简单的合成音。",
+                    "volume": "音效音量"
+                },
+                "voiceLabel": "语音",
+                "questionCount": "题目数量",
+                "questions": "题",
+                "choiceCount": "选项数量",
+                "choices": "项",
+                "timeLimit": "每题时间",
+                "autoAdvance": "自动进入下一题",
+                "useAll": "全部假名",
+                "groups": {
+                    "voiceless": "清音",
+                    "voiced": "浊音",
+                    "contracted": "拗音"
+                },
+                "chars": "个",
+                "totalChars": "总假名数"
+            }
+        },
+        "vocab": {
+            "available": "共 {{count}} 个单词",
+            "back_hub": "Back to hub",
+            "eyebrow": "Vocabulary",
+            "title": "Vocabulary",
+            "description": "Browse a deck's words with readings, meanings, and example sentences.",
+            "search": "Search decks",
+            "empty": "No decks yet.",
+            "words": "words",
+            "read": "Read",
+            "edit": "Edit",
+            "addWord": "Add word",
+            "delete": "Delete",
+            "save": "Save",
+            "cancel": "Cancel",
+            "word": "Word",
+            "reading": "Reading",
+            "meaning": "Meaning",
+            "example": "Example",
+            "required": "Word and meaning are required.",
+            "builtIn": "Built-in words can't be edited."
+        },
+        "vocabularyReview": {
+            "badge": "复习",
+            "title": "词汇复习",
+            "description": "翻转卡片查看答案，然后标记为通过或失败。",
+            "complete": "全部完成！",
+            "completeDescription": "目前没有需要复习的单词。",
+            "exit": "退出复习",
+            "wordsLeft": "个单词剩余",
+            "wordLeft": "个单词剩余",
+            "showAnswer": "查看答案",
+            "fail": "失败",
+            "pass": "通过",
+            "failHint": "失败",
+            "passHint": "通过",
+            "wordLabel": "单词",
+            "recallPrompt": "这个单词是什么意思？",
+            "back_hub": "返回日语"
+        },
+        "render": {
+            "back_hub": "Back to hub",
+            "eyebrow": "Render",
+            "title": "Render",
+            "description": "Read short passages with furigana and a translation to check against.",
+            "search": "Search decks",
+            "empty": "No reading decks yet.",
+            "passages": "passages",
+            "read": "Read",
+            "showTranslation": "Show translation",
+            "hideTranslation": "Hide translation",
+            "speak": "Listen"
+        },
+        "drill": {
+            "title": "Kana Drill"
+        },
+        "review": {
+            "title": "Vocabulary Review"
+        }
+    },
+    "footer": {
+        "tagline": "边喝茶边学日语的温暖方式，主题多样。",
+        "explore": "浏览",
+        "learn": "我们教什么",
+        "rights": "TeaChoco · 版权所有。",
+        "languages": {
+            "ja": "日语",
+            "en": "英语",
+            "ko": "韩语",
+            "th": "泰语"
+        }
+    },
+    "auth": {
+        "signIn": "登录",
+        "signUp": "注册",
+        "signOut": "退出登录",
+        "email": "邮箱",
+        "password": "密码",
+        "name": "姓名",
+        "nameTag": "用户名",
+        "nameTagHint": "3-30 个字符。仅限英文字母、数字、下划线 (_) 或连字符 (-)，不能有空格。你的公开用户名。",
+        "confirmPassword": "确认密码",
+        "forgotPassword": "忘记密码？",
+        "resetPassword": "重置密码",
+        "backToSignIn": "返回登录",
+        "orContinueWith": "或通过以下方式继续",
+        "google": "Google",
+        "discord": "Discord",
+        "noAccount": "没有账户？",
+        "hasAccount": "已有账户？",
+        "verifyEmail": "验证邮箱",
+        "verificationCode": "验证码",
+        "verifyHint": "请输入我们发送至 {{email}} 的 6 位验证码。",
+        "verify": "验证",
+        "otpSent": "我们已向 {{email}} 发送验证码。",
+        "otpResent": "已发送新验证码。",
+        "verifySuccess": "欢迎，{{name}}！",
+        "resendCode": "重新发送验证码",
+        "resendInSeconds": "{{seconds}} 秒后可重发",
+        "profile": "个人资料",
+        "settings": "设置",
+        "welcome": "欢迎，{{name}}",
+        "error": {
+            "invalidCredentials": "邮箱或密码不正确。",
+            "emailInUse": "已存在使用该邮箱的账户。",
+            "nameTagTaken": "该用户名已被使用。",
+            "nameTagInvalid": "用户名必须为 3-30 个字符：仅限英文字母、数字、下划线或连字符（不能有空格）。",
+            "passwordMismatch": "两次输入的密码不一致。",
+            "invalidOtp": "验证码无效或已过期，请重试。",
+            "resendFailed": "无法发送新验证码，请重试。",
+            "generic": "出了点问题。请重试。",
+            "emailNotFound": "No account found with that email.",
+            "resetFailed": "Password reset failed. Please try again.",
+            "oauth": "Sign-in failed: {{reason}}"
+        },
+        "resetCodeSent": "We sent a reset code to {{email}}.",
+        "resetHint": "Enter the code sent to {{email}} and choose a new password.",
+        "forgotHint": "Enter your account email and we'll send you a reset code.",
+        "newPassword": "New Password",
+        "updatePassword": "Update Password",
+        "resetSuccess": "Password updated. Please sign in.",
+        "line": "LINE",
+        "x": "X (Twitter)",
+        "sendResetCode": "发送重置码"
+    },
+    "settings": {
+        "title": "设置",
+        "subtitle": "按你的口味冲泡 ChocoMemo。",
+        "back": "返回",
+        "nav": {
+            "settings": "设置",
+            "appearance": "外观",
+            "language": "语言",
+            "voice": "语音与音频",
+            "interface": "界面",
+            "account": "账户"
+        },
+        "appearance": {
+            "hint": "选择你杯中的氛围。"
+        },
+        "language": {
+            "hint": "选择 ChocoMemo 与你交流的语言。"
+        },
+        "voice": {
+            "hint": "用于朗读假名和单词的声音。"
+        },
+        "interface": {
+            "hint": "调整围绕在你学习周围的显示。",
+            "chromeLabel": "显示界面",
+            "chromeDescription": "显示或隐藏导航栏和页脚。"
+        },
+        "account": {
+            "signedInHint": "已以 {{name}} 身份登录",
+            "signedOutHint": "登录后可在所有设备上保留你的学习故事。",
+            "goToProfile": "查看个人资料",
+            "signIn": "登录"
+        }
+    },
+    "profile": {
+        "title": "个人资料",
+        "subtitle": "你和 ChocoMemo 的学习故事。",
+        "back": "返回",
+        "anonymousName": "Choco 学习者",
+        "memberSince": "加入时间",
+        "notSignedInTitle": "未登录",
+        "notSignedInHint": "登录后可查看个人资料、编辑信息，并在所有设备上跟踪进度。",
+        "signIn": "登录",
+        "stats": {
+            "label": "一览",
+            "kana": "已读假名",
+            "vocabulary": "词汇量",
+            "learned": "已学单词",
+            "due": "待复习"
+        },
+        "identities": {
+            "label": "Linked Accounts",
+            "email": "Email",
+            "verified": "Verified",
+            "unverified": "Not verified",
+            "primary": "Primary",
+            "local": "Password",
+            "google": "Google",
+            "discord": "Discord",
+            "line": "LINE",
+            "x": "X (Twitter)",
+            "connected": "Connected",
+            "notConnected": "Not connected",
+            "comingSoon": "Coming soon",
+            "passwordSet": "Password is set",
+            "passwordNotSet": "No password set yet",
+            "connect": "Connect",
+            "disconnect": "Disconnect",
+            "disconnectSuccess": "Google account disconnected",
+            "disconnectError": "Couldn't disconnect this account ({{reason}})",
+            "disconnectTitle": "Disconnect Google account?",
+            "disconnectHint": "You'll be asked to confirm with Google before the link is removed.",
+            "lastSigninMethod": "You need at least one sign-in method left",
+            "disconnectSession": "Your session expired. Sign in again and retry.",
+            "disconnectVerifyFailed": "Couldn't verify your Google account. Try again.",
+            "disconnectCancelled": "Google sign-in was cancelled.",
+            "change": "Change"
+        },
+        "details": {
+            "name": "姓名",
+            "namePlaceholder": "你的姓名",
+            "saving": "保存中…",
+            "saved": "个人资料已更新",
+            "updateError": "无法更新你的个人资料。",
+            "editProfile": "编辑个人资料",
+            "nameTag": "用户名",
+            "nameTagHint": "3-30 个字符。仅限英文字母、数字、下划线 (_) 或连字符 (-)，不能有空格。你的公开用户名。",
+            "nameTagTaken": "该用户名已被使用。",
+            "nameTagInvalid": "用户名必须为 3-30 个字符：仅限英文字母、数字、下划线或连字符（不能有空格）。",
+            "noNameTag": "还没有用户名",
+            "bio": "简介",
+            "bioPlaceholder": "向大家介绍一下你自己…"
+        },
+        "email": {
+            "label": "Change email",
+            "hint": "Update the email address you use to sign in.",
+            "placeholder": "you@example.com",
+            "save": "Save",
+            "saving": "Saving…",
+            "saved": "Email updated",
+            "updateError": "Could not update your email.",
+            "invalid": "Please enter a valid email address"
+        },
+        "otp": {
+            "confirmEmail": "Confirm new email",
+            "confirmPassword": "Confirm change password",
+            "sendCode": "Send code",
+            "sending": "Sending…",
+            "codeSent": "Code sent",
+            "codeResent": "Code resent",
+            "sendFailed": "Couldn't send the code",
+            "codeSentTo": "Enter the 6-digit code we sent to {{email}}.",
+            "verifySave": "Verify & save",
+            "verifying": "Verifying…",
+            "invalidCode": "Invalid or expired code",
+            "resendFailed": "Couldn't resend the code",
+            "back": "Back",
+            "emailSame": "New email must be different from the current one",
+            "emailTaken": "That email is already in use",
+            "wrongCurrentPassword": "Current password is incorrect"
+        },
+        "password": {
+            "label": "Change password",
+            "hint": "Your current password is required to set a new one.",
+            "setHint": "Set a password for your account. We'll email a code to confirm.",
+            "current": "Current password",
+            "currentPlaceholder": "Enter current password",
+            "currentRequired": "Current password is required",
+            "new": "New password",
+            "newPlaceholder": "Enter new password (min. 6 characters)",
+            "newRequired": "New password is required",
+            "tooShort": "New password must be at least 6 characters",
+            "confirm": "Confirm new password",
+            "confirmPlaceholder": "Re-enter new password",
+            "mismatch": "Passwords do not match",
+            "incorrect": "Current password is incorrect",
+            "change": "Change password",
+            "changing": "Changing…",
+            "changed": "Password changed successfully",
+            "changeError": "Could not change password",
+            "noPasswordYetHint": "This account doesn't have a password set yet."
+        },
+        "avatar": {
+            "source": "头像",
+            "default": "默认",
+            "google": "Google",
+            "local": "自定义",
+            "updated": "头像已更新",
+            "updateError": "无法更新头像",
+            "invalidType": "请选择图片文件",
+            "tooLarge": "图片必须小于 5MB",
+            "previewReady": "预览已就绪 — 选择来源以保存",
+            "remove": "删除",
+            "removeError": "无法删除头像",
+            "cancel": "取消",
+            "saving": "保存中…",
+            "confirm": "确认",
+            "change": "更换头像"
+        },
+        "public": {
+            "notFoundTitle": "Profile not found",
+            "notFoundHint": "Nobody is using this name tag. It may have been changed or removed.",
+            "yourDashboard": "Go to your profile",
+            "viewPublic": "View public profile"
+        }
+    },
+    "english": {
+        "badge": "英语",
+        "title": "学习英语",
+        "description": "英语是一门新课程。下面这些卡组功能已经可用，字符集和练习仍在开发中。",
+        "nav": {
+            "render": {
+                "title": "阅读",
+                "description": "读短文并对照译文检查自己。",
+                "action": "开始阅读"
+            },
+            "review": {
+                "title": "词汇复习",
+                "description": "用单词卡和间隔重复复习词汇。",
+                "action": "开始复习"
+            },
+            "exam": {
+                "title": "词汇测验",
+                "description": "用自己词汇生成的单选题测试自己。",
+                "action": "参加测验"
+            },
+            "vocab": {
+                "title": "浏览词汇",
+                "description": "浏览卡组中的单词，含读音、释义和例句。",
+                "action": "查看单词"
+            }
+        },
+        "vocab": {
+            "title": "词汇"
+        },
+        "render": {
+            "title": "阅读"
+        },
+        "review": {
+            "title": "词汇复习"
+        },
+        "exam": {
+            "title": "考试"
+        },
+        "sections": {
+            "learn": "学习",
+            "practice": "练习"
+        }
+    },
+    "deck": {
+        "type": {
+            "vocab": "词汇",
+            "render": "阅读",
+            "review": "复习",
+            "exam": "测验",
+            "drill": "练习"
+        },
+        "source": {
+            "official": "官方",
+            "community": "社区",
+            "local": "我的",
+            "cloud": "云端"
+        },
+        "visibility": {
+            "public": "公开",
+            "unlisted": "不公开列出",
+            "private": "私密"
+        },
+        "search": "搜索卡组",
+        "searchAria": "按名称搜索卡组",
+        "searchClear": "清除搜索",
+        "tallyAria": "按来源划分的卡组",
+        "resultCount": "显示 {{total}} 个卡组中的 {{matched}} 个",
+        "loading": "正在加载卡组…",
+        "itemCount_one": "{{count}} 项",
+        "itemCount_other": "{{count}} 项",
+        "byAuthor": "由 {{author}} 创建",
+        "openAria": "打开 {{name}}",
+        "export": "导出",
+        "exportAria": "导出卡组",
+        "download": "下载",
+        "downloadAria": "下载卡组",
+        "delete": "删除",
+        "deleteAria": "删除卡组",
+        "start": "开始",
+        "list": {
+            "backHub": "返回{{language}}",
+            "eyebrow": {
+                "vocab": "词汇",
+                "render": "阅读",
+                "exam": "测验",
+                "review": "复习"
+            },
+            "title": {
+                "vocab": "词汇卡组",
+                "render": "阅读卡组",
+                "exam": "测验集",
+                "review": "复习卡组"
+            },
+            "description": {
+                "vocab": "把已掌握的词归入卡组，再按间隔重复训练。",
+                "render": "难度分级的小短文，附译文供对照。",
+                "exam": "用你自己的词汇生成的单选题集。",
+                "review": "以间隔重复的方式复习卡组。"
+            }
+        },
+        "empty": {
+            "local": {
+                "title": "你还没有自己的卡组",
+                "body": "你创建或导入的卡组会出现在这里。不如先从官方卡组开始。",
+                "action": "浏览官方卡组"
+            },
+            "official": {
+                "title": "这个类型还没有官方卡组",
+                "body": "官方卡组随应用一起提供，但这个类型尚未发布。"
+            },
+            "filtered": {
+                "title": "没有符合筛选条件的卡组",
+                "body": "此标签页中没有卡组符合你选择的搜索、标签和选项。放宽其中一项即可看到。",
+                "action": "清除筛选"
+            },
+            "cloud": {
+                "title": "云同步即将推出",
+                "body": "登录后，你的卡组将跟随你到每台设备。",
+                "action": "登录"
+            },
+            "cloudSignedIn": {
+                "title": "云同步即将推出",
+                "body": "你已登录。跨设备保持卡组同步的功能正在开发中。"
+            },
+            "community": {
+                "title": "还没有社区卡组",
+                "body": "其他学习者发布的卡组会在社区开放后显示在这里。"
+            }
+        },
+        "noResults": {
+            "title": "没有符合搜索的内容",
+            "body": "试试更短的词，或清除搜索以查看此标签页的全部内容。"
+        },
+        "details": {
+            "notFound": "未找到该卡组。",
+            "back": "返回卡组列表",
+            "contents": "包含内容",
+            "version": "版本",
+            "updated": "更新时间",
+            "noSession": "{{language}}卡组的练习尚未就绪。"
+        },
+        "options": {
+            "sortAria": "排序卡组",
+            "sort": {
+                "default": "默认顺序",
+                "name": "名称 A–Z",
+                "recent": "最近更新",
+                "popular": "下载最多",
+                "size": "体积最大"
+            },
+            "density": {
+                "comfortable": "宽松",
+                "compact": "紧凑"
+            },
+            "nsfw": {
+                "label": "敏感内容",
+                "on": "已显示敏感卡组",
+                "off": "已隐藏敏感卡组"
+            },
+            "importHeading": "导入",
+            "importHint": "读取你之前导出的卡组文件。",
+            "importUnavailable": "此类卡组尚无文件格式。"
+        },
+        "tags": {
+            "clear": "清除标签",
+            "remove": "移除标签 {{tag}}"
+        },
+        "actions": {
+            "create": {
+                "vocab": "新建卡组",
+                "exam": "新建测验"
+            },
+            "importOnly": "导入"
+        },
+        "import": {
+            "action": "导入卡组文件",
+            "invalidDeck": "该文件不是有效的卡组。",
+            "invalidExam": "该文件不是有效的测验集。",
+            "invalidJson": "无法将该文件作为 JSON 读取。"
+        },
+        "viewAuthor": "查看 {{author}} 的主页"
+    }
+}

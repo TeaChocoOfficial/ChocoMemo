@@ -1,6 +1,7 @@
 // -Path: 'client/app/routes/page/english/vocab/vocab.tsx'
 import type { Route } from './+types/vocab';
-import VocabularyDeckList from '~/pages/english/vocabulary/DeckList';
+import { Languages } from '~/data/language';
+import DeckListPage from '~/components/page/DeckListPage';
 
 export function meta({}: Route.MetaArgs) {
     return [
@@ -9,6 +10,6 @@ export function meta({}: Route.MetaArgs) {
     ];
 }
 
-export default function EnglishVocabulary() {
-    return <VocabularyDeckList />;
+export default function EnglishVocab() {
+    return <DeckListPage type='vocab' language={Languages.en} />;
 }

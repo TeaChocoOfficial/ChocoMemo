@@ -1,0 +1,70 @@
+//-Path: "vite-extra-react-ssr-ts/src/components/custom/Button.tsx"
+
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+    variant?: 'ghost' | 'outline' | 'surface' | 'primary' | 'secondary';
+    size?: 'sm' | 'md' | 'lg';
+    children: React.ReactNode;
+    brandColor?: string;
+}
+
+const variantClasses: Record<string, string> = {
+    ghost: 'bg-transparent hover:bg-surface-overlay text-surface-foreground',
+    outline: 'border border-line-strong text-primary hover:border-primary hover:bg-primary-subtle',
+    surface: 'bg-surface text-surface-foreground border border-line hover:bg-surface-overlay',
+    primary: 'bg-primary text-primary-foreground hover:bg-primary-emphasis',
+    secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary-emphasis',
+};
+
+const sizeClasses: Record<string, string> = {
+    sm: 'px-3 py-1.5 text-sm',
+    md: 'px-5 py-2.5 text-sm',
+    lg: 'px-7 py-3.5 text-base',
+};
+
+/** `foreground` defers to the active theme's text token so a brand tint can
+ *  follow light/dark instead of being pinned to one theme's hex. */
+function resolveBrandColor(brandColor: string) {
+    return brandColor === 'foreground' ? 'var(--color-surface-foreground)' : brandColor;
+}
+
+/** Translucent fill for the hover state. Hex colors take the 8-digit `#rrggbbaa`
+ *  form; a resolved `var()` cannot take an alpha suffix, so it mixes instead. */
+function brandColorHover(brandColor: string) {
+    return brandColor.startsWith('#')
+        ? `${brandColor}20`
+        : `color-mix(in srgb, ${brandColor} 12%, transparent)`;
+}
+
+export default function Button({
+    size = 'md',
+    children,
+    className,
+    brandColor,
+    variant = 'primary',
+    style,
+    ...props
+}: ButtonProps) {
+    const brand = brandColor && resolveBrandColor(brandColor);
+
+    const customStyle = brand
+        ? ({
+              ...style,
+              '--btn-color': brand,
+              '--btn-color-hover': brandColorHover(brand),
+              '--btn-border-hover': brand,
+          } as React.CSSProperties)
+        : style;
+
+    const brandClass = brand
+        ? 'text-[var(--btn-color)]! border-[var(--btn-color)]! hover:border-[var(--btn-border-hover)]! hover:bg-[var(--btn-color-hover)]!'
+        : '';
+    return (
+        <button
+            className={`inline-flex items-center justify-center gap-2 rounded-sm font-semibold transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2 active:translate-y-px disabled:opacity-50 disabled:pointer-events-none cursor-pointer ${variantClasses[variant]} ${sizeClasses[size]} ${brandClass} ${className || ''}`}
+            style={customStyle}
+            {...props}
+        >
+            {children}
+        </button>
+    );
+}

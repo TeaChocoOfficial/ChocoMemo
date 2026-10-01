@@ -1,7 +1,7 @@
 // -Path: 'client/app/routes/page/english/review/review.tsx'
-import DeckListPage from '~/components/page/DeckListPage';
 import { Languages } from '~/data/language';
 import type { Route } from './+types/review';
+import DeckListPage from '~/components/page/DeckListPage';
 
 export function meta({}: Route.MetaArgs) {
     return [

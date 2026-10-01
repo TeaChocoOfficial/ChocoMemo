@@ -1,0 +1,906 @@
+{
+    "nav": {
+        "home": "Tahanan",
+        "languages": "Mga Wika",
+        "japanese": "Hapones",
+        "menu": "Buksan ang menu",
+        "settings": "Mga Setting",
+        "language": "Wika",
+        "theme": "Tema",
+        "english": "English"
+    },
+    "chrome": {
+        "hide": "Itago",
+        "show": "Ipakita",
+        "toggleLabel": "Ipakita ang interface"
+    },
+    "home": {
+        "badge": "ChocoMemo · shared na library ng wika",
+        "title": "Matuto ng kahit anong wika,",
+        "titleAccent": "isang shared deck sa isang beses.",
+        "subtitle": "Japanese, English, Thai, Korean at Chinese — bawat isa ay binubuo mula sa mga deck, drill at quiz na sinusulat at ibinabahagi ng mga tunay na nag-aaral. Libreng bukas at iyong palaguin.",
+        "ctaStart": "Magsimulang matuto",
+        "ctaCreate": "I-publish ang deck",
+        "ctaHow": "Paano ito gumagana",
+        "scriptsLabel": "Naghihimulot ngayon",
+        "stats": {
+            "badge": "Nasa shelf",
+            "languages": "Mga wika",
+            "kana": "Mga kana character",
+            "vocabulary": "Mga salitang bokabularyo",
+            "shelves": "Mga deck at quiz"
+        },
+        "languages": {
+            "badge": "Ang shelf",
+            "title": "Limang wika, isang mainit na gawi",
+            "hint": "Magsimula sa tray na handa ngayon — ang iba ay naghihimulot pa.",
+            "available": "Handa nang i-pour",
+            "comingSoon": "Naghihimulot",
+            "toAll": "Tingnan ang lahat ng wika",
+            "items": {
+                "japanese": {
+                    "name": "Hapones",
+                    "description": "Hiragana, katakana at kanji kasama ang mga drill at spaced review."
+                },
+                "english": {
+                    "name": "Ingles",
+                    "description": "Mga pang-araw-araw na salita at pariralang, inaayos ng mga gumagamit nito."
+                },
+                "thai": {
+                    "name": "Thai",
+                    "description": "Mga tone, sulat at mga salitang lalabas mo talaga sa kalsada."
+                },
+                "korean": {
+                    "name": "Koreano",
+                    "description": "Hangul sa isang upuan, saka mga conversation deck na tumatagal."
+                },
+                "chinese": {
+                    "name": "Tsino",
+                    "description": "Mga karakter, pinyin at pares ng tono, nadrill sa maikling round."
+                }
+            }
+        },
+        "library": {
+            "badge": "Ang shelf ng komunidad",
+            "title": "Sumulat ng deck. Ibahagi. Panoorin itong magtuturo.",
+            "hint": "Bawat study set sa ChocoMemo ay sinusulat ng tao, hindi ng publisher. Ayusin isa, i-publish, at iba pang tao ay makakakuha ng buong kurso mula rito.",
+            "cta": "Buksan ang shelf ng review",
+            "items": {
+                "decks": {
+                    "title": "Mga deck ng bokabularyo",
+                    "hint": "Pumili ng salitang may tema — kalikasan, hayop, mga bagay-araw — at i-review ito gaya ng maliit na e-book."
+                },
+                "exam": {
+                    "title": "Mga quiz set",
+                    "hint": "Gawing timed exam ang isang deck at makita mong eksaktong aling mga salita pa ang naghihimulot."
+                },
+                "kana": {
+                    "title": "Mga kana drill",
+                    "hint": "Mabilis na round sa dalawang syllabaryo hanggang dumating ang anyo nang walang iniisip."
+                },
+                "review": {
+                    "title": "Spaced review",
+                    "hint": "Ang mga deck na na-download mo ay bumabalik ayon sa sarili nilang iskedyul, kaya walang naumuumaw."
+                }
+            }
+        },
+        "how": {
+            "badge": "Paano ito gumagana",
+            "title": "Ang iyong araw-araw na pour",
+            "hint": "Apat na maliit na hakbang, uulitin araw-araw — iyon lang ang kailangan.",
+            "step1": {
+                "title": "Pumili ng wika",
+                "hint": "Piliin ang tray na pinupununtahan mo ngayon."
+            },
+            "step2": {
+                "title": "Magrampa ng deck",
+                "hint": "Kumuha ng deck na isinulat ng iba, o magsimula sa built-in shelf."
+            },
+            "step3": {
+                "title": "Mag-drill at mag-quiz",
+                "hint": "Maikling kana drill at exam sa bokabularyo, limang minuto sa isang beses."
+            },
+            "step4": {
+                "title": "I-publish ang sarili mo",
+                "hint": "Idagdag ang mga salitang palaging nakakalimot at ibahagi muli sa shelf."
+            }
+        },
+        "cta": {
+            "title": "Naka-on na ang pot.",
+            "hint": "Walang sign-up wall sa pagitan ng iyo at ang unang deck. Mag-sign in lang kapag gusto mong ma-sync ang mga salita mo.",
+            "primary": "Magsimulang matuto",
+            "secondary": "I-publish ang deck"
+        }
+    },
+    "theme": {
+        "pickerLabel": "Baguhin ang tema",
+        "names": {
+            "lightChoco": "Maliwanag na Choco",
+            "darkChoco": "Madilim na Choco",
+            "darkGalaxy": "Madilim na Galaksya",
+            "lightGalaxy": "Maliwanag na Galaksya",
+            "darkSakura": "Madilim na Sakura",
+            "lightSakura": "Maliwanag na Sakura",
+            "darkPaper": "Madilim na Papel",
+            "lightPaper": "Maliwanag na Papel",
+            "darkNature": "Madilim na Kalikasan",
+            "lightNature": "Maliwanag na Kalikasan",
+            "darkAutumn": "Madilim na Taglagas",
+            "lightAutumn": "Maliwanag na Taglagas",
+            "darkWinter": "Madilim na Taglamig",
+            "lightWinter": "Maliwanag na Taglamig"
+        }
+    },
+    "common": {
+        "error": {
+            "oops": "Ay!",
+            "unexpected": "May naganap na hindi inaasahang error.",
+            "notFound": "Hindi mahanap ang hiniling na pahina."
+        },
+        "tabs": {
+            "local": "Lokal",
+            "cloud": "Cloud",
+            "community": "Komunidad",
+            "official": "Opisyal"
+        },
+        "comingSoon": {
+            "cloud": "Malapit na ang cloud sync, kailangan mag-sign in",
+            "community": "Hindi pa available ang pagtingin sa mga set ng komunidad"
+        },
+        "loading": "Loading…",
+        "select": "Pumili"
+    },
+    "notfound": {
+        "title": "Hindi Nahanap ang Pahina",
+        "description": "Ang pahinang hinahanap mo ay hindi umiiral o nailipat na.",
+        "back_home": "Bumalik sa Tahanan",
+        "error_code": "404"
+    },
+    "languageSelect": {
+        "badge": "Pagpili ng Wika",
+        "title": "Pumili ng Wikang Pag-aaralan",
+        "description": "Piliin ang wikang gusto mong pag-aralan. Handa na ang Japanese ngayon; ang iba ay naghihimulot pa.",
+        "back_home": "Bumalik sa Tahanan",
+        "status": {
+            "available": "Available",
+            "comingSoon": "Malapit Na"
+        },
+        "cta": {
+            "start": "Magsimulang Matuto",
+            "unavailable": "Hindi Available"
+        },
+        "languages": {
+            "japanese": {
+                "name": "Hapones",
+                "description": "Hiragana, katakana at kanji, nadrill sa maikling round at pinananatiling mainit ng spaced review."
+            },
+            "english": {
+                "name": "Ingles",
+                "description": "Mga pang-araw-araw na salita at pariralang, inaayos sa mga deck ng mga tunay na gumagamit."
+            },
+            "thai": {
+                "name": "Thai",
+                "description": "Mga tone at sulat magkatabi, kasama ang mga salitang makikita mo sa kalsada."
+            },
+            "korean": {
+                "name": "Koreano",
+                "description": "Hangul sa isang upuan, saka mga conversation deck na ayaw tumalam."
+            },
+            "chinese": {
+                "name": "Tsino",
+                "description": "Mga karakter, pinyin at pares ng tono, nadrill ng ilang minuto sa isang beses."
+            }
+        },
+        "back_language": "Bumalik sa pagpili ng wika"
+    },
+    "japanese": {
+        "badge": "Hapones",
+        "title": "Matuto ng Hapones",
+        "description": "Kabisaduhin ang mga batayan ng Hapones sa pamamagitan ng kana, bokabularyo, at mga pagsusulit.",
+        "back_language": "Bumalik sa Pagpili ng Wika",
+        "stats": {
+            "kana": "Mga karakter ng kana",
+            "vocabulary": "Mga salitang bokabularyo",
+            "learned": "Mga salitang natutunan",
+            "due": "Dahil na para sa pagre-rebyu"
+        },
+        "sections": {
+            "kana": "Kana",
+            "kanaHint": "Alamin ang dalawang alpabetong pantig ng Hapones — tingnan ang bawat karakter at sanayin ang pagkilala.",
+            "vocabulary": "Bokabularyo",
+            "vocabularyHint": "Palaguin ang iyong listahan ng salita at rebyuhin ito sa nakaayos na iskedyul.",
+            "learn": "Matuto",
+            "practice": "Magsanay"
+        },
+        "nav": {
+            "kana": {
+                "title": "Kana",
+                "description": "Tingnan ang lahat ng Hiragana at Katakana kasama ang kanilang mga bigkas.",
+                "action": "Tingnan ang Kana"
+            },
+            "render": {
+                "title": "Render",
+                "description": "Read short passages with furigana and check yourself against the translation.",
+                "action": "Start Reading"
+            },
+            "vocab": {
+                "title": "Bokabularyo",
+                "description": "Palakihin ang bokabularyo mo at magpraktis nang may agwat.",
+                "action": "Tingnan ang mga salita"
+            },
+            "drill": {
+                "title": "Kana drill",
+                "description": "Subukan ang pagkilala mo sa hiragana at katakana.",
+                "action": "Simulan ang kana drill"
+            },
+            "review": {
+                "title": "Rebyu ng Bokabularyo",
+                "description": "Rebyuhin ang bokabularyo gamit ang flashcards at spaced repetition.",
+                "action": "Simulan ang rebyu"
+            },
+            "exam": {
+                "title": "Pagsusulit sa bokabularyo",
+                "description": "Subukan ang sarili mo sa maraming sagot na galing sa sarili mong bokabularyo.",
+                "action": "Kumuha ng pagsusulit"
+            }
+        },
+        "decks": {
+            "title": "Mga Deck ng Rebyu ng Bokabularyo",
+            "description": "Pumili ng deck na ire-rebyu. Ang mga deck ay mula sa built-in na set, iyong sariling mga salita, o mga na-download na koleksyon.",
+            "availableCount": "{{count}} deck ang available",
+            "startReview": "Simulan ang Rebyu",
+            "due": "dahil na",
+            "byAuthor": "ni {{author}}",
+            "download": "I-download",
+            "note": "Rebyu",
+            "ready": "Handa",
+            "words": "salita",
+            "search": "Maghanap ng deck...",
+            "empty": "Wala pang deck — mag-import ng isa o gumawa ng custom na deck.",
+            "addCustom": "Magdagdag ng custom na deck",
+            "importDeck": "Mag-import ng deck",
+            "importErrorJson": "Hindi mabasa ang file na ito bilang JSON.",
+            "form": {
+                "title": "Gumawa ng custom na deck",
+                "subtitle": "Pumili ng mga salita mula sa iyong bokabularyo upang i-grupo sa isang deck ng rebyu.",
+                "nameLabel": "Pangalan",
+                "namePlaceholder": "hal. Paborito kong kanji",
+                "descriptionLabel": "Deskripsyon (opsiyonal)",
+                "descriptionPlaceholder": "Maikling tala tungkol sa deck na ito",
+                "wordsLabel": "Mga salitang isasama",
+                "wordsPlaceholder": "Maghanap ng mga salita...",
+                "selectedCount": "{{count}} napili",
+                "nameError": "Bigyan ng pangalan ang iyong deck.",
+                "minWordsError": "Pumili ng kahit isang salita.",
+                "cancel": "Kanselahin",
+                "submit": "Gumawa ng deck"
+            },
+            "notFound": "Hindi nahanap ang deck na iyon.",
+            "source": {
+                "default": "Built-in",
+                "custom": "Aking mga salita",
+                "cloud": "Cloud",
+                "downloaded": "Na-download"
+            },
+            "open": "Open",
+            "itemCount_one": "{{count}} item",
+            "itemCount_other": "{{count}} items",
+            "export": "Export",
+            "exportAria": "Export deck",
+            "downloadAria": "Download deck",
+            "delete": "Delete",
+            "deleteAria": "Delete deck",
+            "type": {
+                "vocab": "Vocabulary",
+                "render": "Reading",
+                "review": "Review",
+                "exam": "Exam",
+                "drill": "Drill"
+            },
+            "viewAuthor": "Tingnan ang profile ni {{author}}",
+            "favourite": "Idagdag sa paborito",
+            "unfavourite": "Alisin sa paborito"
+        },
+        "exam": {
+            "title": "Pagsusulit",
+            "import": "Mag-import ng set ng pagsusulit",
+            "addCustom": "Magdagdag ng custom na set",
+            "importErrorJson": "Hindi mabasa ang file na ito bilang JSON.",
+            "form": {
+                "title": "Gumawa ng custom na set ng pagsusulit",
+                "subtitle": "Pumili ng mga salita mula sa iyong bokabularyo — binuo ang set mula sa kanilang mga kahulugan, tulad ng mga built-in na set.",
+                "titleLabel": "Pamagat",
+                "titlePlaceholder": "hal. Aking pang-araw-araw na salita",
+                "descriptionLabel": "Deskripsyon (opsiyonal)",
+                "descriptionPlaceholder": "Maikling tala tungkol sa set na ito",
+                "wordsLabel": "Mga salitang isasama",
+                "wordsPlaceholder": "Maghanap ng mga salita...",
+                "titleError": "Bigyan ng pangalan ang iyong set.",
+                "minWordsError": "Pumili ng hindi bababa sa dalawang salita.",
+                "cancel": "Kanselahin",
+                "submit": "Gumawa ng set",
+                "selectedCount_one": "{{count}} ang napili",
+                "selectedCount_other": "{{count}} ang napili"
+            }
+        },
+        "kana": {
+            "badge": "Kana",
+            "title": "Kana ng Hapones",
+            "description": "Ang Hiragana at Katakana ay ang dalawang alpabetong pantig ng Hapones. I-tap ang mga tab upang lumipat.",
+            "tabs": {
+                "hiragana": "Hiragana",
+                "katakana": "Katakana"
+            },
+            "voiceless": "Walang boses",
+            "voiced": "May boses",
+            "contracted": "Kontraktado",
+            "voice_label": "Boses",
+            "voice_preview": "Preview",
+            "voice_auto": "Auto",
+            "voice_choose": "Pumili ng boses",
+            "voice_ja": "Hapones",
+            "voice_volume": "Volume",
+            "take_quiz": "Kumuha ng Pagsusulit",
+            "count": "kana",
+            "stats": {
+                "set": "Sa set",
+                "group": "Sa grupo",
+                "read": "Nabasa"
+            },
+            "readProgress": "{{read}} / {{total}}",
+            "gridHint": "I-tap ang isang kana upang marinig ito, o pindutin ang Simulang basahin upang dumaan sa grupo kung saan ka huminto.",
+            "readStart": "Simulang basahin",
+            "readContinue": "Ipagpatuloy ang pagbasa",
+            "readStop": "Itigil",
+            "nowReading": "kasalukuyang binabasa",
+            "upNext": "sunod",
+            "pinToolbar": "I-pin ang toolbar",
+            "unpinToolbar": "Alisin ang pin ng toolbar",
+            "sticky": "Sticky",
+            "stickyOn": "Bukas",
+            "stickyOff": "Sarado",
+            "back_hub": "Bumalik sa Hapones"
+        },
+        "kanaDrill": {
+            "badge": "Pagsasanay sa Kana",
+            "title": "Pagsasanay sa Kana",
+            "intro": "I-configure ang iyong pagsusulit — piliin kung aling mga grupo ng kana ang isasama, kung ilang tanong, at kung gaano karaming oras bawat tanong.",
+            "start": "Simulan ang Pagsusulit",
+            "progress": "Tanong",
+            "score": "Iskor",
+            "promptLabel": "Ano ang bigkas ng kanang ito?",
+            "promptLabelRomajiToChar": "Aling kana ang tugma sa bigkas na ito?",
+            "promptLabelListen": "Aling kana ang narinig mo?",
+            "listenAgain": "Pakinggan muli",
+            "correct": "Tama!",
+            "wrong": "Hindi eksakto.",
+            "timeout": "Naubos ang oras!",
+            "correctAnswer": "Tamang sagot",
+            "next": "Susunod na Tanong",
+            "endGame": "Tapusin ang Laro",
+            "resultTitle": "Kumpleto na ang Pagsusulit!",
+            "result": {
+                "correctLabel": "Tama",
+                "wrongLabel": "Mali",
+                "timeoutLabel": "Naubos ang Oras",
+                "settingsSummary": "Mga Setting",
+                "settingsButton": "Mga Setting",
+                "exitButton": "Lumabas",
+                "playAgain": "Maglaro Muli",
+                "history": "Kasaysayan ng Sagot",
+                "timeoutShort": "Naubos ang Oras",
+                "yes": "Oo",
+                "no": "Hindi"
+            },
+            "retry": "Subukan Muli",
+            "back_characters": "Bumalik sa Kana",
+            "settings": {
+                "setsLabel": "Mga Set ng Kana",
+                "questionLabel": "Mga Opsyon ng Pagsusulit",
+                "modeLabel": "Mode ng Tanong",
+                "mode": {
+                    "charToRomaji": "Kana → Bigkas",
+                    "charToRomajiHint": "Tingnan ang kana, piliin ang bigkas nitong romaji.",
+                    "romajiToChar": "Bigkas → Kana",
+                    "romajiToCharHint": "Tingnan ang bigkas, piliin ang tugmang kana.",
+                    "listenToChar": "Pakinggan → Kana",
+                    "listenToCharHint": "Pakinggan ang binigkas na kana, piliin ang narinig mo."
+                },
+                "sound": {
+                    "label": "Epekto ng tunog",
+                    "voice": "Aria",
+                    "voiceHint": "I-play ang binigkas na recording ni Aria.",
+                    "tone": "Tono",
+                    "toneHint": "I-play ang simpleng synthesised beep.",
+                    "volume": "Volume ng tunog"
+                },
+                "voiceLabel": "Boses",
+                "questionCount": "Bilang ng mga tanong",
+                "questions": "tanong",
+                "choiceCount": "Mga pagpipilian ng sagot",
+                "choices": "pagpipilian",
+                "timeLimit": "Oras bawat tanong",
+                "autoAdvance": "Awtomatikong lumipat sa susunod na tanong",
+                "useAll": "Lahat ng kana",
+                "groups": {
+                    "voiceless": "Walang boses",
+                    "voiced": "May boses",
+                    "contracted": "Kontraktado"
+                },
+                "chars": "karakter",
+                "totalChars": "Kabuuang kana"
+            }
+        },
+        "vocab": {
+            "available": "{{count}} salita sa kabuuan",
+            "back_hub": "Back to hub",
+            "eyebrow": "Vocabulary",
+            "title": "Vocabulary",
+            "description": "Browse a deck's words with readings, meanings, and example sentences.",
+            "search": "Search decks",
+            "empty": "No decks yet.",
+            "words": "words",
+            "read": "Read",
+            "edit": "Edit",
+            "addWord": "Add word",
+            "delete": "Delete",
+            "save": "Save",
+            "cancel": "Cancel",
+            "word": "Word",
+            "reading": "Reading",
+            "meaning": "Meaning",
+            "example": "Example",
+            "required": "Word and meaning are required.",
+            "builtIn": "Built-in words can't be edited."
+        },
+        "vocabularyReview": {
+            "badge": "Rebyu",
+            "title": "Rebyu ng Bokabularyo",
+            "description": "I-flip ang card upang makita ang sagot, pagkatapos ay markahan bilang Pass o Fail.",
+            "complete": "Lahat ay tapos na!",
+            "completeDescription": "Wala nang salitang dapat i-rebyu ngayon.",
+            "exit": "Lumabas sa Rebyu",
+            "wordsLeft": "salita ang natitira",
+            "wordLeft": "salita ang natitira",
+            "showAnswer": "Ipakita ang sagot",
+            "fail": "Fail",
+            "pass": "Pass",
+            "failHint": "fail",
+            "passHint": "pass",
+            "wordLabel": "Salita",
+            "recallPrompt": "Ano ang kahulugan ng salitang ito?",
+            "back_hub": "Bumalik sa Hapones"
+        },
+        "render": {
+            "back_hub": "Back to hub",
+            "eyebrow": "Render",
+            "title": "Render",
+            "description": "Read short passages with furigana and a translation to check against.",
+            "search": "Search decks",
+            "empty": "No reading decks yet.",
+            "passages": "passages",
+            "read": "Read",
+            "showTranslation": "Show translation",
+            "hideTranslation": "Hide translation",
+            "speak": "Listen"
+        },
+        "drill": {
+            "title": "Kana Drill"
+        },
+        "review": {
+            "title": "Vocabulary Review"
+        }
+    },
+    "footer": {
+        "tagline": "Isang mainam na paraan, maraming paksa para lasawin ang iyong Japaneseisa kutsara.",
+        "explore": "Mag-explore",
+        "learn": "Aming itinuturo",
+        "rights": "TeaChoco · Lahat ng karapatan ay nakalaan.",
+        "languages": {
+            "ja": "Hapon",
+            "en": "Ingles",
+            "ko": "Koreano",
+            "th": "Thai"
+        }
+    },
+    "auth": {
+        "signIn": "Mag-sign In",
+        "signUp": "Gumawa ng Account",
+        "signOut": "Mag-sign Out",
+        "email": "Email",
+        "password": "Password",
+        "name": "Pangalan",
+        "nameTag": "Username",
+        "nameTagHint": "3-30 na karakter. English letters, numero, underscore (_) o hyphen (-) lang, walang espasyo. Ang iyong pampublikong username.",
+        "confirmPassword": "Kumpirmahin ang Password",
+        "forgotPassword": "Nakalimutan ang password?",
+        "resetPassword": "I-reset ang Password",
+        "backToSignIn": "Bumalik sa Sign In",
+        "orContinueWith": "O magpatuloy gamit ang",
+        "google": "Google",
+        "discord": "Discord",
+        "noAccount": "Wala pang account?",
+        "hasAccount": "May account na ba?",
+        "verifyEmail": "I-verify ang Email",
+        "verificationCode": "Verification code",
+        "verifyHint": "Ilagay ang 6-digit na code na ipinadala namin sa {{email}}.",
+        "verify": "I-verify",
+        "otpSent": "Nagpadala kami ng code sa {{email}}.",
+        "otpResent": "May ipinadalang bagong code.",
+        "verifySuccess": "Maligayang pagdating, {{name}}!",
+        "resendCode": "Ipadala muli ang code",
+        "resendInSeconds": "Ipadala muli sa {{seconds}}s",
+        "profile": "Profile",
+        "settings": "Mga Setting",
+        "welcome": "Maligayang pagdating, {{name}}!",
+        "error": {
+            "invalidCredentials": "Maling email o password",
+            "emailInUse": "Ginamit na ang email na ito",
+            "nameTagTaken": "Ginagamit na ang username na iyon.",
+            "nameTagInvalid": "Ang username ay dapat 3-30 na karakter: English letters, numero, underscore o hyphen lang (walang espasyo).",
+            "passwordMismatch": "Hindi tugma ang mga password.",
+            "invalidOtp": "Hindi wasto o expired na code. Subukan muli.",
+            "resendFailed": "Hindi maipadala ang bagong code. Subukan muli.",
+            "generic": "May naganap na error",
+            "emailNotFound": "No account found with that email.",
+            "resetFailed": "Password reset failed. Please try again.",
+            "oauth": "Sign-in failed: {{reason}}"
+        },
+        "resetCodeSent": "We sent a reset code to {{email}}.",
+        "resetHint": "Enter the code sent to {{email}} and choose a new password.",
+        "forgotHint": "Enter your account email and we'll send you a reset code.",
+        "newPassword": "New Password",
+        "updatePassword": "Update Password",
+        "resetSuccess": "Password updated. Please sign in.",
+        "line": "LINE",
+        "x": "X (Twitter)",
+        "sendResetCode": "Ipadala ang reset code"
+    },
+    "settings": {
+        "title": "Mga Setting",
+        "subtitle": "Ihanda ang ChocoMemo ayon sa'yo.",
+        "back": "Bumalik",
+        "nav": {
+            "settings": "Mga Setting",
+            "appearance": "Hitsura",
+            "language": "Wika",
+            "voice": "Boses at audio",
+            "interface": "Interface",
+            "account": "Account"
+        },
+        "appearance": {
+            "hint": "Piliin ang mood ng iyong tasa."
+        },
+        "language": {
+            "hint": "Piliin ang wikang ginagamit ng ChocoMemo sa'yo."
+        },
+        "voice": {
+            "hint": "Ang boses na nagbabasa nang malakas ng kana at mga salita."
+        },
+        "interface": {
+            "hint": "Ayusin ang bumubuo sa iyong pag-aaral.",
+            "chromeLabel": "Ipakita ang interface",
+            "chromeDescription": "Ipakita o itago ang navigation at footer."
+        },
+        "account": {
+            "signedInHint": "Naka-log in bilang {{name}}",
+            "signedOutHint": "Mag-log in para mapanatili ang iyong kuwento sa pag-aaral sa lahat ng device.",
+            "goToProfile": "Tingnan ang profile",
+            "signIn": "Mag-log in"
+        }
+    },
+    "profile": {
+        "title": "Profile",
+        "subtitle": "Ang iyong kuwento sa pag-aaral kasama ang ChocoMemo.",
+        "back": "Bumalik",
+        "anonymousName": "ChocoStudyante",
+        "memberSince": "Miyembro simula",
+        "notSignedInTitle": "Hindi naka-log in",
+        "notSignedInHint": "Mag-log in para makita ang iyong profile, i-edit ang mga detalye, at masubaybayan ang progreso sa lahat ng device.",
+        "signIn": "Mag-log in",
+        "stats": {
+            "label": "Sa isang sulyap",
+            "kana": "Kana na nabasa",
+            "vocabulary": "Bokabularyo",
+            "learned": "Mga salitang natutunan",
+            "due": "Due para sa pagsusuri"
+        },
+        "identities": {
+            "label": "Linked Accounts",
+            "email": "Email",
+            "verified": "Verified",
+            "unverified": "Not verified",
+            "primary": "Primary",
+            "local": "Password",
+            "google": "Google",
+            "discord": "Discord",
+            "line": "LINE",
+            "x": "X (Twitter)",
+            "connected": "Connected",
+            "notConnected": "Not connected",
+            "comingSoon": "Coming soon",
+            "passwordSet": "Password is set",
+            "passwordNotSet": "No password set yet",
+            "connect": "Connect",
+            "disconnect": "Disconnect",
+            "disconnectSuccess": "Google account disconnected",
+            "disconnectError": "Couldn't disconnect this account ({{reason}})",
+            "disconnectTitle": "Disconnect Google account?",
+            "disconnectHint": "You'll be asked to confirm with Google before the link is removed.",
+            "lastSigninMethod": "You need at least one sign-in method left",
+            "disconnectSession": "Your session expired. Sign in again and retry.",
+            "disconnectVerifyFailed": "Couldn't verify your Google account. Try again.",
+            "disconnectCancelled": "Google sign-in was cancelled.",
+            "change": "Change"
+        },
+        "details": {
+            "name": "Pangalan",
+            "namePlaceholder": "Iyong pangalan",
+            "saving": "Sinasave…",
+            "saved": "Na-update ang profile",
+            "updateError": "Hindi ma-update ang iyong profile.",
+            "editProfile": "I-edit ang profile",
+            "nameTag": "Username",
+            "nameTagHint": "3-30 na karakter. English letters, numero, underscore (_) o hyphen (-) lang, walang espasyo. Ang iyong pampublikong username.",
+            "nameTagTaken": "Ginagamit na ang username na iyon.",
+            "nameTagInvalid": "Ang username ay dapat 3-30 na karakter: English letters, numero, underscore o hyphen lang (walang espasyo).",
+            "noNameTag": "Wala pang username",
+            "bio": "Bio",
+            "bioPlaceholder": "Magkwento nang kaunti tungkol sa iyong sarili…"
+        },
+        "email": {
+            "label": "Change email",
+            "hint": "Update the email address you use to sign in.",
+            "placeholder": "you@example.com",
+            "save": "Save",
+            "saving": "Saving…",
+            "saved": "Email updated",
+            "updateError": "Could not update your email.",
+            "invalid": "Please enter a valid email address"
+        },
+        "otp": {
+            "confirmEmail": "Confirm new email",
+            "confirmPassword": "Confirm change password",
+            "sendCode": "Send code",
+            "sending": "Sending…",
+            "codeSent": "Code sent",
+            "codeResent": "Code resent",
+            "sendFailed": "Couldn't send the code",
+            "codeSentTo": "Enter the 6-digit code we sent to {{email}}.",
+            "verifySave": "Verify & save",
+            "verifying": "Verifying…",
+            "invalidCode": "Invalid or expired code",
+            "resendFailed": "Couldn't resend the code",
+            "back": "Back",
+            "emailSame": "New email must be different from the current one",
+            "emailTaken": "That email is already in use",
+            "wrongCurrentPassword": "Current password is incorrect"
+        },
+        "password": {
+            "label": "Change password",
+            "hint": "Your current password is required to set a new one.",
+            "setHint": "Set a password for your account. We'll email a code to confirm.",
+            "current": "Current password",
+            "currentPlaceholder": "Enter current password",
+            "currentRequired": "Current password is required",
+            "new": "New password",
+            "newPlaceholder": "Enter new password (min. 6 characters)",
+            "newRequired": "New password is required",
+            "tooShort": "New password must be at least 6 characters",
+            "confirm": "Confirm new password",
+            "confirmPlaceholder": "Re-enter new password",
+            "mismatch": "Passwords do not match",
+            "incorrect": "Current password is incorrect",
+            "change": "Change password",
+            "changing": "Changing…",
+            "changed": "Password changed successfully",
+            "changeError": "Could not change password",
+            "noPasswordYetHint": "This account doesn't have a password set yet."
+        },
+        "avatar": {
+            "source": "Larawan ng profile",
+            "default": "Default",
+            "google": "Google",
+            "local": "Pasadya",
+            "updated": "Na-update ang larawan ng profile",
+            "updateError": "Hindi ma-update ang larawan ng profile",
+            "invalidType": "Mangyaring pumili ng file ng imahe",
+            "tooLarge": "Ang imahe ay dapat na mas maliit sa 5MB",
+            "previewReady": "Handa na ang preview — pumili ng mapagkukunan upang i-save",
+            "remove": "Alisin",
+            "removeError": "Hindi maalis ang larawan ng profile",
+            "cancel": "Kanselahin",
+            "saving": "Sinasave…",
+            "confirm": "Kumpirmahin",
+            "change": "Palitan ang larawan ng profile"
+        },
+        "public": {
+            "notFoundTitle": "Profile not found",
+            "notFoundHint": "Nobody is using this name tag. It may have been changed or removed.",
+            "yourDashboard": "Go to your profile",
+            "viewPublic": "View public profile"
+        }
+    },
+    "english": {
+        "badge": "Ingles",
+        "title": "Matuto ang Ingles",
+        "description": "Ang Ingles ay bagong track. Gumagana na ang mga tampok na deck sa ibaba; ang character set at drill ay ginagawa pa.",
+        "nav": {
+            "render": {
+                "title": "Pagbabasa",
+                "description": "Magbasa ng maikling teksto at i-check sa pagsasalin.",
+                "action": "Simulan ang pagbasa"
+            },
+            "review": {
+                "title": "Rebyu ng bokabularyo",
+                "description": "Rebyuhin ang bokabularyo gamit ang flashcards at spaced repetition.",
+                "action": "Simulan ang rebyu"
+            },
+            "exam": {
+                "title": "Pagsusulit sa bokabularyo",
+                "description": "Subukan ang sarili mo sa maraming sagot mula sa sarili mong bokabularyo.",
+                "action": "Kumuha ng pagsusulit"
+            },
+            "vocab": {
+                "title": "Tingnan ang bokabularyo",
+                "description": "Dumaan sa mga salita ng isang deck kasama ang pagbasa, kahulugan at halimbawa.",
+                "action": "Tingnan ang mga salita"
+            }
+        },
+        "vocab": {
+            "title": "Bokabularyo"
+        },
+        "render": {
+            "title": "Pagbabasa"
+        },
+        "review": {
+            "title": "Rebyu ng bokabularyo"
+        },
+        "exam": {
+            "title": "Pagsusulit"
+        },
+        "sections": {
+            "learn": "Matuto",
+            "practice": "Magsanay"
+        }
+    },
+    "deck": {
+        "type": {
+            "vocab": "Bokabularyo",
+            "render": "Pagbabasa",
+            "review": "Rebyu",
+            "exam": "Pagsusulit",
+            "drill": "Pagsasanay"
+        },
+        "source": {
+            "official": "Opisyal",
+            "community": "Komunidad",
+            "local": "Sa iyo",
+            "cloud": "Cloud"
+        },
+        "visibility": {
+            "public": "Pampublikong",
+            "unlisted": "Hindi nakalista",
+            "private": "Pribado"
+        },
+        "search": "Maghanap ng deck",
+        "searchAria": "Maghanap ng deck ayon sa pangalan",
+        "searchClear": "Burahin ang paghahanap",
+        "tallyAria": "Mga deck ayon sa pinagmulan",
+        "resultCount": "Ipinapakita ang {{matched}} sa {{total}} na deck",
+        "loading": "Naglo-load ng mga deck…",
+        "itemCount_one": "{{count}} aytem",
+        "itemCount_other": "{{count}} na aytem",
+        "byAuthor": "ni {{author}}",
+        "openAria": "Buksan ang {{name}}",
+        "export": "I-export",
+        "exportAria": "I-export ang deck",
+        "download": "I-download",
+        "downloadAria": "I-download ang deck",
+        "delete": "Burahin",
+        "deleteAria": "Burahin ang deck",
+        "start": "Simulan",
+        "list": {
+            "backHub": "Bumalik sa {{language}}",
+            "eyebrow": {
+                "vocab": "Bokabularyo",
+                "render": "Pagbabasa",
+                "exam": "Mga pagsusulit",
+                "review": "Rebyu"
+            },
+            "title": {
+                "vocab": "Mga deck ng bokabularyo",
+                "render": "Mga deck ng pagbabasa",
+                "exam": "Mga set ng pagsusulit",
+                "review": "Mga deck ng rebyu"
+            },
+            "description": {
+                "vocab": "Pangkatin ang mga salitang alam mo sa isang deck, saka magpraktis nang may agwat.",
+                "render": "Maikling teksto ayon sa antas, may pagsasalin para sa pagsusuri.",
+                "exam": "Mga set ng maraming sagot na ginawa mula sa sarili mong bokabularyo.",
+                "review": "Rebyuhin ang deck sa isang sesyon na may agwat na pag-uulit."
+            }
+        },
+        "empty": {
+            "local": {
+                "title": "Wala ka pang sariling deck",
+                "body": "Lalabas dito ang mga deck na ginawa mo o in-import. Magsimula sa isang opisyal na deck.",
+                "action": "Tingnan ang mga opisyal na deck"
+            },
+            "official": {
+                "title": "Wala pang opisyal na deck para sa uri na ito",
+                "body": "Kasama ng app ang mga opisyal na deck. Wala pang na-publish para sa uri na ito."
+            },
+            "filtered": {
+                "title": "Walang tumutugma sa mga filter na ito",
+                "body": "Walang deck sa tab na ito na tumutugma sa iyong paghahanap, tag, at piniling opsyon. Mag loosen ng isa.",
+                "action": "Burahin ang mga filter"
+            },
+            "cloud": {
+                "title": "Malapit na ang cloud sync",
+                "body": "Mag-sign in at susundan ka ng iyong deck sa lahat ng device.",
+                "action": "Mag-sign in"
+            },
+            "cloudSignedIn": {
+                "title": "Malapit na ang cloud sync",
+                "body": "Naka-sign in ka na. Ginagawa ang pag-sync ng deck sa pagitan ng mga device."
+            },
+            "community": {
+                "title": "Wala pang deck ng komunidad",
+                "body": "Lalabas dito ang mga deck na in-publish ng iba pang mag-aaral kapag bumukas na ang komunidad."
+            }
+        },
+        "noResults": {
+            "title": "Walang tumutugma sa paghahanap na iyon",
+            "body": "Subukan ang mas maikling salita, o burahin ang paghahanap para makita ang lahat sa tab na ito."
+        },
+        "details": {
+            "notFound": "Hindi mahanap ang deck na iyon.",
+            "back": "Bumalik sa mga deck",
+            "contents": "Laman nito",
+            "version": "Bersyon",
+            "updated": "Na-update",
+            "noSession": "Hindi pa handa ang mga sesyon para sa deck ng {{language}}."
+        },
+        "options": {
+            "sortAria": "Ayusin ang mga deck",
+            "sort": {
+                "default": "Orihinal na pagkakasunod",
+                "name": "Pangalan A–Z",
+                "recent": "Kamakailang na-update",
+                "popular": "Pinakamaraming na-download",
+                "size": "Pinakamalaki"
+            },
+            "density": {
+                "comfortable": "Malaya",
+                "compact": "Siksik"
+            },
+            "nsfw": {
+                "label": "Sensitibo",
+                "on": "Ipinapakita ang mga sensitibong deck",
+                "off": "Nakatago ang mga sensitibong deck"
+            },
+            "importHeading": "Mag-import",
+            "importHint": "Binabasa ang isang deck file na na-export mo dati.",
+            "importUnavailable": "Wala pang format ng file para sa uri nitong deck."
+        },
+        "tags": {
+            "clear": "Burahin ang mga tag",
+            "remove": "Alisin ang tag na {{tag}}"
+        },
+        "actions": {
+            "create": {
+                "vocab": "Bagong deck",
+                "exam": "Bagong pagsusulit"
+            },
+            "importOnly": "Mag-import"
+        },
+        "import": {
+            "action": "Mag-import ng deck file",
+            "invalidDeck": "Hindi validong deck ang file na iyon.",
+            "invalidExam": "Hindi validong set ng pagsusulit ang file na iyon.",
+            "invalidJson": "Hindi mabasa ang file na iyon bilang JSON."
+        },
+        "viewAuthor": "Tingnan ang profile ni {{author}}"
+    }
+}

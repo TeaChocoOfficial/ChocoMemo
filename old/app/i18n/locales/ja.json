@@ -1,0 +1,906 @@
+{
+    "nav": {
+        "home": "ホーム",
+        "languages": "言語",
+        "japanese": "日本語",
+        "menu": "メニューを開く",
+        "settings": "設定",
+        "language": "言語",
+        "theme": "テーマ",
+        "english": "English"
+    },
+    "chrome": {
+        "hide": "非表示",
+        "show": "表示",
+        "toggleLabel": "インターフェースを表示"
+    },
+    "home": {
+        "badge": "ChocoMemo · コミュニティの言語ライブラリ",
+        "title": "どんな言語でも、",
+        "titleAccent": "一枚のデッキを分け合って。",
+        "subtitle": "日本語・英語・タイ語・韓国語・中国語。どれも実際の学習者が書いて共有するデッキとドリル、クイズからできています。無料、オープンで、自由に広げられます。",
+        "ctaStart": "学習を始める",
+        "ctaCreate": "デッキを公開する",
+        "ctaHow": "使い方をご覧ください",
+        "scriptsLabel": "ただいま抽出中",
+        "stats": {
+            "badge": "棚の上",
+            "languages": "言語数",
+            "kana": "かな文字",
+            "vocabulary": "単語数",
+            "shelves": "デッキ＆クイズ"
+        },
+        "languages": {
+            "badge": "棚",
+            "title": "5つの言語、ひとつの温かい習慣",
+            "hint": "今日あるトレイから始めましょう。残りはまだ抽出中です。",
+            "available": "すぐ注げます",
+            "comingSoon": "抽出中",
+            "toAll": "すべての言語を見る",
+            "items": {
+                "japanese": {
+                    "name": "日本語",
+                    "description": "ひらがな・カタカナ・漢字を、ドリルと間隔反復で。"
+                },
+                "english": {
+                    "name": "英語",
+                    "description": "日常の語彙とフレーズを、実際に使う人が整えた形で。"
+                },
+                "thai": {
+                    "name": "タイ語",
+                    "description": "声調、スクリプト、そして実際に街で出会う言葉。"
+                },
+                "korean": {
+                    "name": "韓国語",
+                    "description": "한글はひと集中で、そのあとはしっかり残る会話デッキ。"
+                },
+                "chinese": {
+                    "name": "中国語",
+                    "description": "漢字、ピンイン、トーンの組み合わせを短いラウンドで。"
+                }
+            }
+        },
+        "library": {
+            "badge": "コミュニティの棚",
+            "title": "デッキを書いて、共有して、教えるのを見届ける。",
+            "hint": "ChocoMemoのすべての学習セットは出版社ではなく人が書きます。整えて公開すれば、誰かにはそこから一つの講座が得られます。",
+            "cta": "復習の棚を開く",
+            "items": {
+                "decks": {
+                    "title": "語彙デッキ",
+                    "hint": "自然、動物、日々のことをテーマのデッキにまとめて、小さな電子の本のように復習できます。"
+                },
+                "exam": {
+                    "title": "クイズセット",
+                    "hint": "デッキを時間制限の試験に変えて、まだ抽出が必要な言葉をそのまま確かめられます。"
+                },
+                "kana": {
+                    "title": "かなドリル",
+                    "hint": "五十音ひと通りを素早く回して、考えずに形が書けるように。"
+                },
+                "review": {
+                    "title": "間隔反復",
+                    "hint": "ダウンロードしたデッキは自分のスケジュールで戻ってくるので、どれも冷めません。"
+                }
+            }
+        },
+        "how": {
+            "badge": "使い方",
+            "title": "毎日の抽出",
+            "hint": "小さな4ステップを毎日繰り返す。それだけあれば十分です。",
+            "step1": {
+                "title": "言語を選ぶ",
+                "hint": "今日学ぶトレイを選びます。"
+            },
+            "step2": {
+                "title": "デッキを借りる",
+                "hint": "誰かが書いたデッキを借りるか、標準の棚から始めましょう。"
+            },
+            "step3": {
+                "title": "ドリルとクイズ",
+                "hint": "短いかなドリルと単語クイズを、5分ずつ。"
+            },
+            "step4": {
+                "title": "自分のデッキを公開する",
+                "hint": "よく忘れる言葉を足して、棚に分け合ってください。"
+            }
+        },
+        "cta": {
+            "title": "ケトルはもう火にかけています。",
+            "hint": "最初のデッキの前に登録の壁はありません。単語を同期させたいときだけサインインしてください。",
+            "primary": "学習を始める",
+            "secondary": "デッキを公開する"
+        }
+    },
+    "theme": {
+        "pickerLabel": "テーマを変更",
+        "names": {
+            "lightChoco": "チョコライト",
+            "darkChoco": "チョコダーク",
+            "darkGalaxy": "銀河ダーク",
+            "lightGalaxy": "銀河ライト",
+            "darkSakura": "桜ダーク",
+            "lightSakura": "桜ライト",
+            "darkPaper": "紙ダーク",
+            "lightPaper": "紙ライト",
+            "darkNature": "抹茶ダーク",
+            "lightNature": "抹茶ライト",
+            "darkAutumn": "紅葉ダーク",
+            "lightAutumn": "紅葉ライト",
+            "darkWinter": "雪ダーク",
+            "lightWinter": "雪ライト"
+        }
+    },
+    "common": {
+        "error": {
+            "oops": "おっと！",
+            "unexpected": "予期しないエラーが発生しました。",
+            "notFound": "要求されたページが見つかりませんでした。"
+        },
+        "tabs": {
+            "local": "ローカル",
+            "cloud": "クラウド",
+            "community": "コミュニティ",
+            "official": "公式"
+        },
+        "comingSoon": {
+            "cloud": "クラウド同期は近日公開、サインインが必要です",
+            "community": "コミュニティのセットを閲覧する機能はまだ利用できません"
+        },
+        "loading": "Loading…",
+        "select": "選択"
+    },
+    "notfound": {
+        "title": "ページが見つかりません",
+        "description": "お探しのページは存在しないか、移動された可能性があります。",
+        "back_home": "ホームに戻る",
+        "error_code": "404"
+    },
+    "languageSelect": {
+        "badge": "言語の選択",
+        "title": "学習する言語を選ぶ",
+        "description": "学びたい言語を選んでください。日本語は今日すぐ使えます。残りは抽出中です。",
+        "back_home": "ホームに戻る",
+        "status": {
+            "available": "利用可能",
+            "comingSoon": "近日公開"
+        },
+        "cta": {
+            "start": "学習を始める",
+            "unavailable": "利用できません"
+        },
+        "languages": {
+            "japanese": {
+                "name": "日本語",
+                "description": "ひらがな・カタカナ・漢字を、短いラウンドで反復し、間隔反復で温かいままに保つ。"
+            },
+            "english": {
+                "name": "英語",
+                "description": "日常の語彙とフレーズを、実際に使う人がデッキに整えてくれる。"
+            },
+            "thai": {
+                "name": "タイ語",
+                "description": "声調と文字を並べて、さらに実際に街で出会う言葉。"
+            },
+            "korean": {
+                "name": "韓国語",
+                "description": "한글はひと集中で、そのあとは冷えたがらない会話デッキ。"
+            },
+            "chinese": {
+                "name": "中国語",
+                "description": "漢字、ピンイン、トーンの組み合わせを、数分ずつ練習。"
+            }
+        },
+        "back_language": "言語選択に戻る"
+    },
+    "japanese": {
+        "badge": "日本語",
+        "title": "日本語を学ぶ",
+        "description": "かな、語彙、クイズを通して日本語の基礎をマスターしましょう。",
+        "back_language": "言語選択に戻る",
+        "stats": {
+            "kana": "かなの文字",
+            "vocabulary": "語彙の単語",
+            "learned": "学習済み単語",
+            "due": "復習予定"
+        },
+        "sections": {
+            "kana": "かな",
+            "kanaHint": "日本語の二つの音節文字を学ぼう — 全文字を確認して、認識力を練習しましょう。",
+            "vocabulary": "語彙",
+            "vocabularyHint": "単語を増やして、間隔をあけて復習しましょう。",
+            "learn": "学習",
+            "practice": "練習"
+        },
+        "nav": {
+            "kana": {
+                "title": "かな",
+                "description": "ひらがなとカタカナの全かなと読み方を確認できます。",
+                "action": "かなを見る"
+            },
+            "render": {
+                "title": "Render",
+                "description": "Read short passages with furigana and check yourself against the translation.",
+                "action": "Start Reading"
+            },
+            "vocab": {
+                "title": "語彙",
+                "description": "単語を増やし、間隔をあけて復習しましょう。",
+                "action": "単語を見る"
+            },
+            "drill": {
+                "title": "カナドリル",
+                "description": "ひらがなとカタカナの認識力をテストします。",
+                "action": "カナドリルを開始"
+            },
+            "review": {
+                "title": "語彙復習",
+                "description": "フラッシュカードと間隔反復で語彙を復習します。",
+                "action": "復習を開始"
+            },
+            "exam": {
+                "title": "語彙テスト",
+                "description": "自分の語彙から作った選択式で自分自身をテストします。",
+                "action": "テストを受ける"
+            }
+        },
+        "decks": {
+            "title": "語彙復習デッキ",
+            "description": "復習するデッキを選びましょう。デッキは組み込みセット、自分で追加した単語、またはダウンロードしたコレクションから選べます。",
+            "availableCount": "利用可能なデッキ {{count}} 個",
+            "startReview": "復習を開始",
+            "due": "期限",
+            "byAuthor": "{{author}} より",
+            "download": "ダウンロード",
+            "note": "復習",
+            "ready": "準備OK",
+            "words": "語",
+            "search": "デッキを検索...",
+            "empty": "デッキがまだありません — インポートするか、カスタムデッキを作成してください。",
+            "addCustom": "カスタムデッキを作成",
+            "importDeck": "デッキをインポート",
+            "importErrorJson": "このファイルをJSONとして読み込めませんでした。",
+            "form": {
+                "title": "カスタムデッキを作成",
+                "subtitle": "語彙から単語を選んで、復習デッキにまとめましょう。",
+                "nameLabel": "名前",
+                "namePlaceholder": "例：好きな漢字",
+                "descriptionLabel": "説明（任意）",
+                "descriptionPlaceholder": "このデッキについてのメモ",
+                "wordsLabel": "含める単語",
+                "wordsPlaceholder": "単語を検索...",
+                "selectedCount": "{{count}} 件選択中",
+                "nameError": "デッキの名前を入力してください。",
+                "minWordsError": "少なくとも1つ単語を選んでください。",
+                "cancel": "キャンセル",
+                "submit": "デッキを作成"
+            },
+            "notFound": "そのデッキは見つかりませんでした。",
+            "source": {
+                "default": "組み込み",
+                "custom": "自分の単語",
+                "cloud": "クラウド",
+                "downloaded": "ダウンロード"
+            },
+            "open": "Open",
+            "itemCount_one": "{{count}} item",
+            "itemCount_other": "{{count}} items",
+            "export": "Export",
+            "exportAria": "Export deck",
+            "downloadAria": "Download deck",
+            "delete": "Delete",
+            "deleteAria": "Delete deck",
+            "type": {
+                "vocab": "Vocabulary",
+                "render": "Reading",
+                "review": "Review",
+                "exam": "Exam",
+                "drill": "Drill"
+            },
+            "viewAuthor": "{{author}} のプロフィールを見る",
+            "favourite": "お気に入りに追加",
+            "unfavourite": "お気に入りから削除"
+        },
+        "exam": {
+            "title": "テスト",
+            "import": "テストセットをインポート",
+            "addCustom": "カスタムセットを作成",
+            "importErrorJson": "このファイルをJSONとして読み込めませんでした。",
+            "form": {
+                "title": "カスタムテストセットを作成",
+                "subtitle": "語彙から単語を選べば、組み込みセットと同じように意味から問題が自動生成されます。",
+                "titleLabel": "タイトル",
+                "titlePlaceholder": "例：日常の単語",
+                "descriptionLabel": "説明（任意）",
+                "descriptionPlaceholder": "このセットについてのメモ",
+                "wordsLabel": "含める単語",
+                "wordsPlaceholder": "単語を検索...",
+                "titleError": "セットの名前を入力してください。",
+                "minWordsError": "少なくとも2つ単語を選んでください。",
+                "cancel": "キャンセル",
+                "submit": "セットを作成",
+                "selectedCount_one": "{{count}} 件選択中",
+                "selectedCount_other": "{{count}} 件選択中"
+            }
+        },
+        "kana": {
+            "badge": "かな",
+            "title": "日本語のかな",
+            "description": "ひらがなとカタカナは日本語の二つの音節文字です。タブで切り替えられます。",
+            "tabs": {
+                "hiragana": "ひらがな",
+                "katakana": "カタカナ"
+            },
+            "voiceless": "清音",
+            "voiced": "濁音",
+            "contracted": "拗音",
+            "voice_label": "音声",
+            "voice_preview": "試聴",
+            "voice_auto": "自動",
+            "voice_choose": "音声を選択",
+            "voice_ja": "日本語",
+            "voice_volume": "音量",
+            "take_quiz": "クイズに挑戦",
+            "count": "かな",
+            "stats": {
+                "set": "セット内",
+                "group": "グループ内",
+                "read": "読了"
+            },
+            "readProgress": "{{read}} / {{total}}",
+            "gridHint": "かなをタップして発音を聞くか、[読み上げ]で前回の続きからグループを読み上げます。",
+            "readStart": "読み上げ開始",
+            "readContinue": "続きから読む",
+            "readStop": "停止",
+            "nowReading": "読み上げ中",
+            "upNext": "次に読む",
+            "pinToolbar": "ツールバーを固定",
+            "unpinToolbar": "固定を解除",
+            "sticky": "固定",
+            "stickyOn": "オン",
+            "stickyOff": "オフ",
+            "back_hub": "日本語に戻る"
+        },
+        "kanaDrill": {
+            "badge": "かなドリル",
+            "title": "かなドリル",
+            "intro": "クイズを設定しましょう。練習するかなグループ、問題数、1問あたりの制限時間を選べます。",
+            "start": "クイズを始める",
+            "progress": "問題",
+            "score": "スコア",
+            "promptLabel": "このかなの読み方は何ですか？",
+            "promptLabelRomajiToChar": "この読み方に一致するかなはどれですか？",
+            "promptLabelListen": "聞こえたかなはどれですか？",
+            "listenAgain": "もう一度再生",
+            "correct": "正解！",
+            "wrong": "不正解",
+            "timeout": "時間切れ！",
+            "correctAnswer": "正解",
+            "next": "次の問題",
+            "endGame": "終了する",
+            "resultTitle": "クイズ完了！",
+            "result": {
+                "correctLabel": "正解",
+                "wrongLabel": "不正解",
+                "timeoutLabel": "時間切れ",
+                "settingsSummary": "設定",
+                "settingsButton": "設定",
+                "exitButton": "終了",
+                "playAgain": "もう一度",
+                "history": "解答履歴",
+                "timeoutShort": "時間切れ",
+                "yes": "はい",
+                "no": "いいえ"
+            },
+            "retry": "もう一度",
+            "back_characters": "かなに戻る",
+            "settings": {
+                "setsLabel": "かなセット",
+                "questionLabel": "クイズ設定",
+                "modeLabel": "問題形式",
+                "mode": {
+                    "charToRomaji": "かな → 読み",
+                    "charToRomajiHint": "かなを見て、読み方を選びます。",
+                    "romajiToChar": "読み → かな",
+                    "romajiToCharHint": "読み方を見て、一致するかなを選びます。",
+                    "listenToChar": "聞く → かな",
+                    "listenToCharHint": "発音を聞いて、聞こえたかなを選びます。"
+                },
+                "sound": {
+                    "label": "効果音",
+                    "voice": "アリア",
+                    "voiceHint": "アリアの録音音声を再生します。",
+                    "tone": "トーン",
+                    "toneHint": "シンプルな合成音を再生します。",
+                    "volume": "効果音の音量"
+                },
+                "voiceLabel": "音声",
+                "questionCount": "問題数",
+                "questions": "問",
+                "choiceCount": "選択肢の数",
+                "choices": "択",
+                "timeLimit": "1問あたりの時間",
+                "autoAdvance": "次の問題へ自動で進む",
+                "useAll": "全かな",
+                "groups": {
+                    "voiceless": "清音",
+                    "voiced": "濁音",
+                    "contracted": "拗音"
+                },
+                "chars": "かな",
+                "totalChars": "合計かな数"
+            }
+        },
+        "vocab": {
+            "available": "合計 {{count}} 単語",
+            "back_hub": "Back to hub",
+            "eyebrow": "Vocabulary",
+            "title": "Vocabulary",
+            "description": "Browse a deck's words with readings, meanings, and example sentences.",
+            "search": "Search decks",
+            "empty": "No decks yet.",
+            "words": "words",
+            "read": "Read",
+            "edit": "Edit",
+            "addWord": "Add word",
+            "delete": "Delete",
+            "save": "Save",
+            "cancel": "Cancel",
+            "word": "Word",
+            "reading": "Reading",
+            "meaning": "Meaning",
+            "example": "Example",
+            "required": "Word and meaning are required.",
+            "builtIn": "Built-in words can't be edited."
+        },
+        "vocabularyReview": {
+            "badge": "復習",
+            "title": "語彙復習",
+            "description": "カードをめくって答えを確認し、合格か不合格を選択しましょう。",
+            "complete": "すべて完了しました！",
+            "completeDescription": "現在復習が必要な単語はありません。",
+            "exit": "復習を終了",
+            "wordsLeft": "単語残り",
+            "wordLeft": "単語残り",
+            "showAnswer": "答えを見る",
+            "fail": "不合格",
+            "pass": "合格",
+            "failHint": "不合格",
+            "passHint": "合格",
+            "wordLabel": "単語",
+            "recallPrompt": "この単語の意味は？",
+            "back_hub": "日本語に戻る"
+        },
+        "render": {
+            "back_hub": "Back to hub",
+            "eyebrow": "Render",
+            "title": "Render",
+            "description": "Read short passages with furigana and a translation to check against.",
+            "search": "Search decks",
+            "empty": "No reading decks yet.",
+            "passages": "passages",
+            "read": "Read",
+            "showTranslation": "Show translation",
+            "hideTranslation": "Hide translation",
+            "speak": "Listen"
+        },
+        "drill": {
+            "title": "Kana Drill"
+        },
+        "review": {
+            "title": "Vocabulary Review"
+        }
+    },
+    "footer": {
+        "tagline": "テーマ豊富で居心地の良い、日本語学習のひとときを。",
+        "explore": "探す",
+        "learn": "学べること",
+        "rights": "TeaChoco · 無断転載を禁じます。",
+        "languages": {
+            "ja": "日本語",
+            "en": "英語",
+            "ko": "韓国語",
+            "th": "タイ語"
+        }
+    },
+    "auth": {
+        "signIn": "ログイン",
+        "signUp": "新規登録",
+        "signOut": "ログアウト",
+        "email": "メールアドレス",
+        "password": "パスワード",
+        "name": "名前",
+        "nameTag": "ユーザー名",
+        "nameTagHint": "3〜30文字。英字、数字、アンダースコア(_)、ハイフン(-)のみ使用できます。スペースは使えません。公開用のユーザー名です。",
+        "confirmPassword": "パスワード（確認）",
+        "forgotPassword": "パスワードをお忘れですか？",
+        "resetPassword": "パスワードをリセット",
+        "backToSignIn": "ログインに戻る",
+        "orContinueWith": "または以下で继续",
+        "google": "Google",
+        "discord": "Discord",
+        "noAccount": "アカウントをお持ちでないですか？",
+        "hasAccount": "すでにアカウントをお持ちですか？",
+        "verifyEmail": "メールアドレスの確認",
+        "verificationCode": "確認コード",
+        "verifyHint": "{{email}} に送信した6桁のコードを入力してください。",
+        "verify": "確認",
+        "otpSent": "{{email}} にコードを送信しました。",
+        "otpResent": "新しいコードを送信しました。",
+        "verifySuccess": "ようこそ、{{name}}さん！",
+        "resendCode": "コードを再送信",
+        "resendInSeconds": "{{seconds}}秒後に再送信",
+        "profile": "プロフィール",
+        "settings": "設定",
+        "welcome": "ようこそ、{{name}}さん",
+        "error": {
+            "invalidCredentials": "メールアドレスまたはパスワードが正しくありません。",
+            "emailInUse": "このメールアドレスのアカウントは既に存在します。",
+            "nameTagTaken": "このユーザー名は既に使用されています。",
+            "nameTagInvalid": "ユーザー名は3〜30文字で、英字・数字・アンダースコア・ハイフンのみ使用できます（スペース不可）。",
+            "passwordMismatch": "パスワードが一致しません。",
+            "invalidOtp": "コードが無効または期限切れです。もう一度お試しください。",
+            "resendFailed": "新しいコードを送信できませんでした。もう一度お試しください。",
+            "generic": "エラーが発生しました。もう一度お試しください。",
+            "emailNotFound": "No account found with that email.",
+            "resetFailed": "Password reset failed. Please try again.",
+            "oauth": "Sign-in failed: {{reason}}"
+        },
+        "resetCodeSent": "We sent a reset code to {{email}}.",
+        "resetHint": "Enter the code sent to {{email}} and choose a new password.",
+        "forgotHint": "Enter your account email and we'll send you a reset code.",
+        "newPassword": "New Password",
+        "updatePassword": "Update Password",
+        "resetSuccess": "Password updated. Please sign in.",
+        "line": "LINE",
+        "x": "X (Twitter)",
+        "sendResetCode": "リセットコードを送信"
+    },
+    "settings": {
+        "title": "設定",
+        "subtitle": "好みに合わせて ChocoMemo を淹れましょう。",
+        "back": "戻る",
+        "nav": {
+            "settings": "設定",
+            "appearance": "外観",
+            "language": "言語",
+            "voice": "音声とオーディオ",
+            "interface": "インターフェース",
+            "account": "アカウント"
+        },
+        "appearance": {
+            "hint": "あなたの一杯の雰囲気を選びましょう。"
+        },
+        "language": {
+            "hint": "ChocoMemo があなたと話す言語を選びます。"
+        },
+        "voice": {
+            "hint": "かなや単語を読み上げる声。"
+        },
+        "interface": {
+            "hint": "学びを彩る表示を調整します。",
+            "chromeLabel": "インターフェースを表示",
+            "chromeDescription": "ナビゲーションとフッターの表示／非表示を切り替えます。"
+        },
+        "account": {
+            "signedInHint": "{{name}} としてサインイン中",
+            "signedOutHint": "サインインすると、学習の記録をすべての端末で保持できます。",
+            "goToProfile": "プロフィールを見る",
+            "signIn": "サインイン"
+        }
+    },
+    "profile": {
+        "title": "プロフィール",
+        "subtitle": "ChocoMemo であなたの学習ストーリー。",
+        "back": "戻る",
+        "anonymousName": "チョコラーナー",
+        "memberSince": "登録日",
+        "notSignedInTitle": "サインインしていません",
+        "notSignedInHint": "サインインすると、プロフィールの表示・編集や、すべての端末での進捗追跡ができます。",
+        "signIn": "サインイン",
+        "stats": {
+            "label": "ひと目で",
+            "kana": "読んだかな",
+            "vocabulary": "語彙",
+            "learned": "学んだ単語",
+            "due": "復習予定"
+        },
+        "identities": {
+            "label": "Linked Accounts",
+            "email": "Email",
+            "verified": "Verified",
+            "unverified": "Not verified",
+            "primary": "Primary",
+            "local": "Password",
+            "google": "Google",
+            "discord": "Discord",
+            "line": "LINE",
+            "x": "X (Twitter)",
+            "connected": "Connected",
+            "notConnected": "Not connected",
+            "comingSoon": "Coming soon",
+            "passwordSet": "Password is set",
+            "passwordNotSet": "No password set yet",
+            "connect": "Connect",
+            "disconnect": "Disconnect",
+            "disconnectSuccess": "Google account disconnected",
+            "disconnectError": "Couldn't disconnect this account ({{reason}})",
+            "disconnectTitle": "Disconnect Google account?",
+            "disconnectHint": "You'll be asked to confirm with Google before the link is removed.",
+            "lastSigninMethod": "You need at least one sign-in method left",
+            "disconnectSession": "Your session expired. Sign in again and retry.",
+            "disconnectVerifyFailed": "Couldn't verify your Google account. Try again.",
+            "disconnectCancelled": "Google sign-in was cancelled.",
+            "change": "Change"
+        },
+        "details": {
+            "name": "名前",
+            "namePlaceholder": "あなたの名前",
+            "saving": "保存中…",
+            "saved": "プロフィールを更新しました",
+            "updateError": "プロフィールを更新できませんでした。",
+            "editProfile": "プロフィールを編集",
+            "nameTag": "ユーザー名",
+            "nameTagHint": "3〜30文字。英字、数字、アンダースコア(_)、ハイフン(-)のみ使用できます。スペースは使えません。公開用のユーザー名です。",
+            "nameTagTaken": "このユーザー名は既に使用されています。",
+            "nameTagInvalid": "ユーザー名は3〜30文字で、英字・数字・アンダースコア・ハイフンのみ使用できます（スペース不可）。",
+            "noNameTag": "ユーザー名はまだありません",
+            "bio": "自己紹介",
+            "bioPlaceholder": "あなたについて少し教えてください…"
+        },
+        "email": {
+            "label": "Change email",
+            "hint": "Update the email address you use to sign in.",
+            "placeholder": "you@example.com",
+            "save": "Save",
+            "saving": "Saving…",
+            "saved": "Email updated",
+            "updateError": "Could not update your email.",
+            "invalid": "Please enter a valid email address"
+        },
+        "otp": {
+            "confirmEmail": "Confirm new email",
+            "confirmPassword": "Confirm change password",
+            "sendCode": "Send code",
+            "sending": "Sending…",
+            "codeSent": "Code sent",
+            "codeResent": "Code resent",
+            "sendFailed": "Couldn't send the code",
+            "codeSentTo": "Enter the 6-digit code we sent to {{email}}.",
+            "verifySave": "Verify & save",
+            "verifying": "Verifying…",
+            "invalidCode": "Invalid or expired code",
+            "resendFailed": "Couldn't resend the code",
+            "back": "Back",
+            "emailSame": "New email must be different from the current one",
+            "emailTaken": "That email is already in use",
+            "wrongCurrentPassword": "Current password is incorrect"
+        },
+        "password": {
+            "label": "Change password",
+            "hint": "Your current password is required to set a new one.",
+            "setHint": "Set a password for your account. We'll email a code to confirm.",
+            "current": "Current password",
+            "currentPlaceholder": "Enter current password",
+            "currentRequired": "Current password is required",
+            "new": "New password",
+            "newPlaceholder": "Enter new password (min. 6 characters)",
+            "newRequired": "New password is required",
+            "tooShort": "New password must be at least 6 characters",
+            "confirm": "Confirm new password",
+            "confirmPlaceholder": "Re-enter new password",
+            "mismatch": "Passwords do not match",
+            "incorrect": "Current password is incorrect",
+            "change": "Change password",
+            "changing": "Changing…",
+            "changed": "Password changed successfully",
+            "changeError": "Could not change password",
+            "noPasswordYetHint": "This account doesn't have a password set yet."
+        },
+        "avatar": {
+            "source": "プロフィール写真",
+            "default": "デフォルト",
+            "google": "Google",
+            "local": "カスタム",
+            "updated": "プロフィール写真を更新しました",
+            "updateError": "プロフィール写真を更新できませんでした",
+            "invalidType": "画像ファイルを選択してください",
+            "tooLarge": "画像は5MB未満にしてください",
+            "previewReady": "プレビュー準備完了 — 保存するソースを選択してください",
+            "remove": "削除",
+            "removeError": "プロフィール写真を削除できませんでした",
+            "cancel": "キャンセル",
+            "saving": "保存中…",
+            "confirm": "確認",
+            "change": "プロフィール写真を変更"
+        },
+        "public": {
+            "notFoundTitle": "Profile not found",
+            "notFoundHint": "Nobody is using this name tag. It may have been changed or removed.",
+            "yourDashboard": "Go to your profile",
+            "viewPublic": "View public profile"
+        }
+    },
+    "english": {
+        "badge": "英語",
+        "title": "英語を学ぼう",
+        "description": "英語は新しいコースです。下のデッキ機能はすでに使えます。文字セットとドリルは現在開発中です。",
+        "nav": {
+            "render": {
+                "title": "読解",
+                "description": "短い文章を読み、訳で確認します。",
+                "action": "読解を始める"
+            },
+            "review": {
+                "title": "語彙復習",
+                "description": "フラッシュカードと間隔反復で語彙を復習します。",
+                "action": "復習を始める"
+            },
+            "exam": {
+                "title": "語彙テスト",
+                "description": "自分の語彙から作った選択式で自分自身をテストします。",
+                "action": "テストを受ける"
+            },
+            "vocab": {
+                "title": "語彙を見る",
+                "description": "デッキの単語を発音・意味・例文つきで確認できます。",
+                "action": "単語を見る"
+            }
+        },
+        "vocab": {
+            "title": "語彙"
+        },
+        "render": {
+            "title": "読解"
+        },
+        "review": {
+            "title": "語彙復習"
+        },
+        "exam": {
+            "title": "テスト"
+        },
+        "sections": {
+            "learn": "学習",
+            "practice": "練習"
+        }
+    },
+    "deck": {
+        "type": {
+            "vocab": "語彙",
+            "render": "読解",
+            "review": "復習",
+            "exam": "テスト",
+            "drill": "ドリル"
+        },
+        "source": {
+            "official": "公式",
+            "community": "コミュニティ",
+            "local": "マイ",
+            "cloud": "クラウド"
+        },
+        "visibility": {
+            "public": "公開",
+            "unlisted": "限定公開",
+            "private": "非公開"
+        },
+        "search": "デッキを検索",
+        "searchAria": "名前でデッキを検索",
+        "searchClear": "検索をクリア",
+        "tallyAria": "由来別のデッキ",
+        "resultCount": "{{total}} 件中 {{matched}} 件のデッキを表示",
+        "loading": "デッキを読み込み中…",
+        "itemCount_one": "{{count}} 件",
+        "itemCount_other": "{{count}} 件",
+        "byAuthor": "{{author}} 作",
+        "openAria": "{{name}} を開く",
+        "export": "エクスポート",
+        "exportAria": "デッキをエクスポート",
+        "download": "ダウンロード",
+        "downloadAria": "デッキをダウンロード",
+        "delete": "削除",
+        "deleteAria": "デッキを削除",
+        "start": "開始",
+        "list": {
+            "backHub": "{{language}}に戻る",
+            "eyebrow": {
+                "vocab": "語彙",
+                "render": "読解",
+                "exam": "テスト",
+                "review": "復習"
+            },
+            "title": {
+                "vocab": "語彙デッキ",
+                "render": "読解デッキ",
+                "exam": "テストセット",
+                "review": "復習デッキ"
+            },
+            "description": {
+                "vocab": "知っている単語をデッキにまとめ、間隔をあけて繰り返し学習しましょう。",
+                "render": "段階的な 짧은文章を読解し、訳で確認できます。",
+                "exam": "自分の語彙から作った選択式の問題セットです。",
+                "review": "デッキを間隔反復のセッションで復習します。"
+            }
+        },
+        "empty": {
+            "local": {
+                "title": "まだ自分のデッキがありません",
+                "body": "作成またはインポートしたデッキがここに表示されます。まずは公式デッキから始めてみましたください。",
+                "action": "公式デッキを見る"
+            },
+            "official": {
+                "title": "この種類の公式デッキはまだありません",
+                "body": "公式デッキはアプリに同梱されます。この種類はまだ公開されていません。"
+            },
+            "filtered": {
+                "title": "条件に合うデッキがありません",
+                "body": "このタブには、検索・タグ・条件に一致するデッキがありません。いずれかを緩めると再表示されます。",
+                "action": "条件をクリア"
+            },
+            "cloud": {
+                "title": "クラウド同期は近日公開",
+                "body": "サインインするとデッキがデバイス間を移動します。",
+                "action": "サインイン"
+            },
+            "cloudSignedIn": {
+                "title": "クラウド同期は近日公開",
+                "body": "サインイン済みです。デバイス間でデッキを同期する機能は準備中です。"
+            },
+            "community": {
+                "title": "コミュニティのデッキはまだありません",
+                "body": "他の学習者が公開したデッキは、コミュニティが開いた後にここに表示されます。"
+            }
+        },
+        "noResults": {
+            "title": "検索に一致するものはありません",
+            "body": "短いキーワードを試すか、検索をクリアしてこのタブのすべてを表示してください。"
+        },
+        "details": {
+            "notFound": "そのデッキは見つかりませんでした。",
+            "back": "デッキ一覧に戻る",
+            "contents": "中身",
+            "version": "バージョン",
+            "updated": "更新日",
+            "noSession": "{{language}} デッキのセッションはまだ準備中です。"
+        },
+        "options": {
+            "sortAria": "デッキを並び替え",
+            "sort": {
+                "default": "元の並び順",
+                "name": "名前順",
+                "recent": "更新が新しい順",
+                "popular": "ダウンロードが多い順",
+                "size": "大きい順"
+            },
+            "density": {
+                "comfortable": "ゆったり",
+                "compact": "コンパクト"
+            },
+            "nsfw": {
+                "label": "センシティブ",
+                "on": "センシティブなデッキを表示中",
+                "off": "センシティブなデッキは非表示"
+            },
+            "importHeading": "インポート",
+            "importHint": "以前エクスポートしたデッキファイルを読み込みます。",
+            "importUnavailable": "この種類のデッキはファイル形式がまだありません。"
+        },
+        "tags": {
+            "clear": "タグをクリア",
+            "remove": "タグ {{tag}} を外す"
+        },
+        "actions": {
+            "create": {
+                "vocab": "新しいデッキ",
+                "exam": "新しいテスト"
+            },
+            "importOnly": "インポート"
+        },
+        "import": {
+            "action": "デッキファイルをインポート",
+            "invalidDeck": "このファイルは有効なデッキではありません。",
+            "invalidExam": "このファイルは有効なテストセットではありません。",
+            "invalidJson": "このファイルをJSONとして読めませんでした。"
+        },
+        "viewAuthor": "{{author}} のプロフィールを見る"
+    }
+}

@@ -4,8 +4,8 @@ import { useTranslation } from 'react-i18next';
 import Section from '~/components/custom/Section';
 import { KANA_CHARS } from '~/data/japanese/kana';
 import { DEFAULT_VOCABULARY } from '~/data/japanese/vocabulary';
-import { DEFAULT_DECKS } from '~/data/japanese/decks';
-import { defaultExamSets } from '~/data/japanese/defaultExamSets';
+import { DEFAULT_DECKS } from '~/data/temp/decks';
+import { defaultExamSets } from '~/data/temp/defaultExamSets';
 
 function StatTile({
     value,

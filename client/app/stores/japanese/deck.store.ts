@@ -9,7 +9,7 @@ import { newDeckMeta } from '~/utils/deckMeta';
 import type { VocabWord } from '~/types/vocabulary';
 import { useVocabularyStore } from './vocabulary.store';
 import { persist, createJSONStorage } from 'zustand/middleware';
-import { DEFAULT_DECKS, findDefaultDeck } from '~/data/japanese/decks';
+import { DEFAULT_DECKS, findDefaultDeck } from '~/data/temp/decks';
 
 interface DeckState {
     /** User-created / downloaded decks, persisted to localStorage. */

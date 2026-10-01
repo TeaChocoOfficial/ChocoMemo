@@ -11,7 +11,7 @@ import Badge from '~/components/custom/Badge';
 import Section from '~/components/custom/Section';
 import DeckCardByline from '~/components/container/DeckCard/DeckCardByline';
 import { localDecks, useDeckListLocalStore } from '~/stores/deck/deckListLocal.store';
-import { officialDecks } from '~/data/japanese/officialDecks';
+import { officialDecks } from '~/stores/deck/deckListOfficial.store';
 import { useDeckListCloudStore } from '~/stores/deck/deckListCloud.store';
 import { useDeckListCommunityStore } from '~/stores/deck/deckListCommunity.store';
 import { useLangText } from '~/hooks/useLangText';

@@ -1,0 +1,906 @@
+{
+    "nav": {
+        "home": "หน้าหลัก",
+        "languages": "ภาษา",
+        "japanese": "ภาษาญี่ปุ่น",
+        "menu": "เปิดเมนู",
+        "settings": "การตั้งค่า",
+        "language": "ภาษา",
+        "theme": "ธีม",
+        "english": "English"
+    },
+    "chrome": {
+        "hide": "ซ่อน",
+        "show": "แสดง",
+        "toggleLabel": "แสดงส่วนติดต่อ"
+    },
+    "home": {
+        "badge": "ChocoMemo · คลังภาษาของชุมชน",
+        "title": "เรียนภาษาใดก็ได้,",
+        "titleAccent": "ทีละชุดคำที่ใช้ร่วมกัน",
+        "subtitle": "ญี่ปุ่น อังกฤษ ไทย เกาหลี และจีน — แต่ละภาษาสร้างจากชุดคำ แบบฝึก และแบบทดสอบที่ผู้เรียนจริงเขียนและแบ่งปันกัน ฟรี เปิดกว้าง และคุณต่อยอดได้เอง",
+        "ctaStart": "เริ่มเรียน",
+        "ctaCreate": "เผยแพร่ชุดคำ",
+        "ctaHow": "ดูวิธีใช้งาน",
+        "scriptsLabel": "กำลังต้มอยู่",
+        "stats": {
+            "badge": "บนชั้น",
+            "languages": "ภาษา",
+            "kana": "ตัวอักษรคานา",
+            "vocabulary": "คำศัพท์",
+            "shelves": "ชุดคำและแบบทดสอบ"
+        },
+        "languages": {
+            "badge": "ชั้นวาง",
+            "title": "ห้าภาษา หนึ่งนิสัยอบอุ่น",
+            "hint": "เริ่มจากถาดที่พร้อมวันนี้ ส่วนที่เหลือยังกำลังต้มอยู่",
+            "available": "พร้อมเท",
+            "comingSoon": "กำลังต้ม",
+            "toAll": "ดูทุกภาษา",
+            "items": {
+                "japanese": {
+                    "name": "ภาษาญี่ปุ่น",
+                    "description": "ฮิรากานะ คาตาคานะ และคันจิ พร้อมแบบฝึกและการทบทวนแบบเว้นระยะ"
+                },
+                "english": {
+                    "name": "ภาษาอังกฤษ",
+                    "description": "คำและวลีในชีวิตประจำวัน คัดแยกโดยผู้ใช้จริง"
+                },
+                "thai": {
+                    "name": "ภาษาไทย",
+                    "description": "วรรณยุกต์ ตัวอักษร และคำที่คุณจะเจอจริงบนถนน"
+                },
+                "korean": {
+                    "name": "ภาษาเกาหลี",
+                    "description": "ฮังกุลในนั่งเดียว แล้วตามด้วยชุดคำสนทนาที่อยู่ตัวจริง"
+                },
+                "chinese": {
+                    "name": "ภาษาจีน",
+                    "description": "ตัวยืน พินอิน และคู่วรรณยุกต์ ฝึกเป็นรอบสั้นๆ"
+                }
+            }
+        },
+        "library": {
+            "badge": "ชั้นของชุมชน",
+            "title": "เขียนชุดคำ แบ่งปัน แล้วดูมันสอนคนอื่น",
+            "hint": "ทุกชุดการเรียนใน ChocoMemo เขียนโดยคน ไม่ใช่สำนักพิมพ์ จัดให้สะอาดสักชุด เผยแพร่ แล้วคนอื่นจะได้คอร์สทั้งชุดจากมัน",
+            "cta": "เปิดชั้นทบทวน",
+            "items": {
+                "decks": {
+                    "title": "ชุดคำศัพท์",
+                    "hint": "รวมคำเป็นชุดตามธีม ธรรมชาติ สัตว์ เรื่องรอบวัน แล้วทบทวนเหมือนหนังสือเล่มเล็ก"
+                },
+                "exam": {
+                    "title": "ชุดแบบทดสอบ",
+                    "hint": "เปลี่ยนชุดคำให้เป็นข้อสอบจับเวลา แล้วดูว่าคำไหนยังต้มไม่เข้ม"
+                },
+                "kana": {
+                    "title": "แบบฝึกคานา",
+                    "hint": "วนไปเร็วๆ ทั้งสองตารางอักษรจนรูปทรงออกมาโดยไม่ต้องคิด"
+                },
+                "review": {
+                    "title": "การทบทวนแบบเว้นระยะ",
+                    "hint": "ชุดคำที่คุณดาวน์โหลดจะกลับมาตามตารางของตัวเอง ไม่มีอะไรเย็นชา"
+                }
+            }
+        },
+        "how": {
+            "badge": "วิธีใช้งาน",
+            "title": "การต้มประจำวันของคุณ",
+            "hint": "สี่ก้าวเล็กๆ ทำซ้ำทุกวัน แค่นี้ก็พอแล้ว",
+            "step1": {
+                "title": "เลือกภาษาของคุณ",
+                "hint": "เลือกถาดที่คุณเรียนวันนี้"
+            },
+            "step2": {
+                "title": "ยืมชุดคำ",
+                "hint": "หยิบชุดคำที่คนอื่นเขียน หรือเริ่มจากชั้นที่มีมาให้"
+            },
+            "step3": {
+                "title": "ฝึกและทดสอบ",
+                "hint": "แบบฝึกคานาสั้นๆ และข้อสอบคำศัพท์ ทีละห้านาที"
+            },
+            "step4": {
+                "title": "เผยแพร่ของตัวเอง",
+                "hint": "เติมคำที่ลืมบ่อยๆ แล้วแบ่งปันกลับเข้าชั้น"
+            }
+        },
+        "cta": {
+            "title": "น้ำเดือดพร้อมแล้ว",
+            "hint": "ไม่มีกำแพงสมัครสมาชิกขวางระหว่างคุณกับชุดคำแรก เข้าสู่ระบบก็ต่อเมื่ออยากให้คำของคุณซิงก์กัน",
+            "primary": "เริ่มเรียน",
+            "secondary": "เผยแพร่ชุดคำ"
+        }
+    },
+    "theme": {
+        "pickerLabel": "เปลี่ยนธีม",
+        "names": {
+            "lightChoco": "ช็อกโกแลตสว่าง",
+            "darkChoco": "ช็อกโกแลตมืด",
+            "darkGalaxy": "กาแล็กซีมืด",
+            "lightGalaxy": "กาแล็กซีสว่าง",
+            "darkSakura": "ซากุระมืด",
+            "lightSakura": "ซากุระสว่าง",
+            "darkPaper": "เปเปอร์มืด",
+            "lightPaper": "เปเปอร์สว่าง",
+            "darkNature": "มัทฉะมืด",
+            "lightNature": "มัทฉะสว่าง",
+            "darkAutumn": "โมมิจิมืด",
+            "lightAutumn": "โมมิจิสว่าง",
+            "darkWinter": "ยูกิมืด",
+            "lightWinter": "ยูกิสว่าง"
+        }
+    },
+    "common": {
+        "error": {
+            "oops": "อุ๊ปส์!",
+            "unexpected": "เกิดข้อผิดพลาดที่ไม่คาดคิด",
+            "notFound": "ไม่พบหน้าที่ขอ"
+        },
+        "tabs": {
+            "local": "ในเครื่อง",
+            "cloud": "คลาวด์",
+            "community": "ชุมชน",
+            "official": "ทางการ"
+        },
+        "comingSoon": {
+            "cloud": "การซิงค์คลาวด์กำลังจะมา ต้องลงชื่อเข้าใช้",
+            "community": "การเรียกดูชุดของชุมชนยังไม่พร้อมใช้งาน"
+        },
+        "loading": "Loading…",
+        "select": "เลือก"
+    },
+    "notfound": {
+        "title": "ไม่พบหน้า",
+        "description": "หน้าที่คุณกำลังมองหาไม่มีอยู่หรือถูกย้ายไปแล้ว",
+        "back_home": "กลับหน้าหลัก",
+        "error_code": "404"
+    },
+    "languageSelect": {
+        "badge": "เลือกภาษา",
+        "title": "เลือกภาษาที่ต้องการเรียน",
+        "description": "เลือกภาษาที่คุณอยากเรียน ภาษาญี่ปุ่นพร้อมใช้งานวันนี้ ส่วนที่เหลือยังกำลังต้มอยู่",
+        "back_home": "กลับหน้าหลัก",
+        "status": {
+            "available": "พร้อมใช้งาน",
+            "comingSoon": "เร็วๆ นี้"
+        },
+        "cta": {
+            "start": "เริ่มเรียน",
+            "unavailable": "ยังไม่พร้อมใช้งาน"
+        },
+        "languages": {
+            "japanese": {
+                "name": "ภาษาญี่ปุ่น",
+                "description": "ฮิรากานะ คาตาคานะ และคันจิ ฝึกเป็นรอบสั้นๆ และคงความอบอุ่นด้วยการทบทวนแบบเว้นระยะ"
+            },
+            "english": {
+                "name": "ภาษาอังกฤษ",
+                "description": "คำและวลีในชีวิตประจำวัน คัดแยกเป็นชุดคำโดยผู้ที่ใช้จริง"
+            },
+            "thai": {
+                "name": "ภาษาไทย",
+                "description": "วรรณยุกต์และตัวอักษรวางอยู่คู่กัน พร้อมคำที่คุณจะเจอบนถนน"
+            },
+            "korean": {
+                "name": "ภาษาเกาหลี",
+                "description": "ฮังกุลในนั่งเดียว แล้วตามด้วยชุดคำสนทนาที่ไม่ยอมเย็น"
+            },
+            "chinese": {
+                "name": "ภาษาจีน",
+                "description": "ตัวยืน พินอิน และคู่วรรณยุกต์ ฝึกทีละไม่กี่นาที"
+            }
+        },
+        "back_language": "กลับไปหน้าเลือกภาษา"
+    },
+    "japanese": {
+        "badge": "ภาษาญี่ปุ่น",
+        "title": "เรียนภาษาญี่ปุ่น",
+        "description": "ฝึกพื้นฐานภาษาญี่ปุ่นผ่านตัวคะนะ คำศัพท์ และแบบทดสอบ",
+        "back_language": "กลับไปเลือกภาษา",
+        "stats": {
+            "kana": "ตัวอักษรคะนะ",
+            "vocabulary": "คำศัพท์",
+            "learned": "คำที่เรียนแล้ว",
+            "due": "ถึงกำหนดทบทวน"
+        },
+        "sections": {
+            "kana": "ตัวคะนะ",
+            "kanaHint": "เรียนรู้ระบบพยางค์สองแบบของญี่ปุ่น — ดูทุกตัวอักษรและฝึกการจำ",
+            "vocabulary": "คำศัพท์",
+            "vocabularyHint": "เพิ่มคลังคำศัพท์และทบทวนตามช่วงเวลา",
+            "learn": "เรียนรู้",
+            "practice": "ฝึกฝน"
+        },
+        "nav": {
+            "kana": {
+                "title": "ตัวคะนะ",
+                "description": "ดูฮิรางานะและคาตาคานะทั้งหมดพร้อมการอ่าน",
+                "action": "ดูตัวคะนะ"
+            },
+            "render": {
+                "title": "Render",
+                "description": "Read short passages with furigana and check yourself against the translation.",
+                "action": "Start Reading"
+            },
+            "vocab": {
+                "title": "คำศัพท์",
+                "description": "สะสมคลังคำของคุณ แล้วซ้อมแบบห่างตามระยะเวลา",
+                "action": "ดูคำศัพท์"
+            },
+            "drill": {
+                "title": "ซ้อมคะนะ",
+                "description": "ทดสอบความจำของฮิรางานะและคาตาคานะ",
+                "action": "เริ่มซ้อมคะนะ"
+            },
+            "review": {
+                "title": "ทบทวนคำศัพท์",
+                "description": "ทบทวนคำศัพท์ด้วยการ์ดคำและการทบทวนแบบห่าง",
+                "action": "เริ่มทบทวน"
+            },
+            "exam": {
+                "title": "ข้อสอบคำศัพท์",
+                "description": "ทดสอบตัวเองด้วยข้อสอบแบบเลือกตอบที่สร้างจากคำศัพท์ของคุณ",
+                "action": "ทำข้อสอบ"
+            }
+        },
+        "decks": {
+            "title": "ชุดทบทวนคำศัพท์",
+            "description": "เลือกชุดคำศัพท์เพื่อทบทวน ชุดมาจากชุดเริ่มต้น คำที่คุณเพิ่มเอง หรือคอลเล็กชันที่ดาวน์โหลด",
+            "availableCount": "ชุดที่พร้อมใช้ {{count}} ชุด",
+            "startReview": "เริ่มทบทวน",
+            "due": "ถึงกำหนด",
+            "byAuthor": "โดย {{author}}",
+            "download": "ดาวน์โหลด",
+            "note": "ทบทวน",
+            "ready": "พร้อมแล้ว",
+            "words": "คำ",
+            "search": "ค้นหาชุดคำศัพท์...",
+            "empty": "ยังไม่มีชุดคำศัพท์ — นำเข้าหรือสร้างชุดแบบกำหนดเอง",
+            "addCustom": "สร้างชุดแบบกำหนดเอง",
+            "importDeck": "นำเข้าชุดคำศัพท์",
+            "importErrorJson": "ไม่สามารถอ่านไฟล์นี้เป็น JSON ได้",
+            "form": {
+                "title": "สร้างชุดคำศัพท์แบบกำหนดเอง",
+                "subtitle": "เลือกคำศัพท์ของคุณเพื่อจัดกลุ่มเป็นชุดทบทวน",
+                "nameLabel": "ชื่อ",
+                "namePlaceholder": "เช่น คันจิที่ชอบ",
+                "descriptionLabel": "คำอธิบาย (ไม่บังคับ)",
+                "descriptionPlaceholder": "หมายเหตุสั้นๆ เกี่ยวกับชุดนี้",
+                "wordsLabel": "คำศัพท์ที่จะรวม",
+                "wordsPlaceholder": "ค้นหาคำศัพท์...",
+                "selectedCount": "เลือก {{count}} คำ",
+                "nameError": "กรุณาใส่ชื่อชุดคำศัพท์",
+                "minWordsError": "กรุณาเลือกอย่างน้อย 1 คำ",
+                "cancel": "ยกเลิก",
+                "submit": "สร้างชุด"
+            },
+            "notFound": "ไม่พบชุดคำศัพท์ดังกล่าว",
+            "source": {
+                "default": "ชุดเริ่มต้น",
+                "custom": "คำของฉัน",
+                "cloud": "คลาวด์",
+                "downloaded": "ดาวน์โหลด"
+            },
+            "open": "Open",
+            "itemCount_one": "{{count}} item",
+            "itemCount_other": "{{count}} items",
+            "export": "Export",
+            "exportAria": "Export deck",
+            "downloadAria": "Download deck",
+            "delete": "Delete",
+            "deleteAria": "Delete deck",
+            "type": {
+                "vocab": "Vocabulary",
+                "render": "Reading",
+                "review": "Review",
+                "exam": "Exam",
+                "drill": "Drill"
+            },
+            "viewAuthor": "ดูโปรไฟล์ของ {{author}}",
+            "favourite": "เพิ่มในรายการโปรด",
+            "unfavourite": "เอาออกจากรายการโปรด"
+        },
+        "exam": {
+            "title": "แบบทดสอบ",
+            "import": "นำเข้าชุดแบบทดสอบ",
+            "addCustom": "สร้างชุดแบบกำหนดเอง",
+            "importErrorJson": "ไม่สามารถอ่านไฟล์นี้เป็น JSON ได้",
+            "form": {
+                "title": "สร้างชุดแบบทดสอบแบบกำหนดเอง",
+                "subtitle": "เลือกคำศัพท์ของคุณ — ชุดจะสร้างข้อสอบจากความหมายเหมือนกับชุดเริ่มต้น",
+                "titleLabel": "ชื่อชุด",
+                "titlePlaceholder": "เช่น คำศัพท์ในชีวิตประจำวัน",
+                "descriptionLabel": "คำอธิบาย (ไม่บังคับ)",
+                "descriptionPlaceholder": "หมายเหตุสั้นๆ เกี่ยวกับชุดนี้",
+                "wordsLabel": "คำศัพท์ที่จะรวม",
+                "wordsPlaceholder": "ค้นหาคำศัพท์...",
+                "titleError": "กรุณาใส่ชื่อชุด",
+                "minWordsError": "กรุณาเลือกอย่างน้อย 2 คำ",
+                "cancel": "ยกเลิก",
+                "submit": "สร้างชุด",
+                "selectedCount_one": "เลือก {{count}} คำ",
+                "selectedCount_other": "เลือก {{count}} คำ"
+            }
+        },
+        "kana": {
+            "badge": "ตัวคะนะ",
+            "title": "ตัวคะนะญี่ปุ่น",
+            "description": "ฮิรางานะและคาตาคานะคือระบบพยางค์สองแบบของภาษาญี่ปุ่น แตะแท็บเพื่อสลับ",
+            "tabs": {
+                "hiragana": "ฮิรางานะ",
+                "katakana": "คาตาคานะ"
+            },
+            "voiceless": "เสียงไม่ก้อง",
+            "voiced": "เสียงก้อง",
+            "contracted": "เสียงย่อ",
+            "voice_label": "เสียง",
+            "voice_preview": "ทดลองฟัง",
+            "voice_auto": "อัตโนมัติ",
+            "voice_choose": "เลือกเสียง",
+            "voice_ja": "ญี่ปุ่น",
+            "voice_volume": "ระดับเสียง",
+            "take_quiz": "ทำแบบทดสอบ",
+            "count": "ตัวคะนะ",
+            "stats": {
+                "set": "ในชุด",
+                "group": "ในกลุ่ม",
+                "read": "อ่านแล้ว"
+            },
+            "readProgress": "{{read}} / {{total}}",
+            "gridHint": "แตะคะนะเพื่อฟังเสียง หรือกดเริ่มอ่านเพื่ออ่านทีละตัวจากจุดที่ค้างไว้",
+            "readStart": "เริ่มอ่าน",
+            "readContinue": "อ่านต่อ",
+            "readStop": "หยุด",
+            "nowReading": "กำลังอ่าน",
+            "upNext": "ถัดไป",
+            "pinToolbar": "ปักหมุดแถบเครื่องมือ",
+            "unpinToolbar": "เลิกปักหมุดแถบเครื่องมือ",
+            "sticky": "ปักหมุด",
+            "stickyOn": "เปิด",
+            "stickyOff": "ปิด",
+            "back_hub": "กลับไปภาษาญี่ปุ่น"
+        },
+        "kanaDrill": {
+            "badge": "แบบฝึกคะนะ",
+            "title": "แบบฝึกคะนะ",
+            "intro": "ตั้งค่าแบบทดสอบของคุณ — เลือกกลุ่มตัวคะนะ จำนวนคำถาม และเวลาที่ใช้ต่อคำถาม",
+            "start": "เริ่มแบบทดสอบ",
+            "progress": "คำถาม",
+            "score": "คะแนน",
+            "promptLabel": "ตัวคะนะนี้อ่านว่าอะไร?",
+            "promptLabelRomajiToChar": "ตัวคะนะใดตรงกับการอ่านนี้?",
+            "promptLabelListen": "ได้ยินตัวคะนะใด?",
+            "listenAgain": "ฟังอีกครั้ง",
+            "correct": "ถูกต้อง!",
+            "wrong": "ยังไม่ถูก",
+            "timeout": "หมดเวลา!",
+            "correctAnswer": "คำตอบที่ถูกต้อง",
+            "next": "คำถามถัดไป",
+            "endGame": "จบเกม",
+            "resultTitle": "ทำแบบทดสอบเสร็จสิ้น!",
+            "result": {
+                "correctLabel": "ถูกต้อง",
+                "wrongLabel": "ผิด",
+                "timeoutLabel": "หมดเวลา",
+                "settingsSummary": "การตั้งค่า",
+                "settingsButton": "การตั้งค่า",
+                "exitButton": "ออก",
+                "playAgain": "เล่นอีกครั้ง",
+                "history": "ประวัติคำตอบ",
+                "timeoutShort": "หมดเวลา",
+                "yes": "ใช่",
+                "no": "ไม่"
+            },
+            "retry": "ลองใหม่",
+            "back_characters": "กลับไปตัวคะนะ",
+            "settings": {
+                "setsLabel": "กลุ่มตัวคะนะ",
+                "questionLabel": "ตัวเลือกแบบทดสอบ",
+                "modeLabel": "โหมดคำถาม",
+                "mode": {
+                    "charToRomaji": "ตัวคะนะ → การอ่าน",
+                    "charToRomajiHint": "เห็นตัวคะนะ เลือกการอ่าน",
+                    "romajiToChar": "การอ่าน → ตัวคะนะ",
+                    "romajiToCharHint": "เห็นการอ่าน เลือกตัวคะนะที่ตรงกัน",
+                    "listenToChar": "ฟัง → ตัวคะนะ",
+                    "listenToCharHint": "ฟังเสียงตัวคะนะ เลือกสิ่งที่ได้ยิน"
+                },
+                "sound": {
+                    "label": "เสียงเอฟเฟกต์",
+                    "voice": "Aria",
+                    "voiceHint": "เล่นเสียงพูดที่บันทึกไว้โดย Aria",
+                    "tone": "โทนเสียง",
+                    "toneHint": "เล่นเสียงสังเคราะห์แบบง่าย",
+                    "volume": "ระดับเสียงเอฟเฟกต์"
+                },
+                "voiceLabel": "เสียง",
+                "questionCount": "จำนวนคำถาม",
+                "questions": "ข้อ",
+                "choiceCount": "จำนวนตัวเลือก",
+                "choices": "ตัวเลือก",
+                "timeLimit": "เวลาต่อคำถาม",
+                "autoAdvance": "ไปคำถามถัดไปโดยอัตโนมัติ",
+                "useAll": "ตัวคะนะทั้งหมด",
+                "groups": {
+                    "voiceless": "เสียงไม่ก้อง",
+                    "voiced": "เสียงก้อง",
+                    "contracted": "เสียงย่อ"
+                },
+                "chars": "ตัว",
+                "totalChars": "ตัวคะนะทั้งหมด"
+            }
+        },
+        "vocab": {
+            "available": "รวม {{count}} คำ",
+            "back_hub": "Back to hub",
+            "eyebrow": "Vocabulary",
+            "title": "Vocabulary",
+            "description": "Browse a deck's words with readings, meanings, and example sentences.",
+            "search": "Search decks",
+            "empty": "No decks yet.",
+            "words": "words",
+            "read": "Read",
+            "edit": "Edit",
+            "addWord": "Add word",
+            "delete": "Delete",
+            "save": "Save",
+            "cancel": "Cancel",
+            "word": "Word",
+            "reading": "Reading",
+            "meaning": "Meaning",
+            "example": "Example",
+            "required": "Word and meaning are required.",
+            "builtIn": "Built-in words can't be edited."
+        },
+        "vocabularyReview": {
+            "badge": "ทบทวน",
+            "title": "ทบทวนคำศัพท์",
+            "description": "พลิกการ์ดเพื่อดูคำตอบ จากนั้นเลือกผ่านหรือไม่ผ่าน",
+            "complete": "ทำเสร็จแล้ว!",
+            "completeDescription": "ไม่มีคำศัพท์ที่ต้องทบทวนในตอนนี้",
+            "exit": "ออกจากทบทวน",
+            "wordsLeft": "คำเหลือ",
+            "wordLeft": "คำเหลือ",
+            "showAnswer": "ดูคำตอบ",
+            "fail": "ไม่ผ่าน",
+            "pass": "ผ่าน",
+            "failHint": "ไม่ผ่าน",
+            "passHint": "ผ่าน",
+            "wordLabel": "คำศัพท์",
+            "recallPrompt": "คำนี้แปลว่าอะไร?",
+            "back_hub": "กลับไปภาษาญี่ปุ่น"
+        },
+        "render": {
+            "back_hub": "Back to hub",
+            "eyebrow": "Render",
+            "title": "Render",
+            "description": "Read short passages with furigana and a translation to check against.",
+            "search": "Search decks",
+            "empty": "No reading decks yet.",
+            "passages": "passages",
+            "read": "Read",
+            "showTranslation": "Show translation",
+            "hideTranslation": "Hide translation",
+            "speak": "Listen"
+        },
+        "drill": {
+            "title": "Kana Drill"
+        },
+        "review": {
+            "title": "Vocabulary Review"
+        }
+    },
+    "footer": {
+        "tagline": "วิถีอบอุ่นและหลากธีมสำหรับจิบคำศัพท์ภาษาญี่ปุ่นไปทีละคำ",
+        "explore": "สำรวจ",
+        "learn": "เราเปิดสอนอะไร",
+        "rights": "TeaChoco · สงวนลิขสิทธิ์",
+        "languages": {
+            "ja": "ญี่ปุ่น",
+            "en": "อังกฤษ",
+            "ko": "เกาหลี",
+            "th": "ไทย"
+        }
+    },
+    "auth": {
+        "signIn": "เข้าสู่ระบบ",
+        "signUp": "สมัครสมาชิก",
+        "signOut": "ออกจากระบบ",
+        "email": "อีเมล",
+        "password": "รหัสผ่าน",
+        "name": "ชื่อ",
+        "nameTag": "ชื่อผู้ใช้",
+        "nameTagHint": "3-30 ตัวอักษร ตัวอักษรภาษาอังกฤษ ตัวเลข ขีดล่าง (_) หรือยัติภังค์ (-) เท่านั้น ไม่มีช่องว่าง ชื่อผู้ใช้สาธารณะของคุณ",
+        "confirmPassword": "ยืนยันรหัสผ่าน",
+        "forgotPassword": "ลืมรหัสผ่าน?",
+        "resetPassword": "รีเซ็ตรหัสผ่าน",
+        "backToSignIn": "กลับไปเข้าสู่ระบบ",
+        "orContinueWith": "หรือดำเนินการต่อด้วย",
+        "google": "Google",
+        "discord": "Discord",
+        "noAccount": "ยังไม่มีบัญชี?",
+        "hasAccount": "มีบัญชีอยู่แล้ว?",
+        "verifyEmail": "ยืนยันอีเมล",
+        "verificationCode": "รหัสยืนยัน",
+        "verifyHint": "กรอกรหัส 6 หลักที่เราส่งไปที่ {{email}}",
+        "verify": "ยืนยัน",
+        "otpSent": "เราส่งรหัสไปที่ {{email}} แล้ว",
+        "otpResent": "ส่งรหัสใหม่แล้ว",
+        "verifySuccess": "ยินดีต้อนรับ, {{name}}!",
+        "resendCode": "ส่งรหัสอีกครั้ง",
+        "resendInSeconds": "ส่งอีกครั้งใน {{seconds}} วิ",
+        "profile": "โปรไฟล์",
+        "settings": "การตั้งค่า",
+        "welcome": "ยินดีต้อนรับ, {{name}}",
+        "error": {
+            "invalidCredentials": "อีเมลหรือรหัสผ่านไม่ถูกต้อง",
+            "emailInUse": "มีบัญชีที่ใช้อีเมลนี้อยู่แล้ว",
+            "nameTagTaken": "ชื่อผู้ใช้นี้ถูกใช้ไปแล้ว",
+            "nameTagInvalid": "ชื่อผู้ใช้ต้องมี 3-30 ตัวอักษร: ตัวอักษรภาษาอังกฤษ ตัวเลข ขีดล่าง หรือยัติภังค์เท่านั้น (ไม่มีช่องว่าง)",
+            "passwordMismatch": "รหัสผ่านไม่ตรงกัน",
+            "invalidOtp": "รหัสไม่ถูกต้องหรือหมดอายุ กรุณาลองอีกครั้ง",
+            "resendFailed": "ไม่สามารถส่งรหัสใหม่ได้ กรุณาลองอีกครั้ง",
+            "generic": "เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง",
+            "emailNotFound": "No account found with that email.",
+            "resetFailed": "Password reset failed. Please try again.",
+            "oauth": "Sign-in failed: {{reason}}"
+        },
+        "resetCodeSent": "We sent a reset code to {{email}}.",
+        "resetHint": "Enter the code sent to {{email}} and choose a new password.",
+        "forgotHint": "Enter your account email and we'll send you a reset code.",
+        "newPassword": "New Password",
+        "updatePassword": "Update Password",
+        "resetSuccess": "Password updated. Please sign in.",
+        "line": "LINE",
+        "x": "X (Twitter)",
+        "sendResetCode": "ส่งรหัสรีเซ็ต"
+    },
+    "settings": {
+        "title": "การตั้งค่า",
+        "subtitle": "ปรุง ChocoMemo ตามรสนิยมของคุณ",
+        "back": "กลับ",
+        "nav": {
+            "settings": "การตั้งค่า",
+            "appearance": "รูปลักษณ์",
+            "language": "ภาษา",
+            "voice": "เสียงและเสียงพูด",
+            "interface": "อินเทอร์เฟซ",
+            "account": "บัญชี"
+        },
+        "appearance": {
+            "hint": "เลือกอารมณ์ของถ้วยของคุณ"
+        },
+        "language": {
+            "hint": "เลือกภาษาที่ ChocoMemo ใช้พูดคุยกับคุณ"
+        },
+        "voice": {
+            "hint": "เสียงที่อ่านคานะและคำศัพท์ออกเสียง"
+        },
+        "interface": {
+            "hint": "ปรับสิ่งที่อบอวลรอบการเรียนรู้ของคุณ",
+            "chromeLabel": "แสดงอินเทอร์เฟซ",
+            "chromeDescription": "แสดงหรือซ่อนเมนูนำทางและส่วนท้าย"
+        },
+        "account": {
+            "signedInHint": "ลงชื่อเข้าสู่ระบบในชื่อ {{name}}",
+            "signedOutHint": "ลงชื่อเข้าใช้เพื่อรักษาเรื่องราวการเรียนรู้ของคุณในทุกอุปกรณ์",
+            "goToProfile": "ดูโปรไฟล์",
+            "signIn": "ลงชื่อเข้าใช้"
+        }
+    },
+    "profile": {
+        "title": "โปรไฟล์",
+        "subtitle": "เรื่องราวการเรียนรู้ของคุณกับ ChocoMemo",
+        "back": "กลับ",
+        "anonymousName": "ผู้เรียนช็อคโก้",
+        "memberSince": "เป็นสมาชิกตั้งแต่",
+        "notSignedInTitle": "ยังไม่ได้ลงชื่อเข้าใช้",
+        "notSignedInHint": "ลงชื่อเข้าใช้เพื่อดูโปรไฟล์ แก้ไขข้อมูล และติดตามความคืบหน้าในทุกอุปกรณ์",
+        "signIn": "ลงชื่อเข้าใช้",
+        "stats": {
+            "label": "สรุปโดยรวม",
+            "kana": "คานะที่อ่าน",
+            "vocabulary": "คำศัพท์",
+            "learned": "คำที่เรียนรู้",
+            "due": "ถึงเวลาเรียกคืน"
+        },
+        "identities": {
+            "label": "Linked Accounts",
+            "email": "Email",
+            "verified": "Verified",
+            "unverified": "Not verified",
+            "primary": "Primary",
+            "local": "Password",
+            "google": "Google",
+            "discord": "Discord",
+            "line": "LINE",
+            "x": "X (Twitter)",
+            "connected": "Connected",
+            "notConnected": "Not connected",
+            "comingSoon": "Coming soon",
+            "passwordSet": "Password is set",
+            "passwordNotSet": "No password set yet",
+            "connect": "Connect",
+            "disconnect": "Disconnect",
+            "disconnectSuccess": "Google account disconnected",
+            "disconnectError": "Couldn't disconnect this account ({{reason}})",
+            "disconnectTitle": "Disconnect Google account?",
+            "disconnectHint": "You'll be asked to confirm with Google before the link is removed.",
+            "lastSigninMethod": "You need at least one sign-in method left",
+            "disconnectSession": "Your session expired. Sign in again and retry.",
+            "disconnectVerifyFailed": "Couldn't verify your Google account. Try again.",
+            "disconnectCancelled": "Google sign-in was cancelled.",
+            "change": "Change"
+        },
+        "details": {
+            "name": "ชื่อ",
+            "namePlaceholder": "ชื่อของคุณ",
+            "saving": "กำลังบันทึก…",
+            "saved": "อัปเดตโปรไฟล์แล้ว",
+            "updateError": "ไม่สามารถอัปเดตโปรไฟล์ของคุณได้",
+            "editProfile": "แก้ไขโปรไฟล์",
+            "nameTag": "ชื่อผู้ใช้",
+            "nameTagHint": "3-30 ตัวอักษร ตัวอักษรภาษาอังกฤษ ตัวเลข ขีดล่าง (_) หรือยัติภังค์ (-) เท่านั้น ไม่มีช่องว่าง ชื่อผู้ใช้สาธารณะของคุณ",
+            "nameTagTaken": "ชื่อผู้ใช้นี้ถูกใช้ไปแล้ว",
+            "nameTagInvalid": "ชื่อผู้ใช้ต้องมี 3-30 ตัวอักษร: ตัวอักษรภาษาอังกฤษ ตัวเลข ขีดล่าง หรือยัติภังค์เท่านั้น (ไม่มีช่องว่าง)",
+            "noNameTag": "ยังไม่มีชื่อผู้ใช้",
+            "bio": "เกี่ยวกับฉัน",
+            "bioPlaceholder": "บอกคนอื่นเล็กน้อยเกี่ยวกับตัวคุณ…"
+        },
+        "email": {
+            "label": "Change email",
+            "hint": "Update the email address you use to sign in.",
+            "placeholder": "you@example.com",
+            "save": "Save",
+            "saving": "Saving…",
+            "saved": "Email updated",
+            "updateError": "Could not update your email.",
+            "invalid": "Please enter a valid email address"
+        },
+        "otp": {
+            "confirmEmail": "Confirm new email",
+            "confirmPassword": "Confirm change password",
+            "sendCode": "Send code",
+            "sending": "Sending…",
+            "codeSent": "Code sent",
+            "codeResent": "Code resent",
+            "sendFailed": "Couldn't send the code",
+            "codeSentTo": "Enter the 6-digit code we sent to {{email}}.",
+            "verifySave": "Verify & save",
+            "verifying": "Verifying…",
+            "invalidCode": "Invalid or expired code",
+            "resendFailed": "Couldn't resend the code",
+            "back": "Back",
+            "emailSame": "New email must be different from the current one",
+            "emailTaken": "That email is already in use",
+            "wrongCurrentPassword": "Current password is incorrect"
+        },
+        "password": {
+            "label": "Change password",
+            "hint": "Your current password is required to set a new one.",
+            "setHint": "Set a password for your account. We'll email a code to confirm.",
+            "current": "Current password",
+            "currentPlaceholder": "Enter current password",
+            "currentRequired": "Current password is required",
+            "new": "New password",
+            "newPlaceholder": "Enter new password (min. 6 characters)",
+            "newRequired": "New password is required",
+            "tooShort": "New password must be at least 6 characters",
+            "confirm": "Confirm new password",
+            "confirmPlaceholder": "Re-enter new password",
+            "mismatch": "Passwords do not match",
+            "incorrect": "Current password is incorrect",
+            "change": "Change password",
+            "changing": "Changing…",
+            "changed": "Password changed successfully",
+            "changeError": "Could not change password",
+            "noPasswordYetHint": "This account doesn't have a password set yet."
+        },
+        "avatar": {
+            "source": "รูปโปรไฟล์",
+            "default": "ค่าเริ่มต้น",
+            "google": "Google",
+            "local": "กำหนดเอง",
+            "updated": "อัปเดตรูปโปรไฟล์แล้ว",
+            "updateError": "ไม่สามารถอัปเดตรูปโปรไฟล์ได้",
+            "invalidType": "โปรดเลือกไฟล์รูปภาพ",
+            "tooLarge": "รูปภาพต้องมีขนาดเล็กกว่า 5MB",
+            "previewReady": "พร้อมดูตัวอย่าง — เลือกแหล่งที่มาเพื่อบันทึก",
+            "remove": "ลบ",
+            "removeError": "ไม่สามารถลบรูปโปรไฟล์ได้",
+            "cancel": "ยกเลิก",
+            "saving": "กำลังบันทึก…",
+            "confirm": "ยืนยัน",
+            "change": "เปลี่ยนรูปโปรไฟล์"
+        },
+        "public": {
+            "notFoundTitle": "Profile not found",
+            "notFoundHint": "Nobody is using this name tag. It may have been changed or removed.",
+            "yourDashboard": "Go to your profile",
+            "viewPublic": "View public profile"
+        }
+    },
+    "english": {
+        "badge": "ภาษาอังกฤษ",
+        "title": "เรียนภาษาอังกฤษ",
+        "description": "ภาษาอังกฤษเป็นแทร็กใหม่ ฟีเจอร์ชุดด้านล่างใช้งานได้แล้ว ส่วนชุดอักษรและแบบฝึกยังอยู่ระหว่างพัฒนา",
+        "nav": {
+            "render": {
+                "title": "การอ่าน",
+                "description": "อ่านเรื่องสั้นแล้วเทียบกับคำแปล",
+                "action": "เริ่มอ่าน"
+            },
+            "review": {
+                "title": "ทบทวนคำศัพท์",
+                "description": "ทบทวนคำศัพท์ด้วยการ์ดคำและการทบทวนแบบห่าง",
+                "action": "เริ่มทบทวน"
+            },
+            "exam": {
+                "title": "ข้อสอบคำศัพท์",
+                "description": "ทดสอบตัวเองด้วยข้อสอบแบบเลือกตอบที่สร้างจากคำศัพท์ของคุณ",
+                "action": "ทำข้อสอบ"
+            },
+            "vocab": {
+                "title": "ดูคำศัพท์",
+                "description": "อ่านคำในชุดพร้อมคำอ่าน ความหมาย และตัวอย่างประโยค",
+                "action": "เปิดดูคำศัพท์"
+            }
+        },
+        "vocab": {
+            "title": "คำศัพท์"
+        },
+        "render": {
+            "title": "การอ่าน"
+        },
+        "review": {
+            "title": "ทบทวนคำศัพท์"
+        },
+        "exam": {
+            "title": "แบบทดสอบ"
+        },
+        "sections": {
+            "learn": "เรียนรู้",
+            "practice": "ฝึกฝน"
+        }
+    },
+    "deck": {
+        "type": {
+            "vocab": "คำศัพท์",
+            "render": "การอ่าน",
+            "review": "ทบทวน",
+            "exam": "ข้อสอบ",
+            "drill": "ซ้อม"
+        },
+        "source": {
+            "official": "ทางการ",
+            "community": "ชุมชน",
+            "local": "ของคุณ",
+            "cloud": "คลาวด์"
+        },
+        "visibility": {
+            "public": "สาธารณะ",
+            "unlisted": "ไม่แสดงในรายการ",
+            "private": "ส่วนตัว"
+        },
+        "search": "ค้นหาชุด",
+        "searchAria": "ค้นหาชุดด้วยชื่อ",
+        "searchClear": "ล้างคำค้น",
+        "tallyAria": "ชุดแยกตามแหล่งที่มา",
+        "resultCount": "แสดง {{matched}} จาก {{total}} ชุด",
+        "loading": "กำลังโหลดชุด…",
+        "itemCount_one": "{{count}} รายการ",
+        "itemCount_other": "{{count}} รายการ",
+        "byAuthor": "โดย {{author}}",
+        "openAria": "เปิด {{name}}",
+        "export": "ส่งออก",
+        "exportAria": "ส่งออกชุด",
+        "download": "ดาวน์โหลด",
+        "downloadAria": "ดาวน์โหลดชุด",
+        "delete": "ลบ",
+        "deleteAria": "ลบชุด",
+        "start": "เริ่ม",
+        "list": {
+            "backHub": "กลับไป{{language}}",
+            "eyebrow": {
+                "vocab": "คำศัพท์",
+                "render": "การอ่าน",
+                "exam": "ข้อสอบ",
+                "review": "ทบทวน"
+            },
+            "title": {
+                "vocab": "ชุดคำศัพท์",
+                "render": "ชุดอ่าน",
+                "exam": "ชุดข้อสอบ",
+                "review": "ชุดทบทวน"
+            },
+            "description": {
+                "vocab": "จัดกลุ่มคำที่คุณรู้เป็นชุด แล้วซ้อมแบบห่างตามระยะเวลา",
+                "render": "เรื่องสั้นจัดระดับความยากให้อ่าน พร้อมคำแปลไว้เทียบ",
+                "exam": "ชุดข้อสอบแบบเลือกตอบ สร้างจากคำศัพท์ของคุณเอง",
+                "review": "ฝึกทบทวนแบบการทบทวนแบบห่าง"
+            }
+        },
+        "empty": {
+            "local": {
+                "title": "ยังไม่มีชุดของคุณเอง",
+                "body": "ชุดที่คุณสร้างหรือนำเข้าจะมาอยู่ที่นี่ เริ่มจากชุดทางการแทนก็ได้",
+                "action": "ดูชุดทางการ"
+            },
+            "official": {
+                "title": "ยังไม่มีชุดทางการสำหรับประเภทนี้",
+                "body": "ชุดทางการมาพร้อมแอป ยังไม่มีชุดไหนเผยแพร่สำหรับประเภทนี้"
+            },
+            "filtered": {
+                "title": "ไม่มีชุดที่ตรงกับตัวกรอง",
+                "body": "ไม่มีชุดในแท็บนี้ที่ตรงกับคำค้น แท็ก และตัวเลือกที่คุณเลือก ลดข้อกำหนดลงสักอย่างเพื่อดูอีกครั้ง",
+                "action": "ล้างตัวกรอง"
+            },
+            "cloud": {
+                "title": "การซิงค์คลาวด์กำลังจะมา",
+                "body": "ลงชื่อเข้าใช้แล้วชุดของคุณจะตามคุณไปทุกเครื่อง",
+                "action": "ลงชื่อเข้าใช้"
+            },
+            "cloudSignedIn": {
+                "title": "การซิงค์คลาวด์กำลังจะมา",
+                "body": "คุณลงชื่อเข้าใช้แล้ว การเก็บชุดให้ตรงกันข้ามอุปกรณ์กำลังจะมา"
+            },
+            "community": {
+                "title": "ยังไม่มีชุดจากชุมชน",
+                "body": "ชุดที่ผู้เรียนคนอื่นเผยแพร่จะมาปรากฏที่นี่เมื่อเปิดให้ชุมชนใช้งาน"
+            }
+        },
+        "noResults": {
+            "title": "ไม่พบสิ่งที่ตรงกับคำค้นนี้",
+            "body": "ลองใช้คำที่สั้นลง หรือล้างคำค้นเพื่อดูทุกอย่างในแท็บนี้"
+        },
+        "details": {
+            "notFound": "ไม่พบชุดนั้น",
+            "back": "กลับไปชุดทั้งหมด",
+            "contents": "สิ่งที่อยู่ข้างใน",
+            "version": "เวอร์ชัน",
+            "updated": "อัปเดตเมื่อ",
+            "noSession": "เซสชันสำหรับชุด{{language}}ยังไม่พร้อมใช้งาน"
+        },
+        "options": {
+            "sortAria": "เรียงชุด",
+            "sort": {
+                "default": "ตามลำดับต้นทาง",
+                "name": "ชื่อ ก–ฮ",
+                "recent": "อัปเดตล่าสุด",
+                "popular": "ดาวน์โหลดมากที่สุด",
+                "size": "ขนาดใหญ่สุด"
+            },
+            "density": {
+                "comfortable": "สบายตา",
+                "compact": "กระชับ"
+            },
+            "nsfw": {
+                "label": "เนื้อหาอ่อนไหว",
+                "on": "แสดงชุดเนื้อหาอ่อนไหวแล้ว",
+                "off": "ซ่อนชุดเนื้อหาอ่อนไหว"
+            },
+            "importHeading": "นำเข้า",
+            "importHint": "อ่านไฟล์ชุดที่คุณเคยส่งออกไว้",
+            "importUnavailable": "ยังไม่มีรูปแบบไฟล์สำหรับชุดประเภทนี้"
+        },
+        "tags": {
+            "clear": "ล้างแท็ก",
+            "remove": "เอาแท็ก {{tag}} ออก"
+        },
+        "actions": {
+            "create": {
+                "vocab": "ชุดใหม่",
+                "exam": "ข้อสอบใหม่"
+            },
+            "importOnly": "นำเข้า"
+        },
+        "import": {
+            "action": "นำเข้าไฟล์ชุด",
+            "invalidDeck": "ไฟล์นี้ไม่ใช่ชุดที่ถูกต้อง",
+            "invalidExam": "ไฟล์นี้ไม่ใช่ชุดข้อสอบที่ถูกต้อง",
+            "invalidJson": "อ่านไฟล์นี้เป็น JSON ไม่ได้"
+        },
+        "viewAuthor": "ดูโปรไฟล์ของ {{author}}"
+    }
+}

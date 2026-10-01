@@ -11,12 +11,12 @@
 // The shell's one real job beyond the frame is holding the view state in the
 // URL, so the source tab, the search and every view option survive a reload and
 // travel in a shared link.
-import PageShell from '~/components/custom/PageShell';
-import DeckList from '~/components/container/DeckList/DeckList';
-import { useDeckListQuery } from '~/hooks/useDeckListQuery';
-import { useTranslation } from 'react-i18next';
 import type { DeckType } from '~/types/deck';
+import { useTranslation } from 'react-i18next';
 import type { Languages } from '~/data/language';
+import PageShell from '~/components/custom/PageShell';
+import { useDeckListQuery } from '~/hooks/useDeckListQuery';
+import DeckList from '~/components/container/DeckList/DeckList';
 
 /** The deck types that get a list page. `drill` is a single-session page of
  *  its own, so it has no list — and therefore no per-type copy either. */
@@ -38,12 +38,7 @@ export default function DeckListPage({ type, language }: { type: ListType; langu
                 }),
             })}
         >
-            <DeckList
-                type={type}
-                language={language}
-                query={controls.query}
-                controls={controls}
-            />
+            <DeckList type={type} language={language} query={controls.query} controls={controls} />
         </PageShell>
     );
 }

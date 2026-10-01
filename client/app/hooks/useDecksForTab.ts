@@ -2,12 +2,12 @@
 //
 // Kept out of the components so the page shell and the list agree on the
 // numbers: the header says "12 decks" and the tab says the same, from one
-// read. `official` is the odd one out — its decks ship in the bundle, so it
-// reads static data while the other three read stores.
+// read. `official` is the odd one out — its store is seeded from the bundled
+// data rather than fetched, so it is already complete on the first paint.
 import { useMemo } from 'react';
 import type { DeckData, DeckSource, DeckType } from '~/types/deck';
 import type { Languages } from '~/data/language';
-import { officialDecksOfType } from '~/data/japanese/officialDecks';
+import { officialDecksOfType } from '~/stores/deck/deckListOfficial.store';
 import { useDeckListLocalStore } from '~/stores/deck/deckListLocal.store';
 import { useDeckListCloudStore } from '~/stores/deck/deckListCloud.store';
 import { useDeckListCommunityStore } from '~/stores/deck/deckListCommunity.store';

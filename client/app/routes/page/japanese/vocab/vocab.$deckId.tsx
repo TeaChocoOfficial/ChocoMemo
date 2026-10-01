@@ -1,6 +1,5 @@
 // -Path: 'client/app/routes/page/japanese/vocabulary.$deckId.tsx'
 import type { Route } from './+types/vocab.$deckId';
-import VocabDeck from '~/pages/japanese/vocab/VocabDeck';
 
 export function meta({ params }: Route.MetaArgs) {
     return [
@@ -9,6 +8,6 @@ export function meta({ params }: Route.MetaArgs) {
     ];
 }
 
-export default function VocabDeckById() {
-    return <VocabDeck />;
+export default function JapaneseVocabById() {
+    return <></>;
 }

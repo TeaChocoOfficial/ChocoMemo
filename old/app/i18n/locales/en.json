@@ -1,0 +1,888 @@
+{
+    "nav": {
+        "home": "Home",
+        "languages": "Languages",
+        "japanese": "Japanese",
+        "english": "English",
+        "menu": "Open menu",
+        "settings": "Settings",
+        "language": "Language",
+        "theme": "Theme"
+    },
+    "chrome": {
+        "hide": "Hide",
+        "show": "Show",
+        "toggleLabel": "Show interface"
+    },
+    "home": {
+        "badge": "ChocoMemo · community language library",
+        "title": "Learn any language,",
+        "titleAccent": "one shared deck at a time.",
+        "subtitle": "Japanese, English, Thai, Korean and Chinese — each one built from decks, drills and quizzes that real learners write, share and pour for each other. Free, open, and yours to extend.",
+        "ctaStart": "Start learning",
+        "ctaCreate": "Publish a deck",
+        "ctaHow": "See how it works",
+        "scriptsLabel": "Now brewing",
+        "stats": {
+            "badge": "On the shelf",
+            "languages": "Languages",
+            "kana": "Kana characters",
+            "vocabulary": "Vocabulary words",
+            "shelves": "Decks & quizzes"
+        },
+        "languages": {
+            "badge": "The shelf",
+            "title": "Five languages, one warm habit",
+            "hint": "Start with the tray that's ready today — the rest are steeping.",
+            "available": "Ready to pour",
+            "comingSoon": "Steeping",
+            "toAll": "Browse every language",
+            "items": {
+                "japanese": {
+                    "name": "Japanese",
+                    "description": "Hiragana, katakana and kanji with drills and spaced review."
+                },
+                "english": {
+                    "name": "English",
+                    "description": "Everyday vocabulary and phrases, sorted by the people who use them."
+                },
+                "thai": {
+                    "name": "Thai",
+                    "description": "Tones, script and the words you'll actually meet on the street."
+                },
+                "korean": {
+                    "name": "Korean",
+                    "description": "Hangul in one sitting, then conversation decks that stick."
+                },
+                "chinese": {
+                    "name": "Chinese",
+                    "description": "Characters, pinyin and tone pairs, drilled in short rounds."
+                }
+            }
+        },
+        "library": {
+            "badge": "The community shelf",
+            "title": "Write a deck. Share it. Watch it teach.",
+            "hint": "Every study set in ChocoMemo is written by a person, not a publisher. Tidy one up, publish it, and someone else gets a whole course from it.",
+            "cta": "Open the review shelf",
+            "items": {
+                "decks": {
+                    "title": "Vocabulary decks",
+                    "hint": "Group words into a themed deck — nature, animals, everyday things — and review it like a little e-book."
+                },
+                "exam": {
+                    "title": "Quiz sets",
+                    "hint": "Turn a deck into a timed exam and see exactly which words still need steeping."
+                },
+                "kana": {
+                    "title": "Kana drills",
+                    "hint": "Fast rounds through both syllabaries until the shapes come without thinking."
+                },
+                "review": {
+                    "title": "Spaced review",
+                    "hint": "Decks you downloaded come back on their own schedule, so nothing goes cold."
+                }
+            }
+        },
+        "how": {
+            "badge": "How it works",
+            "title": "Your daily pour",
+            "hint": "Four small steps, repeated every day — that's all it takes.",
+            "step1": {
+                "title": "Pick your language",
+                "hint": "Choose the tray you're studying today."
+            },
+            "step2": {
+                "title": "Borrow a deck",
+                "hint": "Take a deck someone else wrote, or start from the built-in shelf."
+            },
+            "step3": {
+                "title": "Drill and quiz",
+                "hint": "Short kana drills and vocabulary exam, five minutes at a time."
+            },
+            "step4": {
+                "title": "Publish your own",
+                "hint": "Add the words you keep forgetting and share them back with the shelf."
+            }
+        },
+        "cta": {
+            "title": "The pot's already on.",
+            "hint": "No sign-up walls between you and the first deck. Sign in only when you want your words to sync.",
+            "primary": "Start learning",
+            "secondary": "Publish a deck"
+        }
+    },
+    "theme": {
+        "pickerLabel": "Change theme",
+        "names": {
+            "lightChoco": "Light Choco",
+            "darkChoco": "Dark Choco",
+            "darkGalaxy": "Dark Galaxy",
+            "lightGalaxy": "Light Galaxy",
+            "darkSakura": "Dark Sakura",
+            "lightSakura": "Light Sakura",
+            "darkPaper": "Dark Paper",
+            "lightPaper": "Light Paper",
+            "darkNature": "Dark Nature",
+            "lightNature": "Light Nature",
+            "darkAutumn": "Dark Autumn",
+            "lightAutumn": "Light Autumn",
+            "darkWinter": "Dark Winter",
+            "lightWinter": "Light Winter"
+        }
+    },
+    "common": {
+        "loading": "Loading…",
+        "error": {
+            "oops": "Oops!",
+            "unexpected": "An unexpected error occurred.",
+            "notFound": "The requested page could not be found."
+        },
+        "tabs": {
+            "local": "Local",
+            "official": "Official",
+            "cloud": "Cloud",
+            "community": "Community"
+        },
+        "comingSoon": {
+            "cloud": "Cloud sync coming soon, sign in required",
+            "community": "Browsing community sets isn't available yet"
+        },
+        "select": "Select"
+    },
+    "notfound": {
+        "title": "Page Not Found",
+        "description": "The page you are looking for doesn't exist or has been moved.",
+        "back_home": "Back to Home",
+        "error_code": "404"
+    },
+    "languageSelect": {
+        "badge": "Language Selection",
+        "title": "Choose a Language to Learn",
+        "description": "Pick the language you want to study. Japanese is ready today; the rest are steeping.",
+        "back_home": "Back to Home",
+        "status": {
+            "available": "Available",
+            "comingSoon": "Coming Soon"
+        },
+        "cta": {
+            "start": "Start Learning",
+            "unavailable": "Not Available"
+        },
+        "languages": {
+            "japanese": {
+                "name": "Japanese",
+                "description": "Hiragana, katakana and kanji, drilled in short rounds and kept warm with spaced review."
+            },
+            "english": {
+                "name": "English",
+                "description": "Everyday vocabulary and phrases, sorted into decks by the people who actually use them."
+            },
+            "thai": {
+                "name": "Thai",
+                "description": "Tones and script side by side, plus the words you will meet on the street."
+            },
+            "korean": {
+                "name": "Korean",
+                "description": "Hangul in one sitting, then conversation decks that refuse to go cold."
+            },
+            "chinese": {
+                "name": "Chinese",
+                "description": "Characters, pinyin and tone pairs, practised a few minutes at a time."
+            }
+        },
+        "back_language": "Back to Language Selection"
+    },
+    "deck": {
+        "type": {
+            "vocab": "Vocabulary",
+            "render": "Reading",
+            "review": "Review",
+            "exam": "Exam",
+            "drill": "Drill"
+        },
+        "source": {
+            "official": "Official",
+            "community": "Community",
+            "local": "Local",
+            "cloud": "Cloud"
+        },
+        "visibility": {
+            "public": "Public",
+            "unlisted": "Unlisted",
+            "private": "Private"
+        },
+        "search": "Search decks",
+        "searchAria": "Search decks by name",
+        "searchClear": "Clear search",
+        "tallyAria": "Decks by source",
+        "resultCount": "Showing {{matched}} of {{total}} decks",
+        "loading": "Loading decks",
+        "itemCount_one": "{{count}} item",
+        "itemCount_other": "{{count}} items",
+        "byAuthor": "by {{author}}",
+        "openAria": "Open {{name}}",
+        "export": "Export",
+        "exportAria": "Export deck",
+        "download": "Download",
+        "downloadAria": "Download deck",
+        "delete": "Delete",
+        "deleteAria": "Delete deck",
+        "start": "Start",
+        "list": {
+            "backHub": "Back to {{language}}"
+        },
+        "empty": {
+            "local": {
+                "title": "No decks of your own yet",
+                "body": "Decks you create or import land here. Start from one of the official decks instead.",
+                "action": "Browse official decks"
+            },
+            "official": {
+                "title": "No official decks for this type yet",
+                "body": "Official decks ship with the app. None have been published for this type yet."
+            },
+            "filtered": {
+                "title": "Nothing matches those filters",
+                "body": "No deck in this tab fits the search, tags and options you picked. Loosen one of them to see it again.",
+                "action": "Clear filters"
+            },
+            "cloud": {
+                "title": "Cloud sync is coming soon",
+                "body": "Sign in and your decks will follow you between devices.",
+                "action": "Sign in"
+            },
+            "cloudSignedIn": {
+                "title": "Cloud sync is coming soon",
+                "body": "You're signed in. Keeping your decks in sync across devices is on the way."
+            },
+            "community": {
+                "title": "No community decks yet",
+                "body": "Decks published by other learners will show up here once the community opens."
+            }
+        },
+        "noResults": {
+            "title": "Nothing matches that search",
+            "body": "Try a shorter word, or clear the search to see everything in this tab."
+        },
+        "details": {
+            "notFound": "That deck was not found.",
+            "back": "Back to decks",
+            "contents": "What's inside",
+            "version": "Version",
+            "updated": "Updated",
+            "noSession": "Sessions for {{language}} decks are not ready yet."
+        },
+        "options": {
+            "sortAria": "Sort decks",
+            "sort": {
+                "default": "Source order",
+                "name": "Name A–Z",
+                "recent": "Recently updated",
+                "popular": "Most downloaded",
+                "size": "Largest first"
+            },
+            "density": {
+                "comfortable": "Comfortable",
+                "compact": "Compact"
+            },
+            "nsfw": {
+                "label": "Flagged",
+                "on": "Flagged decks are shown",
+                "off": "Flagged decks are hidden"
+            },
+            "importHeading": "Import",
+            "importHint": "Reads a deck file you exported earlier.",
+            "importUnavailable": "No file format for this kind of deck yet."
+        },
+        "tags": {
+            "clear": "Clear tags",
+            "remove": "Remove tag {{tag}}"
+        },
+        "actions": {
+            "create": {
+                "vocab": "New deck",
+                "exam": "New exam"
+            },
+            "importOnly": "Import"
+        },
+        "import": {
+            "action": "Import a deck file",
+            "invalidDeck": "That file isn't a valid deck.",
+            "invalidExam": "That file isn't a valid exam set.",
+            "invalidJson": "That file isn't readable JSON."
+        },
+        "viewAuthor": "View the profile of {{author}}"
+    },
+    "footer": {
+        "tagline": "A cozy, theme-rich way to sip your way through the Japanese language.",
+        "explore": "Explore",
+        "learn": "What we teach",
+        "rights": "TeaChoco · All rights reserved.",
+        "languages": {
+            "ja": "Japanese",
+            "en": "English",
+            "ko": "Korean",
+            "th": "Thai"
+        }
+    },
+    "auth": {
+        "signIn": "Sign In",
+        "signUp": "Sign Up",
+        "signOut": "Sign Out",
+        "email": "Email",
+        "password": "Password",
+        "name": "Name",
+        "nameTag": "Name tag",
+        "nameTagHint": "3-30 characters. English letters, numbers, underscores (_) or hyphens (-) only, no spaces. Your public handle.",
+        "confirmPassword": "Confirm Password",
+        "forgotPassword": "Forgot password?",
+        "resetPassword": "Reset Password",
+        "backToSignIn": "Back to Sign In",
+        "orContinueWith": "Or continue with",
+        "google": "Google",
+        "discord": "Discord",
+        "line": "LINE",
+        "x": "X (Twitter)",
+        "noAccount": "Don't have an account?",
+        "hasAccount": "Already have an account?",
+        "verifyEmail": "Verify Email",
+        "verificationCode": "Verification code",
+        "verifyHint": "Enter the 6-digit code we sent to {{email}}.",
+        "verify": "Verify",
+        "otpSent": "We sent a code to {{email}}.",
+        "otpResent": "A new code was sent.",
+        "verifySuccess": "Welcome, {{name}}!",
+        "resendCode": "Resend code",
+        "resendInSeconds": "Resend in {{seconds}}s",
+        "profile": "Profile",
+        "settings": "Settings",
+        "welcome": "Welcome, {{name}}",
+        "error": {
+            "invalidCredentials": "Invalid email or password.",
+            "emailInUse": "An account with this email already exists.",
+            "nameTagTaken": "That name tag is already taken.",
+            "nameTagInvalid": "Name tag must be 3-30 characters: English letters, numbers, underscores or hyphens only (no spaces).",
+            "passwordMismatch": "Passwords do not match.",
+            "invalidOtp": "Invalid or expired code. Please try again.",
+            "resendFailed": "Couldn't send a new code. Please try again.",
+            "generic": "Something went wrong. Please try again.",
+            "emailNotFound": "No account found with that email.",
+            "resetFailed": "Password reset failed. Please try again.",
+            "oauth": "Sign-in failed: {{reason}}"
+        },
+        "resetCodeSent": "We sent a reset code to {{email}}.",
+        "resetHint": "Enter the code sent to {{email}} and choose a new password.",
+        "forgotHint": "Enter your account email and we'll send you a reset code.",
+        "newPassword": "New Password",
+        "updatePassword": "Update Password",
+        "resetSuccess": "Password updated. Please sign in.",
+        "sendResetCode": "Send reset code"
+    },
+    "japanese": {
+        "badge": "Japanese",
+        "title": "Learn Japanese",
+        "description": "Master the basics of Japanese through kana, vocabulary, and quizzes.",
+        "back_language": "Back to Language Selection",
+        "stats": {
+            "kana": "Kana characters",
+            "vocabulary": "Vocabulary words",
+            "learned": "Words learned",
+            "due": "Due for review"
+        },
+        "sections": {
+            "kana": "Kana",
+            "kanaHint": "Learn the two Japanese syllabaries — browse every character and drill your recognition.",
+            "vocabulary": "Vocabulary",
+            "vocabularyHint": "Grow your word bank and review it on a spaced schedule.",
+            "learn": "Learn",
+            "practice": "Practice"
+        },
+        "nav": {
+            "kana": {
+                "title": "Kana",
+                "description": "Browse all Hiragana and Katakana with their readings.",
+                "action": "View Kana"
+            },
+            "vocab": {
+                "title": "Vocabulary",
+                "description": "Grow your word bank, then drill it on a spaced schedule.",
+                "action": "Browse Words"
+            },
+            "render": {
+                "title": "Render",
+                "description": "Read short passages with furigana and check yourself against the translation.",
+                "action": "Start Reading"
+            },
+            "drill": {
+                "title": "Kana Drill",
+                "description": "Test your recognition of Hiragana and Katakana kanas.",
+                "action": "Start Kana Drill"
+            },
+            "review": {
+                "title": "Vocabulary Review",
+                "description": "Review vocabulary with flashcards and spaced repetition.",
+                "action": "Start Review"
+            },
+            "exam": {
+                "title": "Vocabulary exam",
+                "description": "Test yourself with a multiple-choice exam built from your vocabulary.",
+                "action": "Take an Exam"
+            }
+        },
+        "decks": {
+            "title": "Vocabulary Review Decks",
+            "description": "Pick a deck to review. Decks come from the built-in set, your own words, or downloaded collections.",
+            "availableCount": "{{count}} decks available",
+            "startReview": "Start Review",
+            "due": "due",
+            "byAuthor": "by {{author}}",
+            "viewAuthor": "View the profile of {{author}}",
+            "download": "Download",
+            "note": "Review",
+            "open": "Open",
+            "itemCount_one": "{{count}} item",
+            "itemCount_other": "{{count}} items",
+            "favourite": "Add to favourites",
+            "unfavourite": "Remove from favourites",
+            "export": "Export",
+            "exportAria": "Export deck",
+            "downloadAria": "Download deck",
+            "delete": "Delete",
+            "deleteAria": "Delete deck",
+            "type": {
+                "vocab": "Vocabulary",
+                "render": "Reading",
+                "review": "Review",
+                "exam": "Exam",
+                "drill": "Drill"
+            },
+            "ready": "Ready",
+            "words": "words",
+            "search": "Search decks...",
+            "empty": "No decks yet — import one or create a custom deck.",
+            "addCustom": "Add custom deck",
+            "importDeck": "Import deck",
+            "importErrorJson": "Could not read this file as JSON.",
+            "form": {
+                "title": "Create a custom deck",
+                "subtitle": "Pick words from your vocabulary to group into a review deck.",
+                "nameLabel": "Name",
+                "namePlaceholder": "e.g. My favorite kanji",
+                "descriptionLabel": "Description (optional)",
+                "descriptionPlaceholder": "A short note about this deck",
+                "wordsLabel": "Words to include",
+                "wordsPlaceholder": "Search words...",
+                "selectedCount": "{{count}} selected",
+                "nameError": "Give your deck a name.",
+                "minWordsError": "Pick at least one word.",
+                "cancel": "Cancel",
+                "submit": "Create deck"
+            },
+            "notFound": "That deck was not found.",
+            "source": {
+                "default": "Built-in",
+                "custom": "My words",
+                "cloud": "Cloud",
+                "downloaded": "Downloaded"
+            }
+        },
+        "exam": {
+            "title": "Exam",
+            "addCustom": "New exam",
+            "import": "Import exam",
+            "importErrorJson": "Could not read this file as JSON.",
+            "form": {
+                "title": "Create a custom exam",
+                "subtitle": "Pick words from your vocabulary to build a multiple-choice exam set.",
+                "titleLabel": "Title",
+                "titlePlaceholder": "e.g. N5 grammar check",
+                "descriptionLabel": "Description (optional)",
+                "descriptionPlaceholder": "A short note about this exam",
+                "wordsLabel": "Words to include",
+                "wordsPlaceholder": "Search words...",
+                "selectedCount_one": "{{count}} selected",
+                "selectedCount_other": "{{count}} selected",
+                "titleError": "Give your exam a title.",
+                "minWordsError": "Pick at least two words.",
+                "cancel": "Cancel",
+                "submit": "Create exam"
+            }
+        },
+        "kana": {
+            "badge": "Kana",
+            "title": "Japanese Kana",
+            "description": "Hiragana and Katakana are the two Japanese syllabaries. Tap the tabs to switch.",
+            "tabs": {
+                "hiragana": "Hiragana",
+                "katakana": "Katakana"
+            },
+            "voiceless": "Voiceless",
+            "voiced": "Voiced",
+            "contracted": "Contracted",
+            "voice_label": "Voice",
+            "voice_preview": "Preview",
+            "voice_auto": "Auto",
+            "voice_choose": "Choose a voice",
+            "voice_ja": "Japanese",
+            "voice_volume": "Volume",
+            "take_quiz": "Take the Quiz",
+            "count": "kana",
+            "stats": {
+                "set": "In set",
+                "group": "In group",
+                "read": "Read"
+            },
+            "readProgress": "{{read}} / {{total}}",
+            "gridHint": "Tap a kana to hear it, or press Start reading to walk through the group from where you left off.",
+            "readStart": "Start reading",
+            "readContinue": "Continue reading",
+            "readStop": "Stop",
+            "nowReading": "now reading",
+            "upNext": "up next",
+            "pinToolbar": "Pin toolbar",
+            "unpinToolbar": "Unpin toolbar",
+            "sticky": "Sticky",
+            "stickyOn": "On",
+            "stickyOff": "Off",
+            "back_hub": "Back to Japanese"
+        },
+        "kanaDrill": {
+            "badge": "Kana Drill",
+            "title": "Kana Drill",
+            "intro": "Configure your quiz — pick which kana groups to include, how many questions, and how much time you get per question.",
+            "start": "Start Quiz",
+            "progress": "Question",
+            "score": "Score",
+            "promptLabel": "What is the reading of this kana?",
+            "promptLabelRomajiToChar": "Which kana matches this reading?",
+            "promptLabelListen": "Which kana did you hear?",
+            "listenAgain": "Listen again",
+            "correct": "Correct!",
+            "wrong": "Not quite.",
+            "timeout": "Time's up!",
+            "correctAnswer": "Correct answer",
+            "next": "Next Question",
+            "endGame": "End Game",
+            "resultTitle": "Quiz Complete!",
+            "result": {
+                "correctLabel": "Correct",
+                "wrongLabel": "Wrong",
+                "timeoutLabel": "Timeout",
+                "settingsSummary": "Settings",
+                "settingsButton": "Settings",
+                "exitButton": "Exit",
+                "playAgain": "Play Again",
+                "history": "Answer History",
+                "timeoutShort": "Timeout",
+                "yes": "Yes",
+                "no": "No"
+            },
+            "retry": "Try Again",
+            "back_characters": "Back to Kana",
+            "settings": {
+                "setsLabel": "Kana Sets",
+                "questionLabel": "Quiz Options",
+                "modeLabel": "Question Mode",
+                "mode": {
+                    "charToRomaji": "Kana → Reading",
+                    "charToRomajiHint": "See the kana, pick its romaji reading.",
+                    "romajiToChar": "Reading → Kana",
+                    "romajiToCharHint": "See the reading, pick the matching kana.",
+                    "listenToChar": "Listen → Kana",
+                    "listenToCharHint": "Hear the kana spoken, pick what you heard."
+                },
+                "sound": {
+                    "label": "Sound effect",
+                    "voice": "Aria",
+                    "voiceHint": "Play a spoken recording by Aria.",
+                    "tone": "Tone",
+                    "toneHint": "Play a simple synthesized beep.",
+                    "volume": "Sound volume"
+                },
+                "voiceLabel": "Voice",
+                "questionCount": "Number of questions",
+                "questions": "questions",
+                "choiceCount": "Answer choices",
+                "choices": "choices",
+                "timeLimit": "Time per question",
+                "autoAdvance": "Auto-advance to next question",
+                "useAll": "All kanas",
+                "groups": {
+                    "voiceless": "Voiceless",
+                    "voiced": "Voiced",
+                    "contracted": "Contracted"
+                },
+                "chars": "chars",
+                "totalChars": "Total kanas"
+            }
+        },
+        "vocab": {
+            "back_hub": "Back to hub",
+            "eyebrow": "Vocabulary",
+            "title": "Vocabulary",
+            "description": "Browse a deck's words with readings, meanings, and example sentences.",
+            "search": "Search decks",
+            "empty": "No decks yet.",
+            "words": "words",
+            "read": "Read",
+            "edit": "Edit",
+            "addWord": "Add word",
+            "delete": "Delete",
+            "save": "Save",
+            "cancel": "Cancel",
+            "word": "Word",
+            "reading": "Reading",
+            "meaning": "Meaning",
+            "example": "Example",
+            "required": "Word and meaning are required.",
+            "builtIn": "Built-in words can't be edited.",
+            "available": "{{count}} words total"
+        },
+        "render": {
+            "back_hub": "Back to hub",
+            "eyebrow": "Render",
+            "title": "Render",
+            "description": "Read short passages with furigana and a translation to check against.",
+            "search": "Search decks",
+            "empty": "No reading decks yet.",
+            "passages": "passages",
+            "read": "Read",
+            "showTranslation": "Show translation",
+            "hideTranslation": "Hide translation",
+            "speak": "Listen"
+        },
+        "vocabularyReview": {
+            "badge": "Review",
+            "title": "Vocabulary Review",
+            "description": "Flip the card to reveal the answer, then mark as Pass or Fail.",
+            "complete": "All caught up!",
+            "completeDescription": "No more words due for review right now.",
+            "exit": "Exit Review",
+            "wordsLeft": "words left",
+            "wordLeft": "word left",
+            "showAnswer": "Show answer",
+            "fail": "Fail",
+            "pass": "Pass",
+            "failHint": "fail",
+            "passHint": "pass",
+            "wordLabel": "Word",
+            "recallPrompt": "What does this word mean?",
+            "back_hub": "Back to Japanese"
+        },
+        "drill": {
+            "title": "Kana Drill"
+        },
+        "review": {
+            "title": "Vocabulary Review"
+        }
+    },
+    "english": {
+        "badge": "English",
+        "title": "Learn English",
+        "description": "English is a new track. The deck features below work today; the character set and drill are still being built.",
+        "nav": {
+            "render": {
+                "title": "Render",
+                "description": "Read short passages and check yourself against the translation.",
+                "action": "Start Reading"
+            },
+            "review": {
+                "title": "Vocabulary Review",
+                "description": "Review vocabulary with flashcards and spaced repetition.",
+                "action": "Start Review"
+            },
+            "exam": {
+                "title": "Vocabulary exam",
+                "description": "Test yourself with multiple-choice exam built from your vocabulary.",
+                "action": "Take an Exam"
+            },
+            "vocab": {
+                "title": "Browse Vocabulary",
+                "description": "Read through a deck's words with readings, meanings, and examples.",
+                "action": "Browse Words"
+            }
+        },
+        "vocab": {
+            "title": "Vocabulary"
+        },
+        "render": {
+            "title": "Render"
+        },
+        "review": {
+            "title": "Vocabulary Review"
+        },
+        "exam": {
+            "title": "Exam"
+        },
+        "sections": {
+            "learn": "Learn",
+            "practice": "Practice"
+        }
+    },
+    "settings": {
+        "title": "Settings",
+        "subtitle": "Brew ChocoMemo to your taste.",
+        "back": "Back",
+        "nav": {
+            "settings": "Settings",
+            "appearance": "Appearance",
+            "language": "Language",
+            "voice": "Voice & audio",
+            "interface": "Interface",
+            "account": "Account"
+        },
+        "appearance": {
+            "hint": "Pick the mood of your cup. A canvas for every craving."
+        },
+        "language": {
+            "hint": "Choose the language ChocoMemo speaks to you."
+        },
+        "voice": {
+            "hint": "The voice used to read kana and words aloud."
+        },
+        "interface": {
+            "hint": "Tune what frames your learning.",
+            "chromeLabel": "Show interface",
+            "chromeDescription": "Show or hide the navigation and footer."
+        },
+        "account": {
+            "signedInHint": "Signed in as {{name}}",
+            "signedOutHint": "Sign in to keep your learning story across devices.",
+            "goToProfile": "View profile",
+            "signIn": "Sign In"
+        }
+    },
+    "profile": {
+        "public": {
+            "notFoundTitle": "Profile not found",
+            "notFoundHint": "Nobody is using this name tag. It may have been changed or removed.",
+            "yourDashboard": "Go to your profile",
+            "viewPublic": "View public profile"
+        },
+        "title": "Profile",
+        "subtitle": "Your learning story with ChocoMemo.",
+        "back": "Back",
+        "anonymousName": "ChocoLearner",
+        "memberSince": "Member since",
+        "notSignedInTitle": "Not signed in",
+        "notSignedInHint": "Sign in to see your profile, edit your details, and track progress across devices.",
+        "signIn": "Sign In",
+        "stats": {
+            "label": "At a glance",
+            "kana": "Kana read",
+            "vocabulary": "Vocabulary",
+            "learned": "Words learned",
+            "due": "Due for review"
+        },
+        "identities": {
+            "label": "Linked Accounts",
+            "email": "Email",
+            "verified": "Verified",
+            "unverified": "Not verified",
+            "primary": "Primary",
+            "local": "Password",
+            "google": "Google",
+            "discord": "Discord",
+            "line": "LINE",
+            "x": "X (Twitter)",
+            "connected": "Connected",
+            "notConnected": "Not connected",
+            "comingSoon": "Coming soon",
+            "passwordSet": "Password is set",
+            "passwordNotSet": "No password set yet",
+            "connect": "Connect",
+            "disconnect": "Disconnect",
+            "disconnectSuccess": "Google account disconnected",
+            "disconnectError": "Couldn't disconnect this account ({{reason}})",
+            "disconnectTitle": "Disconnect Google account?",
+            "disconnectHint": "You'll be asked to confirm with Google before the link is removed.",
+            "lastSigninMethod": "You need at least one sign-in method left",
+            "disconnectSession": "Your session expired. Sign in again and retry.",
+            "disconnectVerifyFailed": "Couldn't verify your Google account. Try again.",
+            "disconnectCancelled": "Google sign-in was cancelled.",
+            "change": "Change"
+        },
+        "details": {
+            "name": "Name",
+            "namePlaceholder": "Your name",
+            "saving": "Saving…",
+            "saved": "Profile updated",
+            "updateError": "Could not update your profile.",
+            "editProfile": "Edit profile",
+            "nameTag": "Name tag",
+            "nameTagHint": "3-30 characters. English letters, numbers, underscores (_) or hyphens (-) only, no spaces. Your public handle.",
+            "nameTagTaken": "That name tag is already taken.",
+            "nameTagInvalid": "Name tag must be 3-30 characters: English letters, numbers, underscores or hyphens only (no spaces).",
+            "noNameTag": "No name tag yet",
+            "bio": "Bio",
+            "bioPlaceholder": "Tell people a little about yourself…"
+        },
+        "email": {
+            "label": "Change email",
+            "hint": "Update the email address you use to sign in.",
+            "placeholder": "you@example.com",
+            "save": "Save",
+            "saving": "Saving…",
+            "saved": "Email updated",
+            "updateError": "Could not update your email.",
+            "invalid": "Please enter a valid email address"
+        },
+        "otp": {
+            "confirmEmail": "Confirm new email",
+            "confirmPassword": "Confirm change password",
+            "sendCode": "Send code",
+            "sending": "Sending…",
+            "codeSent": "Code sent",
+            "codeResent": "Code resent",
+            "sendFailed": "Couldn't send the code",
+            "codeSentTo": "Enter the 6-digit code we sent to {{email}}.",
+            "verifySave": "Verify & save",
+            "verifying": "Verifying…",
+            "invalidCode": "Invalid or expired code",
+            "resendFailed": "Couldn't resend the code",
+            "back": "Back",
+            "emailSame": "New email must be different from the current one",
+            "emailTaken": "That email is already in use",
+            "wrongCurrentPassword": "Current password is incorrect"
+        },
+        "password": {
+            "label": "Change password",
+            "hint": "Your current password is required to set a new one.",
+            "setHint": "Set a password for your account. We'll email a code to confirm.",
+            "current": "Current password",
+            "currentPlaceholder": "Enter current password",
+            "currentRequired": "Current password is required",
+            "new": "New password",
+            "newPlaceholder": "Enter new password (min. 6 characters)",
+            "newRequired": "New password is required",
+            "tooShort": "New password must be at least 6 characters",
+            "confirm": "Confirm new password",
+            "confirmPlaceholder": "Re-enter new password",
+            "mismatch": "Passwords do not match",
+            "incorrect": "Current password is incorrect",
+            "change": "Change password",
+            "changing": "Changing…",
+            "changed": "Password changed successfully",
+            "changeError": "Could not change password",
+            "noPasswordYetHint": "This account doesn't have a password set yet."
+        },
+        "avatar": {
+            "source": "Profile picture",
+            "default": "Default",
+            "google": "Google",
+            "local": "Custom",
+            "updated": "Profile picture updated",
+            "updateError": "Could not update profile picture",
+            "invalidType": "Please select an image file",
+            "tooLarge": "Image must be smaller than 5MB",
+            "previewReady": "Preview ready — select a source to save",
+            "remove": "Remove",
+            "removeError": "Could not remove profile picture",
+            "cancel": "Cancel",
+            "saving": "Saving…",
+            "confirm": "Confirm",
+            "change": "Change profile picture"
+        }
+    }
+}

@@ -1,6 +1,5 @@
 // -Path: 'client/app/routes/page/japanese/render.$deckId.tsx'
 import type { Route } from './+types/render.$deckId';
-import RenderDeckReader from '~/pages/japanese/render/RenderDeckReader';
 
 export function meta({ params }: Route.MetaArgs) {
     return [
@@ -9,6 +8,6 @@ export function meta({ params }: Route.MetaArgs) {
     ];
 }
 
-export default function RenderDeckById() {
-    return <RenderDeckReader />;
+export default function JapaneseRenderById() {
+    return <></>;
 }

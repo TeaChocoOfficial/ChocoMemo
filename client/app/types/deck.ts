@@ -87,6 +87,7 @@ export interface CreateDeckData {
     type: DeckType;
     tags: string[];
     nsfw: boolean;
+    index: number;
     /** Ids of the deck's content, resolved according to `type`: word ids for
      *  'vocab'/'review', passage ids for 'render', question ids for 'exam'.
      *  The content itself is never inlined on the deck, so a list only carries

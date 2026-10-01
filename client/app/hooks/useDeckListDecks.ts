@@ -9,14 +9,14 @@
 // Kept out of `DeckList` so the page component stays about layout: this is
 // pure data shaping with no JSX and no i18n.
 import { useMemo } from 'react';
+import type { Languages } from '~/data/language';
 import { useLangText } from '~/hooks/useLangText';
+import type { DeckListQuery } from '~/types/deckList';
+import type { DeckData, DeckType } from '~/types/deck';
 import { useDecksForTab } from '~/hooks/useDecksForTab';
 import { useDeckSourceReady } from '~/hooks/useDeckSourceReady';
 import { useIncrementalList } from '~/hooks/useIncrementalList';
 import { collectDeckTags, sortDecks } from '~/utils/deckListQuery';
-import type { DeckData, DeckType } from '~/types/deck';
-import type { DeckListQuery } from '~/types/deckList';
-import type { Languages } from '~/data/language';
 
 export interface DeckListResult {
     /** The page of cards to render right now. */
@@ -69,9 +69,8 @@ export function useDeckListDecks(
 
         // Tags are a narrowing filter, never a widening one — a deck must
         // carry every selected tag to survive.
-        if (query.tags.length > 0) {
+        if (query.tags.length > 0)
             result = result.filter((deck) => query.tags.every((tag) => deck.tags.includes(tag)));
-        }
 
         // Tags are the only place a deck says what it is about when it has no
         // description, so they belong in the search text too.
@@ -105,6 +104,9 @@ export function useDeckListDecks(
         isNarrowedEmpty: decks.length > 0 && matched.length === 0,
         sentinelRef: hasMore ? sentinelRef : undefined,
         isDefault:
-            !query.search.trim() && !query.nsfw && query.sort === 'default' && query.tags.length === 0,
+            !query.search.trim() &&
+            !query.nsfw &&
+            query.sort === 'default' &&
+            query.tags.length === 0,
     };
 }

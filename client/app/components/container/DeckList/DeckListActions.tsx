@@ -10,19 +10,14 @@
 // The table is deliberately boring. Adding a track means adding a row here,
 // not threading another condition through the options bar.
 import type { ReactNode } from 'react';
+import { Languages } from '~/data/language';
+import type { DeckType } from '~/types/deck';
 import { useTranslation } from 'react-i18next';
 import { FaLayerGroup } from 'react-icons/fa6';
 import DeckImportButton from './DeckImportButton';
-import AddCustomExamButton from '~/pages/japanese/exam/AddCustomExamButton';
-import AddCustomDeckButton from '~/pages/japanese/review/AddCustomDeckButton';
-import { Languages } from '~/data/language';
-import type { DeckType } from '~/types/deck';
 
 /** The controls the options bar renders for a page that can add to its list. */
 export interface DeckListActions {
-    /** The compose control. When absent the toolbar has no action menu, and
-     *  `import` is rendered inline in the row instead. */
-    create: ReactNode | null;
     /** Label and icon for the trigger that opens `create`. Only read when
      *  `create` is set. */
     createLabel: string;
@@ -42,10 +37,7 @@ const IMPORTABLE: readonly DeckType[] = ['vocab', 'exam'];
  * route nor an import format — the options bar then renders no action control
  * at all, rather than a menu with nothing in it.
  */
-export function useDeckListActions(
-    language: Languages,
-    type: DeckType,
-): DeckListActions | null {
+export function useDeckListActions(language: Languages, type: DeckType): DeckListActions | null {
     const { t } = useTranslation();
 
     const canImport = IMPORTABLE.includes(type);
@@ -57,17 +49,8 @@ export function useDeckListActions(
     if (!canImport && !canCreate) return null;
 
     return {
-        create: canCreate ? (
-            type === 'exam' ? (
-                <AddCustomExamButton />
-            ) : (
-                <AddCustomDeckButton />
-            )
-        ) : null,
         createLabel: canCreate ? t(`deck.actions.create.${type}`) : t('deck.actions.importOnly'),
         createIcon: <FaLayerGroup className='h-3.5 w-3.5' />,
-        import: canImport ? (
-            <DeckImportButton language={language} type={type} />
-        ) : null,
+        import: canImport ? <DeckImportButton language={language} type={type} /> : null,
     };
 }

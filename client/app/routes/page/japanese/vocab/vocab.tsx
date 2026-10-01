@@ -1,6 +1,7 @@
 // -Path: 'client/app/routes/page/japanese/vocabulary.tsx'
+import { Languages } from '~/data/language';
 import type { Route } from './+types/vocab';
-import VocabularyDeckList from '~/pages/japanese/vocab/DeckList';
+import DeckListPage from '~/components/page/DeckListPage';
 
 export function meta({}: Route.MetaArgs) {
     return [
@@ -9,6 +10,6 @@ export function meta({}: Route.MetaArgs) {
     ];
 }
 
-export default function Vocabulary() {
-    return <VocabularyDeckList />;
+export default function JapaneseVocab() {
+    return <DeckListPage type='vocab' language={Languages.ja} />;
 }
