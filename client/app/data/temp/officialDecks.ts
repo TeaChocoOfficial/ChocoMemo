@@ -31,6 +31,7 @@ function renderDeckToDeck(deck: RenderDeck): DeckData {
         nsfw: deck.nsfw,
         contentIds: deck.passageIds,
         meta: shippedDeckMeta(),
+        targetLang: Languages.ja,
     };
 }
 
@@ -47,6 +48,7 @@ function examSetToDeck(set: ExamSet): DeckData {
         nsfw: false,
         contentIds: set.questions.map((question) => question.id),
         meta: shippedDeckMeta(),
+        targetLang: Languages.ja,
     };
 }
 

@@ -12,8 +12,8 @@ import type { IconType } from 'react-icons';
 import { Languages, languages } from '~/data/language';
 
 export type NavItem = {
-    label: string;
     to: string;
+    label: string;
     icon: IconType;
     /** Set for a track hub, which shows its native glyph instead of an
      *  icon. Feature links leave it undefined. */
@@ -34,7 +34,7 @@ type Translate = (key: string) => string;
  * and the i18n namespace `${language}.${type}` lines up with the list copy. */
 function featureItems(language: Languages, t: Translate): NavItem[] {
     const item = (type: string, to: string, icon: IconType): NavItem => ({
-        label: t(`${language}.${type}.title`),
+        label: t(`${language}.nav.${type}.title`),
         to,
         icon,
     });

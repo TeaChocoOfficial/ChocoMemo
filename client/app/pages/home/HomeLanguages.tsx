@@ -44,7 +44,7 @@ export default function HomeLanguages() {
                                     >
                                         {language.glyph}
                                     </span>
-                                    {language.available ? (
+                                    {language.status === 'ready' ? (
                                         <span className='mt-1 h-2 w-2 shrink-0 rounded-full bg-success' />
                                     ) : (
                                         <FaLock className='mt-1 h-3.5 w-3.5 shrink-0 text-surface-muted' />
@@ -72,7 +72,7 @@ export default function HomeLanguages() {
                                 transition={{ duration: 0.5, delay: index * 0.07 }}
                                 className='h-full'
                             >
-                                {language.available ? (
+                                {language.status === 'ready' ? (
                                     <Link
                                         to='/japanese'
                                         className='group flex h-full flex-col rounded-sm border border-line bg-surface p-5 transition-colors duration-200 hover:border-primary hover:bg-surface-overlay'

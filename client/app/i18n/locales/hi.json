@@ -3,11 +3,11 @@
         "home": "होम",
         "languages": "भाषाएँ",
         "japanese": "जापानी",
+        "english": "अंग्रेज़ी",
         "menu": "मेनू खोलें",
         "settings": "सेटिंग्स",
         "language": "भाषा",
-        "theme": "थीम",
-        "english": "English"
+        "theme": "थीम"
     },
     "chrome": {
         "hide": "छिपाएँ",
@@ -132,6 +132,7 @@
         }
     },
     "common": {
+        "loading": "Loading…",
         "error": {
             "oops": "ओह!",
             "unexpected": "कोई अप्रत्याशित त्रुटि हुई।",
@@ -139,15 +140,14 @@
         },
         "tabs": {
             "local": "स्थानीय",
+            "official": "आधिकारिक",
             "cloud": "क्लाउड",
-            "community": "समुदाय",
-            "official": "आधिकारिक"
+            "community": "समुदाय"
         },
         "comingSoon": {
             "cloud": "क्लाउड सिंक जल्द आ रहा है, साइन इन आवश्यक है",
             "community": "समुदाय के सेट ब्राउज़ करना अभी उपलब्ध नहीं है"
         },
-        "loading": "Loading…",
         "select": "चुनें"
     },
     "notfound": {
@@ -193,6 +193,229 @@
         },
         "back_language": "भाषा चयन पर वापस जाएँ"
     },
+    "deck": {
+        "type": {
+            "vocab": "शब्दावली",
+            "render": "पठन",
+            "review": "समीक्षा",
+            "exam": "परीक्षा",
+            "drill": "अभ्यास"
+        },
+        "source": {
+            "official": "आधिकारिक",
+            "community": "समुदाय",
+            "local": "आपके",
+            "cloud": "क्लाउड"
+        },
+        "visibility": {
+            "public": "सार्वजनिक",
+            "unlisted": "सूचीबद्ध नहीं",
+            "private": "निजी"
+        },
+        "search": "डेक खोजें",
+        "searchAria": "नाम से डेक खोजें",
+        "searchClear": "खोज साफ़ करें",
+        "tallyAria": "स्रोत के अनुसार डेक",
+        "resultCount": "{{total}} में से {{matched}} डेक दिख रहे हैं",
+        "loading": "डेक लोड हो रहे हैं…",
+        "itemCount_one": "{{count}} आइटम",
+        "itemCount_other": "{{count}} आइटम",
+        "byAuthor": "{{author}} द्वारा",
+        "openAria": "{{name}} खोलें",
+        "export": "निर्यात",
+        "exportAria": "डेक निर्यात करें",
+        "download": "डाउनलोड",
+        "downloadAria": "डेक डाउनलोड करें",
+        "delete": "हटाएँ",
+        "deleteAria": "डेक हटाएँ",
+        "start": "शुरू करें",
+        "list": {
+            "backHub": "{{language}} पर वापस जाएँ"
+        },
+        "empty": {
+            "local": {
+                "title": "आपका कोई डेक अभी नहीं है",
+                "body": "आपके बनाए या आयात किए डेक यहाँ आएँगे। किसी आधिकारिक डेक से शुरू करें।",
+                "action": "आधिकारिक डेक देखें"
+            },
+            "official": {
+                "title": "इस प्रकार का कोई आधिकारिक डेक अभी नहीं है",
+                "body": "आधिकारिक डेक ऐप के साथ आते हैं। इस प्रकार का अभी कोई प्रकाशित नहीं हुआ।"
+            },
+            "filtered": {
+                "title": "इन फ़िल्टरों से कुछ मेल नहीं खाता",
+                "body": "इस टैब में कोई डेक आपकी खोज, टैग और विकल्पों से मेल नहीं खाता। कोई एक ढीला करें।",
+                "action": "फ़िल्टर हटाएँ"
+            },
+            "cloud": {
+                "title": "क्लाउड सिंक जल्द आ रहा है",
+                "body": "साइन इन करें और आपके डेक हर डिवाइस पर आपके साथ रहेंगे।",
+                "action": "साइन इन करें"
+            },
+            "cloudSignedIn": {
+                "title": "क्लाउड सिंक जल्द आ रहा है",
+                "body": "आप साइन इन हैं। डिवाइसों के बीच डेक सिंक कराना जारी है।"
+            },
+            "community": {
+                "title": "अभी कोई सामुदायिक डेक नहीं है",
+                "body": "दूसरे शिक्षार्थियों द्वारा प्रकाशित डेक समुदाय खुलने पर यहाँ दिखेंगे।"
+            }
+        },
+        "noResults": {
+            "title": "इस खोज से कुछ नहीं मिला",
+            "body": "कोई छोटा शब्द आज़माएँ, या इस टैब की सब चीज़ें देखने के लिए खोज साफ़ करें।"
+        },
+        "details": {
+            "notFound": "वह डेक नहीं मिला।",
+            "back": "डेक सूची पर वापस जाएँ",
+            "contents": "इसमें क्या है",
+            "version": "संस्करण",
+            "updated": "अद्यतन",
+            "noSession": "{{language}} डेक के सत्र अभी तैयार नहीं हैं।"
+        },
+        "options": {
+            "sortAria": "डेक क्रमबद्ध करें",
+            "sort": {
+                "default": "मूल क्रम",
+                "name": "नाम A–Z",
+                "recent": "हाल में अद्यतन",
+                "popular": "सर्वाधिक डाउनलोड",
+                "size": "सबसे बड़े"
+            },
+            "density": {
+                "comfortable": "फैला हुआ",
+                "compact": "सघन"
+            },
+            "nsfw": {
+                "label": "संवेदनशील",
+                "on": "संवेदनशील डेक दिख रहे हैं",
+                "off": "संवेदनशील डेक छिपे हैं"
+            },
+            "importHeading": "आयात",
+            "importHint": "पहले निर्यात किया गया डेक फ़ाइल पढ़ता है।",
+            "importUnavailable": "इस प्रकार के डेक के लिए अभी फ़ाइल प्रारूप नहीं है।"
+        },
+        "tags": {
+            "clear": "टैग हटाएँ",
+            "remove": "टैग {{tag}} हटाएँ"
+        },
+        "actions": {
+            "create": {
+                "vocab": "नया डेक",
+                "exam": "नई परीक्षा"
+            },
+            "importOnly": "आयात"
+        },
+        "import": {
+            "action": "डेक फ़ाइल आयात करें",
+            "invalidDeck": "यह फ़ाइल एक मान्य डेक नहीं है।",
+            "invalidExam": "यह फ़ाइल एक मान्य परीक्षा सेट नहीं है।",
+            "invalidJson": "इस फ़ाइल को JSON के रूप में नहीं पढ़ा जा सका।"
+        },
+        "viewAuthor": "{{author}} की प्रोफ़ाइल देखें",
+        "edit": {
+            "listTitle": "डेक",
+            "panelTitle": "संपादक",
+            "layoutTitle": "लेआउट",
+            "spacedLabel": "अंतराल वाले पैनल",
+            "spacedHint": "डॉक किए गए पैनलों के बीच थोड़ा अंतर छोड़ें।",
+            "statusTitle": "स्थिति",
+            "previewTitle": "पूर्वावलोकन",
+            "inspectorTitle": "निरीक्षक",
+            "loading": "आपके डेक लोड हो रहे हैं…",
+            "empty": "अभी संपादित करने के लिए कोई डेक नहीं है।",
+            "previewEmpty": "इस डेक में अभी कोई सामग्री नहीं है।",
+            "selectPrompt": "इसका विवरण संपादित करने के लिए एक डेक चुनें।",
+            "nameLabel": "नाम",
+            "namePlaceholder": "डेक का नाम",
+            "descriptionLabel": "विवरण",
+            "descriptionPlaceholder": "यह डेक किस बारे में है?",
+            "tagsLabel": "टैग",
+            "tagsPlaceholder": "कॉमा से अलग किए गए टैग",
+            "nsfwLabel": "NSFW के रूप में चिह्नित करें",
+            "save": "परिवर्तन सहेजें",
+            "delete": "डेक हटाएँ",
+            "dragHandle": "क्रम बदलने के लिए खींचें",
+            "mobileHint": "नीचे डेक का क्रम बदलें और संपादित करें। डेक मैनेजर का उपयोग करने के लिए चौड़ी स्क्रीन पर खोलें।",
+            "filters": "प्रकार के अनुसार डेक फ़िल्टर करें",
+            "filterAll": "सभी डेक",
+            "typeLabel": "प्रकार",
+            "sourceLabel": "स्रोत",
+            "itemsLabel": "आइटम",
+            "statusDecks": "{{visible}} / {{total}} डेक",
+            "noneSelected": "कोई डेक चयनित नहीं",
+            "addPanel": "पैनल जोड़ें",
+            "views": "संपादक दृश्य",
+            "viewAll": "सभी डेक",
+            "viewFavourites": "पसंदीदा",
+            "viewRecent": "हाल का"
+        }
+    },
+    "footer": {
+        "tagline": "एक गर्मजोशी भरा तरीका, बहुत सारे विषय आपकी जापानी को घूँट-घूँट करके पीने के लिए।",
+        "explore": "खोजें",
+        "learn": "हम क्या सिखाते हैं",
+        "rights": "TeaChoco · सर्वाधिकार सुरक्षित।",
+        "languages": {
+            "ja": "जापानी",
+            "en": "अंग्रेज़ी",
+            "ko": "कोरियाई",
+            "th": "थाई"
+        }
+    },
+    "auth": {
+        "signIn": "साइन इन करें",
+        "signUp": "खाता बनाएँ",
+        "signOut": "साइन आउट करें",
+        "email": "ईमेल",
+        "password": "पासवर्ड",
+        "name": "नाम",
+        "nameTag": "यूज़रनेम",
+        "nameTagHint": "3-30 अक्षर। केवल अंग्रेज़ी अक्षर, अंक, अंडरस्कोर (_) या हाइफ़न (-), कोई स्पेस नहीं। आपका सार्वजनिक यूज़रनेम।",
+        "confirmPassword": "पासवर्ड की पुष्टि करें",
+        "forgotPassword": "पासवर्ड भूल गए?",
+        "resetPassword": "पासवर्ड रीसेट करें",
+        "backToSignIn": "साइन इन पर वापस जाएँ",
+        "orContinueWith": "या इसके साथ जारी रखें",
+        "google": "Google",
+        "discord": "Discord",
+        "line": "LINE",
+        "x": "X (Twitter)",
+        "noAccount": "खाता नहीं है?",
+        "hasAccount": "पहले से खाता है?",
+        "verifyEmail": "ईमेल सत्यापित करें",
+        "verificationCode": "सत्यापन कोड",
+        "verifyHint": "{{email}} पर भेजा गया 6 अंकों का कोड दर्ज करें।",
+        "verify": "सत्यापित करें",
+        "otpSent": "हमने {{email}} पर एक कोड भेजा।",
+        "otpResent": "एक नया कोड भेज दिया गया।",
+        "verifySuccess": "स्वागत है, {{name}}!",
+        "resendCode": "कोड फिर से भेजें",
+        "resendInSeconds": "{{seconds}} सेकंड में फिर से भेजें",
+        "profile": "प्रोफ़ाइल",
+        "settings": "सेटिंग्स",
+        "welcome": "स्वागत है, {{name}}!",
+        "error": {
+            "invalidCredentials": "गलत ईमेल या पासवर्ड",
+            "emailInUse": "ईमेल पहले से उपयोग में है",
+            "nameTagTaken": "यह यूज़रनेम पहले से लिया जा चुका है।",
+            "nameTagInvalid": "यूज़रनेम 3-30 अक्षरों का होना चाहिए: केवल अंग्रेज़ी अक्षर, अंक, अंडरस्कोर या हाइफ़न (कोई स्पेस नहीं)।",
+            "passwordMismatch": "पासवर्ड मेल नहीं खाते।",
+            "invalidOtp": "अमान्य या समाप्त कोड। कृपया फिर से प्रयास करें।",
+            "resendFailed": "नया कोड भेजा नहीं जा सका। कृपया फिर से प्रयास करें।",
+            "generic": "एक त्रुटि हुई",
+            "emailNotFound": "No account found with that email.",
+            "resetFailed": "Password reset failed. Please try again.",
+            "oauth": "Sign-in failed: {{reason}}"
+        },
+        "resetCodeSent": "We sent a reset code to {{email}}.",
+        "resetHint": "Enter the code sent to {{email}} and choose a new password.",
+        "forgotHint": "Enter your account email and we'll send you a reset code.",
+        "newPassword": "New Password",
+        "updatePassword": "Update Password",
+        "resetSuccess": "Password updated. Please sign in.",
+        "sendResetCode": "रीसेट कोड भेजें"
+    },
     "japanese": {
         "badge": "जापानी",
         "title": "जापानी सीखें",
@@ -210,7 +433,8 @@
             "vocabulary": "शब्दावली",
             "vocabularyHint": "अपना शब्द बैंक बढ़ाएँ और इसे अंतरालित समय-सारणी पर समीक्षा करें।",
             "learn": "सीखें",
-            "practice": "अभ्यास करें"
+            "practice": "अभ्यास करें",
+            "manage": "प्रबंधन"
         },
         "nav": {
             "kana": {
@@ -218,15 +442,15 @@
                 "description": "सभी हीरागाना और काताकाना उनके उच्चारण के साथ ब्राउज़ करें।",
                 "action": "काना देखें"
             },
-            "render": {
-                "title": "Render",
-                "description": "Read short passages with furigana and check yourself against the translation.",
-                "action": "Start Reading"
-            },
             "vocab": {
                 "title": "शब्दावली",
                 "description": "शब्द बढ़ाएँ और अंतराल पर अभ्यास करें।",
                 "action": "शब्द देखें"
+            },
+            "render": {
+                "title": "Render",
+                "description": "Read short passages with furigana and check yourself against the translation.",
+                "action": "Start Reading"
             },
             "drill": {
                 "title": "काना ड्रिल",
@@ -242,7 +466,17 @@
                 "title": "शब्दावली परीक्षा",
                 "description": "अपनी शब्दावली से बनी बहुविकल्पीय परीक्षा से खुद को जाँचें।",
                 "action": "परीक्षा दें"
+            },
+            "edit": {
+                "title": "डेक संपादित करें",
+                "description": "अपने संग्रह के डेक का नाम बदलें, क्रम बदलें या उन्हें हटाएँ।",
+                "action": "डेक संपादित करें"
             }
+        },
+        "edit": {
+            "title": "डेक संपादित करें",
+            "description": "अपने संग्रह के डेक प्रबंधित करें। संपादक जल्द आ रहा है।",
+            "back": "जापानी पर वापस"
         },
         "decks": {
             "title": "शब्दावली समीक्षा डेक",
@@ -251,8 +485,26 @@
             "startReview": "समीक्षा शुरू करें",
             "due": "देय",
             "byAuthor": "द्वारा {{author}}",
+            "viewAuthor": "{{author}} की प्रोफ़ाइल देखें",
             "download": "डाउनलोड",
             "note": "समीक्षा",
+            "open": "Open",
+            "itemCount_one": "{{count}} item",
+            "itemCount_other": "{{count}} items",
+            "favourite": "पसंदीदा में जोड़ें",
+            "unfavourite": "पसंदीदा से हटाएँ",
+            "export": "Export",
+            "exportAria": "Export deck",
+            "downloadAria": "Download deck",
+            "delete": "Delete",
+            "deleteAria": "Delete deck",
+            "type": {
+                "vocab": "Vocabulary",
+                "render": "Reading",
+                "review": "Review",
+                "exam": "Exam",
+                "drill": "Drill"
+            },
             "ready": "तैयार",
             "words": "शब्द",
             "search": "डेक खोजें...",
@@ -281,30 +533,12 @@
                 "custom": "मेरे शब्द",
                 "cloud": "क्लाउड",
                 "downloaded": "डाउनलोड किया गया"
-            },
-            "open": "Open",
-            "itemCount_one": "{{count}} item",
-            "itemCount_other": "{{count}} items",
-            "export": "Export",
-            "exportAria": "Export deck",
-            "downloadAria": "Download deck",
-            "delete": "Delete",
-            "deleteAria": "Delete deck",
-            "type": {
-                "vocab": "Vocabulary",
-                "render": "Reading",
-                "review": "Review",
-                "exam": "Exam",
-                "drill": "Drill"
-            },
-            "viewAuthor": "{{author}} की प्रोफ़ाइल देखें",
-            "favourite": "पसंदीदा में जोड़ें",
-            "unfavourite": "पसंदीदा से हटाएँ"
+            }
         },
         "exam": {
             "title": "परीक्षा",
-            "import": "परीक्षा सेट आयात करें",
             "addCustom": "कस्टम सेट जोड़ें",
+            "import": "परीक्षा सेट आयात करें",
             "importErrorJson": "इस फ़ाइल को JSON के रूप में नहीं पढ़ा जा सका।",
             "form": {
                 "title": "कस्टम परीक्षा सेट बनाएँ",
@@ -315,12 +549,12 @@
                 "descriptionPlaceholder": "इस सेट के बारे में एक संक्षिप्त नोट",
                 "wordsLabel": "शामिल करने के लिए शब्द",
                 "wordsPlaceholder": "शब्द खोजें...",
+                "selectedCount_one": "{{count}} चयनित",
+                "selectedCount_other": "{{count}} चयनित",
                 "titleError": "अपने सेट को एक नाम दें।",
                 "minWordsError": "कम से कम दो शब्द चुनें।",
                 "cancel": "रद्द करें",
-                "submit": "सेट बनाएँ",
-                "selectedCount_one": "{{count}} चयनित",
-                "selectedCount_other": "{{count}} चयनित"
+                "submit": "सेट बनाएँ"
             }
         },
         "kana": {
@@ -432,7 +666,6 @@
             }
         },
         "vocab": {
-            "available": "{{count}} शब्द कुल",
             "back_hub": "Back to hub",
             "eyebrow": "Vocabulary",
             "title": "Vocabulary",
@@ -451,7 +684,21 @@
             "meaning": "Meaning",
             "example": "Example",
             "required": "Word and meaning are required.",
-            "builtIn": "Built-in words can't be edited."
+            "builtIn": "Built-in words can't be edited.",
+            "available": "{{count}} शब्द कुल"
+        },
+        "render": {
+            "back_hub": "Back to hub",
+            "eyebrow": "Render",
+            "title": "Render",
+            "description": "Read short passages with furigana and a translation to check against.",
+            "search": "Search decks",
+            "empty": "No reading decks yet.",
+            "passages": "passages",
+            "read": "Read",
+            "showTranslation": "Show translation",
+            "hideTranslation": "Hide translation",
+            "speak": "Listen"
         },
         "vocabularyReview": {
             "badge": "समीक्षा",
@@ -471,19 +718,6 @@
             "recallPrompt": "इस शब्द का क्या अर्थ है?",
             "back_hub": "जापानी पर वापस"
         },
-        "render": {
-            "back_hub": "Back to hub",
-            "eyebrow": "Render",
-            "title": "Render",
-            "description": "Read short passages with furigana and a translation to check against.",
-            "search": "Search decks",
-            "empty": "No reading decks yet.",
-            "passages": "passages",
-            "read": "Read",
-            "showTranslation": "Show translation",
-            "hideTranslation": "Hide translation",
-            "speak": "Listen"
-        },
         "drill": {
             "title": "Kana Drill"
         },
@@ -491,70 +725,59 @@
             "title": "Vocabulary Review"
         }
     },
-    "footer": {
-        "tagline": "एक गर्मजोशी भरा तरीका, बहुत सारे विषय आपकी जापानी को घूँट-घूँट करके पीने के लिए।",
-        "explore": "खोजें",
-        "learn": "हम क्या सिखाते हैं",
-        "rights": "TeaChoco · सर्वाधिकार सुरक्षित।",
-        "languages": {
-            "ja": "जापानी",
-            "en": "अंग्रेज़ी",
-            "ko": "कोरियाई",
-            "th": "थाई"
-        }
-    },
-    "auth": {
-        "signIn": "साइन इन करें",
-        "signUp": "खाता बनाएँ",
-        "signOut": "साइन आउट करें",
-        "email": "ईमेल",
-        "password": "पासवर्ड",
-        "name": "नाम",
-        "nameTag": "यूज़रनेम",
-        "nameTagHint": "3-30 अक्षर। केवल अंग्रेज़ी अक्षर, अंक, अंडरस्कोर (_) या हाइफ़न (-), कोई स्पेस नहीं। आपका सार्वजनिक यूज़रनेम।",
-        "confirmPassword": "पासवर्ड की पुष्टि करें",
-        "forgotPassword": "पासवर्ड भूल गए?",
-        "resetPassword": "पासवर्ड रीसेट करें",
-        "backToSignIn": "साइन इन पर वापस जाएँ",
-        "orContinueWith": "या इसके साथ जारी रखें",
-        "google": "Google",
-        "discord": "Discord",
-        "noAccount": "खाता नहीं है?",
-        "hasAccount": "पहले से खाता है?",
-        "verifyEmail": "ईमेल सत्यापित करें",
-        "verificationCode": "सत्यापन कोड",
-        "verifyHint": "{{email}} पर भेजा गया 6 अंकों का कोड दर्ज करें।",
-        "verify": "सत्यापित करें",
-        "otpSent": "हमने {{email}} पर एक कोड भेजा।",
-        "otpResent": "एक नया कोड भेज दिया गया।",
-        "verifySuccess": "स्वागत है, {{name}}!",
-        "resendCode": "कोड फिर से भेजें",
-        "resendInSeconds": "{{seconds}} सेकंड में फिर से भेजें",
-        "profile": "प्रोफ़ाइल",
-        "settings": "सेटिंग्स",
-        "welcome": "स्वागत है, {{name}}!",
-        "error": {
-            "invalidCredentials": "गलत ईमेल या पासवर्ड",
-            "emailInUse": "ईमेल पहले से उपयोग में है",
-            "nameTagTaken": "यह यूज़रनेम पहले से लिया जा चुका है।",
-            "nameTagInvalid": "यूज़रनेम 3-30 अक्षरों का होना चाहिए: केवल अंग्रेज़ी अक्षर, अंक, अंडरस्कोर या हाइफ़न (कोई स्पेस नहीं)।",
-            "passwordMismatch": "पासवर्ड मेल नहीं खाते।",
-            "invalidOtp": "अमान्य या समाप्त कोड। कृपया फिर से प्रयास करें।",
-            "resendFailed": "नया कोड भेजा नहीं जा सका। कृपया फिर से प्रयास करें।",
-            "generic": "एक त्रुटि हुई",
-            "emailNotFound": "No account found with that email.",
-            "resetFailed": "Password reset failed. Please try again.",
-            "oauth": "Sign-in failed: {{reason}}"
+    "english": {
+        "badge": "अंग्रेज़ी",
+        "title": "अंग्रेज़ी सीखें",
+        "description": "अंग्रेज़ी एक नया ट्रैक है। नीचे दी गई डेक सुविधाएँ अब काम करती हैं; कैरेक्टर सेट और ड्रिल पर काम जारी है।",
+        "nav": {
+            "render": {
+                "title": "पठन",
+                "description": "छोटे पाठ पढ़ें और अनुवाद से मिलान करें।",
+                "action": "पठन शुरू करें"
+            },
+            "review": {
+                "title": "शब्दावली समीक्षा",
+                "description": "फ़्लैशकार्ड और अंतरित पुनरावृत्ति से शब्दावली दोहराएँ।",
+                "action": "समीक्षा शुरू करें"
+            },
+            "exam": {
+                "title": "शब्दावली परीक्षा",
+                "description": "अपनी शब्दावली से बनी बहुविकल्पीय परीक्षा से खुद को जाँचें।",
+                "action": "परीक्षा दें"
+            },
+            "vocab": {
+                "title": "शब्दावली देखें",
+                "description": "उच्चारण, अर्थ और उदाहरण के साथ डेक के शब्द पढ़ें।",
+                "action": "शब्द देखें"
+            },
+            "edit": {
+                "title": "डेक संपादित करें",
+                "description": "अपने संग्रह के डेक का नाम बदलें, क्रम बदलें या उन्हें हटाएँ।",
+                "action": "डेक संपादित करें"
+            }
         },
-        "resetCodeSent": "We sent a reset code to {{email}}.",
-        "resetHint": "Enter the code sent to {{email}} and choose a new password.",
-        "forgotHint": "Enter your account email and we'll send you a reset code.",
-        "newPassword": "New Password",
-        "updatePassword": "Update Password",
-        "resetSuccess": "Password updated. Please sign in.",
-        "line": "LINE",
-        "x": "X (Twitter)",
-        "sendResetCode": "रीसेट कोड भेजें"
+        "edit": {
+            "title": "डेक संपादित करें",
+            "description": "अपने संग्रह के डेक प्रबंधित करें। संपादक जल्द आ रहा है।",
+            "back": "अंग्रेज़ी पर वापस"
+        },
+        "vocab": {
+            "title": "शब्दावली"
+        },
+        "render": {
+            "title": "पठन"
+        },
+        "review": {
+            "title": "शब्दावली समीक्षा"
+        },
+        "exam": {
+            "title": "परीक्षा"
+        },
+        "sections": {
+            "learn": "सीखें",
+            "practice": "अभ्यास करें",
+            "manage": "प्रबंधन"
+        }
     },
     "settings": {
         "title": "सेटिंग्स",
@@ -590,6 +813,12 @@
         }
     },
     "profile": {
+        "public": {
+            "notFoundTitle": "Profile not found",
+            "notFoundHint": "Nobody is using this name tag. It may have been changed or removed.",
+            "yourDashboard": "Go to your profile",
+            "viewPublic": "View public profile"
+        },
         "title": "प्रोफ़ाइल",
         "subtitle": "ChocoMemo के साथ आपकी सीख की कहानी।",
         "back": "वापस",
@@ -713,194 +942,6 @@
             "saving": "सहेजा जा रहा है…",
             "confirm": "पुष्टि करें",
             "change": "प्रोफ़ाइल फ़ोटो बदलें"
-        },
-        "public": {
-            "notFoundTitle": "Profile not found",
-            "notFoundHint": "Nobody is using this name tag. It may have been changed or removed.",
-            "yourDashboard": "Go to your profile",
-            "viewPublic": "View public profile"
         }
-    },
-    "english": {
-        "badge": "अंग्रेज़ी",
-        "title": "अंग्रेज़ी सीखें",
-        "description": "अंग्रेज़ी एक नया ट्रैक है। नीचे दी गई डेक सुविधाएँ अब काम करती हैं; कैरेक्टर सेट और ड्रिल पर काम जारी है।",
-        "nav": {
-            "render": {
-                "title": "पठन",
-                "description": "छोटे पाठ पढ़ें और अनुवाद से मिलान करें।",
-                "action": "पठन शुरू करें"
-            },
-            "review": {
-                "title": "शब्दावली समीक्षा",
-                "description": "फ़्लैशकार्ड और अंतरित पुनरावृत्ति से शब्दावली दोहराएँ।",
-                "action": "समीक्षा शुरू करें"
-            },
-            "exam": {
-                "title": "शब्दावली परीक्षा",
-                "description": "अपनी शब्दावली से बनी बहुविकल्पीय परीक्षा से खुद को जाँचें।",
-                "action": "परीक्षा दें"
-            },
-            "vocab": {
-                "title": "शब्दावली देखें",
-                "description": "उच्चारण, अर्थ और उदाहरण के साथ डेक के शब्द पढ़ें।",
-                "action": "शब्द देखें"
-            }
-        },
-        "vocab": {
-            "title": "शब्दावली"
-        },
-        "render": {
-            "title": "पठन"
-        },
-        "review": {
-            "title": "शब्दावली समीक्षा"
-        },
-        "exam": {
-            "title": "परीक्षा"
-        },
-        "sections": {
-            "learn": "सीखें",
-            "practice": "अभ्यास करें"
-        }
-    },
-    "deck": {
-        "type": {
-            "vocab": "शब्दावली",
-            "render": "पठन",
-            "review": "समीक्षा",
-            "exam": "परीक्षा",
-            "drill": "अभ्यास"
-        },
-        "source": {
-            "official": "आधिकारिक",
-            "community": "समुदाय",
-            "local": "आपके",
-            "cloud": "क्लाउड"
-        },
-        "visibility": {
-            "public": "सार्वजनिक",
-            "unlisted": "सूचीबद्ध नहीं",
-            "private": "निजी"
-        },
-        "search": "डेक खोजें",
-        "searchAria": "नाम से डेक खोजें",
-        "searchClear": "खोज साफ़ करें",
-        "tallyAria": "स्रोत के अनुसार डेक",
-        "resultCount": "{{total}} में से {{matched}} डेक दिख रहे हैं",
-        "loading": "डेक लोड हो रहे हैं…",
-        "itemCount_one": "{{count}} आइटम",
-        "itemCount_other": "{{count}} आइटम",
-        "byAuthor": "{{author}} द्वारा",
-        "openAria": "{{name}} खोलें",
-        "export": "निर्यात",
-        "exportAria": "डेक निर्यात करें",
-        "download": "डाउनलोड",
-        "downloadAria": "डेक डाउनलोड करें",
-        "delete": "हटाएँ",
-        "deleteAria": "डेक हटाएँ",
-        "start": "शुरू करें",
-        "list": {
-            "backHub": "{{language}} पर वापस जाएँ",
-            "eyebrow": {
-                "vocab": "शब्दावली",
-                "render": "पठन",
-                "exam": "परीक्षाएँ",
-                "review": "समीक्षा"
-            },
-            "title": {
-                "vocab": "शब्दावली डेक",
-                "render": "पठन डेक",
-                "exam": "परीक्षा सेट",
-                "review": "समीक्षा डेक"
-            },
-            "description": {
-                "vocab": "जो शब्द आप जानते हैं उन्हें एक डेक में बाँधें, फिर अंतराल पर अभ्यास करें।",
-                "render": "कठिनाई-स्तर के छोटे पाठ, अनुवाद के साथ जाँचने के लिए।",
-                "exam": "आपकी अपनी शब्दावली से बने बहुविकल्पीय प्रश्न-सेट।",
-                "review": "डेक को अंतरित पुनरावृत्ति सत्र में दोहराएँ।"
-            }
-        },
-        "empty": {
-            "local": {
-                "title": "आपका कोई डेक अभी नहीं है",
-                "body": "आपके बनाए या आयात किए डेक यहाँ आएँगे। किसी आधिकारिक डेक से शुरू करें।",
-                "action": "आधिकारिक डेक देखें"
-            },
-            "official": {
-                "title": "इस प्रकार का कोई आधिकारिक डेक अभी नहीं है",
-                "body": "आधिकारिक डेक ऐप के साथ आते हैं। इस प्रकार का अभी कोई प्रकाशित नहीं हुआ।"
-            },
-            "filtered": {
-                "title": "इन फ़िल्टरों से कुछ मेल नहीं खाता",
-                "body": "इस टैब में कोई डेक आपकी खोज, टैग और विकल्पों से मेल नहीं खाता। कोई एक ढीला करें।",
-                "action": "फ़िल्टर हटाएँ"
-            },
-            "cloud": {
-                "title": "क्लाउड सिंक जल्द आ रहा है",
-                "body": "साइन इन करें और आपके डेक हर डिवाइस पर आपके साथ रहेंगे।",
-                "action": "साइन इन करें"
-            },
-            "cloudSignedIn": {
-                "title": "क्लाउड सिंक जल्द आ रहा है",
-                "body": "आप साइन इन हैं। डिवाइसों के बीच डेक सिंक कराना जारी है।"
-            },
-            "community": {
-                "title": "अभी कोई सामुदायिक डेक नहीं है",
-                "body": "दूसरे शिक्षार्थियों द्वारा प्रकाशित डेक समुदाय खुलने पर यहाँ दिखेंगे।"
-            }
-        },
-        "noResults": {
-            "title": "इस खोज से कुछ नहीं मिला",
-            "body": "कोई छोटा शब्द आज़माएँ, या इस टैब की सब चीज़ें देखने के लिए खोज साफ़ करें।"
-        },
-        "details": {
-            "notFound": "वह डेक नहीं मिला।",
-            "back": "डेक सूची पर वापस जाएँ",
-            "contents": "इसमें क्या है",
-            "version": "संस्करण",
-            "updated": "अद्यतन",
-            "noSession": "{{language}} डेक के सत्र अभी तैयार नहीं हैं।"
-        },
-        "options": {
-            "sortAria": "डेक क्रमबद्ध करें",
-            "sort": {
-                "default": "मूल क्रम",
-                "name": "नाम A–Z",
-                "recent": "हाल में अद्यतन",
-                "popular": "सर्वाधिक डाउनलोड",
-                "size": "सबसे बड़े"
-            },
-            "density": {
-                "comfortable": "फैला हुआ",
-                "compact": "सघन"
-            },
-            "nsfw": {
-                "label": "संवेदनशील",
-                "on": "संवेदनशील डेक दिख रहे हैं",
-                "off": "संवेदनशील डेक छिपे हैं"
-            },
-            "importHeading": "आयात",
-            "importHint": "पहले निर्यात किया गया डेक फ़ाइल पढ़ता है।",
-            "importUnavailable": "इस प्रकार के डेक के लिए अभी फ़ाइल प्रारूप नहीं है।"
-        },
-        "tags": {
-            "clear": "टैग हटाएँ",
-            "remove": "टैग {{tag}} हटाएँ"
-        },
-        "actions": {
-            "create": {
-                "vocab": "नया डेक",
-                "exam": "नई परीक्षा"
-            },
-            "importOnly": "आयात"
-        },
-        "import": {
-            "action": "डेक फ़ाइल आयात करें",
-            "invalidDeck": "यह फ़ाइल एक मान्य डेक नहीं है।",
-            "invalidExam": "यह फ़ाइल एक मान्य परीक्षा सेट नहीं है।",
-            "invalidJson": "इस फ़ाइल को JSON के रूप में नहीं पढ़ा जा सका।"
-        },
-        "viewAuthor": "{{author}} की प्रोफ़ाइल देखें"
     }
 }

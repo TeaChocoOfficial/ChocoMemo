@@ -312,7 +312,44 @@
             "invalidExam": "That file isn't a valid exam set.",
             "invalidJson": "That file isn't readable JSON."
         },
-        "viewAuthor": "View the profile of {{author}}"
+        "viewAuthor": "View the profile of {{author}}",
+        "edit": {
+            "listTitle": "Decks",
+            "panelTitle": "Editor",
+            "layoutTitle": "Layout",
+            "spacedLabel": "Spaced panels",
+            "spacedHint": "Leave a gap between the docked panels.",
+            "statusTitle": "Status",
+            "previewTitle": "Preview",
+            "inspectorTitle": "Inspector",
+            "loading": "Loading your decks…",
+            "empty": "No decks to edit yet.",
+            "previewEmpty": "This deck has no content yet.",
+            "selectPrompt": "Select a deck to edit its details.",
+            "nameLabel": "Name",
+            "namePlaceholder": "Deck name",
+            "descriptionLabel": "Description",
+            "descriptionPlaceholder": "What is this deck about?",
+            "tagsLabel": "Tags",
+            "tagsPlaceholder": "Comma-separated tags",
+            "nsfwLabel": "Mark as NSFW",
+            "save": "Save changes",
+            "delete": "Delete deck",
+            "dragHandle": "Drag to reorder",
+            "mobileHint": "Reorder and edit decks below. Open on a wider screen to use the deck manager.",
+            "filters": "Filter decks by type",
+            "filterAll": "All decks",
+            "typeLabel": "Type",
+            "sourceLabel": "Source",
+            "itemsLabel": "Items",
+            "statusDecks": "{{visible}} / {{total}} decks",
+            "noneSelected": "No deck selected",
+            "addPanel": "Add panel",
+            "views": "Editor views",
+            "viewAll": "All decks",
+            "viewFavourites": "Favourites",
+            "viewRecent": "Recent"
+        }
     },
     "footer": {
         "tagline": "A cozy, theme-rich way to sip your way through the Japanese language.",
@@ -396,7 +433,8 @@
             "vocabulary": "Vocabulary",
             "vocabularyHint": "Grow your word bank and review it on a spaced schedule.",
             "learn": "Learn",
-            "practice": "Practice"
+            "practice": "Practice",
+            "manage": "Manage"
         },
         "nav": {
             "kana": {
@@ -428,7 +466,17 @@
                 "title": "Vocabulary exam",
                 "description": "Test yourself with a multiple-choice exam built from your vocabulary.",
                 "action": "Take an Exam"
+            },
+            "edit": {
+                "title": "Edit Decks",
+                "description": "Rename, reorder, or remove the decks in your collection.",
+                "action": "Edit Decks"
             }
+        },
+        "edit": {
+            "title": "Edit Decks",
+            "description": "Manage the decks in your collection. The editor is coming soon.",
+            "back": "Back to Japanese"
         },
         "decks": {
             "title": "Vocabulary Review Decks",
@@ -701,7 +749,17 @@
                 "title": "Browse Vocabulary",
                 "description": "Read through a deck's words with readings, meanings, and examples.",
                 "action": "Browse Words"
+            },
+            "edit": {
+                "title": "Edit Decks",
+                "description": "Rename, reorder, or remove the decks in your collection.",
+                "action": "Edit Decks"
             }
+        },
+        "edit": {
+            "title": "Edit Decks",
+            "description": "Manage the decks in your collection. The editor is coming soon.",
+            "back": "Back to English"
         },
         "vocab": {
             "title": "Vocabulary"
@@ -717,7 +775,8 @@
         },
         "sections": {
             "learn": "Learn",
-            "practice": "Practice"
+            "practice": "Practice",
+            "manage": "Manage"
         }
     },
     "settings": {

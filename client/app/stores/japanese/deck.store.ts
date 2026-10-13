@@ -3,6 +3,7 @@
 // localStorage and can be created from custom words, or (in the future)
 // synced from cloud data or downloaded from other users.
 import { create } from 'zustand';
+import { Languages } from '~/data/language';
 import type { DeckData } from '~/types/deck';
 import { importedDeckSchema } from '~/utils/deck';
 import { newDeckMeta } from '~/utils/deckMeta';
@@ -75,6 +76,7 @@ export const useDeckStore = create<DeckState>()(
                     // `contentIds` because it spans every deck type.
                     contentIds: result.data.wordIds,
                     meta: newDeckMeta(),
+                    targetLang: Languages.ja,
                 };
                 set((state) => ({ userDecks: [...state.userDecks, deck] }));
                 return { success: true };
@@ -105,6 +107,7 @@ export function myWordsDeck(): DeckData | null {
         // Derived on every read rather than stored, so it is stamped the same
         // way a saved deck would be rather than inheriting a stale byline.
         meta: newDeckMeta(),
+        targetLang: Languages.ja,
     };
 }
 

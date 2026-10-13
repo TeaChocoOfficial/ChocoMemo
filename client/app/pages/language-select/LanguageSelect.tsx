@@ -13,8 +13,8 @@ export default function LanguageSelectPage() {
     // Only one language ships today, so the page is a list: the ready ones get
     // full-width actionable rows, the rest collapse into one quiet group. A
     // grid of five equal tiles read as "mostly unavailable".
-    const ready = languages.filter((language) => language.available);
-    const comingSoon = languages.filter((language) => !language.available);
+    const ready = languages.filter((language) => language.status === 'ready');
+    const comingSoon = languages.filter((language) => language.status !== 'ready');
 
     return (
         <Section className='items-start justify-center'>

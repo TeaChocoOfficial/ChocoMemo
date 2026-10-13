@@ -43,7 +43,10 @@ interface DeckListLocalState {
         language: Languages,
         raw: unknown,
     ) => { success: true; id: string } | { success: false; error: string };
-    addDeck: (language: Languages, deck: Omit<DeckData, 'id' | 'source' | 'meta'>) => string;
+    addDeck: (
+        language: Languages,
+        deck: Omit<DeckData, 'id' | 'source' | 'meta' | 'targetLang'>,
+    ) => string;
     updateDeck: (language: Languages, id: string, patch: Partial<DeckData>) => void;
     removeDeck: (language: Languages, id: string) => void;
     clearDecks: (language: Languages) => void;
@@ -72,7 +75,13 @@ export const useDeckListLocalStore = create<DeckListLocalState>()(
                 // Meta is stamped here rather than by the caller: the store is
                 // the only place that knows a deck was just created, so no
                 // caller can hand in a stale or borrowed byline.
-                const stored: DeckData = { ...deck, id, source: 'local', meta: newDeckMeta() };
+                const stored: DeckData = {
+                    ...deck,
+                    id,
+                    source: 'local',
+                    meta: newDeckMeta(),
+                    targetLang: language,
+                };
                 set((state) =>
                     withDecks(state, language, [...(state.deckLists[language] ?? []), stored]),
                 );
@@ -130,7 +139,7 @@ export const useDeckListLocalStore = create<DeckListLocalState>()(
 
             addExamSet: (set_) => {
                 const id = newId('exam');
-                const deck: Omit<DeckData, 'id' | 'source' | 'meta'> = {
+                const deck: Omit<DeckData, 'id' | 'source' | 'meta' | 'targetLang'> = {
                     name: set_.title,
                     description: set_.description,
                     type: 'exam',
@@ -179,6 +188,7 @@ export const useDeckListLocalStore = create<DeckListLocalState>()(
                     // same field `contentIds` because it spans all deck types.
                     contentIds: result.data.wordIds,
                     meta: newDeckMeta(),
+                    targetLang: language,
                 };
                 set((state) =>
                     withDecks(state, language, [...(state.deckLists[language] ?? []), stored]),

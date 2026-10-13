@@ -74,6 +74,10 @@ export interface DeckOrigin {
  *  Words are referenced by id; resolution depends on the source. */
 export interface DeckData extends CreateDeckData {
     id: string;
+    /** The study language this deck belongs to. Stamped by the store that
+     *  files it, so a deck always knows its target even when lists are read
+     *  flat rather than by language key. */
+    targetLang: Languages;
 }
 
 export interface CreateDeckData {

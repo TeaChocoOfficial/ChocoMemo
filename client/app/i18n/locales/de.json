@@ -3,11 +3,11 @@
         "home": "Startseite",
         "languages": "Sprachen",
         "japanese": "Japanisch",
+        "english": "Englisch",
         "menu": "Menü öffnen",
         "settings": "Einstellungen",
         "language": "Sprache",
-        "theme": "Design",
-        "english": "English"
+        "theme": "Design"
     },
     "chrome": {
         "hide": "Ausblenden",
@@ -132,6 +132,7 @@
         }
     },
     "common": {
+        "loading": "Loading…",
         "error": {
             "oops": "Hoppla!",
             "unexpected": "Ein unerwarteter Fehler ist aufgetreten.",
@@ -139,15 +140,14 @@
         },
         "tabs": {
             "local": "Lokal",
+            "official": "Offiziell",
             "cloud": "Cloud",
-            "community": "Community",
-            "official": "Offiziell"
+            "community": "Community"
         },
         "comingSoon": {
             "cloud": "Cloud-Sync kommt bald, Anmeldung erforderlich",
             "community": "Community-Sets durchstöbern ist noch nicht verfügbar"
         },
-        "loading": "Loading…",
         "select": "Auswählen"
     },
     "notfound": {
@@ -193,6 +193,229 @@
         },
         "back_language": "Zurück zur Sprachauswahl"
     },
+    "deck": {
+        "type": {
+            "vocab": "Wortschatz",
+            "render": "Leseverstehen",
+            "review": "Wiederholung",
+            "exam": "Prüfung",
+            "drill": "Drill"
+        },
+        "source": {
+            "official": "Offiziell",
+            "community": "Community",
+            "local": "Deine",
+            "cloud": "Cloud"
+        },
+        "visibility": {
+            "public": "Öffentlich",
+            "unlisted": "Nicht gelistet",
+            "private": "Privat"
+        },
+        "search": "Stapel suchen",
+        "searchAria": "Stapel nach Namen suchen",
+        "searchClear": "Suche löschen",
+        "tallyAria": "Stapel nach Herkunft",
+        "resultCount": "{{matched}} von {{total}} Stapeln werden angezeigt",
+        "loading": "Stapel werden geladen…",
+        "itemCount_one": "{{count}} Eintrag",
+        "itemCount_other": "{{count}} Einträge",
+        "byAuthor": "von {{author}}",
+        "openAria": "{{name}} öffnen",
+        "export": "Exportieren",
+        "exportAria": "Stapel exportieren",
+        "download": "Herunterladen",
+        "downloadAria": "Stapel herunterladen",
+        "delete": "Löschen",
+        "deleteAria": "Stapel löschen",
+        "start": "Starten",
+        "list": {
+            "backHub": "Zurück zu {{language}}"
+        },
+        "empty": {
+            "local": {
+                "title": "Du hast noch keine eigenen Stapel",
+                "body": "Stapel, die du erstellst oder importierst, landen hier. Fang mit einem offiziellen Stapel an.",
+                "action": "Offizielle Stapel ansehen"
+            },
+            "official": {
+                "title": "Noch keine offiziellen Stapel für diesen Typ",
+                "body": "Offizielle Stapel kommen mit der App. Für diesen Typ wurde noch keiner veröffentlicht."
+            },
+            "filtered": {
+                "title": "Nichts passt zu diesen Filtern",
+                "body": "Kein Stapel in diesem Tab passt zu deiner Suche, deinen Tags und Optionen. Lockere eines davon.",
+                "action": "Filter zurücksetzen"
+            },
+            "cloud": {
+                "title": "Cloud-Sync kommt bald",
+                "body": "Melde dich an und deine Stapel folgen dir überall hin.",
+                "action": "Anmelden"
+            },
+            "cloudSignedIn": {
+                "title": "Cloud-Sync kommt bald",
+                "body": "Du bist angemeldet. Die Synchronisierung über Geräte hinweg ist unterwegs."
+            },
+            "community": {
+                "title": "Noch keine Community-Stapel",
+                "body": "Stapel, die andere Lernende veröffentlichen, erscheinen hier, sobald die Community öffnet."
+            }
+        },
+        "noResults": {
+            "title": "Nichts passt zu dieser Suche",
+            "body": "Versuch ein kürzeres Wort oder leere die Suche, um alles in diesem Tab zu sehen."
+        },
+        "details": {
+            "notFound": "Dieser Stapel wurde nicht gefunden.",
+            "back": "Zurück zu den Stapeln",
+            "contents": "Was drin ist",
+            "version": "Version",
+            "updated": "Aktualisiert",
+            "noSession": "Sitzungen für {{language}}-Stapel sind noch nicht bereit."
+        },
+        "options": {
+            "sortAria": "Stapel sortieren",
+            "sort": {
+                "default": "Originalreihenfolge",
+                "name": "Name A–Z",
+                "recent": "Zuletzt aktualisiert",
+                "popular": "Meiste Downloads",
+                "size": "Größte zuerst"
+            },
+            "density": {
+                "comfortable": "Großzügig",
+                "compact": "Kompakt"
+            },
+            "nsfw": {
+                "label": "Sensitiv",
+                "on": "Sensible Stapel werden angezeigt",
+                "off": "Sensible Stapel sind ausgeblendet"
+            },
+            "importHeading": "Importieren",
+            "importHint": "Liest eine Stapeldatei, die du früher exportiert hast.",
+            "importUnavailable": "Für diesen Stapeltyp gibt es noch kein Dateiformat."
+        },
+        "tags": {
+            "clear": "Tags löschen",
+            "remove": "Tag {{tag}} entfernen"
+        },
+        "actions": {
+            "create": {
+                "vocab": "Neuer Stapel",
+                "exam": "Neue Prüfung"
+            },
+            "importOnly": "Importieren"
+        },
+        "import": {
+            "action": "Stapeldatei importieren",
+            "invalidDeck": "Diese Datei ist kein gültiger Stapel.",
+            "invalidExam": "Diese Datei ist kein gültiger Prüfungssatz.",
+            "invalidJson": "Diese Datei konnte nicht als JSON gelesen werden."
+        },
+        "viewAuthor": "Profil von {{author}} ansehen",
+        "edit": {
+            "listTitle": "Stapel",
+            "panelTitle": "Editor",
+            "layoutTitle": "Layout",
+            "spacedLabel": "Abgesetzte Panels",
+            "spacedHint": "Lass eine Lücke zwischen den angedockten Panels.",
+            "statusTitle": "Status",
+            "previewTitle": "Vorschau",
+            "inspectorTitle": "Inspektor",
+            "loading": "Deine Stapel werden geladen…",
+            "empty": "Noch keine Stapel zum Bearbeiten.",
+            "previewEmpty": "Dieser Stapel hat noch keine Inhalte.",
+            "selectPrompt": "Wähle einen Stapel, um seine Details zu bearbeiten.",
+            "nameLabel": "Name",
+            "namePlaceholder": "Name des Stapels",
+            "descriptionLabel": "Beschreibung",
+            "descriptionPlaceholder": "Worum geht es in diesem Stapel?",
+            "tagsLabel": "Tags",
+            "tagsPlaceholder": "Durch Kommas getrennte Tags",
+            "nsfwLabel": "Als NSFW markieren",
+            "save": "Änderungen speichern",
+            "delete": "Stapel löschen",
+            "dragHandle": "Zum Umsortieren ziehen",
+            "mobileHint": "Sortiere und bearbeite die Stapel unten. Öffne einen breiteren Bildschirm, um den Stapel-Manager zu verwenden.",
+            "filters": "Stapel nach Typ filtern",
+            "filterAll": "Alle Stapel",
+            "typeLabel": "Typ",
+            "sourceLabel": "Quelle",
+            "itemsLabel": "Einträge",
+            "statusDecks": "{{visible}} / {{total}} Stapel",
+            "noneSelected": "Kein Stapel ausgewählt",
+            "addPanel": "Panel hinzufügen",
+            "views": "Editor-Ansichten",
+            "viewAll": "Alle Stapel",
+            "viewFavourites": "Favoriten",
+            "viewRecent": "Zuletzt"
+        }
+    },
+    "footer": {
+        "tagline": "Eine gemütliche Art, mit vielen ThemenJapanisch schlürfen.",
+        "explore": "Entdecken",
+        "learn": "Was wir lehren",
+        "rights": "TeaChoco · Alle Rechte vorbehalten.",
+        "languages": {
+            "ja": "Japanisch",
+            "en": "Englisch",
+            "ko": "Koreanisch",
+            "th": "Thailändisch"
+        }
+    },
+    "auth": {
+        "signIn": "Anmelden",
+        "signUp": "Registrieren",
+        "signOut": "Abmelden",
+        "email": "E-Mail",
+        "password": "Passwort",
+        "name": "Name",
+        "nameTag": "Benutzername",
+        "nameTagHint": "3-30 Zeichen. Nur englische Buchstaben, Zahlen, Unterstriche (_) oder Bindestriche (-), keine Leerzeichen. Dein öffentlicher Benutzername.",
+        "confirmPassword": "Passwort bestätigen",
+        "forgotPassword": "Passwort vergessen?",
+        "resetPassword": "Passwort zurücksetzen",
+        "backToSignIn": "Zurück zur Anmeldung",
+        "orContinueWith": "Oder fortfahren mit",
+        "google": "Google",
+        "discord": "Discord",
+        "line": "LINE",
+        "x": "X (Twitter)",
+        "noAccount": "Noch kein Konto?",
+        "hasAccount": "Bereits ein Konto?",
+        "verifyEmail": "E-Mail verifizieren",
+        "verificationCode": "Verifizierungscode",
+        "verifyHint": "Gib den 6-stelligen Code ein, den wir an {{email}} gesendet haben.",
+        "verify": "Verifizieren",
+        "otpSent": "Wir haben einen Code an {{email}} gesendet.",
+        "otpResent": "Ein neuer Code wurde gesendet.",
+        "verifySuccess": "Willkommen, {{name}}!",
+        "resendCode": "Code erneut senden",
+        "resendInSeconds": "Erneut senden in {{seconds}}s",
+        "profile": "Profil",
+        "settings": "Einstellungen",
+        "welcome": "Willkommen, {{name}}!",
+        "error": {
+            "invalidCredentials": "Ungültige E-Mail oder Passwort",
+            "emailInUse": "E-Mail-Adresse bereits vergeben",
+            "nameTagTaken": "Dieser Benutzername ist bereits vergeben.",
+            "nameTagInvalid": "Der Benutzername muss 3-30 Zeichen lang sein: nur englische Buchstaben, Zahlen, Unterstriche oder Bindestriche (ohne Leerzeichen).",
+            "passwordMismatch": "Die Passwörter stimmen nicht überein.",
+            "invalidOtp": "Ungültiger oder abgelaufener Code. Bitte versuche es erneut.",
+            "resendFailed": "Neuer Code konnte nicht gesendet werden. Bitte versuche es erneut.",
+            "generic": "Ein Fehler ist aufgetreten",
+            "emailNotFound": "No account found with that email.",
+            "resetFailed": "Password reset failed. Please try again.",
+            "oauth": "Sign-in failed: {{reason}}"
+        },
+        "resetCodeSent": "We sent a reset code to {{email}}.",
+        "resetHint": "Enter the code sent to {{email}} and choose a new password.",
+        "forgotHint": "Enter your account email and we'll send you a reset code.",
+        "newPassword": "New Password",
+        "updatePassword": "Update Password",
+        "resetSuccess": "Password updated. Please sign in.",
+        "sendResetCode": "Reset-Code senden"
+    },
     "japanese": {
         "badge": "Japanisch",
         "title": "Japanisch lernen",
@@ -210,7 +433,8 @@
             "vocabulary": "Wortschatz",
             "vocabularyHint": "Erweitere deine Wortbank und wiederhole sie nach einem verteilten Zeitplan.",
             "learn": "Lernen",
-            "practice": "Üben"
+            "practice": "Üben",
+            "manage": "Verwalten"
         },
         "nav": {
             "kana": {
@@ -218,15 +442,15 @@
                 "description": "Durchstöbere alle Hiragana und Katakana mit ihren Lesungen.",
                 "action": "Kana ansehen"
             },
-            "render": {
-                "title": "Render",
-                "description": "Read short passages with furigana and check yourself against the translation.",
-                "action": "Start Reading"
-            },
             "vocab": {
                 "title": "Wortschatz",
                 "description": "Erweitere deinen Wortschatz und übe in Abständen.",
                 "action": "Wörter ansehen"
+            },
+            "render": {
+                "title": "Render",
+                "description": "Read short passages with furigana and check yourself against the translation.",
+                "action": "Start Reading"
             },
             "drill": {
                 "title": "Kana-Drill",
@@ -242,7 +466,17 @@
                 "title": "Wortschatz-Prüfung",
                 "description": "Prüfe dich mit einer Multiple-Choice-Prüfung aus deinem Wortschatz.",
                 "action": "Prüfung ablegen"
+            },
+            "edit": {
+                "title": "Stapel bearbeiten",
+                "description": "Benenne die Stapel in deiner Sammlung um, sortiere sie neu oder entferne sie.",
+                "action": "Stapel bearbeiten"
             }
+        },
+        "edit": {
+            "title": "Stapel bearbeiten",
+            "description": "Verwalte die Stapel in deiner Sammlung. Der Editor kommt bald.",
+            "back": "Zurück zu Japanisch"
         },
         "decks": {
             "title": "Wortschatz-Wiederholungsstapel",
@@ -251,8 +485,26 @@
             "startReview": "Wiederholung starten",
             "due": "fällig",
             "byAuthor": "von {{author}}",
+            "viewAuthor": "Profil von {{author}} ansehen",
             "download": "Herunterladen",
             "note": "Wiederholung",
+            "open": "Open",
+            "itemCount_one": "{{count}} item",
+            "itemCount_other": "{{count}} items",
+            "favourite": "Zu Favoriten hinzufügen",
+            "unfavourite": "Aus Favoriten entfernen",
+            "export": "Export",
+            "exportAria": "Export deck",
+            "downloadAria": "Download deck",
+            "delete": "Delete",
+            "deleteAria": "Delete deck",
+            "type": {
+                "vocab": "Vocabulary",
+                "render": "Reading",
+                "review": "Review",
+                "exam": "Exam",
+                "drill": "Drill"
+            },
             "ready": "Bereit",
             "words": "Wörter",
             "search": "Stapel suchen...",
@@ -281,30 +533,12 @@
                 "custom": "Meine Wörter",
                 "cloud": "Cloud",
                 "downloaded": "Heruntergeladen"
-            },
-            "open": "Open",
-            "itemCount_one": "{{count}} item",
-            "itemCount_other": "{{count}} items",
-            "export": "Export",
-            "exportAria": "Export deck",
-            "downloadAria": "Download deck",
-            "delete": "Delete",
-            "deleteAria": "Delete deck",
-            "type": {
-                "vocab": "Vocabulary",
-                "render": "Reading",
-                "review": "Review",
-                "exam": "Exam",
-                "drill": "Drill"
-            },
-            "viewAuthor": "Profil von {{author}} ansehen",
-            "favourite": "Zu Favoriten hinzufügen",
-            "unfavourite": "Aus Favoriten entfernen"
+            }
         },
         "exam": {
             "title": "Prüfung",
-            "import": "Prüfungsset importieren",
             "addCustom": "Benutzerdefiniertes Set hinzufügen",
+            "import": "Prüfungsset importieren",
             "importErrorJson": "Diese Datei konnte nicht als JSON gelesen werden.",
             "form": {
                 "title": "Benutzerdefiniertes Prüfungsset erstellen",
@@ -315,12 +549,12 @@
                 "descriptionPlaceholder": "Eine kurze Notiz zu diesem Set",
                 "wordsLabel": "Wörter zum Einfügen",
                 "wordsPlaceholder": "Wörter suchen...",
+                "selectedCount_one": "{{count}} ausgewählt",
+                "selectedCount_other": "{{count}} ausgewählt",
                 "titleError": "Gib deinem Set einen Namen.",
                 "minWordsError": "Wähle mindestens zwei Wörter.",
                 "cancel": "Abbrechen",
-                "submit": "Set erstellen",
-                "selectedCount_one": "{{count}} ausgewählt",
-                "selectedCount_other": "{{count}} ausgewählt"
+                "submit": "Set erstellen"
             }
         },
         "kana": {
@@ -432,7 +666,6 @@
             }
         },
         "vocab": {
-            "available": "{{count}} Wörter insgesamt",
             "back_hub": "Back to hub",
             "eyebrow": "Vocabulary",
             "title": "Vocabulary",
@@ -451,7 +684,21 @@
             "meaning": "Meaning",
             "example": "Example",
             "required": "Word and meaning are required.",
-            "builtIn": "Built-in words can't be edited."
+            "builtIn": "Built-in words can't be edited.",
+            "available": "{{count}} Wörter insgesamt"
+        },
+        "render": {
+            "back_hub": "Back to hub",
+            "eyebrow": "Render",
+            "title": "Render",
+            "description": "Read short passages with furigana and a translation to check against.",
+            "search": "Search decks",
+            "empty": "No reading decks yet.",
+            "passages": "passages",
+            "read": "Read",
+            "showTranslation": "Show translation",
+            "hideTranslation": "Hide translation",
+            "speak": "Listen"
         },
         "vocabularyReview": {
             "badge": "Wiederholung",
@@ -471,19 +718,6 @@
             "recallPrompt": "Was bedeutet dieses Wort?",
             "back_hub": "Zurück zu Japanisch"
         },
-        "render": {
-            "back_hub": "Back to hub",
-            "eyebrow": "Render",
-            "title": "Render",
-            "description": "Read short passages with furigana and a translation to check against.",
-            "search": "Search decks",
-            "empty": "No reading decks yet.",
-            "passages": "passages",
-            "read": "Read",
-            "showTranslation": "Show translation",
-            "hideTranslation": "Hide translation",
-            "speak": "Listen"
-        },
         "drill": {
             "title": "Kana Drill"
         },
@@ -491,70 +725,59 @@
             "title": "Vocabulary Review"
         }
     },
-    "footer": {
-        "tagline": "Eine gemütliche Art, mit vielen ThemenJapanisch schlürfen.",
-        "explore": "Entdecken",
-        "learn": "Was wir lehren",
-        "rights": "TeaChoco · Alle Rechte vorbehalten.",
-        "languages": {
-            "ja": "Japanisch",
-            "en": "Englisch",
-            "ko": "Koreanisch",
-            "th": "Thailändisch"
-        }
-    },
-    "auth": {
-        "signIn": "Anmelden",
-        "signUp": "Registrieren",
-        "signOut": "Abmelden",
-        "email": "E-Mail",
-        "password": "Passwort",
-        "name": "Name",
-        "nameTag": "Benutzername",
-        "nameTagHint": "3-30 Zeichen. Nur englische Buchstaben, Zahlen, Unterstriche (_) oder Bindestriche (-), keine Leerzeichen. Dein öffentlicher Benutzername.",
-        "confirmPassword": "Passwort bestätigen",
-        "forgotPassword": "Passwort vergessen?",
-        "resetPassword": "Passwort zurücksetzen",
-        "backToSignIn": "Zurück zur Anmeldung",
-        "orContinueWith": "Oder fortfahren mit",
-        "google": "Google",
-        "discord": "Discord",
-        "noAccount": "Noch kein Konto?",
-        "hasAccount": "Bereits ein Konto?",
-        "verifyEmail": "E-Mail verifizieren",
-        "verificationCode": "Verifizierungscode",
-        "verifyHint": "Gib den 6-stelligen Code ein, den wir an {{email}} gesendet haben.",
-        "verify": "Verifizieren",
-        "otpSent": "Wir haben einen Code an {{email}} gesendet.",
-        "otpResent": "Ein neuer Code wurde gesendet.",
-        "verifySuccess": "Willkommen, {{name}}!",
-        "resendCode": "Code erneut senden",
-        "resendInSeconds": "Erneut senden in {{seconds}}s",
-        "profile": "Profil",
-        "settings": "Einstellungen",
-        "welcome": "Willkommen, {{name}}!",
-        "error": {
-            "invalidCredentials": "Ungültige E-Mail oder Passwort",
-            "emailInUse": "E-Mail-Adresse bereits vergeben",
-            "nameTagTaken": "Dieser Benutzername ist bereits vergeben.",
-            "nameTagInvalid": "Der Benutzername muss 3-30 Zeichen lang sein: nur englische Buchstaben, Zahlen, Unterstriche oder Bindestriche (ohne Leerzeichen).",
-            "passwordMismatch": "Die Passwörter stimmen nicht überein.",
-            "invalidOtp": "Ungültiger oder abgelaufener Code. Bitte versuche es erneut.",
-            "resendFailed": "Neuer Code konnte nicht gesendet werden. Bitte versuche es erneut.",
-            "generic": "Ein Fehler ist aufgetreten",
-            "emailNotFound": "No account found with that email.",
-            "resetFailed": "Password reset failed. Please try again.",
-            "oauth": "Sign-in failed: {{reason}}"
+    "english": {
+        "badge": "Englisch",
+        "title": "Englisch lernen",
+        "description": "Englisch ist ein neuer Track. Die Stapel-Funktionen unten funktionieren bereits; Zeichensatz und Drill entstehen noch.",
+        "nav": {
+            "render": {
+                "title": "Leseverstehen",
+                "description": "Lies kurze Texte und prüfe sie an der Übersetzung.",
+                "action": "Zum Lesen starten"
+            },
+            "review": {
+                "title": "Wortschatz-Wiederholung",
+                "description": "Wiederhole Wortschatz mit Karteikarten und verteilten Wiederholungen.",
+                "action": "Wiederholung starten"
+            },
+            "exam": {
+                "title": "Wortschatz-Prüfung",
+                "description": "Prüfe dich mit einer Multiple-Choice-Prüfung aus deinem Wortschatz.",
+                "action": "Prüfung ablegen"
+            },
+            "vocab": {
+                "title": "Wortschatz durchsehen",
+                "description": "Sieh dir die Wörter eines Stapels mit Aussprache, Bedeutung und Beispielsätzen an.",
+                "action": "Wörter ansehen"
+            },
+            "edit": {
+                "title": "Stapel bearbeiten",
+                "description": "Benenne die Stapel in deiner Sammlung um, sortiere sie neu oder entferne sie.",
+                "action": "Stapel bearbeiten"
+            }
         },
-        "resetCodeSent": "We sent a reset code to {{email}}.",
-        "resetHint": "Enter the code sent to {{email}} and choose a new password.",
-        "forgotHint": "Enter your account email and we'll send you a reset code.",
-        "newPassword": "New Password",
-        "updatePassword": "Update Password",
-        "resetSuccess": "Password updated. Please sign in.",
-        "line": "LINE",
-        "x": "X (Twitter)",
-        "sendResetCode": "Reset-Code senden"
+        "edit": {
+            "title": "Stapel bearbeiten",
+            "description": "Verwalte die Stapel in deiner Sammlung. Der Editor kommt bald.",
+            "back": "Zurück zu Englisch"
+        },
+        "vocab": {
+            "title": "Wortschatz"
+        },
+        "render": {
+            "title": "Leseverstehen"
+        },
+        "review": {
+            "title": "Wortschatz-Wiederholung"
+        },
+        "exam": {
+            "title": "Prüfung"
+        },
+        "sections": {
+            "learn": "Lernen",
+            "practice": "Üben",
+            "manage": "Verwalten"
+        }
     },
     "settings": {
         "title": "Einstellungen",
@@ -590,6 +813,12 @@
         }
     },
     "profile": {
+        "public": {
+            "notFoundTitle": "Profile not found",
+            "notFoundHint": "Nobody is using this name tag. It may have been changed or removed.",
+            "yourDashboard": "Go to your profile",
+            "viewPublic": "View public profile"
+        },
         "title": "Profil",
         "subtitle": "Deine Lernstory mit ChocoMemo.",
         "back": "Zurück",
@@ -713,194 +942,6 @@
             "saving": "Speichern…",
             "confirm": "Bestätigen",
             "change": "Profilbild ändern"
-        },
-        "public": {
-            "notFoundTitle": "Profile not found",
-            "notFoundHint": "Nobody is using this name tag. It may have been changed or removed.",
-            "yourDashboard": "Go to your profile",
-            "viewPublic": "View public profile"
         }
-    },
-    "english": {
-        "badge": "Englisch",
-        "title": "Englisch lernen",
-        "description": "Englisch ist ein neuer Track. Die Stapel-Funktionen unten funktionieren bereits; Zeichensatz und Drill entstehen noch.",
-        "nav": {
-            "render": {
-                "title": "Leseverstehen",
-                "description": "Lies kurze Texte und prüfe sie an der Übersetzung.",
-                "action": "Zum Lesen starten"
-            },
-            "review": {
-                "title": "Wortschatz-Wiederholung",
-                "description": "Wiederhole Wortschatz mit Karteikarten und verteilten Wiederholungen.",
-                "action": "Wiederholung starten"
-            },
-            "exam": {
-                "title": "Wortschatz-Prüfung",
-                "description": "Prüfe dich mit einer Multiple-Choice-Prüfung aus deinem Wortschatz.",
-                "action": "Prüfung ablegen"
-            },
-            "vocab": {
-                "title": "Wortschatz durchsehen",
-                "description": "Sieh dir die Wörter eines Stapels mit Aussprache, Bedeutung und Beispielsätzen an.",
-                "action": "Wörter ansehen"
-            }
-        },
-        "vocab": {
-            "title": "Wortschatz"
-        },
-        "render": {
-            "title": "Leseverstehen"
-        },
-        "review": {
-            "title": "Wortschatz-Wiederholung"
-        },
-        "exam": {
-            "title": "Prüfung"
-        },
-        "sections": {
-            "learn": "Lernen",
-            "practice": "Üben"
-        }
-    },
-    "deck": {
-        "type": {
-            "vocab": "Wortschatz",
-            "render": "Leseverstehen",
-            "review": "Wiederholung",
-            "exam": "Prüfung",
-            "drill": "Drill"
-        },
-        "source": {
-            "official": "Offiziell",
-            "community": "Community",
-            "local": "Deine",
-            "cloud": "Cloud"
-        },
-        "visibility": {
-            "public": "Öffentlich",
-            "unlisted": "Nicht gelistet",
-            "private": "Privat"
-        },
-        "search": "Stapel suchen",
-        "searchAria": "Stapel nach Namen suchen",
-        "searchClear": "Suche löschen",
-        "tallyAria": "Stapel nach Herkunft",
-        "resultCount": "{{matched}} von {{total}} Stapeln werden angezeigt",
-        "loading": "Stapel werden geladen…",
-        "itemCount_one": "{{count}} Eintrag",
-        "itemCount_other": "{{count}} Einträge",
-        "byAuthor": "von {{author}}",
-        "openAria": "{{name}} öffnen",
-        "export": "Exportieren",
-        "exportAria": "Stapel exportieren",
-        "download": "Herunterladen",
-        "downloadAria": "Stapel herunterladen",
-        "delete": "Löschen",
-        "deleteAria": "Stapel löschen",
-        "start": "Starten",
-        "list": {
-            "backHub": "Zurück zu {{language}}",
-            "eyebrow": {
-                "vocab": "Wortschatz",
-                "render": "Leseverstehen",
-                "exam": "Prüfungen",
-                "review": "Wiederholung"
-            },
-            "title": {
-                "vocab": "Wortschatz-Stapel",
-                "render": "Lese-Stapel",
-                "exam": "Prüfungssätze",
-                "review": "Wiederholungs-Stapel"
-            },
-            "description": {
-                "vocab": "Fasse die Wörter, die du kennst, in einem Stapel zusammen und übe in Abständen.",
-                "render": "Kurze, abgestufte Texte zum Lesen, mit einer Übersicht zum Abgleich.",
-                "exam": "Multiple-Choice-Sätze aus deinem eigenen Wortschatz.",
-                "review": "Wiederhole einen Stapel in einer Sitzung mit verteilten Wiederholungen."
-            }
-        },
-        "empty": {
-            "local": {
-                "title": "Du hast noch keine eigenen Stapel",
-                "body": "Stapel, die du erstellst oder importierst, landen hier. Fang mit einem offiziellen Stapel an.",
-                "action": "Offizielle Stapel ansehen"
-            },
-            "official": {
-                "title": "Noch keine offiziellen Stapel für diesen Typ",
-                "body": "Offizielle Stapel kommen mit der App. Für diesen Typ wurde noch keiner veröffentlicht."
-            },
-            "filtered": {
-                "title": "Nichts passt zu diesen Filtern",
-                "body": "Kein Stapel in diesem Tab passt zu deiner Suche, deinen Tags und Optionen. Lockere eines davon.",
-                "action": "Filter zurücksetzen"
-            },
-            "cloud": {
-                "title": "Cloud-Sync kommt bald",
-                "body": "Melde dich an und deine Stapel folgen dir überall hin.",
-                "action": "Anmelden"
-            },
-            "cloudSignedIn": {
-                "title": "Cloud-Sync kommt bald",
-                "body": "Du bist angemeldet. Die Synchronisierung über Geräte hinweg ist unterwegs."
-            },
-            "community": {
-                "title": "Noch keine Community-Stapel",
-                "body": "Stapel, die andere Lernende veröffentlichen, erscheinen hier, sobald die Community öffnet."
-            }
-        },
-        "noResults": {
-            "title": "Nichts passt zu dieser Suche",
-            "body": "Versuch ein kürzeres Wort oder leere die Suche, um alles in diesem Tab zu sehen."
-        },
-        "details": {
-            "notFound": "Dieser Stapel wurde nicht gefunden.",
-            "back": "Zurück zu den Stapeln",
-            "contents": "Was drin ist",
-            "version": "Version",
-            "updated": "Aktualisiert",
-            "noSession": "Sitzungen für {{language}}-Stapel sind noch nicht bereit."
-        },
-        "options": {
-            "sortAria": "Stapel sortieren",
-            "sort": {
-                "default": "Originalreihenfolge",
-                "name": "Name A–Z",
-                "recent": "Zuletzt aktualisiert",
-                "popular": "Meiste Downloads",
-                "size": "Größte zuerst"
-            },
-            "density": {
-                "comfortable": "Großzügig",
-                "compact": "Kompakt"
-            },
-            "nsfw": {
-                "label": "Sensitiv",
-                "on": "Sensible Stapel werden angezeigt",
-                "off": "Sensible Stapel sind ausgeblendet"
-            },
-            "importHeading": "Importieren",
-            "importHint": "Liest eine Stapeldatei, die du früher exportiert hast.",
-            "importUnavailable": "Für diesen Stapeltyp gibt es noch kein Dateiformat."
-        },
-        "tags": {
-            "clear": "Tags löschen",
-            "remove": "Tag {{tag}} entfernen"
-        },
-        "actions": {
-            "create": {
-                "vocab": "Neuer Stapel",
-                "exam": "Neue Prüfung"
-            },
-            "importOnly": "Importieren"
-        },
-        "import": {
-            "action": "Stapeldatei importieren",
-            "invalidDeck": "Diese Datei ist kein gültiger Stapel.",
-            "invalidExam": "Diese Datei ist kein gültiger Prüfungssatz.",
-            "invalidJson": "Diese Datei konnte nicht als JSON gelesen werden."
-        },
-        "viewAuthor": "Profil von {{author}} ansehen"
     }
 }

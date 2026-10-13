@@ -4,17 +4,17 @@
 
 Built with **React Router v7 (framework mode)**, **TypeScript**, **Zustand**, **i18next**, and **Tailwind CSS**.
 
-> Currently only the **Japanese** track is implemented. The language-select screen lists five languages; **English, Korean, Thai, and Chinese** are shown but disabled ("Coming Soon").
+> The **Japanese** track is complete. **English** has a hub, deck-list browsing, deck management, and per-deck session routes, but no character set or drill yet. The language-select screen lists five languages; **Korean, Thai, and Chinese** are still disabled ("Coming Soon").
 
 ---
 
 ## ✨ Features
 
 ### Language Select
-Choose which language to study. The page is a list: Japanese is active as a full-width actionable row, and the four unbuilt languages are grouped below under a quiet "Coming Soon" heading.
+Choose which language to study. The page is a list: the ready languages (Japanese, English) are full-width actionable rows, and the unbuilt ones (Korean, Thai, Chinese) are grouped below under a quiet "Coming Soon" heading.
 
 ### Japanese Hub
-The hub links to the core learning features: kana charts, kana drill, render, vocabulary, exam, and review.
+The hub groups its destinations into three sections: **Learn** (kana charts, vocabulary, render), **Practice** (kana drill, review, exam), and **Manage** (edit decks).
 
 ### Kana Charts
 Browse **Hiragana** and **Katakana** reference charts, organized into three groups:
@@ -44,8 +44,11 @@ A fully configurable multiple-choice drill:
 
 Decks come from the built-in set or the user's own local words. The shared list component also accepts **cloud** and **community** tabs, but those have no backend yet and render a "Coming Soon" state only.
 
+### Edit Decks
+One page for editing across **every** deck type — vocabulary, render, review, and exam — instead of per feature, so it lives in the hub's **Manage** section rather than under Learn or Practice. The route and hub entry exist today; the editor screen itself is still an empty placeholder.
+
 ### Character Drill (per language)
-Each language track has its own character/alphabet drill, using the same underlying drill component as Kana Drill but fed a different character set per language:
+The character drill is one shared component fed a different character set per track. Only **Japanese (kana)** is wired today; the rest are planned:
 - **Japanese** — Kana (Hiragana/Katakana)
 - **English** — Alphabet (A–Z)
 - **Korean** — Hangul
@@ -67,7 +70,7 @@ All account routes are locale-scoped, so these are reached as `/:lang/...`:
 
 ## 🧭 Routes
 
-> Every route is nested under `:lang`, the active i18n locale segment — currently one of 3 (`en`, `th`, `ja`). Visiting the bare `/` redirects to your locale.
+> Every route is nested under `:lang`, the active i18n locale segment. The UI ships **18 locales**: `en`, `th`, `ja`, `zh`, `ko`, `vi`, `id`, `es`, `pt`, `fr`, `de`, `ar`, `hi`, `ru`, `it`, `tr`, `fil`, `ms`. Visiting the bare `/` redirects to your detected locale.
 
 ### Core
 
@@ -93,29 +96,35 @@ Account concerns are locale-scoped like everything else, so `/settings` is reach
 |-------|------|
 | `/:lang/japanese` | Japanese hub |
 | `/:lang/japanese/kana` | Hiragana / Katakana charts + voice picker |
-| `/:lang/japanese/kana-drill` | Kana drill |
+| `/:lang/japanese/drill` | Kana drill |
+| `/:lang/japanese/edit` | Edit decks (Manage; placeholder) |
+| `/:lang/japanese/decks/:deckId` | Deck details (any deck type) |
+| `/:lang/japanese/vocab` | Vocabulary decks (deck list UI) |
+| `/:lang/japanese/vocab/:deckId` | Browse a vocabulary deck |
 | `/:lang/japanese/render` | Render decks (deck list UI) |
 | `/:lang/japanese/render/:deckId` | Read a render deck |
-| `/:lang/japanese/vocabulary` | Vocabulary decks (deck list UI) |
-| `/:lang/japanese/vocabulary/:deckId` | Browse a vocabulary deck |
 | `/:lang/japanese/exam` | Exam decks (deck list UI) |
-| `/:lang/japanese/exam/:examId` | Run an exam |
+| `/:lang/japanese/exam/:deckId` | Run an exam |
 | `/:lang/japanese/review` | Review decks (deck list UI) |
 | `/:lang/japanese/review/:deckId` | Flashcard / spaced review of a deck |
 
-### English track *(planned)*
+### English track
+
+The hub, deck-list browsing, deck management, and per-deck session routes are in place; the alphabet and drill are still to come.
 
 | Route | Page |
 |-------|------|
 | `/:lang/english` | English hub |
 | `/:lang/english/alphabet` | Alphabet chart + voice picker |
-| `/:lang/english/alphabet-drill` | Alphabet drill |
+| `/:lang/english/drill` | Alphabet drill |
+| `/:lang/english/edit` | Edit decks (Manage; placeholder) |
+| `/:lang/english/decks/:deckId` | Deck details (any deck type) |
+| `/:lang/english/vocab` | Vocabulary decks (deck list UI) |
+| `/:lang/english/vocab/:deckId` | Browse a vocabulary deck |
 | `/:lang/english/render` | Render decks (deck list UI) |
 | `/:lang/english/render/:deckId` | Read a render deck |
-| `/:lang/english/vocabulary` | Vocabulary decks (deck list UI) |
-| `/:lang/english/vocabulary/:deckId` | Browse a vocabulary deck |
 | `/:lang/english/exam` | Exam decks (deck list UI) |
-| `/:lang/english/exam/:examId` | Run an exam |
+| `/:lang/english/exam/:deckId` | Run an exam |
 | `/:lang/english/review` | Review decks (deck list UI) |
 | `/:lang/english/review/:deckId` | Flashcard / spaced review of a deck |
 
@@ -125,13 +134,13 @@ Account concerns are locale-scoped like everything else, so `/settings` is reach
 |-------|------|
 | `/:lang/korean` | Korean hub |
 | `/:lang/korean/hangul` | Hangul chart + voice picker |
-| `/:lang/korean/hangul-drill` | Hangul drill |
+| `/:lang/korean/drill` | Hangul drill |
 | `/:lang/korean/render` | Render decks (deck list UI) |
 | `/:lang/korean/render/:deckId` | Read a render deck |
-| `/:lang/korean/vocabulary` | Vocabulary decks (deck list UI) |
-| `/:lang/korean/vocabulary/:deckId` | Browse a vocabulary deck |
+| `/:lang/korean/vocab` | Vocabulary decks (deck list UI) |
+| `/:lang/korean/vocab/:deckId` | Browse a vocabulary deck |
 | `/:lang/korean/exam` | Exam decks (deck list UI) |
-| `/:lang/korean/exam/:examId` | Run an exam |
+| `/:lang/korean/exam/:deckId` | Run an exam |
 | `/:lang/korean/review` | Review decks (deck list UI) |
 | `/:lang/korean/review/:deckId` | Flashcard / spaced review of a deck |
 
@@ -141,13 +150,13 @@ Account concerns are locale-scoped like everything else, so `/settings` is reach
 |-------|------|
 | `/:lang/chinese` | Chinese hub |
 | `/:lang/chinese/hanzi` | Hanzi chart + voice picker |
-| `/:lang/chinese/hanzi-drill` | Hanzi drill |
+| `/:lang/chinese/drill` | Hanzi drill |
 | `/:lang/chinese/render` | Render decks (deck list UI) |
 | `/:lang/chinese/render/:deckId` | Read a render deck |
-| `/:lang/chinese/vocabulary` | Vocabulary decks (deck list UI) |
-| `/:lang/chinese/vocabulary/:deckId` | Browse a vocabulary deck |
+| `/:lang/chinese/vocab` | Vocabulary decks (deck list UI) |
+| `/:lang/chinese/vocab/:deckId` | Browse a vocabulary deck |
 | `/:lang/chinese/exam` | Exam decks (deck list UI) |
-| `/:lang/chinese/exam/:examId` | Run an exam |
+| `/:lang/chinese/exam/:deckId` | Run an exam |
 | `/:lang/chinese/review` | Review decks (deck list UI) |
 | `/:lang/chinese/review/:deckId` | Flashcard / spaced review of a deck |
 
@@ -157,13 +166,13 @@ Account concerns are locale-scoped like everything else, so `/settings` is reach
 |-------|------|
 | `/:lang/thai` | Thai hub |
 | `/:lang/thai/alphabet` | Thai alphabet chart + voice picker |
-| `/:lang/thai/alphabet-drill` | Alphabet drill |
+| `/:lang/thai/drill` | Alphabet drill |
 | `/:lang/thai/render` | Render decks (deck list UI) |
 | `/:lang/thai/render/:deckId` | Read a render deck |
-| `/:lang/thai/vocabulary` | Vocabulary decks (deck list UI) |
-| `/:lang/thai/vocabulary/:deckId` | Browse a vocabulary deck |
+| `/:lang/thai/vocab` | Vocabulary decks (deck list UI) |
+| `/:lang/thai/vocab/:deckId` | Browse a vocabulary deck |
 | `/:lang/thai/exam` | Exam decks (deck list UI) |
-| `/:lang/thai/exam/:examId` | Run an exam |
+| `/:lang/thai/exam/:deckId` | Run an exam |
 | `/:lang/thai/review` | Review decks (deck list UI) |
 | `/:lang/thai/review/:deckId` | Flashcard / spaced review of a deck |
 

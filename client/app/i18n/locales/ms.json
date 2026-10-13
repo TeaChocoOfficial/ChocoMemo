@@ -3,11 +3,11 @@
         "home": "Laman Utama",
         "languages": "Bahasa",
         "japanese": "Bahasa Jepun",
+        "english": "Bahasa Inggeris",
         "menu": "Buka menu",
         "settings": "Tetapan",
         "language": "Bahasa",
-        "theme": "Tema",
-        "english": "English"
+        "theme": "Tema"
     },
     "chrome": {
         "hide": "Sembunyikan",
@@ -132,6 +132,7 @@
         }
     },
     "common": {
+        "loading": "Loading…",
         "error": {
             "oops": "Aduh!",
             "unexpected": "Berlaku ralat yang tidak dijangka.",
@@ -139,15 +140,14 @@
         },
         "tabs": {
             "local": "Tempatan",
+            "official": "Rasmi",
             "cloud": "Awan",
-            "community": "Komuniti",
-            "official": "Rasmi"
+            "community": "Komuniti"
         },
         "comingSoon": {
             "cloud": "Segerak awan akan tiba tidak lama lagi, log masuk diperlukan",
             "community": "Semakan set komuniti belum tersedia"
         },
-        "loading": "Loading…",
         "select": "Pilih"
     },
     "notfound": {
@@ -193,6 +193,229 @@
         },
         "back_language": "Kembali ke pilihan bahasa"
     },
+    "deck": {
+        "type": {
+            "vocab": "Perkataan",
+            "render": "Membaca",
+            "review": "Semakan",
+            "exam": "Peperiksaan",
+            "drill": "Latihan"
+        },
+        "source": {
+            "official": "Rasmi",
+            "community": "Komuniti",
+            "local": "Milik anda",
+            "cloud": "Awan"
+        },
+        "visibility": {
+            "public": "Awam",
+            "unlisted": "Tidak disenaraikan",
+            "private": "Peribadi"
+        },
+        "search": "Cari dek",
+        "searchAria": "Cari dek mengikut nama",
+        "searchClear": "Kosongkan carian",
+        "tallyAria": "Dek mengikut sumber",
+        "resultCount": "Memaparkan {{matched}} daripada {{total}} dek",
+        "loading": "Memuatkan dek…",
+        "itemCount_one": "{{count}} item",
+        "itemCount_other": "{{count}} item",
+        "byAuthor": "oleh {{author}}",
+        "openAria": "Buka {{name}}",
+        "export": "Eksport",
+        "exportAria": "Eksport dek",
+        "download": "Muat turun",
+        "downloadAria": "Muat turun dek",
+        "delete": "Padam",
+        "deleteAria": "Padam dek",
+        "start": "Mula",
+        "list": {
+            "backHub": "Kembali ke {{language}}"
+        },
+        "empty": {
+            "local": {
+                "title": "Anda belum mempunyai dek",
+                "body": "Dek yang anda cipta atau import akan muncul di sini. Mulakan dengan dek rasmi.",
+                "action": "Lihat dek rasmi"
+            },
+            "official": {
+                "title": "Belum ada dek rasmi untuk jenis ini",
+                "body": "Dek rasmi disertakan bersama aplikasi. Belum ada yang diterbitkan untuk jenis ini."
+            },
+            "filtered": {
+                "title": "Tiada yang sepadan dengan penapis ini",
+                "body": "Tiada dek dalam tab ini sepadan dengan carian, tag dan pilihan anda. Longgarkan satu.",
+                "action": "Kosongkan penapis"
+            },
+            "cloud": {
+                "title": "Segerak awan akan tiba tidak lama lagi",
+                "body": "Log masuk dan dek anda akan mengikut anda merentas peranti.",
+                "action": "Log masuk"
+            },
+            "cloudSignedIn": {
+                "title": "Segerak awan akan tiba tidak lama lagi",
+                "body": "Anda telah log masuk. Penyegerakan dek antara peranti sedang disiapkan."
+            },
+            "community": {
+                "title": "Belum ada dek komuniti",
+                "body": "Dek yang diterbitkan oleh pelajar lain akan muncul di sini apabila komuniti dibuka."
+            }
+        },
+        "noResults": {
+            "title": "Tiada padanan untuk carian itu",
+            "body": "Cuba perkataan yang lebih pendek, atau kosongkan carian untuk melihat semuanya dalam tab ini."
+        },
+        "details": {
+            "notFound": "Dek itu tidak dijumpai.",
+            "back": "Kembali ke senarai dek",
+            "contents": "Kandungannya",
+            "version": "Versi",
+            "updated": "Dikemas kini",
+            "noSession": "Sesi untuk dek {{language}} belum bersedia."
+        },
+        "options": {
+            "sortAria": "Susun dek",
+            "sort": {
+                "default": "Susunan asal",
+                "name": "Nama A–Z",
+                "recent": "Terbaru dikemas kini",
+                "popular": "Paling banyak dimuat turun",
+                "size": "Paling besar"
+            },
+            "density": {
+                "comfortable": "Selesa",
+                "compact": "Padat"
+            },
+            "nsfw": {
+                "label": "Sensitif",
+                "on": "Dek sensitif dipaparkan",
+                "off": "Dek sensitif disembunyikan"
+            },
+            "importHeading": "Import",
+            "importHint": "Membaca fail dek yang pernah anda eksport.",
+            "importUnavailable": "Belum ada format fail untuk jenis dek ini."
+        },
+        "tags": {
+            "clear": "Kosongkan tag",
+            "remove": "Buang tag {{tag}}"
+        },
+        "actions": {
+            "create": {
+                "vocab": "Dek baharu",
+                "exam": "Peperiksaan baharu"
+            },
+            "importOnly": "Import"
+        },
+        "import": {
+            "action": "Import fail dek",
+            "invalidDeck": "Fail itu bukan dek yang sah.",
+            "invalidExam": "Fail itu bukan set peperiksaan yang sah.",
+            "invalidJson": "Fail itu tidak boleh dibaca sebagai JSON."
+        },
+        "viewAuthor": "Lihat profil {{author}}",
+        "edit": {
+            "listTitle": "Dek",
+            "panelTitle": "Editor",
+            "layoutTitle": "Susun Atur",
+            "spacedLabel": "Panel berjarak",
+            "spacedHint": "Tinggalkan jurang antara panel yang dipasang.",
+            "statusTitle": "Status",
+            "previewTitle": "Pratonton",
+            "inspectorTitle": "Pemeriksa",
+            "loading": "Memuatkan dek anda…",
+            "empty": "Belum ada dek untuk diedit.",
+            "previewEmpty": "Dek ini belum mempunyai kandungan.",
+            "selectPrompt": "Pilih dek untuk mengedit butirannya.",
+            "nameLabel": "Nama",
+            "namePlaceholder": "Nama dek",
+            "descriptionLabel": "Penerangan",
+            "descriptionPlaceholder": "Dek ini tentang apa?",
+            "tagsLabel": "Tag",
+            "tagsPlaceholder": "Tag dipisahkan dengan koma",
+            "nsfwLabel": "Tanda sebagai NSFW",
+            "save": "Simpan perubahan",
+            "delete": "Padam dek",
+            "dragHandle": "Seret untuk menyusun semula",
+            "mobileHint": "Susun semula dan edit dek di bawah. Buka pada skrin yang lebih luas untuk menggunakan pengurus dek.",
+            "filters": "Tapis dek mengikut jenis",
+            "filterAll": "Semua dek",
+            "typeLabel": "Jenis",
+            "sourceLabel": "Sumber",
+            "itemsLabel": "Item",
+            "statusDecks": "{{visible}} / {{total}} dek",
+            "noneSelected": "Tiada dek dipilih",
+            "addPanel": "Tambah panel",
+            "views": "Paparan editor",
+            "viewAll": "Semua dek",
+            "viewFavourites": "Kegemaran",
+            "viewRecent": "Terkini"
+        }
+    },
+    "footer": {
+        "tagline": "Cara yang selesa dan kaya tema untuk menikmati perjalanan melalui bahasa Jepun.",
+        "explore": "Terokai",
+        "learn": "Apa yang kami ajar",
+        "rights": "TeaChoco · Hak cipta terpelihara.",
+        "languages": {
+            "ja": "Jepun",
+            "en": "Inggeris",
+            "ko": "Korea",
+            "th": "Thai"
+        }
+    },
+    "auth": {
+        "signIn": "Log Masuk",
+        "signUp": "Daftar",
+        "signOut": "Log Keluar",
+        "email": "E-mel",
+        "password": "Kata laluan",
+        "name": "Nama",
+        "nameTag": "Nama pengguna",
+        "nameTagHint": "3-30 aksara. Hanya huruf Inggeris, nombor, garis bawah (_) atau sempang (-), tanpa ruang. Nama pengguna awam anda.",
+        "confirmPassword": "Sahkan Kata Laluan",
+        "forgotPassword": "Lupa kata laluan?",
+        "resetPassword": "Tetap Semula Kata Laluan",
+        "backToSignIn": "Kembali ke Log Masuk",
+        "orContinueWith": "Atau teruskan dengan",
+        "google": "Google",
+        "discord": "Discord",
+        "line": "LINE",
+        "x": "X (Twitter)",
+        "noAccount": "Tiada akaun?",
+        "hasAccount": "Sudah ada akaun?",
+        "verifyEmail": "Sahkan E-mel",
+        "verificationCode": "Kod pengesahan",
+        "verifyHint": "Masukkan kod 6 digit yang kami hantar ke {{email}}.",
+        "verify": "Sahkan",
+        "otpSent": "Kami menghantar kod ke {{email}}.",
+        "otpResent": "Kod baharu telah dihantar.",
+        "verifySuccess": "Selamat datang, {{name}}!",
+        "resendCode": "Hantar semula kod",
+        "resendInSeconds": "Hantar semula dalam {{seconds}}s",
+        "profile": "Profil",
+        "settings": "Tetapan",
+        "welcome": "Selamat datang, {{name}}",
+        "error": {
+            "invalidCredentials": "E-mel atau kata laluan tidak sah.",
+            "emailInUse": "Akaun dengan e-mel ini sudah wujud.",
+            "nameTagTaken": "Nama pengguna itu sudah digunakan.",
+            "nameTagInvalid": "Nama pengguna mestilah 3-30 aksara: hanya huruf Inggeris, nombor, garis bawah atau sempang (tanpa ruang).",
+            "passwordMismatch": "Kata laluan tidak sepadan.",
+            "invalidOtp": "Kod tidak sah atau telah tamat tempoh. Sila cuba lagi.",
+            "resendFailed": "Tidak dapat menghantar kod baharu. Sila cuba lagi.",
+            "generic": "Ralat berlaku. Sila cuba lagi.",
+            "emailNotFound": "No account found with that email.",
+            "resetFailed": "Password reset failed. Please try again.",
+            "oauth": "Sign-in failed: {{reason}}"
+        },
+        "resetCodeSent": "We sent a reset code to {{email}}.",
+        "resetHint": "Enter the code sent to {{email}} and choose a new password.",
+        "forgotHint": "Enter your account email and we'll send you a reset code.",
+        "newPassword": "New Password",
+        "updatePassword": "Update Password",
+        "resetSuccess": "Password updated. Please sign in.",
+        "sendResetCode": "Hantar kod set semula"
+    },
     "japanese": {
         "badge": "Bahasa Jepun",
         "title": "Belajar Bahasa Jepun",
@@ -210,7 +433,8 @@
             "vocabulary": "Kosa Kata",
             "vocabularyHint": "Kembangkan bank perkataan anda dan semaknya mengikut jadual berjarak.",
             "learn": "Belajar",
-            "practice": "Berlatih"
+            "practice": "Berlatih",
+            "manage": "Urus"
         },
         "nav": {
             "kana": {
@@ -218,15 +442,15 @@
                 "description": "Lihat semua Hiragana dan Katakana beserta bacaannya.",
                 "action": "Lihat Kana"
             },
-            "render": {
-                "title": "Render",
-                "description": "Read short passages with furigana and check yourself against the translation.",
-                "action": "Start Reading"
-            },
             "vocab": {
                 "title": "Perkataan",
                 "description": "Kumpulkan perkataan dan latih dengan jarak berkala.",
                 "action": "Lihat perkataan"
+            },
+            "render": {
+                "title": "Render",
+                "description": "Read short passages with furigana and check yourself against the translation.",
+                "action": "Start Reading"
             },
             "drill": {
                 "title": "Latihan Kana",
@@ -242,7 +466,17 @@
                 "title": "Peperiksaan Kosa Kata",
                 "description": "Uji diri dengan peperiksaan pelbagai pilihan daripada kosa kata anda sendiri.",
                 "action": "Ambil peperiksaan"
+            },
+            "edit": {
+                "title": "Edit Dek",
+                "description": "Namakan semula, susun semula atau buang dek dalam koleksi anda.",
+                "action": "Edit Dek"
             }
+        },
+        "edit": {
+            "title": "Edit Dek",
+            "description": "Urus dek dalam koleksi anda. Editor akan datang tidak lama lagi.",
+            "back": "Kembali ke Jepun"
         },
         "decks": {
             "title": "Dek Semakan Kosa Kata",
@@ -251,8 +485,26 @@
             "startReview": "Mula Semakan",
             "due": "tertunggak",
             "byAuthor": "oleh {{author}}",
+            "viewAuthor": "Lihat profil {{author}}",
             "download": "Muat turun",
             "note": "Semakan",
+            "open": "Open",
+            "itemCount_one": "{{count}} item",
+            "itemCount_other": "{{count}} items",
+            "favourite": "Tambah ke kegemaran",
+            "unfavourite": "Buang dari kegemaran",
+            "export": "Export",
+            "exportAria": "Export deck",
+            "downloadAria": "Download deck",
+            "delete": "Delete",
+            "deleteAria": "Delete deck",
+            "type": {
+                "vocab": "Vocabulary",
+                "render": "Reading",
+                "review": "Review",
+                "exam": "Exam",
+                "drill": "Drill"
+            },
             "ready": "Sedia",
             "words": "perkataan",
             "search": "Cari dek...",
@@ -281,30 +533,12 @@
                 "custom": "Perkataan saya",
                 "cloud": "Awan",
                 "downloaded": "Dimuat turun"
-            },
-            "open": "Open",
-            "itemCount_one": "{{count}} item",
-            "itemCount_other": "{{count}} items",
-            "export": "Export",
-            "exportAria": "Export deck",
-            "downloadAria": "Download deck",
-            "delete": "Delete",
-            "deleteAria": "Delete deck",
-            "type": {
-                "vocab": "Vocabulary",
-                "render": "Reading",
-                "review": "Review",
-                "exam": "Exam",
-                "drill": "Drill"
-            },
-            "viewAuthor": "Lihat profil {{author}}",
-            "favourite": "Tambah ke kegemaran",
-            "unfavourite": "Buang dari kegemaran"
+            }
         },
         "exam": {
             "title": "Peperiksaan",
-            "import": "Import set peperiksaan",
             "addCustom": "Tambah set tersuai",
+            "import": "Import set peperiksaan",
             "importErrorJson": "Tidak dapat membaca fail ini sebagai JSON.",
             "form": {
                 "title": "Cipta set peperiksaan tersuai",
@@ -315,12 +549,12 @@
                 "descriptionPlaceholder": "Nota ringkas tentang set ini",
                 "wordsLabel": "Perkataan untuk disertakan",
                 "wordsPlaceholder": "Cari perkataan...",
+                "selectedCount_one": "{{count}} dipilih",
+                "selectedCount_other": "{{count}} dipilih",
                 "titleError": "Beri nama kepada set anda.",
                 "minWordsError": "Pilih sekurang-kurangnya dua perkataan.",
                 "cancel": "Batal",
-                "submit": "Cipta set",
-                "selectedCount_one": "{{count}} dipilih",
-                "selectedCount_other": "{{count}} dipilih"
+                "submit": "Cipta set"
             }
         },
         "kana": {
@@ -432,7 +666,6 @@
             }
         },
         "vocab": {
-            "available": "{{count}} perkataan keseluruhan",
             "back_hub": "Back to hub",
             "eyebrow": "Vocabulary",
             "title": "Vocabulary",
@@ -451,7 +684,21 @@
             "meaning": "Meaning",
             "example": "Example",
             "required": "Word and meaning are required.",
-            "builtIn": "Built-in words can't be edited."
+            "builtIn": "Built-in words can't be edited.",
+            "available": "{{count}} perkataan keseluruhan"
+        },
+        "render": {
+            "back_hub": "Back to hub",
+            "eyebrow": "Render",
+            "title": "Render",
+            "description": "Read short passages with furigana and a translation to check against.",
+            "search": "Search decks",
+            "empty": "No reading decks yet.",
+            "passages": "passages",
+            "read": "Read",
+            "showTranslation": "Show translation",
+            "hideTranslation": "Hide translation",
+            "speak": "Listen"
         },
         "vocabularyReview": {
             "badge": "Semakan",
@@ -471,19 +718,6 @@
             "recallPrompt": "Apakah maksud perkataan ini?",
             "back_hub": "Kembali ke Jepun"
         },
-        "render": {
-            "back_hub": "Back to hub",
-            "eyebrow": "Render",
-            "title": "Render",
-            "description": "Read short passages with furigana and a translation to check against.",
-            "search": "Search decks",
-            "empty": "No reading decks yet.",
-            "passages": "passages",
-            "read": "Read",
-            "showTranslation": "Show translation",
-            "hideTranslation": "Hide translation",
-            "speak": "Listen"
-        },
         "drill": {
             "title": "Kana Drill"
         },
@@ -491,70 +725,59 @@
             "title": "Vocabulary Review"
         }
     },
-    "footer": {
-        "tagline": "Cara yang selesa dan kaya tema untuk menikmati perjalanan melalui bahasa Jepun.",
-        "explore": "Terokai",
-        "learn": "Apa yang kami ajar",
-        "rights": "TeaChoco · Hak cipta terpelihara.",
-        "languages": {
-            "ja": "Jepun",
-            "en": "Inggeris",
-            "ko": "Korea",
-            "th": "Thai"
-        }
-    },
-    "auth": {
-        "signIn": "Log Masuk",
-        "signUp": "Daftar",
-        "signOut": "Log Keluar",
-        "email": "E-mel",
-        "password": "Kata laluan",
-        "name": "Nama",
-        "nameTag": "Nama pengguna",
-        "nameTagHint": "3-30 aksara. Hanya huruf Inggeris, nombor, garis bawah (_) atau sempang (-), tanpa ruang. Nama pengguna awam anda.",
-        "confirmPassword": "Sahkan Kata Laluan",
-        "forgotPassword": "Lupa kata laluan?",
-        "resetPassword": "Tetap Semula Kata Laluan",
-        "backToSignIn": "Kembali ke Log Masuk",
-        "orContinueWith": "Atau teruskan dengan",
-        "google": "Google",
-        "discord": "Discord",
-        "noAccount": "Tiada akaun?",
-        "hasAccount": "Sudah ada akaun?",
-        "verifyEmail": "Sahkan E-mel",
-        "verificationCode": "Kod pengesahan",
-        "verifyHint": "Masukkan kod 6 digit yang kami hantar ke {{email}}.",
-        "verify": "Sahkan",
-        "otpSent": "Kami menghantar kod ke {{email}}.",
-        "otpResent": "Kod baharu telah dihantar.",
-        "verifySuccess": "Selamat datang, {{name}}!",
-        "resendCode": "Hantar semula kod",
-        "resendInSeconds": "Hantar semula dalam {{seconds}}s",
-        "profile": "Profil",
-        "settings": "Tetapan",
-        "welcome": "Selamat datang, {{name}}",
-        "error": {
-            "invalidCredentials": "E-mel atau kata laluan tidak sah.",
-            "emailInUse": "Akaun dengan e-mel ini sudah wujud.",
-            "nameTagTaken": "Nama pengguna itu sudah digunakan.",
-            "nameTagInvalid": "Nama pengguna mestilah 3-30 aksara: hanya huruf Inggeris, nombor, garis bawah atau sempang (tanpa ruang).",
-            "passwordMismatch": "Kata laluan tidak sepadan.",
-            "invalidOtp": "Kod tidak sah atau telah tamat tempoh. Sila cuba lagi.",
-            "resendFailed": "Tidak dapat menghantar kod baharu. Sila cuba lagi.",
-            "generic": "Ralat berlaku. Sila cuba lagi.",
-            "emailNotFound": "No account found with that email.",
-            "resetFailed": "Password reset failed. Please try again.",
-            "oauth": "Sign-in failed: {{reason}}"
+    "english": {
+        "badge": "Bahasa Inggeris",
+        "title": "Belajar Bahasa Inggeris",
+        "description": "Bahasa Inggeris ialah trek baharu. Ciri dek di bawah sudah berfungsi; set aksara dan drill masih dibina.",
+        "nav": {
+            "render": {
+                "title": "Membaca",
+                "description": "Baca teks pendek dan semak dengan terjemahannya.",
+                "action": "Mula membaca"
+            },
+            "review": {
+                "title": "Semakan kosa kata",
+                "description": "Semak kosa kata dengan kad imbasan dan pengulangan berjarak.",
+                "action": "Mula semakan"
+            },
+            "exam": {
+                "title": "Peperiksaan kosa kata",
+                "description": "Uji diri dengan peperiksaan pelbagai pilihan daripada kosa kata anda sendiri.",
+                "action": "Ambil peperiksaan"
+            },
+            "vocab": {
+                "title": "Lihat kosa kata",
+                "description": "Semak perkataan dalam dek bersama sebutan, maksud dan contoh.",
+                "action": "Lihat perkataan"
+            },
+            "edit": {
+                "title": "Edit Dek",
+                "description": "Namakan semula, susun semula atau buang dek dalam koleksi anda.",
+                "action": "Edit Dek"
+            }
         },
-        "resetCodeSent": "We sent a reset code to {{email}}.",
-        "resetHint": "Enter the code sent to {{email}} and choose a new password.",
-        "forgotHint": "Enter your account email and we'll send you a reset code.",
-        "newPassword": "New Password",
-        "updatePassword": "Update Password",
-        "resetSuccess": "Password updated. Please sign in.",
-        "line": "LINE",
-        "x": "X (Twitter)",
-        "sendResetCode": "Hantar kod set semula"
+        "edit": {
+            "title": "Edit Dek",
+            "description": "Urus dek dalam koleksi anda. Editor akan datang tidak lama lagi.",
+            "back": "Kembali ke Bahasa Inggeris"
+        },
+        "vocab": {
+            "title": "Perkataan"
+        },
+        "render": {
+            "title": "Membaca"
+        },
+        "review": {
+            "title": "Semakan kosa kata"
+        },
+        "exam": {
+            "title": "Peperiksaan"
+        },
+        "sections": {
+            "learn": "Belajar",
+            "practice": "Berlatih",
+            "manage": "Urus"
+        }
     },
     "settings": {
         "title": "Tetapan",
@@ -590,6 +813,12 @@
         }
     },
     "profile": {
+        "public": {
+            "notFoundTitle": "Profile not found",
+            "notFoundHint": "Nobody is using this name tag. It may have been changed or removed.",
+            "yourDashboard": "Go to your profile",
+            "viewPublic": "View public profile"
+        },
         "title": "Profil",
         "subtitle": "Kisah pembelajarammu bersama ChocoMemo.",
         "back": "Kembali",
@@ -713,194 +942,6 @@
             "saving": "Menyimpan…",
             "confirm": "Sahkan",
             "change": "Tukar gambar profil"
-        },
-        "public": {
-            "notFoundTitle": "Profile not found",
-            "notFoundHint": "Nobody is using this name tag. It may have been changed or removed.",
-            "yourDashboard": "Go to your profile",
-            "viewPublic": "View public profile"
         }
-    },
-    "english": {
-        "badge": "Bahasa Inggeris",
-        "title": "Belajar Bahasa Inggeris",
-        "description": "Bahasa Inggeris ialah trek baharu. Ciri dek di bawah sudah berfungsi; set aksara dan drill masih dibina.",
-        "nav": {
-            "render": {
-                "title": "Membaca",
-                "description": "Baca teks pendek dan semak dengan terjemahannya.",
-                "action": "Mula membaca"
-            },
-            "review": {
-                "title": "Semakan kosa kata",
-                "description": "Semak kosa kata dengan kad imbasan dan pengulangan berjarak.",
-                "action": "Mula semakan"
-            },
-            "exam": {
-                "title": "Peperiksaan kosa kata",
-                "description": "Uji diri dengan peperiksaan pelbagai pilihan daripada kosa kata anda sendiri.",
-                "action": "Ambil peperiksaan"
-            },
-            "vocab": {
-                "title": "Lihat kosa kata",
-                "description": "Semak perkataan dalam dek bersama sebutan, maksud dan contoh.",
-                "action": "Lihat perkataan"
-            }
-        },
-        "vocab": {
-            "title": "Perkataan"
-        },
-        "render": {
-            "title": "Membaca"
-        },
-        "review": {
-            "title": "Semakan kosa kata"
-        },
-        "exam": {
-            "title": "Peperiksaan"
-        },
-        "sections": {
-            "learn": "Belajar",
-            "practice": "Berlatih"
-        }
-    },
-    "deck": {
-        "type": {
-            "vocab": "Perkataan",
-            "render": "Membaca",
-            "review": "Semakan",
-            "exam": "Peperiksaan",
-            "drill": "Latihan"
-        },
-        "source": {
-            "official": "Rasmi",
-            "community": "Komuniti",
-            "local": "Milik anda",
-            "cloud": "Awan"
-        },
-        "visibility": {
-            "public": "Awam",
-            "unlisted": "Tidak disenaraikan",
-            "private": "Peribadi"
-        },
-        "search": "Cari dek",
-        "searchAria": "Cari dek mengikut nama",
-        "searchClear": "Kosongkan carian",
-        "tallyAria": "Dek mengikut sumber",
-        "resultCount": "Memaparkan {{matched}} daripada {{total}} dek",
-        "loading": "Memuatkan dek…",
-        "itemCount_one": "{{count}} item",
-        "itemCount_other": "{{count}} item",
-        "byAuthor": "oleh {{author}}",
-        "openAria": "Buka {{name}}",
-        "export": "Eksport",
-        "exportAria": "Eksport dek",
-        "download": "Muat turun",
-        "downloadAria": "Muat turun dek",
-        "delete": "Padam",
-        "deleteAria": "Padam dek",
-        "start": "Mula",
-        "list": {
-            "backHub": "Kembali ke {{language}}",
-            "eyebrow": {
-                "vocab": "Perkataan",
-                "render": "Membaca",
-                "exam": "Peperiksaan",
-                "review": "Semakan"
-            },
-            "title": {
-                "vocab": "Dek perkataan",
-                "render": "Dek bacaan",
-                "exam": "Set peperiksaan",
-                "review": "Dek semakan"
-            },
-            "description": {
-                "vocab": "Kumpulkan perkataan yang anda kuasai dalam satu dek, kemudian latih dengan jarak berkala.",
-                "render": "Teks pendek mengikut tahap, dengan terjemahan untuk semakan.",
-                "exam": "Set pelbagai pilihan yang dibina daripada perkataan anda sendiri.",
-                "review": "Semak dek dalam sesi pengulangan berjarak."
-            }
-        },
-        "empty": {
-            "local": {
-                "title": "Anda belum mempunyai dek",
-                "body": "Dek yang anda cipta atau import akan muncul di sini. Mulakan dengan dek rasmi.",
-                "action": "Lihat dek rasmi"
-            },
-            "official": {
-                "title": "Belum ada dek rasmi untuk jenis ini",
-                "body": "Dek rasmi disertakan bersama aplikasi. Belum ada yang diterbitkan untuk jenis ini."
-            },
-            "filtered": {
-                "title": "Tiada yang sepadan dengan penapis ini",
-                "body": "Tiada dek dalam tab ini sepadan dengan carian, tag dan pilihan anda. Longgarkan satu.",
-                "action": "Kosongkan penapis"
-            },
-            "cloud": {
-                "title": "Segerak awan akan tiba tidak lama lagi",
-                "body": "Log masuk dan dek anda akan mengikut anda merentas peranti.",
-                "action": "Log masuk"
-            },
-            "cloudSignedIn": {
-                "title": "Segerak awan akan tiba tidak lama lagi",
-                "body": "Anda telah log masuk. Penyegerakan dek antara peranti sedang disiapkan."
-            },
-            "community": {
-                "title": "Belum ada dek komuniti",
-                "body": "Dek yang diterbitkan oleh pelajar lain akan muncul di sini apabila komuniti dibuka."
-            }
-        },
-        "noResults": {
-            "title": "Tiada padanan untuk carian itu",
-            "body": "Cuba perkataan yang lebih pendek, atau kosongkan carian untuk melihat semuanya dalam tab ini."
-        },
-        "details": {
-            "notFound": "Dek itu tidak dijumpai.",
-            "back": "Kembali ke senarai dek",
-            "contents": "Kandungannya",
-            "version": "Versi",
-            "updated": "Dikemas kini",
-            "noSession": "Sesi untuk dek {{language}} belum bersedia."
-        },
-        "options": {
-            "sortAria": "Susun dek",
-            "sort": {
-                "default": "Susunan asal",
-                "name": "Nama A–Z",
-                "recent": "Terbaru dikemas kini",
-                "popular": "Paling banyak dimuat turun",
-                "size": "Paling besar"
-            },
-            "density": {
-                "comfortable": "Selesa",
-                "compact": "Padat"
-            },
-            "nsfw": {
-                "label": "Sensitif",
-                "on": "Dek sensitif dipaparkan",
-                "off": "Dek sensitif disembunyikan"
-            },
-            "importHeading": "Import",
-            "importHint": "Membaca fail dek yang pernah anda eksport.",
-            "importUnavailable": "Belum ada format fail untuk jenis dek ini."
-        },
-        "tags": {
-            "clear": "Kosongkan tag",
-            "remove": "Buang tag {{tag}}"
-        },
-        "actions": {
-            "create": {
-                "vocab": "Dek baharu",
-                "exam": "Peperiksaan baharu"
-            },
-            "importOnly": "Import"
-        },
-        "import": {
-            "action": "Import fail dek",
-            "invalidDeck": "Fail itu bukan dek yang sah.",
-            "invalidExam": "Fail itu bukan set peperiksaan yang sah.",
-            "invalidJson": "Fail itu tidak boleh dibaca sebagai JSON."
-        },
-        "viewAuthor": "Lihat profil {{author}}"
     }
 }

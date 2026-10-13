@@ -11,16 +11,16 @@
 // page read as a single control surface rather than two stacked widgets.
 import { useTranslation } from 'react-i18next';
 import DeckCard from '~/components/container/DeckCard/DeckCard';
-import type { DeckListQueryControls } from '~/hooks/useDeckListQuery';
+import type { DeckListQueryControls } from '~/hooks/deck/useDeckListQuery';
 import DeckListEmpty from './DeckListEmpty';
 import DeckListSkeleton from './DeckListSkeleton';
 import SourceTally from './SourceTally';
 import DeckListSearch from './DeckListSearch';
 import DeckTagFilter from './DeckTagFilter';
 import DeckListOptions from './DeckListOptions';
-import { useDeckCounts } from '~/hooks/useDecksForTab';
+import { useDeckCounts } from '~/hooks/deck/useDecksForTab';
 import { useDeckListActions } from './DeckListActions';
-import { useDeckListDecks } from '~/hooks/useDeckListDecks';
+import { useDeckListDecks } from '~/hooks/deck/useDeckListDecks';
 import { useAuthStore } from '~/stores/config/auth.store';
 import type { DeckType } from '~/types/deck';
 import type { DeckListQuery } from '~/types/deckList';
@@ -28,7 +28,7 @@ import type { Languages } from '~/data/language';
 
 /** Details page for a deck. Shared by every type and language, so the list
  *  never has to know that a session lives behind a different route. */
-const deckPath = (language: Languages) => `/${language}/decks/`;
+const DECK_PATH = '/decks/';
 
 /** Column count per density. Comfortable is the roomy default; compact trades
  *  card size for a denser scan, which is why it also tightens the gutters. */
@@ -39,12 +39,12 @@ const GRID = {
 
 export default function DeckList({
     type,
-    language,
+    targetLang,
     query,
     controls,
 }: {
     type: DeckType;
-    language: Languages;
+    targetLang: Languages;
     /** The view state parsed out of the URL by `useDeckListQuery`. */
     query: DeckListQuery;
     /** The setters from the same hook, forwarded so the page shell owns the URL
@@ -52,11 +52,11 @@ export default function DeckList({
     controls: DeckListQueryControls;
 }) {
     const { t } = useTranslation();
-    const counts = useDeckCounts(language, type);
-    const actions = useDeckListActions(language, type);
+    const counts = useDeckCounts(targetLang, type);
+    const actions = useDeckListActions(targetLang, type);
     const { setTab, setSearch, setSort, setDensity, setNsfw, toggleTag, reset } = controls;
     const { visible, matched, total, availableTags, isLoading, isNarrowedEmpty, sentinelRef } =
-        useDeckListDecks(language, type, query);
+        useDeckListDecks(targetLang, type, query);
 
     // `user` is `undefined` while the session is still being fetched, which
     // reads as signed out — the same as the server, so the first render on
@@ -131,7 +131,7 @@ export default function DeckList({
                         {visible.map((deck, index) => (
                             <DeckCard
                                 key={deck.id}
-                                to={deckPath(language)}
+                                to={DECK_PATH}
                                 deck={deck}
                                 index={index}
                             />

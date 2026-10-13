@@ -3,11 +3,11 @@
         "home": "Главная",
         "languages": "Языки",
         "japanese": "Японский",
+        "english": "Английский",
         "menu": "Открыть меню",
         "settings": "Настройки",
         "language": "Язык",
-        "theme": "Тема",
-        "english": "English"
+        "theme": "Тема"
     },
     "chrome": {
         "hide": "Скрыть",
@@ -132,6 +132,7 @@
         }
     },
     "common": {
+        "loading": "Loading…",
         "error": {
             "oops": "Ой!",
             "unexpected": "Произошла непредвиденная ошибка.",
@@ -139,15 +140,14 @@
         },
         "tabs": {
             "local": "Локально",
+            "official": "Официальные",
             "cloud": "Облако",
-            "community": "Сообщество",
-            "official": "Официальные"
+            "community": "Сообщество"
         },
         "comingSoon": {
             "cloud": "Облачная синхронизация скоро появится, требуется вход",
             "community": "Просмотр наборов сообщества пока недоступен"
         },
-        "loading": "Loading…",
         "select": "Выбрать"
     },
     "notfound": {
@@ -193,6 +193,229 @@
         },
         "back_language": "Назад к выбору языка"
     },
+    "deck": {
+        "type": {
+            "vocab": "Лексика",
+            "render": "Чтение",
+            "review": "Повторение",
+            "exam": "Экзамен",
+            "drill": "Тренировка"
+        },
+        "source": {
+            "official": "Официальные",
+            "community": "Сообщество",
+            "local": "Мои",
+            "cloud": "Облако"
+        },
+        "visibility": {
+            "public": "Публичная",
+            "unlisted": "Без списка",
+            "private": "Приватная"
+        },
+        "search": "Поиск колод",
+        "searchAria": "Поиск колод по названию",
+        "searchClear": "Очистить поиск",
+        "tallyAria": "Колоды по источнику",
+        "resultCount": "Показано {{matched}} из {{total}} колод",
+        "loading": "Загрузка колод…",
+        "itemCount_one": "{{count}} элемент",
+        "itemCount_other": "{{count}} элемента",
+        "byAuthor": "от {{author}}",
+        "openAria": "Открыть {{name}}",
+        "export": "Экспорт",
+        "exportAria": "Экспортировать колоду",
+        "download": "Скачать",
+        "downloadAria": "Скачать колоду",
+        "delete": "Удалить",
+        "deleteAria": "Удалить колоду",
+        "start": "Начать",
+        "list": {
+            "backHub": "Назад к {{language}}"
+        },
+        "empty": {
+            "local": {
+                "title": "У вас пока нет своих колод",
+                "body": "Созданные и импортированные колоды появятся здесь. Начните с официальной.",
+                "action": "Смотреть официальные колоды"
+            },
+            "official": {
+                "title": "Официальных колод этого типа пока нет",
+                "body": "Официальные колоды входят в приложение. Для этого типа их ещё не выпустили."
+            },
+            "filtered": {
+                "title": "Ничего не подходит под фильтры",
+                "body": "В этой вкладке нет колод под ваш поиск, теги и параметры. Ослабьте что-нибудь одно.",
+                "action": "Сбросить фильтры"
+            },
+            "cloud": {
+                "title": "Облачная синхронизация скоро появится",
+                "body": "Войдите — и колоды будут с вами на всех устройствах.",
+                "action": "Войти"
+            },
+            "cloudSignedIn": {
+                "title": "Облачная синхронизация скоро появится",
+                "body": "Вы вошли в аккаунт. Синхронизация колод между устройствами уже в работе."
+            },
+            "community": {
+                "title": "Пока нет колод сообщества",
+                "body": "Колоды, опубликованные другими учениками, появятся здесь, когда откроется сообщество."
+            }
+        },
+        "noResults": {
+            "title": "По этому запросу ничего нет",
+            "body": "Попробуйте более короткое слово или очистите поиск, чтобы увидеть всё во вкладке."
+        },
+        "details": {
+            "notFound": "Такая колода не найдена.",
+            "back": "Назад к колодам",
+            "contents": "Что внутри",
+            "version": "Версия",
+            "updated": "Обновлено",
+            "noSession": "Сессии для колод {{language}} ещё не готовы."
+        },
+        "options": {
+            "sortAria": "Сортировать колоды",
+            "sort": {
+                "default": "Исходный порядок",
+                "name": "По названию А–Я",
+                "recent": "Недавно обновлённые",
+                "popular": "Чаще скачивают",
+                "size": "Сначала большие"
+            },
+            "density": {
+                "comfortable": "Просторно",
+                "compact": "Плотно"
+            },
+            "nsfw": {
+                "label": "Чувствительное",
+                "on": "Чувствительные колоды показаны",
+                "off": "Чувствительные колоды скрыты"
+            },
+            "importHeading": "Импорт",
+            "importHint": "Читает файл колоды, который вы раньше экспортировали.",
+            "importUnavailable": "Для этого типа колод формата файла пока нет."
+        },
+        "tags": {
+            "clear": "Очистить теги",
+            "remove": "Убрать тег {{tag}}"
+        },
+        "actions": {
+            "create": {
+                "vocab": "Новая колода",
+                "exam": "Новый экзамен"
+            },
+            "importOnly": "Импорт"
+        },
+        "import": {
+            "action": "Импортировать файл колоды",
+            "invalidDeck": "Этот файл не является корректной колодой.",
+            "invalidExam": "Этот файл не является корректным набором заданий.",
+            "invalidJson": "Не удалось прочитать этот файл как JSON."
+        },
+        "viewAuthor": "Открыть профиль {{author}}",
+        "edit": {
+            "listTitle": "Колоды",
+            "panelTitle": "Редактор",
+            "layoutTitle": "Макет",
+            "spacedLabel": "Панели с отступами",
+            "spacedHint": "Оставьте промежуток между закреплёнными панелями.",
+            "statusTitle": "Статус",
+            "previewTitle": "Предпросмотр",
+            "inspectorTitle": "Инспектор",
+            "loading": "Загрузка ваших колод…",
+            "empty": "Пока нет колод для редактирования.",
+            "previewEmpty": "В этой колоде пока нет содержимого.",
+            "selectPrompt": "Выберите колоду, чтобы отредактировать её детали.",
+            "nameLabel": "Название",
+            "namePlaceholder": "Название колоды",
+            "descriptionLabel": "Описание",
+            "descriptionPlaceholder": "О чём эта колода?",
+            "tagsLabel": "Теги",
+            "tagsPlaceholder": "Теги через запятую",
+            "nsfwLabel": "Пометить как NSFW",
+            "save": "Сохранить изменения",
+            "delete": "Удалить колоду",
+            "dragHandle": "Перетащите, чтобы изменить порядок",
+            "mobileHint": "Меняйте порядок и редактируйте колоды ниже. Откройте на более широком экране, чтобы использовать менеджер колод.",
+            "filters": "Фильтровать колоды по типу",
+            "filterAll": "Все колоды",
+            "typeLabel": "Тип",
+            "sourceLabel": "Источник",
+            "itemsLabel": "Элементы",
+            "statusDecks": "{{visible}} / {{total}} колод",
+            "noneSelected": "Колода не выбрана",
+            "addPanel": "Добавить панель",
+            "views": "Представления редактора",
+            "viewAll": "Все колоды",
+            "viewFavourites": "Избранное",
+            "viewRecent": "Недавние"
+        }
+    },
+    "footer": {
+        "tagline": "Уютный способ с богатыми темами смаковать путь через японский язык.",
+        "explore": "Исследовать",
+        "learn": "Чему мы учим",
+        "rights": "TeaChoco · Все права защищены.",
+        "languages": {
+            "ja": "Японский",
+            "en": "Английский",
+            "ko": "Корейский",
+            "th": "Тайский"
+        }
+    },
+    "auth": {
+        "signIn": "Войти",
+        "signUp": "Регистрация",
+        "signOut": "Выйти",
+        "email": "Электронная почта",
+        "password": "Пароль",
+        "name": "Имя",
+        "nameTag": "Никнейм",
+        "nameTagHint": "От 3 до 30 символов. Только английские буквы, цифры, подчёркивания (_) или дефисы (-), без пробелов. Ваш публичный никнейм.",
+        "confirmPassword": "Подтвердите пароль",
+        "forgotPassword": "Забыли пароль?",
+        "resetPassword": "Сбросить пароль",
+        "backToSignIn": "Вернуться ко входу",
+        "orContinueWith": "Или продолжить с",
+        "google": "Google",
+        "discord": "Discord",
+        "line": "LINE",
+        "x": "X (Twitter)",
+        "noAccount": "Нет аккаунта?",
+        "hasAccount": "Уже есть аккаунт?",
+        "verifyEmail": "Подтвердить email",
+        "verificationCode": "Код подтверждения",
+        "verifyHint": "Введите 6-значный код, отправленный на {{email}}.",
+        "verify": "Подтвердить",
+        "otpSent": "Мы отправили код на {{email}}.",
+        "otpResent": "Отправлен новый код.",
+        "verifySuccess": "Добро пожаловать, {{name}}!",
+        "resendCode": "Отправить код снова",
+        "resendInSeconds": "Повторить через {{seconds}}с",
+        "profile": "Профиль",
+        "settings": "Настройки",
+        "welcome": "Добро пожаловать, {{name}}",
+        "error": {
+            "invalidCredentials": "Неверный адрес электронной почты или пароль.",
+            "emailInUse": "Аккаунт с таким адресом уже существует.",
+            "nameTagTaken": "Этот никнейм уже занят.",
+            "nameTagInvalid": "Никнейм должен содержать от 3 до 30 символов: только английские буквы, цифры, подчёркивания или дефисы (без пробелов).",
+            "passwordMismatch": "Пароли не совпадают.",
+            "invalidOtp": "Неверный или просроченный код. Попробуйте снова.",
+            "resendFailed": "Не удалось отправить новый код. Попробуйте снова.",
+            "generic": "Произошла ошибка. Пожалуйста, попробуйте снова.",
+            "emailNotFound": "No account found with that email.",
+            "resetFailed": "Password reset failed. Please try again.",
+            "oauth": "Sign-in failed: {{reason}}"
+        },
+        "resetCodeSent": "We sent a reset code to {{email}}.",
+        "resetHint": "Enter the code sent to {{email}} and choose a new password.",
+        "forgotHint": "Enter your account email and we'll send you a reset code.",
+        "newPassword": "New Password",
+        "updatePassword": "Update Password",
+        "resetSuccess": "Password updated. Please sign in.",
+        "sendResetCode": "Отправить код сброса"
+    },
     "japanese": {
         "badge": "Японский",
         "title": "Изучать японский",
@@ -210,7 +433,8 @@
             "vocabulary": "Лексика",
             "vocabularyHint": "Пополняйте свой словарный запас и повторяйте его по интервальному графику.",
             "learn": "Учить",
-            "practice": "Практика"
+            "practice": "Практика",
+            "manage": "Управление"
         },
         "nav": {
             "kana": {
@@ -218,15 +442,15 @@
                 "description": "Просмотрите всю хирагану и катакану с их чтениями.",
                 "action": "Смотреть кану"
             },
-            "render": {
-                "title": "Render",
-                "description": "Read short passages with furigana and check yourself against the translation.",
-                "action": "Start Reading"
-            },
             "vocab": {
                 "title": "Лексика",
                 "description": "Расширяйте словарь и повторяйте через интервалы.",
                 "action": "Смотреть слова"
+            },
+            "render": {
+                "title": "Render",
+                "description": "Read short passages with furigana and check yourself against the translation.",
+                "action": "Start Reading"
             },
             "drill": {
                 "title": "Тренировка каны",
@@ -242,7 +466,17 @@
                 "title": "Экзамен по лексике",
                 "description": "Проверьте себя тестом с выбором из своей лексики.",
                 "action": "Пройти тест"
+            },
+            "edit": {
+                "title": "Редактировать колоды",
+                "description": "Переименовывайте, меняйте порядок или удаляйте колоды в своей коллекции.",
+                "action": "Редактировать колоды"
             }
+        },
+        "edit": {
+            "title": "Редактировать колоды",
+            "description": "Управляйте колодами в своей коллекции. Редактор появится скоро.",
+            "back": "Назад к японскому"
         },
         "decks": {
             "title": "Колоды для повторения лексики",
@@ -251,8 +485,26 @@
             "startReview": "Начать повторение",
             "due": "к повторению",
             "byAuthor": "автор {{author}}",
+            "viewAuthor": "Открыть профиль {{author}}",
             "download": "Скачать",
             "note": "Повторение",
+            "open": "Open",
+            "itemCount_one": "{{count}} элемент",
+            "itemCount_other": "{{count}} элемента",
+            "favourite": "В избранное",
+            "unfavourite": "Убрать из избранного",
+            "export": "Export",
+            "exportAria": "Export deck",
+            "downloadAria": "Download deck",
+            "delete": "Delete",
+            "deleteAria": "Delete deck",
+            "type": {
+                "vocab": "Vocabulary",
+                "render": "Reading",
+                "review": "Review",
+                "exam": "Exam",
+                "drill": "Drill"
+            },
             "ready": "Готово",
             "words": "слов",
             "search": "Поиск колод...",
@@ -281,32 +533,12 @@
                 "custom": "Мои слова",
                 "cloud": "Облако",
                 "downloaded": "Загружено"
-            },
-            "open": "Open",
-            "itemCount_one": "{{count}} элемент",
-            "itemCount_other": "{{count}} элемента",
-            "export": "Export",
-            "exportAria": "Export deck",
-            "downloadAria": "Download deck",
-            "delete": "Delete",
-            "deleteAria": "Delete deck",
-            "type": {
-                "vocab": "Vocabulary",
-                "render": "Reading",
-                "review": "Review",
-                "exam": "Exam",
-                "drill": "Drill"
-            },
-            "viewAuthor": "Открыть профиль {{author}}",
-            "favourite": "В избранное",
-            "unfavourite": "Убрать из избранного",
-            "itemCount_few": "{{count}} элемента",
-            "itemCount_many": "{{count}} элементов"
+            }
         },
         "exam": {
             "title": "Экзамен",
-            "import": "Импортировать набор экзамена",
             "addCustom": "Добавить свой набор",
+            "import": "Импортировать набор экзамена",
             "importErrorJson": "Не удалось прочитать этот файл как JSON.",
             "form": {
                 "title": "Создать свой набор экзамена",
@@ -317,14 +549,12 @@
                 "descriptionPlaceholder": "Краткая заметка об этом наборе",
                 "wordsLabel": "Слова для включения",
                 "wordsPlaceholder": "Поиск слов...",
+                "selectedCount_one": "выбрано {{count}}",
+                "selectedCount_other": "выбрано {{count}}",
                 "titleError": "Дайте набору название.",
                 "minWordsError": "Выберите хотя бы два слова.",
                 "cancel": "Отмена",
-                "submit": "Создать набор",
-                "selectedCount_one": "выбрано {{count}}",
-                "selectedCount_other": "выбрано {{count}}",
-                "selectedCount_few": "выбрано {{count}}",
-                "selectedCount_many": "выбрано {{count}}"
+                "submit": "Создать набор"
             }
         },
         "kana": {
@@ -436,7 +666,6 @@
             }
         },
         "vocab": {
-            "available": "{{count}} слов всего",
             "back_hub": "Back to hub",
             "eyebrow": "Vocabulary",
             "title": "Vocabulary",
@@ -455,7 +684,21 @@
             "meaning": "Meaning",
             "example": "Example",
             "required": "Word and meaning are required.",
-            "builtIn": "Built-in words can't be edited."
+            "builtIn": "Built-in words can't be edited.",
+            "available": "{{count}} слов всего"
+        },
+        "render": {
+            "back_hub": "Back to hub",
+            "eyebrow": "Render",
+            "title": "Render",
+            "description": "Read short passages with furigana and a translation to check against.",
+            "search": "Search decks",
+            "empty": "No reading decks yet.",
+            "passages": "passages",
+            "read": "Read",
+            "showTranslation": "Show translation",
+            "hideTranslation": "Hide translation",
+            "speak": "Listen"
         },
         "vocabularyReview": {
             "badge": "Повторение",
@@ -475,19 +718,6 @@
             "recallPrompt": "Что означает это слово?",
             "back_hub": "Назад к японскому"
         },
-        "render": {
-            "back_hub": "Back to hub",
-            "eyebrow": "Render",
-            "title": "Render",
-            "description": "Read short passages with furigana and a translation to check against.",
-            "search": "Search decks",
-            "empty": "No reading decks yet.",
-            "passages": "passages",
-            "read": "Read",
-            "showTranslation": "Show translation",
-            "hideTranslation": "Hide translation",
-            "speak": "Listen"
-        },
         "drill": {
             "title": "Kana Drill"
         },
@@ -495,70 +725,59 @@
             "title": "Vocabulary Review"
         }
     },
-    "footer": {
-        "tagline": "Уютный способ с богатыми темами смаковать путь через японский язык.",
-        "explore": "Исследовать",
-        "learn": "Чему мы учим",
-        "rights": "TeaChoco · Все права защищены.",
-        "languages": {
-            "ja": "Японский",
-            "en": "Английский",
-            "ko": "Корейский",
-            "th": "Тайский"
-        }
-    },
-    "auth": {
-        "signIn": "Войти",
-        "signUp": "Регистрация",
-        "signOut": "Выйти",
-        "email": "Электронная почта",
-        "password": "Пароль",
-        "name": "Имя",
-        "nameTag": "Никнейм",
-        "nameTagHint": "От 3 до 30 символов. Только английские буквы, цифры, подчёркивания (_) или дефисы (-), без пробелов. Ваш публичный никнейм.",
-        "confirmPassword": "Подтвердите пароль",
-        "forgotPassword": "Забыли пароль?",
-        "resetPassword": "Сбросить пароль",
-        "backToSignIn": "Вернуться ко входу",
-        "orContinueWith": "Или продолжить с",
-        "google": "Google",
-        "discord": "Discord",
-        "noAccount": "Нет аккаунта?",
-        "hasAccount": "Уже есть аккаунт?",
-        "verifyEmail": "Подтвердить email",
-        "verificationCode": "Код подтверждения",
-        "verifyHint": "Введите 6-значный код, отправленный на {{email}}.",
-        "verify": "Подтвердить",
-        "otpSent": "Мы отправили код на {{email}}.",
-        "otpResent": "Отправлен новый код.",
-        "verifySuccess": "Добро пожаловать, {{name}}!",
-        "resendCode": "Отправить код снова",
-        "resendInSeconds": "Повторить через {{seconds}}с",
-        "profile": "Профиль",
-        "settings": "Настройки",
-        "welcome": "Добро пожаловать, {{name}}",
-        "error": {
-            "invalidCredentials": "Неверный адрес электронной почты или пароль.",
-            "emailInUse": "Аккаунт с таким адресом уже существует.",
-            "nameTagTaken": "Этот никнейм уже занят.",
-            "nameTagInvalid": "Никнейм должен содержать от 3 до 30 символов: только английские буквы, цифры, подчёркивания или дефисы (без пробелов).",
-            "passwordMismatch": "Пароли не совпадают.",
-            "invalidOtp": "Неверный или просроченный код. Попробуйте снова.",
-            "resendFailed": "Не удалось отправить новый код. Попробуйте снова.",
-            "generic": "Произошла ошибка. Пожалуйста, попробуйте снова.",
-            "emailNotFound": "No account found with that email.",
-            "resetFailed": "Password reset failed. Please try again.",
-            "oauth": "Sign-in failed: {{reason}}"
+    "english": {
+        "badge": "Английский",
+        "title": "Учить английский",
+        "description": "Английский — новая тема. Функции колод ниже уже работают; набор символов и тренировка ещё в разработке.",
+        "nav": {
+            "render": {
+                "title": "Чтение",
+                "description": "Читайте короткие тексты и сверяйтесь с переводом.",
+                "action": "Начать читать"
+            },
+            "review": {
+                "title": "Повторение лексики",
+                "description": "Повторяйте лексику карточками и интервальным повторением.",
+                "action": "Начать повторение"
+            },
+            "exam": {
+                "title": "Экзамен по лексике",
+                "description": "Проверьте себя тестом с выбором из своей лексики.",
+                "action": "Пройти тест"
+            },
+            "vocab": {
+                "title": "Посмотреть лексику",
+                "description": "Просматривайте слова колоды с произношением, значением и примерами.",
+                "action": "Смотреть слова"
+            },
+            "edit": {
+                "title": "Редактировать колоды",
+                "description": "Переименовывайте, меняйте порядок или удаляйте колоды в своей коллекции.",
+                "action": "Редактировать колоды"
+            }
         },
-        "resetCodeSent": "We sent a reset code to {{email}}.",
-        "resetHint": "Enter the code sent to {{email}} and choose a new password.",
-        "forgotHint": "Enter your account email and we'll send you a reset code.",
-        "newPassword": "New Password",
-        "updatePassword": "Update Password",
-        "resetSuccess": "Password updated. Please sign in.",
-        "line": "LINE",
-        "x": "X (Twitter)",
-        "sendResetCode": "Отправить код сброса"
+        "edit": {
+            "title": "Редактировать колоды",
+            "description": "Управляйте колодами в своей коллекции. Редактор появится скоро.",
+            "back": "Назад к английскому"
+        },
+        "vocab": {
+            "title": "Лексика"
+        },
+        "render": {
+            "title": "Чтение"
+        },
+        "review": {
+            "title": "Повторение лексики"
+        },
+        "exam": {
+            "title": "Экзамен"
+        },
+        "sections": {
+            "learn": "Учить",
+            "practice": "Практика",
+            "manage": "Управление"
+        }
     },
     "settings": {
         "title": "Настройки",
@@ -594,6 +813,12 @@
         }
     },
     "profile": {
+        "public": {
+            "notFoundTitle": "Profile not found",
+            "notFoundHint": "Nobody is using this name tag. It may have been changed or removed.",
+            "yourDashboard": "Go to your profile",
+            "viewPublic": "View public profile"
+        },
         "title": "Профиль",
         "subtitle": "Ваша история обучения с ChocoMemo.",
         "back": "Назад",
@@ -717,196 +942,6 @@
             "saving": "Сохранение…",
             "confirm": "Подтвердить",
             "change": "Сменить фото профиля"
-        },
-        "public": {
-            "notFoundTitle": "Profile not found",
-            "notFoundHint": "Nobody is using this name tag. It may have been changed or removed.",
-            "yourDashboard": "Go to your profile",
-            "viewPublic": "View public profile"
         }
-    },
-    "english": {
-        "badge": "Английский",
-        "title": "Учить английский",
-        "description": "Английский — новая тема. Функции колод ниже уже работают; набор символов и тренировка ещё в разработке.",
-        "nav": {
-            "render": {
-                "title": "Чтение",
-                "description": "Читайте короткие тексты и сверяйтесь с переводом.",
-                "action": "Начать читать"
-            },
-            "review": {
-                "title": "Повторение лексики",
-                "description": "Повторяйте лексику карточками и интервальным повторением.",
-                "action": "Начать повторение"
-            },
-            "exam": {
-                "title": "Экзамен по лексике",
-                "description": "Проверьте себя тестом с выбором из своей лексики.",
-                "action": "Пройти тест"
-            },
-            "vocab": {
-                "title": "Посмотреть лексику",
-                "description": "Просматривайте слова колоды с произношением, значением и примерами.",
-                "action": "Смотреть слова"
-            }
-        },
-        "vocab": {
-            "title": "Лексика"
-        },
-        "render": {
-            "title": "Чтение"
-        },
-        "review": {
-            "title": "Повторение лексики"
-        },
-        "exam": {
-            "title": "Экзамен"
-        },
-        "sections": {
-            "learn": "Учить",
-            "practice": "Практика"
-        }
-    },
-    "deck": {
-        "type": {
-            "vocab": "Лексика",
-            "render": "Чтение",
-            "review": "Повторение",
-            "exam": "Экзамен",
-            "drill": "Тренировка"
-        },
-        "source": {
-            "official": "Официальные",
-            "community": "Сообщество",
-            "local": "Мои",
-            "cloud": "Облако"
-        },
-        "visibility": {
-            "public": "Публичная",
-            "unlisted": "Без списка",
-            "private": "Приватная"
-        },
-        "search": "Поиск колод",
-        "searchAria": "Поиск колод по названию",
-        "searchClear": "Очистить поиск",
-        "tallyAria": "Колоды по источнику",
-        "resultCount": "Показано {{matched}} из {{total}} колод",
-        "loading": "Загрузка колод…",
-        "itemCount_one": "{{count}} элемент",
-        "itemCount_other": "{{count}} элемента",
-        "byAuthor": "от {{author}}",
-        "openAria": "Открыть {{name}}",
-        "export": "Экспорт",
-        "exportAria": "Экспортировать колоду",
-        "download": "Скачать",
-        "downloadAria": "Скачать колоду",
-        "delete": "Удалить",
-        "deleteAria": "Удалить колоду",
-        "start": "Начать",
-        "list": {
-            "backHub": "Назад к {{language}}",
-            "eyebrow": {
-                "vocab": "Лексика",
-                "render": "Чтение",
-                "exam": "Экзамены",
-                "review": "Повторение"
-            },
-            "title": {
-                "vocab": "Колоды лексики",
-                "render": "Колоды для чтения",
-                "exam": "Наборы заданий",
-                "review": "Колоды для повторения"
-            },
-            "description": {
-                "vocab": "Соберите знакомые слова в колоду и повторяйте их через интервалы.",
-                "render": "Короткие тексты по уровню, с переводом для самопроверки.",
-                "exam": "Наборы с множественным выбором из вашей лексики.",
-                "review": "Проходите колоду в сессии с интервальным повторением."
-            }
-        },
-        "empty": {
-            "local": {
-                "title": "У вас пока нет своих колод",
-                "body": "Созданные и импортированные колоды появятся здесь. Начните с официальной.",
-                "action": "Смотреть официальные колоды"
-            },
-            "official": {
-                "title": "Официальных колод этого типа пока нет",
-                "body": "Официальные колоды входят в приложение. Для этого типа их ещё не выпустили."
-            },
-            "filtered": {
-                "title": "Ничего не подходит под фильтры",
-                "body": "В этой вкладке нет колод под ваш поиск, теги и параметры. Ослабьте что-нибудь одно.",
-                "action": "Сбросить фильтры"
-            },
-            "cloud": {
-                "title": "Облачная синхронизация скоро появится",
-                "body": "Войдите — и колоды будут с вами на всех устройствах.",
-                "action": "Войти"
-            },
-            "cloudSignedIn": {
-                "title": "Облачная синхронизация скоро появится",
-                "body": "Вы вошли в аккаунт. Синхронизация колод между устройствами уже в работе."
-            },
-            "community": {
-                "title": "Пока нет колод сообщества",
-                "body": "Колоды, опубликованные другими учениками, появятся здесь, когда откроется сообщество."
-            }
-        },
-        "noResults": {
-            "title": "По этому запросу ничего нет",
-            "body": "Попробуйте более короткое слово или очистите поиск, чтобы увидеть всё во вкладке."
-        },
-        "details": {
-            "notFound": "Такая колода не найдена.",
-            "back": "Назад к колодам",
-            "contents": "Что внутри",
-            "version": "Версия",
-            "updated": "Обновлено",
-            "noSession": "Сессии для колод {{language}} ещё не готовы."
-        },
-        "options": {
-            "sortAria": "Сортировать колоды",
-            "sort": {
-                "default": "Исходный порядок",
-                "name": "По названию А–Я",
-                "recent": "Недавно обновлённые",
-                "popular": "Чаще скачивают",
-                "size": "Сначала большие"
-            },
-            "density": {
-                "comfortable": "Просторно",
-                "compact": "Плотно"
-            },
-            "nsfw": {
-                "label": "Чувствительное",
-                "on": "Чувствительные колоды показаны",
-                "off": "Чувствительные колоды скрыты"
-            },
-            "importHeading": "Импорт",
-            "importHint": "Читает файл колоды, который вы раньше экспортировали.",
-            "importUnavailable": "Для этого типа колод формата файла пока нет."
-        },
-        "tags": {
-            "clear": "Очистить теги",
-            "remove": "Убрать тег {{tag}}"
-        },
-        "actions": {
-            "create": {
-                "vocab": "Новая колода",
-                "exam": "Новый экзамен"
-            },
-            "importOnly": "Импорт"
-        },
-        "import": {
-            "action": "Импортировать файл колоды",
-            "invalidDeck": "Этот файл не является корректной колодой.",
-            "invalidExam": "Этот файл не является корректным набором заданий.",
-            "invalidJson": "Не удалось прочитать этот файл как JSON."
-        },
-        "viewAuthor": "Открыть профиль {{author}}",
-        "itemCount_few": "{{count}} элемента",
-        "itemCount_many": "{{count}} элементов"
     }
 }

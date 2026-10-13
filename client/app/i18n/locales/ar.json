@@ -3,11 +3,11 @@
         "home": "الرئيسية",
         "languages": "اللغات",
         "japanese": "اليابانية",
+        "english": "الإنجليزية",
         "menu": "فتح القائمة",
         "settings": "الإعدادات",
         "language": "اللغة",
-        "theme": "المظهر",
-        "english": "English"
+        "theme": "المظهر"
     },
     "chrome": {
         "hide": "إخفاء",
@@ -132,6 +132,7 @@
         }
     },
     "common": {
+        "loading": "Loading…",
         "error": {
             "oops": "أوبس!",
             "unexpected": "حدث خطأ غير متوقع.",
@@ -139,15 +140,14 @@
         },
         "tabs": {
             "local": "محلي",
+            "official": "رسمي",
             "cloud": "سحابة",
-            "community": "المجتمع",
-            "official": "رسمي"
+            "community": "المجتمع"
         },
         "comingSoon": {
             "cloud": "مزامنة السحابة قريبًا، يتطلب تسجيل الدخول",
             "community": "تصفح مجموعات المجتمع غير متاح بعد"
         },
-        "loading": "Loading…",
         "select": "اختر"
     },
     "notfound": {
@@ -193,6 +193,229 @@
         },
         "back_language": "العودة إلى اختيار اللغة"
     },
+    "deck": {
+        "type": {
+            "vocab": "المفردات",
+            "render": "القراءة",
+            "review": "المراجعة",
+            "exam": "اختبار",
+            "drill": "تدريب"
+        },
+        "source": {
+            "official": "رسمي",
+            "community": "المجتمع",
+            "local": "مجموعاتك",
+            "cloud": "السحابة"
+        },
+        "visibility": {
+            "public": "عام",
+            "unlisted": "غير مدرج",
+            "private": "خاص"
+        },
+        "search": "ابحث في المجموعات",
+        "searchAria": "ابحث في المجموعات بالاسم",
+        "searchClear": "مسح البحث",
+        "tallyAria": "المجموعات حسب المصدر",
+        "resultCount": "عرض {{matched}} من {{total}} مجموعة",
+        "loading": "جارٍ تحميل المجموعات…",
+        "itemCount_one": "{{count}} عنصر",
+        "itemCount_other": "{{count}} عنصر",
+        "byAuthor": "بواسطة {{author}}",
+        "openAria": "فتح {{name}}",
+        "export": "تصدير",
+        "exportAria": "تصدير المجموعة",
+        "download": "تنزيل",
+        "downloadAria": "تنزيل المجموعة",
+        "delete": "حذف",
+        "deleteAria": "حذف المجموعة",
+        "start": "ابدأ",
+        "list": {
+            "backHub": "العودة إلى {{language}}"
+        },
+        "empty": {
+            "local": {
+                "title": "لا تملك مجموعات بعد",
+                "body": "المجموعات التي تنشئها أو تستوردها تظهر هنا. ابدأ بمجموعة رسمية.",
+                "action": "تصفح المجموعات الرسمية"
+            },
+            "official": {
+                "title": "لا توجد مجموعات رسمية لهذا النوع بعد",
+                "body": "المجموعات الرسمية تأتي مع التطبيق. لم يُنشر أي منها لهذا النوع بعد."
+            },
+            "filtered": {
+                "title": "لا شيء يطابق هذه المرشحات",
+                "body": "لا مجموعة في هذا التبويب تطابق البحث والوسوم والخيارات التي اخترتها. خفّف أحدها.",
+                "action": "مسح المرشحات"
+            },
+            "cloud": {
+                "title": "مزامنة السحابة قريبًا",
+                "body": "سجّل الدخول وستتبعك مجموعاتك بين أجهزتك.",
+                "action": "تسجيل الدخول"
+            },
+            "cloudSignedIn": {
+                "title": "مزامنة السحابة قريبًا",
+                "body": "لقد سجّلت الدخول. مزامنة المجموعات بين الأجهزة قيد العمل."
+            },
+            "community": {
+                "title": "لا توجد مجموعات مجتمعية بعد",
+                "body": "ستظهر هنا المجموعات التي ينشرها متعلمون آخرون عند فتح المجتمع."
+            }
+        },
+        "noResults": {
+            "title": "لا نتائج لهذا البحث",
+            "body": "جرّب كلمة أقصر، أو امسح البحث لرؤية كل شيء في هذا التبويب."
+        },
+        "details": {
+            "notFound": "لم يتم العثور على تلك المجموعة.",
+            "back": "العودة إلى المجموعات",
+            "contents": "ما بداخلها",
+            "version": "الإصدار",
+            "updated": "آخر تحديث",
+            "noSession": "جلسات مجموعات {{language}} غير جاهزة بعد."
+        },
+        "options": {
+            "sortAria": "ترتيب المجموعات",
+            "sort": {
+                "default": "الترتيب الأصلي",
+                "name": "الاسم أ–ي",
+                "recent": "المحدَّثة مؤخرًا",
+                "popular": "الأكثر تنزيلًا",
+                "size": "الأكبر حجمًا"
+            },
+            "density": {
+                "comfortable": "مريح",
+                "compact": "مضغوط"
+            },
+            "nsfw": {
+                "label": "حسّاس",
+                "on": "المجموعات الحساسة معروضة",
+                "off": "المجموعات الحساسة مخفية"
+            },
+            "importHeading": "استيراد",
+            "importHint": "يقرأ ملف مجموعة صدّرته سابقًا.",
+            "importUnavailable": "لا يوجد صيغة ملف لهذا النوع من المجموعات بعد."
+        },
+        "tags": {
+            "clear": "مسح الوسوم",
+            "remove": "إزالة الوسم {{tag}}"
+        },
+        "actions": {
+            "create": {
+                "vocab": "مجموعة جديدة",
+                "exam": "اختبار جديد"
+            },
+            "importOnly": "استيراد"
+        },
+        "import": {
+            "action": "استيراد ملف مجموعة",
+            "invalidDeck": "هذا الملف ليس مجموعة صالحة.",
+            "invalidExam": "هذا الملف ليس مجموعة اختبار صالحة.",
+            "invalidJson": "تعذّرت قراءة هذا الملف كـ JSON."
+        },
+        "viewAuthor": "عرض ملف {{author}}",
+        "edit": {
+            "listTitle": "المجموعات",
+            "panelTitle": "المحرر",
+            "layoutTitle": "التخطيط",
+            "spacedLabel": "لوحات متباعدة",
+            "spacedHint": "اترك فجوة بين اللوحات المثبتة.",
+            "statusTitle": "الحالة",
+            "previewTitle": "معاينة",
+            "inspectorTitle": "المفتش",
+            "loading": "جارٍ تحميل مجموعاتك…",
+            "empty": "لا توجد مجموعات للتحرير بعد.",
+            "previewEmpty": "لا تحتوي هذه المجموعة على محتوى بعد.",
+            "selectPrompt": "اختر مجموعة لتحرير تفاصيلها.",
+            "nameLabel": "الاسم",
+            "namePlaceholder": "اسم المجموعة",
+            "descriptionLabel": "الوصف",
+            "descriptionPlaceholder": "عن ماذا تتحدث هذه المجموعة؟",
+            "tagsLabel": "الوسوم",
+            "tagsPlaceholder": "وسوم مفصولة بفواصل",
+            "nsfwLabel": "وضع علامة NSFW",
+            "save": "حفظ التغييرات",
+            "delete": "حذف المجموعة",
+            "dragHandle": "اسحب لإعادة الترتيب",
+            "mobileHint": "أعد ترتيب المجموعات وحرّرها في الأسفل. افتح على شاشة أوسع لاستخدام مدير المجموعات.",
+            "filters": "تصفية المجموعات حسب النوع",
+            "filterAll": "كل المجموعات",
+            "typeLabel": "النوع",
+            "sourceLabel": "المصدر",
+            "itemsLabel": "العناصر",
+            "statusDecks": "{{visible}} / {{total}} مجموعة",
+            "noneSelected": "لم يتم تحديد أي مجموعة",
+            "addPanel": "إضافة لوحة",
+            "views": "عروض المحرر",
+            "viewAll": "كل المجموعات",
+            "viewFavourites": "المفضلة",
+            "viewRecent": "الأحدث"
+        }
+    },
+    "footer": {
+        "tagline": "طريقة مريحة وغنية بالسمات لتتذوق طريقك عبر اللغة اليابانية.",
+        "explore": "استكشف",
+        "learn": "ما نعلّمه",
+        "rights": "TeaChoco · جميع الحقوق محفوظة.",
+        "languages": {
+            "ja": "اليابانية",
+            "en": "الإنجليزية",
+            "ko": "الكورية",
+            "th": "التايلاندية"
+        }
+    },
+    "auth": {
+        "signIn": "تسجيل الدخول",
+        "signUp": "إنشاء حساب",
+        "signOut": "تسجيل الخروج",
+        "email": "البريد الإلكتروني",
+        "password": "كلمة المرور",
+        "name": "الاسم",
+        "nameTag": "اسم المستخدم",
+        "nameTagHint": "من 3 إلى 30 حرفًا. أحرف إنجليزية وأرقام وشرطات سفلية (_) أو واصلات (-) فقط، بدون مسافات. اسم المستخدم العام الخاص بك.",
+        "confirmPassword": "تأكيد كلمة المرور",
+        "forgotPassword": "نسيت كلمة المرور؟",
+        "resetPassword": "إعادة تعيين كلمة المرور",
+        "backToSignIn": "العودة لتسجيل الدخول",
+        "orContinueWith": "أو تابع باستخدام",
+        "google": "جوجل",
+        "discord": "Discord",
+        "line": "LINE",
+        "x": "X (Twitter)",
+        "noAccount": "ليس لديك حساب؟",
+        "hasAccount": "لديك حساب بالفعل؟",
+        "verifyEmail": "التحقق من البريد الإلكتروني",
+        "verificationCode": "رمز التحقق",
+        "verifyHint": "أدخل الرمز المكون من 6 أرقام الذي أرسلناه إلى {{email}}.",
+        "verify": "تحقق",
+        "otpSent": "أرسلنا رمزًا إلى {{email}}.",
+        "otpResent": "تم إرسال رمز جديد.",
+        "verifySuccess": "مرحبًا، {{name}}!",
+        "resendCode": "إعادة إرسال الرمز",
+        "resendInSeconds": "إعادة الإرسال خلال {{seconds}} ثانية",
+        "profile": "الملف الشخصي",
+        "settings": "الإعدادات",
+        "welcome": "مرحبًا، {{name}}",
+        "error": {
+            "invalidCredentials": "البريد الإلكتروني أو كلمة المرور غير صحيحة.",
+            "emailInUse": "يوجد حساب بهذا البريد الإلكتروني بالفعل.",
+            "nameTagTaken": "اسم المستخدم هذا مستخدم بالفعل.",
+            "nameTagInvalid": "يجب أن يتكون اسم المستخدم من 3 إلى 30 حرفًا: أحرف إنجليزية أو أرقام أو شرطات سفلية أو واصلات فقط (بدون مسافات).",
+            "passwordMismatch": "كلمتا المرور غير متطابقتين.",
+            "invalidOtp": "رمز غير صالح أو منتهي الصلاحية. حاول مرة أخرى.",
+            "resendFailed": "تعذر إرسال رمز جديد. حاول مرة أخرى.",
+            "generic": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
+            "emailNotFound": "No account found with that email.",
+            "resetFailed": "Password reset failed. Please try again.",
+            "oauth": "Sign-in failed: {{reason}}"
+        },
+        "resetCodeSent": "We sent a reset code to {{email}}.",
+        "resetHint": "Enter the code sent to {{email}} and choose a new password.",
+        "forgotHint": "Enter your account email and we'll send you a reset code.",
+        "newPassword": "New Password",
+        "updatePassword": "Update Password",
+        "resetSuccess": "Password updated. Please sign in.",
+        "sendResetCode": "إرسال رمز إعادة التعيين"
+    },
     "japanese": {
         "badge": "اليابانية",
         "title": "تعلّم اليابانية",
@@ -210,7 +433,8 @@
             "vocabulary": "المفردات",
             "vocabularyHint": "نّمِ بنك الكلمات لديك وراجعه وفق جدول متباعد.",
             "learn": "تعلّم",
-            "practice": "تدرّب"
+            "practice": "تدرّب",
+            "manage": "الإدارة"
         },
         "nav": {
             "kana": {
@@ -218,15 +442,15 @@
                 "description": "تصفح كل الهيراغانا والكاتاكانا مع قراءاتها.",
                 "action": "عرض الكانا"
             },
-            "render": {
-                "title": "Render",
-                "description": "Read short passages with furigana and check yourself against the translation.",
-                "action": "Start Reading"
-            },
             "vocab": {
                 "title": "المفردات",
                 "description": "وسّع مفرداتك وتدرب عليها على فترات متباعدة.",
                 "action": "تصفح الكلمات"
+            },
+            "render": {
+                "title": "Render",
+                "description": "Read short passages with furigana and check yourself against the translation.",
+                "action": "Start Reading"
             },
             "drill": {
                 "title": "تدريب الكانا",
@@ -242,7 +466,17 @@
                 "title": "اختبار المفردات",
                 "description": "اختبر نفسك بامتحان اختيار من متعدد مبني من مفرداتك.",
                 "action": "خُذ الاختبار"
+            },
+            "edit": {
+                "title": "تحرير المجموعات",
+                "description": "أعد تسمية المجموعات أو ترتيبها أو إزالتها من مجموعتك.",
+                "action": "تحرير المجموعات"
             }
+        },
+        "edit": {
+            "title": "تحرير المجموعات",
+            "description": "أدر المجموعات في مجموعتك. المحرر قادم قريبًا.",
+            "back": "العودة إلى اليابانية"
         },
         "decks": {
             "title": "مجموعات مراجعة المفردات",
@@ -251,8 +485,26 @@
             "startReview": "ابدأ المراجعة",
             "due": "مستحقة",
             "byAuthor": "بواسطة {{author}}",
+            "viewAuthor": "عرض ملف {{author}}",
             "download": "تنزيل",
             "note": "مراجعة",
+            "open": "Open",
+            "itemCount_one": "{{count}} عنصر",
+            "itemCount_other": "{{count}} عنصر",
+            "favourite": "إضافة إلى المفضلة",
+            "unfavourite": "إزالة من المفضلة",
+            "export": "Export",
+            "exportAria": "Export deck",
+            "downloadAria": "Download deck",
+            "delete": "Delete",
+            "deleteAria": "Delete deck",
+            "type": {
+                "vocab": "Vocabulary",
+                "render": "Reading",
+                "review": "Review",
+                "exam": "Exam",
+                "drill": "Drill"
+            },
             "ready": "جاهز",
             "words": "كلمات",
             "search": "البحث في المجموعات...",
@@ -281,34 +533,12 @@
                 "custom": "كلماتي",
                 "cloud": "سحابة",
                 "downloaded": "تم تنزيلها"
-            },
-            "open": "Open",
-            "itemCount_one": "{{count}} عنصر",
-            "itemCount_other": "{{count}} عنصر",
-            "export": "Export",
-            "exportAria": "Export deck",
-            "downloadAria": "Download deck",
-            "delete": "Delete",
-            "deleteAria": "Delete deck",
-            "type": {
-                "vocab": "Vocabulary",
-                "render": "Reading",
-                "review": "Review",
-                "exam": "Exam",
-                "drill": "Drill"
-            },
-            "viewAuthor": "عرض ملف {{author}}",
-            "favourite": "إضافة إلى المفضلة",
-            "unfavourite": "إزالة من المفضلة",
-            "itemCount_zero": "{{count}} عنصر",
-            "itemCount_two": "{{count}} عنصران",
-            "itemCount_few": "{{count}} عناصر",
-            "itemCount_many": "{{count}} عنصرًا"
+            }
         },
         "exam": {
             "title": "اختبار",
-            "import": "استيراد مجموعة اختبارات",
             "addCustom": "إضافة مجموعة مخصصة",
+            "import": "استيراد مجموعة اختبارات",
             "importErrorJson": "تعذر قراءة هذا الملف بصيغة JSON.",
             "form": {
                 "title": "إنشاء مجموعة اختبارات مخصصة",
@@ -319,16 +549,12 @@
                 "descriptionPlaceholder": "ملاحظة قصيرة حول هذه المجموعة",
                 "wordsLabel": "الكلمات المراد تضمينها",
                 "wordsPlaceholder": "البحث عن كلمات...",
+                "selectedCount_one": "محدَّد {{count}}",
+                "selectedCount_other": "محدَّد {{count}}",
                 "titleError": "أعطِ مجموعتك اسمًا.",
                 "minWordsError": "اختر كلمتين على الأقل.",
                 "cancel": "إلغاء",
-                "submit": "إنشاء مجموعة",
-                "selectedCount_one": "محدَّد {{count}}",
-                "selectedCount_other": "محدَّد {{count}}",
-                "selectedCount_zero": "محدَّد {{count}}",
-                "selectedCount_two": "محدَّدان {{count}}",
-                "selectedCount_few": "محدَّدة {{count}}",
-                "selectedCount_many": "محدَّدة {{count}}"
+                "submit": "إنشاء مجموعة"
             }
         },
         "kana": {
@@ -440,7 +666,6 @@
             }
         },
         "vocab": {
-            "available": "{{count}} كلمة في المجموع",
             "back_hub": "Back to hub",
             "eyebrow": "Vocabulary",
             "title": "Vocabulary",
@@ -459,7 +684,21 @@
             "meaning": "Meaning",
             "example": "Example",
             "required": "Word and meaning are required.",
-            "builtIn": "Built-in words can't be edited."
+            "builtIn": "Built-in words can't be edited.",
+            "available": "{{count}} كلمة في المجموع"
+        },
+        "render": {
+            "back_hub": "Back to hub",
+            "eyebrow": "Render",
+            "title": "Render",
+            "description": "Read short passages with furigana and a translation to check against.",
+            "search": "Search decks",
+            "empty": "No reading decks yet.",
+            "passages": "passages",
+            "read": "Read",
+            "showTranslation": "Show translation",
+            "hideTranslation": "Hide translation",
+            "speak": "Listen"
         },
         "vocabularyReview": {
             "badge": "مراجعة",
@@ -479,19 +718,6 @@
             "recallPrompt": "ماذا تعني هذه الكلمة؟",
             "back_hub": "العودة إلى اليابانية"
         },
-        "render": {
-            "back_hub": "Back to hub",
-            "eyebrow": "Render",
-            "title": "Render",
-            "description": "Read short passages with furigana and a translation to check against.",
-            "search": "Search decks",
-            "empty": "No reading decks yet.",
-            "passages": "passages",
-            "read": "Read",
-            "showTranslation": "Show translation",
-            "hideTranslation": "Hide translation",
-            "speak": "Listen"
-        },
         "drill": {
             "title": "Kana Drill"
         },
@@ -499,70 +725,59 @@
             "title": "Vocabulary Review"
         }
     },
-    "footer": {
-        "tagline": "طريقة مريحة وغنية بالسمات لتتذوق طريقك عبر اللغة اليابانية.",
-        "explore": "استكشف",
-        "learn": "ما نعلّمه",
-        "rights": "TeaChoco · جميع الحقوق محفوظة.",
-        "languages": {
-            "ja": "اليابانية",
-            "en": "الإنجليزية",
-            "ko": "الكورية",
-            "th": "التايلاندية"
-        }
-    },
-    "auth": {
-        "signIn": "تسجيل الدخول",
-        "signUp": "إنشاء حساب",
-        "signOut": "تسجيل الخروج",
-        "email": "البريد الإلكتروني",
-        "password": "كلمة المرور",
-        "name": "الاسم",
-        "nameTag": "اسم المستخدم",
-        "nameTagHint": "من 3 إلى 30 حرفًا. أحرف إنجليزية وأرقام وشرطات سفلية (_) أو واصلات (-) فقط، بدون مسافات. اسم المستخدم العام الخاص بك.",
-        "confirmPassword": "تأكيد كلمة المرور",
-        "forgotPassword": "نسيت كلمة المرور؟",
-        "resetPassword": "إعادة تعيين كلمة المرور",
-        "backToSignIn": "العودة لتسجيل الدخول",
-        "orContinueWith": "أو تابع باستخدام",
-        "google": "جوجل",
-        "discord": "Discord",
-        "noAccount": "ليس لديك حساب؟",
-        "hasAccount": "لديك حساب بالفعل؟",
-        "verifyEmail": "التحقق من البريد الإلكتروني",
-        "verificationCode": "رمز التحقق",
-        "verifyHint": "أدخل الرمز المكون من 6 أرقام الذي أرسلناه إلى {{email}}.",
-        "verify": "تحقق",
-        "otpSent": "أرسلنا رمزًا إلى {{email}}.",
-        "otpResent": "تم إرسال رمز جديد.",
-        "verifySuccess": "مرحبًا، {{name}}!",
-        "resendCode": "إعادة إرسال الرمز",
-        "resendInSeconds": "إعادة الإرسال خلال {{seconds}} ثانية",
-        "profile": "الملف الشخصي",
-        "settings": "الإعدادات",
-        "welcome": "مرحبًا، {{name}}",
-        "error": {
-            "invalidCredentials": "البريد الإلكتروني أو كلمة المرور غير صحيحة.",
-            "emailInUse": "يوجد حساب بهذا البريد الإلكتروني بالفعل.",
-            "nameTagTaken": "اسم المستخدم هذا مستخدم بالفعل.",
-            "nameTagInvalid": "يجب أن يتكون اسم المستخدم من 3 إلى 30 حرفًا: أحرف إنجليزية أو أرقام أو شرطات سفلية أو واصلات فقط (بدون مسافات).",
-            "passwordMismatch": "كلمتا المرور غير متطابقتين.",
-            "invalidOtp": "رمز غير صالح أو منتهي الصلاحية. حاول مرة أخرى.",
-            "resendFailed": "تعذر إرسال رمز جديد. حاول مرة أخرى.",
-            "generic": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
-            "emailNotFound": "No account found with that email.",
-            "resetFailed": "Password reset failed. Please try again.",
-            "oauth": "Sign-in failed: {{reason}}"
+    "english": {
+        "badge": "الإنجليزية",
+        "title": "تعلّم الإنجليزية",
+        "description": "الإنجليزية مسار جديد. ميزات المجموعات أدناه تعمل بالفعل؛ أما مجموعة الأحرف والتمرين فقيد الإنشاء.",
+        "nav": {
+            "render": {
+                "title": "القراءة",
+                "description": "اقرأ نصوصًا قصيرة وقارنها بالترجمة.",
+                "action": "ابدأ القراءة"
+            },
+            "review": {
+                "title": "مراجعة المفردات",
+                "description": "راجع المفردات ببطاقات التكرار المتباعد.",
+                "action": "ابدأ المراجعة"
+            },
+            "exam": {
+                "title": "اختبار المفردات",
+                "description": "اختبر نفسك بامتحان اختيار من متعدد مبني من مفرداتك.",
+                "action": "خُذ الاختبار"
+            },
+            "vocab": {
+                "title": "تصفح المفردات",
+                "description": "تصفح كلمات المجموعة مع النطق والمعنى وأمثلة.",
+                "action": "عرض الكلمات"
+            },
+            "edit": {
+                "title": "تحرير المجموعات",
+                "description": "أعد تسمية المجموعات أو ترتيبها أو إزالتها من مجموعتك.",
+                "action": "تحرير المجموعات"
+            }
         },
-        "resetCodeSent": "We sent a reset code to {{email}}.",
-        "resetHint": "Enter the code sent to {{email}} and choose a new password.",
-        "forgotHint": "Enter your account email and we'll send you a reset code.",
-        "newPassword": "New Password",
-        "updatePassword": "Update Password",
-        "resetSuccess": "Password updated. Please sign in.",
-        "line": "LINE",
-        "x": "X (Twitter)",
-        "sendResetCode": "إرسال رمز إعادة التعيين"
+        "edit": {
+            "title": "تحرير المجموعات",
+            "description": "أدر المجموعات في مجموعتك. المحرر قادم قريبًا.",
+            "back": "العودة إلى الإنجليزية"
+        },
+        "vocab": {
+            "title": "المفردات"
+        },
+        "render": {
+            "title": "القراءة"
+        },
+        "review": {
+            "title": "مراجعة المفردات"
+        },
+        "exam": {
+            "title": "اختبار"
+        },
+        "sections": {
+            "learn": "تعلّم",
+            "practice": "تدرّب",
+            "manage": "الإدارة"
+        }
     },
     "settings": {
         "title": "الإعدادات",
@@ -598,6 +813,12 @@
         }
     },
     "profile": {
+        "public": {
+            "notFoundTitle": "Profile not found",
+            "notFoundHint": "Nobody is using this name tag. It may have been changed or removed.",
+            "yourDashboard": "Go to your profile",
+            "viewPublic": "View public profile"
+        },
         "title": "الملف الشخصي",
         "subtitle": "قصتك التعليمية مع تشوكوميمو.",
         "back": "رجوع",
@@ -721,198 +942,6 @@
             "saving": "جارٍ الحفظ…",
             "confirm": "تأكيد",
             "change": "تغيير صورة الملف الشخصي"
-        },
-        "public": {
-            "notFoundTitle": "Profile not found",
-            "notFoundHint": "Nobody is using this name tag. It may have been changed or removed.",
-            "yourDashboard": "Go to your profile",
-            "viewPublic": "View public profile"
         }
-    },
-    "english": {
-        "badge": "الإنجليزية",
-        "title": "تعلّم الإنجليزية",
-        "description": "الإنجليزية مسار جديد. ميزات المجموعات أدناه تعمل بالفعل؛ أما مجموعة الأحرف والتمرين فقيد الإنشاء.",
-        "nav": {
-            "render": {
-                "title": "القراءة",
-                "description": "اقرأ نصوصًا قصيرة وقارنها بالترجمة.",
-                "action": "ابدأ القراءة"
-            },
-            "review": {
-                "title": "مراجعة المفردات",
-                "description": "راجع المفردات ببطاقات التكرار المتباعد.",
-                "action": "ابدأ المراجعة"
-            },
-            "exam": {
-                "title": "اختبار المفردات",
-                "description": "اختبر نفسك بامتحان اختيار من متعدد مبني من مفرداتك.",
-                "action": "خُذ الاختبار"
-            },
-            "vocab": {
-                "title": "تصفح المفردات",
-                "description": "تصفح كلمات المجموعة مع النطق والمعنى وأمثلة.",
-                "action": "عرض الكلمات"
-            }
-        },
-        "vocab": {
-            "title": "المفردات"
-        },
-        "render": {
-            "title": "القراءة"
-        },
-        "review": {
-            "title": "مراجعة المفردات"
-        },
-        "exam": {
-            "title": "اختبار"
-        },
-        "sections": {
-            "learn": "تعلّم",
-            "practice": "تدرّب"
-        }
-    },
-    "deck": {
-        "type": {
-            "vocab": "المفردات",
-            "render": "القراءة",
-            "review": "المراجعة",
-            "exam": "اختبار",
-            "drill": "تدريب"
-        },
-        "source": {
-            "official": "رسمي",
-            "community": "المجتمع",
-            "local": "مجموعاتك",
-            "cloud": "السحابة"
-        },
-        "visibility": {
-            "public": "عام",
-            "unlisted": "غير مدرج",
-            "private": "خاص"
-        },
-        "search": "ابحث في المجموعات",
-        "searchAria": "ابحث في المجموعات بالاسم",
-        "searchClear": "مسح البحث",
-        "tallyAria": "المجموعات حسب المصدر",
-        "resultCount": "عرض {{matched}} من {{total}} مجموعة",
-        "loading": "جارٍ تحميل المجموعات…",
-        "itemCount_one": "{{count}} عنصر",
-        "itemCount_other": "{{count}} عنصر",
-        "byAuthor": "بواسطة {{author}}",
-        "openAria": "فتح {{name}}",
-        "export": "تصدير",
-        "exportAria": "تصدير المجموعة",
-        "download": "تنزيل",
-        "downloadAria": "تنزيل المجموعة",
-        "delete": "حذف",
-        "deleteAria": "حذف المجموعة",
-        "start": "ابدأ",
-        "list": {
-            "backHub": "العودة إلى {{language}}",
-            "eyebrow": {
-                "vocab": "المفردات",
-                "render": "القراءة",
-                "exam": "الاختبارات",
-                "review": "المراجعة"
-            },
-            "title": {
-                "vocab": "مجموعات المفردات",
-                "render": "مجموعات القراءة",
-                "exam": "مجموعات الاختبار",
-                "review": "مجموعات المراجعة"
-            },
-            "description": {
-                "vocab": "اجمع الكلمات التي تعرفها في مجموعة، ثم تدرب عليها على فترات متباعدة.",
-                "render": "نصوص قصيرة متدرجة، مع ترجمة للمقارنة.",
-                "exam": "مجموعات اختيار من متعدد مبنية من مفرداتك أنت.",
-                "review": "راجع مجموعة في جلسة تكرار متباعد."
-            }
-        },
-        "empty": {
-            "local": {
-                "title": "لا تملك مجموعات بعد",
-                "body": "المجموعات التي تنشئها أو تستوردها تظهر هنا. ابدأ بمجموعة رسمية.",
-                "action": "تصفح المجموعات الرسمية"
-            },
-            "official": {
-                "title": "لا توجد مجموعات رسمية لهذا النوع بعد",
-                "body": "المجموعات الرسمية تأتي مع التطبيق. لم يُنشر أي منها لهذا النوع بعد."
-            },
-            "filtered": {
-                "title": "لا شيء يطابق هذه المرشحات",
-                "body": "لا مجموعة في هذا التبويب تطابق البحث والوسوم والخيارات التي اخترتها. خفّف أحدها.",
-                "action": "مسح المرشحات"
-            },
-            "cloud": {
-                "title": "مزامنة السحابة قريبًا",
-                "body": "سجّل الدخول وستتبعك مجموعاتك بين أجهزتك.",
-                "action": "تسجيل الدخول"
-            },
-            "cloudSignedIn": {
-                "title": "مزامنة السحابة قريبًا",
-                "body": "لقد سجّلت الدخول. مزامنة المجموعات بين الأجهزة قيد العمل."
-            },
-            "community": {
-                "title": "لا توجد مجموعات مجتمعية بعد",
-                "body": "ستظهر هنا المجموعات التي ينشرها متعلمون آخرون عند فتح المجتمع."
-            }
-        },
-        "noResults": {
-            "title": "لا نتائج لهذا البحث",
-            "body": "جرّب كلمة أقصر، أو امسح البحث لرؤية كل شيء في هذا التبويب."
-        },
-        "details": {
-            "notFound": "لم يتم العثور على تلك المجموعة.",
-            "back": "العودة إلى المجموعات",
-            "contents": "ما بداخلها",
-            "version": "الإصدار",
-            "updated": "آخر تحديث",
-            "noSession": "جلسات مجموعات {{language}} غير جاهزة بعد."
-        },
-        "options": {
-            "sortAria": "ترتيب المجموعات",
-            "sort": {
-                "default": "الترتيب الأصلي",
-                "name": "الاسم أ–ي",
-                "recent": "المحدَّثة مؤخرًا",
-                "popular": "الأكثر تنزيلًا",
-                "size": "الأكبر حجمًا"
-            },
-            "density": {
-                "comfortable": "مريح",
-                "compact": "مضغوط"
-            },
-            "nsfw": {
-                "label": "حسّاس",
-                "on": "المجموعات الحساسة معروضة",
-                "off": "المجموعات الحساسة مخفية"
-            },
-            "importHeading": "استيراد",
-            "importHint": "يقرأ ملف مجموعة صدّرته سابقًا.",
-            "importUnavailable": "لا يوجد صيغة ملف لهذا النوع من المجموعات بعد."
-        },
-        "tags": {
-            "clear": "مسح الوسوم",
-            "remove": "إزالة الوسم {{tag}}"
-        },
-        "actions": {
-            "create": {
-                "vocab": "مجموعة جديدة",
-                "exam": "اختبار جديد"
-            },
-            "importOnly": "استيراد"
-        },
-        "import": {
-            "action": "استيراد ملف مجموعة",
-            "invalidDeck": "هذا الملف ليس مجموعة صالحة.",
-            "invalidExam": "هذا الملف ليس مجموعة اختبار صالحة.",
-            "invalidJson": "تعذّرت قراءة هذا الملف كـ JSON."
-        },
-        "viewAuthor": "عرض ملف {{author}}",
-        "itemCount_zero": "{{count}} عنصر",
-        "itemCount_two": "{{count}} عنصران",
-        "itemCount_few": "{{count}} عناصر",
-        "itemCount_many": "{{count}} عنصرًا"
     }
 }

@@ -3,11 +3,11 @@
         "home": "Accueil",
         "languages": "Langues",
         "japanese": "Japonais",
+        "english": "Anglais",
         "menu": "Ouvrir le menu",
         "settings": "Paramètres",
         "language": "Langue",
-        "theme": "Thème",
-        "english": "English"
+        "theme": "Thème"
     },
     "chrome": {
         "hide": "Masquer",
@@ -132,6 +132,7 @@
         }
     },
     "common": {
+        "loading": "Loading…",
         "error": {
             "oops": "Oups !",
             "unexpected": "Une erreur inattendue s'est produite.",
@@ -139,15 +140,14 @@
         },
         "tabs": {
             "local": "Local",
+            "official": "Officiel",
             "cloud": "Cloud",
-            "community": "Communauté",
-            "official": "Officiel"
+            "community": "Communauté"
         },
         "comingSoon": {
             "cloud": "La synchronisation cloud arrive bientôt, connexion requise",
             "community": "Parcourir les ensembles communautaires n'est pas encore disponible"
         },
-        "loading": "Loading…",
         "select": "Sélectionner"
     },
     "notfound": {
@@ -193,6 +193,229 @@
         },
         "back_language": "Retour au choix de langue"
     },
+    "deck": {
+        "type": {
+            "vocab": "Vocabulaire",
+            "render": "Lecture",
+            "review": "Révision",
+            "exam": "Examen",
+            "drill": "Drill"
+        },
+        "source": {
+            "official": "Officiel",
+            "community": "Communauté",
+            "local": "Les tiens",
+            "cloud": "Cloud"
+        },
+        "visibility": {
+            "public": "Public",
+            "unlisted": "Non répertorié",
+            "private": "Privé"
+        },
+        "search": "Rechercher des paquets",
+        "searchAria": "Rechercher des paquets par nom",
+        "searchClear": "Effacer la recherche",
+        "tallyAria": "Paquets par source",
+        "resultCount": "Affichage de {{matched}} paquets sur {{total}}",
+        "loading": "Chargement des paquets…",
+        "itemCount_one": "{{count}} élément",
+        "itemCount_other": "{{count}} éléments",
+        "byAuthor": "par {{author}}",
+        "openAria": "Ouvrir {{name}}",
+        "export": "Exporter",
+        "exportAria": "Exporter le paquet",
+        "download": "Télécharger",
+        "downloadAria": "Télécharger le paquet",
+        "delete": "Supprimer",
+        "deleteAria": "Supprimer le paquet",
+        "start": "Démarrer",
+        "list": {
+            "backHub": "Retour à {{language}}"
+        },
+        "empty": {
+            "local": {
+                "title": "Tu n'as pas encore de paquets",
+                "body": "Les paquets que tu crées ou importes arrivent ici. Commence par un paquet officiel.",
+                "action": "Voir les paquets officiels"
+            },
+            "official": {
+                "title": "Aucun paquet officiel pour ce type",
+                "body": "Les paquets officiels sont fournis avec l'application. Aucun n'a encore été publié pour ce type."
+            },
+            "filtered": {
+                "title": "Aucun paquet ne correspond à ces filtres",
+                "body": "Aucun paquet de cet onglet ne correspond à la recherche, aux tags et aux options choisis. Assouplis-en un pour les revoir.",
+                "action": "Effacer les filtres"
+            },
+            "cloud": {
+                "title": "La synchronisation cloud arrive bientôt",
+                "body": "Connecte-toi et tes paquets te suivent d'un appareil à l'autre.",
+                "action": "Se connecter"
+            },
+            "cloudSignedIn": {
+                "title": "La synchronisation cloud arrive bientôt",
+                "body": "Tu es connecté. La synchronisation des paquets entre appareils est en cours."
+            },
+            "community": {
+                "title": "Aucun paquet communautaire",
+                "body": "Les paquets publiés par d'autres apprenants apparaîtront ici quand la communauté ouvrira."
+            }
+        },
+        "noResults": {
+            "title": "Rien ne correspond à cette recherche",
+            "body": "Essaie un mot plus court, ou efface la recherche pour tout voir dans cet onglet."
+        },
+        "details": {
+            "notFound": "Ce paquet est introuvable.",
+            "back": "Retour aux paquets",
+            "contents": "Ce qu'il contient",
+            "version": "Version",
+            "updated": "Mis à jour",
+            "noSession": "Les sessions de paquets {{language}} ne sont pas encore prêtes."
+        },
+        "options": {
+            "sortAria": "Trier les paquets",
+            "sort": {
+                "default": "Ordre d'origine",
+                "name": "Nom A–Z",
+                "recent": "Mises à jour récemment",
+                "popular": "Les plus téléchargés",
+                "size": "Les plus volumineux"
+            },
+            "density": {
+                "comfortable": "Confortable",
+                "compact": "Compact"
+            },
+            "nsfw": {
+                "label": "Sensible",
+                "on": "Les paquets sensibles sont affichés",
+                "off": "Les paquets sensibles sont masqués"
+            },
+            "importHeading": "Importer",
+            "importHint": "Lit un fichier de paquet que tu as exporté auparavant.",
+            "importUnavailable": "Pas encore de format de fichier pour ce type de paquet."
+        },
+        "tags": {
+            "clear": "Effacer les tags",
+            "remove": "Retirer le tag {{tag}}"
+        },
+        "actions": {
+            "create": {
+                "vocab": "Nouveau paquet",
+                "exam": "Nouvel examen"
+            },
+            "importOnly": "Importer"
+        },
+        "import": {
+            "action": "Importer un fichier de paquet",
+            "invalidDeck": "Ce fichier n'est pas un paquet valide.",
+            "invalidExam": "Ce fichier n'est pas une série d'examen valide.",
+            "invalidJson": "Impossible de lire ce fichier en JSON."
+        },
+        "viewAuthor": "Voir le profil de {{author}}",
+        "edit": {
+            "listTitle": "Paquets",
+            "panelTitle": "Éditeur",
+            "layoutTitle": "Disposition",
+            "spacedLabel": "Panneaux espacés",
+            "spacedHint": "Laissez un espace entre les panneaux ancrés.",
+            "statusTitle": "Statut",
+            "previewTitle": "Aperçu",
+            "inspectorTitle": "Inspecteur",
+            "loading": "Chargement de vos paquets…",
+            "empty": "Aucun paquet à modifier pour l'instant.",
+            "previewEmpty": "Ce paquet n'a pas encore de contenu.",
+            "selectPrompt": "Sélectionnez un paquet pour modifier ses détails.",
+            "nameLabel": "Nom",
+            "namePlaceholder": "Nom du paquet",
+            "descriptionLabel": "Description",
+            "descriptionPlaceholder": "De quoi parle ce paquet ?",
+            "tagsLabel": "Tags",
+            "tagsPlaceholder": "Tags séparés par des virgules",
+            "nsfwLabel": "Marquer comme NSFW",
+            "save": "Enregistrer les modifications",
+            "delete": "Supprimer le paquet",
+            "dragHandle": "Glisser pour réorganiser",
+            "mobileHint": "Réorganisez et modifiez les paquets ci-dessous. Ouvrez sur un écran plus large pour utiliser le gestionnaire de paquets.",
+            "filters": "Filtrer les paquets par type",
+            "filterAll": "Tous les paquets",
+            "typeLabel": "Type",
+            "sourceLabel": "Source",
+            "itemsLabel": "Éléments",
+            "statusDecks": "{{visible}} / {{total}} paquets",
+            "noneSelected": "Aucun paquet sélectionné",
+            "addPanel": "Ajouter un panneau",
+            "views": "Vues de l’éditeur",
+            "viewAll": "Tous les paquets",
+            "viewFavourites": "Favoris",
+            "viewRecent": "Récents"
+        }
+    },
+    "footer": {
+        "tagline": "Une façon chaleureuse, beaucoup de thèmes pour siroter votre japonais gorgée après gorgée.",
+        "explore": "Explorer",
+        "learn": "Ce que nous enseignons",
+        "rights": "TeaChoco · Tous droits réservés.",
+        "languages": {
+            "ja": "Japonais",
+            "en": "Anglais",
+            "ko": "Coréen",
+            "th": "Thaï"
+        }
+    },
+    "auth": {
+        "signIn": "Se connecter",
+        "signUp": "S'inscrire",
+        "signOut": "Se déconnecter",
+        "email": "E-mail",
+        "password": "Mot de passe",
+        "name": "Nom",
+        "nameTag": "Nom d'utilisateur",
+        "nameTagHint": "3 à 30 caractères. Uniquement des lettres anglaises, des chiffres, des underscores (_) ou des tirets (-), sans espaces. Votre identifiant public.",
+        "confirmPassword": "Confirmer le mot de passe",
+        "forgotPassword": "Mot de passe oublié ?",
+        "resetPassword": "Réinitialiser le mot de passe",
+        "backToSignIn": "Retour à la connexion",
+        "orContinueWith": "Ou continuer avec",
+        "google": "Google",
+        "discord": "Discord",
+        "line": "LINE",
+        "x": "X (Twitter)",
+        "noAccount": "Pas encore de compte ?",
+        "hasAccount": "Déjà un compte ?",
+        "verifyEmail": "Vérifier l'e-mail",
+        "verificationCode": "Code de vérification",
+        "verifyHint": "Saisissez le code à 6 chiffres envoyé à {{email}}.",
+        "verify": "Vérifier",
+        "otpSent": "Un code a été envoyé à {{email}}.",
+        "otpResent": "Un nouveau code a été envoyé.",
+        "verifySuccess": "Bienvenue, {{name}} !",
+        "resendCode": "Renvoyer le code",
+        "resendInSeconds": "Renvoyer dans {{seconds}}s",
+        "profile": "Profil",
+        "settings": "Paramètres",
+        "welcome": "Bienvenue, {{name}} !",
+        "error": {
+            "invalidCredentials": "E-mail ou mot de passe incorrect",
+            "emailInUse": "Cet e-mail est déjà utilisé",
+            "nameTagTaken": "Ce nom d'utilisateur est déjà pris.",
+            "nameTagInvalid": "Le nom d'utilisateur doit comporter 3 à 30 caractères : uniquement des lettres anglaises, des chiffres, des underscores ou des tirets (sans espaces).",
+            "passwordMismatch": "Les mots de passe ne correspondent pas.",
+            "invalidOtp": "Code invalide ou expiré. Veuillez réessayer.",
+            "resendFailed": "Impossible d'envoyer un nouveau code. Veuillez réessayer.",
+            "generic": "Une erreur est survenue",
+            "emailNotFound": "No account found with that email.",
+            "resetFailed": "Password reset failed. Please try again.",
+            "oauth": "Sign-in failed: {{reason}}"
+        },
+        "resetCodeSent": "We sent a reset code to {{email}}.",
+        "resetHint": "Enter the code sent to {{email}} and choose a new password.",
+        "forgotHint": "Enter your account email and we'll send you a reset code.",
+        "newPassword": "New Password",
+        "updatePassword": "Update Password",
+        "resetSuccess": "Password updated. Please sign in.",
+        "sendResetCode": "Envoyer le code de réinitialisation"
+    },
     "japanese": {
         "badge": "Japonais",
         "title": "Apprendre le Japonais",
@@ -210,7 +433,8 @@
             "vocabulary": "Vocabulaire",
             "vocabularyHint": "Développez votre banque de mots et révisez-la selon un planning espacé.",
             "learn": "Apprendre",
-            "practice": "S'entraîner"
+            "practice": "S'entraîner",
+            "manage": "Gérer"
         },
         "nav": {
             "kana": {
@@ -218,15 +442,15 @@
                 "description": "Parcourez tous les hiragana et katakana avec leurs lectures.",
                 "action": "Voir les Kana"
             },
-            "render": {
-                "title": "Render",
-                "description": "Read short passages with furigana and check yourself against the translation.",
-                "action": "Start Reading"
-            },
             "vocab": {
                 "title": "Vocabulaire",
                 "description": "Enrichis ton vocabulaire et entraîne-toi à intervalles réguliers.",
                 "action": "Voir les mots"
+            },
+            "render": {
+                "title": "Render",
+                "description": "Read short passages with furigana and check yourself against the translation.",
+                "action": "Start Reading"
             },
             "drill": {
                 "title": "Drill de kana",
@@ -242,7 +466,17 @@
                 "title": "Examen de vocabulaire",
                 "description": "Teste-toi avec un examen à choix multiple fait de ton vocabulaire.",
                 "action": "Passer l'examen"
+            },
+            "edit": {
+                "title": "Modifier les paquets",
+                "description": "Renommez, réorganisez ou supprimez les paquets de votre collection.",
+                "action": "Modifier les paquets"
             }
+        },
+        "edit": {
+            "title": "Modifier les paquets",
+            "description": "Gérez les paquets de votre collection. L'éditeur arrive bientôt.",
+            "back": "Retour au Japonais"
         },
         "decks": {
             "title": "Paquets de Révision de Vocabulaire",
@@ -251,8 +485,26 @@
             "startReview": "Commencer la Révision",
             "due": "à réviser",
             "byAuthor": "par {{author}}",
+            "viewAuthor": "Voir le profil de {{author}}",
             "download": "Télécharger",
             "note": "Révision",
+            "open": "Open",
+            "itemCount_one": "{{count}} élément",
+            "itemCount_other": "{{count}} éléments",
+            "favourite": "Ajouter aux favoris",
+            "unfavourite": "Retirer des favoris",
+            "export": "Export",
+            "exportAria": "Export deck",
+            "downloadAria": "Download deck",
+            "delete": "Delete",
+            "deleteAria": "Delete deck",
+            "type": {
+                "vocab": "Vocabulary",
+                "render": "Reading",
+                "review": "Review",
+                "exam": "Exam",
+                "drill": "Drill"
+            },
             "ready": "Prêt",
             "words": "mots",
             "search": "Rechercher des paquets...",
@@ -281,31 +533,12 @@
                 "custom": "Mes mots",
                 "cloud": "Cloud",
                 "downloaded": "Téléchargé"
-            },
-            "open": "Open",
-            "itemCount_one": "{{count}} élément",
-            "itemCount_other": "{{count}} éléments",
-            "export": "Export",
-            "exportAria": "Export deck",
-            "downloadAria": "Download deck",
-            "delete": "Delete",
-            "deleteAria": "Delete deck",
-            "type": {
-                "vocab": "Vocabulary",
-                "render": "Reading",
-                "review": "Review",
-                "exam": "Exam",
-                "drill": "Drill"
-            },
-            "viewAuthor": "Voir le profil de {{author}}",
-            "favourite": "Ajouter aux favoris",
-            "unfavourite": "Retirer des favoris",
-            "itemCount_many": "{{count}} éléments"
+            }
         },
         "exam": {
             "title": "Examen",
-            "import": "Importer un ensemble d'examens",
             "addCustom": "Ajouter un ensemble personnalisé",
+            "import": "Importer un ensemble d'examens",
             "importErrorJson": "Impossible de lire ce fichier en JSON.",
             "form": {
                 "title": "Créer un ensemble d'examens personnalisé",
@@ -316,13 +549,12 @@
                 "descriptionPlaceholder": "Une courte note sur cet ensemble",
                 "wordsLabel": "Mots à inclure",
                 "wordsPlaceholder": "Rechercher des mots...",
+                "selectedCount_one": "{{count}} sélectionné",
+                "selectedCount_other": "{{count}} sélectionnés",
                 "titleError": "Donnez un nom à votre ensemble.",
                 "minWordsError": "Choisissez au moins deux mots.",
                 "cancel": "Annuler",
-                "submit": "Créer l'ensemble",
-                "selectedCount_one": "{{count}} sélectionné",
-                "selectedCount_other": "{{count}} sélectionnés",
-                "selectedCount_many": "{{count}} sélectionnés"
+                "submit": "Créer l'ensemble"
             }
         },
         "kana": {
@@ -434,7 +666,6 @@
             }
         },
         "vocab": {
-            "available": "{{count}} mots au total",
             "back_hub": "Back to hub",
             "eyebrow": "Vocabulary",
             "title": "Vocabulary",
@@ -453,7 +684,21 @@
             "meaning": "Meaning",
             "example": "Example",
             "required": "Word and meaning are required.",
-            "builtIn": "Built-in words can't be edited."
+            "builtIn": "Built-in words can't be edited.",
+            "available": "{{count}} mots au total"
+        },
+        "render": {
+            "back_hub": "Back to hub",
+            "eyebrow": "Render",
+            "title": "Render",
+            "description": "Read short passages with furigana and a translation to check against.",
+            "search": "Search decks",
+            "empty": "No reading decks yet.",
+            "passages": "passages",
+            "read": "Read",
+            "showTranslation": "Show translation",
+            "hideTranslation": "Hide translation",
+            "speak": "Listen"
         },
         "vocabularyReview": {
             "badge": "Révision",
@@ -473,19 +718,6 @@
             "recallPrompt": "Que signifie ce mot ?",
             "back_hub": "Retour au Japonais"
         },
-        "render": {
-            "back_hub": "Back to hub",
-            "eyebrow": "Render",
-            "title": "Render",
-            "description": "Read short passages with furigana and a translation to check against.",
-            "search": "Search decks",
-            "empty": "No reading decks yet.",
-            "passages": "passages",
-            "read": "Read",
-            "showTranslation": "Show translation",
-            "hideTranslation": "Hide translation",
-            "speak": "Listen"
-        },
         "drill": {
             "title": "Kana Drill"
         },
@@ -493,70 +725,59 @@
             "title": "Vocabulary Review"
         }
     },
-    "footer": {
-        "tagline": "Une façon chaleureuse, beaucoup de thèmes pour siroter votre japonais gorgée après gorgée.",
-        "explore": "Explorer",
-        "learn": "Ce que nous enseignons",
-        "rights": "TeaChoco · Tous droits réservés.",
-        "languages": {
-            "ja": "Japonais",
-            "en": "Anglais",
-            "ko": "Coréen",
-            "th": "Thaï"
-        }
-    },
-    "auth": {
-        "signIn": "Se connecter",
-        "signUp": "S'inscrire",
-        "signOut": "Se déconnecter",
-        "email": "E-mail",
-        "password": "Mot de passe",
-        "name": "Nom",
-        "nameTag": "Nom d'utilisateur",
-        "nameTagHint": "3 à 30 caractères. Uniquement des lettres anglaises, des chiffres, des underscores (_) ou des tirets (-), sans espaces. Votre identifiant public.",
-        "confirmPassword": "Confirmer le mot de passe",
-        "forgotPassword": "Mot de passe oublié ?",
-        "resetPassword": "Réinitialiser le mot de passe",
-        "backToSignIn": "Retour à la connexion",
-        "orContinueWith": "Ou continuer avec",
-        "google": "Google",
-        "discord": "Discord",
-        "noAccount": "Pas encore de compte ?",
-        "hasAccount": "Déjà un compte ?",
-        "verifyEmail": "Vérifier l'e-mail",
-        "verificationCode": "Code de vérification",
-        "verifyHint": "Saisissez le code à 6 chiffres envoyé à {{email}}.",
-        "verify": "Vérifier",
-        "otpSent": "Un code a été envoyé à {{email}}.",
-        "otpResent": "Un nouveau code a été envoyé.",
-        "verifySuccess": "Bienvenue, {{name}} !",
-        "resendCode": "Renvoyer le code",
-        "resendInSeconds": "Renvoyer dans {{seconds}}s",
-        "profile": "Profil",
-        "settings": "Paramètres",
-        "welcome": "Bienvenue, {{name}} !",
-        "error": {
-            "invalidCredentials": "E-mail ou mot de passe incorrect",
-            "emailInUse": "Cet e-mail est déjà utilisé",
-            "nameTagTaken": "Ce nom d'utilisateur est déjà pris.",
-            "nameTagInvalid": "Le nom d'utilisateur doit comporter 3 à 30 caractères : uniquement des lettres anglaises, des chiffres, des underscores ou des tirets (sans espaces).",
-            "passwordMismatch": "Les mots de passe ne correspondent pas.",
-            "invalidOtp": "Code invalide ou expiré. Veuillez réessayer.",
-            "resendFailed": "Impossible d'envoyer un nouveau code. Veuillez réessayer.",
-            "generic": "Une erreur est survenue",
-            "emailNotFound": "No account found with that email.",
-            "resetFailed": "Password reset failed. Please try again.",
-            "oauth": "Sign-in failed: {{reason}}"
+    "english": {
+        "badge": "Anglais",
+        "title": "Apprendre l'anglais",
+        "description": "L'anglais est une nouvelle voie. Les fonctions de paquets ci-dessous fonctionnent déjà ; le jeu de caractères et le drill sont encore en cours.",
+        "nav": {
+            "render": {
+                "title": "Lecture",
+                "description": "Lisez de courts textes et vérifiez avec la traduction.",
+                "action": "Commencer à lire"
+            },
+            "review": {
+                "title": "Révision de vocabulaire",
+                "description": "Révisez le vocabulaire avec des cartes et la répétition espacée.",
+                "action": "Commencer la révision"
+            },
+            "exam": {
+                "title": "Examen de vocabulaire",
+                "description": "Testez-vous avec un examen à choix multiple fait de ton vocabulaire.",
+                "action": "Passer l'examen"
+            },
+            "vocab": {
+                "title": "Parcourir le vocabulaire",
+                "description": "Parcourez les mots d'un paquet avec leur prononciation, leur sens et des exemples.",
+                "action": "Voir les mots"
+            },
+            "edit": {
+                "title": "Modifier les paquets",
+                "description": "Renommez, réorganisez ou supprimez les paquets de votre collection.",
+                "action": "Modifier les paquets"
+            }
         },
-        "resetCodeSent": "We sent a reset code to {{email}}.",
-        "resetHint": "Enter the code sent to {{email}} and choose a new password.",
-        "forgotHint": "Enter your account email and we'll send you a reset code.",
-        "newPassword": "New Password",
-        "updatePassword": "Update Password",
-        "resetSuccess": "Password updated. Please sign in.",
-        "line": "LINE",
-        "x": "X (Twitter)",
-        "sendResetCode": "Envoyer le code de réinitialisation"
+        "edit": {
+            "title": "Modifier les paquets",
+            "description": "Gérez les paquets de votre collection. L'éditeur arrive bientôt.",
+            "back": "Retour à l'Anglais"
+        },
+        "vocab": {
+            "title": "Vocabulaire"
+        },
+        "render": {
+            "title": "Lecture"
+        },
+        "review": {
+            "title": "Révision de vocabulaire"
+        },
+        "exam": {
+            "title": "Examen"
+        },
+        "sections": {
+            "learn": "Apprendre",
+            "practice": "S'entraîner",
+            "manage": "Gérer"
+        }
     },
     "settings": {
         "title": "Paramètres",
@@ -592,6 +813,12 @@
         }
     },
     "profile": {
+        "public": {
+            "notFoundTitle": "Profile not found",
+            "notFoundHint": "Nobody is using this name tag. It may have been changed or removed.",
+            "yourDashboard": "Go to your profile",
+            "viewPublic": "View public profile"
+        },
         "title": "Profil",
         "subtitle": "Votre histoire d'apprentissage avec ChocoMemo.",
         "back": "Retour",
@@ -715,195 +942,6 @@
             "saving": "Enregistrement…",
             "confirm": "Confirmer",
             "change": "Changer la photo de profil"
-        },
-        "public": {
-            "notFoundTitle": "Profile not found",
-            "notFoundHint": "Nobody is using this name tag. It may have been changed or removed.",
-            "yourDashboard": "Go to your profile",
-            "viewPublic": "View public profile"
         }
-    },
-    "english": {
-        "badge": "Anglais",
-        "title": "Apprendre l'anglais",
-        "description": "L'anglais est une nouvelle voie. Les fonctions de paquets ci-dessous fonctionnent déjà ; le jeu de caractères et le drill sont encore en cours.",
-        "nav": {
-            "render": {
-                "title": "Lecture",
-                "description": "Lisez de courts textes et vérifiez avec la traduction.",
-                "action": "Commencer à lire"
-            },
-            "review": {
-                "title": "Révision de vocabulaire",
-                "description": "Révisez le vocabulaire avec des cartes et la répétition espacée.",
-                "action": "Commencer la révision"
-            },
-            "exam": {
-                "title": "Examen de vocabulaire",
-                "description": "Testez-vous avec un examen à choix multiple fait de ton vocabulaire.",
-                "action": "Passer l'examen"
-            },
-            "vocab": {
-                "title": "Parcourir le vocabulaire",
-                "description": "Parcourez les mots d'un paquet avec leur prononciation, leur sens et des exemples.",
-                "action": "Voir les mots"
-            }
-        },
-        "vocab": {
-            "title": "Vocabulaire"
-        },
-        "render": {
-            "title": "Lecture"
-        },
-        "review": {
-            "title": "Révision de vocabulaire"
-        },
-        "exam": {
-            "title": "Examen"
-        },
-        "sections": {
-            "learn": "Apprendre",
-            "practice": "S'entraîner"
-        }
-    },
-    "deck": {
-        "type": {
-            "vocab": "Vocabulaire",
-            "render": "Lecture",
-            "review": "Révision",
-            "exam": "Examen",
-            "drill": "Drill"
-        },
-        "source": {
-            "official": "Officiel",
-            "community": "Communauté",
-            "local": "Les tiens",
-            "cloud": "Cloud"
-        },
-        "visibility": {
-            "public": "Public",
-            "unlisted": "Non répertorié",
-            "private": "Privé"
-        },
-        "search": "Rechercher des paquets",
-        "searchAria": "Rechercher des paquets par nom",
-        "searchClear": "Effacer la recherche",
-        "tallyAria": "Paquets par source",
-        "resultCount": "Affichage de {{matched}} paquets sur {{total}}",
-        "loading": "Chargement des paquets…",
-        "itemCount_one": "{{count}} élément",
-        "itemCount_other": "{{count}} éléments",
-        "byAuthor": "par {{author}}",
-        "openAria": "Ouvrir {{name}}",
-        "export": "Exporter",
-        "exportAria": "Exporter le paquet",
-        "download": "Télécharger",
-        "downloadAria": "Télécharger le paquet",
-        "delete": "Supprimer",
-        "deleteAria": "Supprimer le paquet",
-        "start": "Démarrer",
-        "list": {
-            "backHub": "Retour à {{language}}",
-            "eyebrow": {
-                "vocab": "Vocabulaire",
-                "render": "Lecture",
-                "exam": "Examens",
-                "review": "Révision"
-            },
-            "title": {
-                "vocab": "Paquets de vocabulaire",
-                "render": "Paquets de lecture",
-                "exam": "Séries d'examen",
-                "review": "Paquets de révision"
-            },
-            "description": {
-                "vocab": "Regroupe les mots que tu connais en un paquet, puis entraîne-toi à intervalles réguliers.",
-                "render": "De courts textes gradués, avec une traduction pour vérifier.",
-                "exam": "Des séries à choix multiple faites à partir de ton propre vocabulaire.",
-                "review": "Révise un paquet en répétition espacée."
-            }
-        },
-        "empty": {
-            "local": {
-                "title": "Tu n'as pas encore de paquets",
-                "body": "Les paquets que tu crées ou importes arrivent ici. Commence par un paquet officiel.",
-                "action": "Voir les paquets officiels"
-            },
-            "official": {
-                "title": "Aucun paquet officiel pour ce type",
-                "body": "Les paquets officiels sont fournis avec l'application. Aucun n'a encore été publié pour ce type."
-            },
-            "filtered": {
-                "title": "Aucun paquet ne correspond à ces filtres",
-                "body": "Aucun paquet de cet onglet ne correspond à la recherche, aux tags et aux options choisis. Assouplis-en un pour les revoir.",
-                "action": "Effacer les filtres"
-            },
-            "cloud": {
-                "title": "La synchronisation cloud arrive bientôt",
-                "body": "Connecte-toi et tes paquets te suivent d'un appareil à l'autre.",
-                "action": "Se connecter"
-            },
-            "cloudSignedIn": {
-                "title": "La synchronisation cloud arrive bientôt",
-                "body": "Tu es connecté. La synchronisation des paquets entre appareils est en cours."
-            },
-            "community": {
-                "title": "Aucun paquet communautaire",
-                "body": "Les paquets publiés par d'autres apprenants apparaîtront ici quand la communauté ouvrira."
-            }
-        },
-        "noResults": {
-            "title": "Rien ne correspond à cette recherche",
-            "body": "Essaie un mot plus court, ou efface la recherche pour tout voir dans cet onglet."
-        },
-        "details": {
-            "notFound": "Ce paquet est introuvable.",
-            "back": "Retour aux paquets",
-            "contents": "Ce qu'il contient",
-            "version": "Version",
-            "updated": "Mis à jour",
-            "noSession": "Les sessions de paquets {{language}} ne sont pas encore prêtes."
-        },
-        "options": {
-            "sortAria": "Trier les paquets",
-            "sort": {
-                "default": "Ordre d'origine",
-                "name": "Nom A–Z",
-                "recent": "Mises à jour récemment",
-                "popular": "Les plus téléchargés",
-                "size": "Les plus volumineux"
-            },
-            "density": {
-                "comfortable": "Confortable",
-                "compact": "Compact"
-            },
-            "nsfw": {
-                "label": "Sensible",
-                "on": "Les paquets sensibles sont affichés",
-                "off": "Les paquets sensibles sont masqués"
-            },
-            "importHeading": "Importer",
-            "importHint": "Lit un fichier de paquet que tu as exporté auparavant.",
-            "importUnavailable": "Pas encore de format de fichier pour ce type de paquet."
-        },
-        "tags": {
-            "clear": "Effacer les tags",
-            "remove": "Retirer le tag {{tag}}"
-        },
-        "actions": {
-            "create": {
-                "vocab": "Nouveau paquet",
-                "exam": "Nouvel examen"
-            },
-            "importOnly": "Importer"
-        },
-        "import": {
-            "action": "Importer un fichier de paquet",
-            "invalidDeck": "Ce fichier n'est pas un paquet valide.",
-            "invalidExam": "Ce fichier n'est pas une série d'examen valide.",
-            "invalidJson": "Impossible de lire ce fichier en JSON."
-        },
-        "viewAuthor": "Voir le profil de {{author}}",
-        "itemCount_many": "{{count}} éléments"
     }
 }

@@ -1,0 +1,35 @@
+/* -Path: 'client/app/components/edit/dockview-theme.css' */
+/*
+ * Dockview chrome mapped onto ChocoMemo's theme tokens.
+ *
+ * Paired with dockview's light/dark base class (chosen from the app theme in
+ * `theme.ts`) so the structural variables keep their defaults; this file
+ * re-points the surfaces, text and accents at the app tokens. The compound
+ * selectors outrank the single-class base theme regardless of stylesheet
+ * order, so every ChocoMemo theme drives the docking chrome.
+ */
+.dockview-theme {
+    --dv-group-view-background-color: var(--color-surface) !important;
+    --dv-tabs-and-actions-container-background-color: var(--color-surface-overlay) !important;
+    --dv-activegroup-visiblepanel-tab-background-color: var(--color-primary-emphasis) !important;
+    --dv-activegroup-hiddenpanel-tab-background-color: var(--color-surface-overlay) !important;
+    --dv-inactivegroup-visiblepanel-tab-background-color: var(--color-primary-subtle) !important;
+    --dv-inactivegroup-hiddenpanel-tab-background-color: var(--color-surface-overlay) !important;
+    --dv-activegroup-visiblepanel-tab-color: var(--color-primary-foreground) !important;
+    --dv-activegroup-hiddenpanel-tab-color: var(--color-surface-subtle) !important;
+    --dv-inactivegroup-visiblepanel-tab-color: var(--color-surface-subtle) !important;
+    --dv-inactivegroup-hiddenpanel-tab-color: var(--color-surface-muted) !important;
+    --dv-tab-divider-color: var(--color-line) !important;
+    --dv-separator-border: var(--color-line) !important;
+    --dv-color-nord-frost: var(--color-surface-foreground) !important;
+    --dv-color-nord-frost-2: var(--color-primary-muted) !important;
+    --dv-active-sash-color: var(--color-primary) !important;
+    --dv-drag-over-background-color: var(--color-primary-subtle) !important;
+    --dv-drag-over-border-color: var(--color-primary) !important;
+    --dv-tabs-container-scrollbar-color: var(--color-line-strong) !important;
+    --dv-icon-hover-background-color: var(--color-surface-sunken) !important;
+}
+
+.dockview-theme.spaced {
+    --dv-separator-border: var(--color-surface) !important;
+}

@@ -16,6 +16,7 @@ import { useDeckListCloudStore } from '~/stores/deck/deckListCloud.store';
 import { useDeckListCommunityStore } from '~/stores/deck/deckListCommunity.store';
 import { useLangText } from '~/hooks/useLangText';
 import { formatRelativeTime } from '~/utils/relativeTime';
+import { useTargetLang } from '~/hooks/useTargetLang';
 import type { Lang } from '~/i18n/locales';
 import type { DeckData, DeckLists, DeckType } from '~/types/deck';
 import { Languages } from '~/data/language';
@@ -25,41 +26,37 @@ import { Languages } from '~/data/language';
  *  @todo Drop an entry as each track gains its session routes. */
 const SESSION_TYPES: Partial<Record<Languages, readonly DeckType[]>> = {
     [Languages.ja]: ['vocab', 'render', 'exam', 'review'],
+    [Languages.en]: ['vocab', 'render', 'exam', 'review'],
 };
 
 /** Where "Start" goes, or `undefined` when the track has no session yet —
  *  an honest notice beats a button into a 404. */
-function sessionPath(deck: DeckData, language: Languages): string | undefined {
-    if (!SESSION_TYPES[language]?.includes(deck.type)) return undefined;
-    return `/${language}/${deck.type}/${deck.id}`;
+function sessionPath(deck: DeckData, targetLang: Languages): string | undefined {
+    if (!SESSION_TYPES[targetLang]?.includes(deck.type)) return undefined;
+    return `/${deck.type}/${deck.id}`;
 }
 
 /** A deck from any source, or `undefined` if no source holds that id. */
 function findDeck(
     deckId: string,
-    language: Languages,
+    targetLang: Languages,
     cloudLists: DeckLists,
     communityLists: DeckLists,
 ): DeckData | undefined {
     const sources: DeckData[][] = [
-        officialDecks(language),
-        localDecks(language),
-        cloudLists[language] ?? [],
-        communityLists[language] ?? [],
+        officialDecks(targetLang),
+        localDecks(targetLang),
+        cloudLists[targetLang] ?? [],
+        communityLists[targetLang] ?? [],
     ];
     return sources.flat().find((deck) => deck.id === deckId);
 }
 
-export default function DeckDetailsPage({
-    deckId,
-    language,
-}: {
-    deckId: string;
-    language: Languages;
-}) {
+export default function DeckDetailsPage({ deckId }: { deckId: string }) {
     const { t, i18n } = useTranslation();
     const navigate = useNavigate();
     const locale = useLangText();
+    const targetLang = useTargetLang();
 
     // Subscribing to the local store is what makes the page re-render once
     // storage has rehydrated, which is when a local deck first appears.
@@ -67,12 +64,12 @@ export default function DeckDetailsPage({
     const cloudLists = useDeckListCloudStore((state) => state.deckLists);
     const communityLists = useDeckListCommunityStore((state) => state.deckLists);
 
-    const deck = findDeck(deckId, language, cloudLists, communityLists);
+    const deck = findDeck(deckId, targetLang, cloudLists, communityLists);
 
     // Where to send the viewer when there is no history to unwind — a shared
     // link opened in a fresh tab, say. An unknown deck has no type to name a
-    // list, so a miss falls back to the track hub rather than guessing one.
-    const fallbackPath = deck ? `/${language}/${deck.type}` : `/${language}`;
+    // list, so a miss falls back to the hub rather than guessing one.
+    const fallbackPath = deck ? `/${deck.type}` : '/';
 
     /**
      * Goes back in history rather than to a fixed list, so a deck opened from
@@ -109,7 +106,7 @@ export default function DeckDetailsPage({
         );
     }
 
-    const start = sessionPath(deck, language);
+    const start = sessionPath(deck, targetLang);
     const name = locale(deck.name);
     const visibility = deck.meta?.visibility;
 
@@ -226,7 +223,9 @@ export default function DeckDetailsPage({
                             ) : (
                                 <p className='border border-dashed border-line-strong px-4 py-3 text-sm text-surface-muted'>
                                     {t('deck.details.noSession', {
-                                        language: t(`languageSelect.languages.${language}.name`),
+                                        language: t(
+                                            `languageSelect.languages.${targetLang}.name`,
+                                        ),
                                     })}
                                 </p>
                             )}

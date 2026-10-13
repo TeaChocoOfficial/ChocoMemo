@@ -1,4 +1,5 @@
 import { Role } from '~/types/auth';
+import { Languages } from '~/data/language';
 import type { DeckLists, DeckMeta } from '~/types/deck';
 import { APP_AUTHOR_ID, UPDATED_AT } from '~/constants/deckAuthors';
 
@@ -30,6 +31,7 @@ export const deckListOfficialData: DeckLists = {
             tags: ['nature'],
             nsfw: false,
             meta: officialDeckMeta,
+            targetLang: Languages.ja,
         },
         {
             id: 'offcial-vocab-animals',
@@ -42,6 +44,7 @@ export const deckListOfficialData: DeckLists = {
             tags: ['animals'],
             nsfw: false,
             meta: officialDeckMeta,
+            targetLang: Languages.ja,
         },
         {
             id: 'offcial-vocab-things',
@@ -54,6 +57,7 @@ export const deckListOfficialData: DeckLists = {
             tags: ['everyday'],
             nsfw: false,
             meta: officialDeckMeta,
+            targetLang: Languages.ja,
         },
         {
             id: 'offcial-vocab-actions',
@@ -66,6 +70,7 @@ export const deckListOfficialData: DeckLists = {
             tags: ['actions'],
             nsfw: false,
             meta: officialDeckMeta,
+            targetLang: Languages.ja,
         },
         {
             id: 'offcial-exam-nonus',
@@ -78,6 +83,7 @@ export const deckListOfficialData: DeckLists = {
             nsfw: false,
             contentIds: [],
             meta: officialDeckMeta,
+            targetLang: Languages.ja,
         },
         {
             id: 'offcial-render-daily',
@@ -90,6 +96,7 @@ export const deckListOfficialData: DeckLists = {
             nsfw: false,
             contentIds: ['p-station', 'p-shop', 'p-weather'],
             meta: officialDeckMeta,
+            targetLang: Languages.ja,
         },
         {
             id: 'offcial-render-numbers',
@@ -102,6 +109,7 @@ export const deckListOfficialData: DeckLists = {
             nsfw: false,
             contentIds: ['p-shop'],
             meta: officialDeckMeta,
+            targetLang: Languages.ja,
         },
     ],
 };

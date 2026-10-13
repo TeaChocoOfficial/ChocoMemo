@@ -3,7 +3,7 @@
 // so the user's choices are remembered across sessions.
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
-import type { QuizSettingsState } from '~/pages/japanese/drill/components/setting/QuizSettings';
+import type { QuizSettingsState } from '~/pages/drill/kana/components/setting/QuizSettings';
 
 const DEFAULT_SETTINGS: QuizSettingsState = {
     hiragana: { voiceless: true, voiced: true, contracted: true },

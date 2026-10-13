@@ -1,5 +1,6 @@
 // -Path: 'client/app/data/japanese/decks.ts'
 import type { DeckData } from '~/types/deck';
+import { Languages } from '~/data/language';
 import { shippedDeckMeta } from '~/utils/deckMeta';
 import { DEFAULT_VOCABULARY } from '../japanese/vocabulary';
 
@@ -33,6 +34,7 @@ export const DEFAULT_DECKS: DeckData[] = [
         tags: ['nature'],
         nsfw: false,
         meta: shippedDeckMeta(),
+        targetLang: Languages.ja,
     },
     {
         id: 'deck-animals',
@@ -44,6 +46,7 @@ export const DEFAULT_DECKS: DeckData[] = [
         tags: ['animals'],
         nsfw: false,
         meta: shippedDeckMeta(),
+        targetLang: Languages.ja,
     },
     {
         id: 'deck-things',
@@ -55,6 +58,7 @@ export const DEFAULT_DECKS: DeckData[] = [
         tags: ['everyday'],
         nsfw: false,
         meta: shippedDeckMeta(),
+        targetLang: Languages.ja,
     },
     {
         id: 'deck-actions',
@@ -66,6 +70,7 @@ export const DEFAULT_DECKS: DeckData[] = [
         tags: ['actions'],
         nsfw: false,
         meta: shippedDeckMeta(),
+        targetLang: Languages.ja,
     },
 ];
 

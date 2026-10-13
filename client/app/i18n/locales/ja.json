@@ -3,11 +3,11 @@
         "home": "ホーム",
         "languages": "言語",
         "japanese": "日本語",
+        "english": "英語",
         "menu": "メニューを開く",
         "settings": "設定",
         "language": "言語",
-        "theme": "テーマ",
-        "english": "English"
+        "theme": "テーマ"
     },
     "chrome": {
         "hide": "非表示",
@@ -132,6 +132,7 @@
         }
     },
     "common": {
+        "loading": "Loading…",
         "error": {
             "oops": "おっと！",
             "unexpected": "予期しないエラーが発生しました。",
@@ -139,15 +140,14 @@
         },
         "tabs": {
             "local": "ローカル",
+            "official": "公式",
             "cloud": "クラウド",
-            "community": "コミュニティ",
-            "official": "公式"
+            "community": "コミュニティ"
         },
         "comingSoon": {
             "cloud": "クラウド同期は近日公開、サインインが必要です",
             "community": "コミュニティのセットを閲覧する機能はまだ利用できません"
         },
-        "loading": "Loading…",
         "select": "選択"
     },
     "notfound": {
@@ -193,6 +193,229 @@
         },
         "back_language": "言語選択に戻る"
     },
+    "deck": {
+        "type": {
+            "vocab": "語彙",
+            "render": "読解",
+            "review": "復習",
+            "exam": "テスト",
+            "drill": "ドリル"
+        },
+        "source": {
+            "official": "公式",
+            "community": "コミュニティ",
+            "local": "マイ",
+            "cloud": "クラウド"
+        },
+        "visibility": {
+            "public": "公開",
+            "unlisted": "限定公開",
+            "private": "非公開"
+        },
+        "search": "デッキを検索",
+        "searchAria": "名前でデッキを検索",
+        "searchClear": "検索をクリア",
+        "tallyAria": "由来別のデッキ",
+        "resultCount": "{{total}} 件中 {{matched}} 件のデッキを表示",
+        "loading": "デッキを読み込み中…",
+        "itemCount_one": "{{count}} 件",
+        "itemCount_other": "{{count}} 件",
+        "byAuthor": "{{author}} 作",
+        "openAria": "{{name}} を開く",
+        "export": "エクスポート",
+        "exportAria": "デッキをエクスポート",
+        "download": "ダウンロード",
+        "downloadAria": "デッキをダウンロード",
+        "delete": "削除",
+        "deleteAria": "デッキを削除",
+        "start": "開始",
+        "list": {
+            "backHub": "{{language}}に戻る"
+        },
+        "empty": {
+            "local": {
+                "title": "まだ自分のデッキがありません",
+                "body": "作成またはインポートしたデッキがここに表示されます。まずは公式デッキから始めてみましたください。",
+                "action": "公式デッキを見る"
+            },
+            "official": {
+                "title": "この種類の公式デッキはまだありません",
+                "body": "公式デッキはアプリに同梱されます。この種類はまだ公開されていません。"
+            },
+            "filtered": {
+                "title": "条件に合うデッキがありません",
+                "body": "このタブには、検索・タグ・条件に一致するデッキがありません。いずれかを緩めると再表示されます。",
+                "action": "条件をクリア"
+            },
+            "cloud": {
+                "title": "クラウド同期は近日公開",
+                "body": "サインインするとデッキがデバイス間を移動します。",
+                "action": "サインイン"
+            },
+            "cloudSignedIn": {
+                "title": "クラウド同期は近日公開",
+                "body": "サインイン済みです。デバイス間でデッキを同期する機能は準備中です。"
+            },
+            "community": {
+                "title": "コミュニティのデッキはまだありません",
+                "body": "他の学習者が公開したデッキは、コミュニティが開いた後にここに表示されます。"
+            }
+        },
+        "noResults": {
+            "title": "検索に一致するものはありません",
+            "body": "短いキーワードを試すか、検索をクリアしてこのタブのすべてを表示してください。"
+        },
+        "details": {
+            "notFound": "そのデッキは見つかりませんでした。",
+            "back": "デッキ一覧に戻る",
+            "contents": "中身",
+            "version": "バージョン",
+            "updated": "更新日",
+            "noSession": "{{language}} デッキのセッションはまだ準備中です。"
+        },
+        "options": {
+            "sortAria": "デッキを並び替え",
+            "sort": {
+                "default": "元の並び順",
+                "name": "名前順",
+                "recent": "更新が新しい順",
+                "popular": "ダウンロードが多い順",
+                "size": "大きい順"
+            },
+            "density": {
+                "comfortable": "ゆったり",
+                "compact": "コンパクト"
+            },
+            "nsfw": {
+                "label": "センシティブ",
+                "on": "センシティブなデッキを表示中",
+                "off": "センシティブなデッキは非表示"
+            },
+            "importHeading": "インポート",
+            "importHint": "以前エクスポートしたデッキファイルを読み込みます。",
+            "importUnavailable": "この種類のデッキはファイル形式がまだありません。"
+        },
+        "tags": {
+            "clear": "タグをクリア",
+            "remove": "タグ {{tag}} を外す"
+        },
+        "actions": {
+            "create": {
+                "vocab": "新しいデッキ",
+                "exam": "新しいテスト"
+            },
+            "importOnly": "インポート"
+        },
+        "import": {
+            "action": "デッキファイルをインポート",
+            "invalidDeck": "このファイルは有効なデッキではありません。",
+            "invalidExam": "このファイルは有効なテストセットではありません。",
+            "invalidJson": "このファイルをJSONとして読めませんでした。"
+        },
+        "viewAuthor": "{{author}} のプロフィールを見る",
+        "edit": {
+            "listTitle": "デッキ",
+            "panelTitle": "エディター",
+            "layoutTitle": "レイアウト",
+            "spacedLabel": "パネルの間隔",
+            "spacedHint": "ドッキングしたパネルの間にすき間を空けます。",
+            "statusTitle": "ステータス",
+            "previewTitle": "プレビュー",
+            "inspectorTitle": "インスペクター",
+            "loading": "デッキを読み込んでいます…",
+            "empty": "まだ編集できるデッキがありません。",
+            "previewEmpty": "このデッキにはまだ内容がありません。",
+            "selectPrompt": "デッキを選択して詳細を編集します。",
+            "nameLabel": "名前",
+            "namePlaceholder": "デッキ名",
+            "descriptionLabel": "説明",
+            "descriptionPlaceholder": "このデッキはどんな内容ですか？",
+            "tagsLabel": "タグ",
+            "tagsPlaceholder": "カンマ区切りのタグ",
+            "nsfwLabel": "NSFW としてマーク",
+            "save": "変更を保存",
+            "delete": "デッキを削除",
+            "dragHandle": "ドラッグして並べ替え",
+            "mobileHint": "下でデッキの並べ替えと編集ができます。デッキマネージャーを使うには、より広い画面で開いてください。",
+            "filters": "種類でデッキを絞り込む",
+            "filterAll": "すべてのデッキ",
+            "typeLabel": "種類",
+            "sourceLabel": "ソース",
+            "itemsLabel": "項目",
+            "statusDecks": "{{visible}} / {{total}} デッキ",
+            "noneSelected": "デッキが選択されていません",
+            "addPanel": "パネルを追加",
+            "views": "エディター表示",
+            "viewAll": "すべてのデッキ",
+            "viewFavourites": "お気に入り",
+            "viewRecent": "最近"
+        }
+    },
+    "footer": {
+        "tagline": "テーマ豊富で居心地の良い、日本語学習のひとときを。",
+        "explore": "探す",
+        "learn": "学べること",
+        "rights": "TeaChoco · 無断転載を禁じます。",
+        "languages": {
+            "ja": "日本語",
+            "en": "英語",
+            "ko": "韓国語",
+            "th": "タイ語"
+        }
+    },
+    "auth": {
+        "signIn": "ログイン",
+        "signUp": "新規登録",
+        "signOut": "ログアウト",
+        "email": "メールアドレス",
+        "password": "パスワード",
+        "name": "名前",
+        "nameTag": "ユーザー名",
+        "nameTagHint": "3〜30文字。英字、数字、アンダースコア(_)、ハイフン(-)のみ使用できます。スペースは使えません。公開用のユーザー名です。",
+        "confirmPassword": "パスワード（確認）",
+        "forgotPassword": "パスワードをお忘れですか？",
+        "resetPassword": "パスワードをリセット",
+        "backToSignIn": "ログインに戻る",
+        "orContinueWith": "または以下で继续",
+        "google": "Google",
+        "discord": "Discord",
+        "line": "LINE",
+        "x": "X (Twitter)",
+        "noAccount": "アカウントをお持ちでないですか？",
+        "hasAccount": "すでにアカウントをお持ちですか？",
+        "verifyEmail": "メールアドレスの確認",
+        "verificationCode": "確認コード",
+        "verifyHint": "{{email}} に送信した6桁のコードを入力してください。",
+        "verify": "確認",
+        "otpSent": "{{email}} にコードを送信しました。",
+        "otpResent": "新しいコードを送信しました。",
+        "verifySuccess": "ようこそ、{{name}}さん！",
+        "resendCode": "コードを再送信",
+        "resendInSeconds": "{{seconds}}秒後に再送信",
+        "profile": "プロフィール",
+        "settings": "設定",
+        "welcome": "ようこそ、{{name}}さん",
+        "error": {
+            "invalidCredentials": "メールアドレスまたはパスワードが正しくありません。",
+            "emailInUse": "このメールアドレスのアカウントは既に存在します。",
+            "nameTagTaken": "このユーザー名は既に使用されています。",
+            "nameTagInvalid": "ユーザー名は3〜30文字で、英字・数字・アンダースコア・ハイフンのみ使用できます（スペース不可）。",
+            "passwordMismatch": "パスワードが一致しません。",
+            "invalidOtp": "コードが無効または期限切れです。もう一度お試しください。",
+            "resendFailed": "新しいコードを送信できませんでした。もう一度お試しください。",
+            "generic": "エラーが発生しました。もう一度お試しください。",
+            "emailNotFound": "No account found with that email.",
+            "resetFailed": "Password reset failed. Please try again.",
+            "oauth": "Sign-in failed: {{reason}}"
+        },
+        "resetCodeSent": "We sent a reset code to {{email}}.",
+        "resetHint": "Enter the code sent to {{email}} and choose a new password.",
+        "forgotHint": "Enter your account email and we'll send you a reset code.",
+        "newPassword": "New Password",
+        "updatePassword": "Update Password",
+        "resetSuccess": "Password updated. Please sign in.",
+        "sendResetCode": "リセットコードを送信"
+    },
     "japanese": {
         "badge": "日本語",
         "title": "日本語を学ぶ",
@@ -210,7 +433,8 @@
             "vocabulary": "語彙",
             "vocabularyHint": "単語を増やして、間隔をあけて復習しましょう。",
             "learn": "学習",
-            "practice": "練習"
+            "practice": "練習",
+            "manage": "管理"
         },
         "nav": {
             "kana": {
@@ -218,15 +442,15 @@
                 "description": "ひらがなとカタカナの全かなと読み方を確認できます。",
                 "action": "かなを見る"
             },
-            "render": {
-                "title": "Render",
-                "description": "Read short passages with furigana and check yourself against the translation.",
-                "action": "Start Reading"
-            },
             "vocab": {
                 "title": "語彙",
                 "description": "単語を増やし、間隔をあけて復習しましょう。",
                 "action": "単語を見る"
+            },
+            "render": {
+                "title": "Render",
+                "description": "Read short passages with furigana and check yourself against the translation.",
+                "action": "Start Reading"
             },
             "drill": {
                 "title": "カナドリル",
@@ -242,7 +466,17 @@
                 "title": "語彙テスト",
                 "description": "自分の語彙から作った選択式で自分自身をテストします。",
                 "action": "テストを受ける"
+            },
+            "edit": {
+                "title": "デッキを編集",
+                "description": "コレクション内のデッキの名前変更、並べ替え、削除ができます。",
+                "action": "デッキを編集"
             }
+        },
+        "edit": {
+            "title": "デッキを編集",
+            "description": "コレクション内のデッキを管理します。エディターは近日公開予定です。",
+            "back": "日本語に戻る"
         },
         "decks": {
             "title": "語彙復習デッキ",
@@ -251,8 +485,26 @@
             "startReview": "復習を開始",
             "due": "期限",
             "byAuthor": "{{author}} より",
+            "viewAuthor": "{{author}} のプロフィールを見る",
             "download": "ダウンロード",
             "note": "復習",
+            "open": "Open",
+            "itemCount_one": "{{count}} item",
+            "itemCount_other": "{{count}} items",
+            "favourite": "お気に入りに追加",
+            "unfavourite": "お気に入りから削除",
+            "export": "Export",
+            "exportAria": "Export deck",
+            "downloadAria": "Download deck",
+            "delete": "Delete",
+            "deleteAria": "Delete deck",
+            "type": {
+                "vocab": "Vocabulary",
+                "render": "Reading",
+                "review": "Review",
+                "exam": "Exam",
+                "drill": "Drill"
+            },
             "ready": "準備OK",
             "words": "語",
             "search": "デッキを検索...",
@@ -281,30 +533,12 @@
                 "custom": "自分の単語",
                 "cloud": "クラウド",
                 "downloaded": "ダウンロード"
-            },
-            "open": "Open",
-            "itemCount_one": "{{count}} item",
-            "itemCount_other": "{{count}} items",
-            "export": "Export",
-            "exportAria": "Export deck",
-            "downloadAria": "Download deck",
-            "delete": "Delete",
-            "deleteAria": "Delete deck",
-            "type": {
-                "vocab": "Vocabulary",
-                "render": "Reading",
-                "review": "Review",
-                "exam": "Exam",
-                "drill": "Drill"
-            },
-            "viewAuthor": "{{author}} のプロフィールを見る",
-            "favourite": "お気に入りに追加",
-            "unfavourite": "お気に入りから削除"
+            }
         },
         "exam": {
             "title": "テスト",
-            "import": "テストセットをインポート",
             "addCustom": "カスタムセットを作成",
+            "import": "テストセットをインポート",
             "importErrorJson": "このファイルをJSONとして読み込めませんでした。",
             "form": {
                 "title": "カスタムテストセットを作成",
@@ -315,12 +549,12 @@
                 "descriptionPlaceholder": "このセットについてのメモ",
                 "wordsLabel": "含める単語",
                 "wordsPlaceholder": "単語を検索...",
+                "selectedCount_one": "{{count}} 件選択中",
+                "selectedCount_other": "{{count}} 件選択中",
                 "titleError": "セットの名前を入力してください。",
                 "minWordsError": "少なくとも2つ単語を選んでください。",
                 "cancel": "キャンセル",
-                "submit": "セットを作成",
-                "selectedCount_one": "{{count}} 件選択中",
-                "selectedCount_other": "{{count}} 件選択中"
+                "submit": "セットを作成"
             }
         },
         "kana": {
@@ -432,7 +666,6 @@
             }
         },
         "vocab": {
-            "available": "合計 {{count}} 単語",
             "back_hub": "Back to hub",
             "eyebrow": "Vocabulary",
             "title": "Vocabulary",
@@ -451,7 +684,21 @@
             "meaning": "Meaning",
             "example": "Example",
             "required": "Word and meaning are required.",
-            "builtIn": "Built-in words can't be edited."
+            "builtIn": "Built-in words can't be edited.",
+            "available": "合計 {{count}} 単語"
+        },
+        "render": {
+            "back_hub": "Back to hub",
+            "eyebrow": "Render",
+            "title": "Render",
+            "description": "Read short passages with furigana and a translation to check against.",
+            "search": "Search decks",
+            "empty": "No reading decks yet.",
+            "passages": "passages",
+            "read": "Read",
+            "showTranslation": "Show translation",
+            "hideTranslation": "Hide translation",
+            "speak": "Listen"
         },
         "vocabularyReview": {
             "badge": "復習",
@@ -471,19 +718,6 @@
             "recallPrompt": "この単語の意味は？",
             "back_hub": "日本語に戻る"
         },
-        "render": {
-            "back_hub": "Back to hub",
-            "eyebrow": "Render",
-            "title": "Render",
-            "description": "Read short passages with furigana and a translation to check against.",
-            "search": "Search decks",
-            "empty": "No reading decks yet.",
-            "passages": "passages",
-            "read": "Read",
-            "showTranslation": "Show translation",
-            "hideTranslation": "Hide translation",
-            "speak": "Listen"
-        },
         "drill": {
             "title": "Kana Drill"
         },
@@ -491,70 +725,59 @@
             "title": "Vocabulary Review"
         }
     },
-    "footer": {
-        "tagline": "テーマ豊富で居心地の良い、日本語学習のひとときを。",
-        "explore": "探す",
-        "learn": "学べること",
-        "rights": "TeaChoco · 無断転載を禁じます。",
-        "languages": {
-            "ja": "日本語",
-            "en": "英語",
-            "ko": "韓国語",
-            "th": "タイ語"
-        }
-    },
-    "auth": {
-        "signIn": "ログイン",
-        "signUp": "新規登録",
-        "signOut": "ログアウト",
-        "email": "メールアドレス",
-        "password": "パスワード",
-        "name": "名前",
-        "nameTag": "ユーザー名",
-        "nameTagHint": "3〜30文字。英字、数字、アンダースコア(_)、ハイフン(-)のみ使用できます。スペースは使えません。公開用のユーザー名です。",
-        "confirmPassword": "パスワード（確認）",
-        "forgotPassword": "パスワードをお忘れですか？",
-        "resetPassword": "パスワードをリセット",
-        "backToSignIn": "ログインに戻る",
-        "orContinueWith": "または以下で继续",
-        "google": "Google",
-        "discord": "Discord",
-        "noAccount": "アカウントをお持ちでないですか？",
-        "hasAccount": "すでにアカウントをお持ちですか？",
-        "verifyEmail": "メールアドレスの確認",
-        "verificationCode": "確認コード",
-        "verifyHint": "{{email}} に送信した6桁のコードを入力してください。",
-        "verify": "確認",
-        "otpSent": "{{email}} にコードを送信しました。",
-        "otpResent": "新しいコードを送信しました。",
-        "verifySuccess": "ようこそ、{{name}}さん！",
-        "resendCode": "コードを再送信",
-        "resendInSeconds": "{{seconds}}秒後に再送信",
-        "profile": "プロフィール",
-        "settings": "設定",
-        "welcome": "ようこそ、{{name}}さん",
-        "error": {
-            "invalidCredentials": "メールアドレスまたはパスワードが正しくありません。",
-            "emailInUse": "このメールアドレスのアカウントは既に存在します。",
-            "nameTagTaken": "このユーザー名は既に使用されています。",
-            "nameTagInvalid": "ユーザー名は3〜30文字で、英字・数字・アンダースコア・ハイフンのみ使用できます（スペース不可）。",
-            "passwordMismatch": "パスワードが一致しません。",
-            "invalidOtp": "コードが無効または期限切れです。もう一度お試しください。",
-            "resendFailed": "新しいコードを送信できませんでした。もう一度お試しください。",
-            "generic": "エラーが発生しました。もう一度お試しください。",
-            "emailNotFound": "No account found with that email.",
-            "resetFailed": "Password reset failed. Please try again.",
-            "oauth": "Sign-in failed: {{reason}}"
+    "english": {
+        "badge": "英語",
+        "title": "英語を学ぼう",
+        "description": "英語は新しいコースです。下のデッキ機能はすでに使えます。文字セットとドリルは現在開発中です。",
+        "nav": {
+            "render": {
+                "title": "読解",
+                "description": "短い文章を読み、訳で確認します。",
+                "action": "読解を始める"
+            },
+            "review": {
+                "title": "語彙復習",
+                "description": "フラッシュカードと間隔反復で語彙を復習します。",
+                "action": "復習を始める"
+            },
+            "exam": {
+                "title": "語彙テスト",
+                "description": "自分の語彙から作った選択式で自分自身をテストします。",
+                "action": "テストを受ける"
+            },
+            "vocab": {
+                "title": "語彙を見る",
+                "description": "デッキの単語を発音・意味・例文つきで確認できます。",
+                "action": "単語を見る"
+            },
+            "edit": {
+                "title": "デッキを編集",
+                "description": "コレクション内のデッキの名前変更、並べ替え、削除ができます。",
+                "action": "デッキを編集"
+            }
         },
-        "resetCodeSent": "We sent a reset code to {{email}}.",
-        "resetHint": "Enter the code sent to {{email}} and choose a new password.",
-        "forgotHint": "Enter your account email and we'll send you a reset code.",
-        "newPassword": "New Password",
-        "updatePassword": "Update Password",
-        "resetSuccess": "Password updated. Please sign in.",
-        "line": "LINE",
-        "x": "X (Twitter)",
-        "sendResetCode": "リセットコードを送信"
+        "edit": {
+            "title": "デッキを編集",
+            "description": "コレクション内のデッキを管理します。エディターは近日公開予定です。",
+            "back": "英語に戻る"
+        },
+        "vocab": {
+            "title": "語彙"
+        },
+        "render": {
+            "title": "読解"
+        },
+        "review": {
+            "title": "語彙復習"
+        },
+        "exam": {
+            "title": "テスト"
+        },
+        "sections": {
+            "learn": "学習",
+            "practice": "練習",
+            "manage": "管理"
+        }
     },
     "settings": {
         "title": "設定",
@@ -590,6 +813,12 @@
         }
     },
     "profile": {
+        "public": {
+            "notFoundTitle": "Profile not found",
+            "notFoundHint": "Nobody is using this name tag. It may have been changed or removed.",
+            "yourDashboard": "Go to your profile",
+            "viewPublic": "View public profile"
+        },
         "title": "プロフィール",
         "subtitle": "ChocoMemo であなたの学習ストーリー。",
         "back": "戻る",
@@ -713,194 +942,6 @@
             "saving": "保存中…",
             "confirm": "確認",
             "change": "プロフィール写真を変更"
-        },
-        "public": {
-            "notFoundTitle": "Profile not found",
-            "notFoundHint": "Nobody is using this name tag. It may have been changed or removed.",
-            "yourDashboard": "Go to your profile",
-            "viewPublic": "View public profile"
         }
-    },
-    "english": {
-        "badge": "英語",
-        "title": "英語を学ぼう",
-        "description": "英語は新しいコースです。下のデッキ機能はすでに使えます。文字セットとドリルは現在開発中です。",
-        "nav": {
-            "render": {
-                "title": "読解",
-                "description": "短い文章を読み、訳で確認します。",
-                "action": "読解を始める"
-            },
-            "review": {
-                "title": "語彙復習",
-                "description": "フラッシュカードと間隔反復で語彙を復習します。",
-                "action": "復習を始める"
-            },
-            "exam": {
-                "title": "語彙テスト",
-                "description": "自分の語彙から作った選択式で自分自身をテストします。",
-                "action": "テストを受ける"
-            },
-            "vocab": {
-                "title": "語彙を見る",
-                "description": "デッキの単語を発音・意味・例文つきで確認できます。",
-                "action": "単語を見る"
-            }
-        },
-        "vocab": {
-            "title": "語彙"
-        },
-        "render": {
-            "title": "読解"
-        },
-        "review": {
-            "title": "語彙復習"
-        },
-        "exam": {
-            "title": "テスト"
-        },
-        "sections": {
-            "learn": "学習",
-            "practice": "練習"
-        }
-    },
-    "deck": {
-        "type": {
-            "vocab": "語彙",
-            "render": "読解",
-            "review": "復習",
-            "exam": "テスト",
-            "drill": "ドリル"
-        },
-        "source": {
-            "official": "公式",
-            "community": "コミュニティ",
-            "local": "マイ",
-            "cloud": "クラウド"
-        },
-        "visibility": {
-            "public": "公開",
-            "unlisted": "限定公開",
-            "private": "非公開"
-        },
-        "search": "デッキを検索",
-        "searchAria": "名前でデッキを検索",
-        "searchClear": "検索をクリア",
-        "tallyAria": "由来別のデッキ",
-        "resultCount": "{{total}} 件中 {{matched}} 件のデッキを表示",
-        "loading": "デッキを読み込み中…",
-        "itemCount_one": "{{count}} 件",
-        "itemCount_other": "{{count}} 件",
-        "byAuthor": "{{author}} 作",
-        "openAria": "{{name}} を開く",
-        "export": "エクスポート",
-        "exportAria": "デッキをエクスポート",
-        "download": "ダウンロード",
-        "downloadAria": "デッキをダウンロード",
-        "delete": "削除",
-        "deleteAria": "デッキを削除",
-        "start": "開始",
-        "list": {
-            "backHub": "{{language}}に戻る",
-            "eyebrow": {
-                "vocab": "語彙",
-                "render": "読解",
-                "exam": "テスト",
-                "review": "復習"
-            },
-            "title": {
-                "vocab": "語彙デッキ",
-                "render": "読解デッキ",
-                "exam": "テストセット",
-                "review": "復習デッキ"
-            },
-            "description": {
-                "vocab": "知っている単語をデッキにまとめ、間隔をあけて繰り返し学習しましょう。",
-                "render": "段階的な 짧은文章を読解し、訳で確認できます。",
-                "exam": "自分の語彙から作った選択式の問題セットです。",
-                "review": "デッキを間隔反復のセッションで復習します。"
-            }
-        },
-        "empty": {
-            "local": {
-                "title": "まだ自分のデッキがありません",
-                "body": "作成またはインポートしたデッキがここに表示されます。まずは公式デッキから始めてみましたください。",
-                "action": "公式デッキを見る"
-            },
-            "official": {
-                "title": "この種類の公式デッキはまだありません",
-                "body": "公式デッキはアプリに同梱されます。この種類はまだ公開されていません。"
-            },
-            "filtered": {
-                "title": "条件に合うデッキがありません",
-                "body": "このタブには、検索・タグ・条件に一致するデッキがありません。いずれかを緩めると再表示されます。",
-                "action": "条件をクリア"
-            },
-            "cloud": {
-                "title": "クラウド同期は近日公開",
-                "body": "サインインするとデッキがデバイス間を移動します。",
-                "action": "サインイン"
-            },
-            "cloudSignedIn": {
-                "title": "クラウド同期は近日公開",
-                "body": "サインイン済みです。デバイス間でデッキを同期する機能は準備中です。"
-            },
-            "community": {
-                "title": "コミュニティのデッキはまだありません",
-                "body": "他の学習者が公開したデッキは、コミュニティが開いた後にここに表示されます。"
-            }
-        },
-        "noResults": {
-            "title": "検索に一致するものはありません",
-            "body": "短いキーワードを試すか、検索をクリアしてこのタブのすべてを表示してください。"
-        },
-        "details": {
-            "notFound": "そのデッキは見つかりませんでした。",
-            "back": "デッキ一覧に戻る",
-            "contents": "中身",
-            "version": "バージョン",
-            "updated": "更新日",
-            "noSession": "{{language}} デッキのセッションはまだ準備中です。"
-        },
-        "options": {
-            "sortAria": "デッキを並び替え",
-            "sort": {
-                "default": "元の並び順",
-                "name": "名前順",
-                "recent": "更新が新しい順",
-                "popular": "ダウンロードが多い順",
-                "size": "大きい順"
-            },
-            "density": {
-                "comfortable": "ゆったり",
-                "compact": "コンパクト"
-            },
-            "nsfw": {
-                "label": "センシティブ",
-                "on": "センシティブなデッキを表示中",
-                "off": "センシティブなデッキは非表示"
-            },
-            "importHeading": "インポート",
-            "importHint": "以前エクスポートしたデッキファイルを読み込みます。",
-            "importUnavailable": "この種類のデッキはファイル形式がまだありません。"
-        },
-        "tags": {
-            "clear": "タグをクリア",
-            "remove": "タグ {{tag}} を外す"
-        },
-        "actions": {
-            "create": {
-                "vocab": "新しいデッキ",
-                "exam": "新しいテスト"
-            },
-            "importOnly": "インポート"
-        },
-        "import": {
-            "action": "デッキファイルをインポート",
-            "invalidDeck": "このファイルは有効なデッキではありません。",
-            "invalidExam": "このファイルは有効なテストセットではありません。",
-            "invalidJson": "このファイルをJSONとして読めませんでした。"
-        },
-        "viewAuthor": "{{author}} のプロフィールを見る"
     }
 }

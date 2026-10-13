@@ -3,11 +3,11 @@
         "home": "หน้าหลัก",
         "languages": "ภาษา",
         "japanese": "ภาษาญี่ปุ่น",
+        "english": "ภาษาอังกฤษ",
         "menu": "เปิดเมนู",
         "settings": "การตั้งค่า",
         "language": "ภาษา",
-        "theme": "ธีม",
-        "english": "English"
+        "theme": "ธีม"
     },
     "chrome": {
         "hide": "ซ่อน",
@@ -132,6 +132,7 @@
         }
     },
     "common": {
+        "loading": "Loading…",
         "error": {
             "oops": "อุ๊ปส์!",
             "unexpected": "เกิดข้อผิดพลาดที่ไม่คาดคิด",
@@ -139,15 +140,14 @@
         },
         "tabs": {
             "local": "ในเครื่อง",
+            "official": "ทางการ",
             "cloud": "คลาวด์",
-            "community": "ชุมชน",
-            "official": "ทางการ"
+            "community": "ชุมชน"
         },
         "comingSoon": {
             "cloud": "การซิงค์คลาวด์กำลังจะมา ต้องลงชื่อเข้าใช้",
             "community": "การเรียกดูชุดของชุมชนยังไม่พร้อมใช้งาน"
         },
-        "loading": "Loading…",
         "select": "เลือก"
     },
     "notfound": {
@@ -193,6 +193,229 @@
         },
         "back_language": "กลับไปหน้าเลือกภาษา"
     },
+    "deck": {
+        "type": {
+            "vocab": "คำศัพท์",
+            "render": "การอ่าน",
+            "review": "ทบทวน",
+            "exam": "ข้อสอบ",
+            "drill": "ซ้อม"
+        },
+        "source": {
+            "official": "ทางการ",
+            "community": "ชุมชน",
+            "local": "ของคุณ",
+            "cloud": "คลาวด์"
+        },
+        "visibility": {
+            "public": "สาธารณะ",
+            "unlisted": "ไม่แสดงในรายการ",
+            "private": "ส่วนตัว"
+        },
+        "search": "ค้นหาชุด",
+        "searchAria": "ค้นหาชุดด้วยชื่อ",
+        "searchClear": "ล้างคำค้น",
+        "tallyAria": "ชุดแยกตามแหล่งที่มา",
+        "resultCount": "แสดง {{matched}} จาก {{total}} ชุด",
+        "loading": "กำลังโหลดชุด…",
+        "itemCount_one": "{{count}} รายการ",
+        "itemCount_other": "{{count}} รายการ",
+        "byAuthor": "โดย {{author}}",
+        "openAria": "เปิด {{name}}",
+        "export": "ส่งออก",
+        "exportAria": "ส่งออกชุด",
+        "download": "ดาวน์โหลด",
+        "downloadAria": "ดาวน์โหลดชุด",
+        "delete": "ลบ",
+        "deleteAria": "ลบชุด",
+        "start": "เริ่ม",
+        "list": {
+            "backHub": "กลับไป{{language}}"
+        },
+        "empty": {
+            "local": {
+                "title": "ยังไม่มีชุดของคุณเอง",
+                "body": "ชุดที่คุณสร้างหรือนำเข้าจะมาอยู่ที่นี่ เริ่มจากชุดทางการแทนก็ได้",
+                "action": "ดูชุดทางการ"
+            },
+            "official": {
+                "title": "ยังไม่มีชุดทางการสำหรับประเภทนี้",
+                "body": "ชุดทางการมาพร้อมแอป ยังไม่มีชุดไหนเผยแพร่สำหรับประเภทนี้"
+            },
+            "filtered": {
+                "title": "ไม่มีชุดที่ตรงกับตัวกรอง",
+                "body": "ไม่มีชุดในแท็บนี้ที่ตรงกับคำค้น แท็ก และตัวเลือกที่คุณเลือก ลดข้อกำหนดลงสักอย่างเพื่อดูอีกครั้ง",
+                "action": "ล้างตัวกรอง"
+            },
+            "cloud": {
+                "title": "การซิงค์คลาวด์กำลังจะมา",
+                "body": "ลงชื่อเข้าใช้แล้วชุดของคุณจะตามคุณไปทุกเครื่อง",
+                "action": "ลงชื่อเข้าใช้"
+            },
+            "cloudSignedIn": {
+                "title": "การซิงค์คลาวด์กำลังจะมา",
+                "body": "คุณลงชื่อเข้าใช้แล้ว การเก็บชุดให้ตรงกันข้ามอุปกรณ์กำลังจะมา"
+            },
+            "community": {
+                "title": "ยังไม่มีชุดจากชุมชน",
+                "body": "ชุดที่ผู้เรียนคนอื่นเผยแพร่จะมาปรากฏที่นี่เมื่อเปิดให้ชุมชนใช้งาน"
+            }
+        },
+        "noResults": {
+            "title": "ไม่พบสิ่งที่ตรงกับคำค้นนี้",
+            "body": "ลองใช้คำที่สั้นลง หรือล้างคำค้นเพื่อดูทุกอย่างในแท็บนี้"
+        },
+        "details": {
+            "notFound": "ไม่พบชุดนั้น",
+            "back": "กลับไปชุดทั้งหมด",
+            "contents": "สิ่งที่อยู่ข้างใน",
+            "version": "เวอร์ชัน",
+            "updated": "อัปเดตเมื่อ",
+            "noSession": "เซสชันสำหรับชุด{{language}}ยังไม่พร้อมใช้งาน"
+        },
+        "options": {
+            "sortAria": "เรียงชุด",
+            "sort": {
+                "default": "ตามลำดับต้นทาง",
+                "name": "ชื่อ ก–ฮ",
+                "recent": "อัปเดตล่าสุด",
+                "popular": "ดาวน์โหลดมากที่สุด",
+                "size": "ขนาดใหญ่สุด"
+            },
+            "density": {
+                "comfortable": "สบายตา",
+                "compact": "กระชับ"
+            },
+            "nsfw": {
+                "label": "เนื้อหาอ่อนไหว",
+                "on": "แสดงชุดเนื้อหาอ่อนไหวแล้ว",
+                "off": "ซ่อนชุดเนื้อหาอ่อนไหว"
+            },
+            "importHeading": "นำเข้า",
+            "importHint": "อ่านไฟล์ชุดที่คุณเคยส่งออกไว้",
+            "importUnavailable": "ยังไม่มีรูปแบบไฟล์สำหรับชุดประเภทนี้"
+        },
+        "tags": {
+            "clear": "ล้างแท็ก",
+            "remove": "เอาแท็ก {{tag}} ออก"
+        },
+        "actions": {
+            "create": {
+                "vocab": "ชุดใหม่",
+                "exam": "ข้อสอบใหม่"
+            },
+            "importOnly": "นำเข้า"
+        },
+        "import": {
+            "action": "นำเข้าไฟล์ชุด",
+            "invalidDeck": "ไฟล์นี้ไม่ใช่ชุดที่ถูกต้อง",
+            "invalidExam": "ไฟล์นี้ไม่ใช่ชุดข้อสอบที่ถูกต้อง",
+            "invalidJson": "อ่านไฟล์นี้เป็น JSON ไม่ได้"
+        },
+        "viewAuthor": "ดูโปรไฟล์ของ {{author}}",
+        "edit": {
+            "listTitle": "ชุด",
+            "panelTitle": "ตัวแก้ไข",
+            "layoutTitle": "เลย์เอาต์",
+            "spacedLabel": "แผงแบบมีระยะห่าง",
+            "spacedHint": "เว้นช่องว่างระหว่างแผงที่ตรึงไว้",
+            "statusTitle": "สถานะ",
+            "previewTitle": "ตัวอย่าง",
+            "inspectorTitle": "ตัวตรวจสอบ",
+            "loading": "กำลังโหลดชุดของคุณ…",
+            "empty": "ยังไม่มีชุดให้แก้ไข",
+            "previewEmpty": "ชุดนี้ยังไม่มีเนื้อหา",
+            "selectPrompt": "เลือกชุดเพื่อแก้ไขรายละเอียด",
+            "nameLabel": "ชื่อ",
+            "namePlaceholder": "ชื่อชุด",
+            "descriptionLabel": "คำอธิบาย",
+            "descriptionPlaceholder": "ชุดนี้เกี่ยวกับอะไร?",
+            "tagsLabel": "แท็ก",
+            "tagsPlaceholder": "แท็กคั่นด้วยเครื่องหมายจุลภาค",
+            "nsfwLabel": "ทำเครื่องหมายเป็น NSFW",
+            "save": "บันทึกการเปลี่ยนแปลง",
+            "delete": "ลบชุด",
+            "dragHandle": "ลากเพื่อจัดลำดับใหม่",
+            "mobileHint": "จัดลำดับและแก้ไขชุดด้านล่าง เปิดบนหน้าจอที่กว้างขึ้นเพื่อใช้ตัวจัดการชุด",
+            "filters": "กรองชุดตามประเภท",
+            "filterAll": "ชุดทั้งหมด",
+            "typeLabel": "ประเภท",
+            "sourceLabel": "แหล่งที่มา",
+            "itemsLabel": "รายการ",
+            "statusDecks": "{{visible}} / {{total}} ชุด",
+            "noneSelected": "ยังไม่ได้เลือกชุด",
+            "addPanel": "เพิ่มแผง",
+            "views": "มุมมองตัวแก้ไข",
+            "viewAll": "ชุดทั้งหมด",
+            "viewFavourites": "รายการโปรด",
+            "viewRecent": "ล่าสุด"
+        }
+    },
+    "footer": {
+        "tagline": "วิถีอบอุ่นและหลากธีมสำหรับจิบคำศัพท์ภาษาญี่ปุ่นไปทีละคำ",
+        "explore": "สำรวจ",
+        "learn": "เราเปิดสอนอะไร",
+        "rights": "TeaChoco · สงวนลิขสิทธิ์",
+        "languages": {
+            "ja": "ญี่ปุ่น",
+            "en": "อังกฤษ",
+            "ko": "เกาหลี",
+            "th": "ไทย"
+        }
+    },
+    "auth": {
+        "signIn": "เข้าสู่ระบบ",
+        "signUp": "สมัครสมาชิก",
+        "signOut": "ออกจากระบบ",
+        "email": "อีเมล",
+        "password": "รหัสผ่าน",
+        "name": "ชื่อ",
+        "nameTag": "ชื่อผู้ใช้",
+        "nameTagHint": "3-30 ตัวอักษร ตัวอักษรภาษาอังกฤษ ตัวเลข ขีดล่าง (_) หรือยัติภังค์ (-) เท่านั้น ไม่มีช่องว่าง ชื่อผู้ใช้สาธารณะของคุณ",
+        "confirmPassword": "ยืนยันรหัสผ่าน",
+        "forgotPassword": "ลืมรหัสผ่าน?",
+        "resetPassword": "รีเซ็ตรหัสผ่าน",
+        "backToSignIn": "กลับไปเข้าสู่ระบบ",
+        "orContinueWith": "หรือดำเนินการต่อด้วย",
+        "google": "Google",
+        "discord": "Discord",
+        "line": "LINE",
+        "x": "X (Twitter)",
+        "noAccount": "ยังไม่มีบัญชี?",
+        "hasAccount": "มีบัญชีอยู่แล้ว?",
+        "verifyEmail": "ยืนยันอีเมล",
+        "verificationCode": "รหัสยืนยัน",
+        "verifyHint": "กรอกรหัส 6 หลักที่เราส่งไปที่ {{email}}",
+        "verify": "ยืนยัน",
+        "otpSent": "เราส่งรหัสไปที่ {{email}} แล้ว",
+        "otpResent": "ส่งรหัสใหม่แล้ว",
+        "verifySuccess": "ยินดีต้อนรับ, {{name}}!",
+        "resendCode": "ส่งรหัสอีกครั้ง",
+        "resendInSeconds": "ส่งอีกครั้งใน {{seconds}} วิ",
+        "profile": "โปรไฟล์",
+        "settings": "การตั้งค่า",
+        "welcome": "ยินดีต้อนรับ, {{name}}",
+        "error": {
+            "invalidCredentials": "อีเมลหรือรหัสผ่านไม่ถูกต้อง",
+            "emailInUse": "มีบัญชีที่ใช้อีเมลนี้อยู่แล้ว",
+            "nameTagTaken": "ชื่อผู้ใช้นี้ถูกใช้ไปแล้ว",
+            "nameTagInvalid": "ชื่อผู้ใช้ต้องมี 3-30 ตัวอักษร: ตัวอักษรภาษาอังกฤษ ตัวเลข ขีดล่าง หรือยัติภังค์เท่านั้น (ไม่มีช่องว่าง)",
+            "passwordMismatch": "รหัสผ่านไม่ตรงกัน",
+            "invalidOtp": "รหัสไม่ถูกต้องหรือหมดอายุ กรุณาลองอีกครั้ง",
+            "resendFailed": "ไม่สามารถส่งรหัสใหม่ได้ กรุณาลองอีกครั้ง",
+            "generic": "เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง",
+            "emailNotFound": "No account found with that email.",
+            "resetFailed": "Password reset failed. Please try again.",
+            "oauth": "Sign-in failed: {{reason}}"
+        },
+        "resetCodeSent": "We sent a reset code to {{email}}.",
+        "resetHint": "Enter the code sent to {{email}} and choose a new password.",
+        "forgotHint": "Enter your account email and we'll send you a reset code.",
+        "newPassword": "New Password",
+        "updatePassword": "Update Password",
+        "resetSuccess": "Password updated. Please sign in.",
+        "sendResetCode": "ส่งรหัสรีเซ็ต"
+    },
     "japanese": {
         "badge": "ภาษาญี่ปุ่น",
         "title": "เรียนภาษาญี่ปุ่น",
@@ -210,7 +433,8 @@
             "vocabulary": "คำศัพท์",
             "vocabularyHint": "เพิ่มคลังคำศัพท์และทบทวนตามช่วงเวลา",
             "learn": "เรียนรู้",
-            "practice": "ฝึกฝน"
+            "practice": "ฝึกฝน",
+            "manage": "จัดการ"
         },
         "nav": {
             "kana": {
@@ -218,15 +442,15 @@
                 "description": "ดูฮิรางานะและคาตาคานะทั้งหมดพร้อมการอ่าน",
                 "action": "ดูตัวคะนะ"
             },
-            "render": {
-                "title": "Render",
-                "description": "Read short passages with furigana and check yourself against the translation.",
-                "action": "Start Reading"
-            },
             "vocab": {
                 "title": "คำศัพท์",
                 "description": "สะสมคลังคำของคุณ แล้วซ้อมแบบห่างตามระยะเวลา",
                 "action": "ดูคำศัพท์"
+            },
+            "render": {
+                "title": "Render",
+                "description": "Read short passages with furigana and check yourself against the translation.",
+                "action": "Start Reading"
             },
             "drill": {
                 "title": "ซ้อมคะนะ",
@@ -242,7 +466,17 @@
                 "title": "ข้อสอบคำศัพท์",
                 "description": "ทดสอบตัวเองด้วยข้อสอบแบบเลือกตอบที่สร้างจากคำศัพท์ของคุณ",
                 "action": "ทำข้อสอบ"
+            },
+            "edit": {
+                "title": "แก้ไขชุด",
+                "description": "เปลี่ยนชื่อ จัดลำดับใหม่ หรือลบชุดในคอลเลกชันของคุณ",
+                "action": "แก้ไขชุด"
             }
+        },
+        "edit": {
+            "title": "แก้ไขชุด",
+            "description": "จัดการชุดในคอลเลกชันของคุณ ตัวแก้ไขจะมาเร็ว ๆ นี้",
+            "back": "กลับไปภาษาญี่ปุ่น"
         },
         "decks": {
             "title": "ชุดทบทวนคำศัพท์",
@@ -251,8 +485,26 @@
             "startReview": "เริ่มทบทวน",
             "due": "ถึงกำหนด",
             "byAuthor": "โดย {{author}}",
+            "viewAuthor": "ดูโปรไฟล์ของ {{author}}",
             "download": "ดาวน์โหลด",
             "note": "ทบทวน",
+            "open": "Open",
+            "itemCount_one": "{{count}} item",
+            "itemCount_other": "{{count}} items",
+            "favourite": "เพิ่มในรายการโปรด",
+            "unfavourite": "เอาออกจากรายการโปรด",
+            "export": "Export",
+            "exportAria": "Export deck",
+            "downloadAria": "Download deck",
+            "delete": "Delete",
+            "deleteAria": "Delete deck",
+            "type": {
+                "vocab": "Vocabulary",
+                "render": "Reading",
+                "review": "Review",
+                "exam": "Exam",
+                "drill": "Drill"
+            },
             "ready": "พร้อมแล้ว",
             "words": "คำ",
             "search": "ค้นหาชุดคำศัพท์...",
@@ -281,30 +533,12 @@
                 "custom": "คำของฉัน",
                 "cloud": "คลาวด์",
                 "downloaded": "ดาวน์โหลด"
-            },
-            "open": "Open",
-            "itemCount_one": "{{count}} item",
-            "itemCount_other": "{{count}} items",
-            "export": "Export",
-            "exportAria": "Export deck",
-            "downloadAria": "Download deck",
-            "delete": "Delete",
-            "deleteAria": "Delete deck",
-            "type": {
-                "vocab": "Vocabulary",
-                "render": "Reading",
-                "review": "Review",
-                "exam": "Exam",
-                "drill": "Drill"
-            },
-            "viewAuthor": "ดูโปรไฟล์ของ {{author}}",
-            "favourite": "เพิ่มในรายการโปรด",
-            "unfavourite": "เอาออกจากรายการโปรด"
+            }
         },
         "exam": {
             "title": "แบบทดสอบ",
-            "import": "นำเข้าชุดแบบทดสอบ",
             "addCustom": "สร้างชุดแบบกำหนดเอง",
+            "import": "นำเข้าชุดแบบทดสอบ",
             "importErrorJson": "ไม่สามารถอ่านไฟล์นี้เป็น JSON ได้",
             "form": {
                 "title": "สร้างชุดแบบทดสอบแบบกำหนดเอง",
@@ -315,12 +549,12 @@
                 "descriptionPlaceholder": "หมายเหตุสั้นๆ เกี่ยวกับชุดนี้",
                 "wordsLabel": "คำศัพท์ที่จะรวม",
                 "wordsPlaceholder": "ค้นหาคำศัพท์...",
+                "selectedCount_one": "เลือก {{count}} คำ",
+                "selectedCount_other": "เลือก {{count}} คำ",
                 "titleError": "กรุณาใส่ชื่อชุด",
                 "minWordsError": "กรุณาเลือกอย่างน้อย 2 คำ",
                 "cancel": "ยกเลิก",
-                "submit": "สร้างชุด",
-                "selectedCount_one": "เลือก {{count}} คำ",
-                "selectedCount_other": "เลือก {{count}} คำ"
+                "submit": "สร้างชุด"
             }
         },
         "kana": {
@@ -432,7 +666,6 @@
             }
         },
         "vocab": {
-            "available": "รวม {{count}} คำ",
             "back_hub": "Back to hub",
             "eyebrow": "Vocabulary",
             "title": "Vocabulary",
@@ -451,7 +684,21 @@
             "meaning": "Meaning",
             "example": "Example",
             "required": "Word and meaning are required.",
-            "builtIn": "Built-in words can't be edited."
+            "builtIn": "Built-in words can't be edited.",
+            "available": "รวม {{count}} คำ"
+        },
+        "render": {
+            "back_hub": "Back to hub",
+            "eyebrow": "Render",
+            "title": "Render",
+            "description": "Read short passages with furigana and a translation to check against.",
+            "search": "Search decks",
+            "empty": "No reading decks yet.",
+            "passages": "passages",
+            "read": "Read",
+            "showTranslation": "Show translation",
+            "hideTranslation": "Hide translation",
+            "speak": "Listen"
         },
         "vocabularyReview": {
             "badge": "ทบทวน",
@@ -471,19 +718,6 @@
             "recallPrompt": "คำนี้แปลว่าอะไร?",
             "back_hub": "กลับไปภาษาญี่ปุ่น"
         },
-        "render": {
-            "back_hub": "Back to hub",
-            "eyebrow": "Render",
-            "title": "Render",
-            "description": "Read short passages with furigana and a translation to check against.",
-            "search": "Search decks",
-            "empty": "No reading decks yet.",
-            "passages": "passages",
-            "read": "Read",
-            "showTranslation": "Show translation",
-            "hideTranslation": "Hide translation",
-            "speak": "Listen"
-        },
         "drill": {
             "title": "Kana Drill"
         },
@@ -491,70 +725,59 @@
             "title": "Vocabulary Review"
         }
     },
-    "footer": {
-        "tagline": "วิถีอบอุ่นและหลากธีมสำหรับจิบคำศัพท์ภาษาญี่ปุ่นไปทีละคำ",
-        "explore": "สำรวจ",
-        "learn": "เราเปิดสอนอะไร",
-        "rights": "TeaChoco · สงวนลิขสิทธิ์",
-        "languages": {
-            "ja": "ญี่ปุ่น",
-            "en": "อังกฤษ",
-            "ko": "เกาหลี",
-            "th": "ไทย"
-        }
-    },
-    "auth": {
-        "signIn": "เข้าสู่ระบบ",
-        "signUp": "สมัครสมาชิก",
-        "signOut": "ออกจากระบบ",
-        "email": "อีเมล",
-        "password": "รหัสผ่าน",
-        "name": "ชื่อ",
-        "nameTag": "ชื่อผู้ใช้",
-        "nameTagHint": "3-30 ตัวอักษร ตัวอักษรภาษาอังกฤษ ตัวเลข ขีดล่าง (_) หรือยัติภังค์ (-) เท่านั้น ไม่มีช่องว่าง ชื่อผู้ใช้สาธารณะของคุณ",
-        "confirmPassword": "ยืนยันรหัสผ่าน",
-        "forgotPassword": "ลืมรหัสผ่าน?",
-        "resetPassword": "รีเซ็ตรหัสผ่าน",
-        "backToSignIn": "กลับไปเข้าสู่ระบบ",
-        "orContinueWith": "หรือดำเนินการต่อด้วย",
-        "google": "Google",
-        "discord": "Discord",
-        "noAccount": "ยังไม่มีบัญชี?",
-        "hasAccount": "มีบัญชีอยู่แล้ว?",
-        "verifyEmail": "ยืนยันอีเมล",
-        "verificationCode": "รหัสยืนยัน",
-        "verifyHint": "กรอกรหัส 6 หลักที่เราส่งไปที่ {{email}}",
-        "verify": "ยืนยัน",
-        "otpSent": "เราส่งรหัสไปที่ {{email}} แล้ว",
-        "otpResent": "ส่งรหัสใหม่แล้ว",
-        "verifySuccess": "ยินดีต้อนรับ, {{name}}!",
-        "resendCode": "ส่งรหัสอีกครั้ง",
-        "resendInSeconds": "ส่งอีกครั้งใน {{seconds}} วิ",
-        "profile": "โปรไฟล์",
-        "settings": "การตั้งค่า",
-        "welcome": "ยินดีต้อนรับ, {{name}}",
-        "error": {
-            "invalidCredentials": "อีเมลหรือรหัสผ่านไม่ถูกต้อง",
-            "emailInUse": "มีบัญชีที่ใช้อีเมลนี้อยู่แล้ว",
-            "nameTagTaken": "ชื่อผู้ใช้นี้ถูกใช้ไปแล้ว",
-            "nameTagInvalid": "ชื่อผู้ใช้ต้องมี 3-30 ตัวอักษร: ตัวอักษรภาษาอังกฤษ ตัวเลข ขีดล่าง หรือยัติภังค์เท่านั้น (ไม่มีช่องว่าง)",
-            "passwordMismatch": "รหัสผ่านไม่ตรงกัน",
-            "invalidOtp": "รหัสไม่ถูกต้องหรือหมดอายุ กรุณาลองอีกครั้ง",
-            "resendFailed": "ไม่สามารถส่งรหัสใหม่ได้ กรุณาลองอีกครั้ง",
-            "generic": "เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง",
-            "emailNotFound": "No account found with that email.",
-            "resetFailed": "Password reset failed. Please try again.",
-            "oauth": "Sign-in failed: {{reason}}"
+    "english": {
+        "badge": "ภาษาอังกฤษ",
+        "title": "เรียนภาษาอังกฤษ",
+        "description": "ภาษาอังกฤษเป็นแทร็กใหม่ ฟีเจอร์ชุดด้านล่างใช้งานได้แล้ว ส่วนชุดอักษรและแบบฝึกยังอยู่ระหว่างพัฒนา",
+        "nav": {
+            "render": {
+                "title": "การอ่าน",
+                "description": "อ่านเรื่องสั้นแล้วเทียบกับคำแปล",
+                "action": "เริ่มอ่าน"
+            },
+            "review": {
+                "title": "ทบทวนคำศัพท์",
+                "description": "ทบทวนคำศัพท์ด้วยการ์ดคำและการทบทวนแบบห่าง",
+                "action": "เริ่มทบทวน"
+            },
+            "exam": {
+                "title": "ข้อสอบคำศัพท์",
+                "description": "ทดสอบตัวเองด้วยข้อสอบแบบเลือกตอบที่สร้างจากคำศัพท์ของคุณ",
+                "action": "ทำข้อสอบ"
+            },
+            "vocab": {
+                "title": "ดูคำศัพท์",
+                "description": "อ่านคำในชุดพร้อมคำอ่าน ความหมาย และตัวอย่างประโยค",
+                "action": "เปิดดูคำศัพท์"
+            },
+            "edit": {
+                "title": "แก้ไขชุด",
+                "description": "เปลี่ยนชื่อ จัดลำดับใหม่ หรือลบชุดในคอลเลกชันของคุณ",
+                "action": "แก้ไขชุด"
+            }
         },
-        "resetCodeSent": "We sent a reset code to {{email}}.",
-        "resetHint": "Enter the code sent to {{email}} and choose a new password.",
-        "forgotHint": "Enter your account email and we'll send you a reset code.",
-        "newPassword": "New Password",
-        "updatePassword": "Update Password",
-        "resetSuccess": "Password updated. Please sign in.",
-        "line": "LINE",
-        "x": "X (Twitter)",
-        "sendResetCode": "ส่งรหัสรีเซ็ต"
+        "edit": {
+            "title": "แก้ไขชุด",
+            "description": "จัดการชุดในคอลเลกชันของคุณ ตัวแก้ไขจะมาเร็ว ๆ นี้",
+            "back": "กลับไปภาษาอังกฤษ"
+        },
+        "vocab": {
+            "title": "คำศัพท์"
+        },
+        "render": {
+            "title": "การอ่าน"
+        },
+        "review": {
+            "title": "ทบทวนคำศัพท์"
+        },
+        "exam": {
+            "title": "แบบทดสอบ"
+        },
+        "sections": {
+            "learn": "เรียนรู้",
+            "practice": "ฝึกฝน",
+            "manage": "จัดการ"
+        }
     },
     "settings": {
         "title": "การตั้งค่า",
@@ -590,6 +813,12 @@
         }
     },
     "profile": {
+        "public": {
+            "notFoundTitle": "Profile not found",
+            "notFoundHint": "Nobody is using this name tag. It may have been changed or removed.",
+            "yourDashboard": "Go to your profile",
+            "viewPublic": "View public profile"
+        },
         "title": "โปรไฟล์",
         "subtitle": "เรื่องราวการเรียนรู้ของคุณกับ ChocoMemo",
         "back": "กลับ",
@@ -713,194 +942,6 @@
             "saving": "กำลังบันทึก…",
             "confirm": "ยืนยัน",
             "change": "เปลี่ยนรูปโปรไฟล์"
-        },
-        "public": {
-            "notFoundTitle": "Profile not found",
-            "notFoundHint": "Nobody is using this name tag. It may have been changed or removed.",
-            "yourDashboard": "Go to your profile",
-            "viewPublic": "View public profile"
         }
-    },
-    "english": {
-        "badge": "ภาษาอังกฤษ",
-        "title": "เรียนภาษาอังกฤษ",
-        "description": "ภาษาอังกฤษเป็นแทร็กใหม่ ฟีเจอร์ชุดด้านล่างใช้งานได้แล้ว ส่วนชุดอักษรและแบบฝึกยังอยู่ระหว่างพัฒนา",
-        "nav": {
-            "render": {
-                "title": "การอ่าน",
-                "description": "อ่านเรื่องสั้นแล้วเทียบกับคำแปล",
-                "action": "เริ่มอ่าน"
-            },
-            "review": {
-                "title": "ทบทวนคำศัพท์",
-                "description": "ทบทวนคำศัพท์ด้วยการ์ดคำและการทบทวนแบบห่าง",
-                "action": "เริ่มทบทวน"
-            },
-            "exam": {
-                "title": "ข้อสอบคำศัพท์",
-                "description": "ทดสอบตัวเองด้วยข้อสอบแบบเลือกตอบที่สร้างจากคำศัพท์ของคุณ",
-                "action": "ทำข้อสอบ"
-            },
-            "vocab": {
-                "title": "ดูคำศัพท์",
-                "description": "อ่านคำในชุดพร้อมคำอ่าน ความหมาย และตัวอย่างประโยค",
-                "action": "เปิดดูคำศัพท์"
-            }
-        },
-        "vocab": {
-            "title": "คำศัพท์"
-        },
-        "render": {
-            "title": "การอ่าน"
-        },
-        "review": {
-            "title": "ทบทวนคำศัพท์"
-        },
-        "exam": {
-            "title": "แบบทดสอบ"
-        },
-        "sections": {
-            "learn": "เรียนรู้",
-            "practice": "ฝึกฝน"
-        }
-    },
-    "deck": {
-        "type": {
-            "vocab": "คำศัพท์",
-            "render": "การอ่าน",
-            "review": "ทบทวน",
-            "exam": "ข้อสอบ",
-            "drill": "ซ้อม"
-        },
-        "source": {
-            "official": "ทางการ",
-            "community": "ชุมชน",
-            "local": "ของคุณ",
-            "cloud": "คลาวด์"
-        },
-        "visibility": {
-            "public": "สาธารณะ",
-            "unlisted": "ไม่แสดงในรายการ",
-            "private": "ส่วนตัว"
-        },
-        "search": "ค้นหาชุด",
-        "searchAria": "ค้นหาชุดด้วยชื่อ",
-        "searchClear": "ล้างคำค้น",
-        "tallyAria": "ชุดแยกตามแหล่งที่มา",
-        "resultCount": "แสดง {{matched}} จาก {{total}} ชุด",
-        "loading": "กำลังโหลดชุด…",
-        "itemCount_one": "{{count}} รายการ",
-        "itemCount_other": "{{count}} รายการ",
-        "byAuthor": "โดย {{author}}",
-        "openAria": "เปิด {{name}}",
-        "export": "ส่งออก",
-        "exportAria": "ส่งออกชุด",
-        "download": "ดาวน์โหลด",
-        "downloadAria": "ดาวน์โหลดชุด",
-        "delete": "ลบ",
-        "deleteAria": "ลบชุด",
-        "start": "เริ่ม",
-        "list": {
-            "backHub": "กลับไป{{language}}",
-            "eyebrow": {
-                "vocab": "คำศัพท์",
-                "render": "การอ่าน",
-                "exam": "ข้อสอบ",
-                "review": "ทบทวน"
-            },
-            "title": {
-                "vocab": "ชุดคำศัพท์",
-                "render": "ชุดอ่าน",
-                "exam": "ชุดข้อสอบ",
-                "review": "ชุดทบทวน"
-            },
-            "description": {
-                "vocab": "จัดกลุ่มคำที่คุณรู้เป็นชุด แล้วซ้อมแบบห่างตามระยะเวลา",
-                "render": "เรื่องสั้นจัดระดับความยากให้อ่าน พร้อมคำแปลไว้เทียบ",
-                "exam": "ชุดข้อสอบแบบเลือกตอบ สร้างจากคำศัพท์ของคุณเอง",
-                "review": "ฝึกทบทวนแบบการทบทวนแบบห่าง"
-            }
-        },
-        "empty": {
-            "local": {
-                "title": "ยังไม่มีชุดของคุณเอง",
-                "body": "ชุดที่คุณสร้างหรือนำเข้าจะมาอยู่ที่นี่ เริ่มจากชุดทางการแทนก็ได้",
-                "action": "ดูชุดทางการ"
-            },
-            "official": {
-                "title": "ยังไม่มีชุดทางการสำหรับประเภทนี้",
-                "body": "ชุดทางการมาพร้อมแอป ยังไม่มีชุดไหนเผยแพร่สำหรับประเภทนี้"
-            },
-            "filtered": {
-                "title": "ไม่มีชุดที่ตรงกับตัวกรอง",
-                "body": "ไม่มีชุดในแท็บนี้ที่ตรงกับคำค้น แท็ก และตัวเลือกที่คุณเลือก ลดข้อกำหนดลงสักอย่างเพื่อดูอีกครั้ง",
-                "action": "ล้างตัวกรอง"
-            },
-            "cloud": {
-                "title": "การซิงค์คลาวด์กำลังจะมา",
-                "body": "ลงชื่อเข้าใช้แล้วชุดของคุณจะตามคุณไปทุกเครื่อง",
-                "action": "ลงชื่อเข้าใช้"
-            },
-            "cloudSignedIn": {
-                "title": "การซิงค์คลาวด์กำลังจะมา",
-                "body": "คุณลงชื่อเข้าใช้แล้ว การเก็บชุดให้ตรงกันข้ามอุปกรณ์กำลังจะมา"
-            },
-            "community": {
-                "title": "ยังไม่มีชุดจากชุมชน",
-                "body": "ชุดที่ผู้เรียนคนอื่นเผยแพร่จะมาปรากฏที่นี่เมื่อเปิดให้ชุมชนใช้งาน"
-            }
-        },
-        "noResults": {
-            "title": "ไม่พบสิ่งที่ตรงกับคำค้นนี้",
-            "body": "ลองใช้คำที่สั้นลง หรือล้างคำค้นเพื่อดูทุกอย่างในแท็บนี้"
-        },
-        "details": {
-            "notFound": "ไม่พบชุดนั้น",
-            "back": "กลับไปชุดทั้งหมด",
-            "contents": "สิ่งที่อยู่ข้างใน",
-            "version": "เวอร์ชัน",
-            "updated": "อัปเดตเมื่อ",
-            "noSession": "เซสชันสำหรับชุด{{language}}ยังไม่พร้อมใช้งาน"
-        },
-        "options": {
-            "sortAria": "เรียงชุด",
-            "sort": {
-                "default": "ตามลำดับต้นทาง",
-                "name": "ชื่อ ก–ฮ",
-                "recent": "อัปเดตล่าสุด",
-                "popular": "ดาวน์โหลดมากที่สุด",
-                "size": "ขนาดใหญ่สุด"
-            },
-            "density": {
-                "comfortable": "สบายตา",
-                "compact": "กระชับ"
-            },
-            "nsfw": {
-                "label": "เนื้อหาอ่อนไหว",
-                "on": "แสดงชุดเนื้อหาอ่อนไหวแล้ว",
-                "off": "ซ่อนชุดเนื้อหาอ่อนไหว"
-            },
-            "importHeading": "นำเข้า",
-            "importHint": "อ่านไฟล์ชุดที่คุณเคยส่งออกไว้",
-            "importUnavailable": "ยังไม่มีรูปแบบไฟล์สำหรับชุดประเภทนี้"
-        },
-        "tags": {
-            "clear": "ล้างแท็ก",
-            "remove": "เอาแท็ก {{tag}} ออก"
-        },
-        "actions": {
-            "create": {
-                "vocab": "ชุดใหม่",
-                "exam": "ข้อสอบใหม่"
-            },
-            "importOnly": "นำเข้า"
-        },
-        "import": {
-            "action": "นำเข้าไฟล์ชุด",
-            "invalidDeck": "ไฟล์นี้ไม่ใช่ชุดที่ถูกต้อง",
-            "invalidExam": "ไฟล์นี้ไม่ใช่ชุดข้อสอบที่ถูกต้อง",
-            "invalidJson": "อ่านไฟล์นี้เป็น JSON ไม่ได้"
-        },
-        "viewAuthor": "ดูโปรไฟล์ของ {{author}}"
     }
 }

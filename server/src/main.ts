@@ -4,16 +4,13 @@ import chalk from 'chalk';
 import { AppModule } from './app.module';
 import packageJson from '../package.json';
 import { NestFactory } from '@nestjs/core';
-import type { FastifyPluginCallback } from 'fastify';
+import fastifyCookie from '@fastify/cookie';
+import fastifyMultipart from '@fastify/multipart';
 import { SecureService } from './secure/secure.service';
 import { Logger, ValidationPipe } from '@nestjs/common';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { SwaggerTheme, SwaggerThemeNameEnum } from 'swagger-themes';
-import fastifyCookie, { type FastifyCookieOptions } from '@fastify/cookie';
 import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
-import fastifyMultipart, {
-    type FastifyMultipartAttachFieldsToBodyOptions,
-} from '@fastify/multipart';
 
 async function bootstrap() {
     const time = Date.now();

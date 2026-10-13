@@ -91,8 +91,8 @@ const buildQuery = (query: FetchDecksQuery): string => {
  *  strings, and tags the deck with which list it came from — the API has no
  *  such column, since one deck can legitimately appear in more than one list.
  *
- *  `language` is dropped on purpose: the client keys its lists by language
- *  rather than carrying it on each deck. */
+ *  The API's `language` becomes the deck's `targetLang`, so a deck carries the
+ *  study language it belongs to even when lists are read flat. */
 const toDeckData = (deck: z.infer<typeof deckSchema>, source: DeckSource): DeckData => ({
     id: deck.id,
     name: deck.name,
@@ -103,6 +103,7 @@ const toDeckData = (deck: z.infer<typeof deckSchema>, source: DeckSource): DeckD
     tags: deck.tags,
     nsfw: deck.nsfw,
     contentIds: deck.contentIds,
+    targetLang: deck.language as Languages,
     meta: {
         author: { ...deck.meta.author, role: deck.meta.author.role as Role },
         createdAt: deck.meta.createdAt,
