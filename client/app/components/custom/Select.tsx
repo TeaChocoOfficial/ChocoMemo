@@ -9,6 +9,7 @@ interface SelectOptionProps<ValueType = string> {
     value: ValueType;
     label?: string;
     selected?: boolean;
+    disabled?: boolean;
     className?: string;
     onClick?: () => void;
     icon?: React.ReactNode;
@@ -21,6 +22,7 @@ function SelectOption<ValueType>({
     value,
     onClick,
     selected,
+    disabled,
     children,
     className,
 }: SelectOptionProps<ValueType>) {
@@ -30,10 +32,13 @@ function SelectOption<ValueType>({
         <button
             type='button'
             onClick={onClick}
+            disabled={disabled}
             className={`w-full px-4 py-3 text-left flex items-center gap-3 group ${
-                selected
-                    ? 'font-black text-primary-foreground bg-primary hover:bg-primary-emphasis'
-                    : 'text-surface-foreground hover:bg-surface-overlay'
+                disabled
+                    ? 'cursor-not-allowed text-surface-muted opacity-50'
+                    : selected
+                      ? 'font-black text-primary-foreground bg-primary hover:bg-primary-emphasis'
+                      : 'text-surface-foreground hover:bg-surface-overlay'
             } ${className}`}
         >
             {icon && (
@@ -55,6 +60,8 @@ export interface OptionSelectType<ValueType = string> {
     value: ValueType;
     label: string;
     icon?: React.ReactNode;
+    /** Shown but not selectable, e.g. a language that isn't ready yet. */
+    disabled?: boolean;
 }
 
 export interface SelectProps<ValueType = string> {

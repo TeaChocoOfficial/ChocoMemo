@@ -4,13 +4,34 @@ import { useTranslation } from 'react-i18next';
 import Select from '~/components/custom/Select';
 import RangeSlider from '~/components/custom/RangeSlider';
 import { useEffect, useMemo, useState } from 'react';
+import { useTargetLang } from '~/hooks/useTargetLang';
+import { Languages } from '~/data/language';
+import { targetSpeechLang } from '~/utils/targetLang';
 import { useSpeechStore } from '~/stores/config/speech.store';
 
 const AUTO_VALUE = '__auto__';
 
-export default function VoicePicker() {
-    const speak = useSpeak();
+/** A short sample to preview a voice, per target language. `other` has no
+ *  single language, so it uses a neutral sample until a deck supplies one. */
+const PREVIEW: Record<Languages, string> = {
+    [Languages.ja]: 'あ い う え お',
+    [Languages.en]: 'A B C D E',
+    [Languages.other]: 'A B C D E',
+    [Languages.ko]: '가 나 다 라 마',
+    [Languages.th]: 'ก ข ค ง จ',
+    [Languages.zh]: '一 二 三 四 五',
+};
+
+/**
+ * @param speechLang BCP47 tag to speak with, overriding the active target
+ * language. Deck sessions pass `deck.targetInfo.speechTag` here so an `other`
+ * deck previews its own language.
+ */
+export default function VoicePicker({ speechLang: speechLangProp }: { speechLang?: string } = {}) {
+    const speak = useSpeak(speechLangProp);
     const { t } = useTranslation();
+    const targetLang = useTargetLang();
+    const speechLang = speechLangProp ?? targetSpeechLang(targetLang);
     const { voiceURI, setVoice, volume, setVolume } = useSpeechStore();
     const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
 
@@ -26,18 +47,18 @@ export default function VoicePicker() {
         () => [
             {
                 value: AUTO_VALUE,
-                label: `${t('japanese.kana.voice_auto')} (${t('japanese.kana.voice_ja')})`,
+                label: `${t('japanese.kana.voice_auto')} (${speechLang})`,
             },
             ...voices.map((v) => ({
                 value: v.voiceURI,
                 label: `${v.name} (${v.lang})`,
             })),
         ],
-        [voices, t],
+        [voices, t, speechLang],
     );
 
     const handleChange = (uri: string) => {
-        if (uri === AUTO_VALUE) return setVoice('', 'ja-JP');
+        if (uri === AUTO_VALUE) return setVoice('', speechLang);
         const voice = voices.find((v) => v.voiceURI === uri);
         if (voice) setVoice(voice.voiceURI, voice.lang);
     };
@@ -60,7 +81,7 @@ export default function VoicePicker() {
                 </div>
                 <button
                     type='button'
-                    onClick={() => speak('あ い う え お')}
+                    onClick={() => speak(PREVIEW[targetLang])}
                     title={t('japanese.kana.voice_preview')}
                     aria-label={t('japanese.kana.voice_preview')}
                     className='grid h-9 w-9 shrink-0 cursor-pointer place-items-center rounded-sm border border-line bg-surface text-surface-muted transition-colors duration-200 hover:border-primary hover:text-primary'

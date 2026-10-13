@@ -1,6 +1,7 @@
-import { Link } from '~/i18n/routing';
 import { useEffect, useMemo } from 'react';
-import { useSearchParams } from 'react-router';
+import { useNavigate, useSearchParams } from 'react-router';
+import { Link, localizePath } from '~/i18n/routing';
+import type { Lang } from '~/i18n/locales';
 import { useTranslation } from 'react-i18next';
 import Button from '~/components/custom/Button';
 import Section from '~/components/custom/Section';
@@ -24,8 +25,9 @@ const DISCONNECT_ERROR_KEYS: Record<string, string> = {
 
 export default function ProfilePage() {
     const swal = useSwal();
-    const { t } = useTranslation();
+    const navigate = useNavigate();
     const { user } = useAuthStore();
+    const { t, i18n } = useTranslation();
     const [searchParams] = useSearchParams();
     const { open, setOpen } = useAuthStore();
 
@@ -63,16 +65,31 @@ export default function ProfilePage() {
         }).format(date);
     }, [user?.createdAt]);
 
+    /**
+     * Goes back in history rather than to a fixed page, so a profile opened from
+     * the navbar, a deck byline or a shared link returns to where it was opened
+     * from. Falls back to the Landing when there is no history to unwind.
+     *
+     * Read at click time, not at render: the history length is the same on the
+     * server and the client, so asking during render would pick a branch the
+     * client then contradicts.
+     */
+    const goBack = () => {
+        if (window.history.length > 1) return navigate(-1);
+        navigate(localizePath(i18n.language as Lang, '/'));
+    };
+
     return (
         <Section className='items-start justify-center'>
             <div className='mx-auto w-full max-w-5xl px-4 sm:px-6'>
-                <Link
-                    to='/'
-                    className='mb-6 inline-flex items-center gap-2 text-sm font-medium text-surface-muted transition-colors hover:text-primary'
+                <button
+                    type='button'
+                    onClick={goBack}
+                    className='mb-6 inline-flex cursor-pointer items-center gap-2 text-sm font-medium text-surface-muted transition-colors hover:text-primary'
                 >
                     <FaArrowLeft className='h-3.5 w-3.5' />
                     {t('profile.back')}
-                </Link>
+                </button>
                 <ProfileHero memberSince={memberSince} />
                 {user?.nameTag && (
                     <div className='mb-6'>

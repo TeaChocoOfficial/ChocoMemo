@@ -10,7 +10,7 @@ export default [
     route(':lang', 'routes/$lang.tsx', [
         layout('routes/layout.tsx', [
             index('routes/page/home.tsx'),
-            route('language-select', 'routes/page/language-select.tsx'),
+            route('study', 'routes/page/study.tsx'),
             route('edit', 'routes/page/edit.tsx'),
             route('decks/:deckId', 'routes/page/decks/$deckId.tsx'),
             route('vocab', 'routes/page/vocab/vocab.tsx'),

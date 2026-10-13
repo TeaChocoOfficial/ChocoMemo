@@ -18,13 +18,14 @@ import SourceTally from './SourceTally';
 import DeckListSearch from './DeckListSearch';
 import DeckTagFilter from './DeckTagFilter';
 import DeckListOptions from './DeckListOptions';
+import TargetLangFilter from './TargetLangFilter';
 import { useDeckCounts } from '~/hooks/deck/useDecksForTab';
 import { useDeckListActions } from './DeckListActions';
 import { useDeckListDecks } from '~/hooks/deck/useDeckListDecks';
 import { useAuthStore } from '~/stores/config/auth.store';
 import type { DeckType } from '~/types/deck';
 import type { DeckListQuery } from '~/types/deckList';
-import type { Languages } from '~/data/language';
+import { useTargetLang } from '~/hooks/useTargetLang';
 
 /** Details page for a deck. Shared by every type and language, so the list
  *  never has to know that a session lives behind a different route. */
@@ -39,12 +40,10 @@ const GRID = {
 
 export default function DeckList({
     type,
-    targetLang,
     query,
     controls,
 }: {
     type: DeckType;
-    targetLang: Languages;
     /** The view state parsed out of the URL by `useDeckListQuery`. */
     query: DeckListQuery;
     /** The setters from the same hook, forwarded so the page shell owns the URL
@@ -52,6 +51,7 @@ export default function DeckList({
     controls: DeckListQueryControls;
 }) {
     const { t } = useTranslation();
+    const targetLang = useTargetLang();
     const counts = useDeckCounts(targetLang, type);
     const actions = useDeckListActions(targetLang, type);
     const { setTab, setSearch, setSort, setDensity, setNsfw, toggleTag, reset } = controls;
@@ -98,11 +98,16 @@ export default function DeckList({
             <SourceTally counts={counts} active={query.tab} onSelect={setTab} />
 
             <div className='my-4 flex flex-col gap-3'>
-                <DeckListSearch
-                    value={query.search}
-                    onChange={setSearch}
-                    onClear={() => setSearch('')}
-                />
+                <div className='flex flex-col gap-3 sm:flex-row sm:items-center'>
+                    <div className='min-w-0 flex-1'>
+                        <DeckListSearch
+                            value={query.search}
+                            onChange={setSearch}
+                            onClear={() => setSearch('')}
+                        />
+                    </div>
+                    <TargetLangFilter />
+                </div>
                 <DeckListOptions
                     query={query}
                     actions={actions}
@@ -129,12 +134,7 @@ export default function DeckList({
                     </p>
                     <div className={`grid ${GRID[query.density]}`}>
                         {visible.map((deck, index) => (
-                            <DeckCard
-                                key={deck.id}
-                                to={DECK_PATH}
-                                deck={deck}
-                                index={index}
-                            />
+                            <DeckCard key={deck.id} to={DECK_PATH} deck={deck} index={index} />
                         ))}
                     </div>
                     {/* The sentinel is what the observer watches: as it nears the

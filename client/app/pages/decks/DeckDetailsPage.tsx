@@ -16,7 +16,6 @@ import { useDeckListCloudStore } from '~/stores/deck/deckListCloud.store';
 import { useDeckListCommunityStore } from '~/stores/deck/deckListCommunity.store';
 import { useLangText } from '~/hooks/useLangText';
 import { formatRelativeTime } from '~/utils/relativeTime';
-import { useTargetLang } from '~/hooks/useTargetLang';
 import type { Lang } from '~/i18n/locales';
 import type { DeckData, DeckLists, DeckType } from '~/types/deck';
 import { Languages } from '~/data/language';
@@ -31,32 +30,36 @@ const SESSION_TYPES: Partial<Record<Languages, readonly DeckType[]>> = {
 
 /** Where "Start" goes, or `undefined` when the track has no session yet —
  *  an honest notice beats a button into a 404. */
-function sessionPath(deck: DeckData, targetLang: Languages): string | undefined {
-    if (!SESSION_TYPES[targetLang]?.includes(deck.type)) return undefined;
+function sessionPath(deck: DeckData): string | undefined {
+    if (!SESSION_TYPES[deck.targetLang]?.includes(deck.type)) return undefined;
     return `/${deck.type}/${deck.id}`;
 }
 
-/** A deck from any source, or `undefined` if no source holds that id. */
+/** A deck from any source and any target, or `undefined` if none holds the id.
+ *  Searching every language means a deck opens from a link that carries no
+ *  `?target=`. */
 function findDeck(
     deckId: string,
-    targetLang: Languages,
     cloudLists: DeckLists,
     communityLists: DeckLists,
 ): DeckData | undefined {
-    const sources: DeckData[][] = [
-        officialDecks(targetLang),
-        localDecks(targetLang),
-        cloudLists[targetLang] ?? [],
-        communityLists[targetLang] ?? [],
-    ];
-    return sources.flat().find((deck) => deck.id === deckId);
+    for (const language of Object.values(Languages)) {
+        const sources: DeckData[][] = [
+            officialDecks(language),
+            localDecks(language),
+            cloudLists[language] ?? [],
+            communityLists[language] ?? [],
+        ];
+        const found = sources.flat().find((deck) => deck.id === deckId);
+        if (found) return found;
+    }
+    return undefined;
 }
 
 export default function DeckDetailsPage({ deckId }: { deckId: string }) {
     const { t, i18n } = useTranslation();
     const navigate = useNavigate();
     const locale = useLangText();
-    const targetLang = useTargetLang();
 
     // Subscribing to the local store is what makes the page re-render once
     // storage has rehydrated, which is when a local deck first appears.
@@ -64,7 +67,7 @@ export default function DeckDetailsPage({ deckId }: { deckId: string }) {
     const cloudLists = useDeckListCloudStore((state) => state.deckLists);
     const communityLists = useDeckListCommunityStore((state) => state.deckLists);
 
-    const deck = findDeck(deckId, targetLang, cloudLists, communityLists);
+    const deck = findDeck(deckId, cloudLists, communityLists);
 
     // Where to send the viewer when there is no history to unwind — a shared
     // link opened in a fresh tab, say. An unknown deck has no type to name a
@@ -106,7 +109,7 @@ export default function DeckDetailsPage({ deckId }: { deckId: string }) {
         );
     }
 
-    const start = sessionPath(deck, targetLang);
+    const start = sessionPath(deck);
     const name = locale(deck.name);
     const visibility = deck.meta?.visibility;
 
@@ -224,7 +227,7 @@ export default function DeckDetailsPage({ deckId }: { deckId: string }) {
                                 <p className='border border-dashed border-line-strong px-4 py-3 text-sm text-surface-muted'>
                                     {t('deck.details.noSession', {
                                         language: t(
-                                            `languageSelect.languages.${targetLang}.name`,
+                                            `languageSelect.languages.${deck.targetLang}.name`,
                                         ),
                                     })}
                                 </p>

@@ -1,17 +1,16 @@
 // -Path: 'client/app/pages/home/Home.tsx'
 import HomeHero from './HomeHero';
 import HomeStats from './HomeStats';
-import HubNav from '~/components/page/HubNav';
-import Section from '~/components/custom/Section';
+import HomeSpace from './HomeSpace';
 import HomeLanguages from './HomeLanguages';
 import HomeLibrary from './HomeLibrary';
 import HomeHowItWorks from './HomeHowItWorks';
 import HomeCta from './HomeCta';
 
 /**
- * The landing page, which also acts as the hub: the destination rows follow the
- * active target language, so `/:lang` is both the marketing entry and the place
- * a learner picks what to study.
+ * The Landing page: introduces the app and lets the visitor pick a language.
+ * The study destinations live on the study hub (`/:lang/study`), so the Landing
+ * has no study navigation of its own.
  */
 export default function HomePage() {
     return (
@@ -19,12 +18,8 @@ export default function HomePage() {
             <HomeHero />
             <HomeStats />
             <HomeLanguages />
-            <Section className='items-center'>
-                <div className='mx-auto w-full max-w-5xl px-4 sm:px-6'>
-                    <HubNav />
-                </div>
-            </Section>
             <HomeLibrary />
+            <HomeSpace />
             <HomeHowItWorks />
             <HomeCta />
         </>

@@ -59,44 +59,47 @@ function parseTags(raw: string | null): string[] {
 }
 
 /**
- * Turns a URL's search params into a query, substituting the default for every
+ * Turns a URL's search params into a query, substituting a default for every
  * value that is missing or unrecognised.
+ *
+ * @param defaults What a bare URL means. The viewer's saved options are passed
+ * here so a deck list opens the way they last left it, while an explicit
+ * `?sort=` in the link still wins.
  */
-export function parseDeckListQuery(params: URLSearchParams): DeckListQuery {
-    // `nsfw` is opt-in, so anything other than an explicit `1`/`true` means
-    // "leave it hidden". Reading presence alone would expose flagged decks to
-    // anyone who appended `?nsfw`.
+export function parseDeckListQuery(
+    params: URLSearchParams,
+    defaults: DeckListQuery = DEFAULT_DECK_LIST_QUERY,
+): DeckListQuery {
+    // `nsfw` is opt-in, so an explicit `1`/`true` turns it on and anything else
+    // turns it off; only an absent param falls back to the default. Reading
+    // presence alone would expose flagged decks to anyone who appended `?nsfw`.
     const nsfwRaw = params.get(DECK_LIST_PARAMS.nsfw);
 
     return {
-        tab: pick(params.get(DECK_LIST_PARAMS.tab), DECK_SOURCE_TABS, DEFAULT_DECK_LIST_QUERY.tab),
-        search: params.get(DECK_LIST_PARAMS.search)?.trim() ?? DEFAULT_DECK_LIST_QUERY.search,
-        sort: pick(params.get(DECK_LIST_PARAMS.sort), DECK_SORTS, DEFAULT_DECK_LIST_QUERY.sort),
-        density: pick(
-            params.get(DECK_LIST_PARAMS.density),
-            DECK_DENSITIES,
-            DEFAULT_DECK_LIST_QUERY.density,
-        ),
-        nsfw: nsfwRaw === '1' || nsfwRaw === 'true',
+        tab: pick(params.get(DECK_LIST_PARAMS.tab), DECK_SOURCE_TABS, defaults.tab),
+        search: params.get(DECK_LIST_PARAMS.search)?.trim() ?? defaults.search,
+        sort: pick(params.get(DECK_LIST_PARAMS.sort), DECK_SORTS, defaults.sort),
+        density: pick(params.get(DECK_LIST_PARAMS.density), DECK_DENSITIES, defaults.density),
+        nsfw: nsfwRaw == null ? defaults.nsfw : nsfwRaw === '1' || nsfwRaw === 'true',
         tags: parseTags(params.get(DECK_LIST_PARAMS.tags)),
     };
 }
 
 /** Serializes a query back to search params, leaving out every default. */
-export function deckListQueryToParams(query: DeckListQuery): URLSearchParams {
+export function deckListQueryToParams(
+    query: DeckListQuery,
+    defaults: DeckListQuery = DEFAULT_DECK_LIST_QUERY,
+): URLSearchParams {
     const params = new URLSearchParams();
     const set = (key: string, value: string) => {
         if (value) params.set(key, value);
     };
 
-    set(DECK_LIST_PARAMS.tab, query.tab === DEFAULT_DECK_LIST_QUERY.tab ? '' : query.tab);
+    set(DECK_LIST_PARAMS.tab, query.tab === defaults.tab ? '' : query.tab);
     set(DECK_LIST_PARAMS.search, query.search.trim());
-    set(DECK_LIST_PARAMS.sort, query.sort === DEFAULT_DECK_LIST_QUERY.sort ? '' : query.sort);
-    set(
-        DECK_LIST_PARAMS.density,
-        query.density === DEFAULT_DECK_LIST_QUERY.density ? '' : query.density,
-    );
-    set(DECK_LIST_PARAMS.nsfw, query.nsfw ? '1' : '');
+    set(DECK_LIST_PARAMS.sort, query.sort === defaults.sort ? '' : query.sort);
+    set(DECK_LIST_PARAMS.density, query.density === defaults.density ? '' : query.density);
+    set(DECK_LIST_PARAMS.nsfw, query.nsfw === defaults.nsfw ? '' : query.nsfw ? '1' : '0');
     set(DECK_LIST_PARAMS.tags, query.tags.join(','));
 
     return params;
@@ -104,8 +107,11 @@ export function deckListQueryToParams(query: DeckListQuery): URLSearchParams {
 
 /** True when nothing narrows the list — used to decide whether a "clear
  *  everything" affordance is worth showing at all. */
-export function isDeckListQueryDefault(query: DeckListQuery): boolean {
-    return deckListQueryToParams(query).toString() === '';
+export function isDeckListQueryDefault(
+    query: DeckListQuery,
+    defaults: DeckListQuery = DEFAULT_DECK_LIST_QUERY,
+): boolean {
+    return deckListQueryToParams(query, defaults).toString() === '';
 }
 
 /** Adds or removes one tag, keeping the set free of duplicates. */

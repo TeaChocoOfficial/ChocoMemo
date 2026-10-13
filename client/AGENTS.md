@@ -4,7 +4,7 @@ Guidance for AI coding agents working on **ChocoMemo** (`client/`). Read this be
 
 ## Project summary
 
-ChocoMemo is a multi-language learning web app (Japanese implemented; English, Korean, Chinese, Thai planned). Users study character sets, vocabulary, exam and review, and can share decks.
+ChocoMemo is a multi-language learning web app (Japanese implemented; English and a deck-only "Another language" target ready; Korean, Chinese, Thai planned). Users study character sets, vocabulary, exam and review, and can share decks.
 
 - **Client:** React + React Router v7 (framework mode, SSR) + TypeScript, in `client/`
 - **Server:** NestJS (separate package, not covered by this file)
@@ -60,10 +60,12 @@ client/
       $lang.tsx          # locale layout (validates :lang)
       layout.tsx
       not-found.tsx
-      page/              # route modules, mirrors URL structure
-        japanese/        # /:lang/japanese/*
+      page/              # route modules, mirrors URL structure (language-agnostic)
+        vocab/ render/ exam/ review/   # deck lists (+ :deckId)
+        characters/$target.tsx         # character chart
+        drill/$target.tsx              # character drill
     pages/               # actual page UI, one folder per page/feature
-      japanese/<feature>/{components,content,hooks}/
+      study/{components,hooks}/ characters/ drill/ home/ decks/ ...
     components/
       custom/            # design-system primitives (Button, Card, Modal, ...)
       container/         # shared deck UI (DecksList, DeckCard, ExamSetCard)
@@ -82,9 +84,12 @@ Rules of thumb:
 ## Routing
 
 - Every route is nested under **`/:lang`** (the i18n locale segment), account pages included: `/:lang/settings`, `/:lang/profile`, `/:lang/profile/:nameTag`.
-- Language tracks live under the language name: `/:lang/japanese/...`, later `/:lang/english/...`, `/:lang/korean/...`, `/:lang/chinese/...`, `/:lang/thai/...`.
-- Each track has: hub, a character set page, a drill, then `render`, `vocabulary`, `exam`, `review`.
-- Character set naming per language: `kana` (ja), `alphabet` (en, th), `hangul` (ko), `hanzi` (zh); drills use `<name>-drill`.
+- The study language is a **filter, not a path segment**. Deck lists read `?target=ja`; the character routes carry the target in `:target` (`ja`, `en`, `other`, `ko`, `zh`, `th`).
+- Routes: `/:lang` (Landing — introduces the app and picks a language), `/:lang/study` (study hub), `/:lang/edit`, `/:lang/decks/:deckId`, `/:lang/{vocab,render,exam,review}` (+ `/:deckId`), `/:lang/characters/:target`, `/:lang/drill/:target`. There is no language-select route: the first choice is on the Landing and later changes go through the navbar switcher.
+- `other` is a deck-only catch-all target (no character set, so no chart or drill). An `other` deck carries `targetInfo` (`label` + BCP-47 `speechTag`) for its own language name and TTS tag.
+- **Terminology:** `uiLang` = the `:lang` segment (i18n locale). `targetLang` = the language being studied. Never use a bare `lang` where it could mean either.
+- The capabilities config in `app/data/language.ts` declares each target's `status` (`ready` / `coming-soon`) and its `characterSet`. The character routes read it, so a language without a set shows a coming-soon notice. The study hub is target-agnostic.
+- The active target comes from `?target=` first, then the deck list's saved options (`stores/config/deckList.store.ts`), then the default (`useTargetLang`). Only deck lists use `targetLang`; `DeckDetailsPage` resolves a deck (and its language) from the deck itself.
 - Feature name is **`render`** (not `reading`, not `ebook`).
 - Use the locale-aware link/navigate helpers from `app/i18n/routing.tsx` so links keep the current `:lang`. Ask the user before reading it if you need its API.
 
@@ -110,8 +115,8 @@ Deck types are in `app/types/deck.ts` (`DeckData`, `DeckMeta`, `DeckSource`). De
 All user-facing text must come from i18next. **Never hardcode UI strings** in components.
 
 **Locale update rule:**
-1. When you add or change a string, edit **only `app/i18n/locales/en-US.json`**.
-2. **Do not touch the other locale files** (`th-TH`, `ja-JP`, `ko-KR`, `zh-CN`, and the rest). The user will sync them all in one batch later.
+1. When you add or change a string, edit **only `app/i18n/locales/en.json`**.
+2. **Do not touch the other locale files** (`th.json`, `ja.json`, `ko.json`, `zh.json`, and the rest). The user will sync them all in one batch later.
 3. Do not add placeholder or copied English values to the other files.
 4. Keep key names stable and descriptive (`feature.section.label`). Renaming or removing a key in `en-US.json` should be mentioned to the user, since other locales will need the same change.
 5. At the end of the task, list the new/changed/removed keys so the user can batch-translate them.
@@ -119,6 +124,6 @@ All user-facing text must come from i18next. **Never hardcode UI strings** in co
 ## Definition of done
 
 - `pnpm typecheck` passes.
-- No new hardcoded UI strings; new keys exist in `en-US.json` only.
+- No new hardcoded UI strings; new keys exist in `en.json` only.
 - New files have JSDoc on exports and no file is overstuffed.
 - No edits to generated folders, secrets, or unrelated locale files.

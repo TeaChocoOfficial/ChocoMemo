@@ -14,9 +14,8 @@
 import type { DeckType } from '~/types/deck';
 import { useTranslation } from 'react-i18next';
 import PageShell from '~/components/custom/PageShell';
-import { useTargetLang } from '~/hooks/useTargetLang';
-import { useDeckListQuery } from '~/hooks/deck/useDeckListQuery';
 import DeckList from '~/components/container/DeckList/DeckList';
+import { useDeckListQuery } from '~/hooks/deck/useDeckListQuery';
 
 /** The deck types that get a list page. `drill` is a single-session page of
  *  its own, so it has no list — and therefore no per-type copy either. */
@@ -24,27 +23,13 @@ type ListType = Exclude<DeckType, 'drill'>;
 
 export default function DeckListPage({ type }: { type: ListType }) {
     const { t } = useTranslation();
-    const targetLang = useTargetLang();
     // The URL is the only storage for the view state, so the page shell and the
     // list can never disagree about what tab is open.
     const controls = useDeckListQuery();
 
     return (
-        <PageShell
-            width='wide'
-            backTo='/'
-            backLabel={t(`${targetLang}.${type}.back_hub`, {
-                defaultValue: t('deck.list.backHub', {
-                    language: t(`languageSelect.languages.${targetLang}.name`),
-                }),
-            })}
-        >
-            <DeckList
-                type={type}
-                targetLang={targetLang}
-                query={controls.query}
-                controls={controls}
-            />
+        <PageShell width='wide' backTo='/study' backLabel={t('deck.list.backStudy')}>
+            <DeckList type={type} controls={controls} query={controls.query} />
         </PageShell>
     );
 }

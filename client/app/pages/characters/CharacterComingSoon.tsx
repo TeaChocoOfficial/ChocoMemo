@@ -19,7 +19,7 @@ export default function CharacterComingSoon({ targetLang }: { targetLang?: strin
                     className='mb-6 inline-flex items-center gap-2 text-sm font-medium text-surface-muted transition-colors hover:text-primary'
                 >
                     <FaArrowLeft className='h-3.5 w-3.5' />
-                    {t('characters.back_hub')}
+                    {t('characters.backHub')}
                 </Link>
                 <p className='text-sm text-surface-muted'>
                     {t('characters.comingSoon', {

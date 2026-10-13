@@ -34,6 +34,8 @@ export function useRouting() {
 type LinkProps = Omit<ComponentProps<typeof RouterLink>, 'to'> & {
     to: string;
     locale?: Lang;
+    /** Hash to target (without `#`), appended after the localized path. */
+    hash?: string;
 };
 
 /**
@@ -44,11 +46,15 @@ type LinkProps = Omit<ComponentProps<typeof RouterLink>, 'to'> & {
  *
  * <Link to="/about" locale="en">About</Link>
  * // → <a href="/en/about">
+ *
+ * <Link to="/" hash="languages">Languages</Link>
+ * // → <a href="/th#languages">
  */
-export function Link({ to, locale, ...props }: LinkProps) {
+export function Link({ to, locale, hash, ...props }: LinkProps) {
     const { lang } = useRouting();
     const targetLang = locale ?? lang;
-    return <RouterLink to={localizePath(targetLang, to)} {...props} />;
+    const href = localizePath(targetLang, to) + (hash ? `#${hash}` : '');
+    return <RouterLink to={href} {...props} />;
 }
 
 /**

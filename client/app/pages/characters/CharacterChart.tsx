@@ -13,7 +13,7 @@ import CharacterComingSoon from './CharacterComingSoon';
 export default function CharacterChart() {
     const { target } = useParams();
     const targetLang = targetFromCode(target);
-    const set = targetLang ? targetLanguage(targetLang)?.characterSet : undefined;
+    const set = targetLang ? targetLanguage(targetLang)?.characters?.id : undefined;
 
     if (set === 'kana') return <KanaChart />;
     return <CharacterComingSoon targetLang={targetLang} />;

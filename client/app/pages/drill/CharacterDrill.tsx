@@ -13,7 +13,7 @@ import CharacterComingSoon from '~/pages/characters/CharacterComingSoon';
 export default function CharacterDrill() {
     const { target } = useParams();
     const targetLang = targetFromCode(target);
-    const set = targetLang ? targetLanguage(targetLang)?.characterSet : undefined;
+    const set = targetLang ? targetLanguage(targetLang)?.characters?.id : undefined;
 
     if (set === 'kana') return <KanaDrill />;
     return <CharacterComingSoon targetLang={targetLang} />;

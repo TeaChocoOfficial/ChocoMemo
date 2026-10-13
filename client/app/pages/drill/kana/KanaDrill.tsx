@@ -13,8 +13,7 @@ import { useQuizSettingsStore } from '~/stores/japanese/quizSettings.store';
 export default function KanaDrillPage() {
     const speak = useSpeak();
     const { t } = useTranslation();
-    const settings = useQuizSettingsStore((s) => s.settings);
-    const setSettings = useQuizSettingsStore((s) => s.setSettings);
+    const { settings, setSettings } = useQuizSettingsStore();
 
     const {
         phase,
@@ -66,11 +65,11 @@ export default function KanaDrillPage() {
                 {phase === 'intro' && (
                     <>
                         <Link
-                            to='/'
+                            to='/study'
                             className='inline-flex items-center gap-2 mb-6 text-sm font-medium text-surface-muted hover:text-primary transition-colors'
                         >
                             <FaArrowLeft className='w-3.5 h-3.5' />
-                            {t('japanese.kanaDrill.back_characters')}
+                            {t('deck.list.backStudy')}
                         </Link>
                         <QuizIntro settings={settings} onChange={setSettings} onStart={startQuiz} />
                     </>

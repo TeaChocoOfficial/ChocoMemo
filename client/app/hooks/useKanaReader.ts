@@ -89,7 +89,7 @@ export function useKanaReader(
             utterance.volume = volume;
             utterance.pitch = 1;
 
-            const voice = getVoiceForSpeech(voiceURI);
+            const voice = getVoiceForSpeech(voiceURI, lang);
             if (voice) utterance.voice = voice;
 
             utterance.onstart = () => {

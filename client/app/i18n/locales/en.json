@@ -1,9 +1,12 @@
 {
     "nav": {
         "home": "Home",
+        "study": "Study",
+        "edit": "Edit",
         "languages": "Languages",
         "japanese": "Japanese",
         "english": "English",
+        "other": "Another language",
         "menu": "Open menu",
         "settings": "Settings",
         "language": "Language",
@@ -17,11 +20,12 @@
     "home": {
         "badge": "ChocoMemo · community language library",
         "title": "Learn any language,",
-        "titleAccent": "one shared deck at a time.",
-        "subtitle": "Japanese, English, Thai, Korean and Chinese — each one built from decks, drills and quizzes that real learners write, share and pour for each other. Free, open, and yours to extend.",
+        "titleAccent": "one deck at a time.",
+        "subtitle": "Start with Japanese: kana charts with sound, and drills you can run today. Decks, review and quizzes are rolling out, and any other language will work through decks.",
         "ctaStart": "Start learning",
-        "ctaCreate": "Publish a deck",
+        "ctaCreate": "Create a deck",
         "ctaHow": "See how it works",
+        "comingSoon": "Coming soon",
         "scriptsLabel": "Now brewing",
         "stats": {
             "badge": "On the shelf",
@@ -32,47 +36,22 @@
         },
         "languages": {
             "badge": "The shelf",
-            "title": "Five languages, one warm habit",
-            "hint": "Start with the tray that's ready today — the rest are steeping.",
-            "available": "Ready to pour",
-            "comingSoon": "Steeping",
-            "toAll": "Browse every language",
-            "items": {
-                "japanese": {
-                    "name": "Japanese",
-                    "description": "Hiragana, katakana and kanji with drills and spaced review."
-                },
-                "english": {
-                    "name": "English",
-                    "description": "Everyday vocabulary and phrases, sorted by the people who use them."
-                },
-                "thai": {
-                    "name": "Thai",
-                    "description": "Tones, script and the words you'll actually meet on the street."
-                },
-                "korean": {
-                    "name": "Korean",
-                    "description": "Hangul in one sitting, then conversation decks that stick."
-                },
-                "chinese": {
-                    "name": "Chinese",
-                    "description": "Characters, pinyin and tone pairs, drilled in short rounds."
-                }
-            }
+            "title": "Every language, one warm habit",
+            "hint": "Start with the tray that's ready today — the rest are steeping."
         },
         "library": {
-            "badge": "The community shelf",
-            "title": "Write a deck. Share it. Watch it teach.",
-            "hint": "Every study set in ChocoMemo is written by a person, not a publisher. Tidy one up, publish it, and someone else gets a whole course from it.",
+            "badge": "The deck shelf",
+            "title": "A shelf of decks, soon filled by learners.",
+            "hint": "Study sets in ChocoMemo are decks: themed collections of words, passages and quizzes. Learners will be able to publish their own decks and share them with the community.",
             "cta": "Open the review shelf",
             "items": {
                 "decks": {
                     "title": "Vocabulary decks",
-                    "hint": "Group words into a themed deck — nature, animals, everyday things — and review it like a little e-book."
+                    "hint": "Themed decks of words — nature, animals, everyday things — to study in one place."
                 },
                 "exam": {
                     "title": "Quiz sets",
-                    "hint": "Turn a deck into a timed exam and see exactly which words still need steeping."
+                    "hint": "Any deck will turn into a multiple-choice quiz that shows which words still need steeping."
                 },
                 "kana": {
                     "title": "Kana drills",
@@ -80,7 +59,22 @@
                 },
                 "review": {
                     "title": "Spaced review",
-                    "hint": "Decks you downloaded come back on their own schedule, so nothing goes cold."
+                    "hint": "Words you have studied will come back on a schedule, so nothing goes cold."
+                }
+            }
+        },
+        "space": {
+            "badge": "Storage",
+            "title": "Space for your decks",
+            "hint": "Each account will have a storage allowance for the decks you create and upload.",
+            "items": {
+                "included": {
+                    "title": "Included",
+                    "hint": "The allowance will come with every account and be shared by your decks and what you upload to them."
+                },
+                "rent": {
+                    "title": "Rent more",
+                    "hint": "When a collection outgrows it, you'll be able to rent extra space in the shop."
                 }
             }
         },
@@ -92,25 +86,25 @@
                 "title": "Pick your language",
                 "hint": "Choose the tray you're studying today."
             },
-            "step2": {
-                "title": "Borrow a deck",
-                "hint": "Take a deck someone else wrote, or start from the built-in shelf."
-            },
-            "step3": {
-                "title": "Drill and quiz",
-                "hint": "Short kana drills and vocabulary exam, five minutes at a time."
-            },
-            "step4": {
-                "title": "Publish your own",
-                "hint": "Add the words you keep forgetting and share them back with the shelf."
-            }
+        "step2": {
+            "title": "Pick a deck",
+            "hint": "Start with a built-in deck. Decks from other learners will follow."
         },
-        "cta": {
-            "title": "The pot's already on.",
-            "hint": "No sign-up walls between you and the first deck. Sign in only when you want your words to sync.",
-            "primary": "Start learning",
-            "secondary": "Publish a deck"
+        "step3": {
+            "title": "Drill and quiz",
+            "hint": "Short drills, five minutes at a time. Review and quizzes are rolling out."
+        },
+        "step4": {
+            "title": "Create your own",
+            "hint": "Soon you'll add the words you keep forgetting and share them with other learners."
         }
+    },
+    "cta": {
+        "title": "The pot's already on.",
+        "hint": "No sign-up wall between you and the first drill. Account features, like syncing your decks, are on the way.",
+        "primary": "Start learning",
+        "secondary": "Create a deck"
+    }
     },
     "theme": {
         "pickerLabel": "Change theme",
@@ -156,18 +150,112 @@
         "back_home": "Back to Home",
         "error_code": "404"
     },
+    "study": {
+        "title": "Study",
+        "subtitle": "Pick a language, then a way to practise it.",
+        "characters": {
+            "title": "Characters",
+            "description": "Browse a language's character chart and hear each one spoken."
+        },
+        "drill": {
+            "title": "Drill",
+            "description": "Test your recognition with a timed multiple-choice drill."
+        },
+        "decks": {
+            "title": "Decks",
+            "for": "Decks for {{language}}",
+            "learn": "Learn",
+            "practice": "Practice",
+            "items": {
+                "vocab": {
+                    "title": "Vocabulary",
+                    "description": "Browse and study vocabulary decks."
+                },
+                "render": {
+                    "title": "Render",
+                    "description": "Read short passages and check yourself."
+                },
+                "review": {
+                    "title": "Review",
+                    "description": "Review with flashcards and spaced repetition."
+                },
+                "exam": {
+                    "title": "Exam",
+                    "description": "Test yourself with a multiple-choice exam."
+                },
+                "edit": {
+                    "title": "Edit decks",
+                    "description": "Rename, reorder, or remove the decks in your collection."
+                }
+            }
+        },
+        "tag": {
+            "ready": "Ready",
+            "current": "Current",
+            "comingSoon": "Coming Soon"
+        },
+        "action": {
+            "start": "Start"
+        }
+    },
+    "hub": {
+        "comingSoon": "{{language}} is coming soon. Pick another language to start studying.",
+        "sections": {
+            "learn": "Learn",
+            "practice": "Practice",
+            "manage": "Manage"
+        },
+        "nav": {
+            "characters": {
+                "title": "Characters",
+                "description": "Browse the character chart and hear each one spoken.",
+                "action": "View Characters"
+            },
+            "drill": {
+                "title": "Character Drill",
+                "description": "Test your recognition with a timed multiple-choice drill.",
+                "action": "Start Drill"
+            },
+            "vocab": {
+                "title": "Vocabulary",
+                "description": "Browse and study vocabulary decks for this language.",
+                "action": "Browse Words"
+            },
+            "render": {
+                "title": "Render",
+                "description": "Read short passages and check yourself against the translation.",
+                "action": "Start Reading"
+            },
+            "review": {
+                "title": "Vocabulary Review",
+                "description": "Review vocabulary with flashcards and spaced repetition.",
+                "action": "Start Review"
+            },
+            "exam": {
+                "title": "Vocabulary exam",
+                "description": "Test yourself with a multiple-choice exam built from your vocabulary.",
+                "action": "Take an Exam"
+            },
+            "edit": {
+                "title": "Edit Decks",
+                "description": "Rename, reorder, or remove the decks in your collection.",
+                "action": "Edit Decks"
+            }
+        }
+    },
+    "characters": {
+        "backHub": "Back to hub",
+        "comingSoon": "The {{language}} character chart is coming soon.",
+        "unknown": "This language"
+    },
     "languageSelect": {
-        "badge": "Language Selection",
-        "title": "Choose a Language to Learn",
-        "description": "Pick the language you want to study. Japanese is ready today; the rest are steeping.",
         "back_home": "Back to Home",
         "status": {
             "available": "Available",
             "comingSoon": "Coming Soon"
         },
         "cta": {
-            "start": "Start Learning",
-            "unavailable": "Not Available"
+            "start": "Start Learning"
         },
         "languages": {
             "japanese": {
@@ -177,6 +265,10 @@
             "english": {
                 "name": "English",
                 "description": "Everyday vocabulary and phrases, sorted into decks by the people who actually use them."
+            },
+            "other": {
+                "name": "Another language",
+                "description": "Study a language the app has no built-in support for — decks only, no character chart."
             },
             "thai": {
                 "name": "Thai",
@@ -190,8 +282,7 @@
                 "name": "Chinese",
                 "description": "Characters, pinyin and tone pairs, practised a few minutes at a time."
             }
-        },
-        "back_language": "Back to Language Selection"
+        }
     },
     "deck": {
         "type": {
@@ -212,6 +303,7 @@
             "unlisted": "Unlisted",
             "private": "Private"
         },
+        "target": "Language",
         "search": "Search decks",
         "searchAria": "Search decks by name",
         "searchClear": "Clear search",
@@ -230,7 +322,8 @@
         "deleteAria": "Delete deck",
         "start": "Start",
         "list": {
-            "backHub": "Back to {{language}}"
+            "backHub": "Back to {{language}}",
+            "backStudy": "Back to Study"
         },
         "empty": {
             "local": {

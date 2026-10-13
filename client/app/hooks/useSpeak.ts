@@ -1,6 +1,6 @@
 // -Path: 'client/app/hooks/useSpeak.ts'
 // Speaks a given text using the browser's Web Speech API.
-// Respects the user's chosen voice from the speech store.
+// The spoken language follows the active target language, never the UI locale.
 // Falls back gracefully when speech synthesis is unavailable.
 //
 // Optionally accepts a pre-generated static audio file (e.g. VOICEVOX) via
@@ -8,6 +8,8 @@
 // back to speech synthesis if the file fails to load.
 
 import { useCallback } from 'react';
+import { useTargetLang } from '~/hooks/useTargetLang';
+import { targetSpeechLang } from '~/utils/targetLang';
 import { useSpeechStore } from '~/stores/config/speech.store';
 
 // The most recently played static audio file, so any caller can stop the
@@ -30,21 +32,30 @@ function getVoices(): SpeechSynthesisVoice[] {
     return window.speechSynthesis.getVoices();
 }
 
-function pickJapaneseVoice(): SpeechSynthesisVoice | null {
-    const voices = getVoices();
-    return voices.find((v) => v.lang.toLowerCase().startsWith('ja')) ?? null;
+/** The first installed voice for a BCP47 tag's language, or `null`. */
+function pickVoiceForLang(lang: string): SpeechSynthesisVoice | null {
+    const base = lang.toLowerCase().split('-')[0];
+    return getVoices().find((v) => v.lang.toLowerCase().startsWith(base)) ?? null;
 }
 
-export function getVoiceForSpeech(voiceURI: string): SpeechSynthesisVoice | null {
+/** The voice to speak with: the viewer's pick, else the first voice matching
+ *  the target language. */
+export function getVoiceForSpeech(voiceURI: string, lang: string): SpeechSynthesisVoice | null {
     const selected = voiceURI ? getVoices().find((v) => v.voiceURI === voiceURI) ?? null : null;
-    return selected ?? pickJapaneseVoice();
+    return selected ?? pickVoiceForLang(lang);
 }
 
-export function useSpeak() {
+/**
+ * @param speechLangOverride BCP47 tag to speak with, overriding the active
+ * target language. Deck sessions pass `deck.targetInfo.speechTag` here so an
+ * `other` deck speaks its own language.
+ */
+export function useSpeak(speechLangOverride?: string) {
     const voiceURI = useSpeechStore((s) => s.voiceURI);
-    const lang = useSpeechStore((s) => s.lang);
     const rate = useSpeechStore((s) => s.rate);
     const volume = useSpeechStore((s) => s.volume);
+    const targetLang = useTargetLang();
+    const speechLang = speechLangOverride ?? targetSpeechLang(targetLang);
 
     return useCallback(
         (text: string, audioSrc?: string, onEnd?: () => void) => {
@@ -71,7 +82,7 @@ export function useSpeak() {
             }
             speakWithTTS(text, onEnd);
         },
-        [voiceURI, lang, rate, volume],
+        [voiceURI, speechLang, rate, volume],
     );
 
     function speakWithTTS(text: string, onEnd?: () => void) {
@@ -83,16 +94,18 @@ export function useSpeak() {
         window.speechSynthesis.cancel();
 
         const utterance = new SpeechSynthesisUtterance(text);
-        utterance.lang = lang;
+        utterance.lang = speechLang;
         utterance.rate = rate;
         utterance.volume = volume;
         utterance.pitch = 1;
 
-        const selected = getVoiceForSpeech(voiceURI);
-        if (selected) utterance.voice = selected;
+        const selected = getVoiceForSpeech(voiceURI, speechLang);
+        if (selected) {
+            utterance.voice = selected;
+            utterance.lang = selected.lang;
+        }
         if (onEnd) utterance.onend = onEnd;
 
         window.speechSynthesis.speak(utterance);
     }
 }
-

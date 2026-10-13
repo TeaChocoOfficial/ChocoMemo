@@ -1,10 +1,11 @@
-// -Path: 'client/app/pages/language-select/LanguageCard.tsx'
+// -Path: 'client/app/pages/home/LanguageCard.tsx'
 import { motion } from 'framer-motion';
 import Badge from '~/components/custom/Badge';
 import { useTranslation } from 'react-i18next';
 import { Link } from '~/i18n/routing';
 import { FaLock } from 'react-icons/fa6';
 import type { AvailableLanguage } from '~/data/language';
+import { withTarget } from '~/utils/targetLang';
 
 interface LanguageCardProps {
     language: AvailableLanguage;
@@ -29,7 +30,7 @@ export default function LanguageCard({ language, index }: LanguageCardProps) {
             transition={{ duration: 0.4, delay: index * 0.08 }}
         >
             <Link
-                to={`/${id}`}
+                to={withTarget('/vocab', id)}
                 className='group flex items-center gap-5 rounded-sm border border-line bg-surface p-5 transition-colors duration-200 hover:border-primary hover:bg-surface-overlay sm:gap-6 sm:p-6'
             >
                 <span className='text-5xl font-black leading-none text-surface-subtle transition-colors duration-200 group-hover:text-primary sm:text-6xl'>

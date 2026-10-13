@@ -25,7 +25,7 @@ const WIDTHS = {
  * consistent content column, and the "back" link.
  *
  * Exists so the padding and back-link classes aren't retyped per page — they
- * were duplicated verbatim across the Japanese, language-select, and profile
+ * were duplicated verbatim across the study, landing, and profile
  * routes, where a one-off tweak would silently diverge.
  */
 export default function PageShell({

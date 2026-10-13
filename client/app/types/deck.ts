@@ -70,6 +70,15 @@ export interface DeckOrigin {
     syncedAt: string;
 }
 
+/** Language info for an `other` deck, whose target is not one of the built-in
+ *  languages. Only meaningful when `targetLang === Languages.other`. */
+export interface DeckTargetInfo {
+    /** Free-text language name shown on the deck, e.g. "Spanish". */
+    label: string;
+    /** BCP47 tag the Web Speech API speaks, e.g. "es-ES". */
+    speechTag: string;
+}
+
 /** A deck data: a named, reviewable collection of words.
  *  Words are referenced by id; resolution depends on the source. */
 export interface DeckData extends CreateDeckData {
@@ -101,6 +110,11 @@ export interface CreateDeckData {
     /** Only set on a downloaded copy (`source: 'local'` or `'cloud'`
      *  that started life as someone else's `community` deck). */
     origin?: DeckOrigin;
+    /** Language info for an `other` deck. Only meaningful when
+     *  `targetLang === Languages.other`; every built-in target leaves it
+     *  unset.
+     *  @todo The deck editor will require this for `other` decks. */
+    targetInfo?: DeckTargetInfo;
 }
 
 export type DeckLists = Partial<Record<Languages, DeckData[]>>;

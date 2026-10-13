@@ -1,8 +1,8 @@
 // -Path: 'client/app/components/layout/Footer.tsx'
 import { Link } from '~/i18n/routing';
-import { getAssetUrl } from '~/utils/url';
 import { FaGithub } from 'react-icons/fa6';
 import { languages } from '~/data/language';
+import NavbarLogo from './navbar/NavbarLogo';
 import { useTranslation } from 'react-i18next';
 
 export default function Footer() {
@@ -14,13 +14,7 @@ export default function Footer() {
                 <div className='grid gap-8 sm:grid-cols-2 lg:grid-cols-3'>
                     {/* Brand */}
                     <div className='flex flex-col gap-3'>
-                        <Link to='/' className='flex items-center gap-3'>
-                            <img
-                                alt='ChocoMemo'
-                                src={getAssetUrl('/icon.png')}
-                                className='h-12 shrink-0'
-                            />
-                        </Link>
+                        <NavbarLogo />
                         <p className='max-w-xs text-sm text-surface-muted'>{t('footer.tagline')}</p>
                     </div>
 
@@ -40,7 +34,8 @@ export default function Footer() {
                             </li>
                             <li>
                                 <Link
-                                    to='/language-select'
+                                    to='/'
+                                    hash='languages'
                                     className='text-surface-foreground hover:text-primary transition-colors'
                                 >
                                     {t('nav.languages')}
@@ -48,7 +43,7 @@ export default function Footer() {
                             </li>
                             <li>
                                 <Link
-                                    to='/japanese'
+                                    to='/'
                                     className='text-surface-foreground hover:text-primary transition-colors'
                                 >
                                     {t('nav.japanese')}

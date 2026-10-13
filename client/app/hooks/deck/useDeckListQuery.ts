@@ -1,12 +1,7 @@
-// -Path: 'client/app/hooks/useDeckListQuery.ts'
-// The deck list's view state, with the URL as the only storage.
-//
-// There is deliberately no `useState` mirror. A deck list is a *view onto* a
-// collection, and a view is exactly the thing worth putting in the address bar:
-// sharing the link shows the same tab, the same search and the same sort, and
-// Back walks the viewer through the views they actually took. Duplicating the
-// query into component state would buy nothing and would let the two drift on
-// the first browser Back.
+// -Path: 'client/app/hooks/deck/useDeckListQuery.ts'
+// The deck list's view state. The URL is the shareable source — a link shows the
+// same tab, search and sort — and the persisted options fill a bare URL, so the
+// viewer's preferences survive a reload.
 //
 // Two write modes, because the two kinds of change want opposite behaviour:
 //
@@ -19,7 +14,9 @@ import { useCallback, useMemo } from 'react';
 import { useSearchParams } from 'react-router';
 import { DEFAULT_DECK_LIST_QUERY } from '~/types/deckList';
 import type { DeckDensity, DeckListQuery, DeckSort } from '~/types/deckList';
+import { useDeckListOptions } from '~/hooks/useDeckListOptions';
 import type { DeckSource } from '~/types/deck';
+import { useDeckListStore, DEFAULT_DECK_LIST_OPTIONS } from '~/stores/config/deckList.store';
 import {
     deckListQueryToParams,
     isDeckListQueryDefault,
@@ -36,7 +33,7 @@ type CommitMode = 'push' | 'replace';
 type QueryUpdate = Partial<DeckListQuery> | ((current: DeckListQuery) => Partial<DeckListQuery>);
 
 export interface DeckListQueryControls {
-    /** The query currently in the URL, defaults filled in. */
+    /** The view state, defaults filled in. */
     query: DeckListQuery;
     /** A discrete choice the viewer made — worth a history entry. */
     push: (update: QueryUpdate) => void;
@@ -48,9 +45,9 @@ export interface DeckListQueryControls {
     setDensity: (density: DeckDensity) => void;
     setNsfw: (nsfw: boolean) => void;
     toggleTag: (tag: string) => void;
-    /** Back to a bare URL — the local tab, nothing narrowed. */
+    /** Back to a bare URL and the default options. */
     reset: () => void;
-    /** True while the query is the default, so callers can hide "clear". */
+    /** True while nothing is narrowed, so callers can hide "clear". */
     isDefault: boolean;
 }
 
@@ -58,52 +55,91 @@ export interface DeckListQueryControls {
  * Reads the deck list's view state out of the query string and hands back
  * setters that write it back.
  *
- * Safe to call during SSR: `useSearchParams` reports the same params on the
- * server as on the client's first render, so a shared link hydrates onto the
- * view it names rather than flashing the default tab first.
+ * Safe during SSR: the persisted options are read only after mount, so the
+ * server render and the client's first paint agree on the defaults rather than
+ * flashing a stored preference.
  */
 export function useDeckListQuery(): DeckListQueryControls {
     const [searchParams, setSearchParams] = useSearchParams();
-    // `searchParams` is a fresh object per navigation, so parsing it is cheap
-    // enough that memoizing only buys an identity for the returned `query`.
-    const query = useMemo(() => parseDeckListQuery(searchParams), [searchParams]);
+    const options = useDeckListOptions();
+    const save = useDeckListStore((state) => state.save);
+
+    // A bare URL falls back to the viewer's saved options; an explicit param in
+    // the link still wins.
+    const defaults = useMemo<DeckListQuery>(
+        () => ({
+            ...DEFAULT_DECK_LIST_QUERY,
+            sort: options.sort,
+            density: options.density,
+            nsfw: options.nsfw,
+        }),
+        [options.sort, options.density, options.nsfw],
+    );
+
+    const query = useMemo(
+        () => parseDeckListQuery(searchParams, defaults),
+        [searchParams, defaults],
+    );
 
     const commit = useCallback(
         (update: QueryUpdate, mode: CommitMode) => {
             // Read the URL rather than the rendered `query`, so two controls
-            // changing in the same tick — a tag click that also clears the
-            // search, say — cannot undo each other.
-            const current = parseDeckListQuery(searchParams);
+            // changing in the same tick cannot undo each other.
+            const current = parseDeckListQuery(searchParams, defaults);
             const patch = typeof update === 'function' ? update(current) : update;
-            const next = deckListQueryToParams({ ...current, ...patch });
+            const next = deckListQueryToParams({ ...current, ...patch }, defaults);
 
             setSearchParams(next, {
                 replace: mode === 'replace',
-                // Narrowing the list must not scroll the viewer back to the
-                // top; they are already looking at the result.
+                // Narrowing the list must not scroll the viewer back to the top.
                 preventScrollReset: true,
             });
         },
-        [searchParams, setSearchParams],
+        [searchParams, setSearchParams, defaults],
     );
 
     const push = useCallback((update: QueryUpdate) => commit(update, 'push'), [commit]);
     const replace = useCallback((update: QueryUpdate) => commit(update, 'replace'), [commit]);
 
     const setTab = useCallback((tab: DeckSource) => push({ tab }), [push]);
-    const setSort = useCallback((sort: DeckSort) => push({ sort }), [push]);
-    const setDensity = useCallback((density: DeckDensity) => push({ density }), [push]);
-    const setNsfw = useCallback((nsfw: boolean) => push({ nsfw }), [push]);
     const setSearch = useCallback((search: string) => replace({ search }), [replace]);
-
     const toggleTag = useCallback(
         (tag: string) => push((current) => ({ tags: toggleQueryTag(current.tags, tag) })),
         [push],
     );
 
+    // Display options are remembered, so they survive a reload even though the
+    // URL is the visible source of truth.
+    const setSort = useCallback(
+        (sort: DeckSort) => {
+            save({ sort });
+            push({ sort });
+        },
+        [save, push],
+    );
+    const setDensity = useCallback(
+        (density: DeckDensity) => {
+            save({ density });
+            push({ density });
+        },
+        [save, push],
+    );
+    const setNsfw = useCallback(
+        (nsfw: boolean) => {
+            save({ nsfw });
+            push({ nsfw });
+        },
+        [save, push],
+    );
+
     const reset = useCallback(() => {
+        save({
+            sort: DEFAULT_DECK_LIST_OPTIONS.sort,
+            density: DEFAULT_DECK_LIST_OPTIONS.density,
+            nsfw: DEFAULT_DECK_LIST_OPTIONS.nsfw,
+        });
         setSearchParams(new URLSearchParams(), { replace: true, preventScrollReset: true });
-    }, [setSearchParams]);
+    }, [save, setSearchParams]);
 
     return {
         query,
@@ -116,6 +152,7 @@ export function useDeckListQuery(): DeckListQueryControls {
         setNsfw,
         toggleTag,
         reset,
-        isDefault: isDeckListQueryDefault(query) && query.tab === DEFAULT_DECK_LIST_QUERY.tab,
+        isDefault:
+            isDeckListQueryDefault(query, defaults) && query.tab === DEFAULT_DECK_LIST_QUERY.tab,
     };
 }
