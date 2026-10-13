@@ -9,7 +9,6 @@ import Section from '~/components/custom/Section';
 import { FaArrowDown, FaCircleRight, FaGithub, FaPenNib } from 'react-icons/fa6';
 
 /** Whether creating decks is live yet; flip to reveal the second CTA. */
-const CREATE_DECK = false;
 import Badge from '~/components/custom/Badge';
 
 /** The two call-to-action shapes, shared by the primary and secondary buttons. */
@@ -74,12 +73,10 @@ export default function HomeHero() {
                             <FaCircleRight className='h-4 w-4' />
                         </Link>
                         {/* Hidden until creating decks is live. */}
-                        {CREATE_DECK && (
-                            <Link to='/vocab' className={CTA_GHOST}>
-                                <FaPenNib className='h-4 w-4' />
-                                {t('home.ctaCreate')}
-                            </Link>
-                        )}
+                        <Link to='/vocab' className={CTA_GHOST}>
+                            <FaPenNib className='h-4 w-4' />
+                            {t('home.ctaCreate')}
+                        </Link>
                         <Link
                             to='#how-it-works'
                             className={`${CTA_GHOST} border-transparent text-surface-muted hover:bg-surface-overlay`}

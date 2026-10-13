@@ -24,7 +24,7 @@ export default function DesktopNav() {
                         key={item.to}
                         to={item.to}
                         aria-current={active ? 'page' : undefined}
-                        className={`relative flex items-center gap-1.5 rounded-[3px] px-3.5 py-1.5 text-sm font-medium transition-colors ${
+                        className={`relative flex items-center gap-1.5 px-3.5 py-1.5 text-sm font-medium transition-colors ${
                             active
                                 ? 'text-primary-foreground'
                                 : 'text-surface-muted hover:text-surface-foreground'
@@ -32,8 +32,7 @@ export default function DesktopNav() {
                     >
                         {active && (
                             <motion.span
-                                layoutId='desktop-nav-indicator'
-                                className='absolute inset-0 rounded-[3px] bg-primary'
+                                className='absolute inset-0 rounded-sm bg-primary'
                                 transition={{ type: 'spring', stiffness: 400, damping: 32 }}
                             />
                         )}

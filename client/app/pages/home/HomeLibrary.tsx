@@ -3,11 +3,7 @@ import { Link } from '~/i18n/routing';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import HomeSection from './HomeSection';
-import SectionPill from './SectionPill';
 import { FaArrowsRotate, FaBolt, FaListCheck, FaPenNib } from 'react-icons/fa6';
-
-/** Which shelf items are live yet; the rest carry the "Coming soon" pill. */
-const ITEM_READY = { decks: false, exam: false, kana: true, review: false } as const;
 
 const ITEMS = [
     { id: 'decks', to: '/review', icon: <FaPenNib className='h-5 w-5' /> },
@@ -17,9 +13,8 @@ const ITEMS = [
 ] as const;
 
 /**
- * The deck shelf: one card per kind of study set. A card whose feature is not
- * live yet carries the shared "Coming soon" pill, so the shelf tells the truth
- * without a per-card badge block.
+ * The deck shelf: one card per kind of study set. Every card is a live
+ * destination, so the shelf carries no "Coming soon" pills.
  */
 export default function HomeLibrary() {
     const { t } = useTranslation();
@@ -60,8 +55,6 @@ export default function HomeLibrary() {
                             <p className='mt-1.5 flex-1 text-sm leading-relaxed text-surface-subtle'>
                                 {t(`home.library.items.${item.id}.hint`)}
                             </p>
-
-                            {!ITEM_READY[item.id] && <SectionPill />}
                         </Link>
                     </motion.div>
                 ))}
