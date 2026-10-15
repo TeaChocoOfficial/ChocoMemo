@@ -7,8 +7,6 @@ import { useDeckListLocalStore } from '~/stores/deck/deckListLocal.store';
 import { useDeckEditorStore } from '~/stores/config/deckEditor.store';
 import type { DeckFilter, DeckView } from '~/stores/config/deckEditor.store';
 
-export type { DeckFilter, DeckView };
-
 /** The editor surface `useDeckEditor` exposes to any language track. */
 export interface DeckEditor {
     decks: DeckData[];
@@ -60,9 +58,7 @@ export function useDeckEditor(language: Languages): DeckEditor {
     const viewedDecks = useMemo(() => {
         if (view === 'favourites') return decks.filter((deck) => favouriteIds[deck.id]);
         if (view === 'recent') {
-            return [...decks].sort((a, b) =>
-                b.meta.updatedAt.localeCompare(a.meta.updatedAt),
-            );
+            return [...decks].sort((a, b) => b.meta.updatedAt.localeCompare(a.meta.updatedAt));
         }
         return decks;
     }, [decks, view, favouriteIds]);
@@ -86,7 +82,7 @@ export function useDeckEditor(language: Languages): DeckEditor {
         };
         for (const deck of decks) {
             // `drill` has no filter entry; every other type maps to its own count.
-            if (deck.type !== 'drill') counts[deck.type] += 1;
+            counts[deck.type] += 1;
         }
         return counts;
     }, [decks]);

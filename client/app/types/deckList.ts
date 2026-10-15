@@ -23,6 +23,12 @@ export type DeckSort = 'default' | 'name' | 'recent' | 'popular' | 'size';
  *  - `compact`: more columns and tighter gutters, best for scanning names. */
 export type DeckDensity = 'comfortable' | 'compact';
 
+/** Which flagged decks a deck list shows.
+ *  - `all`: every deck, flagged or not.
+ *  - `only`: just the decks flagged `nsfw`.
+ *  - `hide`: every deck except the flagged ones (the safe default). */
+export type DeckNsfwFilter = 'all' | 'only' | 'hide';
+
 /** A single view of a deck list: which source, narrowed by how. */
 export interface DeckListQuery {
     /** Which source tab is showing. */
@@ -31,8 +37,8 @@ export interface DeckListQuery {
     search: string;
     sort: DeckSort;
     density: DeckDensity;
-    /** When false, decks flagged `nsfw` are hidden even if they match. */
-    nsfw: boolean;
+    /** Which flagged decks survive: `all`, only the flagged ones, or none. */
+    nsfw: DeckNsfwFilter;
     /** Every selected tag must be present — tags narrow, they never widen. */
     tags: string[];
 }
@@ -43,6 +49,6 @@ export const DEFAULT_DECK_LIST_QUERY: DeckListQuery = {
     search: '',
     sort: 'default',
     density: 'comfortable',
-    nsfw: false,
+    nsfw: 'hide',
     tags: [],
 };

@@ -1,13 +1,22 @@
 {
     "nav": {
         "home": "Startseite",
+        "study": "Lernen",
+        "edit": "Bearbeiten",
         "languages": "Sprachen",
-        "japanese": "Japanisch",
-        "english": "Englisch",
         "menu": "Menü öffnen",
         "settings": "Einstellungen",
         "language": "Sprache",
         "theme": "Design"
+    },
+    "language": {
+        "all": "Alle Sprachen",
+        "english": "Englisch",
+        "japanese": "Japanisch",
+        "thai": "Thailändisch",
+        "chinese": "Chinesisch",
+        "korean": "Koreanisch",
+        "other": "Eine andere Sprache"
     },
     "chrome": {
         "hide": "Ausblenden",
@@ -22,6 +31,7 @@
         "ctaStart": "Jetzt lernen",
         "ctaCreate": "Deck veröffentlichen",
         "ctaHow": "So funktioniert's",
+        "comingSoon": "Bald verfügbar",
         "scriptsLabel": "Gerade am Ziehen",
         "stats": {
             "badge": "Im Regal",
@@ -33,32 +43,7 @@
         "languages": {
             "badge": "Das Regal",
             "title": "Fünf Sprachen, eine warme Gewohnheit",
-            "hint": "Fang mit dem Tablett an, das heute fertig ist – der Rest zieht noch.",
-            "available": "Bereit zum Ausschenken",
-            "comingSoon": "Zieht noch",
-            "toAll": "Alle Sprachen ansehen",
-            "items": {
-                "japanese": {
-                    "name": "Japanisch",
-                    "description": "Hiragana, Katakana und Kanji mit Übungen und verteiltem Wiederholen."
-                },
-                "english": {
-                    "name": "Englisch",
-                    "description": "Alltagsvokabeln und Redewendungen, sortiert von denen, die sie benutzen."
-                },
-                "thai": {
-                    "name": "Thailändisch",
-                    "description": "Töne, Schrift und die Wörter, die dir draußen wirklich begegnen."
-                },
-                "korean": {
-                    "name": "Koreanisch",
-                    "description": "Hangul in einer Sitzung, danach Gesprächsdecks, die hängen bleiben."
-                },
-                "chinese": {
-                    "name": "Chinesisch",
-                    "description": "Zeichen, Pinyin und Tonpaare – in kurzen Runden geübt."
-                }
-            }
+            "hint": "Fang mit dem Tablett an, das heute fertig ist – der Rest zieht noch."
         },
         "library": {
             "badge": "Das Community-Regal",
@@ -81,6 +66,21 @@
                 "review": {
                     "title": "Verteiltes Wiederholen",
                     "hint": "Heruntergeladene Decks kommen nach eigenem Plan zurück, nichts wird kalt."
+                }
+            }
+        },
+        "space": {
+            "badge": "Speicher",
+            "title": "Platz für deine Decks",
+            "hint": "Jedes Konto erhält ein Speicherkontingent für die Decks, die du erstellst und hochlädst.",
+            "items": {
+                "included": {
+                    "title": "Inklusive",
+                    "hint": "Das Kontingent gehört zu jedem Konto und wird von deinen Decks und deinen Uploads gemeinsam genutzt."
+                },
+                "rent": {
+                    "title": "Mehr mieten",
+                    "hint": "Wenn eine Sammlung es übersteigt, kannst du im Shop zusätzlichen Speicher mieten."
                 }
             }
         },
@@ -156,18 +156,134 @@
         "back_home": "Zurück zur Startseite",
         "error_code": "404"
     },
+    "study": {
+        "title": "Lernen",
+        "subtitle": "Wähle eine Sprache und dann eine Art zu üben.",
+        "characters": {
+            "title": "Zeichen",
+            "description": "Durchstöbere die Zeichentabelle einer Sprache und höre dir jedes Zeichen an."
+        },
+        "drill": {
+            "title": "Übung",
+            "description": "Teste dein Erkennen mit einer zeitlich begrenzten Multiple-Choice-Übung.",
+            "items": {
+                "en": {
+                    "name": "Alphabet-Übung",
+                    "description": "Zeitlich begrenzte Multiple-Choice-Übung zum englischen Alphabet."
+                },
+                "ja": {
+                    "name": "Kana-Übung",
+                    "description": "Zeitlich begrenzte Multiple-Choice-Übung zu Hiragana und Katakana."
+                },
+                "th": {
+                    "name": "Thai-Übung",
+                    "description": "Zeitlich begrenzte Multiple-Choice-Übung zur thailändischen Schrift."
+                },
+                "zh": {
+                    "name": "Hanzi-Übung",
+                    "description": "Zeitlich begrenzte Multiple-Choice-Übung zu den Hanzi-Zeichen."
+                },
+                "ko": {
+                    "name": "Hangul-Übung",
+                    "description": "Zeitlich begrenzte Multiple-Choice-Übung zu den Hangul-Silbenblöcken."
+                }
+            }
+        },
+        "decks": {
+            "title": "Stapel",
+            "for": "Decks für {{language}}",
+            "learn": "Lernen",
+            "practice": "Üben",
+            "items": {
+                "vocab": {
+                    "title": "Wortschatz",
+                    "description": "Durchstöbere und lerne Vokabel-Decks."
+                },
+                "render": {
+                    "title": "Leseverstehen",
+                    "description": "Lies kurze Texte und überprüfe dich."
+                },
+                "review": {
+                    "title": "Wiederholung",
+                    "description": "Wiederhole mit Karteikarten und verteilter Wiederholung."
+                },
+                "exam": {
+                    "title": "Prüfung",
+                    "description": "Teste dich mit einer Multiple-Choice-Prüfung."
+                },
+                "edit": {
+                    "title": "Decks bearbeiten",
+                    "description": "Benenne die Stapel in deiner Sammlung um, sortiere sie neu oder entferne sie."
+                }
+            }
+        },
+        "tag": {
+            "ready": "Bereit",
+            "current": "Aktuell",
+            "comingSoon": "Bald Verfügbar"
+        },
+        "action": {
+            "start": "Starten"
+        }
+    },
+    "hub": {
+        "comingSoon": "{{language}} ist bald verfügbar. Wähle eine andere Sprache, um mit dem Lernen zu beginnen.",
+        "sections": {
+            "learn": "Lernen",
+            "practice": "Üben",
+            "manage": "Verwalten"
+        },
+        "nav": {
+            "characters": {
+                "title": "Zeichen",
+                "description": "Durchstöbere die Zeichentabelle und höre dir jedes Zeichen an.",
+                "action": "Zeichen ansehen"
+            },
+            "drill": {
+                "title": "Zeichen-Übung",
+                "description": "Teste dein Erkennen mit einer zeitlich begrenzten Multiple-Choice-Übung.",
+                "action": "Übung starten"
+            },
+            "vocab": {
+                "title": "Wortschatz",
+                "description": "Durchstöbere und lerne Vokabel-Decks für diese Sprache.",
+                "action": "Wörter ansehen"
+            },
+            "render": {
+                "title": "Leseverstehen",
+                "description": "Lies kurze Texte und prüfe sie an der Übersetzung.",
+                "action": "Zum Lesen starten"
+            },
+            "review": {
+                "title": "Wortschatz-Wiederholung",
+                "description": "Wiederhole Wortschatz mit Karteikarten und verteilten Wiederholungen.",
+                "action": "Wiederholung starten"
+            },
+            "exam": {
+                "title": "Wortschatz-Prüfung",
+                "description": "Prüfe dich mit einer Multiple-Choice-Prüfung aus deinem Wortschatz.",
+                "action": "Prüfung ablegen"
+            },
+            "edit": {
+                "title": "Stapel bearbeiten",
+                "description": "Benenne die Stapel in deiner Sammlung um, sortiere sie neu oder entferne sie.",
+                "action": "Stapel bearbeiten"
+            }
+        }
+    },
+    "characters": {
+        "backHub": "Zurück zum Hub",
+        "comingSoon": "Die Zeichentabelle für {{language}} ist bald verfügbar.",
+        "unknown": "Diese Sprache"
+    },
     "languageSelect": {
-        "badge": "Sprachauswahl",
-        "title": "Wähle eine Sprache zum Lernen",
-        "description": "Wähle die Sprache, die du lernen willst. Japanisch ist heute fertig, der Rest zieht noch.",
         "back_home": "Zurück zur Startseite",
         "status": {
             "available": "Verfügbar",
             "comingSoon": "Bald Verfügbar"
         },
         "cta": {
-            "start": "Jetzt Lernen",
-            "unavailable": "Nicht Verfügbar"
+            "start": "Jetzt Lernen"
         },
         "languages": {
             "japanese": {
@@ -177,6 +293,10 @@
             "english": {
                 "name": "Englisch",
                 "description": "Alltagsvokabeln und Redewendungen, von denen, die sie wirklich benutzen, in Decks sortiert."
+            },
+            "other": {
+                "name": "Eine andere Sprache",
+                "description": "Lerne eine Sprache, die die App nicht integriert unterstützt — nur Decks, keine Zeichentabelle."
             },
             "thai": {
                 "name": "Thailändisch",
@@ -190,8 +310,7 @@
                 "name": "Chinesisch",
                 "description": "Zeichen, Pinyin und Tonpaare – ein paar Minuten am Stück geübt."
             }
-        },
-        "back_language": "Zurück zur Sprachauswahl"
+        }
     },
     "deck": {
         "type": {
@@ -212,6 +331,7 @@
             "unlisted": "Nicht gelistet",
             "private": "Privat"
         },
+        "target": "Sprache",
         "search": "Stapel suchen",
         "searchAria": "Stapel nach Namen suchen",
         "searchClear": "Suche löschen",
@@ -230,7 +350,8 @@
         "deleteAria": "Stapel löschen",
         "start": "Starten",
         "list": {
-            "backHub": "Zurück zu {{language}}"
+            "backHub": "Zurück zu {{language}}",
+            "backStudy": "Zurück zu Lernen"
         },
         "empty": {
             "local": {
@@ -287,9 +408,10 @@
                 "compact": "Kompakt"
             },
             "nsfw": {
-                "label": "Sensitiv",
-                "on": "Sensible Stapel werden angezeigt",
-                "off": "Sensible Stapel sind ausgeblendet"
+                "label": "Markierte Decks",
+                "all": "Alle anzeigen",
+                "only": "Nur markierte",
+                "hide": "Markierte ausblenden"
             },
             "importHeading": "Importieren",
             "importHint": "Liest eine Stapeldatei, die du früher exportiert hast.",

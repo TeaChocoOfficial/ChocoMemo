@@ -9,11 +9,8 @@ import { DEFAULT_DECK_LIST_OPTIONS, useDeckListStore } from '~/stores/config/dec
  * than flashing a stored preference and tripping a hydration mismatch.
  */
 export function useDeckListOptions(): DeckListOptions {
-    const targetLang = useDeckListStore((state) => state.targetLang);
-    const sort = useDeckListStore((state) => state.sort);
-    const density = useDeckListStore((state) => state.density);
-    const nsfw = useDeckListStore((state) => state.nsfw);
     const [hydrated, setHydrated] = useState(false);
+    const { sort, nsfw, density, targetLang } = useDeckListStore();
 
     useEffect(() => setHydrated(true), []);
 

@@ -37,11 +37,11 @@ function brandColorHover(brandColor: string) {
 
 export default function Button({
     size = 'md',
+    style,
+    variant = 'primary',
     children,
     className,
     brandColor,
-    variant = 'primary',
-    style,
     ...props
 }: ButtonProps) {
     const brand = brandColor && resolveBrandColor(brandColor);

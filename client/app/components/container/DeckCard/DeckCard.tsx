@@ -46,15 +46,12 @@ const ACTION_BUTTON =
     'flex h-7 w-7 cursor-pointer items-center justify-center rounded-sm bg-surface-foreground/85 text-surface backdrop-blur-sm transition-colors hover:bg-primary hover:text-primary-foreground';
 
 export default function DeckCard({
-    to,
     deck,
     index,
     onExport,
     onDelete,
     onDownload,
 }: {
-    /** Details page for this deck; the deck id is appended. */
-    to: string;
     deck: DeckData;
     /** Staggers the entrance so a grid fills in rather than popping. */
     index: number;
@@ -76,7 +73,7 @@ export default function DeckCard({
     // render — see its note about hydration.
     const isFavourite = useIsFavourite(deck.id);
     const toggleFavourite = () => useFavouritesStore.getState().toggle(deck.id);
-    const href = `${to}${deck.id}`;
+    const href = `/decks/${deck.id}`;
     // A deck persisted before meta was required arrives with none, so the
     // metadata line falls back to the source label rather than going blank.
     const visibility = deck.meta?.visibility;
@@ -148,7 +145,7 @@ export default function DeckCard({
                                 {deck.tags.slice(0, 3).map((tag) => (
                                     <li
                                         key={tag}
-                                        className='rounded-sm border border-line px-1.5 py-px font-mono text-[10px] uppercase tracking-[0.1em] text-surface-muted'
+                                        className='rounded-sm border border-line px-1.5 py-px font-mono text-[10px] uppercase tracking-widest text-surface-muted'
                                     >
                                         {tag}
                                     </li>

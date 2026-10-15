@@ -1,13 +1,22 @@
 {
     "nav": {
         "home": "Beranda",
+        "study": "Belajar",
+        "edit": "Edit",
         "languages": "Bahasa",
-        "japanese": "Bahasa Jepang",
-        "english": "Bahasa Inggris",
         "menu": "Buka menu",
         "settings": "Pengaturan",
         "language": "Bahasa",
         "theme": "Tema"
+    },
+    "language": {
+        "all": "Semua bahasa",
+        "english": "Bahasa Inggris",
+        "japanese": "Bahasa Jepang",
+        "thai": "Bahasa Thai",
+        "chinese": "Tionghoa",
+        "korean": "Bahasa Korea",
+        "other": "Bahasa lain"
     },
     "chrome": {
         "hide": "Sembunyikan",
@@ -22,6 +31,7 @@
         "ctaStart": "Mulai belajar",
         "ctaCreate": "Terbitkan deck",
         "ctaHow": "Cara kerja",
+        "comingSoon": "Segera hadir",
         "scriptsLabel": "Sedang diseduh",
         "stats": {
             "badge": "Di rak",
@@ -33,32 +43,7 @@
         "languages": {
             "badge": "Rak itu",
             "title": "Lima bahasa, satu kebiasaan hangat",
-            "hint": "Mulai dari baki yang sudah siap hari ini — sisanya masih diseduh.",
-            "available": "Siap dituang",
-            "comingSoon": "Diseduh",
-            "toAll": "Jelajahi semua bahasa",
-            "items": {
-                "japanese": {
-                    "name": "Jepang",
-                    "description": "Hiragana, katakana, dan kanji dengan drill dan tinjauan berjarak."
-                },
-                "english": {
-                    "name": "Inggris",
-                    "description": "Kosakata dan frasa sehari-hari, diurutkan oleh orang yang memakainya."
-                },
-                "thai": {
-                    "name": "Thai",
-                    "description": "Nada, aksara, dan kata-kata yang benar-benar akan kamu temui di jalan."
-                },
-                "korean": {
-                    "name": "Korea",
-                    "description": "Hangul dalam satu sesi, lalu deck percakapan yang nempel."
-                },
-                "chinese": {
-                    "name": "Tionghoa",
-                    "description": "Aksara, pinyin, dan pasangan nada, dilatih dalam putaran singkat."
-                }
-            }
+            "hint": "Mulai dari baki yang sudah siap hari ini — sisanya masih diseduh."
         },
         "library": {
             "badge": "Rak komunitas",
@@ -81,6 +66,21 @@
                 "review": {
                     "title": "Tinjauan berjarak",
                     "hint": "Deck yang kamu unduh kembali muncul sesuai jadwalnya sendiri, jadi tak ada yang mendingin."
+                }
+            }
+        },
+        "space": {
+            "badge": "Penyimpanan",
+            "title": "Ruang untuk dek Anda",
+            "hint": "Setiap akun akan memiliki kuota penyimpanan untuk dek yang Anda buat dan unggah.",
+            "items": {
+                "included": {
+                    "title": "Termasuk",
+                    "hint": "Kuota ini disertakan di setiap akun dan dipakai bersama oleh dek Anda dan apa yang Anda unggah ke dalamnya."
+                },
+                "rent": {
+                    "title": "Sewa lebih banyak",
+                    "hint": "Jika koleksi melebihi kuota, Anda dapat menyewa ruang tambahan di toko."
                 }
             }
         },
@@ -156,18 +156,134 @@
         "back_home": "Kembali ke Beranda",
         "error_code": "404"
     },
+    "study": {
+        "title": "Belajar",
+        "subtitle": "Pilih bahasa, lalu pilih cara melatihnya.",
+        "characters": {
+            "title": "Karakter",
+            "description": "Telusuri bagan karakter suatu bahasa dan dengarkan setiap karakter dilafalkan."
+        },
+        "drill": {
+            "title": "Latihan",
+            "description": "Uji pengenalan Anda dengan latihan pilihan ganda berbatas waktu.",
+            "items": {
+                "en": {
+                    "name": "Latihan Alfabet",
+                    "description": "Pilihan ganda berbatas waktu tentang alfabet Inggris."
+                },
+                "ja": {
+                    "name": "Latihan Kana",
+                    "description": "Pilihan ganda berbatas waktu tentang hiragana dan katakana."
+                },
+                "th": {
+                    "name": "Latihan Aksara Thai",
+                    "description": "Pilihan ganda berbatas waktu tentang aksara Thai."
+                },
+                "zh": {
+                    "name": "Latihan Hanzi",
+                    "description": "Pilihan ganda berbatas waktu tentang karakter Hanzi."
+                },
+                "ko": {
+                    "name": "Latihan Hangul",
+                    "description": "Pilihan ganda berbatas waktu tentang blok suku kata Hangul."
+                }
+            }
+        },
+        "decks": {
+            "title": "Dek",
+            "for": "Dek untuk {{language}}",
+            "learn": "Belajar",
+            "practice": "Latihan",
+            "items": {
+                "vocab": {
+                    "title": "Kosakata",
+                    "description": "Telusuri dan pelajari dek kosakata."
+                },
+                "render": {
+                    "title": "Membaca",
+                    "description": "Baca bacaan pendek dan uji diri Anda."
+                },
+                "review": {
+                    "title": "Tinjauan",
+                    "description": "Tinjau dengan kartu dan pengulangan berjarak."
+                },
+                "exam": {
+                    "title": "Ujian",
+                    "description": "Uji diri Anda dengan ujian pilihan ganda."
+                },
+                "edit": {
+                    "title": "Edit dek",
+                    "description": "Ganti nama, ubah urutan, atau hapus dek di koleksi Anda."
+                }
+            }
+        },
+        "tag": {
+            "ready": "Siap",
+            "current": "Saat ini",
+            "comingSoon": "Segera Hadir"
+        },
+        "action": {
+            "start": "Mulai"
+        }
+    },
+    "hub": {
+        "comingSoon": "{{language}} segera hadir. Pilih bahasa lain untuk mulai belajar.",
+        "sections": {
+            "learn": "Belajar",
+            "practice": "Latihan",
+            "manage": "Kelola"
+        },
+        "nav": {
+            "characters": {
+                "title": "Karakter",
+                "description": "Telusuri bagan karakter dan dengarkan setiap karakter dilafalkan.",
+                "action": "Lihat karakter"
+            },
+            "drill": {
+                "title": "Latihan karakter",
+                "description": "Uji pengenalan Anda dengan latihan pilihan ganda berbatas waktu.",
+                "action": "Mulai latihan"
+            },
+            "vocab": {
+                "title": "Kosakata",
+                "description": "Telusuri dan pelajari dek kosakata untuk bahasa ini.",
+                "action": "Lihat kosakata"
+            },
+            "render": {
+                "title": "Membaca",
+                "description": "Baca teks pendek lalu cek dengan terjemahannya.",
+                "action": "Mulai membaca"
+            },
+            "review": {
+                "title": "Tinjauan Kosakata",
+                "description": "Tinjau kosakata dengan kartu dan pengulangan berjarak.",
+                "action": "Mulai tinjauan"
+            },
+            "exam": {
+                "title": "Ujian Kosakata",
+                "description": "Uji diri dengan soal pilihan ganda dari kosakatamu sendiri.",
+                "action": "Kerjakan ujian"
+            },
+            "edit": {
+                "title": "Edit Dek",
+                "description": "Ganti nama, ubah urutan, atau hapus dek di koleksi Anda.",
+                "action": "Edit Dek"
+            }
+        }
+    },
+    "characters": {
+        "backHub": "Kembali ke hub",
+        "comingSoon": "Bagan karakter {{language}} segera hadir.",
+        "unknown": "Bahasa ini"
+    },
     "languageSelect": {
-        "badge": "Pilihan Bahasa",
-        "title": "Pilih Bahasa untuk Dipelajari",
-        "description": "Pilih bahasa yang ingin kamu pelajari. Jepang siap hari ini; sisanya masih diseduh.",
         "back_home": "Kembali ke Beranda",
         "status": {
             "available": "Tersedia",
             "comingSoon": "Segera Hadir"
         },
         "cta": {
-            "start": "Mulai Belajar",
-            "unavailable": "Tidak Tersedia"
+            "start": "Mulai Belajar"
         },
         "languages": {
             "japanese": {
@@ -177,6 +293,10 @@
             "english": {
                 "name": "Bahasa Inggris",
                 "description": "Kosakata dan frasa sehari-hari, diurutkan menjadi deck oleh orang yang benar-benar memakainya."
+            },
+            "other": {
+                "name": "Bahasa lain",
+                "description": "Pelajari bahasa yang tidak didukung bawaan aplikasi — hanya dek, tanpa bagan karakter."
             },
             "thai": {
                 "name": "Bahasa Thai",
@@ -190,8 +310,7 @@
                 "name": "Tionghoa",
                 "description": "Aksara, pinyin, dan pasangan nada, dilatih beberapa menit sekali jalan."
             }
-        },
-        "back_language": "Kembali ke pilihan bahasa"
+        }
     },
     "deck": {
         "type": {
@@ -212,6 +331,7 @@
             "unlisted": "Tidak terdaftar",
             "private": "Privat"
         },
+        "target": "Bahasa",
         "search": "Cari dek",
         "searchAria": "Cari dek berdasarkan nama",
         "searchClear": "Hapus pencarian",
@@ -230,7 +350,8 @@
         "deleteAria": "Hapus dek",
         "start": "Mulai",
         "list": {
-            "backHub": "Kembali ke {{language}}"
+            "backHub": "Kembali ke {{language}}",
+            "backStudy": "Kembali ke Belajar"
         },
         "empty": {
             "local": {
@@ -287,9 +408,10 @@
                 "compact": "Padat"
             },
             "nsfw": {
-                "label": "Sensitif",
-                "on": "Dek sensitif ditampilkan",
-                "off": "Dek sensitif disembunyikan"
+                "label": "Dek yang ditandai",
+                "all": "Tampilkan semua",
+                "only": "Hanya yang ditandai",
+                "hide": "Sembunyikan yang ditandai"
             },
             "importHeading": "Impor",
             "importHint": "Membaca file dek yang pernah kamu ekspor.",

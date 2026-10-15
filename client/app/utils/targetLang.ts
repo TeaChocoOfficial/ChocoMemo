@@ -1,6 +1,6 @@
 // -Path: 'client/app/utils/targetLang.ts'
 import type { DeckData } from '~/types/deck';
-import { Languages, languages } from '~/data/language';
+import { ALL_TARGETS, Languages, languages, type TargetFilter } from '~/data/language';
 
 /** BCP47 tags the Web Speech API speaks, per target language. `other` has no
  *  single language, so it falls back to a neutral tag until a deck supplies
@@ -14,14 +14,16 @@ const SPEECH_LANG: Record<Languages, string> = {
     [Languages.zh]: 'zh-CN',
 };
 
-/** The short URL code for a target language (`ja`, `en`, ...). */
-export function targetCode(targetLang: Languages): string {
+/** The short URL code for a target selection (`ja`, `en`, ..., or `all`). */
+export function targetCode(targetLang: TargetFilter): string {
+    if (targetLang === ALL_TARGETS) return ALL_TARGETS;
     return languages.find((language) => language.id === targetLang)?.code ?? 'ja';
 }
 
-/** Resolve a short URL code back to a target language, or `undefined`. */
-export function targetFromCode(code: string | null | undefined): Languages | undefined {
+/** Resolve a short URL code back to a target selection, or `undefined`. */
+export function targetFromCode(code: string | null | undefined): TargetFilter | undefined {
     if (!code) return undefined;
+    if (code === ALL_TARGETS) return ALL_TARGETS;
     return languages.find((language) => language.code === code)?.id;
 }
 
@@ -45,7 +47,7 @@ export function deckSpeechLang(deck: Pick<DeckData, 'targetLang' | 'targetInfo'>
  * Append the `?target=` filter to a path so a deck-list link stays shareable
  * and the loader/SSR can read the target without the persisted store.
  */
-export function withTarget(path: string, targetLang: Languages): string {
+export function withTarget(path: string, targetLang: TargetFilter): string {
     const separator = path.includes('?') ? '&' : '?';
     return `${path}${separator}target=${targetCode(targetLang)}`;
 }

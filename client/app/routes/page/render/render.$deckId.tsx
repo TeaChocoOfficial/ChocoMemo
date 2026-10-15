@@ -1,5 +1,6 @@
 // -Path: 'client/app/routes/page/render/render.$deckId.tsx'
 import type { Route } from './+types/render.$deckId';
+import ComingSoonPage from '~/components/page/ComingSoonPage';
 
 export function meta({}: Route.MetaArgs) {
     return [
@@ -9,5 +10,5 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function RenderById() {
-    return <></>;
+    return <ComingSoonPage />;
 }

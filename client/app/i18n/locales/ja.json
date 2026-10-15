@@ -1,13 +1,22 @@
 {
     "nav": {
         "home": "ホーム",
+        "study": "学習",
+        "edit": "編集",
         "languages": "言語",
-        "japanese": "日本語",
-        "english": "英語",
         "menu": "メニューを開く",
         "settings": "設定",
         "language": "言語",
         "theme": "テーマ"
+    },
+    "language": {
+        "all": "すべての言語",
+        "english": "英語",
+        "japanese": "日本語",
+        "thai": "タイ語",
+        "chinese": "中国語",
+        "korean": "韓国語",
+        "other": "その他の言語"
     },
     "chrome": {
         "hide": "非表示",
@@ -22,6 +31,7 @@
         "ctaStart": "学習を始める",
         "ctaCreate": "デッキを公開する",
         "ctaHow": "使い方をご覧ください",
+        "comingSoon": "近日公開",
         "scriptsLabel": "ただいま抽出中",
         "stats": {
             "badge": "棚の上",
@@ -33,32 +43,7 @@
         "languages": {
             "badge": "棚",
             "title": "5つの言語、ひとつの温かい習慣",
-            "hint": "今日あるトレイから始めましょう。残りはまだ抽出中です。",
-            "available": "すぐ注げます",
-            "comingSoon": "抽出中",
-            "toAll": "すべての言語を見る",
-            "items": {
-                "japanese": {
-                    "name": "日本語",
-                    "description": "ひらがな・カタカナ・漢字を、ドリルと間隔反復で。"
-                },
-                "english": {
-                    "name": "英語",
-                    "description": "日常の語彙とフレーズを、実際に使う人が整えた形で。"
-                },
-                "thai": {
-                    "name": "タイ語",
-                    "description": "声調、スクリプト、そして実際に街で出会う言葉。"
-                },
-                "korean": {
-                    "name": "韓国語",
-                    "description": "한글はひと集中で、そのあとはしっかり残る会話デッキ。"
-                },
-                "chinese": {
-                    "name": "中国語",
-                    "description": "漢字、ピンイン、トーンの組み合わせを短いラウンドで。"
-                }
-            }
+            "hint": "今日あるトレイから始めましょう。残りはまだ抽出中です。"
         },
         "library": {
             "badge": "コミュニティの棚",
@@ -81,6 +66,21 @@
                 "review": {
                     "title": "間隔反復",
                     "hint": "ダウンロードしたデッキは自分のスケジュールで戻ってくるので、どれも冷めません。"
+                }
+            }
+        },
+        "space": {
+            "badge": "ストレージ",
+            "title": "デッキのためのスペース",
+            "hint": "各アカウントには、作成・アップロードしたデッキ用のストレージ容量が割り当てられます。",
+            "items": {
+                "included": {
+                    "title": "付属",
+                    "hint": "この容量はすべてのアカウントに付属し、あなたのデッキとアップロードした内容で共有されます。"
+                },
+                "rent": {
+                    "title": "追加でレンタル",
+                    "hint": "コレクションが容量を超えたら、ショップで追加のスペースをレンタルできます。"
                 }
             }
         },
@@ -156,18 +156,134 @@
         "back_home": "ホームに戻る",
         "error_code": "404"
     },
+    "study": {
+        "title": "学習",
+        "subtitle": "言語を選び、次に練習方法を選びましょう。",
+        "characters": {
+            "title": "文字",
+            "description": "言語の文字表を見て、それぞれの発音を聞けます。"
+        },
+        "drill": {
+            "title": "ドリル",
+            "description": "時間制限付きの選択式ドリルで認識力を試しましょう。",
+            "items": {
+                "en": {
+                    "name": "アルファベットドリル",
+                    "description": "英字の時間制限付き選択式ドリル。"
+                },
+                "ja": {
+                    "name": "かなドリル",
+                    "description": "ひらがなとカタカナの時間制限付き選択式ドリル。"
+                },
+                "th": {
+                    "name": "タイ文字ドリル",
+                    "description": "タイ文字の時間制限付き選択式ドリル。"
+                },
+                "zh": {
+                    "name": "漢字ドリル",
+                    "description": "漢字の時間制限付き選択式ドリル。"
+                },
+                "ko": {
+                    "name": "ハングルドリル",
+                    "description": "ハングルの音節の時間制限付き選択式ドリル。"
+                }
+            }
+        },
+        "decks": {
+            "title": "デッキ",
+            "for": "{{language}} のデッキ",
+            "learn": "学習",
+            "practice": "練習",
+            "items": {
+                "vocab": {
+                    "title": "語彙",
+                    "description": "語彙デッキを見て学習します。"
+                },
+                "render": {
+                    "title": "読解",
+                    "description": "短い文章を読み、確認しましょう。"
+                },
+                "review": {
+                    "title": "復習",
+                    "description": "フラッシュカードと間隔反復で復習します。"
+                },
+                "exam": {
+                    "title": "テスト",
+                    "description": "選択式のテストで自分を試しましょう。"
+                },
+                "edit": {
+                    "title": "デッキを編集",
+                    "description": "コレクション内のデッキの名前変更、並べ替え、削除ができます。"
+                }
+            }
+        },
+        "tag": {
+            "ready": "準備OK",
+            "current": "現在",
+            "comingSoon": "近日公開"
+        },
+        "action": {
+            "start": "開始"
+        }
+    },
+    "hub": {
+        "comingSoon": "{{language}} は近日公開です。別の言語を選んで学習を始めましょう。",
+        "sections": {
+            "learn": "学習",
+            "practice": "練習",
+            "manage": "管理"
+        },
+        "nav": {
+            "characters": {
+                "title": "文字",
+                "description": "文字表を見て、それぞれの発音を聞けます。",
+                "action": "文字を見る"
+            },
+            "drill": {
+                "title": "文字ドリル",
+                "description": "時間制限付きの選択式ドリルで認識力を試しましょう。",
+                "action": "ドリルを開始"
+            },
+            "vocab": {
+                "title": "語彙",
+                "description": "この言語の語彙デッキを見て学習します。",
+                "action": "単語を見る"
+            },
+            "render": {
+                "title": "読解",
+                "description": "短い文章を読み、訳で確認します。",
+                "action": "読解を始める"
+            },
+            "review": {
+                "title": "語彙復習",
+                "description": "フラッシュカードと間隔反復で語彙を復習します。",
+                "action": "復習を開始"
+            },
+            "exam": {
+                "title": "語彙テスト",
+                "description": "自分の語彙から作った選択式で自分自身をテストします。",
+                "action": "テストを受ける"
+            },
+            "edit": {
+                "title": "デッキを編集",
+                "description": "コレクション内のデッキの名前変更、並べ替え、削除ができます。",
+                "action": "デッキを編集"
+            }
+        }
+    },
+    "characters": {
+        "backHub": "ハブに戻る",
+        "comingSoon": "{{language}} の文字表は近日公開です。",
+        "unknown": "この言語"
+    },
     "languageSelect": {
-        "badge": "言語の選択",
-        "title": "学習する言語を選ぶ",
-        "description": "学びたい言語を選んでください。日本語は今日すぐ使えます。残りは抽出中です。",
         "back_home": "ホームに戻る",
         "status": {
             "available": "利用可能",
             "comingSoon": "近日公開"
         },
         "cta": {
-            "start": "学習を始める",
-            "unavailable": "利用できません"
+            "start": "学習を始める"
         },
         "languages": {
             "japanese": {
@@ -177,6 +293,10 @@
             "english": {
                 "name": "英語",
                 "description": "日常の語彙とフレーズを、実際に使う人がデッキに整えてくれる。"
+            },
+            "other": {
+                "name": "その他の言語",
+                "description": "アプリが標準で対応していない言語を学びます — デッキのみで、文字表はありません。"
             },
             "thai": {
                 "name": "タイ語",
@@ -190,8 +310,7 @@
                 "name": "中国語",
                 "description": "漢字、ピンイン、トーンの組み合わせを、数分ずつ練習。"
             }
-        },
-        "back_language": "言語選択に戻る"
+        }
     },
     "deck": {
         "type": {
@@ -212,6 +331,7 @@
             "unlisted": "限定公開",
             "private": "非公開"
         },
+        "target": "言語",
         "search": "デッキを検索",
         "searchAria": "名前でデッキを検索",
         "searchClear": "検索をクリア",
@@ -230,7 +350,8 @@
         "deleteAria": "デッキを削除",
         "start": "開始",
         "list": {
-            "backHub": "{{language}}に戻る"
+            "backHub": "{{language}}に戻る",
+            "backStudy": "学習に戻る"
         },
         "empty": {
             "local": {
@@ -287,9 +408,10 @@
                 "compact": "コンパクト"
             },
             "nsfw": {
-                "label": "センシティブ",
-                "on": "センシティブなデッキを表示中",
-                "off": "センシティブなデッキは非表示"
+                "label": "フラグ付きのデッキ",
+                "all": "すべて表示",
+                "only": "フラグ付きのみ",
+                "hide": "フラグ付きを非表示"
             },
             "importHeading": "インポート",
             "importHint": "以前エクスポートしたデッキファイルを読み込みます。",

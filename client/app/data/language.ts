@@ -29,13 +29,19 @@ export const OTHER_GLYPH = '🌐';
 /** The target a deck list browses when no `?target=` is present. */
 export const DEFAULT_TARGET_LANG = Languages.ja;
 
+/** The deck-list "every language" filter, alongside a concrete target. */
+export const ALL_TARGETS = 'all';
+
+/** A deck-list target selection: one language, or every language at once. */
+export type TargetFilter = Languages | typeof ALL_TARGETS;
+
 /** A target language's character chart, when it has one. */
 export interface CharacterSetConfig {
     /** Route set id, e.g. `kana`. */
     id: CharacterSetId;
     /** Large script glyph for the tile, e.g. あ or Aa. */
     glyph: string;
-    /** Chart name, e.g. "Kana". */
+    /** i18n key for the chart name, e.g. `study.characters.items.ja.name`. */
     name: string;
     /** Scripts/count subtitle, e.g. "ひらがな · カタカナ". */
     subtitle: string;
@@ -46,9 +52,9 @@ export interface CharacterSetConfig {
 export interface DrillConfig {
     /** Small language badge shown on the row, e.g. 日 or En. */
     badge: string;
-    /** Drill name, e.g. "Kana Drill". */
+    /** i18n key for the drill name, e.g. `study.drill.items.ja.name`. */
     name: string;
-    /** One-line description of what the drill does. */
+    /** i18n key for the one-line description, e.g. `study.drill.items.ja.description`. */
     description: string;
     status: TargetStatus;
 }
@@ -79,14 +85,14 @@ export const languages: AvailableLanguage[] = [
         characters: {
             id: 'alphabet',
             glyph: 'Aa',
-            name: 'Alphabet',
+            name: 'study.characters.items.en.name',
             subtitle: 'A – Z',
             status: 'coming-soon',
         },
         drill: {
             badge: 'En',
-            name: 'Alphabet Drill',
-            description: 'Timed multiple choice over the English alphabet.',
+            name: 'study.drill.items.en.name',
+            description: 'study.drill.items.en.description',
             status: 'coming-soon',
         },
     },
@@ -98,14 +104,14 @@ export const languages: AvailableLanguage[] = [
         characters: {
             id: 'kana',
             glyph: 'あ',
-            name: 'Kana',
+            name: 'study.characters.items.ja.name',
             subtitle: 'ひらがな · カタカナ',
             status: 'ready',
         },
         drill: {
             badge: '日',
-            name: 'Kana Drill',
-            description: 'Timed multiple choice over hiragana and katakana.',
+            name: 'study.drill.items.ja.name',
+            description: 'study.drill.items.ja.description',
             status: 'ready',
         },
     },
@@ -117,14 +123,14 @@ export const languages: AvailableLanguage[] = [
         characters: {
             id: 'thai',
             glyph: 'ก',
-            name: 'Thai',
+            name: 'study.characters.items.th.name',
             subtitle: 'ก – ฮ',
             status: 'coming-soon',
         },
         drill: {
             badge: 'ก',
-            name: 'Thai Drill',
-            description: 'Timed multiple choice over the Thai script.',
+            name: 'study.drill.items.th.name',
+            description: 'study.drill.items.th.description',
             status: 'coming-soon',
         },
     },
@@ -136,14 +142,14 @@ export const languages: AvailableLanguage[] = [
         characters: {
             id: 'hanzi',
             glyph: '汉',
-            name: 'Hanzi',
+            name: 'study.characters.items.zh.name',
             subtitle: '汉字',
             status: 'coming-soon',
         },
         drill: {
             badge: '中',
-            name: 'Hanzi Drill',
-            description: 'Timed multiple choice over the Hanzi characters.',
+            name: 'study.drill.items.zh.name',
+            description: 'study.drill.items.zh.description',
             status: 'coming-soon',
         },
     },
@@ -155,14 +161,14 @@ export const languages: AvailableLanguage[] = [
         characters: {
             id: 'hangul',
             glyph: '한',
-            name: 'Hangul',
+            name: 'study.characters.items.ko.name',
             subtitle: '한글',
             status: 'coming-soon',
         },
         drill: {
             badge: '한',
-            name: 'Hangul Drill',
-            description: 'Timed multiple choice over the Hangul syllable blocks.',
+            name: 'study.drill.items.ko.name',
+            description: 'study.drill.items.ko.description',
             status: 'coming-soon',
         },
     },

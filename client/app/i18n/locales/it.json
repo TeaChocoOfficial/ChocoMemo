@@ -1,13 +1,22 @@
 {
     "nav": {
         "home": "Home",
+        "study": "Studiare",
+        "edit": "Modifica",
         "languages": "Lingue",
-        "japanese": "Giapponese",
-        "english": "Inglese",
         "menu": "Apri il menu",
         "settings": "Impostazioni",
         "language": "Lingua",
         "theme": "Tema"
+    },
+    "language": {
+        "all": "Tutte le lingue",
+        "english": "Inglese",
+        "japanese": "Giapponese",
+        "thai": "Thailandese",
+        "chinese": "Cinese",
+        "korean": "Coreano",
+        "other": "Un'altra lingua"
     },
     "chrome": {
         "hide": "Nascondi",
@@ -22,6 +31,7 @@
         "ctaStart": "Inizia a imparare",
         "ctaCreate": "Pubblica un mazzo",
         "ctaHow": "Come funziona",
+        "comingSoon": "Prossimamente",
         "scriptsLabel": "In infusione",
         "stats": {
             "badge": "Sullo scaffale",
@@ -33,32 +43,7 @@
         "languages": {
             "badge": "Lo scaffale",
             "title": "Cinque lingue, un'abitudine calda",
-            "hint": "Inizia dal vassoio pronto di oggi — gli altri sono in infusione.",
-            "available": "Pronto da servire",
-            "comingSoon": "In infusione",
-            "toAll": "Sfoglia tutte le lingue",
-            "items": {
-                "japanese": {
-                    "name": "Giapponese",
-                    "description": "Hiragana, katakana e kanji con esercizi e ripasso distanziato."
-                },
-                "english": {
-                    "name": "Inglese",
-                    "description": "Parole e frasi di ogni giorno, ordinate da chi le usa."
-                },
-                "thai": {
-                    "name": "Thai",
-                    "description": "Toni, scrittura e le parole che incontrerai davvero per strada."
-                },
-                "korean": {
-                    "name": "Coreano",
-                    "description": "Hangul in una sola seduta, poi mazzi di conversazione che restano."
-                },
-                "chinese": {
-                    "name": "Cinese",
-                    "description": "Caratteri, pinyin e coppie di toni, esercitati in round brevi."
-                }
-            }
+            "hint": "Inizia dal vassoio pronto di oggi — gli altri sono in infusione."
         },
         "library": {
             "badge": "Lo scaffale della comunità",
@@ -81,6 +66,21 @@
                 "review": {
                     "title": "Ripasso distanziato",
                     "hint": "I mazzi che scarichi tornano secondo il loro calendario, così nulla si raffredda."
+                }
+            }
+        },
+        "space": {
+            "badge": "Spazio di archiviazione",
+            "title": "Spazio per i tuoi mazzi",
+            "hint": "Ogni account avrà una quota di archiviazione per i mazzi che crei e carichi.",
+            "items": {
+                "included": {
+                    "title": "Incluso",
+                    "hint": "La quota accompagna ogni account ed è condivisa dai tuoi mazzi e da ciò che vi carichi."
+                },
+                "rent": {
+                    "title": "Noleggia altro",
+                    "hint": "Quando una raccolta la supera, potrai noleggiare spazio extra nel negozio."
                 }
             }
         },
@@ -156,18 +156,134 @@
         "back_home": "Torna alla Home",
         "error_code": "404"
     },
+    "study": {
+        "title": "Studiare",
+        "subtitle": "Scegli una lingua, poi un modo per esercitarla.",
+        "characters": {
+            "title": "Caratteri",
+            "description": "Sfoglia la tabella dei caratteri di una lingua e ascolta ognuno pronunciato."
+        },
+        "drill": {
+            "title": "Allenamento",
+            "description": "Metti alla prova il tuo riconoscimento con un esercizio a tempo a scelta multipla.",
+            "items": {
+                "en": {
+                    "name": "Allenamento sull'alfabeto",
+                    "description": "Scelta multipla a tempo sull'alfabeto inglese."
+                },
+                "ja": {
+                    "name": "Allenamento sui kana",
+                    "description": "Scelta multipla a tempo su hiragana e katakana."
+                },
+                "th": {
+                    "name": "Allenamento sul thailandese",
+                    "description": "Scelta multipla a tempo sull'alfabeto thailandese."
+                },
+                "zh": {
+                    "name": "Allenamento sui caratteri han",
+                    "description": "Scelta multipla a tempo sui caratteri han."
+                },
+                "ko": {
+                    "name": "Allenamento sull'hangul",
+                    "description": "Scelta multipla a tempo sui blocchi di sillabe dell'hangul."
+                }
+            }
+        },
+        "decks": {
+            "title": "Mazzi",
+            "for": "Mazzi per {{language}}",
+            "learn": "Impara",
+            "practice": "Esercitati",
+            "items": {
+                "vocab": {
+                    "title": "Vocabolario",
+                    "description": "Sfoglia e studia i mazzi di vocabolario."
+                },
+                "render": {
+                    "title": "Lettura",
+                    "description": "Leggi brevi passi e mettiti alla prova."
+                },
+                "review": {
+                    "title": "Ripasso",
+                    "description": "Ripassa con flashcard e ripetizione dilazionata."
+                },
+                "exam": {
+                    "title": "Esame",
+                    "description": "Mettiti alla prova con un esame a scelta multipla."
+                },
+                "edit": {
+                    "title": "Modifica mazzi",
+                    "description": "Rinomina, riordina o rimuovi i mazzi della tua collezione."
+                }
+            }
+        },
+        "tag": {
+            "ready": "Pronto",
+            "current": "Attuale",
+            "comingSoon": "Prossimamente"
+        },
+        "action": {
+            "start": "Inizia"
+        }
+    },
+    "hub": {
+        "comingSoon": "{{language}} arriverà presto. Scegli un'altra lingua per iniziare a studiare.",
+        "sections": {
+            "learn": "Impara",
+            "practice": "Esercitati",
+            "manage": "Gestisci"
+        },
+        "nav": {
+            "characters": {
+                "title": "Caratteri",
+                "description": "Sfoglia la tabella dei caratteri e ascolta ognuno pronunciato.",
+                "action": "Vedi caratteri"
+            },
+            "drill": {
+                "title": "Esercizio sui caratteri",
+                "description": "Metti alla prova il tuo riconoscimento con un esercizio a tempo a scelta multipla.",
+                "action": "Inizia esercizio"
+            },
+            "vocab": {
+                "title": "Vocabolario",
+                "description": "Sfoglia e studia i mazzi di vocabolario di questa lingua.",
+                "action": "Vedi le parole"
+            },
+            "render": {
+                "title": "Lettura",
+                "description": "Leggi brevi testi e verifica con la traduzione.",
+                "action": "Inizia a leggere"
+            },
+            "review": {
+                "title": "Ripasso del Vocabolario",
+                "description": "Ripassa il vocabolario con schede e ripetizione dilazionata.",
+                "action": "Inizia il ripasso"
+            },
+            "exam": {
+                "title": "Esame di vocabolario",
+                "description": "Metti alla prova te stesso con un esame a scelta multipla sul tuo vocabolario.",
+                "action": "Svolgi l'esame"
+            },
+            "edit": {
+                "title": "Modifica mazzi",
+                "description": "Rinomina, riordina o rimuovi i mazzi della tua collezione.",
+                "action": "Modifica mazzi"
+            }
+        }
+    },
+    "characters": {
+        "backHub": "Torna all'hub",
+        "comingSoon": "La tabella dei caratteri di {{language}} arriverà presto.",
+        "unknown": "Questa lingua"
+    },
     "languageSelect": {
-        "badge": "Selezione della Lingua",
-        "title": "Scegli una Lingua da Imparare",
-        "description": "Scegli la lingua che vuoi studiare. Il giapponese è pronto oggi; il resto è in infusione.",
         "back_home": "Torna alla Home",
         "status": {
             "available": "Disponibile",
             "comingSoon": "Prossimamente"
         },
         "cta": {
-            "start": "Inizia a Imparare",
-            "unavailable": "Non Disponibile"
+            "start": "Inizia a Imparare"
         },
         "languages": {
             "japanese": {
@@ -177,6 +293,10 @@
             "english": {
                 "name": "Inglese",
                 "description": "Parole e frasi di ogni giorno, ordinate in mazzi da chi le usa davvero."
+            },
+            "other": {
+                "name": "Un'altra lingua",
+                "description": "Studia una lingua che l'app non supporta di serie — solo mazzi, senza tabella dei caratteri."
             },
             "thai": {
                 "name": "Thai",
@@ -190,8 +310,7 @@
                 "name": "Cinese",
                 "description": "Caratteri, pinyin e coppie di toni, esercitati pochi minuti alla volta."
             }
-        },
-        "back_language": "Torna alla scelta della lingua"
+        }
     },
     "deck": {
         "type": {
@@ -212,6 +331,7 @@
             "unlisted": "Non in elenco",
             "private": "Privato"
         },
+        "target": "Lingua",
         "search": "Cerca mazzi",
         "searchAria": "Cerca mazzi per nome",
         "searchClear": "Cancella ricerca",
@@ -230,7 +350,8 @@
         "deleteAria": "Elimina il mazzo",
         "start": "Inizia",
         "list": {
-            "backHub": "Torna a {{language}}"
+            "backHub": "Torna a {{language}}",
+            "backStudy": "Torna a Studiare"
         },
         "empty": {
             "local": {
@@ -287,9 +408,10 @@
                 "compact": "Compatta"
             },
             "nsfw": {
-                "label": "Sensibili",
-                "on": "Mazzi sensibili mostrati",
-                "off": "Mazzi sensibili nascosti"
+                "label": "Mazzi segnalati",
+                "all": "Mostra tutto",
+                "only": "Solo segnalati",
+                "hide": "Nascondi segnalati"
             },
             "importHeading": "Importa",
             "importHint": "Legge un file di mazzo che hai esportato in precedenza.",

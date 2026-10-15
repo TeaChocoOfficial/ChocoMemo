@@ -10,23 +10,31 @@
 //  - `replace` for the search box. Pushing per keystroke would bury the page
 //    the viewer came from under a hundred identical history entries, so Back
 //    would step through their own typing instead of leaving the search.
-import { useCallback, useMemo } from 'react';
-import { useSearchParams } from 'react-router';
-import { DEFAULT_DECK_LIST_QUERY } from '~/types/deckList';
-import type { DeckDensity, DeckListQuery, DeckSort } from '~/types/deckList';
-import { useDeckListOptions } from '~/hooks/useDeckListOptions';
-import type { DeckSource } from '~/types/deck';
-import { useDeckListStore, DEFAULT_DECK_LIST_OPTIONS } from '~/stores/config/deckList.store';
 import {
+    toggleQueryTag,
+    DECK_LIST_PARAMS,
+    parseDeckListQuery,
     deckListQueryToParams,
     isDeckListQueryDefault,
-    parseDeckListQuery,
-    toggleQueryTag,
 } from '~/utils/deckListQuery';
+import {
+    useDeckListStore,
+    type DeckListOptions,
+    DEFAULT_DECK_LIST_OPTIONS,
+} from '~/stores/config/deckList.store';
+import type { DeckSource } from '~/types/deck';
+import { useSearchParams } from 'react-router';
+import { DEFAULT_DECK_LIST_QUERY } from '~/types/deckList';
+import { useDeckListOptions } from '~/hooks/useDeckListOptions';
+import { useCallback, useEffect, useMemo, useRef } from 'react';
+import type { DeckDensity, DeckListQuery, DeckNsfwFilter, DeckSort } from '~/types/deckList';
 
 /** How a change should land in history: a view worth going Back to, or a
  *  refinement happening faster than anyone would click through. */
 type CommitMode = 'push' | 'replace';
+
+/** The store-backed options a setter is saving in the same call. */
+type SavedOptions = Partial<Pick<DeckListOptions, 'sort' | 'density' | 'nsfw'>>;
 
 /** A patch, or a function of the query currently in the URL. The function form
  *  exists for `toggleTag`, which cannot express "flip this one" as a patch. */
@@ -43,9 +51,9 @@ export interface DeckListQueryControls {
     setSearch: (search: string) => void;
     setSort: (sort: DeckSort) => void;
     setDensity: (density: DeckDensity) => void;
-    setNsfw: (nsfw: boolean) => void;
+    setNsfw: (nsfw: DeckNsfwFilter) => void;
     toggleTag: (tag: string) => void;
-    /** Back to a bare URL and the default options. */
+    /** Clears the deck-list filters and options, keeping the `?target=` filter. */
     reset: () => void;
     /** True while nothing is narrowed, so callers can hide "clear". */
     isDefault: boolean;
@@ -60,9 +68,18 @@ export interface DeckListQueryControls {
  * flashing a stored preference.
  */
 export function useDeckListQuery(): DeckListQueryControls {
-    const [searchParams, setSearchParams] = useSearchParams();
+    const { save } = useDeckListStore();
     const options = useDeckListOptions();
-    const save = useDeckListStore((state) => state.save);
+    const [searchParams, setSearchParams] = useSearchParams();
+
+    /** The params most recently written. Two commits in one tick must build on each
+     *  other, but `searchParams` only updates after the next render. */
+    const latestParams = useRef(searchParams);
+
+    useEffect(() => {
+        // Resync whenever the router reports new params (Back, another control).
+        latestParams.current = searchParams;
+    }, [searchParams]);
 
     // A bare URL falls back to the viewer's saved options; an explicit param in
     // the link still wins.
@@ -82,20 +99,24 @@ export function useDeckListQuery(): DeckListQueryControls {
     );
 
     const commit = useCallback(
-        (update: QueryUpdate, mode: CommitMode) => {
-            // Read the URL rather than the rendered `query`, so two controls
-            // changing in the same tick cannot undo each other.
-            const current = parseDeckListQuery(searchParams, defaults);
+        (update: QueryUpdate, mode: CommitMode, saved?: SavedOptions) => {
+            const base = latestParams.current;
+            const current = parseDeckListQuery(base, defaults);
             const patch = typeof update === 'function' ? update(current) : update;
-            const next = deckListQueryToParams({ ...current, ...patch }, defaults);
 
-            setSearchParams(next, {
-                replace: mode === 'replace',
-                // Narrowing the list must not scroll the viewer back to the top.
-                preventScrollReset: true,
-            });
+            // The store is saved in the same call, so write the URL against the
+            // defaults it is about to have. Otherwise the new value is also left in
+            // the URL as a redundant explicit param, which later outranks the store.
+            const next = deckListQueryToParams({ ...current, ...patch }, { ...defaults, ...saved });
+
+            const merged = new URLSearchParams(base);
+            for (const key of Object.values(DECK_LIST_PARAMS)) merged.delete(key);
+            next.forEach((value, key) => merged.set(key, value));
+
+            latestParams.current = merged;
+            setSearchParams(merged, { replace: mode === 'replace', preventScrollReset: true });
         },
-        [searchParams, setSearchParams, defaults],
+        [setSearchParams, defaults],
     );
 
     const push = useCallback((update: QueryUpdate) => commit(update, 'push'), [commit]);
@@ -110,6 +131,7 @@ export function useDeckListQuery(): DeckListQueryControls {
 
     // Display options are remembered, so they survive a reload even though the
     // URL is the visible source of truth.
+
     const setSort = useCallback(
         (sort: DeckSort) => {
             save({ sort });
@@ -125,7 +147,7 @@ export function useDeckListQuery(): DeckListQueryControls {
         [save, push],
     );
     const setNsfw = useCallback(
-        (nsfw: boolean) => {
+        (nsfw: DeckNsfwFilter) => {
             save({ nsfw });
             push({ nsfw });
         },
@@ -138,7 +160,11 @@ export function useDeckListQuery(): DeckListQueryControls {
             density: DEFAULT_DECK_LIST_OPTIONS.density,
             nsfw: DEFAULT_DECK_LIST_OPTIONS.nsfw,
         });
-        setSearchParams(new URLSearchParams(), { replace: true, preventScrollReset: true });
+        const next = new URLSearchParams(latestParams.current);
+        for (const key of Object.values(DECK_LIST_PARAMS)) next.delete(key);
+        next.set(DECK_LIST_PARAMS.tab, DEFAULT_DECK_LIST_QUERY.tab);
+        latestParams.current = next;
+        setSearchParams(next, { replace: true, preventScrollReset: true });
     }, [save, setSearchParams]);
 
     return {

@@ -1,6 +1,6 @@
 // -Path: 'client/app/routes/page/profile.$nameTag.tsx'
-import PublicProfile from '~/pages/profile/PublicProfile';
 import type { Route } from './+types/profile.$nameTag';
+import PublicProfile from '~/pages/profile/PublicProfile';
 
 export function meta({ params }: Route.MetaArgs) {
     return [

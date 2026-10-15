@@ -7,8 +7,8 @@
 //
 // Derived state only: this reads the stores, it never writes to them.
 import { useEffect } from 'react';
-import type { DeckSource } from '~/types/deck';
-import type { Languages } from '~/data/language';
+import type { DeckListStatus, DeckSource } from '~/types/deck';
+import { ALL_TARGETS, languages, type Languages, type TargetFilter } from '~/data/language';
 import { useDeckListCloudStore } from '~/stores/deck/deckListCloud.store';
 import { useDeckListCommunityStore } from '~/stores/deck/deckListCommunity.store';
 
@@ -17,17 +17,27 @@ import { useDeckListCommunityStore } from '~/stores/deck/deckListCommunity.store
  * @returns `true` while the source still owes the UI its decks, so the caller
  * should show a skeleton instead of an empty state.
  */
-export function useDeckSourceReady(language: Languages, source: DeckSource): boolean {
-    const cloudStatus = useDeckListCloudStore((state) => state.status[language]);
-    const communityStatus = useDeckListCommunityStore((state) => state.status[language]);
+export function useDeckSourceReady(language: TargetFilter, source: DeckSource): boolean {
+    const cloudStatus = useDeckListCloudStore((state) => state.status);
+    const communityStatus = useDeckListCommunityStore((state) => state.status);
 
     useEffect(() => {
         // The remote stores are never asked to load on their own, so a tab that
         // has not been visited stays `idle`; kick them off here. Both fail soft,
-        // so this settles quickly either way.
-        if (source === 'cloud') void useDeckListCloudStore.getState().fetchDecks(language);
-        if (source === 'community') void useDeckListCommunityStore.getState().fetchDecks(language);
+        // so this settles quickly either way. The "all languages" filter has no
+        // single list to ask for, so it asks for every language in turn.
+        const targets = language === ALL_TARGETS ? languages.map((entry) => entry.id) : [language];
+        if (source === 'cloud')
+            targets.forEach((id) => void useDeckListCloudStore.getState().fetchDecks(id));
+        if (source === 'community')
+            targets.forEach((id) => void useDeckListCommunityStore.getState().fetchDecks(id));
     }, [language, source]);
+
+    /** True once every requested language has settled, so "all" waits for all. */
+    const isReady = (status: Partial<Record<Languages, DeckListStatus>>): boolean =>
+        language === ALL_TARGETS
+            ? languages.every((entry) => status[entry.id] === 'ready')
+            : status[language] === 'ready';
 
     // `status` starts undefined rather than 'idle', so an unvisited source
     // counts as pending on the server render too — which is right, because the
@@ -35,9 +45,9 @@ export function useDeckSourceReady(language: Languages, source: DeckSource): boo
     // hydration mismatch.
     switch (source) {
         case 'cloud':
-            return cloudStatus !== 'ready';
+            return !isReady(cloudStatus);
         case 'community':
-            return communityStatus !== 'ready';
+            return !isReady(communityStatus);
         default:
             // `local` and `official` are synchronous, and so is any source added
             // later until somebody says otherwise. Defaulting to "not loading"

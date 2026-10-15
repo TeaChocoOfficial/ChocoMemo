@@ -1,6 +1,7 @@
 // -Path: 'client/app/pages/study/components/CharacterTile.tsx'
 import { Link } from '~/i18n/routing';
 import StatusPill from './StatusPill';
+import { useTranslation } from 'react-i18next';
 import type { CharacterSetConfig, TargetStatus } from '~/data/language';
 
 /**
@@ -11,15 +12,16 @@ import type { CharacterSetConfig, TargetStatus } from '~/data/language';
  */
 export default function CharacterTile({
     code,
-    feature,
     active,
     status,
+    feature,
 }: {
     code: string;
-    feature: CharacterSetConfig;
     active: boolean;
     status: TargetStatus;
+    feature: CharacterSetConfig;
 }) {
+    const { t } = useTranslation();
     const ready = status === 'ready';
     const current = ready && active;
 
@@ -32,7 +34,7 @@ export default function CharacterTile({
                 {feature.glyph}
             </span>
             <span className='mt-4 block text-base font-bold tracking-tight text-surface-foreground'>
-                {feature.name}
+                {t(feature.name)}
             </span>
             <span className='mt-0.5 block text-xs text-surface-muted'>{feature.subtitle}</span>
             <span className='mt-3 block'>
@@ -41,7 +43,7 @@ export default function CharacterTile({
         </>
     );
 
-    const className = `flex min-h-[150px] flex-col rounded-sm border p-5 transition-[transform,border-color,background-color] duration-200 ${
+    const className = `flex min-h-37.5 flex-col rounded-sm border p-5 transition-[transform,border-color,background-color] duration-200 ${
         current
             ? 'border-primary bg-primary-subtle'
             : ready

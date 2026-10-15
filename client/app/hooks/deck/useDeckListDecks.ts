@@ -9,7 +9,7 @@
 // Kept out of `DeckList` so the page component stays about layout: this is
 // pure data shaping with no JSX and no i18n.
 import { useMemo } from 'react';
-import type { Languages } from '~/data/language';
+import type { TargetFilter } from '~/data/language';
 import { useLangText } from '~/hooks/useLangText';
 import type { DeckListQuery } from '~/types/deckList';
 import type { DeckData, DeckType } from '~/types/deck';
@@ -45,7 +45,7 @@ export interface DeckListResult {
  * which is what lets the whole toolbar live in the address bar.
  */
 export function useDeckListDecks(
-    language: Languages,
+    language: TargetFilter,
     type: DeckType,
     query: DeckListQuery,
 ): DeckListResult {
@@ -63,9 +63,19 @@ export function useDeckListDecks(
     const matched = useMemo(() => {
         const needle = query.search.trim().toLowerCase();
 
-        // Flags first: a hidden deck should not be able to pull itself back
-        // into view by matching the search.
-        let result = query.nsfw ? decks : decks.filter((deck) => !deck.nsfw);
+        // Visibility first: a hidden deck should not be able to pull itself
+        // back into view by matching the search or a tag.
+        let result = decks;
+        switch (query.nsfw) {
+            case 'only':
+                result = decks.filter((deck) => deck.nsfw);
+                break;
+            case 'hide':
+                result = decks.filter((deck) => !deck.nsfw);
+                break;
+            default:
+                result = decks;
+        }
 
         // Tags are a narrowing filter, never a widening one — a deck must
         // carry every selected tag to survive.
@@ -105,7 +115,7 @@ export function useDeckListDecks(
         sentinelRef: hasMore ? sentinelRef : undefined,
         isDefault:
             !query.search.trim() &&
-            !query.nsfw &&
+            query.nsfw === 'hide' &&
             query.sort === 'default' &&
             query.tags.length === 0,
     };

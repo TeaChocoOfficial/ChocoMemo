@@ -14,7 +14,7 @@ export type DeckSource = 'official' | 'local' | 'cloud' | 'community';
 /** Who may see a deck. `unlisted` is reachable by link but absent from
  *  listings; `private` is the viewer's alone. */
 export type DeckVisibility = 'public' | 'unlisted' | 'private';
-export type DeckType = 'vocab' | 'render' | 'drill' | 'review' | 'exam';
+export type DeckType = 'vocab' | 'render' | 'review' | 'exam';
 export type DeckListStatus = 'idle' | 'loading' | 'ready' | 'error';
 
 /** How a downloaded copy relates to the deck it came from.

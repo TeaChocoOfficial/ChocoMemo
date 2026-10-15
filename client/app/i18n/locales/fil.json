@@ -1,13 +1,22 @@
 {
     "nav": {
         "home": "Tahanan",
+        "study": "Mag-aral",
+        "edit": "I-edit",
         "languages": "Mga Wika",
-        "japanese": "Hapones",
-        "english": "Ingles",
         "menu": "Buksan ang menu",
         "settings": "Mga Setting",
         "language": "Wika",
         "theme": "Tema"
+    },
+    "language": {
+        "all": "Lahat ng wika",
+        "english": "Ingles",
+        "japanese": "Hapones",
+        "thai": "Thai",
+        "chinese": "Tsino",
+        "korean": "Koreano",
+        "other": "Ibang wika"
     },
     "chrome": {
         "hide": "Itago",
@@ -22,6 +31,7 @@
         "ctaStart": "Magsimulang matuto",
         "ctaCreate": "I-publish ang deck",
         "ctaHow": "Paano ito gumagana",
+        "comingSoon": "Malapit na",
         "scriptsLabel": "Naghihimulot ngayon",
         "stats": {
             "badge": "Nasa shelf",
@@ -33,32 +43,7 @@
         "languages": {
             "badge": "Ang shelf",
             "title": "Limang wika, isang mainit na gawi",
-            "hint": "Magsimula sa tray na handa ngayon — ang iba ay naghihimulot pa.",
-            "available": "Handa nang i-pour",
-            "comingSoon": "Naghihimulot",
-            "toAll": "Tingnan ang lahat ng wika",
-            "items": {
-                "japanese": {
-                    "name": "Hapones",
-                    "description": "Hiragana, katakana at kanji kasama ang mga drill at spaced review."
-                },
-                "english": {
-                    "name": "Ingles",
-                    "description": "Mga pang-araw-araw na salita at pariralang, inaayos ng mga gumagamit nito."
-                },
-                "thai": {
-                    "name": "Thai",
-                    "description": "Mga tone, sulat at mga salitang lalabas mo talaga sa kalsada."
-                },
-                "korean": {
-                    "name": "Koreano",
-                    "description": "Hangul sa isang upuan, saka mga conversation deck na tumatagal."
-                },
-                "chinese": {
-                    "name": "Tsino",
-                    "description": "Mga karakter, pinyin at pares ng tono, nadrill sa maikling round."
-                }
-            }
+            "hint": "Magsimula sa tray na handa ngayon — ang iba ay naghihimulot pa."
         },
         "library": {
             "badge": "Ang shelf ng komunidad",
@@ -81,6 +66,21 @@
                 "review": {
                     "title": "Spaced review",
                     "hint": "Ang mga deck na na-download mo ay bumabalik ayon sa sarili nilang iskedyul, kaya walang naumuumaw."
+                }
+            }
+        },
+        "space": {
+            "badge": "Imbakan",
+            "title": "Espasyo para sa iyong mga deck",
+            "hint": "Ang bawat account ay magkakaroon ng quota sa imbakan para sa mga deck na gagawin at ia-upload mo.",
+            "items": {
+                "included": {
+                    "title": "Kasama",
+                    "hint": "Kasama ang quota sa bawat account at paghahatian ito ng iyong mga deck at ng ia-upload mo sa kanila."
+                },
+                "rent": {
+                    "title": "Umupa ng mas marami",
+                    "hint": "Kapag lumampas ang isang koleksyon, makakaupa ka ng dagdag na espasyo sa tindahan."
                 }
             }
         },
@@ -156,18 +156,134 @@
         "back_home": "Bumalik sa Tahanan",
         "error_code": "404"
     },
+    "study": {
+        "title": "Mag-aral",
+        "subtitle": "Pumili ng wika, pagkatapos ay paraan ng pagsasanay dito.",
+        "characters": {
+            "title": "Mga karakter",
+            "description": "Tingnan ang chart ng karakter ng isang wika at pakinggan ang bawat isa."
+        },
+        "drill": {
+            "title": "Pagsasanay",
+            "description": "Subukan ang iyong pagkilala sa isang may-takdang pagsasanay na multiple-choice.",
+            "items": {
+                "en": {
+                    "name": "Pagsasanay sa Alpabeto",
+                    "description": "May-takdang oras na multiple-choice sa alpabetong Ingles."
+                },
+                "ja": {
+                    "name": "Pagsasanay sa Kana",
+                    "description": "May-takdang oras na multiple-choice sa hiragana at katakana."
+                },
+                "th": {
+                    "name": "Pagsasanay sa Thai",
+                    "description": "May-takdang oras na multiple-choice sa sulat Thai."
+                },
+                "zh": {
+                    "name": "Pagsasanay sa Hanzi",
+                    "description": "May-takdang oras na multiple-choice sa mga karakter na Hanzi."
+                },
+                "ko": {
+                    "name": "Pagsasanay sa Hangul",
+                    "description": "May-takdang oras na multiple-choice sa mga bloke ng pantig na Hangul."
+                }
+            }
+        },
+        "decks": {
+            "title": "Mga Deck",
+            "for": "Mga deck para sa {{language}}",
+            "learn": "Matuto",
+            "practice": "Magsanay",
+            "items": {
+                "vocab": {
+                    "title": "Bokabularyo",
+                    "description": "Tingnan at pag-aralan ang mga deck ng bokabularyo."
+                },
+                "render": {
+                    "title": "Pagbabasa",
+                    "description": "Magbasa ng maiikling sipi at subukan ang sarili."
+                },
+                "review": {
+                    "title": "Rebyu",
+                    "description": "Mag-review gamit ang mga flashcard at spaced repetition."
+                },
+                "exam": {
+                    "title": "Pagsusulit",
+                    "description": "Subukan ang sarili sa isang multiple-choice na exam."
+                },
+                "edit": {
+                    "title": "I-edit ang mga deck",
+                    "description": "Palitan ang pangalan, muling ayusin, o alisin ang mga deck sa iyong koleksyon."
+                }
+            }
+        },
+        "tag": {
+            "ready": "Handa",
+            "current": "Kasalukuyan",
+            "comingSoon": "Malapit Na"
+        },
+        "action": {
+            "start": "Simulan"
+        }
+    },
+    "hub": {
+        "comingSoon": "Malapit nang dumating ang {{language}}. Pumili ng ibang wika para magsimulang mag-aral.",
+        "sections": {
+            "learn": "Matuto",
+            "practice": "Magsanay",
+            "manage": "Pamahalaan"
+        },
+        "nav": {
+            "characters": {
+                "title": "Mga karakter",
+                "description": "Tingnan ang chart ng karakter at pakinggan ang bawat isa.",
+                "action": "Tingnan ang mga karakter"
+            },
+            "drill": {
+                "title": "Pagsasanay sa karakter",
+                "description": "Subukan ang iyong pagkilala sa isang may-takdang pagsasanay na multiple-choice.",
+                "action": "Simulan ang pagsasanay"
+            },
+            "vocab": {
+                "title": "Bokabularyo",
+                "description": "Tingnan at pag-aralan ang mga deck ng bokabularyo para sa wikang ito.",
+                "action": "Tingnan ang mga salita"
+            },
+            "render": {
+                "title": "Pagbabasa",
+                "description": "Magbasa ng maikling teksto at i-check sa pagsasalin.",
+                "action": "Simulan ang pagbasa"
+            },
+            "review": {
+                "title": "Rebyu ng Bokabularyo",
+                "description": "Rebyuhin ang bokabularyo gamit ang flashcards at spaced repetition.",
+                "action": "Simulan ang rebyu"
+            },
+            "exam": {
+                "title": "Pagsusulit sa bokabularyo",
+                "description": "Subukan ang sarili mo sa maraming sagot na galing sa sarili mong bokabularyo.",
+                "action": "Kumuha ng pagsusulit"
+            },
+            "edit": {
+                "title": "I-edit ang mga Deck",
+                "description": "Palitan ang pangalan, muling ayusin, o alisin ang mga deck sa iyong koleksyon.",
+                "action": "I-edit ang mga Deck"
+            }
+        }
+    },
+    "characters": {
+        "backHub": "Bumalik sa hub",
+        "comingSoon": "Malapit nang dumating ang chart ng karakter ng {{language}}.",
+        "unknown": "Wikang ito"
+    },
     "languageSelect": {
-        "badge": "Pagpili ng Wika",
-        "title": "Pumili ng Wikang Pag-aaralan",
-        "description": "Piliin ang wikang gusto mong pag-aralan. Handa na ang Japanese ngayon; ang iba ay naghihimulot pa.",
         "back_home": "Bumalik sa Tahanan",
         "status": {
             "available": "Available",
             "comingSoon": "Malapit Na"
         },
         "cta": {
-            "start": "Magsimulang Matuto",
-            "unavailable": "Hindi Available"
+            "start": "Magsimulang Matuto"
         },
         "languages": {
             "japanese": {
@@ -177,6 +293,10 @@
             "english": {
                 "name": "Ingles",
                 "description": "Mga pang-araw-araw na salita at pariralang, inaayos sa mga deck ng mga tunay na gumagamit."
+            },
+            "other": {
+                "name": "Ibang wika",
+                "description": "Mag-aral ng wikang walang built-in na suporta sa app — mga deck lamang, walang chart ng karakter."
             },
             "thai": {
                 "name": "Thai",
@@ -190,8 +310,7 @@
                 "name": "Tsino",
                 "description": "Mga karakter, pinyin at pares ng tono, nadrill ng ilang minuto sa isang beses."
             }
-        },
-        "back_language": "Bumalik sa pagpili ng wika"
+        }
     },
     "deck": {
         "type": {
@@ -212,6 +331,7 @@
             "unlisted": "Hindi nakalista",
             "private": "Pribado"
         },
+        "target": "Wika",
         "search": "Maghanap ng deck",
         "searchAria": "Maghanap ng deck ayon sa pangalan",
         "searchClear": "Burahin ang paghahanap",
@@ -230,7 +350,8 @@
         "deleteAria": "Burahin ang deck",
         "start": "Simulan",
         "list": {
-            "backHub": "Bumalik sa {{language}}"
+            "backHub": "Bumalik sa {{language}}",
+            "backStudy": "Bumalik sa Mag-aral"
         },
         "empty": {
             "local": {
@@ -287,9 +408,10 @@
                 "compact": "Siksik"
             },
             "nsfw": {
-                "label": "Sensitibo",
-                "on": "Ipinapakita ang mga sensitibong deck",
-                "off": "Nakatago ang mga sensitibong deck"
+                "label": "Mga na-flag na deck",
+                "all": "Ipakita lahat",
+                "only": "Mga na-flag lamang",
+                "hide": "Itago ang mga na-flag"
             },
             "importHeading": "Mag-import",
             "importHint": "Binabasa ang isang deck file na na-export mo dati.",

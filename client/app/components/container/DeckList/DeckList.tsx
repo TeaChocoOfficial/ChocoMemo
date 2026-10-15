@@ -11,25 +11,20 @@
 // page read as a single control surface rather than two stacked widgets.
 import { useTranslation } from 'react-i18next';
 import DeckCard from '~/components/container/DeckCard/DeckCard';
-import type { DeckListQueryControls } from '~/hooks/deck/useDeckListQuery';
+import { useDeckListQuery, type DeckListQueryControls } from '~/hooks/deck/useDeckListQuery';
 import DeckListEmpty from './DeckListEmpty';
 import DeckListSkeleton from './DeckListSkeleton';
 import SourceTally from './SourceTally';
 import DeckListSearch from './DeckListSearch';
 import DeckTagFilter from './DeckTagFilter';
 import DeckListOptions from './DeckListOptions';
-import TargetLangFilter from './TargetLangFilter';
 import { useDeckCounts } from '~/hooks/deck/useDecksForTab';
-import { useDeckListActions } from './DeckListActions';
 import { useDeckListDecks } from '~/hooks/deck/useDeckListDecks';
 import { useAuthStore } from '~/stores/config/auth.store';
 import type { DeckType } from '~/types/deck';
 import type { DeckListQuery } from '~/types/deckList';
-import { useTargetLang } from '~/hooks/useTargetLang';
-
-/** Details page for a deck. Shared by every type and language, so the list
- *  never has to know that a session lives behind a different route. */
-const DECK_PATH = '/decks/';
+import { useDeckTargetLang } from '~/hooks/useTargetLang';
+import TargetLangSelect from '../TargetLangSelect';
 
 /** Column count per density. Comfortable is the roomy default; compact trades
  *  card size for a denser scan, which is why it also tightens the gutters. */
@@ -38,23 +33,12 @@ const GRID = {
     compact: 'grid-cols-2 gap-x-3 gap-y-6 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6',
 } as const;
 
-export default function DeckList({
-    type,
-    query,
-    controls,
-}: {
-    type: DeckType;
-    /** The view state parsed out of the URL by `useDeckListQuery`. */
-    query: DeckListQuery;
-    /** The setters from the same hook, forwarded so the page shell owns the URL
-     *  and this component never reaches for the router itself. */
-    controls: DeckListQueryControls;
-}) {
+export default function DeckList({ type }: { type: DeckType }) {
     const { t } = useTranslation();
-    const targetLang = useTargetLang();
+    const targetLang = useDeckTargetLang();
     const counts = useDeckCounts(targetLang, type);
-    const actions = useDeckListActions(targetLang, type);
-    const { setTab, setSearch, setSort, setDensity, setNsfw, toggleTag, reset } = controls;
+    const { query, push, setTab, setSearch, setSort, setDensity, setNsfw, toggleTag, reset } =
+        useDeckListQuery();
     const { visible, matched, total, availableTags, isLoading, isNarrowedEmpty, sentinelRef } =
         useDeckListDecks(targetLang, type, query);
 
@@ -106,20 +90,19 @@ export default function DeckList({
                             onClear={() => setSearch('')}
                         />
                     </div>
-                    <TargetLangFilter />
+                    <TargetLangSelect allowAll className='py-2.5!' />
                 </div>
                 <DeckListOptions
                     query={query}
-                    actions={actions}
                     onSortChange={setSort}
                     onNsfwChange={setNsfw}
                     onDensityChange={setDensity}
                 />
                 <DeckTagFilter
                     tags={availableTags}
-                    selected={query.tags}
                     onToggle={toggleTag}
-                    onClear={() => controls.push({ tags: [] })}
+                    selected={query.tags}
+                    onClear={() => push({ tags: [] })}
                 />
             </div>
 
@@ -134,7 +117,7 @@ export default function DeckList({
                     </p>
                     <div className={`grid ${GRID[query.density]}`}>
                         {visible.map((deck, index) => (
-                            <DeckCard key={deck.id} to={DECK_PATH} deck={deck} index={index} />
+                            <DeckCard key={deck.id} deck={deck} index={index} />
                         ))}
                     </div>
                     {/* The sentinel is what the observer watches: as it nears the

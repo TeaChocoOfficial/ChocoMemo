@@ -34,10 +34,10 @@ export default function DrillRow({
             </span>
             <span className='min-w-0 flex-1'>
                 <span className='block text-sm font-bold tracking-tight text-surface-foreground'>
-                    {feature.name}
+                    {t(feature.name)}
                 </span>
                 <span className='mt-0.5 block text-sm text-surface-muted'>
-                    {feature.description}
+                    {t(feature.description)}
                 </span>
             </span>
             <span className='shrink-0'>

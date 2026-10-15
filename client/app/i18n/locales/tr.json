@@ -1,13 +1,22 @@
 {
     "nav": {
         "home": "Ana Sayfa",
+        "study": "Çalış",
+        "edit": "Düzenle",
         "languages": "Diller",
-        "japanese": "Japonca",
-        "english": "İngilizce",
         "menu": "Menüyü aç",
         "settings": "Ayarlar",
         "language": "Dil",
         "theme": "Tema"
+    },
+    "language": {
+        "all": "Tüm diller",
+        "english": "İngilizce",
+        "japanese": "Japonca",
+        "thai": "Tayca",
+        "chinese": "Çince",
+        "korean": "Korece",
+        "other": "Başka bir dil"
     },
     "chrome": {
         "hide": "Gizle",
@@ -22,6 +31,7 @@
         "ctaStart": "Öğrenmeye başla",
         "ctaCreate": "Deste yayımla",
         "ctaHow": "Nasıl çalışır",
+        "comingSoon": "Yakında",
         "scriptsLabel": "Şimdi demleniyor",
         "stats": {
             "badge": "Rafta",
@@ -33,32 +43,7 @@
         "languages": {
             "badge": "Raf",
             "title": "Beş dil, tek sıcak alışkanlık",
-            "hint": "Bugün hazır olan tepsiyle başla — gerisi hâlâ demleniyor.",
-            "available": "Dökmeye hazır",
-            "comingSoon": "Demleniyor",
-            "toAll": "Tüm dilleri gör",
-            "items": {
-                "japanese": {
-                    "name": "Japonca",
-                    "description": "Hiragana, katakana ve kanji; alıştırmalarla ve aralıklı tekrar ile."
-                },
-                "english": {
-                    "name": "İngilizce",
-                    "description": "Günlük kelimeler ve kalıplar, onları kullananların düzenlediği gibi."
-                },
-                "thai": {
-                    "name": "Tayca",
-                    "description": "Tonlar, yazı ve sokakta gerçekten karşılaşacağın kelimeler."
-                },
-                "korean": {
-                    "name": "Korece",
-                    "description": "Hangul tek oturuşta, ardından akılda kalan sohbet desteleri."
-                },
-                "chinese": {
-                    "name": "Çince",
-                    "description": "Karakterler, pinyin ve ton çiftleri; kısa turlarla."
-                }
-            }
+            "hint": "Bugün hazır olan tepsiyle başla — gerisi hâlâ demleniyor."
         },
         "library": {
             "badge": "Topluluk rafı",
@@ -81,6 +66,21 @@
                 "review": {
                     "title": "Aralıklı tekrar",
                     "hint": "İndirdiğin desteler kendi programlarıyla geri gelir, böylece hiçbiri soğumaz."
+                }
+            }
+        },
+        "space": {
+            "badge": "Depolama",
+            "title": "Desteleriniz için alan",
+            "hint": "Her hesabın, oluşturup yüklediğiniz desteler için bir depolama kotası olacak.",
+            "items": {
+                "included": {
+                    "title": "Dahil",
+                    "hint": "Kota her hesapta gelir ve destelerinizle onlara yükledikleriniz arasında paylaşılır."
+                },
+                "rent": {
+                    "title": "Daha fazla kirala",
+                    "hint": "Bir koleksiyon kotayı aşınca mağazadan ek alan kiralayabilirsiniz."
                 }
             }
         },
@@ -156,18 +156,134 @@
         "back_home": "Ana Sayfaya Dön",
         "error_code": "404"
     },
+    "study": {
+        "title": "Çalış",
+        "subtitle": "Bir dil seçin, sonra onu çalışmanın bir yolunu seçin.",
+        "characters": {
+            "title": "Karakterler",
+            "description": "Bir dilin karakter tablosuna göz atın ve her birinin sesini dinleyin."
+        },
+        "drill": {
+            "title": "Antrenman",
+            "description": "Zamanlı çoktan seçmeli bir alıştırmayla tanımanızı test edin.",
+            "items": {
+                "en": {
+                    "name": "Alfabe Antrenmanı",
+                    "description": "İngiliz alfabesi üzerine zamanlı çoktan seçmeli alıştırma."
+                },
+                "ja": {
+                    "name": "Kana Antrenmanı",
+                    "description": "Hiragana ve katakana üzerine zamanlı çoktan seçmeli alıştırma."
+                },
+                "th": {
+                    "name": "Tayca Antrenmanı",
+                    "description": "Tay alfabesi üzerine zamanlı çoktan seçmeli alıştırma."
+                },
+                "zh": {
+                    "name": "Hanzi Antrenmanı",
+                    "description": "Hanzi karakterleri üzerine zamanlı çoktan seçmeli alıştırma."
+                },
+                "ko": {
+                    "name": "Hangul Antrenmanı",
+                    "description": "Hangul hece blokları üzerine zamanlı çoktan seçmeli alıştırma."
+                }
+            }
+        },
+        "decks": {
+            "title": "Desteler",
+            "for": "{{language}} desteleri",
+            "learn": "Öğren",
+            "practice": "Pratik Yap",
+            "items": {
+                "vocab": {
+                    "title": "Kelime",
+                    "description": "Kelime destelerine göz atın ve çalışın."
+                },
+                "render": {
+                    "title": "Okuma",
+                    "description": "Kısa metinler okuyun ve kendinizi sınayın."
+                },
+                "review": {
+                    "title": "Tekrar",
+                    "description": "Kartlar ve aralıklı tekrarla gözden geçirin."
+                },
+                "exam": {
+                    "title": "Sınav",
+                    "description": "Çoktan seçmeli bir sınavla kendinizi test edin."
+                },
+                "edit": {
+                    "title": "Desteleri düzenle",
+                    "description": "Koleksiyonundaki desteleri yeniden adlandır, sırala veya kaldır."
+                }
+            }
+        },
+        "tag": {
+            "ready": "Hazır",
+            "current": "Geçerli",
+            "comingSoon": "Yakında"
+        },
+        "action": {
+            "start": "Başla"
+        }
+    },
+    "hub": {
+        "comingSoon": "{{language}} yakında geliyor. Çalışmaya başlamak için başka bir dil seçin.",
+        "sections": {
+            "learn": "Öğren",
+            "practice": "Pratik Yap",
+            "manage": "Yönet"
+        },
+        "nav": {
+            "characters": {
+                "title": "Karakterler",
+                "description": "Karakter tablosuna göz atın ve her birinin sesini dinleyin.",
+                "action": "Karakterleri gör"
+            },
+            "drill": {
+                "title": "Karakter alıştırması",
+                "description": "Zamanlı çoktan seçmeli bir alıştırmayla tanımanızı test edin.",
+                "action": "Alıştırmayı başlat"
+            },
+            "vocab": {
+                "title": "Kelime",
+                "description": "Bu dilin kelime destelerine göz atın ve çalışın.",
+                "action": "Kelimelere göz at"
+            },
+            "render": {
+                "title": "Okuma",
+                "description": "Kısa metinleri okuyun ve çeviriyle karşılaştırın.",
+                "action": "Okumaya başla"
+            },
+            "review": {
+                "title": "Kelime Tekrarı",
+                "description": "Kartlar ve aralıklı tekrar ile kelimeleri gözden geçir.",
+                "action": "Tekrarı başlat"
+            },
+            "exam": {
+                "title": "Kelime sınavı",
+                "description": "Kendi kelimelerinden oluşan çoktan seçmeli sınavla kendini dene.",
+                "action": "Sınava gir"
+            },
+            "edit": {
+                "title": "Desteleri Düzenle",
+                "description": "Koleksiyonundaki desteleri yeniden adlandır, sırala veya kaldır.",
+                "action": "Desteleri Düzenle"
+            }
+        }
+    },
+    "characters": {
+        "backHub": "Hub'a dön",
+        "comingSoon": "{{language}} karakter tablosu yakında geliyor.",
+        "unknown": "Bu dil"
+    },
     "languageSelect": {
-        "badge": "Dil Seçimi",
-        "title": "Öğreneceğiniz Dili Seçin",
-        "description": "Öğrenmek istediğin dili seç. Japonca bugün hazır; gerisi demleniyor.",
         "back_home": "Ana Sayfaya Dön",
         "status": {
             "available": "Mevcut",
             "comingSoon": "Yakında"
         },
         "cta": {
-            "start": "Öğrenmeye Başla",
-            "unavailable": "Mevcut Değil"
+            "start": "Öğrenmeye Başla"
         },
         "languages": {
             "japanese": {
@@ -177,6 +293,10 @@
             "english": {
                 "name": "İngilizce",
                 "description": "Günlük kelimeler ve kalıplar, onları gerçekten kullananlar tarafından destelere ayrılır."
+            },
+            "other": {
+                "name": "Başka bir dil",
+                "description": "Uygulamanın yerleşik destek sunmadığı bir dil çalışın — yalnızca desteler, karakter tablosu yok."
             },
             "thai": {
                 "name": "Tayca",
@@ -190,8 +310,7 @@
                 "name": "Çince",
                 "description": "Karakterler, pinyin ve ton çiftleri; her seferinde birkaç dakika çalışılır."
             }
-        },
-        "back_language": "Dil seçimine dön"
+        }
     },
     "deck": {
         "type": {
@@ -212,6 +331,7 @@
             "unlisted": "Listede yok",
             "private": "Gizli"
         },
+        "target": "Dil",
         "search": "Deste ara",
         "searchAria": "Adına göre deste ara",
         "searchClear": "Aramayı temizle",
@@ -230,7 +350,8 @@
         "deleteAria": "Deste sil",
         "start": "Başla",
         "list": {
-            "backHub": "{{language}} diline dön"
+            "backHub": "{{language}} diline dön",
+            "backStudy": "Çalış'a dön"
         },
         "empty": {
             "local": {
@@ -287,9 +408,10 @@
                 "compact": "Sıkışık"
             },
             "nsfw": {
-                "label": "Hassas",
-                "on": "Hassas desteler gösteriliyor",
-                "off": "Hassas desteler gizli"
+                "label": "İşaretli desteler",
+                "all": "Tümünü göster",
+                "only": "Yalnızca işaretli",
+                "hide": "İşaretlileri gizle"
             },
             "importHeading": "İçe aktar",
             "importHint": "Daha önce dışa aktardığın bir deste dosyasını okur.",

@@ -1,5 +1,5 @@
 // -Path: 'client/app/components/container/DeckList/DeckListOptions.tsx'
-// The controls that decide *how* the list is shown: order, density, and whether
+// The controls that decide *how* the list is shown: order, density, and which
 // flagged decks are visible — plus the actions that add to the collection.
 //
 // Split out of `DeckList` because this is the one part of the page that is not
@@ -7,67 +7,46 @@
 // menu, so the surrounding list stays purely a function of the URL.
 //
 // Density is a labelled toggle rather than a select because it has two states
-// and an obvious word for each. Sort genuinely has five, so it keeps a select.
-import { useEffect, useId, useRef, useState } from 'react';
-import { useTranslation } from 'react-i18next';
+// and an obvious word for each. Sort has five states and the flagged-deck
+// control has three, so both keep a select — more than a toggle can express.
 import {
-    FaArrowDownWideShort,
-    FaArrowUpAZ,
-    FaClock,
     FaEye,
-    FaEyeSlash,
+    FaBan,
     FaFire,
-    FaTableCells,
+    FaClock,
+    FaEyeSlash,
     FaDatabase,
+    FaArrowUpAZ,
+    FaTableCells,
+    FaArrowDownWideShort,
 } from 'react-icons/fa6';
-import Select from '~/components/custom/Select';
-import MenuDropdown from '~/components/custom/MenuDropdown';
 import Button from '~/components/custom/Button';
-import { DECK_SORTS } from '~/utils/deckListQuery';
-import type { DeckDensity, DeckSort } from '~/types/deckList';
-import type { DeckListActions } from './DeckListActions';
+import Select from '~/components/custom/Select';
+import { useTranslation } from 'react-i18next';
+import { DECK_SORTS, DECK_NSFW_FILTERS } from '~/utils/deckListQuery';
+import type { DeckDensity, DeckNsfwFilter, DeckSort } from '~/types/deckList';
 
+/**
+ * The deck-list toolbar: sort and flagged-deck selects, a density toggle, and
+ * the page's add/import actions.
+ *
+ * @param props - The current options and their change handlers.
+ * @returns The rendered toolbar.
+ */
 export default function DeckListOptions({
     query,
+    onNsfwChange,
     onSortChange,
     onDensityChange,
-    onNsfwChange,
-    actions,
 }: {
     /** Only the three fields this component reads. */
-    query: { sort: DeckSort; density: DeckDensity; nsfw: boolean };
+    query: { sort: DeckSort; density: DeckDensity; nsfw: DeckNsfwFilter };
+    onNsfwChange: (nsfw: DeckNsfwFilter) => void;
     onSortChange: (sort: DeckSort) => void;
     onDensityChange: (density: DeckDensity) => void;
-    onNsfwChange: (nsfw: boolean) => void;
     /** Add/import affordances for this page, or `null` where none apply. */
-    actions: DeckListActions | null;
 }) {
     const { t } = useTranslation();
-    const [open, setOpen] = useState(false);
-    const wrapperRef = useRef<HTMLDivElement>(null);
-    const menuId = useId();
-
-    // `MenuDropdown` is a bare absolutely-positioned panel with no dismiss of its
-    // own, so leaving it is this component's job. Escape as well as an outside
-    // click: a keyboard viewer must be able to back out without hunting for
-    // empty space to click.
-    useEffect(() => {
-        if (!open) return;
-
-        const onPointerDown = (event: MouseEvent) => {
-            if (!wrapperRef.current?.contains(event.target as Node)) setOpen(false);
-        };
-        const onKeyDown = (event: KeyboardEvent) => {
-            if (event.key === 'Escape') setOpen(false);
-        };
-
-        document.addEventListener('mousedown', onPointerDown);
-        document.addEventListener('keydown', onKeyDown);
-        return () => {
-            document.removeEventListener('mousedown', onPointerDown);
-            document.removeEventListener('keydown', onKeyDown);
-        };
-    }, [open]);
 
     const sortOptions = DECK_SORTS.map((sort) => ({
         value: sort,
@@ -75,25 +54,40 @@ export default function DeckListOptions({
         icon: <SortIcon sort={sort} />,
     }));
 
+    const nsfwOptions = DECK_NSFW_FILTERS.map((filter) => ({
+        value: filter,
+        label: t(`deck.options.nsfw.${filter}`),
+        icon: <NsfwIcon filter={filter} />,
+    }));
+
     const isCompact = query.density === 'compact';
 
     return (
         <div className='flex flex-wrap items-center gap-2'>
-            <div className='w-40 sm:w-44'>
-                <Select
-                    value={query.sort}
-                    options={sortOptions}
-                    onChange={onSortChange}
-                    placeholder={t('deck.options.sortAria')}
-                />
-            </div>
+            <Select
+                size='sm'
+                value={query.sort}
+                options={sortOptions}
+                onChange={onSortChange}
+                className='w-40 sm:w-44'
+                placeholder={t('deck.options.sortAria')}
+            />
+
+            <Select
+                size='sm'
+                value={query.nsfw}
+                options={nsfwOptions}
+                onChange={onNsfwChange}
+                className='w-40 sm:w-44'
+                placeholder={t('deck.options.nsfw.label')}
+            />
 
             <Button
-                variant='outline'
                 size='sm'
-                onClick={() => onDensityChange(isCompact ? 'comfortable' : 'compact')}
+                variant='outline'
                 aria-pressed={isCompact}
                 title={t(`deck.options.density.${query.density}`)}
+                onClick={() => onDensityChange(isCompact ? 'comfortable' : 'compact')}
             >
                 {isCompact ? (
                     <FaTableCells className='h-3.5 w-3.5' />
@@ -104,61 +98,25 @@ export default function DeckListOptions({
                     {t(`deck.options.density.${query.density}`)}
                 </span>
             </Button>
-
-            <Button
-                variant='outline'
-                size='sm'
-                onClick={() => onNsfwChange(!query.nsfw)}
-                aria-pressed={query.nsfw}
-                title={t(`deck.options.nsfw.${query.nsfw ? 'on' : 'off'}`)}
-            >
-                {query.nsfw ? (
-                    <FaEyeSlash className='h-3.5 w-3.5' />
-                ) : (
-                    <FaEye className='h-3.5 w-3.5' />
-                )}
-                <span className='sr-only sm:not-sr-only'>{t('deck.options.nsfw.label')}</span>
-            </Button>
-
-            {actions && (
-                <div className='relative' ref={wrapperRef}>
-                    {actions.create ? (
-                        <>
-                            <Button
-                                variant='primary'
-                                size='sm'
-                                onClick={() => setOpen((previous) => !previous)}
-                                aria-expanded={open}
-                                aria-haspopup='menu'
-                                aria-controls={open ? menuId : undefined}
-                            >
-                                {actions.createIcon}
-                                <span className='sr-only sm:not-sr-only'>{actions.createLabel}</span>
-                            </Button>
-
-                            <MenuDropdown id={menuId} open={open} className='w-64 p-1'>
-                                <p className='px-3 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-surface-muted'>
-                                    {t('deck.options.importHeading')}
-                                </p>
-                                {actions.import ? (
-                                    <div onClick={() => setOpen(false)}>{actions.import}</div>
-                                ) : (
-                                    <p className='px-3 py-2 text-sm text-surface-subtle'>
-                                        {t('deck.options.importUnavailable')}
-                                    </p>
-                                )}
-                                <p className='border-t border-line px-3 py-2.5 text-xs leading-relaxed text-surface-muted'>
-                                    {t('deck.options.importHint')}
-                                </p>
-                            </MenuDropdown>
-                        </>
-                    ) : actions.import ? (
-                        <div>{actions.import}</div>
-                    ) : null}
-                </div>
-            )}
         </div>
     );
+}
+
+/**
+ * Picks the icon for one flagged-deck filter.
+ *
+ * @param props - The filter the icon stands for.
+ * @returns The matching Font Awesome icon.
+ */
+function NsfwIcon({ filter }: { filter: DeckNsfwFilter }) {
+    switch (filter) {
+        case 'only':
+            return <FaEyeSlash className='h-3.5 w-3.5' />;
+        case 'hide':
+            return <FaBan className='h-3.5 w-3.5' />;
+        default:
+            return <FaEye className='h-3.5 w-3.5' />;
+    }
 }
 
 function SortIcon({ sort }: { sort: DeckSort }) {

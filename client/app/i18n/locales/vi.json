@@ -1,13 +1,22 @@
 {
     "nav": {
         "home": "Trang chủ",
+        "study": "Học",
+        "edit": "Chỉnh sửa",
         "languages": "Ngôn ngữ",
-        "japanese": "Tiếng Nhật",
-        "english": "Tiếng Anh",
         "menu": "Mở menu",
         "settings": "Cài đặt",
         "language": "Ngôn ngữ",
         "theme": "Chủ đề"
+    },
+    "language": {
+        "all": "Tất cả ngôn ngữ",
+        "english": "Tiếng Anh",
+        "japanese": "Tiếng Nhật",
+        "thai": "Tiếng Thái",
+        "chinese": "Tiếng Trung",
+        "korean": "Tiếng Hàn",
+        "other": "Ngôn ngữ khác"
     },
     "chrome": {
         "hide": "Ẩn",
@@ -22,6 +31,7 @@
         "ctaStart": "Bắt đầu học",
         "ctaCreate": "Đăng bộ thẻ",
         "ctaHow": "Cách hoạt động",
+        "comingSoon": "Sắp ra mắt",
         "scriptsLabel": "Đang pha",
         "stats": {
             "badge": "Trên kệ",
@@ -33,32 +43,7 @@
         "languages": {
             "badge": "Kệ sách",
             "title": "Năm ngôn ngữ, một thói quen ấm áp",
-            "hint": "Bắt đầu với khay nào đã sẵn sàng hôm nay — những cái còn lại đang ngâm.",
-            "available": "Sẵn sàng rót",
-            "comingSoon": "Đang ngâm",
-            "toAll": "Xem mọi ngôn ngữ",
-            "items": {
-                "japanese": {
-                    "name": "Tiếng Nhật",
-                    "description": "Hiragana, katakana và kanji cùng bài luyện và ôn tập giãn cách."
-                },
-                "english": {
-                    "name": "Tiếng Anh",
-                    "description": "Từ vựng và câu giao tiếp hằng ngày, do chính người dùng sắp xếp."
-                },
-                "thai": {
-                    "name": "Tiếng Thái",
-                    "description": "Thanh điệu, chữ viết và những từ bạn sẽ thực sự gặp ngoài đường."
-                },
-                "korean": {
-                    "name": "Tiếng Hàn",
-                    "description": "Hangul trong một buổi, rồi những bộ thẻ hội thoại bền lâu."
-                },
-                "chinese": {
-                    "name": "Tiếng Trung",
-                    "description": "Chữ Hán, pinyin và các cặp thanh điệu, luyện theo vòng ngắn."
-                }
-            }
+            "hint": "Bắt đầu với khay nào đã sẵn sàng hôm nay — những cái còn lại đang ngâm."
         },
         "library": {
             "badge": "Kệ của cộng đồng",
@@ -81,6 +66,21 @@
                 "review": {
                     "title": "Ôn tập giãn cách",
                     "hint": "Các bộ thẻ bạn đã tải sẽ tự quay lại đúng lịch riêng, nên không gì bị nguội."
+                }
+            }
+        },
+        "space": {
+            "badge": "Dung lượng lưu trữ",
+            "title": "Không gian cho bộ thẻ của bạn",
+            "hint": "Mỗi tài khoản sẽ có hạn mức lưu trữ cho các bộ thẻ bạn tạo và tải lên.",
+            "items": {
+                "included": {
+                    "title": "Đã bao gồm",
+                    "hint": "Hạn mức này đi kèm mọi tài khoản và được chia sẻ giữa các bộ thẻ của bạn cùng những gì bạn tải lên chúng."
+                },
+                "rent": {
+                    "title": "Thuê thêm",
+                    "hint": "Khi một bộ sưu tập vượt hạn mức, bạn có thể thuê thêm không gian trong cửa hàng."
                 }
             }
         },
@@ -156,18 +156,134 @@
         "back_home": "Về trang chủ",
         "error_code": "404"
     },
+    "study": {
+        "title": "Học",
+        "subtitle": "Chọn một ngôn ngữ, rồi chọn cách luyện tập.",
+        "characters": {
+            "title": "Ký tự",
+            "description": "Duyệt bảng ký tự của một ngôn ngữ và nghe phát âm từng ký tự."
+        },
+        "drill": {
+            "title": "Luyện tập",
+            "description": "Kiểm tra khả năng nhận biết với bài luyện trắc nghiệm tính giờ.",
+            "items": {
+                "en": {
+                    "name": "Luyện bảng chữ cái",
+                    "description": "Trắc nghiệm tính giờ về bảng chữ cái tiếng Anh."
+                },
+                "ja": {
+                    "name": "Luyện kana",
+                    "description": "Trắc nghiệm tính giờ về hiragana và katakana."
+                },
+                "th": {
+                    "name": "Luyện chữ Thái",
+                    "description": "Trắc nghiệm tính giờ về chữ Thái."
+                },
+                "zh": {
+                    "name": "Luyện chữ Hán",
+                    "description": "Trắc nghiệm tính giờ về chữ Hán."
+                },
+                "ko": {
+                    "name": "Luyện Hangul",
+                    "description": "Trắc nghiệm tính giờ về các khối âm tiết Hangul."
+                }
+            }
+        },
+        "decks": {
+            "title": "Bộ thẻ",
+            "for": "Bộ thẻ cho {{language}}",
+            "learn": "Học",
+            "practice": "Luyện tập",
+            "items": {
+                "vocab": {
+                    "title": "Từ vựng",
+                    "description": "Duyệt và học các bộ thẻ từ vựng."
+                },
+                "render": {
+                    "title": "Đọc hiểu",
+                    "description": "Đọc đoạn ngắn và tự kiểm tra."
+                },
+                "review": {
+                    "title": "Ôn tập",
+                    "description": "Ôn tập bằng thẻ ghi nhớ và lặp lại ngắt quãng."
+                },
+                "exam": {
+                    "title": "Kiểm tra",
+                    "description": "Tự kiểm tra bằng bài thi trắc nghiệm."
+                },
+                "edit": {
+                    "title": "Chỉnh sửa bộ thẻ",
+                    "description": "Đổi tên, sắp xếp lại hoặc xoá các bộ thẻ trong bộ sưu tập của bạn."
+                }
+            }
+        },
+        "tag": {
+            "ready": "Sẵn sàng",
+            "current": "Hiện tại",
+            "comingSoon": "Sắp ra mắt"
+        },
+        "action": {
+            "start": "Bắt đầu"
+        }
+    },
+    "hub": {
+        "comingSoon": "{{language}} sắp ra mắt. Chọn ngôn ngữ khác để bắt đầu học.",
+        "sections": {
+            "learn": "Học",
+            "practice": "Luyện tập",
+            "manage": "Quản lý"
+        },
+        "nav": {
+            "characters": {
+                "title": "Ký tự",
+                "description": "Duyệt bảng ký tự và nghe phát âm từng ký tự.",
+                "action": "Xem ký tự"
+            },
+            "drill": {
+                "title": "Luyện ký tự",
+                "description": "Kiểm tra khả năng nhận biết với bài luyện trắc nghiệm tính giờ.",
+                "action": "Bắt đầu luyện"
+            },
+            "vocab": {
+                "title": "Từ vựng",
+                "description": "Duyệt và học các bộ thẻ từ vựng cho ngôn ngữ này.",
+                "action": "Xem từ vựng"
+            },
+            "render": {
+                "title": "Đọc hiểu",
+                "description": "Đọc đoạn văn ngắn và đối chiếu với bản dịch.",
+                "action": "Bắt đầu đọc"
+            },
+            "review": {
+                "title": "Ôn tập từ vựng",
+                "description": "Ôn từ vựng bằng thẻ ghi nhớ và lặp lại ngắt quãng.",
+                "action": "Bắt đầu ôn tập"
+            },
+            "exam": {
+                "title": "Kiểm tra từ vựng",
+                "description": "Tự kiểm tra bằng bộ trắc nghiệm dựng từ từ vựng của bạn.",
+                "action": "Làm bài kiểm tra"
+            },
+            "edit": {
+                "title": "Chỉnh sửa bộ thẻ",
+                "description": "Đổi tên, sắp xếp lại hoặc xoá các bộ thẻ trong bộ sưu tập của bạn.",
+                "action": "Chỉnh sửa bộ thẻ"
+            }
+        }
+    },
+    "characters": {
+        "backHub": "Quay lại trung tâm",
+        "comingSoon": "Bảng ký tự của {{language}} sắp ra mắt.",
+        "unknown": "Ngôn ngữ này"
+    },
     "languageSelect": {
-        "badge": "Chọn ngôn ngữ",
-        "title": "Chọn ngôn ngữ để học",
-        "description": "Chọn ngôn ngữ bạn muốn học. Tiếng Nhật đã sẵn sàng hôm nay; những ngôn ngữ còn lại đang ngâm.",
         "back_home": "Về trang chủ",
         "status": {
             "available": "Khả dụng",
             "comingSoon": "Sắp ra mắt"
         },
         "cta": {
-            "start": "Bắt đầu học",
-            "unavailable": "Chưa khả dụng"
+            "start": "Bắt đầu học"
         },
         "languages": {
             "japanese": {
@@ -177,6 +293,10 @@
             "english": {
                 "name": "Tiếng Anh",
                 "description": "Từ vựng và câu giao tiếp hằng ngày, do chính người dùng sắp vào từng bộ thẻ."
+            },
+            "other": {
+                "name": "Ngôn ngữ khác",
+                "description": "Học một ngôn ngữ mà ứng dụng không hỗ trợ sẵn — chỉ có bộ thẻ, không có bảng ký tự."
             },
             "thai": {
                 "name": "Tiếng Thái",
@@ -190,8 +310,7 @@
                 "name": "Tiếng Trung",
                 "description": "Chữ Hán, pinyin và các cặp thanh điệu, luyện mỗi lần vài phút."
             }
-        },
-        "back_language": "Quay lại chọn ngôn ngữ"
+        }
     },
     "deck": {
         "type": {
@@ -212,6 +331,7 @@
             "unlisted": "Không hiển thị",
             "private": "Riêng tư"
         },
+        "target": "Ngôn ngữ",
         "search": "Tìm bộ thẻ",
         "searchAria": "Tìm bộ thẻ theo tên",
         "searchClear": "Xoá tìm kiếm",
@@ -230,7 +350,8 @@
         "deleteAria": "Xoá bộ thẻ",
         "start": "Bắt đầu",
         "list": {
-            "backHub": "Quay lại {{language}}"
+            "backHub": "Quay lại {{language}}",
+            "backStudy": "Quay lại Học"
         },
         "empty": {
             "local": {
@@ -287,9 +408,10 @@
                 "compact": "Gọn gàng"
             },
             "nsfw": {
-                "label": "Nhạy cảm",
-                "on": "Đang hiện bộ thẻ nhạy cảm",
-                "off": "Đang ẩn bộ thẻ nhạy cảm"
+                "label": "Bộ thẻ bị gắn cờ",
+                "all": "Hiện tất cả",
+                "only": "Chỉ gắn cờ",
+                "hide": "Ẩn gắn cờ"
             },
             "importHeading": "Nhập",
             "importHint": "Đọc tệp bộ thẻ bạn đã xuất trước đó.",

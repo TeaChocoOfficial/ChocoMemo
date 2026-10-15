@@ -1,17 +1,17 @@
 // -Path: 'client/app/stores/config/deckList.store.ts'
 import { create } from 'zustand';
+import type { DeckDensity, DeckNsfwFilter, DeckSort } from '~/types/deckList';
 import { createJSONStorage, persist } from 'zustand/middleware';
-import { DEFAULT_TARGET_LANG, type Languages } from '~/data/language';
-import type { DeckDensity, DeckSort } from '~/types/deckList';
+import { DEFAULT_TARGET_LANG, type TargetFilter } from '~/data/language';
 
 /** The deck-list options the viewer last set, remembered across visits. */
 export interface DeckListOptions {
-    /** The target language the deck list browses. */
-    targetLang: Languages;
+    /** The target language the deck list browses, or every language at once. */
+    targetLang: TargetFilter;
     sort: DeckSort;
     density: DeckDensity;
-    /** Whether decks flagged `nsfw` are shown. */
-    nsfw: boolean;
+    /** Which flagged decks the list shows: all, only flagged, or hide them. */
+    nsfw: DeckNsfwFilter;
 }
 
 /** What a first-time viewer's deck list opens with. */
@@ -19,7 +19,7 @@ export const DEFAULT_DECK_LIST_OPTIONS: DeckListOptions = {
     targetLang: DEFAULT_TARGET_LANG,
     sort: 'default',
     density: 'comfortable',
-    nsfw: false,
+    nsfw: 'hide',
 };
 
 interface DeckListState extends DeckListOptions {
@@ -38,7 +38,7 @@ export const useDeckListStore = create<DeckListState>()(
     persist(
         (set) => ({
             ...DEFAULT_DECK_LIST_OPTIONS,
-            save: (patch) => set(patch),
+            save: (patch) => set((state) => ({ ...state, ...patch })),
         }),
         {
             name: 'choco-memo-deck-list',

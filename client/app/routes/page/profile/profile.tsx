@@ -1,5 +1,5 @@
-import ProfilePage from '~/pages/profile/Profile';
 import type { Route } from './+types/profile';
+import ProfilePage from '~/pages/profile/Profile';
 
 export function meta({}: Route.MetaArgs) {
     return [

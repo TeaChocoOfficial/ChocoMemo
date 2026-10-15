@@ -1,13 +1,22 @@
 {
     "nav": {
         "home": "Início",
+        "study": "Estudar",
+        "edit": "Editar",
         "languages": "Idiomas",
-        "japanese": "Japonês",
-        "english": "Inglês",
         "menu": "Abrir menu",
         "settings": "Configurações",
         "language": "Idioma",
         "theme": "Tema"
+    },
+    "language": {
+        "all": "Todos os idiomas",
+        "english": "Inglês",
+        "japanese": "Japonês",
+        "thai": "Tailandês",
+        "chinese": "Chinês",
+        "korean": "Coreano",
+        "other": "Outro idioma"
     },
     "chrome": {
         "hide": "Ocultar",
@@ -22,6 +31,7 @@
         "ctaStart": "Começar a aprender",
         "ctaCreate": "Publicar um baralho",
         "ctaHow": "Como funciona",
+        "comingSoon": "Em breve",
         "scriptsLabel": "Infusionando agora",
         "stats": {
             "badge": "Na prateleira",
@@ -33,32 +43,7 @@
         "languages": {
             "badge": "A prateleira",
             "title": "Cinco idiomas, um hábito aconchegante",
-            "hint": "Comece pela bandeja que está pronta hoje — o resto está infusionando.",
-            "available": "Pronto para servir",
-            "comingSoon": "Infusionando",
-            "toAll": "Ver todos os idiomas",
-            "items": {
-                "japanese": {
-                    "name": "Japonês",
-                    "description": "Hiragana, katakana e kanji com exercícios e revisão espaçada."
-                },
-                "english": {
-                    "name": "Inglês",
-                    "description": "Vocabulário e frases do dia a dia, organizdos por quem os usa."
-                },
-                "thai": {
-                    "name": "Tailandês",
-                    "description": "Tons, escrita e as palavras que você realmente vai encontrar na rua."
-                },
-                "korean": {
-                    "name": "Coreano",
-                    "description": "Hangul em uma só sentada, depois baralhos de conversa que ficam."
-                },
-                "chinese": {
-                    "name": "Chinês",
-                    "description": "Caracteres, pinyin e pares de tons, treinados em rodadas curtas."
-                }
-            }
+            "hint": "Comece pela bandeja que está pronta hoje — o resto está infusionando."
         },
         "library": {
             "badge": "A prateleira da comunidade",
@@ -81,6 +66,21 @@
                 "review": {
                     "title": "Revisão espaçada",
                     "hint": "Os baralhos que você baixou voltam na própria agenda, então nada esfria."
+                }
+            }
+        },
+        "space": {
+            "badge": "Armazenamento",
+            "title": "Espaço para os seus baralhos",
+            "hint": "Cada conta terá uma cota de armazenamento para os baralhos que criar e enviar.",
+            "items": {
+                "included": {
+                    "title": "Incluído",
+                    "hint": "A cota acompanha cada conta e é partilhada pelos seus baralhos e pelo que enviar para eles."
+                },
+                "rent": {
+                    "title": "Alugar mais",
+                    "hint": "Quando uma coleção a exceder, poderá alugar espaço extra na loja."
                 }
             }
         },
@@ -156,18 +156,134 @@
         "back_home": "Voltar ao Início",
         "error_code": "404"
     },
+    "study": {
+        "title": "Estudar",
+        "subtitle": "Escolha um idioma e depois uma forma de o praticar.",
+        "characters": {
+            "title": "Caracteres",
+            "description": "Explore a tabela de caracteres de um idioma e ouça cada um ser pronunciado."
+        },
+        "drill": {
+            "title": "Treino",
+            "description": "Teste o seu reconhecimento com um exercício cronometrado de escolha múltipla.",
+            "items": {
+                "en": {
+                    "name": "Treino do alfabeto",
+                    "description": "Escolha múltipla cronometrada sobre o alfabeto inglês."
+                },
+                "ja": {
+                    "name": "Treino de kana",
+                    "description": "Escolha múltipla cronometrada sobre hiragana e katakana."
+                },
+                "th": {
+                    "name": "Treino de tailandês",
+                    "description": "Escolha múltipla cronometrada sobre o alfabeto tailandês."
+                },
+                "zh": {
+                    "name": "Treino de caracteres han",
+                    "description": "Escolha múltipla cronometrada sobre os caracteres han."
+                },
+                "ko": {
+                    "name": "Treino de hangul",
+                    "description": "Escolha múltipla cronometrada sobre os blocos de sílabas do hangul."
+                }
+            }
+        },
+        "decks": {
+            "title": "Baralhos",
+            "for": "Baralhos para {{language}}",
+            "learn": "Aprender",
+            "practice": "Praticar",
+            "items": {
+                "vocab": {
+                    "title": "Vocabulário",
+                    "description": "Explore e estude baralhos de vocabulário."
+                },
+                "render": {
+                    "title": "Leitura",
+                    "description": "Leia passagens curtas e teste-se."
+                },
+                "review": {
+                    "title": "Revisão",
+                    "description": "Reveja com flashcards e repetição espaçada."
+                },
+                "exam": {
+                    "title": "Exame",
+                    "description": "Teste-se com um exame de escolha múltipla."
+                },
+                "edit": {
+                    "title": "Editar baralhos",
+                    "description": "Renomeie, reordene ou remova os baralhos da sua coleção."
+                }
+            }
+        },
+        "tag": {
+            "ready": "Pronto",
+            "current": "Atual",
+            "comingSoon": "Em Breve"
+        },
+        "action": {
+            "start": "Iniciar"
+        }
+    },
+    "hub": {
+        "comingSoon": "{{language}} chega em breve. Escolha outro idioma para começar a estudar.",
+        "sections": {
+            "learn": "Aprender",
+            "practice": "Praticar",
+            "manage": "Gerenciar"
+        },
+        "nav": {
+            "characters": {
+                "title": "Caracteres",
+                "description": "Explore a tabela de caracteres e ouça cada um ser pronunciado.",
+                "action": "Ver caracteres"
+            },
+            "drill": {
+                "title": "Exercício de caracteres",
+                "description": "Teste o seu reconhecimento com um exercício cronometrado de escolha múltipla.",
+                "action": "Iniciar exercício"
+            },
+            "vocab": {
+                "title": "Vocabulário",
+                "description": "Explore e estude baralhos de vocabulário deste idioma.",
+                "action": "Ver palavras"
+            },
+            "render": {
+                "title": "Leitura",
+                "description": "Leia textos curtos e confira com a tradução.",
+                "action": "Começar a ler"
+            },
+            "review": {
+                "title": "Revisão de Vocabulário",
+                "description": "Revise o vocabulário com cartões e repetição espaçada.",
+                "action": "Iniciar revisão"
+            },
+            "exam": {
+                "title": "Exame de vocabulário",
+                "description": "Teste-se com um exame de múltipla escolha feito do seu vocabulário.",
+                "action": "Fazer o exame"
+            },
+            "edit": {
+                "title": "Editar baralhos",
+                "description": "Renomeie, reordene ou remova os baralhos da sua coleção.",
+                "action": "Editar baralhos"
+            }
+        }
+    },
+    "characters": {
+        "backHub": "Voltar ao centro",
+        "comingSoon": "A tabela de caracteres de {{language}} chega em breve.",
+        "unknown": "Este idioma"
+    },
     "languageSelect": {
-        "badge": "Seleção de Idioma",
-        "title": "Escolha um Idioma para Aprender",
-        "description": "Escolha o idioma que quer estudar. O japonês está pronto hoje; o resto está infusionando.",
         "back_home": "Voltar ao Início",
         "status": {
             "available": "Disponível",
             "comingSoon": "Em Breve"
         },
         "cta": {
-            "start": "Começar a Aprender",
-            "unavailable": "Indisponível"
+            "start": "Começar a Aprender"
         },
         "languages": {
             "japanese": {
@@ -177,6 +293,10 @@
             "english": {
                 "name": "Inglês",
                 "description": "Vocabulário e frases do dia a dia, organizados em baralhos por quem realmente os usa."
+            },
+            "other": {
+                "name": "Outro idioma",
+                "description": "Estude um idioma sem suporte integrado — apenas baralhos, sem tabela de caracteres."
             },
             "thai": {
                 "name": "Tailandês",
@@ -190,8 +310,7 @@
                 "name": "Chinês",
                 "description": "Caracteres, pinyin e pares de tons, praticados a poucos minutos de cada vez."
             }
-        },
-        "back_language": "Voltar à seleção de idioma"
+        }
     },
     "deck": {
         "type": {
@@ -212,6 +331,7 @@
             "unlisted": "Não listado",
             "private": "Privado"
         },
+        "target": "Idioma",
         "search": "Buscar baralhos",
         "searchAria": "Buscar baralhos por nome",
         "searchClear": "Limpar busca",
@@ -230,7 +350,8 @@
         "deleteAria": "Excluir baralho",
         "start": "Iniciar",
         "list": {
-            "backHub": "Voltar a {{language}}"
+            "backHub": "Voltar a {{language}}",
+            "backStudy": "Voltar a Estudar"
         },
         "empty": {
             "local": {
@@ -287,9 +408,10 @@
                 "compact": "Compacta"
             },
             "nsfw": {
-                "label": "Sensível",
-                "on": "Baralhos sensíveis visíveis",
-                "off": "Baralhos sensíveis ocultos"
+                "label": "Baralhos sinalizados",
+                "all": "Mostrar tudo",
+                "only": "Apenas sinalizados",
+                "hide": "Ocultar sinalizados"
             },
             "importHeading": "Importar",
             "importHint": "Lê um arquivo de baralho que você exportou antes.",

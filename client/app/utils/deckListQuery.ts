@@ -10,11 +10,12 @@
 //     default, not reach a component that has no matching case — otherwise the
 //     server render and the client render can disagree, which is a hydration
 //     mismatch rather than a bug report.
-//  2. Defaults are omitted when serializing. A URL only carries what the viewer
-//     actually chose, so the common case stays `/japanese/vocab` and a shared
-//     link never pins a preference that used to be the implicit one.
+//  2. Defaults are omitted when serializing, so a URL only carries what the
+//     viewer actually chose and a shared link never pins a preference that used
+//     to be the implicit one. The tab is the one exception: it is always
+//     written, so the URL always names the source it shows.
 import { DEFAULT_DECK_LIST_QUERY } from '~/types/deckList';
-import type { DeckDensity, DeckListQuery, DeckSort } from '~/types/deckList';
+import type { DeckDensity, DeckListQuery, DeckNsfwFilter, DeckSort } from '~/types/deckList';
 import type { DeckSource } from '~/types/deck';
 import type { DeckData } from '~/types/deck';
 
@@ -40,6 +41,8 @@ export const DECK_SOURCE_TABS: readonly DeckSource[] = [
 export const DECK_SORTS: readonly DeckSort[] = ['default', 'name', 'recent', 'popular', 'size'];
 
 export const DECK_DENSITIES: readonly DeckDensity[] = ['comfortable', 'compact'];
+
+export const DECK_NSFW_FILTERS: readonly DeckNsfwFilter[] = ['all', 'only', 'hide'];
 
 /** Reads a value only when it is one of the options the UI can actually show. */
 function pick<T extends string>(raw: string | null, allowed: readonly T[], fallback: T): T {
@@ -70,22 +73,21 @@ export function parseDeckListQuery(
     params: URLSearchParams,
     defaults: DeckListQuery = DEFAULT_DECK_LIST_QUERY,
 ): DeckListQuery {
-    // `nsfw` is opt-in, so an explicit `1`/`true` turns it on and anything else
-    // turns it off; only an absent param falls back to the default. Reading
-    // presence alone would expose flagged decks to anyone who appended `?nsfw`.
-    const nsfwRaw = params.get(DECK_LIST_PARAMS.nsfw);
-
+    // An unrecognised `?nsfw=` value falls back to the default (`hide`), so a
+    // hand-edited `?nsfw=foo` still hides flagged decks rather than exposing
+    // them.
     return {
         tab: pick(params.get(DECK_LIST_PARAMS.tab), DECK_SOURCE_TABS, defaults.tab),
         search: params.get(DECK_LIST_PARAMS.search)?.trim() ?? defaults.search,
         sort: pick(params.get(DECK_LIST_PARAMS.sort), DECK_SORTS, defaults.sort),
         density: pick(params.get(DECK_LIST_PARAMS.density), DECK_DENSITIES, defaults.density),
-        nsfw: nsfwRaw == null ? defaults.nsfw : nsfwRaw === '1' || nsfwRaw === 'true',
+        nsfw: pick(params.get(DECK_LIST_PARAMS.nsfw), DECK_NSFW_FILTERS, defaults.nsfw),
         tags: parseTags(params.get(DECK_LIST_PARAMS.tags)),
     };
 }
 
-/** Serializes a query back to search params, leaving out every default. */
+/** Serializes a query back to search params, leaving out every default except
+ *  the tab, which is always written so the URL names the view it shows. */
 export function deckListQueryToParams(
     query: DeckListQuery,
     defaults: DeckListQuery = DEFAULT_DECK_LIST_QUERY,
@@ -95,23 +97,32 @@ export function deckListQueryToParams(
         if (value) params.set(key, value);
     };
 
-    set(DECK_LIST_PARAMS.tab, query.tab === defaults.tab ? '' : query.tab);
+    // The tab is always explicit: a shared link should say which source it
+    // opens, and the viewer should see the tab they picked in the URL.
+    params.set(DECK_LIST_PARAMS.tab, query.tab);
     set(DECK_LIST_PARAMS.search, query.search.trim());
     set(DECK_LIST_PARAMS.sort, query.sort === defaults.sort ? '' : query.sort);
     set(DECK_LIST_PARAMS.density, query.density === defaults.density ? '' : query.density);
-    set(DECK_LIST_PARAMS.nsfw, query.nsfw === defaults.nsfw ? '' : query.nsfw ? '1' : '0');
+    set(DECK_LIST_PARAMS.nsfw, query.nsfw === defaults.nsfw ? '' : query.nsfw);
     set(DECK_LIST_PARAMS.tags, query.tags.join(','));
 
     return params;
 }
 
 /** True when nothing narrows the list — used to decide whether a "clear
- *  everything" affordance is worth showing at all. */
+ *  everything" affordance is worth showing at all. The tab is always written
+ *  to the URL, so it is not counted as narrowing. */
 export function isDeckListQueryDefault(
     query: DeckListQuery,
     defaults: DeckListQuery = DEFAULT_DECK_LIST_QUERY,
 ): boolean {
-    return deckListQueryToParams(query, defaults).toString() === '';
+    return (
+        query.search.trim() === '' &&
+        query.sort === defaults.sort &&
+        query.density === defaults.density &&
+        query.nsfw === defaults.nsfw &&
+        query.tags.length === 0
+    );
 }
 
 /** Adds or removes one tag, keeping the set free of duplicates. */

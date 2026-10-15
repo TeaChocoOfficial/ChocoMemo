@@ -1,13 +1,22 @@
 {
     "nav": {
         "home": "首页",
+        "study": "学习",
+        "edit": "编辑",
         "languages": "语言",
-        "japanese": "日语",
-        "english": "英语",
         "menu": "打开菜单",
         "settings": "设置",
         "language": "语言",
         "theme": "主题"
+    },
+    "language": {
+        "all": "所有语言",
+        "english": "英语",
+        "japanese": "日语",
+        "thai": "泰语",
+        "chinese": "中文",
+        "korean": "韩语",
+        "other": "其他语言"
     },
     "chrome": {
         "hide": "隐藏",
@@ -22,6 +31,7 @@
         "ctaStart": "开始学习",
         "ctaCreate": "发布卡组",
         "ctaHow": "使用方法",
+        "comingSoon": "即将推出",
         "scriptsLabel": "正在冲泡",
         "stats": {
             "badge": "在架上",
@@ -33,32 +43,7 @@
         "languages": {
             "badge": "书架",
             "title": "五种语言，一个温暖的习惯",
-            "hint": "从今天就绪的那一盘开始——其余的还在浸泡。",
-            "available": "可以冲泡",
-            "comingSoon": "浸泡中",
-            "toAll": "浏览全部语言",
-            "items": {
-                "japanese": {
-                    "name": "日语",
-                    "description": "平假名、片假名和汉字，配上练习与间隔复习。"
-                },
-                "english": {
-                    "name": "英语",
-                    "description": "日常词汇和短句，由真正使用它们的人整理。"
-                },
-                "thai": {
-                    "name": "泰语",
-                    "description": "声调、文字，以及你在街头真正会遇到的词。"
-                },
-                "korean": {
-                    "name": "韩语",
-                    "description": "一节课学完韩文，之后是记得住的会话卡组。"
-                },
-                "chinese": {
-                    "name": "中文",
-                    "description": "汉字、拼音和声调配对，用短回合反复操练。"
-                }
-            }
+            "hint": "从今天就绪的那一盘开始——其余的还在浸泡。"
         },
         "library": {
             "badge": "社区书架",
@@ -81,6 +66,21 @@
                 "review": {
                     "title": "间隔复习",
                     "hint": "你下载的卡组会按自己的节奏回来，所以没有任何内容会变凉。"
+                }
+            }
+        },
+        "space": {
+            "badge": "存储空间",
+            "title": "你的牌组空间",
+            "hint": "每个账户都会有存储额度，用于你创建和上传的牌组。",
+            "items": {
+                "included": {
+                    "title": "已包含",
+                    "hint": "此额度随每个账户提供，由你的牌组及上传内容共享使用。"
+                },
+                "rent": {
+                    "title": "租用更多",
+                    "hint": "当收藏超出额度时，你可以在商店中租用额外空间。"
                 }
             }
         },
@@ -156,18 +156,134 @@
         "back_home": "返回首页",
         "error_code": "404"
     },
+    "study": {
+        "title": "学习",
+        "subtitle": "选择一种语言，再选择练习方式。",
+        "characters": {
+            "title": "字符",
+            "description": "浏览某种语言的字符表，并聆听每个字符的发音。"
+        },
+        "drill": {
+            "title": "练习",
+            "description": "用限时选择题练习来测试你的辨识能力。",
+            "items": {
+                "en": {
+                    "name": "英文字母练习",
+                    "description": "针对英文字母的限时选择题练习。"
+                },
+                "ja": {
+                    "name": "假名练习",
+                    "description": "针对平假名和片假名的限时选择题练习。"
+                },
+                "th": {
+                    "name": "泰文练习",
+                    "description": "针对泰文字母的限时选择题练习。"
+                },
+                "zh": {
+                    "name": "汉字练习",
+                    "description": "针对汉字的限时选择题练习。"
+                },
+                "ko": {
+                    "name": "韩文练习",
+                    "description": "针对韩文音节的限时选择题练习。"
+                }
+            }
+        },
+        "decks": {
+            "title": "卡组",
+            "for": "{{language}}的牌组",
+            "learn": "学习",
+            "practice": "练习",
+            "items": {
+                "vocab": {
+                    "title": "词汇",
+                    "description": "浏览并学习词汇牌组。"
+                },
+                "render": {
+                    "title": "阅读",
+                    "description": "阅读短文并自我检测。"
+                },
+                "review": {
+                    "title": "复习",
+                    "description": "用卡片和间隔重复进行复习。"
+                },
+                "exam": {
+                    "title": "测验",
+                    "description": "用选择题考试测试自己。"
+                },
+                "edit": {
+                    "title": "编辑牌组",
+                    "description": "重命名、重新排序或移除你收藏中的卡组。"
+                }
+            }
+        },
+        "tag": {
+            "ready": "就绪",
+            "current": "当前",
+            "comingSoon": "即将推出"
+        },
+        "action": {
+            "start": "开始"
+        }
+    },
+    "hub": {
+        "comingSoon": "{{language}}即将推出。请选择另一种语言开始学习。",
+        "sections": {
+            "learn": "学习",
+            "practice": "练习",
+            "manage": "管理"
+        },
+        "nav": {
+            "characters": {
+                "title": "字符",
+                "description": "浏览字符表，并聆听每个字符的发音。",
+                "action": "查看字符"
+            },
+            "drill": {
+                "title": "字符练习",
+                "description": "用限时选择题练习来测试你的辨识能力。",
+                "action": "开始练习"
+            },
+            "vocab": {
+                "title": "词汇",
+                "description": "浏览并学习该语言的词汇牌组。",
+                "action": "浏览词汇"
+            },
+            "render": {
+                "title": "阅读",
+                "description": "读短文并对照译文检查自己。",
+                "action": "开始阅读"
+            },
+            "review": {
+                "title": "词汇复习",
+                "description": "用单词卡和间隔重复复习词汇。",
+                "action": "开始复习"
+            },
+            "exam": {
+                "title": "词汇测验",
+                "description": "用自己词汇生成的单选题测试自己。",
+                "action": "参加测验"
+            },
+            "edit": {
+                "title": "编辑卡组",
+                "description": "重命名、重新排序或移除你收藏中的卡组。",
+                "action": "编辑卡组"
+            }
+        }
+    },
+    "characters": {
+        "backHub": "返回中心",
+        "comingSoon": "{{language}}字符表即将推出。",
+        "unknown": "此语言"
+    },
     "languageSelect": {
-        "badge": "选择语言",
-        "title": "选择要学习的语言",
-        "description": "选择你想学的语言。日语今天就能用，其余的还在浸泡。",
         "back_home": "返回首页",
         "status": {
             "available": "可用",
             "comingSoon": "即将推出"
         },
         "cta": {
-            "start": "开始学习",
-            "unavailable": "暂不可用"
+            "start": "开始学习"
         },
         "languages": {
             "japanese": {
@@ -177,6 +293,10 @@
             "english": {
                 "name": "英语",
                 "description": "日常词汇和短句，由真正使用它们的人整理成卡组。"
+            },
+            "other": {
+                "name": "其他语言",
+                "description": "学习应用未内置支持的语言 — 仅有牌组，没有字符表。"
             },
             "thai": {
                 "name": "泰语",
@@ -190,8 +310,7 @@
                 "name": "中文",
                 "description": "汉字、拼音和声调配对，每次只练几分钟。"
             }
-        },
-        "back_language": "返回语言选择"
+        }
     },
     "deck": {
         "type": {
@@ -212,6 +331,7 @@
             "unlisted": "不公开列出",
             "private": "私密"
         },
+        "target": "语言",
         "search": "搜索卡组",
         "searchAria": "按名称搜索卡组",
         "searchClear": "清除搜索",
@@ -230,7 +350,8 @@
         "deleteAria": "删除卡组",
         "start": "开始",
         "list": {
-            "backHub": "返回{{language}}"
+            "backHub": "返回{{language}}",
+            "backStudy": "返回学习"
         },
         "empty": {
             "local": {
@@ -287,9 +408,10 @@
                 "compact": "紧凑"
             },
             "nsfw": {
-                "label": "敏感内容",
-                "on": "已显示敏感卡组",
-                "off": "已隐藏敏感卡组"
+                "label": "已标记的牌组",
+                "all": "显示全部",
+                "only": "仅已标记",
+                "hide": "隐藏已标记"
             },
             "importHeading": "导入",
             "importHint": "读取你之前导出的卡组文件。",

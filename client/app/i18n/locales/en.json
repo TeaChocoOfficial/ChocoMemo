@@ -4,13 +4,19 @@
         "study": "Study",
         "edit": "Edit",
         "languages": "Languages",
-        "japanese": "Japanese",
-        "english": "English",
-        "other": "Another language",
         "menu": "Open menu",
         "settings": "Settings",
         "language": "Language",
         "theme": "Theme"
+    },
+    "language": {
+        "all": "All languages",
+        "english": "English",
+        "japanese": "Japanese",
+        "thai": "Thai",
+        "chinese": "Chinese",
+        "korean": "Korean",
+        "other": "Another language"
     },
     "chrome": {
         "hide": "Hide",
@@ -86,25 +92,25 @@
                 "title": "Pick your language",
                 "hint": "Choose the tray you're studying today."
             },
-        "step2": {
-            "title": "Pick a deck",
-            "hint": "Start with a built-in deck. Decks from other learners will follow."
+            "step2": {
+                "title": "Pick a deck",
+                "hint": "Start with a built-in deck. Decks from other learners will follow."
+            },
+            "step3": {
+                "title": "Drill and quiz",
+                "hint": "Short drills, five minutes at a time. Review and quizzes are rolling out."
+            },
+            "step4": {
+                "title": "Create your own",
+                "hint": "Soon you'll add the words you keep forgetting and share them with other learners."
+            }
         },
-        "step3": {
-            "title": "Drill and quiz",
-            "hint": "Short drills, five minutes at a time. Review and quizzes are rolling out."
-        },
-        "step4": {
-            "title": "Create your own",
-            "hint": "Soon you'll add the words you keep forgetting and share them with other learners."
+        "cta": {
+            "title": "The pot's already on.",
+            "hint": "No sign-up wall between you and the first drill. Account features, like syncing your decks, are on the way.",
+            "primary": "Start learning",
+            "secondary": "Create a deck"
         }
-    },
-    "cta": {
-        "title": "The pot's already on.",
-        "hint": "No sign-up wall between you and the first drill. Account features, like syncing your decks, are on the way.",
-        "primary": "Start learning",
-        "secondary": "Create a deck"
-    }
     },
     "theme": {
         "pickerLabel": "Change theme",
@@ -155,11 +161,50 @@
         "subtitle": "Pick a language, then a way to practise it.",
         "characters": {
             "title": "Characters",
-            "description": "Browse a language's character chart and hear each one spoken."
+            "description": "Browse a language's character chart and hear each one spoken.",
+            "items": {
+                "en": {
+                    "name": "Alphabet"
+                },
+                "ja": {
+                    "name": "Kana"
+                },
+                "th": {
+                    "name": "Thai"
+                },
+                "zh": {
+                    "name": "Hanzi"
+                },
+                "ko": {
+                    "name": "Hangul"
+                }
+            }
         },
         "drill": {
             "title": "Drill",
-            "description": "Test your recognition with a timed multiple-choice drill."
+            "description": "Test your recognition with a timed multiple-choice drill.",
+            "items": {
+                "en": {
+                    "name": "Alphabet Drill",
+                    "description": "Timed multiple choice over the English alphabet."
+                },
+                "ja": {
+                    "name": "Kana Drill",
+                    "description": "Timed multiple choice over hiragana and katakana."
+                },
+                "th": {
+                    "name": "Thai Drill",
+                    "description": "Timed multiple choice over the Thai script."
+                },
+                "zh": {
+                    "name": "Hanzi Drill",
+                    "description": "Timed multiple choice over the Hanzi characters."
+                },
+                "ko": {
+                    "name": "Hangul Drill",
+                    "description": "Timed multiple choice over the Hangul syllable blocks."
+                }
+            }
         },
         "decks": {
             "title": "Decks",
@@ -380,9 +425,10 @@
                 "compact": "Compact"
             },
             "nsfw": {
-                "label": "Flagged",
-                "on": "Flagged decks are shown",
-                "off": "Flagged decks are hidden"
+                "label": "Flagged decks",
+                "all": "Show all",
+                "only": "Only flagged",
+                "hide": "Hide flagged"
             },
             "importHeading": "Import",
             "importHint": "Reads a deck file you exported earlier.",

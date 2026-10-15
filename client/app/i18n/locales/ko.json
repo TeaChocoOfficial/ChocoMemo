@@ -1,13 +1,22 @@
 {
     "nav": {
         "home": "홈",
+        "study": "학습",
+        "edit": "편집",
         "languages": "언어",
-        "japanese": "일본어",
-        "english": "영어",
         "menu": "메뉴 열기",
         "settings": "설정",
         "language": "언어",
         "theme": "테마"
+    },
+    "language": {
+        "all": "모든 언어",
+        "english": "영어",
+        "japanese": "일본어",
+        "thai": "태국어",
+        "chinese": "중국어",
+        "korean": "한국어",
+        "other": "다른 언어"
     },
     "chrome": {
         "hide": "숨기기",
@@ -22,6 +31,7 @@
         "ctaStart": "학습 시작",
         "ctaCreate": "덱 게시하기",
         "ctaHow": "사용 방법",
+        "comingSoon": "곧 출시",
         "scriptsLabel": "지금 우러나는 중",
         "stats": {
             "badge": "선반 위",
@@ -33,32 +43,7 @@
         "languages": {
             "badge": "그 선반",
             "title": "다섯 언어, 하나의 따뜻한 습관",
-            "hint": "오늘 준비된 쟁반부터 시작하세요 — 나머지는 아직 우러납니다.",
-            "available": "바로 푸실 수 있음",
-            "comingSoon": "우러나는 중",
-            "toAll": "모든 언어 둘러보기",
-            "items": {
-                "japanese": {
-                    "name": "일본어",
-                    "description": "히라가나, 가타카나, 한자를 드릴과 간격 반복으로 배웁니다."
-                },
-                "english": {
-                    "name": "영어",
-                    "description": "실제로 쓰는 사람들이 정리한 일상 어휘와 표현."
-                },
-                "thai": {
-                    "name": "태국어",
-                    "description": "성조와 글자, 그리고 길에서 실제로 만나게 될 단어들."
-                },
-                "korean": {
-                    "name": "한국어",
-                    "description": "한글은 한 번에, 그다음은 오래 남는 대화 덱."
-                },
-                "chinese": {
-                    "name": "중국어",
-                    "description": "한자, 병음, 성조 짝을 짧은 라운드로."
-                }
-            }
+            "hint": "오늘 준비된 쟁반부터 시작하세요 — 나머지는 아직 우러납니다."
         },
         "library": {
             "badge": "커뮤니티 선반",
@@ -81,6 +66,21 @@
                 "review": {
                     "title": "간격 반복",
                     "hint": "내려받은 덱은 자기 일정대로 돌아오니 하나도 식지 않습니다."
+                }
+            }
+        },
+        "space": {
+            "badge": "저장 공간",
+            "title": "덱을 위한 공간",
+            "hint": "각 계정에는 만들고 업로드한 덱을 위한 저장 공간이 제공됩니다.",
+            "items": {
+                "included": {
+                    "title": "포함",
+                    "hint": "이 용량은 모든 계정에 제공되며, 회원님의 덱과 업로드한 항목이 함께 사용합니다."
+                },
+                "rent": {
+                    "title": "추가 대여",
+                    "hint": "컬렉션이 용량을 넘으면 상점에서 추가 공간을 대여할 수 있습니다."
                 }
             }
         },
@@ -156,18 +156,134 @@
         "back_home": "홈으로 돌아가기",
         "error_code": "404"
     },
+    "study": {
+        "title": "학습",
+        "subtitle": "언어를 고르고, 그다음 연습 방법을 고르세요.",
+        "characters": {
+            "title": "문자",
+            "description": "언어의 문자표를 보고 각 문자의 발음을 들을 수 있습니다."
+        },
+        "drill": {
+            "title": "드릴",
+            "description": "시간 제한이 있는 객관식 드릴로 인지력을 테스트하세요.",
+            "items": {
+                "en": {
+                    "name": "알파벳 드릴",
+                    "description": "영어 알파벳을 다루는 시간 제한 객관식 문제."
+                },
+                "ja": {
+                    "name": "가나 드릴",
+                    "description": "히라가나와 가타카나를 다루는 시간 제한 객관식 문제."
+                },
+                "th": {
+                    "name": "태국어 드릴",
+                    "description": "태국 문자를 다루는 시간 제한 객관식 문제."
+                },
+                "zh": {
+                    "name": "한자 드릴",
+                    "description": "한자를 다루는 시간 제한 객관식 문제."
+                },
+                "ko": {
+                    "name": "한글 드릴",
+                    "description": "한글 음절 블록을 다루는 시간 제한 객관식 문제."
+                }
+            }
+        },
+        "decks": {
+            "title": "덱",
+            "for": "{{language}} 덱",
+            "learn": "학습",
+            "practice": "연습",
+            "items": {
+                "vocab": {
+                    "title": "어휘",
+                    "description": "어휘 덱을 보고 학습합니다."
+                },
+                "render": {
+                    "title": "읽기",
+                    "description": "짧은 글을 읽고 스스로 점검하세요."
+                },
+                "review": {
+                    "title": "복습",
+                    "description": "플래시카드와 간격 반복으로 복습하세요."
+                },
+                "exam": {
+                    "title": "시험",
+                    "description": "객관식 시험으로 스스로를 테스트하세요."
+                },
+                "edit": {
+                    "title": "덱 편집",
+                    "description": "컬렉션의 덱 이름을 바꾸거나 순서를 변경하거나 삭제하세요."
+                }
+            }
+        },
+        "tag": {
+            "ready": "준비됨",
+            "current": "현재",
+            "comingSoon": "지원 예정"
+        },
+        "action": {
+            "start": "시작"
+        }
+    },
+    "hub": {
+        "comingSoon": "{{language}}은(는) 곧 출시됩니다. 다른 언어를 선택해 학습을 시작하세요.",
+        "sections": {
+            "learn": "학습",
+            "practice": "연습",
+            "manage": "관리"
+        },
+        "nav": {
+            "characters": {
+                "title": "문자",
+                "description": "문자표를 보고 각 문자의 발음을 들을 수 있습니다.",
+                "action": "문자 보기"
+            },
+            "drill": {
+                "title": "문자 드릴",
+                "description": "시간 제한이 있는 객관식 드릴로 인지력을 테스트하세요.",
+                "action": "드릴 시작"
+            },
+            "vocab": {
+                "title": "어휘",
+                "description": "이 언어의 어휘 덱을 보고 학습합니다.",
+                "action": "단어 보기"
+            },
+            "render": {
+                "title": "읽기",
+                "description": "짧은 글을 읽고 번역으로 확인합니다.",
+                "action": "읽기 시작"
+            },
+            "review": {
+                "title": "어휘 복습",
+                "description": "플래시카드로 어휘를 간격 반복 복습합니다.",
+                "action": "복습 시작"
+            },
+            "exam": {
+                "title": "어휘 시험",
+                "description": "내 어휘로 만든 객관식으로 실력을 확인합니다.",
+                "action": "시험 보기"
+            },
+            "edit": {
+                "title": "덱 편집",
+                "description": "컬렉션의 덱 이름을 바꾸거나 순서를 변경하거나 삭제하세요.",
+                "action": "덱 편집"
+            }
+        }
+    },
+    "characters": {
+        "backHub": "허브로 돌아가기",
+        "comingSoon": "{{language}} 문자표는 곧 출시됩니다.",
+        "unknown": "이 언어"
+    },
     "languageSelect": {
-        "badge": "언어 선택",
-        "title": "학습할 언어를 선택하세요",
-        "description": "공부하고 싶은 언어를 고르세요. 일본어는 지금 쓸 수 있고, 나머지는 우러나는 중입니다.",
         "back_home": "홈으로 돌아가기",
         "status": {
             "available": "사용 가능",
             "comingSoon": "지원 예정"
         },
         "cta": {
-            "start": "학습 시작",
-            "unavailable": "사용 불가"
+            "start": "학습 시작"
         },
         "languages": {
             "japanese": {
@@ -177,6 +293,10 @@
             "english": {
                 "name": "영어",
                 "description": "실제로 쓰는 사람들이 데크로 정리해 둔 일상 어휘와 표현."
+            },
+            "other": {
+                "name": "다른 언어",
+                "description": "앱이 기본으로 지원하지 않는 언어를 학습합니다 — 덱만 제공되며 문자표는 없습니다."
             },
             "thai": {
                 "name": "태국어",
@@ -190,8 +310,7 @@
                 "name": "중국어",
                 "description": "한자, 병음, 성조 짝을 몇 분씩씩 연습합니다."
             }
-        },
-        "back_language": "언어 선택으로 돌아가기"
+        }
     },
     "deck": {
         "type": {
@@ -212,6 +331,7 @@
             "unlisted": "목록 비공개",
             "private": "비공개"
         },
+        "target": "언어",
         "search": "덱 검색",
         "searchAria": "이름으로 덱 검색",
         "searchClear": "검색어 지우기",
@@ -230,7 +350,8 @@
         "deleteAria": "덱 삭제",
         "start": "시작",
         "list": {
-            "backHub": "{{language}}(으)로 돌아가기"
+            "backHub": "{{language}}(으)로 돌아가기",
+            "backStudy": "학습으로 돌아가기"
         },
         "empty": {
             "local": {
@@ -287,9 +408,10 @@
                 "compact": "간결하게"
             },
             "nsfw": {
-                "label": "민감 콘텐츠",
-                "on": "민감 덱 표시 중",
-                "off": "민감 덱 숨김"
+                "label": "신고된 덱",
+                "all": "모두 표시",
+                "only": "신고된 것만",
+                "hide": "신고된 것 숨기기"
             },
             "importHeading": "가져오기",
             "importHint": "전에 내보낸 덱 파일을 읽습니다.",

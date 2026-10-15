@@ -1,13 +1,22 @@
 {
     "nav": {
         "home": "Accueil",
+        "study": "Étudier",
+        "edit": "Modifier",
         "languages": "Langues",
-        "japanese": "Japonais",
-        "english": "Anglais",
         "menu": "Ouvrir le menu",
         "settings": "Paramètres",
         "language": "Langue",
         "theme": "Thème"
+    },
+    "language": {
+        "all": "Toutes les langues",
+        "english": "Anglais",
+        "japanese": "Japonais",
+        "thai": "Thaï",
+        "chinese": "Chinois",
+        "korean": "Coréen",
+        "other": "Une autre langue"
     },
     "chrome": {
         "hide": "Masquer",
@@ -22,6 +31,7 @@
         "ctaStart": "Commencer à apprendre",
         "ctaCreate": "Publier un deck",
         "ctaHow": "Comment ça marche",
+        "comingSoon": "Bientôt disponible",
         "scriptsLabel": "En infusion",
         "stats": {
             "badge": "Sur l'étagère",
@@ -33,32 +43,7 @@
         "languages": {
             "badge": "L'étagère",
             "title": "Cinq langues, une habitude douillette",
-            "hint": "Commencez par le plateau prêt aujourd'hui — les autres sont en infusion.",
-            "available": "Prêt à servir",
-            "comingSoon": "En infusion",
-            "toAll": "Parcourir toutes les langues",
-            "items": {
-                "japanese": {
-                    "name": "Japonais",
-                    "description": "Hiragana, katakana et kanji, avec drills et révision espacée."
-                },
-                "english": {
-                    "name": "Anglais",
-                    "description": "Vocabulaire et expressions du quotidien, triés par ceux qui les utilisent."
-                },
-                "thai": {
-                    "name": "Thaï",
-                    "description": "Les tons, l'écriture et les mots que vous croiserez vraiment dans la rue."
-                },
-                "korean": {
-                    "name": "Coréen",
-                    "description": "Le hangeul en une seule fois, puis des decks de conversation qui restent."
-                },
-                "chinese": {
-                    "name": "Chinois",
-                    "description": "Caractères, pinyin et paires de tons, drillés en courtes rondes."
-                }
-            }
+            "hint": "Commencez par le plateau prêt aujourd'hui — les autres sont en infusion."
         },
         "library": {
             "badge": "L'étagère communautaire",
@@ -81,6 +66,21 @@
                 "review": {
                     "title": "Révision espacée",
                     "hint": "Les decks téléchargés reviennent selon leur propre calendrier, donc rien ne refroidit."
+                }
+            }
+        },
+        "space": {
+            "badge": "Stockage",
+            "title": "De l'espace pour vos paquets",
+            "hint": "Chaque compte disposera d'un quota de stockage pour les paquets que vous créez et importez.",
+            "items": {
+                "included": {
+                    "title": "Inclus",
+                    "hint": "Ce quota accompagne chaque compte et est partagé par vos paquets et ce que vous y importez."
+                },
+                "rent": {
+                    "title": "Louer plus d'espace",
+                    "hint": "Quand une collection le dépasse, vous pourrez louer de l'espace supplémentaire dans la boutique."
                 }
             }
         },
@@ -156,18 +156,134 @@
         "back_home": "Retour à l'Accueil",
         "error_code": "404"
     },
+    "study": {
+        "title": "Étudier",
+        "subtitle": "Choisissez une langue, puis une façon de la pratiquer.",
+        "characters": {
+            "title": "Caractères",
+            "description": "Parcourez le tableau des caractères d'une langue et écoutez chacun d'eux prononcé."
+        },
+        "drill": {
+            "title": "Exercice",
+            "description": "Testez votre reconnaissance avec un exercice chronométré à choix multiple.",
+            "items": {
+                "en": {
+                    "name": "Exercice d'alphabet",
+                    "description": "Choix multiple chronométré sur l'alphabet anglais."
+                },
+                "ja": {
+                    "name": "Exercice de kana",
+                    "description": "Choix multiple chronométré sur les hiragana et katakana."
+                },
+                "th": {
+                    "name": "Exercice d'alphabet thaï",
+                    "description": "Choix multiple chronométré sur l'alphabet thaï."
+                },
+                "zh": {
+                    "name": "Exercice de sinogrammes",
+                    "description": "Choix multiple chronométré sur les sinogrammes."
+                },
+                "ko": {
+                    "name": "Exercice de hangul",
+                    "description": "Choix multiple chronométré sur les syllabes hangul."
+                }
+            }
+        },
+        "decks": {
+            "title": "Paquets",
+            "for": "Paquets pour {{language}}",
+            "learn": "Apprendre",
+            "practice": "S'entraîner",
+            "items": {
+                "vocab": {
+                    "title": "Vocabulaire",
+                    "description": "Parcourez et étudiez les paquets de vocabulaire."
+                },
+                "render": {
+                    "title": "Lecture",
+                    "description": "Lisez de courts passages et vérifiez-vous."
+                },
+                "review": {
+                    "title": "Révision",
+                    "description": "Révisez avec des cartes et la répétition espacée."
+                },
+                "exam": {
+                    "title": "Examen",
+                    "description": "Testez-vous avec un examen à choix multiple."
+                },
+                "edit": {
+                    "title": "Modifier les paquets",
+                    "description": "Renommez, réorganisez ou supprimez les paquets de votre collection."
+                }
+            }
+        },
+        "tag": {
+            "ready": "Prêt",
+            "current": "Actuel",
+            "comingSoon": "Bientôt Disponible"
+        },
+        "action": {
+            "start": "Démarrer"
+        }
+    },
+    "hub": {
+        "comingSoon": "{{language}} arrive bientôt. Choisissez une autre langue pour commencer à étudier.",
+        "sections": {
+            "learn": "Apprendre",
+            "practice": "S'entraîner",
+            "manage": "Gérer"
+        },
+        "nav": {
+            "characters": {
+                "title": "Caractères",
+                "description": "Parcourez le tableau des caractères et écoutez chacun d'eux prononcé.",
+                "action": "Voir les caractères"
+            },
+            "drill": {
+                "title": "Exercice de caractères",
+                "description": "Testez votre reconnaissance avec un exercice chronométré à choix multiple.",
+                "action": "Commencer l'exercice"
+            },
+            "vocab": {
+                "title": "Vocabulaire",
+                "description": "Parcourez et étudiez les paquets de vocabulaire de cette langue.",
+                "action": "Voir les mots"
+            },
+            "render": {
+                "title": "Lecture",
+                "description": "Lisez de courts textes et vérifiez avec la traduction.",
+                "action": "Commencer à lire"
+            },
+            "review": {
+                "title": "Révision de Vocabulaire",
+                "description": "Révise le vocabulaire avec des cartes et la répétition espacée.",
+                "action": "Commencer la révision"
+            },
+            "exam": {
+                "title": "Examen de vocabulaire",
+                "description": "Teste-toi avec un examen à choix multiple fait de ton vocabulaire.",
+                "action": "Passer l'examen"
+            },
+            "edit": {
+                "title": "Modifier les paquets",
+                "description": "Renommez, réorganisez ou supprimez les paquets de votre collection.",
+                "action": "Modifier les paquets"
+            }
+        }
+    },
+    "characters": {
+        "backHub": "Retour au hub",
+        "comingSoon": "Le tableau des caractères de {{language}} arrive bientôt.",
+        "unknown": "Cette langue"
+    },
     "languageSelect": {
-        "badge": "Sélection de la Langue",
-        "title": "Choisissez une Langue à Apprendre",
-        "description": "Choisissez la langue que vous voulez étudier. Le japonais est prêt aujourd'hui ; le reste est en infusion.",
         "back_home": "Retour à l'Accueil",
         "status": {
             "available": "Disponible",
             "comingSoon": "Bientôt Disponible"
         },
         "cta": {
-            "start": "Commencer à Apprendre",
-            "unavailable": "Non Disponible"
+            "start": "Commencer à Apprendre"
         },
         "languages": {
             "japanese": {
@@ -177,6 +293,10 @@
             "english": {
                 "name": "Anglais",
                 "description": "Vocabulaire et expressions du quotidien, triés en decks par ceux qui les utilisent vraiment."
+            },
+            "other": {
+                "name": "Une autre langue",
+                "description": "Étudiez une langue sans prise en charge intégrée — paquets uniquement, sans tableau des caractères."
             },
             "thai": {
                 "name": "Thaï",
@@ -190,8 +310,7 @@
                 "name": "Chinois",
                 "description": "Caractères, pinyin et paires de tons, pratiqués quelques minutes à la fois."
             }
-        },
-        "back_language": "Retour au choix de langue"
+        }
     },
     "deck": {
         "type": {
@@ -212,6 +331,7 @@
             "unlisted": "Non répertorié",
             "private": "Privé"
         },
+        "target": "Langue",
         "search": "Rechercher des paquets",
         "searchAria": "Rechercher des paquets par nom",
         "searchClear": "Effacer la recherche",
@@ -230,7 +350,8 @@
         "deleteAria": "Supprimer le paquet",
         "start": "Démarrer",
         "list": {
-            "backHub": "Retour à {{language}}"
+            "backHub": "Retour à {{language}}",
+            "backStudy": "Retour à Étudier"
         },
         "empty": {
             "local": {
@@ -287,9 +408,10 @@
                 "compact": "Compact"
             },
             "nsfw": {
-                "label": "Sensible",
-                "on": "Les paquets sensibles sont affichés",
-                "off": "Les paquets sensibles sont masqués"
+                "label": "Paquets signalés",
+                "all": "Tout afficher",
+                "only": "Signalés uniquement",
+                "hide": "Masquer les signalés"
             },
             "importHeading": "Importer",
             "importHint": "Lit un fichier de paquet que tu as exporté auparavant.",

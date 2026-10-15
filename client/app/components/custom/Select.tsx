@@ -11,6 +11,7 @@ interface SelectOptionProps<ValueType = string> {
     selected?: boolean;
     disabled?: boolean;
     className?: string;
+    sizeClass?: string;
     onClick?: () => void;
     icon?: React.ReactNode;
     children?: React.ReactNode;
@@ -20,6 +21,7 @@ function SelectOption<ValueType>({
     icon,
     label,
     value,
+    sizeClass,
     onClick,
     selected,
     disabled,
@@ -33,7 +35,9 @@ function SelectOption<ValueType>({
             type='button'
             onClick={onClick}
             disabled={disabled}
-            className={`w-full px-4 py-3 text-left flex items-center gap-3 group ${
+            className={`w-full text-left flex items-center gap-3 group ${
+                sizeClass ?? sizeClasses.md
+            } ${
                 disabled
                     ? 'cursor-not-allowed text-surface-muted opacity-50'
                     : selected
@@ -50,7 +54,7 @@ function SelectOption<ValueType>({
                     {icon}
                 </span>
             )}
-            <span className='text-sm tracking-tight'>{String(content)}</span>
+            <span className='tracking-tight'>{String(content)}</span>
             {selected && <FaCheck className='absolute h-3.5 w-3.5 right-4' />}
         </button>
     );
@@ -69,6 +73,7 @@ export interface SelectProps<ValueType = string> {
     value?: ValueType;
     required?: boolean;
     className?: string;
+    size?: 'sm' | 'md' | 'lg';
     placeholder?: string;
     icon?: React.ReactNode;
     labelClassName?: string;
@@ -89,6 +94,14 @@ const MAX_PANEL_HEIGHT = 256;
 /** Never collapse the list below this, even on very short viewports. */
 const MIN_PANEL_HEIGHT = 120;
 
+/** Trigger and option sizing, mirroring `custom/Button`: padding plus text size,
+ *  so a small Select reads the same as a small Button in the same toolbar. */
+const sizeClasses: Record<string, string> = {
+    sm: 'px-3 py-1.5 text-sm',
+    md: 'px-5 py-2.5 text-sm',
+    lg: 'px-7 py-3.5 text-base',
+};
+
 interface PanelPosition {
     /** Anchored to the top for a downward panel, ignored when `bottom` is set. */
     top?: number;
@@ -103,6 +116,7 @@ export default function Select<ValueType>({
     icon,
     label,
     value,
+    size = 'md',
     options,
     required,
     children,
@@ -219,8 +233,7 @@ export default function Select<ValueType>({
         label ||
         t('common.select');
     const labelClass = 'flex gap-2 text-sm font-bold text-surface-foreground mb-2 ml-1';
-    const triggerClass =
-        'w-full px-4 py-3 rounded-sm border bg-surface transition-colors duration-200 flex items-center justify-between gap-3 text-left';
+    const triggerClass = `w-full rounded-sm border bg-surface transition-colors duration-200 flex items-center justify-between gap-3 text-left ${sizeClasses[size]}`;
 
     return (
         <div ref={dropdownRef} className={`relative ${containerClassName}`}>
@@ -246,7 +259,7 @@ export default function Select<ValueType>({
                         </span>
                     )}
                     <span
-                        className={`text-sm font-medium truncate ${
+                        className={`font-medium truncate ${
                             isOpen ? 'text-primary' : 'text-surface-foreground'
                         }`}
                     >
@@ -293,6 +306,7 @@ export default function Select<ValueType>({
                                               }) => (
                                                   <SelectOption<ValueType>
                                                       {...optionProps}
+                                                      sizeClass={sizeClasses[size]}
                                                       value={optionValue}
                                                       onClick={() => handleSelect(optionValue)}
                                                       selected={selected || value === optionValue}
@@ -304,6 +318,7 @@ export default function Select<ValueType>({
                                               <SelectOption<ValueType>
                                                   key={String(option.value)}
                                                   {...option}
+                                                  sizeClass={sizeClasses[size]}
                                                   selected={value === option.value}
                                                   onClick={() => handleSelect(option.value)}
                                               />
