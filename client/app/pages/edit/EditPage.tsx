@@ -1,5 +1,5 @@
 // -Path: 'client/app/components/page/EditPage.tsx'
-import EditWorkspace from '../edit/dockview/EditWorkspace';
+import EditWorkspace from './dockview/EditWorkspace';
 import { useTargetLang } from '~/hooks/useTargetLang';
 import { useChromeStore } from '~/stores/config/chrome.store';
 
@@ -10,11 +10,13 @@ import { useChromeStore } from '~/stores/config/chrome.store';
  * left untouched.
  */
 export default function EditPage() {
-    const { showChrome } = useChromeStore();
     const targetLang = useTargetLang();
+    const { showChrome } = useChromeStore();
 
     return (
-        <div className={`w-full overflow-hidden ${showChrome ? 'mt-14 h-[calc(100dvh-56px)]' : 'mt-0 h-dvh'}`}>
+        <div
+            className={`w-full overflow-hidden ${showChrome ? 'mt-14 h-[calc(100dvh-56px)]' : 'mt-0 h-dvh'}`}
+        >
             <EditWorkspace language={targetLang} />
         </div>
     );

@@ -27,7 +27,7 @@
     --dv-drag-over-background-color: var(--color-primary-subtle) !important;
     --dv-drag-over-border-color: var(--color-primary) !important;
     --dv-tabs-container-scrollbar-color: var(--color-line-strong) !important;
-    --dv-icon-hover-background-color: var(--color-surface-sunken) !important;
+    --dv-icon-hover-background-color: var(--color-error-emphasis) !important;
 }
 
 .dockview-theme.spaced {

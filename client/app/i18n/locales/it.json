@@ -27,14 +27,14 @@
         "badge": "ChocoMemo · libreria di lingue della comunità",
         "title": "Impara qualsiasi lingua,",
         "titleAccent": "un mazzo condiviso alla volta.",
-        "subtitle": "Giapponese, inglese, thai, coreano e cinese: ognuno costruito su mazzi, esercizi e quiz scritti e condivisi da chi sta davvero imparando. Gratuito, aperto e da estendere.",
+        "subtitle": "Parti dalle basi: tabelle dei caratteri con l'audio e brevi esercizi che puoi fare oggi stesso. Poi impara con la community, perché imparare insieme è il modo migliore per imparare.",
         "ctaStart": "Inizia a imparare",
         "ctaCreate": "Pubblica un mazzo",
         "ctaHow": "Come funziona",
         "comingSoon": "Prossimamente",
-        "scriptsLabel": "In infusione",
+        "scriptsLabel": "Le lingue che insegniamo",
         "stats": {
-            "badge": "Sullo scaffale",
+            "badge": "A colpo d'occhio",
             "languages": "Lingue",
             "kana": "Caratteri kana",
             "vocabulary": "Parole di vocabolario",
@@ -42,13 +42,13 @@
         },
         "languages": {
             "badge": "Lo scaffale",
-            "title": "Cinque lingue, un'abitudine calda",
-            "hint": "Inizia dal vassoio pronto di oggi — gli altri sono in infusione."
+            "title": "Ogni lingua, partendo dalle basi",
+            "hint": "Inizia da una lingua già pronta oggi: le altre stanno arrivando."
         },
         "library": {
             "badge": "Lo scaffale della comunità",
             "title": "Scrivi un mazzo. Condividilo. Guardalo insegnare.",
-            "hint": "Ogni set di studio di ChocoMemo lo scrive una persona, non un editore. Metti in ordine uno, pubblicalo e qualcun altro ne ricava un intero corso.",
+            "hint": "I set di studio di ChocoMemo sono mazzi: raccolte a tema di parole, brani e quiz. Chi impara potrà pubblicare i propri mazzi e condividerli con la community: insegnarsi a vicenda è il modo migliore per imparare.",
             "cta": "Apri lo scaffale di ripasso",
             "items": {
                 "decks": {
@@ -57,7 +57,7 @@
                 },
                 "exam": {
                     "title": "Set di quiz",
-                    "hint": "Trasforma un mazzo in un esame a tempo e vedi quali parole devono ancora mettersi a infusione."
+                    "hint": "Qualsiasi mazzo diventerà un quiz a scelta multipla che mostra quali parole richiedono ancora lavoro."
                 },
                 "kana": {
                     "title": "Esercizi di kana",
@@ -65,7 +65,7 @@
                 },
                 "review": {
                     "title": "Ripasso distanziato",
-                    "hint": "I mazzi che scarichi tornano secondo il loro calendario, così nulla si raffredda."
+                    "hint": "Le parole che hai studiato torneranno secondo un programma, così nulla viene dimenticato."
                 }
             }
         },
@@ -86,11 +86,11 @@
         },
         "how": {
             "badge": "Come funziona",
-            "title": "La tua infusione quotidiana",
+            "title": "Un'abitudine che dura",
             "hint": "Quattro piccoli passi, ripetuti ogni giorno: basta questo.",
             "step1": {
                 "title": "Scegli la tua lingua",
-                "hint": "Prendi il vassoio che studi oggi."
+                "hint": "Scegli la lingua che studi oggi."
             },
             "step2": {
                 "title": "Prendi in presto un mazzo",
@@ -106,7 +106,7 @@
             }
         },
         "cta": {
-            "title": "Il bollitore è già acceso.",
+            "title": "Inizia dal primo carattere.",
             "hint": "Nessun muro di registrazione tra te e il primo mazzo. Accedi solo quando vuoi sincronizzare le tue parole.",
             "primary": "Inizia a imparare",
             "secondary": "Pubblica un mazzo"
@@ -161,7 +161,24 @@
         "subtitle": "Scegli una lingua, poi un modo per esercitarla.",
         "characters": {
             "title": "Caratteri",
-            "description": "Sfoglia la tabella dei caratteri di una lingua e ascolta ognuno pronunciato."
+            "description": "Sfoglia la tabella dei caratteri di una lingua e ascolta ognuno pronunciato.",
+            "items": {
+                "en": {
+                    "name": "Alfabeto"
+                },
+                "ja": {
+                    "name": "Kana"
+                },
+                "th": {
+                    "name": "Thai"
+                },
+                "zh": {
+                    "name": "Hanzi"
+                },
+                "ko": {
+                    "name": "Hangul"
+                }
+            }
         },
         "drill": {
             "title": "Allenamento",
@@ -288,7 +305,7 @@
         "languages": {
             "japanese": {
                 "name": "Giapponese",
-                "description": "Hiragana, katakana e kanji, esercitati in round brevi e tenuti caldi dal ripasso distanziato."
+                "description": "Hiragana, katakana e kanji, esercitati in brevi serie e mantenuti freschi dal ripasso dilazionato."
             },
             "english": {
                 "name": "Inglese",
@@ -304,7 +321,7 @@
             },
             "korean": {
                 "name": "Coreano",
-                "description": "Hangul in una sola seduta, poi mazzi di conversazione che si rifiutano di raffreddare."
+                "description": "Hangul in una sola seduta, poi mazzi di conversazione che durano."
             },
             "chinese": {
                 "name": "Cinese",
@@ -474,16 +491,10 @@
         }
     },
     "footer": {
-        "tagline": "Un modo accogliente e ricco di temi per assaporare il tuo percorso nella lingua giapponese.",
+        "tagline": "Un modo accogliente e ricco di temi per imparare una nuova lingua.",
         "explore": "Esplora",
         "learn": "Cosa insegniamo",
-        "rights": "TeaChoco · Tutti i diritti riservati.",
-        "languages": {
-            "ja": "Giapponese",
-            "en": "Inglese",
-            "ko": "Coreano",
-            "th": "Thai"
-        }
+        "rights": "TeaChoco · Tutti i diritti riservati."
     },
     "auth": {
         "signIn": "Accedi",
@@ -903,7 +914,7 @@
     },
     "settings": {
         "title": "Impostazioni",
-        "subtitle": "Prepara ChocoMemo a tuo piacimento.",
+        "subtitle": "Fai tuo ChocoMemo.",
         "back": "Indietro",
         "nav": {
             "settings": "Impostazioni",

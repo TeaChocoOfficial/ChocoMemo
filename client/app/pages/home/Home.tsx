@@ -1,10 +1,8 @@
 // -Path: 'client/app/pages/home/Home.tsx'
 import HomeHero from './HomeHero';
 import HomeStats from './HomeStats';
-import HomeSpace from './HomeSpace';
 import HomeLanguages from './HomeLanguages';
 import HomeLibrary from './HomeLibrary';
-import HomeHowItWorks from './HomeHowItWorks';
 import HomeCta from './HomeCta';
 
 /**
@@ -19,8 +17,8 @@ export default function HomePage() {
             <HomeStats />
             <HomeLanguages />
             <HomeLibrary />
-            <HomeSpace />
-            <HomeHowItWorks />
+            {/* <HomeSpace /> */}
+            {/* <HomeHowItWorks /> */}
             <HomeCta />
         </>
     );

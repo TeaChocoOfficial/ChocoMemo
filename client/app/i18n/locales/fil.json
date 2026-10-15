@@ -27,14 +27,14 @@
         "badge": "ChocoMemo · shared na library ng wika",
         "title": "Matuto ng kahit anong wika,",
         "titleAccent": "isang shared deck sa isang beses.",
-        "subtitle": "Japanese, English, Thai, Korean at Chinese — bawat isa ay binubuo mula sa mga deck, drill at quiz na sinusulat at ibinabahagi ng mga tunay na nag-aaral. Libreng bukas at iyong palaguin.",
+        "subtitle": "Magsimula sa mga pangunahing kaalaman — mga tsart ng karakter na may tunog at maiikling drill na magagawa mo ngayon. Pagkatapos, matuto kasama ng komunidad, dahil ang magkatutong magkasama ang pinakamahusay na paraan ng pagkatuto.",
         "ctaStart": "Magsimulang matuto",
         "ctaCreate": "I-publish ang deck",
         "ctaHow": "Paano ito gumagana",
         "comingSoon": "Malapit na",
-        "scriptsLabel": "Naghihimulot ngayon",
+        "scriptsLabel": "Mga wikang itinuturo namin",
         "stats": {
-            "badge": "Nasa shelf",
+            "badge": "Sa isang sulyap",
             "languages": "Mga wika",
             "kana": "Mga kana character",
             "vocabulary": "Mga salitang bokabularyo",
@@ -42,13 +42,13 @@
         },
         "languages": {
             "badge": "Ang shelf",
-            "title": "Limang wika, isang mainit na gawi",
-            "hint": "Magsimula sa tray na handa ngayon — ang iba ay naghihimulot pa."
+            "title": "Bawat wika, mula sa mga pangunahing kaalaman",
+            "hint": "Magsimula sa wikang handa na ngayon — ang iba ay paparating na."
         },
         "library": {
             "badge": "Ang shelf ng komunidad",
             "title": "Sumulat ng deck. Ibahagi. Panoorin itong magtuturo.",
-            "hint": "Bawat study set sa ChocoMemo ay sinusulat ng tao, hindi ng publisher. Ayusin isa, i-publish, at iba pang tao ay makakakuha ng buong kurso mula rito.",
+            "hint": "Ang mga study set sa ChocoMemo ay mga deck: temang koleksyon ng mga salita, sipi at quiz. Magagawang maglathala ng sariling deck at ibahagi sa komunidad ng mga nag-aaral — ang pagtuturo sa isa't isa ang pinakamahusay na paraan ng pagkatuto.",
             "cta": "Buksan ang shelf ng review",
             "items": {
                 "decks": {
@@ -57,7 +57,7 @@
                 },
                 "exam": {
                     "title": "Mga quiz set",
-                    "hint": "Gawing timed exam ang isang deck at makita mong eksaktong aling mga salita pa ang naghihimulot."
+                    "hint": "Ang anumang deck ay magiging multiple-choice quiz na magpapakita kung aling mga salita ang kailangan pang pag-aralan."
                 },
                 "kana": {
                     "title": "Mga kana drill",
@@ -65,7 +65,7 @@
                 },
                 "review": {
                     "title": "Spaced review",
-                    "hint": "Ang mga deck na na-download mo ay bumabalik ayon sa sarili nilang iskedyul, kaya walang naumuumaw."
+                    "hint": "Ang mga salitang napag-aralan mo ay babalik ayon sa iskedyul, kaya walang makakalimutan."
                 }
             }
         },
@@ -86,11 +86,11 @@
         },
         "how": {
             "badge": "Paano ito gumagana",
-            "title": "Ang iyong araw-araw na pour",
+            "title": "Isang gawi na nananatili",
             "hint": "Apat na maliit na hakbang, uulitin araw-araw — iyon lang ang kailangan.",
             "step1": {
                 "title": "Pumili ng wika",
-                "hint": "Piliin ang tray na pinupununtahan mo ngayon."
+                "hint": "Piliin ang wikang pinag-aaralan mo ngayon."
             },
             "step2": {
                 "title": "Magrampa ng deck",
@@ -106,7 +106,7 @@
             }
         },
         "cta": {
-            "title": "Naka-on na ang pot.",
+            "title": "Magsimula sa unang karakter.",
             "hint": "Walang sign-up wall sa pagitan ng iyo at ang unang deck. Mag-sign in lang kapag gusto mong ma-sync ang mga salita mo.",
             "primary": "Magsimulang matuto",
             "secondary": "I-publish ang deck"
@@ -161,7 +161,24 @@
         "subtitle": "Pumili ng wika, pagkatapos ay paraan ng pagsasanay dito.",
         "characters": {
             "title": "Mga karakter",
-            "description": "Tingnan ang chart ng karakter ng isang wika at pakinggan ang bawat isa."
+            "description": "Tingnan ang chart ng karakter ng isang wika at pakinggan ang bawat isa.",
+            "items": {
+                "en": {
+                    "name": "Alpabeto"
+                },
+                "ja": {
+                    "name": "Kana"
+                },
+                "th": {
+                    "name": "Thai"
+                },
+                "zh": {
+                    "name": "Hanzi"
+                },
+                "ko": {
+                    "name": "Hangul"
+                }
+            }
         },
         "drill": {
             "title": "Pagsasanay",
@@ -288,7 +305,7 @@
         "languages": {
             "japanese": {
                 "name": "Hapones",
-                "description": "Hiragana, katakana at kanji, nadrill sa maikling round at pinananatiling mainit ng spaced review."
+                "description": "Hiragana, katakana at kanji, sinasanay sa maiikling round at pinapanatiling sariwa ng spaced review."
             },
             "english": {
                 "name": "Ingles",
@@ -304,7 +321,7 @@
             },
             "korean": {
                 "name": "Koreano",
-                "description": "Hangul sa isang upuan, saka mga conversation deck na ayaw tumalam."
+                "description": "Hangul sa isang upuan, pagkatapos ay mga conversation deck na tumatagal."
             },
             "chinese": {
                 "name": "Tsino",
@@ -474,16 +491,10 @@
         }
     },
     "footer": {
-        "tagline": "Isang mainam na paraan, maraming paksa para lasawin ang iyong Japaneseisa kutsara.",
+        "tagline": "Isang maaliwalas at mayamang-tema na paraan ng pagkatuto ng bagong wika.",
         "explore": "Mag-explore",
         "learn": "Aming itinuturo",
-        "rights": "TeaChoco · Lahat ng karapatan ay nakalaan.",
-        "languages": {
-            "ja": "Hapon",
-            "en": "Ingles",
-            "ko": "Koreano",
-            "th": "Thai"
-        }
+        "rights": "TeaChoco · Lahat ng karapatan ay nakalaan."
     },
     "auth": {
         "signIn": "Mag-sign In",
@@ -903,7 +914,7 @@
     },
     "settings": {
         "title": "Mga Setting",
-        "subtitle": "Ihanda ang ChocoMemo ayon sa'yo.",
+        "subtitle": "Gawing iyo ang ChocoMemo.",
         "back": "Bumalik",
         "nav": {
             "settings": "Mga Setting",

@@ -27,14 +27,14 @@
         "badge": "ChocoMemo · community language library",
         "title": "Learn any language,",
         "titleAccent": "one deck at a time.",
-        "subtitle": "Start with Japanese: kana charts with sound, and drills you can run today. Decks, review and quizzes are rolling out, and any other language will work through decks.",
+        "subtitle": "Start from the basics — character charts with sound and short drills you can run today. Then learn with the community, because learning together is the best way to learn.",
         "ctaStart": "Start learning",
         "ctaCreate": "Create a deck",
         "ctaHow": "See how it works",
         "comingSoon": "Coming soon",
-        "scriptsLabel": "Now brewing",
+        "scriptsLabel": "Languages we teach",
         "stats": {
-            "badge": "On the shelf",
+            "badge": "At a glance",
             "languages": "Languages",
             "kana": "Kana characters",
             "vocabulary": "Vocabulary words",
@@ -42,13 +42,13 @@
         },
         "languages": {
             "badge": "The shelf",
-            "title": "Every language, one warm habit",
-            "hint": "Start with the tray that's ready today — the rest are steeping."
+            "title": "Every language, from the basics up",
+            "hint": "Start with a language that's ready today — the rest are on the way."
         },
         "library": {
             "badge": "The deck shelf",
             "title": "A shelf of decks, soon filled by learners.",
-            "hint": "Study sets in ChocoMemo are decks: themed collections of words, passages and quizzes. Learners will be able to publish their own decks and share them with the community.",
+            "hint": "Study sets in ChocoMemo are decks: themed collections of words, passages and quizzes. Learners will be able to publish their own decks and share them with the community — teaching each other is the best way to learn.",
             "cta": "Open the review shelf",
             "items": {
                 "decks": {
@@ -57,7 +57,7 @@
                 },
                 "exam": {
                     "title": "Quiz sets",
-                    "hint": "Any deck will turn into a multiple-choice quiz that shows which words still need steeping."
+                    "hint": "Any deck will turn into a multiple-choice quiz that shows which words still need work."
                 },
                 "kana": {
                     "title": "Kana drills",
@@ -65,7 +65,7 @@
                 },
                 "review": {
                     "title": "Spaced review",
-                    "hint": "Words you have studied will come back on a schedule, so nothing goes cold."
+                    "hint": "Words you have studied will come back on a schedule, so nothing is forgotten."
                 }
             }
         },
@@ -86,11 +86,11 @@
         },
         "how": {
             "badge": "How it works",
-            "title": "Your daily pour",
+            "title": "A habit that sticks",
             "hint": "Four small steps, repeated every day — that's all it takes.",
             "step1": {
                 "title": "Pick your language",
-                "hint": "Choose the tray you're studying today."
+                "hint": "Choose the language you're studying today."
             },
             "step2": {
                 "title": "Pick a deck",
@@ -106,7 +106,7 @@
             }
         },
         "cta": {
-            "title": "The pot's already on.",
+            "title": "Start from the first character.",
             "hint": "No sign-up wall between you and the first drill. Account features, like syncing your decks, are on the way.",
             "primary": "Start learning",
             "secondary": "Create a deck"
@@ -305,7 +305,7 @@
         "languages": {
             "japanese": {
                 "name": "Japanese",
-                "description": "Hiragana, katakana and kanji, drilled in short rounds and kept warm with spaced review."
+                "description": "Hiragana, katakana and kanji, drilled in short rounds and kept fresh with spaced review."
             },
             "english": {
                 "name": "English",
@@ -321,7 +321,7 @@
             },
             "korean": {
                 "name": "Korean",
-                "description": "Hangul in one sitting, then conversation decks that refuse to go cold."
+                "description": "Hangul in one sitting, then conversation decks that stick."
             },
             "chinese": {
                 "name": "Chinese",
@@ -458,7 +458,6 @@
             "layoutTitle": "Layout",
             "spacedLabel": "Spaced panels",
             "spacedHint": "Leave a gap between the docked panels.",
-            "statusTitle": "Status",
             "previewTitle": "Preview",
             "inspectorTitle": "Inspector",
             "loading": "Loading your decks…",
@@ -484,6 +483,8 @@
             "statusDecks": "{{visible}} / {{total}} decks",
             "noneSelected": "No deck selected",
             "addPanel": "Add panel",
+            "emptyPanel": "Empty panel",
+            "resetLayout": "Reset layout",
             "views": "Editor views",
             "viewAll": "All decks",
             "viewFavourites": "Favourites",
@@ -491,16 +492,10 @@
         }
     },
     "footer": {
-        "tagline": "A cozy, theme-rich way to sip your way through the Japanese language.",
+        "tagline": "A cozy, theme-rich way to learn a new language.",
         "explore": "Explore",
         "learn": "What we teach",
-        "rights": "TeaChoco · All rights reserved.",
-        "languages": {
-            "ja": "Japanese",
-            "en": "English",
-            "ko": "Korean",
-            "th": "Thai"
-        }
+        "rights": "TeaChoco · All rights reserved."
     },
     "auth": {
         "signIn": "Sign In",
@@ -920,7 +915,7 @@
     },
     "settings": {
         "title": "Settings",
-        "subtitle": "Brew ChocoMemo to your taste.",
+        "subtitle": "Make ChocoMemo your own.",
         "back": "Back",
         "nav": {
             "settings": "Settings",

@@ -4,9 +4,11 @@ import { FaGithub } from 'react-icons/fa6';
 import { languages } from '~/data/language';
 import NavbarLogo from './navbar/NavbarLogo';
 import { useTranslation } from 'react-i18next';
+import { getPrimaryNavItems } from './navbar/utils';
 
 export default function Footer() {
     const { t } = useTranslation();
+    const navItems = getPrimaryNavItems();
 
     return (
         <footer className='mt-auto border-t border-line bg-surface'>
@@ -24,31 +26,16 @@ export default function Footer() {
                             {t('footer.explore')}
                         </h3>
                         <ul className='flex flex-col gap-2 text-sm'>
-                            <li>
-                                <Link
-                                    to='/'
-                                    className='text-surface-foreground hover:text-primary transition-colors'
-                                >
-                                    {t('nav.home')}
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    to='/'
-                                    hash='languages'
-                                    className='text-surface-foreground hover:text-primary transition-colors'
-                                >
-                                    {t('nav.languages')}
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    to='/'
-                                    className='text-surface-foreground hover:text-primary transition-colors'
-                                >
-                                    {t('nav.japanese')}
-                                </Link>
-                            </li>
+                            {navItems.map((item) => (
+                                <li key={item.to}>
+                                    <Link
+                                        to={item.to}
+                                        className='text-surface-foreground hover:text-primary transition-colors'
+                                    >
+                                        {t(item.label)}
+                                    </Link>
+                                </li>
+                            ))}
                         </ul>
                     </div>
 
@@ -61,9 +48,10 @@ export default function Footer() {
                             {languages.map((lang) => (
                                 <li
                                     key={lang.code}
-                                    className='border border-line px-3 py-1 text-sm text-surface-subtle'
+                                    className='flex items-center gap-1.5 border border-line px-3 py-1 text-sm text-surface-subtle'
                                 >
-                                    {t(`footer.languages.${lang.code}`)}
+                                    <span aria-hidden='true'>{lang.flag}</span>
+                                    {t(`language.${lang.id}`)}
                                 </li>
                             ))}
                         </ul>

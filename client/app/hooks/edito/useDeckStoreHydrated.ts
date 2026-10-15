@@ -15,10 +15,7 @@ export function useDeckStoreHydrated(): boolean {
 
     useEffect(() => {
         const persist = useDeckListLocalStore.persist;
-        if (!persist || persist.hasHydrated()) {
-            setHydrated(true);
-            return;
-        }
+        if (!persist || persist.hasHydrated()) return setHydrated(true);
         return persist.onFinishHydration(() => setHydrated(true));
     }, []);
 

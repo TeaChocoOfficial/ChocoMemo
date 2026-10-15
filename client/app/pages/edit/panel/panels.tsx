@@ -1,7 +1,6 @@
 // -Path: 'client/app/components/edit/dockview/panels.tsx'
 import EditorPanel from './EditorPanel';
 import LayoutPanel from './LayoutPanel';
-import StatusPanel from './StatusPanel';
 import PreviewPanel from './PreviewPanel';
 import ActivityPanel from './ActivityPanel';
 import DeckListPanel from './DeckListPanel';
@@ -18,8 +17,9 @@ export interface PanelDefinition {
     titleKey: string;
     /** Whether the "+" menu can (re)open it. Rails are always mounted. */
     addable?: boolean;
-    /** Hide the tab header — used by the activity rail and the status bar. */
-    hideHeader?: boolean;
+    /** Whether it starts in the default layout. Defaults to `true`; set `false`
+     *  for a chooser-only panel that is added on demand. */
+    defaultLayout?: boolean;
     initialWidth?: number;
     minimumWidth?: number;
     maximumWidth?: number;
@@ -30,8 +30,12 @@ export interface PanelDefinition {
     };
 }
 
-/** The activity rail width, in pixels. */
-export const ACTIVITY_WIDTH = 56;
+/** The activity panel's starting width, in pixels. */
+export const ACTIVITY_WIDTH = 220;
+/** The narrowest the activity panel may be dragged, in pixels. */
+export const ACTIVITY_MIN_WIDTH = 180;
+/** The widest the activity panel may be dragged, in pixels. */
+export const ACTIVITY_MAX_WIDTH = 360;
 /** The inspector column's starting width, in pixels. */
 export const INSPECTOR_WIDTH = 280;
 
@@ -45,24 +49,23 @@ export const PANEL_DEFS: PanelDefinition[] = [
     {
         id: 'activity',
         component: ActivityPanel,
-        titleKey: 'deck.edit.filters',
+        titleKey: 'deck.edit.addPanel',
         addable: false,
-        hideHeader: true,
-        initialWidth: ACTIVITY_WIDTH,
-        minimumWidth: ACTIVITY_WIDTH,
-        maximumWidth: ACTIVITY_WIDTH,
+        defaultLayout: true,
     },
     {
         id: 'list',
         component: DeckListPanel,
         titleKey: 'deck.edit.listTitle',
         position: { referencePanel: 'activity', direction: 'right' },
+        defaultLayout: true,
     },
     {
         id: 'editor',
         component: EditorPanel,
         titleKey: 'deck.edit.panelTitle',
         position: { referencePanel: 'list', direction: 'right' },
+        defaultLayout: true,
     },
     {
         id: 'inspector',
@@ -70,26 +73,21 @@ export const PANEL_DEFS: PanelDefinition[] = [
         titleKey: 'deck.edit.inspectorTitle',
         initialWidth: INSPECTOR_WIDTH,
         position: { referencePanel: 'editor', direction: 'right' },
+        defaultLayout: true,
     },
     {
         id: 'preview',
         component: PreviewPanel,
         titleKey: 'deck.edit.previewTitle',
         position: { referencePanel: 'editor', direction: 'below' },
-    },
-    {
-        id: 'status',
-        component: StatusPanel,
-        titleKey: 'deck.edit.statusTitle',
-        addable: false,
-        hideHeader: true,
-        position: { referencePanel: 'preview', direction: 'below' },
+        defaultLayout: true,
     },
     {
         id: 'layout',
         component: LayoutPanel,
         titleKey: 'deck.edit.layoutTitle',
         position: { referencePanel: 'list', direction: 'below' },
+        defaultLayout: true,
     },
 ];
 

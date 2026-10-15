@@ -69,6 +69,8 @@ export interface AvailableLanguage {
     /** Short code used in the URL (`?target=ja`). */
     code: string;
     glyph: string;
+    /** Flag emoji for the language, e.g. 🇯🇵. `other` uses the globe. */
+    flag: string;
     status: TargetStatus;
     /** The character chart, when this language has one. */
     characters?: CharacterSetConfig;
@@ -81,6 +83,7 @@ export const languages: AvailableLanguage[] = [
         id: Languages.en,
         code: 'en',
         glyph: 'A',
+        flag: '🇺🇸',
         status: 'ready',
         characters: {
             id: 'alphabet',
@@ -100,6 +103,7 @@ export const languages: AvailableLanguage[] = [
         id: Languages.ja,
         code: 'ja',
         glyph: 'あ',
+        flag: '🇯🇵',
         status: 'ready',
         characters: {
             id: 'kana',
@@ -119,6 +123,7 @@ export const languages: AvailableLanguage[] = [
         id: Languages.th,
         code: 'th',
         glyph: 'ก',
+        flag: '🇹🇭',
         status: 'coming-soon',
         characters: {
             id: 'thai',
@@ -138,6 +143,7 @@ export const languages: AvailableLanguage[] = [
         id: Languages.zh,
         code: 'zh',
         glyph: '字',
+        flag: '🇨🇳',
         status: 'coming-soon',
         characters: {
             id: 'hanzi',
@@ -157,6 +163,7 @@ export const languages: AvailableLanguage[] = [
         id: Languages.ko,
         code: 'ko',
         glyph: '한',
+        flag: '🇰🇷',
         status: 'coming-soon',
         characters: {
             id: 'hangul',
@@ -176,6 +183,7 @@ export const languages: AvailableLanguage[] = [
         id: Languages.other,
         code: 'other',
         glyph: OTHER_GLYPH,
+        flag: OTHER_GLYPH,
         status: 'ready',
     },
 ];

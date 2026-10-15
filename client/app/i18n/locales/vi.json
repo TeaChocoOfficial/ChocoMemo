@@ -27,14 +27,14 @@
         "badge": "ChocoMemo · thư viện ngôn ngữ cộng đồng",
         "title": "Học bất kỳ ngôn ngữ nào,",
         "titleAccent": "mỗi lần một bộ thẻ chung.",
-        "subtitle": "Tiếng Nhật, Anh, Thái, Hàn và Trung — mỗi ngôn ngữ được xây từ các bộ thẻ, bài luyện và câu đố do chính người học viết và chia sẻ. Miễn phí, mở, và bạn muốn mở rộng cũng được.",
+        "subtitle": "Bắt đầu từ những điều cơ bản — bảng ký tự kèm âm thanh và các bài luyện ngắn bạn có thể làm ngay hôm nay. Sau đó học cùng cộng đồng, vì học cùng nhau là cách học tốt nhất.",
         "ctaStart": "Bắt đầu học",
         "ctaCreate": "Đăng bộ thẻ",
         "ctaHow": "Cách hoạt động",
         "comingSoon": "Sắp ra mắt",
-        "scriptsLabel": "Đang pha",
+        "scriptsLabel": "Những ngôn ngữ chúng tôi dạy",
         "stats": {
-            "badge": "Trên kệ",
+            "badge": "Tổng quan nhanh",
             "languages": "Ngôn ngữ",
             "kana": "Ký tự kana",
             "vocabulary": "Từ vựng",
@@ -42,13 +42,13 @@
         },
         "languages": {
             "badge": "Kệ sách",
-            "title": "Năm ngôn ngữ, một thói quen ấm áp",
-            "hint": "Bắt đầu với khay nào đã sẵn sàng hôm nay — những cái còn lại đang ngâm."
+            "title": "Mọi ngôn ngữ, bắt đầu từ cơ bản",
+            "hint": "Bắt đầu với ngôn ngữ đã sẵn sàng hôm nay — những ngôn ngữ còn lại đang trên đường tới."
         },
         "library": {
             "badge": "Kệ của cộng đồng",
             "title": "Viết một bộ thẻ. Chia sẻ. Xem nó dạy.",
-            "hint": "Mỗi bộ học trong ChocoMemo đều do một con người viết, không phải một nhà xuất bản. Chỉnh lại một bộ, đăng lên, và người khác sẽ có trọn một khóa học từ đó.",
+            "hint": "Các bộ học trong ChocoMemo là bộ thẻ: tuyển tập theo chủ đề gồm từ, đoạn văn và câu đố. Người học sẽ có thể đăng bộ thẻ của mình và chia sẻ với cộng đồng — dạy nhau là cách học tốt nhất.",
             "cta": "Mở kệ ôn tập",
             "items": {
                 "decks": {
@@ -57,7 +57,7 @@
                 },
                 "exam": {
                     "title": "Bộ câu đố",
-                    "hint": "Biến một bộ thẻ thành bài thi có đếm ngược, và sẽ thấy rõ từ nào còn cần ngâm."
+                    "hint": "Mọi bộ thẻ sẽ biến thành câu đố trắc nghiệm cho biết những từ nào vẫn cần luyện thêm."
                 },
                 "kana": {
                     "title": "Bài luyện kana",
@@ -65,7 +65,7 @@
                 },
                 "review": {
                     "title": "Ôn tập giãn cách",
-                    "hint": "Các bộ thẻ bạn đã tải sẽ tự quay lại đúng lịch riêng, nên không gì bị nguội."
+                    "hint": "Những từ bạn đã học sẽ quay lại theo lịch, nên không điều gì bị lãng quên."
                 }
             }
         },
@@ -86,11 +86,11 @@
         },
         "how": {
             "badge": "Cách hoạt động",
-            "title": "Cốc rót mỗi ngày",
+            "title": "Một thói quen bền bỉ",
             "hint": "Bốn bước nhỏ, lặp lại mỗi ngày — chỉ vậy thôi là đủ.",
             "step1": {
                 "title": "Chọn ngôn ngữ",
-                "hint": "Chọn khay bạn học hôm nay."
+                "hint": "Chọn ngôn ngữ bạn đang học hôm nay."
             },
             "step2": {
                 "title": "Mượn một bộ thẻ",
@@ -106,7 +106,7 @@
             }
         },
         "cta": {
-            "title": "Ấm đã lên bếp rồi.",
+            "title": "Bắt đầu từ ký tự đầu tiên.",
             "hint": "Không có bức tường đăng ký nào giữa bạn và bộ thẻ đầu tiên. Chỉ đăng nhập khi bạn muốn đồng bộ từ vựng.",
             "primary": "Bắt đầu học",
             "secondary": "Đăng bộ thẻ"
@@ -161,7 +161,24 @@
         "subtitle": "Chọn một ngôn ngữ, rồi chọn cách luyện tập.",
         "characters": {
             "title": "Ký tự",
-            "description": "Duyệt bảng ký tự của một ngôn ngữ và nghe phát âm từng ký tự."
+            "description": "Duyệt bảng ký tự của một ngôn ngữ và nghe phát âm từng ký tự.",
+            "items": {
+                "en": {
+                    "name": "Bảng chữ cái"
+                },
+                "ja": {
+                    "name": "Kana"
+                },
+                "th": {
+                    "name": "Thái"
+                },
+                "zh": {
+                    "name": "Hán tự"
+                },
+                "ko": {
+                    "name": "Hangul"
+                }
+            }
         },
         "drill": {
             "title": "Luyện tập",
@@ -288,7 +305,7 @@
         "languages": {
             "japanese": {
                 "name": "Tiếng Nhật",
-                "description": "Hiragana, katakana và kanji, luyện theo vòng ngắn và giữ ấm bằng ôn tập giãn cách."
+                "description": "Hiragana, katakana và kanji, luyện theo vòng ngắn và giữ tươi mới bằng ôn tập giãn cách."
             },
             "english": {
                 "name": "Tiếng Anh",
@@ -304,7 +321,7 @@
             },
             "korean": {
                 "name": "Tiếng Hàn",
-                "description": "Hangul trong một buổi, rồi những bộ thẻ hội thoại không chịu nguội."
+                "description": "Hangul trong một buổi, rồi những bộ thẻ hội thoại bền bỉ."
             },
             "chinese": {
                 "name": "Tiếng Trung",
@@ -474,16 +491,10 @@
         }
     },
     "footer": {
-        "tagline": "Một cách ấm áp, nhiều chủ đề để nhấm nháp từng ngụm tiếng Nhật.",
+        "tagline": "Một cách học ngôn ngữ mới ấm áp và giàu chủ đề.",
         "explore": "Khám phá",
         "learn": "Chúng tôi dạy gì",
-        "rights": "TeaChoco · Bảo lưu mọi quyền.",
-        "languages": {
-            "ja": "Tiếng Nhật",
-            "en": "Tiếng Anh",
-            "ko": "Tiếng Hàn",
-            "th": "Tiếng Thái"
-        }
+        "rights": "TeaChoco · Bảo lưu mọi quyền."
     },
     "auth": {
         "signIn": "Đăng nhập",
@@ -903,7 +914,7 @@
     },
     "settings": {
         "title": "Cài đặt",
-        "subtitle": "Pha ChocoMemo theo sở thích của bạn.",
+        "subtitle": "Biến ChocoMemo thành của riêng bạn.",
         "back": "Quay lại",
         "nav": {
             "settings": "Cài đặt",

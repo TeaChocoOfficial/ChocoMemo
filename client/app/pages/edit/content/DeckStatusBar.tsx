@@ -17,8 +17,8 @@ interface DeckStatusBarProps {
  * @param props - Collection totals and the selected deck.
  */
 export default function DeckStatusBar({ total, visible, selected }: DeckStatusBarProps) {
-    const { t } = useTranslation();
     const locale = useLangText();
+    const { t } = useTranslation();
 
     return (
         <div className='flex h-7 shrink-0 items-center justify-between gap-4 border-t border-line bg-primary px-3 font-mono text-[11px] uppercase tracking-[0.14em] text-primary-foreground'>

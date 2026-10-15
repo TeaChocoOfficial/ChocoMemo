@@ -27,14 +27,14 @@
         "badge": "ChocoMemo · bibliothèque de langues communautaire",
         "title": "Apprenez n'importe quelle langue,",
         "titleAccent": "un deck partagé à la fois.",
-        "subtitle": "Japonais, anglais, thaï, coréen et chinois — chacun bâti sur des decks, des drills et des quiz écrits et partagés par de vrais apprenants. Gratuit, ouvert, à vous de l'étendre.",
+        "subtitle": "Commencez par les bases : des tableaux de caractères avec le son et de courts exercices à faire dès aujourd'hui. Puis apprenez avec la communauté, car apprendre ensemble est la meilleure façon d'apprendre.",
         "ctaStart": "Commencer à apprendre",
         "ctaCreate": "Publier un deck",
         "ctaHow": "Comment ça marche",
         "comingSoon": "Bientôt disponible",
-        "scriptsLabel": "En infusion",
+        "scriptsLabel": "Les langues que nous enseignons",
         "stats": {
-            "badge": "Sur l'étagère",
+            "badge": "En un coup d'œil",
             "languages": "Langues",
             "kana": "Caractères kana",
             "vocabulary": "Mots de vocabulaire",
@@ -42,13 +42,13 @@
         },
         "languages": {
             "badge": "L'étagère",
-            "title": "Cinq langues, une habitude douillette",
-            "hint": "Commencez par le plateau prêt aujourd'hui — les autres sont en infusion."
+            "title": "Toutes les langues, à partir des bases",
+            "hint": "Commencez par une langue prête dès aujourd'hui — les autres arrivent."
         },
         "library": {
             "badge": "L'étagère communautaire",
             "title": "Écrivez un deck. Partagez-le. Regardez-le enseigner.",
-            "hint": "Chaque set d'étude de ChocoMemo est écrit par une personne, pas par un éditeur. Rangez-en un, publiez-le, et quelqu'un d'autre en tire tout un cours.",
+            "hint": "Les ensembles d'étude de ChocoMemo sont des decks : des collections thématiques de mots, de passages et de quiz. Les apprenants pourront publier leurs propres decks et les partager avec la communauté — s'enseigner les uns aux autres est la meilleure façon d'apprendre.",
             "cta": "Ouvrir l'étagère de révision",
             "items": {
                 "decks": {
@@ -57,7 +57,7 @@
                 },
                 "exam": {
                     "title": "Sets de quiz",
-                    "hint": "Transformez un deck en examen chronométré et voyez exactement quels mots doivent encore infuser."
+                    "hint": "N'importe quel deck deviendra un quiz à choix multiple qui montre quels mots demandent encore du travail."
                 },
                 "kana": {
                     "title": "Drills de kana",
@@ -65,7 +65,7 @@
                 },
                 "review": {
                     "title": "Révision espacée",
-                    "hint": "Les decks téléchargés reviennent selon leur propre calendrier, donc rien ne refroidit."
+                    "hint": "Les mots que vous avez étudiés reviendront selon un calendrier, pour que rien ne soit oublié."
                 }
             }
         },
@@ -86,11 +86,11 @@
         },
         "how": {
             "badge": "Comment ça marche",
-            "title": "Votre infusion du jour",
+            "title": "Une habitude qui dure",
             "hint": "Quatre petits pas, répétés chaque jour — c'est tout ce qu'il faut.",
             "step1": {
                 "title": "Choisissez votre langue",
-                "hint": "Prenez le plateau que vous révisez aujourd'hui."
+                "hint": "Choisissez la langue que vous étudiez aujourd'hui."
             },
             "step2": {
                 "title": "Empruntez un deck",
@@ -106,7 +106,7 @@
             }
         },
         "cta": {
-            "title": "La bouilloire est déjà chaude.",
+            "title": "Commencez par le premier caractère.",
             "hint": "Aucun mur d'inscription entre vous et le premier deck. Connectez-vous seulement pour synchroniser vos mots.",
             "primary": "Commencer à apprendre",
             "secondary": "Publier un deck"
@@ -161,7 +161,24 @@
         "subtitle": "Choisissez une langue, puis une façon de la pratiquer.",
         "characters": {
             "title": "Caractères",
-            "description": "Parcourez le tableau des caractères d'une langue et écoutez chacun d'eux prononcé."
+            "description": "Parcourez le tableau des caractères d'une langue et écoutez chacun d'eux prononcé.",
+            "items": {
+                "en": {
+                    "name": "Alphabet"
+                },
+                "ja": {
+                    "name": "Kana"
+                },
+                "th": {
+                    "name": "Thaï"
+                },
+                "zh": {
+                    "name": "Hanzi"
+                },
+                "ko": {
+                    "name": "Hangeul"
+                }
+            }
         },
         "drill": {
             "title": "Exercice",
@@ -288,7 +305,7 @@
         "languages": {
             "japanese": {
                 "name": "Japonais",
-                "description": "Hiragana, katakana et kanji, drillés en courtes rondes et gardés au chaud par la révision espacée."
+                "description": "Hiragana, katakana et kanji, travaillés en courtes séries et gardés frais par la révision espacée."
             },
             "english": {
                 "name": "Anglais",
@@ -304,7 +321,7 @@
             },
             "korean": {
                 "name": "Coréen",
-                "description": "Le hangeul en une seule fois, puis des decks de conversation qui refusent de refroidir."
+                "description": "Le hangeul en une seule fois, puis des decks de conversation qui durent."
             },
             "chinese": {
                 "name": "Chinois",
@@ -474,16 +491,10 @@
         }
     },
     "footer": {
-        "tagline": "Une façon chaleureuse, beaucoup de thèmes pour siroter votre japonais gorgée après gorgée.",
+        "tagline": "Une façon chaleureuse et riche en thèmes d'apprendre une nouvelle langue.",
         "explore": "Explorer",
         "learn": "Ce que nous enseignons",
-        "rights": "TeaChoco · Tous droits réservés.",
-        "languages": {
-            "ja": "Japonais",
-            "en": "Anglais",
-            "ko": "Coréen",
-            "th": "Thaï"
-        }
+        "rights": "TeaChoco · Tous droits réservés."
     },
     "auth": {
         "signIn": "Se connecter",
@@ -903,7 +914,7 @@
     },
     "settings": {
         "title": "Paramètres",
-        "subtitle": "Préparez ChocoMemo à votre goût.",
+        "subtitle": "Faites de ChocoMemo le vôtre.",
         "back": "Retour",
         "nav": {
             "settings": "Paramètres",

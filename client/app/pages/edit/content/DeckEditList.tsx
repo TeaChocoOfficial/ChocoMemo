@@ -1,11 +1,11 @@
 // -Path: 'client/app/components/edit/DeckEditList.tsx'
-import SortableList from '../components/SortableList';
 import type { DeckData } from '~/types/deck';
-import type { DeckFilter } from '../../../hooks/edito/useDeckEditor';
 import Badge from '~/components/custom/Badge';
 import { useTranslation } from 'react-i18next';
 import { useLangText } from '~/hooks/useLangText';
+import SortableList from '../components/SortableList';
 import { FaTrash, FaGripVertical } from 'react-icons/fa6';
+import type { DeckFilter } from '~/stores/config/deckEditor.store';
 
 /** Props for {@link DeckEditList}. */
 interface DeckEditListProps {

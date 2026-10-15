@@ -27,14 +27,14 @@
         "badge": "ChocoMemo · topluluk dil kitaplığı",
         "title": "Herhangi bir dili öğren,",
         "titleAccent": "her seferinde bir ortak deste.",
-        "subtitle": "Japonca, İngilizce, Tayca, Korece ve Çince — her biri gerçek öğrenenlerin yazdığı ve paylaştığı desteler, alıştırmalar ve quizlerden oluşur. Ücretsiz, açık ve genişletmeye açık.",
+        "subtitle": "Temellerden başla — sesli karakter tabloları ve bugün yapabileceğin kısa alıştırmalar. Sonra toplulukla birlikte öğren, çünkü birlikte öğrenmek en iyi öğrenme yoludur.",
         "ctaStart": "Öğrenmeye başla",
         "ctaCreate": "Deste yayımla",
         "ctaHow": "Nasıl çalışır",
         "comingSoon": "Yakında",
-        "scriptsLabel": "Şimdi demleniyor",
+        "scriptsLabel": "Öğrettiğimiz diller",
         "stats": {
-            "badge": "Rafta",
+            "badge": "Bir bakışta",
             "languages": "Diller",
             "kana": "Kana karakterleri",
             "vocabulary": "Kelime sayısı",
@@ -42,13 +42,13 @@
         },
         "languages": {
             "badge": "Raf",
-            "title": "Beş dil, tek sıcak alışkanlık",
-            "hint": "Bugün hazır olan tepsiyle başla — gerisi hâlâ demleniyor."
+            "title": "Her dil, temellerden başlayarak",
+            "hint": "Bugün hazır olan bir dille başla — gerisi yolda."
         },
         "library": {
             "badge": "Topluluk rafı",
             "title": "Bir deste yaz. Paylaş. Onun öğretişini izle.",
-            "hint": "ChocoMemo'daki her çalışma seti bir yayıncı değil, bir insan tarafından yazılır. Birini düzelt, yayımla; başka biri ondan bir bütün kurs edinsin.",
+            "hint": "ChocoMemo'daki çalışma setleri destelerdir: kelimeler, metinler ve quizlerden oluşan temalı koleksiyonlar. Öğrenenler kendi destelerini yayımlayıp toplulukla paylaşabilecek — birbirine öğretmek en iyi öğrenme yoludur.",
             "cta": "Tekrar rafını aç",
             "items": {
                 "decks": {
@@ -57,7 +57,7 @@
                 },
                 "exam": {
                     "title": "Quiz setleri",
-                    "hint": "Bir desteyi süreli bir sınava çevir ve hangi kelimelerin hâlâ demlenmesi gerektiğini gör."
+                    "hint": "Her deste, hangi kelimelerin hâlâ çalışma gerektirdiğini gösteren çoktan seçmeli bir quize dönüşür."
                 },
                 "kana": {
                     "title": "Kana alıştırmaları",
@@ -65,7 +65,7 @@
                 },
                 "review": {
                     "title": "Aralıklı tekrar",
-                    "hint": "İndirdiğin desteler kendi programlarıyla geri gelir, böylece hiçbiri soğumaz."
+                    "hint": "Çalıştığın kelimeler bir programa göre geri gelir, böylece hiçbiri unutulmaz."
                 }
             }
         },
@@ -86,11 +86,11 @@
         },
         "how": {
             "badge": "Nasıl çalışır",
-            "title": "Günlük demlemen",
+            "title": "Kalıcı bir alışkanlık",
             "hint": "Her gün tekrarlanan dört küçük adım — hepsi bu kadar.",
             "step1": {
                 "title": "Dilini seç",
-                "hint": "Bugün çalıştığın tepsiyi seç."
+                "hint": "Bugün çalıştığın dili seç."
             },
             "step2": {
                 "title": "Bir deste ödünç al",
@@ -106,7 +106,7 @@
             }
         },
         "cta": {
-            "title": "Demlik zaten yanıyor.",
+            "title": "İlk karakterden başla.",
             "hint": "Seninle ilk deste arasında kayıt duvarı yok. Kelimelerini eşitlemek istediğinde giriş yap.",
             "primary": "Öğrenmeye başla",
             "secondary": "Deste yayımla"
@@ -161,7 +161,24 @@
         "subtitle": "Bir dil seçin, sonra onu çalışmanın bir yolunu seçin.",
         "characters": {
             "title": "Karakterler",
-            "description": "Bir dilin karakter tablosuna göz atın ve her birinin sesini dinleyin."
+            "description": "Bir dilin karakter tablosuna göz atın ve her birinin sesini dinleyin.",
+            "items": {
+                "en": {
+                    "name": "Alfabe"
+                },
+                "ja": {
+                    "name": "Kana"
+                },
+                "th": {
+                    "name": "Tayca"
+                },
+                "zh": {
+                    "name": "Hanzi"
+                },
+                "ko": {
+                    "name": "Hangıl"
+                }
+            }
         },
         "drill": {
             "title": "Antrenman",
@@ -288,7 +305,7 @@
         "languages": {
             "japanese": {
                 "name": "Japonca",
-                "description": "Hiragana, Katakana ve kanji; kısa turlarla çalışılır ve aralıklı tekrar ile sıcak tutulur."
+                "description": "Hiragana, katakana ve kanji; kısa turlarla çalışılır ve aralıklı tekrarla taze tutulur."
             },
             "english": {
                 "name": "İngilizce",
@@ -304,7 +321,7 @@
             },
             "korean": {
                 "name": "Korece",
-                "description": "Hangul tek oturuşta, ardından soğumakta ısrar eden sohbet desteleri."
+                "description": "Hangul tek oturuşta, ardından kalıcı sohbet desteleri."
             },
             "chinese": {
                 "name": "Çince",
@@ -474,16 +491,10 @@
         }
     },
     "footer": {
-        "tagline": "Japon dilinde gezinmenin rahat ve tema zengini bir yolu.",
+        "tagline": "Yeni bir dil öğrenmenin rahat ve tema zengini bir yolu.",
         "explore": "Keşfet",
         "learn": "Ne öğretiyoruz",
-        "rights": "TeaChoco · Tüm hakları saklıdır.",
-        "languages": {
-            "ja": "Japonca",
-            "en": "İngilizce",
-            "ko": "Korece",
-            "th": "Tayca"
-        }
+        "rights": "TeaChoco · Tüm hakları saklıdır."
     },
     "auth": {
         "signIn": "Giriş Yap",
@@ -903,7 +914,7 @@
     },
     "settings": {
         "title": "Ayarlar",
-        "subtitle": "ChocoMemo'yu zevkine göre demle.",
+        "subtitle": "ChocoMemo'yu kendine göre yap.",
         "back": "Geri",
         "nav": {
             "settings": "Ayarlar",

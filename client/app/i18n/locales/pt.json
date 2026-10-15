@@ -27,14 +27,14 @@
         "badge": "ChocoMemo · biblioteca de idiomas da comunidade",
         "title": "Aprenda qualquer idioma,",
         "titleAccent": "um baralho por vez.",
-        "subtitle": "Japonês, inglês, tailandês, coreano e chinês — cada um feito de baralhos, exercícios e quizzes escritos e compartilhados por quem está aprendendo de verdade. Grátis, aberto e seu para ampliar.",
+        "subtitle": "Comece pelo básico — tabelas de caracteres com som e exercícios curtos que você pode fazer hoje. Depois aprenda com a comunidade, porque aprender juntos é a melhor forma de aprender.",
         "ctaStart": "Começar a aprender",
         "ctaCreate": "Publicar um baralho",
         "ctaHow": "Como funciona",
         "comingSoon": "Em breve",
-        "scriptsLabel": "Infusionando agora",
+        "scriptsLabel": "Idiomas que ensinamos",
         "stats": {
-            "badge": "Na prateleira",
+            "badge": "Num relance",
             "languages": "Idiomas",
             "kana": "Caracteres kana",
             "vocabulary": "Palavras de vocabulário",
@@ -42,13 +42,13 @@
         },
         "languages": {
             "badge": "A prateleira",
-            "title": "Cinco idiomas, um hábito aconchegante",
-            "hint": "Comece pela bandeja que está pronta hoje — o resto está infusionando."
+            "title": "Todos os idiomas, desde o básico",
+            "hint": "Comece por um idioma que já está pronto hoje — os demais estão a caminho."
         },
         "library": {
             "badge": "A prateleira da comunidade",
             "title": "Escreva um baralho. Compartilhe. Veja ele ensinar.",
-            "hint": "Cada conjunto de estudos do ChocoMemo é escrito por uma pessoa, não por uma editora. Arrume um, publique e outra pessoa ganha um curso inteiro a partir dele.",
+            "hint": "Os conjuntos de estudo no ChocoMemo são baralhos: coleções temáticas de palavras, trechos e quizzes. Quem aprende poderá publicar os próprios baralhos e compartilhá-los com a comunidade — ensinar uns aos outros é a melhor forma de aprender.",
             "cta": "Abrir a prateleira de revisão",
             "items": {
                 "decks": {
@@ -57,7 +57,7 @@
                 },
                 "exam": {
                     "title": "Conjuntos de quiz",
-                    "hint": "Transforme um baralho em uma prova cronometrada e veja exatamente quais palavras ainda precisam infusionar."
+                    "hint": "Qualquer baralho vira um quiz de múltipla escolha que mostra quais palavras ainda precisam de trabalho."
                 },
                 "kana": {
                     "title": "Exercícios de kana",
@@ -65,7 +65,7 @@
                 },
                 "review": {
                     "title": "Revisão espaçada",
-                    "hint": "Os baralhos que você baixou voltam na própria agenda, então nada esfria."
+                    "hint": "As palavras que você estudou voltam conforme uma agenda, para que nada seja esquecido."
                 }
             }
         },
@@ -86,11 +86,11 @@
         },
         "how": {
             "badge": "Como funciona",
-            "title": "Sua infusão diária",
+            "title": "Um hábito que perdura",
             "hint": "Quatro passos pequenos, repetidos todo dia — é só isso.",
             "step1": {
                 "title": "Escolha seu idioma",
-                "hint": "Escolha a bandeja que você estuda hoje."
+                "hint": "Escolha o idioma que você estuda hoje."
             },
             "step2": {
                 "title": "Pegue um baralho",
@@ -106,7 +106,7 @@
             }
         },
         "cta": {
-            "title": "O bule já está no fogo.",
+            "title": "Comece pelo primeiro caractere.",
             "hint": "Sem parede de cadastro entre você e o primeiro baralho. Entre só quando quiser sincronizar suas palavras.",
             "primary": "Começar a aprender",
             "secondary": "Publicar um baralho"
@@ -161,7 +161,24 @@
         "subtitle": "Escolha um idioma e depois uma forma de o praticar.",
         "characters": {
             "title": "Caracteres",
-            "description": "Explore a tabela de caracteres de um idioma e ouça cada um ser pronunciado."
+            "description": "Explore a tabela de caracteres de um idioma e ouça cada um ser pronunciado.",
+            "items": {
+                "en": {
+                    "name": "Alfabeto"
+                },
+                "ja": {
+                    "name": "Kana"
+                },
+                "th": {
+                    "name": "Tailandês"
+                },
+                "zh": {
+                    "name": "Hanzi"
+                },
+                "ko": {
+                    "name": "Hangul"
+                }
+            }
         },
         "drill": {
             "title": "Treino",
@@ -288,7 +305,7 @@
         "languages": {
             "japanese": {
                 "name": "Japonês",
-                "description": "Hiragana, katakana e kanji, treinados em rodadas curtas e mantidos quentes pela revisão espaçada."
+                "description": "Hiragana, katakana e kanji, treinados em rodadas curtas e mantidos frescos pela revisão espaçada."
             },
             "english": {
                 "name": "Inglês",
@@ -304,7 +321,7 @@
             },
             "korean": {
                 "name": "Coreano",
-                "description": "Hangul em uma só sentada e depois baralhos de conversa que se recusam a esfriar."
+                "description": "Hangul de uma só vez e depois baralhos de conversa que duram."
             },
             "chinese": {
                 "name": "Chinês",
@@ -474,16 +491,10 @@
         }
     },
     "footer": {
-        "tagline": "Um jeito aconchegante e cheio de temas para saborear seu caminho pelo idioma japonês.",
+        "tagline": "Uma forma aconchegante e cheia de temas de aprender um novo idioma.",
         "explore": "Explorar",
         "learn": "O que ensinamos",
-        "rights": "TeaChoco · Todos os direitos reservados.",
-        "languages": {
-            "ja": "Japonês",
-            "en": "Inglês",
-            "ko": "Coreano",
-            "th": "Tailandês"
-        }
+        "rights": "TeaChoco · Todos os direitos reservados."
     },
     "auth": {
         "signIn": "Entrar",
@@ -903,7 +914,7 @@
     },
     "settings": {
         "title": "Configurações",
-        "subtitle": "Prepare o ChocoMemo do seu jeito.",
+        "subtitle": "Deixe o ChocoMemo com a sua cara.",
         "back": "Voltar",
         "nav": {
             "settings": "Configurações",

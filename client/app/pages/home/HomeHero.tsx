@@ -63,7 +63,7 @@ export default function HomeHero() {
                         <span className='text-primary'>{t('home.titleAccent')}</span>
                     </h1>
 
-                    <p className='mt-8 max-w-2xl text-base leading-relaxed text-surface-subtle sm:text-lg'>
+                    <p className='mt-8 mx-auto max-w-2xl text-base leading-relaxed text-surface-subtle sm:text-lg'>
                         {t('home.subtitle')}
                     </p>
 

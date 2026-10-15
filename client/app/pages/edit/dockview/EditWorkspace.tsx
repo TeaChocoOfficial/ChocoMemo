@@ -4,6 +4,7 @@ import Dockviews from './Dockviews';
 import DeckEditList from '../content/DeckEditList';
 import { Languages } from '~/data/language';
 import DeckEditPanel from '../panel/DeckEditPanel';
+import StatusPanel from '../panel/StatusPanel';
 import { useTranslation } from 'react-i18next';
 import DeckActivityBar from '../components/DeckActivityBar';
 import { useDeckEditor } from '../../../hooks/edito/useDeckEditor';
@@ -37,9 +38,7 @@ export default function EditWorkspace({ language }: EditWorkspaceProps) {
     const hydrated = useDeckStoreHydrated();
     const isDesktop = useMediaQuery('(min-width: 768px)');
 
-    if (!hydrated) {
-        return <DeckEditorSkeleton />;
-    }
+    if (!hydrated) return <DeckEditorSkeleton />;
 
     if (!isDesktop) {
         return (
@@ -55,11 +54,11 @@ export default function EditWorkspace({ language }: EditWorkspaceProps) {
                 </p>
                 <div className='rounded-sm border border-line'>
                     <DeckEditList
-                        decks={editor.visibleDecks}
-                        selectedId={editor.selectedId}
                         onDelete={editor.remove}
                         onSelect={editor.select}
                         onReorder={editor.reorder}
+                        decks={editor.visibleDecks}
+                        selectedId={editor.selectedId}
                     />
                 </div>
                 <div className='rounded-sm border border-line'>
@@ -76,7 +75,12 @@ export default function EditWorkspace({ language }: EditWorkspaceProps) {
 
     return (
         <EditorProvider value={editor}>
-            <Dockviews />
+            <div className='flex h-full flex-col'>
+                <div className='min-h-0 flex-1'>
+                    <Dockviews />
+                </div>
+                <StatusPanel />
+            </div>
         </EditorProvider>
     );
 }

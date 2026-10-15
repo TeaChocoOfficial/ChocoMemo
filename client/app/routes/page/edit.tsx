@@ -1,6 +1,6 @@
 // -Path: 'client/app/routes/page/edit.tsx'
 import type { Route } from './+types/edit';
-import EditPage from '~/components/page/EditPage';
+import EditPage from '~/pages/edit/EditPage';
 
 export function meta({}: Route.MetaArgs) {
     return [

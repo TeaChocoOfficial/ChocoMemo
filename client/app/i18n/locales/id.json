@@ -27,14 +27,14 @@
         "badge": "ChocoMemo · pustaka bahasa komunitas",
         "title": "Pelajari bahasa apa pun,",
         "titleAccent": "satu deck bersama setiap kali.",
-        "subtitle": "Jepang, Inggris, Thai, Korea, dan Tionghoa — masing-masing dibangun dari deck, drill, dan kuis yang ditulis dan dibagikan oleh fellow learner sungguhan. Gratis, terbuka, dan bebas kamu perluas.",
+        "subtitle": "Mulai dari dasar — tabel karakter dengan suara dan latihan singkat yang bisa kamu kerjakan hari ini. Lalu belajar bersama komunitas, karena belajar bersama adalah cara terbaik untuk belajar.",
         "ctaStart": "Mulai belajar",
         "ctaCreate": "Terbitkan deck",
         "ctaHow": "Cara kerja",
         "comingSoon": "Segera hadir",
-        "scriptsLabel": "Sedang diseduh",
+        "scriptsLabel": "Bahasa yang kami ajarkan",
         "stats": {
-            "badge": "Di rak",
+            "badge": "Sekilas",
             "languages": "Bahasa",
             "kana": "Huruf kana",
             "vocabulary": "Kosakata",
@@ -42,13 +42,13 @@
         },
         "languages": {
             "badge": "Rak itu",
-            "title": "Lima bahasa, satu kebiasaan hangat",
-            "hint": "Mulai dari baki yang sudah siap hari ini — sisanya masih diseduh."
+            "title": "Semua bahasa, dari dasar",
+            "hint": "Mulai dari bahasa yang sudah siap hari ini — sisanya sedang dalam perjalanan."
         },
         "library": {
             "badge": "Rak komunitas",
             "title": "Tulis deck. Bagikan. Lihat dia mengajar.",
-            "hint": "Setiap set belajar di ChocoMemo ditulis oleh orang, bukan penerbit. Rapikan satu, terbitkan, dan orang lain mendapat satu kursus utuh darinya.",
+            "hint": "Set belajar di ChocoMemo adalah deck: kumpulan bertema berisi kata, bacaan, dan kuis. Pelajar akan bisa menerbitkan deck sendiri dan membagikannya ke komunitas — saling mengajar adalah cara terbaik untuk belajar.",
             "cta": "Buka rak tinjauan",
             "items": {
                 "decks": {
@@ -57,7 +57,7 @@
                 },
                 "exam": {
                     "title": "Set kuis",
-                    "hint": "Ubah deck jadi ujian berdurasi tetap dan lihat kata mana yang masih perlu diseduh."
+                    "hint": "Deck apa pun akan berubah menjadi kuis pilihan ganda yang menunjukkan kata mana yang masih perlu dilatih."
                 },
                 "kana": {
                     "title": "Drill kana",
@@ -65,7 +65,7 @@
                 },
                 "review": {
                     "title": "Tinjauan berjarak",
-                    "hint": "Deck yang kamu unduh kembali muncul sesuai jadwalnya sendiri, jadi tak ada yang mendingin."
+                    "hint": "Kata yang sudah kamu pelajari akan kembali sesuai jadwal, jadi tidak ada yang terlupakan."
                 }
             }
         },
@@ -86,11 +86,11 @@
         },
         "how": {
             "badge": "Cara kerja",
-            "title": "Tuang harianmu",
+            "title": "Kebiasaan yang bertahan",
             "hint": "Empat langkah kecil, diulang tiap hari — itu saja yang dibutuhkan.",
             "step1": {
                 "title": "Pilih bahasamu",
-                "hint": "Pilih baki yang kamu pelajari hari ini."
+                "hint": "Pilih bahasa yang kamu pelajari hari ini."
             },
             "step2": {
                 "title": "Pinjam deck",
@@ -106,7 +106,7 @@
             }
         },
         "cta": {
-            "title": "Panci tehnya sudah menyala.",
+            "title": "Mulai dari karakter pertama.",
             "hint": "Tidak ada dinding pendaftaran antara kamu dan deck pertama. Masuk saja saat ingin menyinkronkan katamu.",
             "primary": "Mulai belajar",
             "secondary": "Terbitkan deck"
@@ -161,7 +161,24 @@
         "subtitle": "Pilih bahasa, lalu pilih cara melatihnya.",
         "characters": {
             "title": "Karakter",
-            "description": "Telusuri bagan karakter suatu bahasa dan dengarkan setiap karakter dilafalkan."
+            "description": "Telusuri bagan karakter suatu bahasa dan dengarkan setiap karakter dilafalkan.",
+            "items": {
+                "en": {
+                    "name": "Alfabet"
+                },
+                "ja": {
+                    "name": "Kana"
+                },
+                "th": {
+                    "name": "Thai"
+                },
+                "zh": {
+                    "name": "Hanzi"
+                },
+                "ko": {
+                    "name": "Hangul"
+                }
+            }
         },
         "drill": {
             "title": "Latihan",
@@ -288,7 +305,7 @@
         "languages": {
             "japanese": {
                 "name": "Bahasa Jepang",
-                "description": "Hiragana, katakana, dan kanji, dilatih dalam putaran pendek dan tetap hangat lewat tinjauan berjarak."
+                "description": "Hiragana, katakana, dan kanji, dilatih dalam putaran pendek dan tetap segar lewat tinjauan berjarak."
             },
             "english": {
                 "name": "Bahasa Inggris",
@@ -304,7 +321,7 @@
             },
             "korean": {
                 "name": "Bahasa Korea",
-                "description": "Hangul dalam satu sesi, lalu deck percakapan yang enggan menjadi dingin."
+                "description": "Hangul dalam satu sesi, lalu deck percakapan yang bertahan."
             },
             "chinese": {
                 "name": "Tionghoa",
@@ -474,16 +491,10 @@
         }
     },
     "footer": {
-        "tagline": "Cara yang nyaman dan kaya tema untuk menyeruput jalanmu menelusuri bahasa Jepang.",
+        "tagline": "Cara yang nyaman dan kaya tema untuk mempelajari bahasa baru.",
         "explore": "Jelajahi",
         "learn": "Yang kami ajarkan",
-        "rights": "TeaChoco · Semua hak dilindungi.",
-        "languages": {
-            "ja": "Jepang",
-            "en": "Inggris",
-            "ko": "Korea",
-            "th": "Thai"
-        }
+        "rights": "TeaChoco · Semua hak dilindungi."
     },
     "auth": {
         "signIn": "Masuk",
@@ -903,7 +914,7 @@
     },
     "settings": {
         "title": "Pengaturan",
-        "subtitle": "Racik ChocoMemo sesuai seleramu.",
+        "subtitle": "Jadikan ChocoMemo milikmu.",
         "back": "Kembali",
         "nav": {
             "settings": "Pengaturan",
