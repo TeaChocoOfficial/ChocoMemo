@@ -12,12 +12,13 @@ import {
     type LoaderFunctionArgs,
 } from 'react-router';
 import i18n from '~/i18n';
-import { getAssetUrl } from './utils/url';
 import env, { isDev } from '~/secure/env';
 import type { Route } from './+types/root';
+import { getAssetUrl } from './utils/base/url';
 import { useTranslation } from 'react-i18next';
+import 'dockview-react/dist/styles/dockview.css';
 import { SUPPORTED_LANGS, type Lang } from '~/i18n/locales';
-import { useOAuthCallbackNotice } from '~/hooks/useOAuthCallbackNotice';
+import { useOAuthCallbackNotice } from '~/hooks/config/useOAuthCallbackNotice';
 
 export async function loader({ request }: LoaderFunctionArgs) {
     const url = new URL(request.url);

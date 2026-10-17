@@ -6,7 +6,7 @@ import QuizQuestion from './QuizQuestion';
 import QuizFeedback from './QuizFeedback';
 import { FaVolumeHigh } from 'react-icons/fa6';
 import { useTranslation } from 'react-i18next';
-import type { Choice } from '~/hooks/useQuizEngine';
+import type { Choice } from '~/hooks/drill/useQuizEngine';
 import type { QuizMode } from '../../hooks/useKanaDrill';
 import QuizChoices, { type ChoiceFeedback } from './QuizChoices';
 

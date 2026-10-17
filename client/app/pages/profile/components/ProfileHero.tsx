@@ -2,7 +2,7 @@ import axios from 'axios';
 import env from '~/secure/env';
 import { motion } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { useSwal } from '~/hooks/useSwal';
+import { useSwal } from '~/hooks/base/useSwal';
 import avatarAPI from '~/services/avatar';
 import { AuthProvider } from '~/types/auth';
 import Badge from '~/components/custom/Badge';

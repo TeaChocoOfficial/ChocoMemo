@@ -1,9 +1,9 @@
 // -Path: 'client/app/components/edit/ActivityRail.tsx'
+import { FaClock, FaHeart, FaLayerGroup } from 'react-icons/fa6';
 import type { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useEditor } from '../components/EditorContext';
+import { useEditor } from '~/hooks/editor/useEditor';
 import type { DeckView } from '~/stores/config/deckEditor.store';
-import { FaClock, FaHeart, FaLayerGroup } from 'react-icons/fa6';
 
 /** One selectable explorer view. */
 interface ViewItem {
@@ -20,9 +20,8 @@ const VIEWS: ViewItem[] = [
 const BUTTON = 'relative flex h-11 w-11 items-center justify-center rounded-sm transition-colors';
 
 /**
- * VS Code-style activity rail for the deck editor. The top group switches the
- * explorer's view (all decks, favourites, recent); the bottom group holds
- * app-level actions (theme light/dark toggle, settings).
+ * VS Code-style activity rail for the deck editor: one button per explorer view
+ * (all decks, favourites, recent), with the active one underlined.
  */
 export default function ActivityRail() {
     const { t } = useTranslation();
@@ -39,7 +38,7 @@ export default function ActivityRail() {
     return (
         <nav
             aria-label={t('deck.edit.views')}
-            className='flex shrink-0 items-center justify-between border-b border-line bg-surface-sunken px-1.5 py-1'
+            className='flex shrink-0 items-center gap-1 border-b border-line bg-surface-sunken px-1.5 py-1'
         >
             <div className='flex items-center gap-1'>
                 {VIEWS.map((item) => {

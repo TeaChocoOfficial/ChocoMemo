@@ -2,23 +2,36 @@
 import { FaPlus } from 'react-icons/fa6';
 import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { PANEL_DEFS, type PanelDefinition } from './panels';
 import type { DockviewApi } from 'dockview-react';
+import { PANEL_DEFS, type PanelDefinition } from './panels';
 
 /**
  * The workspace's "add panel" menu: one row per registered panel. Clicking a
- * row docks a fresh instance beside the panel that was active before the menu
- * was opened, so the same component can be opened more than once without id
+ * row docks a fresh instance as a tab in the panel that was active before the
+ * menu was opened, or beside the chooser itself when no other panel has been
+ * active. The same component can be opened more than once without id
  * collisions.
  *
- * @param props - The dockview api and the chooser panel's own id.
+ * @param props - The dockview api, an optional reference panel id, and an
+ *                optional callback fired after a panel is added.
  */
 export default function PanelChooser({
-    containerApi,
     referenceId,
+    containerApi,
+    onAdd,
+    direction = 'right',
 }: {
+    /** The panel a new panel docks beside when no other panel has been active.
+     *  Omitted in the mobile drawer, where the chooser falls back to the active
+     *  panel or the active group. */
+    referenceId?: string;
     containerApi: DockviewApi;
-    referenceId: string;
+    /** Fired after a panel is added, so the drawer can close itself. */
+    onAdd?: () => void;
+    /** How a panel docks beside the fallback reference. `'right'` opens a new
+     *  column (desktop); `'within'` opens a tab in the same group (mobile,
+     *  where the workspace is a single locked group). */
+    direction?: 'within' | 'right';
 }) {
     const { t } = useTranslation();
 
@@ -39,10 +52,18 @@ export default function PanelChooser({
     // before the registry is initialized.
     const addable = PANEL_DEFS.filter((def) => def.addable !== false);
 
-    /** Docks a new instance of `def` beside the last active panel. */
+    /** Docks a new instance of `def`: as a tab in the last active panel, or
+     *  beside the chooser when no other panel has been active. */
     const add = (def: PanelDefinition) => {
         const id = `${def.id}-${Date.now().toString(36)}`;
-        const reference = targetRef.current ?? referenceId;
+        // The remembered target may have been closed since it was last active.
+        const remembered = targetRef.current;
+        const target = remembered && containerApi.getPanel(remembered) ? remembered : null;
+        // The drawer passes no reference id, so fall back to the active panel; when
+        // there is none either, omit `position` and dockview adds the panel to the
+        // active group.
+        const reference = referenceId ?? containerApi.activePanel?.id;
+
         containerApi.addPanel({
             id,
             component: def.id,
@@ -50,8 +71,14 @@ export default function PanelChooser({
             initialWidth: def.initialWidth,
             minimumWidth: def.minimumWidth,
             maximumWidth: def.maximumWidth,
-            position: { referencePanel: reference, direction: 'right' },
+            position: target
+                ? { referencePanel: target, direction: 'within' }
+                : reference
+                  ? { referencePanel: reference, direction }
+                  : undefined,
         });
+
+        onAdd?.();
     };
 
     return (

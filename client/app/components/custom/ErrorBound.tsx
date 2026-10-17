@@ -1,4 +1,4 @@
-import { useSwal } from '~/hooks/useSwal';
+import { useSwal } from '~/hooks/base/useSwal';
 import { Component, type ErrorInfo, type ReactNode } from 'react';
 
 interface Props {

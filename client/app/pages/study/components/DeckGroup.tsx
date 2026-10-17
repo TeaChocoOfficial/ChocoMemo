@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import DeckLink from './DeckLink';
 import StudySectionHeading from './StudySectionHeading';
 import type { Languages } from '~/data/language';
-import { withTarget } from '~/utils/targetLang';
+import { withTarget } from '~/utils/config/targetLang';
 import {
     FaBookOpen,
     FaArrowsRotate,

@@ -5,7 +5,7 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { getVoiceForSpeech } from '~/hooks/useSpeak';
+import { getVoiceForSpeech } from '~/hooks/base/useSpeak';
 import { useSpeechStore } from '~/stores/config/speech.store';
 import { useKanaProgressStore } from '~/stores/japanese/kanaProgress.store';
 import type { Kana, KanaChars, KanaSetId } from '~/data/japanese/kana';

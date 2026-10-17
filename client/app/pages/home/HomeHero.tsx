@@ -2,7 +2,7 @@
 import env from '~/secure/env';
 import { Link } from '~/i18n/routing';
 import { motion } from 'framer-motion';
-import { getAssetUrl } from '~/utils/url';
+import { getAssetUrl } from '~/utils/base/url';
 import { languages } from '~/data/language';
 import { useTranslation } from 'react-i18next';
 import Section from '~/components/custom/Section';
@@ -73,7 +73,7 @@ export default function HomeHero() {
                             <FaCircleRight className='h-4 w-4' />
                         </Link>
                         {/* Hidden until creating decks is live. */}
-                        <Link to='/vocab' className={CTA_GHOST}>
+                        <Link to='/edit' className={CTA_GHOST}>
                             <FaPenNib className='h-4 w-4' />
                             {t('home.ctaCreate')}
                         </Link>

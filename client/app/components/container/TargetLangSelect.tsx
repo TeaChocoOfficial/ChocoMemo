@@ -4,8 +4,8 @@ import { useSearchParams } from 'react-router';
 import Select, { type OptionSelectType } from '~/components/custom/Select';
 import { FaGlobe } from 'react-icons/fa6';
 import { ALL_TARGETS, languages, type TargetFilter } from '~/data/language';
-import { useDeckTargetLang, useTargetLang } from '~/hooks/useTargetLang';
-import { targetCode } from '~/utils/targetLang';
+import { useDeckTargetLang, useTargetLang } from '~/hooks/base/useTargetLang';
+import { targetCode } from '~/utils/config/targetLang';
 import { useDeckListStore } from '~/stores/config/deckList.store';
 
 /**

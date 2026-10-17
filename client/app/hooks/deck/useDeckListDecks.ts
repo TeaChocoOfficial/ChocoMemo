@@ -10,13 +10,13 @@
 // pure data shaping with no JSX and no i18n.
 import { useMemo } from 'react';
 import type { TargetFilter } from '~/data/language';
-import { useLangText } from '~/hooks/useLangText';
 import type { DeckListQuery } from '~/types/deckList';
 import type { DeckData, DeckType } from '~/types/deck';
+import { useLangText } from '~/hooks/config/useLangText';
 import { useDecksForTab } from '~/hooks/deck/useDecksForTab';
 import { useDeckSourceReady } from '~/hooks/deck/useDeckSourceReady';
-import { useIncrementalList } from '~/hooks/useIncrementalList';
-import { collectDeckTags, sortDecks } from '~/utils/deckListQuery';
+import { useIncrementalList } from '~/hooks/deck/useIncrementalList';
+import { collectDeckTags, sortDecks } from '~/utils/deck/deckListQuery';
 
 export interface DeckListResult {
     /** The page of cards to render right now. */

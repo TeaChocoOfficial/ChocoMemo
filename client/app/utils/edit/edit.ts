@@ -1,5 +1,5 @@
 // -Path: 'client/app/components/edit/utils.ts'
-import { resolveText } from '~/hooks/useLangText';
+import { resolveText } from '~/hooks/config/useLangText';
 import type { LangText, MultiLang } from '~/types/type';
 import { SUPPORTED_LANGS, type Lang } from '~/i18n/locales';
 

@@ -1,6 +1,6 @@
 import { Link } from '~/i18n/routing';
 import { motion } from 'framer-motion';
-import { getAssetUrl } from '~/utils/url';
+import { getAssetUrl } from '~/utils/base/url';
 
 export default function NavbarLogo() {
     return (

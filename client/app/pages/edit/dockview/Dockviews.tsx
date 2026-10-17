@@ -1,48 +1,36 @@
 // -Path: 'client/app/components/edit/dockview/Dockviews.tsx'
-import './dockview-theme.css';
-import { resolveDockviewTheme } from './theme';
+import {
+    addDefaultPanels,
+    applyConstraints,
+    applyHeaderVisibility,
+    readDockviewLayout,
+    saveDockviewLayout,
+} from '~/utils/edit/editStorage';
 import { useTranslation } from 'react-i18next';
 import AddPanelActions from './AddPanelActions';
-import Button from '~/components/custom/Button';
-import 'dockview-react/dist/styles/dockview.css';
-import { TAB_CONTEXT_MENU } from './tabContextMenu';
+import EmptyLayout from './EmptyLayout';
+import PinnedTab from './PinnedTab';
+import { resolveDockviewTheme } from '~/utils/edit/theme';
+import { useThemeStore } from '~/stores/config/theme.store';
 import { useMemo, useRef, useState, useEffect } from 'react';
 import { PANEL_DEFS, PANEL_COMPONENTS } from '../panel/panels';
-import { useThemeStore } from '~/stores/config/theme.store';
+import { orderPinnedFirst, prunePinnedIds } from '~/utils/edit/pinnedTabs';
 import { useDockviewStore } from '~/stores/config/dockview.store';
+import { usePinnedTabsStore } from '~/stores/config/pinnedTabs.store';
 import { dockviewApiRef } from '~/stores/config/dockviewApi.store';
-import { readDockviewLayout, saveDockviewLayout } from './layoutStorage';
+import type { DockviewVariant } from '~/utils/edit/editStorage';
+import { buildTabContextMenu, TAB_GROUP_CONTEXT_MENU } from '~/utils/edit/tabContextMenu';
 import { DockviewReact, type DockviewApi, type DockviewReadyEvent } from 'dockview-react';
 
 /** Debounce before writing the layout, so a drag does not save every frame. */
 const SAVE_DELAY = 300;
 
-/** Adds every registered panel in its declared default position. */
-function addDefaultPanels(api: DockviewApi, titles: Record<string, string>): void {
-    for (const def of PANEL_DEFS) {
-        if (def.defaultLayout !== true) continue;
-        api.addPanel({
-            id: def.id,
-            component: def.id,
-            title: titles[def.id],
-            initialWidth: def.initialWidth,
-            minimumWidth: def.minimumWidth,
-            maximumWidth: def.maximumWidth,
-            position: def.position,
-        });
-    }
-}
-
-/** Re-applies each panel's width constraints from the registry. A layout saved
- *  under older constraints (e.g. the activity rail's fixed 56px) would otherwise
- *  restore those constraints and lock the panel at its old size. */
-function applyConstraints(api: DockviewApi): void {
-    for (const def of PANEL_DEFS) {
-        api.getPanel(def.id)?.api.setConstraints({
-            minimumWidth: def.minimumWidth,
-            maximumWidth: def.maximumWidth,
-        });
-    }
+/** Props for {@link Dockviews}. */
+interface DockviewsProps {
+    /** Which workspace variant to mount: the spatial desktop arrangement, or
+     *  the mobile one-group tab strip. Controls the storage key, the default
+     *  panel order and which dockview mutations stay enabled. */
+    variant?: DockviewVariant;
 }
 
 /**
@@ -51,20 +39,35 @@ function applyConstraints(api: DockviewApi): void {
  * re-opens any panel the user closed. The arrangement is restored from
  * localStorage and saved back whenever it changes; the theme follows the app
  * theme and the spaced toggle comes from the dockview store.
+ *
+ * The same component serves both breakpoints. On mobile (`variant='mobile'`)
+ * every panel mounts as a tab of one full-width group, drag-and-drop, group
+ * locking and floating groups are disabled, and the registry's width
+ * constraints and `hideHeader` are never applied — either would fight the
+ * single tab strip.
+ *
+ * @param props - The workspace variant to mount.
  */
-export default function Dockviews() {
+export default function Dockviews({ variant = 'desktop' }: DockviewsProps) {
     const { t } = useTranslation();
+    const reordering = useRef(false);
     const { isDark } = useThemeStore();
     const { spaced } = useDockviewStore();
     const [isEmpty, setIsEmpty] = useState(false);
     const saveTimer = useRef<number | null>(null);
+
+    /** Whether this mount is the locked single-group mobile workspace. */
+    const isMobile = variant === 'mobile';
 
     const theme = useMemo(() => resolveDockviewTheme(isDark, spaced), [isDark, spaced]);
 
     /** Debounced layout save, so a drag does not write on every frame. */
     const scheduleSave = (api: DockviewApi) => {
         if (saveTimer.current !== null) window.clearTimeout(saveTimer.current);
-        saveTimer.current = window.setTimeout(() => saveDockviewLayout(api.toJSON()), SAVE_DELAY);
+        saveTimer.current = window.setTimeout(
+            () => saveDockviewLayout(api.toJSON(), variant),
+            SAVE_DELAY,
+        );
     };
 
     /** Restores the default panel layout after every panel has been closed. */
@@ -73,8 +76,11 @@ export default function Dockviews() {
         if (!api) return;
         api.clear();
         const titles = Object.fromEntries(PANEL_DEFS.map((def) => [def.id, t(def.titleKey)]));
-        addDefaultPanels(api, titles);
-        applyConstraints(api);
+        addDefaultPanels(api, titles, variant);
+        if (!isMobile) {
+            applyConstraints(api);
+            applyHeaderVisibility(api);
+        }
     };
 
     const onReady = (event: DockviewReadyEvent) => {
@@ -82,18 +88,31 @@ export default function Dockviews() {
         dockviewApiRef.current = api;
         const titles = Object.fromEntries(PANEL_DEFS.map((def) => [def.id, t(def.titleKey)]));
 
-        const saved = readDockviewLayout();
+        const saved = readDockviewLayout(variant);
         if (saved) {
             try {
                 api.fromJSON(saved);
             } catch {
-                addDefaultPanels(api, titles);
+                addDefaultPanels(api, titles, variant);
             }
-        } else addDefaultPanels(api, titles);
+        } else addDefaultPanels(api, titles, variant);
 
         // A restored layout carries the constraints it was saved with, so the
-        // registry's current constraints are re-applied on top.
-        applyConstraints(api);
+        // registry's current constraints are re-applied on top. Mobile skips
+        // both passes: the activity rail's 360px cap would clamp the whole
+        // full-width group, and hiding the activity header would hide the only
+        // tab bar.
+        if (!isMobile) {
+            applyConstraints(api);
+            applyHeaderVisibility(api);
+        }
+
+        // Drop pinned ids whose panel no longer exists, then put the pinned tabs
+        // first in their group.
+        const stored = usePinnedTabsStore.getState().pinnedIds;
+        const pinnedIds = prunePinnedIds(api, stored);
+        if (pinnedIds.length !== stored.length) usePinnedTabsStore.getState().prune(pinnedIds);
+        orderPinnedFirst(api, pinnedIds);
 
         // Track emptiness so the reset affordance appears once the last panel
         // is closed.
@@ -103,8 +122,21 @@ export default function Dockviews() {
         syncEmpty();
 
         // Save the resolved layout straight away, then on every later change, so
-        // a first visit persists even before the user drags anything.
-        api.onDidLayoutChange(() => scheduleSave(api));
+        // a first visit persists even before the user drags anything. The
+        // pinned-first order is re-asserted on every change so a drag cannot
+        // move a pinned tab behind an unpinned one. `onDidLayoutChange` is
+        // microtask-buffered, so our own moves land in a later pass rather than
+        // re-entering here; that pass is harmless because `orderPinnedFirst`
+        // only moves panels that are actually out of place. The flag is a
+        // belt-and-braces guard for a synchronous fire.
+        api.onDidLayoutChange(() => {
+            if (!reordering.current) {
+                reordering.current = true;
+                orderPinnedFirst(api, usePinnedTabsStore.getState().pinnedIds);
+                reordering.current = false;
+            }
+            scheduleSave(api);
+        });
         scheduleSave(api);
     };
 
@@ -119,7 +151,7 @@ export default function Dockviews() {
     // Alt+W closes the active tab, like an editor. Ctrl+W is a browser-reserved
     // shortcut that cannot be intercepted, so the workspace uses Alt+W instead.
     // Chrome panels (the activity chooser and the status bar) are not closable,
-    // so they are skipped.
+    // and neither is a pinned tab, so both are skipped.
     useEffect(() => {
         const onKeyDown = (event: KeyboardEvent) => {
             if (!event.altKey || event.ctrlKey || event.metaKey) return;
@@ -130,6 +162,7 @@ export default function Dockviews() {
 
             const def = PANEL_DEFS.find((item) => item.id === panel.id);
             if (def?.addable === false) return;
+            if (usePinnedTabsStore.getState().pinnedIds.includes(panel.id)) return;
 
             event.preventDefault();
             panel.api.close();
@@ -146,16 +179,13 @@ export default function Dockviews() {
                 onReady={onReady}
                 className='h-full w-full'
                 components={PANEL_COMPONENTS}
-                pinnedTabs={{ enabled: true }}
+                defaultTabComponent={PinnedTab}
                 leftHeaderActionsComponent={AddPanelActions}
-                getTabContextMenuItems={() => TAB_CONTEXT_MENU}
+                getTabGroupChipContextMenuItems={() => TAB_GROUP_CONTEXT_MENU}
+                getTabContextMenuItems={({ panel }) => buildTabContextMenu(t, panel)}
             />
 
-            {isEmpty && (
-                <div className='z-10 absolute inset-0 flex items-center justify-center'>
-                    <Button onClick={resetLayout}>{t('deck.edit.resetLayout')}</Button>
-                </div>
-            )}
+            {isEmpty && <EmptyLayout onReset={resetLayout} />}
         </div>
     );
 }

@@ -18,10 +18,10 @@ import { FaDownload, FaFileExport, FaTrash } from 'react-icons/fa6';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
 import AuthorAvatar from './AuthorAvatar';
 import DeckCover from './DeckCover';
-import { formatRelativeTime } from '~/utils/relativeTime';
+import { formatRelativeTime } from '~/utils/base/relativeTime';
 import { useFavouritesStore } from '~/stores/deck/favourites.store';
-import { useIsFavourite } from '~/hooks/useIsFavourite';
-import { useLangText } from '~/hooks/useLangText';
+import { useIsFavourite } from '~/hooks/deck/useIsFavourite';
+import { useLangText } from '~/hooks/config/useLangText';
 import type { DeckData, DeckSource } from '~/types/deck';
 
 const SOURCE_KEY: Record<DeckSource, string> = {

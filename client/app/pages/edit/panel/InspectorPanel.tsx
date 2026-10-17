@@ -1,6 +1,6 @@
 // -Path: 'client/app/components/edit/InspectorPanel.tsx'
 import PanelMessage from '../components/PanelMessage';
-import { useEditor } from '../components/EditorContext';
+import { useEditor } from '~/hooks/editor/useEditor';
 import { useTranslation } from 'react-i18next';
 import type { IDockviewPanelProps } from 'dockview-react';
 

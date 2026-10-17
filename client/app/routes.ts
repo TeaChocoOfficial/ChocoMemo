@@ -8,10 +8,10 @@ import { type RouteConfig, layout, index, route } from '@react-router/dev/routes
  */
 export default [
     route(':lang', 'routes/$lang.tsx', [
+        route('edit', 'routes/page/edit.tsx'),
         layout('routes/layout.tsx', [
             index('routes/page/home.tsx'),
             route('study', 'routes/page/study.tsx'),
-            route('edit', 'routes/page/edit.tsx'),
             route('decks/:deckId', 'routes/page/decks/$deckId.tsx'),
             route('vocab', 'routes/page/vocab/vocab.tsx'),
             route('vocab/:deckId', 'routes/page/vocab/vocab.$deckId.tsx'),

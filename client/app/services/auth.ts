@@ -3,7 +3,7 @@ import { z } from 'zod';
 import env from '~/secure/env';
 import type { User } from '~/types/auth';
 import serverRest, { schemaParse } from './axios';
-import { getLocaleUrl } from '~/utils/url';
+import { getLocaleUrl } from '~/utils/base/url';
 
 const email = z.string().trim().email();
 

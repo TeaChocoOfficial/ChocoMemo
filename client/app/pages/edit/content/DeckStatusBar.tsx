@@ -1,7 +1,7 @@
 // -Path: 'client/app/components/edit/DeckStatusBar.tsx'
 import type { DeckData } from '~/types/deck';
 import { useTranslation } from 'react-i18next';
-import { useLangText } from '~/hooks/useLangText';
+import { useLangText } from '~/hooks/config/useLangText';
 
 /** Props for {@link DeckStatusBar}. */
 interface DeckStatusBarProps {

@@ -11,7 +11,7 @@
 // The counts stay visible even for a source that is still loading, because the
 // number is what tells the viewer the tab is worth clicking at all.
 import { useTranslation } from 'react-i18next';
-import { DECK_SOURCE_TABS } from '~/utils/deckListQuery';
+import { DECK_SOURCE_TABS } from '~/utils/deck/deckListQuery';
 import type { DeckSource } from '~/types/deck';
 
 export default function SourceTally({

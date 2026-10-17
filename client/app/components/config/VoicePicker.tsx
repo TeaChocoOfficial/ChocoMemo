@@ -1,12 +1,12 @@
-import { useSpeak } from '~/hooks/useSpeak';
+import { useSpeak } from '~/hooks/base/useSpeak';
 import { FaVolumeHigh } from 'react-icons/fa6';
 import { useTranslation } from 'react-i18next';
 import Select from '~/components/custom/Select';
 import RangeSlider from '~/components/custom/RangeSlider';
 import { useEffect, useMemo, useState } from 'react';
-import { useTargetLang } from '~/hooks/useTargetLang';
+import { useTargetLang } from '~/hooks/base/useTargetLang';
 import { Languages } from '~/data/language';
-import { targetSpeechLang } from '~/utils/targetLang';
+import { targetSpeechLang } from '~/utils/config/targetLang';
 import { useSpeechStore } from '~/stores/config/speech.store';
 
 const AUTO_VALUE = '__auto__';

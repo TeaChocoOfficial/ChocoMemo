@@ -11,7 +11,7 @@ import { DEFAULT_DECKS } from '~/data/temp/decks';
 import { DEFAULT_RENDER_DECKS } from '~/data/temp/renderDecks';
 import { defaultExamSets } from '~/data/temp/defaultExamSets';
 import { Languages } from '~/data/language';
-import { shippedDeckMeta } from '~/utils/deckMeta';
+import { shippedDeckMeta } from '~/utils/deck/deckMeta';
 
 /** Languages with bundled content. The data in `app/data/japanese` is
  *  Japanese, so every other track has nothing official to list yet.

@@ -9,14 +9,18 @@ const ROW = 'h-9 w-full rounded-sm bg-surface-overlay';
 const HEADING = 'h-3 w-24 rounded-sm bg-surface-overlay';
 /** Placeholder for a text field. */
 const FIELD = 'w-full rounded-sm bg-surface-overlay';
+/** Placeholder for one dockview tab in the mobile tab strip. */
+const TAB = 'h-8 w-20 self-end rounded-sm bg-surface-overlay';
+/** Placeholder for the active (content-shaped) mobile tab. */
+const TAB_ACTIVE = 'h-8 w-24 self-end rounded-sm bg-surface-sunken';
 
 /**
  * Full-screen loading skeleton for the deck editor. Both layouts are rendered
  * and toggled with `md:` utilities, so the skeleton matches the viewport even
  * during SSR and the first paint — before a media query could be read — without
  * a hydration mismatch. The desktop side mirrors the docked rail, explorer,
- * editor and status bar; the mobile side mirrors the horizontal rail with a
- * stacked list and form.
+ * editor and status bar; the mobile side mirrors the locked dockview variant:
+ * a tab strip above a single content panel.
  *
  * @returns The rendered skeleton.
  */
@@ -55,26 +59,17 @@ export default function DeckEditorSkeleton() {
                 <div className='h-7 shrink-0 bg-primary-subtle' />
             </div>
 
-            <div className='flex h-full animate-pulse flex-col gap-3 overflow-hidden p-3 md:hidden'>
-                <div className='flex gap-1'>
-                    {Array.from({ length: 5 }).map((_, index) => (
-                        <div key={index} className={RAIL_ITEM} />
-                    ))}
+            <div className='flex h-full animate-pulse flex-col overflow-hidden md:hidden'>
+                <div className='flex shrink-0 gap-1 border-b border-line px-2 pt-2'>
+                    <div className={TAB_ACTIVE} />
+                    <div className={TAB} />
+                    <div className={TAB} />
                 </div>
 
-                <div className='h-10 w-full rounded-sm border border-dashed border-line-strong' />
-
-                <div className='space-y-3 rounded-sm border border-line p-4'>
-                    <div className={HEADING} />
-                    {Array.from({ length: 5 }).map((_, index) => (
-                        <div key={index} className={ROW} />
-                    ))}
-                </div>
-
-                <div className='space-y-4 rounded-sm border border-line p-4'>
+                <div className='min-h-0 flex-1 space-y-5 p-4'>
                     <div className={HEADING} />
                     <div className={`${FIELD} h-10`} />
-                    <div className={`${FIELD} h-20`} />
+                    <div className={`${FIELD} h-24`} />
                     <div className='h-10 w-2/3 rounded-sm bg-surface-overlay' />
                 </div>
             </div>

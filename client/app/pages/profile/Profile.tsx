@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import Button from '~/components/custom/Button';
 import Section from '~/components/custom/Section';
 import { useAuthStore } from '~/stores/config/auth.store';
-import { useSwal } from '~/hooks/useSwal';
+import { useSwal } from '~/hooks/base/useSwal';
 import ProfileHero from './components/ProfileHero';
 import StatsSection from './components/StatsSection';
 import { FaArrowLeft, FaUser } from 'react-icons/fa6';

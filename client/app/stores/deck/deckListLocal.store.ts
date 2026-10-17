@@ -6,11 +6,11 @@
 import { create } from 'zustand';
 import { Languages } from '~/data/language';
 import type { ExamSet } from '~/types/deck/exam';
-import { importedDeckSchema } from '~/utils/deck';
+import { importedDeckSchema } from '~/utils/deck/deck';
 import type { RenderPassage } from '~/types/deck/render';
 import type { ExamQuestion } from '~/types/deck/exam';
-import { importedExamSetSchema } from '~/utils/exam';
-import { newDeckMeta } from '~/utils/deckMeta';
+import { importedExamSetSchema } from '~/utils/exam/exam';
+import { newDeckMeta } from '~/utils/deck/deckMeta';
 import type { DeckData, DeckLists } from '~/types/deck';
 import { createJSONStorage, persist } from 'zustand/middleware';
 import { DEFAULT_PASSAGES } from '~/data/japanese/renderPassages';

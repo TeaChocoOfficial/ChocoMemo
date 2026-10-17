@@ -4,7 +4,7 @@
 // all 13 themes without hunting through real app flows.
 import { useState } from 'react';
 import Swal from 'sweetalert2';
-import { useSwal } from '~/hooks/useSwal';
+import { useSwal } from '~/hooks/base/useSwal';
 import { THEMES, useThemeStore } from '~/stores/config/theme.store';
 import Section from '~/components/custom/Section';
 import { useTranslation } from 'react-i18next';

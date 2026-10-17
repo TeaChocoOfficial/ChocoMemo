@@ -1,6 +1,6 @@
 // -Path: 'client/app/data/japanese/defaultExamSets.ts'
 import { DEFAULT_VOCABULARY } from '../japanese/vocabulary';
-import { buildExamSetFromVocabulary } from '~/utils/exam';
+import { buildExamSetFromVocabulary } from '~/utils/exam/exam';
 
 /** Default exam sets are derived from DEFAULT_VOCABULARY automatically, so
  *  no questions need to be written by hand. Options are re-shuffled on

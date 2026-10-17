@@ -5,8 +5,8 @@
 import { create } from 'zustand';
 import { Languages } from '~/data/language';
 import type { DeckData } from '~/types/deck';
-import { importedDeckSchema } from '~/utils/deck';
-import { newDeckMeta } from '~/utils/deckMeta';
+import { importedDeckSchema } from '~/utils/deck/deck';
+import { newDeckMeta } from '~/utils/deck/deckMeta';
 import type { VocabWord } from '~/types/vocabulary';
 import { useVocabularyStore } from './vocabulary.store';
 import { persist, createJSONStorage } from 'zustand/middleware';

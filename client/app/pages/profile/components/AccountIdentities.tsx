@@ -10,7 +10,7 @@ import type { ReactNode } from 'react';
 import { AuthProvider } from '~/types/auth';
 import Badge from '~/components/custom/Badge';
 import { useTranslation } from 'react-i18next';
-import { getAccountEmail } from '~/utils/auth';
+import { getAccountEmail } from '~/utils/config/auth';
 import Button from '~/components/custom/Button';
 import ChangeEmailModal from './ChangeEmailModal';
 import { useAuthStore } from '~/stores/config/auth.store';

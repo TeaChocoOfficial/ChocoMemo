@@ -1,7 +1,7 @@
 // -Path: 'client/app/pages/characters/CharacterChart.tsx'
 import { useParams } from 'react-router';
 import { ALL_TARGETS, targetLanguage } from '~/data/language';
-import { targetFromCode } from '~/utils/targetLang';
+import { targetFromCode } from '~/utils/config/targetLang';
 import KanaChart from './kana/Kana';
 import CharacterComingSoon from './CharacterComingSoon';
 

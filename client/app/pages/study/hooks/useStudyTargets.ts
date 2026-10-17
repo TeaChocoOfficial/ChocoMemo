@@ -1,6 +1,6 @@
 // -Path: 'client/app/pages/study/hooks/useStudyTargets.ts'
 import { languages } from '~/data/language';
-import { useTargetLang } from '~/hooks/useTargetLang';
+import { useTargetLang } from '~/hooks/base/useTargetLang';
 import type {
     AvailableLanguage,
     CharacterSetConfig,

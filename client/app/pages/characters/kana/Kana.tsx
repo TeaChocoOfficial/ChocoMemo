@@ -7,7 +7,7 @@ import { KANA_CHARS } from '~/data/japanese/kana';
 import type { Kana, KanaChars, KanaSetId } from '~/data/japanese/kana';
 import SetTabs, { type SetTabOption } from '~/components/custom/SetTabs';
 import Section from '~/components/custom/Section';
-import { useKanaReader } from '~/hooks/useKanaReader';
+import { useKanaReader } from '~/hooks/characters/useKanaReader';
 import KanaGrid from './components/KanaGrid';
 import KanaHero from './components/KanaHero';
 import KanaStats, { type Stat } from './components/KanaStats';

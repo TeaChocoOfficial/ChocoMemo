@@ -1,6 +1,6 @@
 // -Path: 'client/app/pages/drill/kana/components/game/QuizChoices.tsx'
 import { motion } from 'framer-motion';
-import type { Choice } from '~/hooks/useQuizEngine';
+import type { Choice } from '~/hooks/drill/useQuizEngine';
 
 export type ChoiceFeedback = 'idle' | 'selected' | 'correct' | 'wrong';
 

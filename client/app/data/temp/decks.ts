@@ -1,7 +1,7 @@
 // -Path: 'client/app/data/japanese/decks.ts'
 import type { DeckData } from '~/types/deck';
 import { Languages } from '~/data/language';
-import { shippedDeckMeta } from '~/utils/deckMeta';
+import { shippedDeckMeta } from '~/utils/deck/deckMeta';
 import { DEFAULT_VOCABULARY } from '../japanese/vocabulary';
 
 /**

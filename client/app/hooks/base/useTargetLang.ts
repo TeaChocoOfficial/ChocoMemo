@@ -1,7 +1,7 @@
 // -Path: 'client/app/hooks/useTargetLang.ts'
 import { useSearchParams } from 'react-router';
-import { useDeckListOptions } from '~/hooks/useDeckListOptions';
-import { targetFromCode } from '~/utils/targetLang';
+import { useDeckListOptions } from '~/hooks/deck/useDeckListOptions';
+import { targetFromCode } from '~/utils/config/targetLang';
 import { ALL_TARGETS, DEFAULT_TARGET_LANG, type Languages, type TargetFilter } from '~/data/language';
 
 /**

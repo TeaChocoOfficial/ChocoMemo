@@ -2,7 +2,7 @@
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { DeckData } from '~/types/deck';
-import { resolveText } from '~/hooks/useLangText';
+import { resolveText } from '~/hooks/config/useLangText';
 import { useVocabularyStore } from '~/stores/japanese/vocabulary.store';
 import {
     useDeckListLocalStore,

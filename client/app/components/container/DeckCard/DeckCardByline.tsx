@@ -9,7 +9,7 @@
 // text and sends the viewer to the details page to reach the profile.
 import { useTranslation } from 'react-i18next';
 import { Link } from '~/i18n/routing';
-import { formatRelativeTime } from '~/utils/relativeTime';
+import { formatRelativeTime } from '~/utils/base/relativeTime';
 import AuthorAvatar, { authorProfile } from './AuthorAvatar';
 import type { DeckAuthor } from '~/types/deck';
 

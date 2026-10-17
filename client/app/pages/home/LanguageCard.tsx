@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { Link } from '~/i18n/routing';
 import { FaLock } from 'react-icons/fa6';
 import type { AvailableLanguage } from '~/data/language';
-import { withTarget } from '~/utils/targetLang';
+import { withTarget } from '~/utils/config/targetLang';
 
 interface LanguageCardProps {
     language: AvailableLanguage;

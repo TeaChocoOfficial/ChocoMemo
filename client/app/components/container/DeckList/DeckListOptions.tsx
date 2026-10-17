@@ -23,7 +23,7 @@ import {
 import Button from '~/components/custom/Button';
 import Select from '~/components/custom/Select';
 import { useTranslation } from 'react-i18next';
-import { DECK_SORTS, DECK_NSFW_FILTERS } from '~/utils/deckListQuery';
+import { DECK_SORTS, DECK_NSFW_FILTERS } from '~/utils/deck/deckListQuery';
 import type { DeckDensity, DeckNsfwFilter, DeckSort } from '~/types/deckList';
 
 /**

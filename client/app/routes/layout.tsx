@@ -9,6 +9,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 export default function Layout() {
     const { t } = useTranslation();
+
     const { showChrome, setShowChrome } = useChromeStore();
 
     return (

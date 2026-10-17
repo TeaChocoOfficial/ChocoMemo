@@ -1,6 +1,6 @@
 // -Path: 'client/app/pages/characters/kana/components/KanaCard.tsx'
 import { motion } from 'framer-motion';
-import { useSpeak } from '~/hooks/useSpeak';
+import { useSpeak } from '~/hooks/base/useSpeak';
 import { FaVolumeHigh } from 'react-icons/fa6';
 import type { Kana } from '~/data/japanese/kana';
 

@@ -1,11 +1,11 @@
 import NavLinks from '../NavLinks';
 import { Link } from '~/i18n/routing';
-import { useSwal } from '~/hooks/useSwal';
+import { useSwal } from '~/hooks/base/useSwal';
 import { authAPI } from '~/services/auth';
 import MenuControls from './MenuControls';
 import type { SetState } from '~/types/type';
 import { useTranslation } from 'react-i18next';
-import { getAccountEmail } from '~/utils/auth';
+import { getAccountEmail } from '~/utils/config/auth';
 import HideChromeButton from './HideChromeButton';
 import { useAuthStore } from '~/stores/config/auth.store';
 import MenuDropdown from '~/components/custom/MenuDropdown';

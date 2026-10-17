@@ -14,8 +14,8 @@ import { localDecks, useDeckListLocalStore } from '~/stores/deck/deckListLocal.s
 import { officialDecks } from '~/stores/deck/deckListOfficial.store';
 import { useDeckListCloudStore } from '~/stores/deck/deckListCloud.store';
 import { useDeckListCommunityStore } from '~/stores/deck/deckListCommunity.store';
-import { useLangText } from '~/hooks/useLangText';
-import { formatRelativeTime } from '~/utils/relativeTime';
+import { useLangText } from '~/hooks/config/useLangText';
+import { formatRelativeTime } from '~/utils/base/relativeTime';
 import type { Lang } from '~/i18n/locales';
 import type { DeckData, DeckLists, DeckType } from '~/types/deck';
 import { Languages } from '~/data/language';

@@ -1,6 +1,6 @@
 // -Path: 'client/app/components/edit/EditorPanel.tsx'
 import DeckEditPanel from './DeckEditPanel';
-import { useEditor } from '../components/EditorContext';
+import { useEditor } from '~/hooks/editor/useEditor';
 import type { IDockviewPanelProps } from 'dockview-react';
 
 /**

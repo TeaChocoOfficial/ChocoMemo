@@ -8,8 +8,8 @@
 // back to speech synthesis if the file fails to load.
 
 import { useCallback } from 'react';
-import { useTargetLang } from '~/hooks/useTargetLang';
-import { targetSpeechLang } from '~/utils/targetLang';
+import { useTargetLang } from '~/hooks/base/useTargetLang';
+import { targetSpeechLang } from '~/utils/config/targetLang';
 import { useSpeechStore } from '~/stores/config/speech.store';
 
 // The most recently played static audio file, so any caller can stop the

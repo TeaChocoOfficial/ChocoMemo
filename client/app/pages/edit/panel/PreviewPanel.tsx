@@ -1,8 +1,8 @@
 // -Path: 'client/app/components/edit/PreviewPanel.tsx'
 import PanelMessage from '../components/PanelMessage';
-import { useEditor } from '../components/EditorContext';
+import { useEditor } from '~/hooks/editor/useEditor';
 import { useTranslation } from 'react-i18next';
-import { useDeckPreview } from '../../../hooks/edito/useDeckPreview';
+import { useDeckPreview } from '../../../hooks/editor/useDeckPreview';
 import type { IDockviewPanelProps } from 'dockview-react';
 
 /** Dockview panel previewing the content of the selected deck. */

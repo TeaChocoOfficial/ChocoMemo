@@ -23,7 +23,7 @@ import { useDeckListDecks } from '~/hooks/deck/useDeckListDecks';
 import { useAuthStore } from '~/stores/config/auth.store';
 import type { DeckType } from '~/types/deck';
 import type { DeckListQuery } from '~/types/deckList';
-import { useDeckTargetLang } from '~/hooks/useTargetLang';
+import { useDeckTargetLang } from '~/hooks/base/useTargetLang';
 import TargetLangSelect from '../TargetLangSelect';
 
 /** Column count per density. Comfortable is the roomy default; compact trades

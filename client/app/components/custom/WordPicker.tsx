@@ -3,7 +3,7 @@
 // exam-set and custom-deck creation forms.
 import { useMemo, useState } from 'react';
 import { FaMagnifyingGlass } from 'react-icons/fa6';
-import { useLangText } from '~/hooks/useLangText';
+import { useLangText } from '~/hooks/config/useLangText';
 import type { VocabWord } from '~/types/vocabulary';
 
 interface WordPickerProps {

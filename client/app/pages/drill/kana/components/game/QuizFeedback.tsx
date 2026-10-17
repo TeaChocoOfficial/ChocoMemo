@@ -3,7 +3,7 @@
 // correct answer, plus a Next Question button when auto-advance is off.
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import type { Choice } from '~/hooks/useQuizEngine';
+import type { Choice } from '~/hooks/drill/useQuizEngine';
 
 interface QuizFeedbackProps {
     lastChoice: Choice | null;

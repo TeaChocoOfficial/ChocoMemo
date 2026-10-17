@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { useSwal } from '~/hooks/useSwal';
+import { useSwal } from '~/hooks/base/useSwal';
 import { useTranslation } from 'react-i18next';
 import Button from '~/components/custom/Button';
 import PasswordInput from '~/components/auth/PasswordInput';
@@ -9,7 +9,7 @@ import { Modal, ModalBody, ModalFooter, ModalHeader } from '~/components/custom/
 import { authAPI } from '~/services/auth';
 import { useAuthStore } from '~/stores/config/auth.store';
 import { AuthProvider } from '~/types/auth';
-import { getAccountEmail } from '~/utils/auth';
+import { getAccountEmail } from '~/utils/config/auth';
 import { FaKey, FaShieldHalved } from 'react-icons/fa6';
 
 const RESEND_COOLDOWN = 30;

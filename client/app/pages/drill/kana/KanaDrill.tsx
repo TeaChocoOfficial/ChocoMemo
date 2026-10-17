@@ -1,6 +1,6 @@
 // -Path: 'client/app/pages/drill/kana/KanaDrill.tsx'
 import { Link } from '~/i18n/routing';
-import { useSpeak } from '~/hooks/useSpeak';
+import { useSpeak } from '~/hooks/base/useSpeak';
 import { FaArrowLeft } from 'react-icons/fa6';
 import { useTranslation } from 'react-i18next';
 import Section from '~/components/custom/Section';

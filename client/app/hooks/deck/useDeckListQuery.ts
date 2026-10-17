@@ -16,7 +16,7 @@ import {
     parseDeckListQuery,
     deckListQueryToParams,
     isDeckListQueryDefault,
-} from '~/utils/deckListQuery';
+} from '~/utils/deck/deckListQuery';
 import {
     useDeckListStore,
     type DeckListOptions,
@@ -25,7 +25,7 @@ import {
 import type { DeckSource } from '~/types/deck';
 import { useSearchParams } from 'react-router';
 import { DEFAULT_DECK_LIST_QUERY } from '~/types/deckList';
-import { useDeckListOptions } from '~/hooks/useDeckListOptions';
+import { useDeckListOptions } from '~/hooks/deck/useDeckListOptions';
 import { useCallback, useEffect, useMemo, useRef } from 'react';
 import type { DeckDensity, DeckListQuery, DeckNsfwFilter, DeckSort } from '~/types/deckList';
 

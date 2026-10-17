@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { useSpeak } from '~/hooks/useSpeak';
-import { useLangText } from '~/hooks/useLangText';
+import { useSpeak } from '~/hooks/base/useSpeak';
+import { useLangText } from '~/hooks/config/useLangText';
 import type { VocabWord } from '~/types/vocabulary';
 import { FaCheck, FaCopy, FaVolumeHigh } from 'react-icons/fa6';
 

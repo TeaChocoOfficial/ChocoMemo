@@ -2,7 +2,7 @@
 import { useEffect } from 'react';
 import { useSearchParams } from 'react-router';
 import { useTranslation } from 'react-i18next';
-import { useSwal } from './useSwal';
+import { useSwal } from '../base/useSwal';
 
 /**
  * Surfaces a failed OAuth *sign-in* on whatever page the provider redirected

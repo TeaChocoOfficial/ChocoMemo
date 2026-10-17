@@ -1,6 +1,6 @@
 import { FaAt, FaLock, FaUser, FaEnvelope, FaShieldHalved } from 'react-icons/fa6';
 import axios from 'axios';
-import { useSwal } from '~/hooks/useSwal';
+import { useSwal } from '~/hooks/base/useSwal';
 import PasswordInput from './PasswordInput';
 import React, { useEffect, useState } from 'react';
 import { AuthProvider } from '~/types/auth';

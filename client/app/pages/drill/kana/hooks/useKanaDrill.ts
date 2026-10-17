@@ -3,13 +3,13 @@
 // timer, scoring, feedback, and answer history. Owns the phase machine
 // (intro -> playing -> result) with mode-aware choice building and no rendering.
 import { useEffect, useMemo, useRef, useState } from 'react';
-import type { Choice } from '~/hooks/useQuizEngine';
-import { buildChoices, uniqueStrings } from '~/hooks/useQuizEngine';
+import type { Choice } from '~/hooks/drill/useQuizEngine';
+import { buildChoices, uniqueStrings } from '~/hooks/drill/useQuizEngine';
 import type { Kana, KanaChars, KanaSetId } from '~/data/japanese/kana';
 import { KANA_CHARS } from '~/data/japanese/kana';
 import type { QuizSettingsState } from '../components/setting/QuizSettings';
 import type { ChoiceFeedback } from '../components/game/QuizChoices';
-import { playDrillSound } from '~/utils/sound';
+import { playDrillSound } from '~/utils/config/sound';
 
 export type GroupId = keyof KanaChars;
 

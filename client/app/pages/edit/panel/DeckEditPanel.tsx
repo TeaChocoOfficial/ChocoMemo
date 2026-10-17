@@ -1,11 +1,11 @@
 // -Path: 'client/app/components/edit/DeckEditPanel.tsx'
-import Badge from '~/components/custom/Badge';
+import { useId, useState } from 'react';
 import type { DeckData } from '~/types/deck';
+import Badge from '~/components/custom/Badge';
+import { useTranslation } from 'react-i18next';
 import Button from '~/components/custom/Button';
 import Switch from '~/components/custom/Switch';
-import { useTranslation } from 'react-i18next';
-import { useId, useState, type FormEvent } from 'react';
-import { readLangText, writeLangText, parseTags } from '../../../utils/edit';
+import { readLangText, writeLangText, parseTags } from '~/utils/edit/edit';
 
 /** Props for {@link DeckEditPanel}. */
 interface DeckEditPanelProps {
@@ -43,7 +43,7 @@ export default function DeckEditPanel({ deck, onSave, onDelete }: DeckEditPanelP
     const canSave = trimmedName.length > 0;
 
     /** Persists every edited field back onto the selected deck. */
-    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    const handleSubmit = (event: React.SubmitEvent) => {
         event.preventDefault();
         if (!deck || !canSave) return;
         const descriptionText = description.trim();
@@ -57,13 +57,12 @@ export default function DeckEditPanel({ deck, onSave, onDelete }: DeckEditPanelP
         });
     };
 
-    if (!deck) {
+    if (!deck)
         return (
             <div className='flex h-full items-center justify-center p-8 text-center text-sm text-surface-muted'>
                 {t('deck.edit.selectPrompt')}
             </div>
         );
-    }
 
     return (
         <form onSubmit={handleSubmit} className='flex h-full flex-col gap-5 p-5'>

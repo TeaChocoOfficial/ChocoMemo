@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import PageShell from '~/components/custom/PageShell';
 import DeckGroup from './components/DeckGroup';
 import DrillGroup from './components/DrillGroup';
-import { useTargetLang } from '~/hooks/useTargetLang';
+import { useTargetLang } from '~/hooks/base/useTargetLang';
 import CharacterGroup from './components/CharacterGroup';
 import { useStudyTargets } from './hooks/useStudyTargets';
 import TargetLangSelect from '~/components/container/TargetLangSelect';
