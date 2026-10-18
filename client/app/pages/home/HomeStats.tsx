@@ -2,15 +2,15 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import Section from '~/components/custom/Section';
-import { KANA_CHARS } from '~/data/japanese/kana';
-import { DEFAULT_VOCABULARY } from '~/data/japanese/vocabulary';
+import { KANA_CHARS } from '~/data/ja/kana';
+import { DEFAULT_VOCABULARY } from '~/data/ja/vocabulary';
 import { Languages, languages } from '~/data/language';
 import { officialDecks } from '~/stores/deck/deckListOfficial.store';
 
 /**
  * The opening figures: a hairline-ruled strip of counts measured from the data
- * the app actually loads — bundled decks, vocabulary, kana, and the languages
- * that are ready. Nothing is typed into copy, so the numbers cannot drift.
+ * the app actually loads — bundled decks, vocabulary, kana, and the study
+ * languages. Nothing is typed into copy, so the numbers cannot drift.
  *
  * A "users" figure is deliberately absent: the app has no server endpoint that
  * reports a user or community count, and a made-up number would be a lie.
@@ -22,15 +22,13 @@ export default function HomeStats() {
         (sum, set) => sum + Object.values(set).reduce((group, list) => group + list.length, 0),
         0,
     );
-    const readyLanguages = languages.filter(
-        (language) => language.status === 'ready' && language.id !== Languages.other,
-    ).length;
+    const studyLanguages = languages.filter((language) => language.id !== Languages.other).length;
 
     const stats = [
         { value: officialDecks(Languages.ja).length, label: t('home.stats.shelves') },
         { value: DEFAULT_VOCABULARY.length, label: t('home.stats.vocabulary') },
         { value: characters, label: t('home.stats.kana') },
-        { value: readyLanguages, label: t('home.stats.languages') },
+        { value: studyLanguages, label: t('home.stats.languages') },
     ];
 
     return (

@@ -9,7 +9,7 @@
 // unlike the local, cloud and community stores there is no `add`/`update`/
 // `remove` to offer.
 import { create } from 'zustand';
-import { deckListOfficialData } from '~/data/japanese/deck/deckListOfficialData';
+import { deckListOfficialData } from '~/data/ja/deck/deckListOfficialData';
 import type { Languages } from '~/data/language';
 import type { DeckData, DeckLists, DeckType } from '~/types/deck';
 

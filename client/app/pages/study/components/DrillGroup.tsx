@@ -6,8 +6,8 @@ import type { StudyItem } from '../hooks/useStudyTargets';
 import type { DrillConfig } from '~/data/language';
 
 /**
- * The Drill group: one row per drill, ready ones first, inside a single
- * bordered container with dividers — deliberately a list, not a card grid.
+ * The Drill group: one row per drill, inside a single bordered container with
+ * dividers — deliberately a list, not a card grid.
  */
 export default function DrillGroup({ items }: { items: StudyItem<DrillConfig>[] }) {
     const { t } = useTranslation();
@@ -25,7 +25,6 @@ export default function DrillGroup({ items }: { items: StudyItem<DrillConfig>[] 
                         code={item.language.code}
                         feature={item.feature}
                         active={item.active}
-                        status={item.status}
                     />
                 ))}
             </div>

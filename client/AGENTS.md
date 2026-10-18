@@ -4,7 +4,7 @@ Guidance for AI coding agents working on **ChocoMemo** (`client/`). Read this be
 
 ## Project summary
 
-ChocoMemo is a multi-language learning web app (Japanese implemented; English and a deck-only "Another language" target ready; Korean, Chinese, Thai planned). Users study character sets, vocabulary, exam and review, and can share decks.
+ChocoMemo is a multi-language learning web app (all six targets active and studyable through decks; the Japanese character chart/drill is the only one implemented; "Another language" is a deck-only catch-all). Users study character sets, vocabulary, exam and review, and can share decks.
 
 - **Client:** React + React Router v7 (framework mode, SSR) + TypeScript, in `client/`
 - **Server:** NestJS (separate package, not covered by this file)
@@ -88,7 +88,7 @@ Rules of thumb:
 - Routes: `/:lang` (Landing — introduces the app and picks a language), `/:lang/study` (study hub), `/:lang/edit`, `/:lang/decks/:deckId`, `/:lang/{vocab,render,exam,review}` (+ `/:deckId`), `/:lang/characters/:target`, `/:lang/drill/:target`. There is no language-select route: the first choice is on the Landing and later changes go through the navbar switcher.
 - `other` is a deck-only catch-all target (no character set, so no chart or drill). An `other` deck carries `targetInfo` (`label` + BCP-47 `speechTag`) for its own language name and TTS tag.
 - **Terminology:** `uiLang` = the `:lang` segment (i18n locale). `targetLang` = the language being studied. Never use a bare `lang` where it could mean either.
-- The capabilities config in `app/data/language.ts` declares each target's `status` (`ready` / `coming-soon`) and its `characterSet`. The character routes read it, so a language without a set shows a coming-soon notice. The study hub is target-agnostic.
+- The capabilities config in `app/data/language.ts` declares each target's character set and drill (no `status` field — every target is active/selectable). The character routes only implement `kana`, so any other target shows a coming-soon placeholder on its chart/drill route. The study hub is target-agnostic.
 - The active target comes from `?target=` first, then the deck list's saved options (`stores/config/deckList.store.ts`), then the default (`useTargetLang`). Only deck lists use `targetLang`; `DeckDetailsPage` resolves a deck (and its language) from the deck itself.
 - Feature name is **`render`** (not `reading`, not `ebook`).
 - Use the locale-aware link/navigate helpers from `app/i18n/routing.tsx` so links keep the current `:lang`. Ask the user before reading it if you need its API.

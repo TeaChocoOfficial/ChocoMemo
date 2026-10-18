@@ -35,54 +35,54 @@ function sentenceReading(example: VocabExample): string | undefined {
  *  Distractor count varies from 2 to 7 (so options range 3–8) and shrinks
  *  automatically on very small pools: it never throws, falling back to as
  *  few options as the pool allows instead. */
-export function buildExamSetFromVocabulary(
-    words: VocabWord[],
-    opts: { id: string; title: string; description?: string; source?: DeckSource },
-): ExamSet {
-    const questions: ExamQuestion[] = words.map((word, i) => {
-        const others = words.filter((w) => w.id !== word.id);
-        const maxDistractors = Math.min(others.length, 7);
-        const minDistractors = Math.min(2, maxDistractors);
-        const distractorCount =
-            maxDistractors <= minDistractors
-                ? maxDistractors
-                : randomInt(minDistractors, maxDistractors);
+// export function buildExamSetFromVocabulary(
+//     words: VocabWord[],
+//     opts: { id: string; title: string; description?: string; source?: DeckSource },
+// ): ExamSet {
+//     const questions: ExamQuestion[] = words.map((word, i) => {
+//         const others = words.filter((w) => w.id !== word.id);
+//         const maxDistractors = Math.min(others.length, 7);
+//         const minDistractors = Math.min(2, maxDistractors);
+//         const distractorCount =
+//             maxDistractors <= minDistractors
+//                 ? maxDistractors
+//                 : randomInt(minDistractors, maxDistractors);
 
-        if (i % 2 === 1) {
-            const distractors = shuffle(others.map((w) => w.word)).slice(0, distractorCount);
-            const question: FillBlankExamQuestion = {
-                id: `${word.id}-fillblank`,
-                type: 'fillBlank',
-                sentenceBefore: word.example.before.map((s) => s.ch).join(''),
-                sentenceAfter: word.example.after.map((s) => s.ch).join(''),
-                sentenceReading: sentenceReading(word.example),
-                correctAnswer: word.word,
-                options: shuffle([word.word, ...distractors]),
-            };
-            return question;
-        }
+//         if (i % 2 === 1) {
+//             const distractors = shuffle(others.map((w) => w.word)).slice(0, distractorCount);
+//             const question: FillBlankExamQuestion = {
+//                 id: `${word.id}-fillblank`,
+//                 type: 'fillBlank',
+//                 sentenceBefore: word.example.before.map((s) => s.ch).join(''),
+//                 sentenceAfter: word.example.after.map((s) => s.ch).join(''),
+//                 sentenceReading: sentenceReading(word.example),
+//                 correctAnswer: word.word,
+//                 options: shuffle([word.word, ...distractors]),
+//             };
+//             return question;
+//         }
 
-        const distractors = shuffle(others.map((w) => w.meaning)).slice(0, distractorCount);
-        const question: MeaningExamQuestion = {
-            id: word.id,
-            type: 'meaning',
-            prompt: word.word,
-            promptReading: word.reading,
-            correctAnswer: word.meaning,
-            options: shuffle([word.meaning, ...distractors]),
-        };
-        return question;
-    });
+//         const distractors = shuffle(others.map((w) => w.meaning)).slice(0, distractorCount);
+//         const question: MeaningExamQuestion = {
+//             id: word.id,
+//             type: 'meaning',
+//             prompt: word.word,
+//             promptReading: word.reading,
+//             correctAnswer: word.meaning,
+//             options: shuffle([word.meaning, ...distractors]),
+//         };
+//         return question;
+//     });
 
-    return {
-        id: opts.id,
-        title: opts.title,
-        description: opts.description,
-        source: opts.source ?? 'local',
-        questions,
-        createdAt: Date.now(),
-    };
-}
+//     return {
+//         id: opts.id,
+//         title: opts.title,
+//         description: opts.description,
+//         source: opts.source ?? 'local',
+//         questions,
+//         createdAt: Date.now(),
+//     };
+// }
 
 // A meaning is either a plain string (imported files/custom words) or a
 // per-locale record (built-in sets) — accepting both keeps the exported

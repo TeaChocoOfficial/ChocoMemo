@@ -2,7 +2,7 @@
 // Wraps the persisted vocabulary words, including defaults merged at hydrate time.
 import { create } from 'zustand';
 import type { VocabWord } from '~/types/vocabulary';
-import { DEFAULT_VOCABULARY } from '~/data/japanese/vocabulary';
+import { DEFAULT_VOCABULARY } from '~/data/ja/vocabulary';
 import { persist, createJSONStorage } from 'zustand/middleware';
 
 interface VocabularyState {

@@ -33,7 +33,6 @@ export default function DeckImportButton({
     const inputRef = useRef<HTMLInputElement>(null);
     const [error, setError] = useState<string | null>(null);
     const importDeck = useDeckListLocalStore((state) => state.importDeck);
-    const importExamSet = useDeckListLocalStore((state) => state.importExamSet);
 
     const handleFile = async (file: File) => {
         setError(null);
@@ -47,8 +46,7 @@ export default function DeckImportButton({
             return;
         }
 
-        const result =
-            type === 'exam' ? importExamSet(language, raw) : importDeck(language, raw);
+        const result = importDeck(language, raw);
         if (!result.success) {
             setError(t(`deck.import.${type === 'exam' ? 'invalidExam' : 'invalidDeck'}`));
             return;

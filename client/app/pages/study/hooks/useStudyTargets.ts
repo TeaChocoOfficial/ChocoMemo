@@ -1,12 +1,7 @@
 // -Path: 'client/app/pages/study/hooks/useStudyTargets.ts'
 import { languages } from '~/data/language';
 import { useTargetLang } from '~/hooks/base/useTargetLang';
-import type {
-    AvailableLanguage,
-    CharacterSetConfig,
-    DrillConfig,
-    TargetStatus,
-} from '~/data/language';
+import type { DrillConfig, AvailableLanguage, CharacterSetConfig } from '~/data/language';
 
 /** A character-set tile or drill row, annotated for the study hub. */
 export interface StudyItem<Feature> {
@@ -16,8 +11,6 @@ export interface StudyItem<Feature> {
     feature: Feature;
     /** True when this language is the active target. */
     active: boolean;
-    /** The feature's own readiness, not the language's. */
-    status: TargetStatus;
 }
 
 export interface StudyTargets {
@@ -27,47 +20,36 @@ export interface StudyTargets {
     active: AvailableLanguage | undefined;
 }
 
-/** Ready items first, then coming soon, each keeping the config order. */
-function readyFirst<Feature>(items: StudyItem<Feature>[]): StudyItem<Feature>[] {
-    return [...items].sort((a, b) => Number(a.status !== 'ready') - Number(b.status !== 'ready'));
-}
-
 /**
  * The study hub's character and drill items, derived from the capabilities
- * config: every language that has the feature, ready ones first, the active
- * target flagged. Adding a language only needs a config entry.
+ * config: every language that has the feature, the active target flagged.
+ * Adding a language only needs a config entry.
  */
 export function useStudyTargets(): StudyTargets {
     const targetLang = useTargetLang();
 
-    const characters = readyFirst(
-        languages.flatMap((language) =>
-            language.characters
-                ? [
-                      {
-                          language,
-                          feature: language.characters,
-                          active: language.id === targetLang,
-                          status: language.characters.status,
-                      },
-                  ]
-                : [],
-        ),
+    const characters = languages.flatMap((language) =>
+        language.characters
+            ? [
+                  {
+                      language,
+                      feature: language.characters,
+                      active: language.id === targetLang,
+                  },
+              ]
+            : [],
     );
 
-    const drills = readyFirst(
-        languages.flatMap((language) =>
-            language.drill
-                ? [
-                      {
-                          language,
-                          feature: language.drill,
-                          active: language.id === targetLang,
-                          status: language.drill.status,
-                      },
-                  ]
-                : [],
-        ),
+    const drills = languages.flatMap((language) =>
+        language.drill
+            ? [
+                  {
+                      language,
+                      feature: language.drill,
+                      active: language.id === targetLang,
+                  },
+              ]
+            : [],
     );
 
     return {

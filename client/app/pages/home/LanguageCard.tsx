@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import Badge from '~/components/custom/Badge';
 import { useTranslation } from 'react-i18next';
 import { Link } from '~/i18n/routing';
-import { FaLock } from 'react-icons/fa6';
 import type { AvailableLanguage } from '~/data/language';
 import { withTarget } from '~/utils/config/targetLang';
 
@@ -56,42 +55,6 @@ export default function LanguageCard({ language, index }: LanguageCardProps) {
                     {t('languageSelect.cta.start')}
                 </span>
             </Link>
-        </motion.div>
-    );
-}
-
-/**
- * Row for a language that isn't ready yet.
- *
- * Deliberately not interactive and far quieter than the available row: no
- * border of its own, no description, no call to action. It sits inside the
- * "Coming soon" group so the page reads as "one thing to do, four to wait for"
- * rather than as a wall of locked tiles.
- */
-export function LanguageLockedRow({ language, index }: LanguageCardProps) {
-    const { t } = useTranslation();
-    const { id, code, glyph } = language;
-
-    return (
-        <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.3, delay: index * 0.05 }}
-            className='flex items-center gap-4 px-4 py-3 sm:px-5'
-        >
-            <span className='w-8 shrink-0 text-center text-xl font-black text-surface-subtle/60'>
-                {glyph}
-            </span>
-            <span className='min-w-0 flex-1 truncate text-sm font-semibold text-surface-muted'>
-                {t(`languageSelect.languages.${id}.name`)}
-            </span>
-            <span className='shrink-0 font-mono text-[11px] uppercase tracking-[0.14em] text-surface-muted/70'>
-                {code}
-            </span>
-            <span className='inline-flex shrink-0 items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.14em] text-surface-muted'>
-                <FaLock className='h-3 w-3' />
-                <span className='hidden sm:inline'>{t('languageSelect.status.comingSoon')}</span>
-            </span>
         </motion.div>
     );
 }

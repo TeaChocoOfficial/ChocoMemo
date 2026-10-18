@@ -14,10 +14,9 @@ export enum Languages {
     other = 'other',
 }
 
-export type Language = Languages[keyof Languages];
+export type LangCode = keyof typeof Languages;
 
-/** Whether a target language, or one of its features, is ready or still built. */
-export type TargetStatus = 'ready' | 'coming-soon';
+export type Language = (typeof Languages)[LangCode];
 
 /** The character set a target language teaches, when it has one yet. */
 export type CharacterSetId = 'kana' | 'alphabet' | 'hangul' | 'hanzi' | 'thai';
@@ -37,26 +36,18 @@ export type TargetFilter = Languages | typeof ALL_TARGETS;
 
 /** A target language's character chart, when it has one. */
 export interface CharacterSetConfig {
-    /** Route set id, e.g. `kana`. */
-    id: CharacterSetId;
     /** Large script glyph for the tile, e.g. あ or Aa. */
     glyph: string;
-    /** i18n key for the chart name, e.g. `study.characters.items.ja.name`. */
-    name: string;
     /** Scripts/count subtitle, e.g. "ひらがな · カタカナ". */
     subtitle: string;
-    status: TargetStatus;
 }
 
 /** A target language's character drill, when it has one. */
 export interface DrillConfig {
     /** Small language badge shown on the row, e.g. 日 or En. */
     badge: string;
-    /** i18n key for the drill name, e.g. `study.drill.items.ja.name`. */
-    name: string;
     /** i18n key for the one-line description, e.g. `study.drill.items.ja.description`. */
     description: string;
-    status: TargetStatus;
 }
 
 /**
@@ -67,11 +58,10 @@ export interface DrillConfig {
 export interface AvailableLanguage {
     id: Languages;
     /** Short code used in the URL (`?target=ja`). */
-    code: string;
+    code: LangCode;
     glyph: string;
     /** Flag emoji for the language, e.g. 🇯🇵. `other` uses the globe. */
     flag: string;
-    status: TargetStatus;
     /** The character chart, when this language has one. */
     characters?: CharacterSetConfig;
     /** The character drill, when this language has one. */
@@ -84,19 +74,13 @@ export const languages: AvailableLanguage[] = [
         code: 'en',
         glyph: 'A',
         flag: '🇺🇸',
-        status: 'ready',
         characters: {
-            id: 'alphabet',
             glyph: 'Aa',
-            name: 'study.characters.items.en.name',
             subtitle: 'A – Z',
-            status: 'coming-soon',
         },
         drill: {
             badge: 'En',
-            name: 'study.drill.items.en.name',
             description: 'study.drill.items.en.description',
-            status: 'coming-soon',
         },
     },
     {
@@ -104,19 +88,13 @@ export const languages: AvailableLanguage[] = [
         code: 'ja',
         glyph: 'あ',
         flag: '🇯🇵',
-        status: 'ready',
         characters: {
-            id: 'kana',
             glyph: 'あ',
-            name: 'study.characters.items.ja.name',
             subtitle: 'ひらがな · カタカナ',
-            status: 'ready',
         },
         drill: {
             badge: '日',
-            name: 'study.drill.items.ja.name',
             description: 'study.drill.items.ja.description',
-            status: 'ready',
         },
     },
     {
@@ -124,19 +102,13 @@ export const languages: AvailableLanguage[] = [
         code: 'th',
         glyph: 'ก',
         flag: '🇹🇭',
-        status: 'coming-soon',
         characters: {
-            id: 'thai',
             glyph: 'ก',
-            name: 'study.characters.items.th.name',
             subtitle: 'ก – ฮ',
-            status: 'coming-soon',
         },
         drill: {
             badge: 'ก',
-            name: 'study.drill.items.th.name',
             description: 'study.drill.items.th.description',
-            status: 'coming-soon',
         },
     },
     {
@@ -144,19 +116,13 @@ export const languages: AvailableLanguage[] = [
         code: 'zh',
         glyph: '字',
         flag: '🇨🇳',
-        status: 'coming-soon',
         characters: {
-            id: 'hanzi',
             glyph: '汉',
-            name: 'study.characters.items.zh.name',
             subtitle: '汉字',
-            status: 'coming-soon',
         },
         drill: {
             badge: '中',
-            name: 'study.drill.items.zh.name',
             description: 'study.drill.items.zh.description',
-            status: 'coming-soon',
         },
     },
     {
@@ -164,19 +130,13 @@ export const languages: AvailableLanguage[] = [
         code: 'ko',
         glyph: '한',
         flag: '🇰🇷',
-        status: 'coming-soon',
         characters: {
-            id: 'hangul',
             glyph: '한',
-            name: 'study.characters.items.ko.name',
             subtitle: '한글',
-            status: 'coming-soon',
         },
         drill: {
             badge: '한',
-            name: 'study.drill.items.ko.name',
             description: 'study.drill.items.ko.description',
-            status: 'coming-soon',
         },
     },
     {
@@ -184,16 +144,10 @@ export const languages: AvailableLanguage[] = [
         code: 'other',
         glyph: OTHER_GLYPH,
         flag: OTHER_GLYPH,
-        status: 'ready',
     },
 ];
 
 /** The config entry for a target language, or `undefined` if unknown. */
 export function targetLanguage(id: Languages): AvailableLanguage | undefined {
     return languages.find((language) => language.id === id);
-}
-
-/** True when a target language is ready to study. */
-export function isTargetReady(id: Languages): boolean {
-    return targetLanguage(id)?.status === 'ready';
 }

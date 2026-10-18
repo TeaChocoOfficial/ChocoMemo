@@ -4,7 +4,7 @@
 
 Built with **React Router v7 (framework mode)**, **TypeScript**, **Zustand**, **i18next**, and **Tailwind CSS**.
 
-> The **Japanese** track is complete. **English** has the study hub, deck-list browsing, deck management, and per-deck session routes, but no character set or drill yet. **Korean, Thai, and Chinese** are still disabled ("Coming Soon"). **Another language** is a deck-only catch-all for languages the app has no built-in support for.
+> Every target language is **active**: all six can be browsed and studied through decks. The **Japanese** character chart and drill are the only ones implemented so far — the other languages' chart and drill routes still show a placeholder notice until their scripts ship. **Another language** is a deck-only catch-all for languages the app has no built-in support for.
 
 ---
 
@@ -16,26 +16,26 @@ The study language is **not** part of the URL path. Every route is language-agno
 
 - Deck-list pages read `?target=ja` from the query string, so a link is shareable and the loader/SSR can read it.
 - When the query is absent, the last target the viewer browsed is used (saved on the device), falling back to a default.
-- A **target-language selector** in the deck-list toolbar switches which language is browsed; unready languages are listed but disabled.
-- A single capabilities config (`app/data/language.ts`) declares each target language's status (`ready` / `coming-soon`) and its character set. The character routes read from it, so a language without a set (English today) shows a coming-soon notice instead of a chart.
+- A **target-language selector** in the deck-list toolbar switches which language is browsed; every language is selectable, plus an "all languages" option.
+- A single capabilities config (`app/data/language.ts`) declares each target language's character set and drill. The character routes read from it: only `kana` is implemented today, so any other language shows a placeholder "coming soon" notice instead of a chart.
 
 ### Choosing a target language
 
-There is no separate language-select page. The **Landing page** lists the languages, and picking a ready one opens its vocabulary deck list (`/vocab?target=…`). The deck list's own selector changes the target later, and the choice is saved on the device.
+There is no separate language-select page. The **Landing page** lists the languages, and picking one opens its vocabulary deck list (`/vocab?target=…`). The deck list's own selector changes the target later, and the choice is saved on the device.
 
 ### Landing page
 
-`/:lang` introduces the app and lets the visitor pick a language. Its language section (`id="languages"`) lists every target language: ready ones are full-width actionable rows, and the unbuilt ones are grouped under a quiet "Coming Soon" heading and disabled. Picking a ready language opens its vocabulary deck list. The Landing has no study navigation of its own.
+`/:lang` introduces the app and lets the visitor pick a language. Its language section (`id="languages"`) lists every target language as a full-width actionable row; picking one opens its vocabulary deck list. The Landing has no study navigation of its own.
 
 ### Study hub
 
 `/:lang/study` is the overview a visitor lands on after picking a language. It has three deliberately different groups:
 
-- **Characters** — a tile per character set, dominated by the script glyph, ready ones first. A language without a chart yet is an inert "Coming Soon" tile.
-- **Drill** — a list of character drills, one row each, ready ones first.
+- **Characters** — a tile per character set, dominated by the script glyph. Every tile links to its chart route; a language whose chart is not implemented yet lands on a placeholder notice.
+- **Drill** — a list of character drills, one row each.
 - **Decks** — a **Learn** column (vocabulary, render), a **Practice** column (review, exam), and a full-width **Manage** row (edit decks). Every deck link carries the active target as `?target=`.
 
-The character and drill groups are driven by the capabilities config (`app/data/language.ts`), so every target language is listed and a missing chart/drill shows as "Coming Soon"; the Decks group follows the active target. The active target's ready items are highlighted, and a shared **target selector** in the header changes the target.
+The character and drill groups are driven by the capabilities config (`app/data/language.ts`), so every target language is listed (only `kana` is implemented today; the other routes show a placeholder notice), and the Decks group follows the active target. The active target's items are highlighted, and a shared **target selector** in the header changes the target.
 
 ### Another language
 
@@ -74,7 +74,7 @@ Other languages fall through to a "Coming Soon" notice until their chart ships.
 - **exam** — decks used to generate a multiple-choice test.
 - **Review** — decks used for spaced/flashcard-style review of previously studied words.
 
-Decks live in one shared collection; each deck carries a `targetLang` so a list can filter by it. The deck-list toolbar has a **target-language selector**, so the viewer can switch which language's decks they are browsing without leaving the page (unready languages are disabled). The list's display options (source, sort, density, nsfw) live in the URL for shareable links, and the sort/density/nsfw choices plus the target are also **remembered on the device**, so a bare deck list opens the way you last left it. Decks come from the built-in set or the user's own local words. The shared list component also accepts **cloud** and **community** tabs, but those have no backend yet and render a "Coming Soon" state only.
+Decks live in one shared collection; each deck carries a `targetLang` so a list can filter by it. The deck-list toolbar has a **target-language selector**, so the viewer can switch which language's decks they are browsing without leaving the page (every language plus an "all languages" option). The list's display options (source, sort, density, nsfw) live in the URL for shareable links, and the sort/density/nsfw choices plus the target are also **remembered on the device**, so a bare deck list opens the way you last left it. Decks come from the built-in set or the user's own local words. The shared list component also accepts **cloud** and **community** tabs, but those have no backend yet and render a "Coming Soon" state only.
 
 ### Edit Decks
 
@@ -138,16 +138,18 @@ Account concerns are locale-scoped like everything else, so `/settings` is reach
 | `/:lang/profile/:nameTag` | Public profile view for another user |
 | `/:lang/auth` | OAuth landing route — re-fetches the session cookie, then redirects home |
 
-### Target language status
+### Target languages
 
-| Target | Code | Status | Character set |
-|--------|------|--------|---------------|
-| Japanese | `ja` | Ready | Kana |
-| English | `en` | Ready | none (planned) |
-| Another language | `other` | Ready (decks only) | none |
-| Korean | `ko` | Coming soon | Hangul (planned) |
-| Thai | `th` | Coming soon | Thai (planned) |
-| Chinese | `zh` | Coming soon | Hanzi (planned) |
+| Target | Code | Character set |
+|--------|------|---------------|
+| Japanese | `ja` | Kana (implemented) |
+| English | `en` | Alphabet (planned) |
+| Another language | `other` | none (decks only) |
+| Korean | `ko` | Hangul (planned) |
+| Thai | `th` | Thai (planned) |
+| Chinese | `zh` | Hanzi (planned) |
+
+All six targets are active — selectable in every selector and studyable through decks. The character chart and drill are implemented for `ja` only — the other chart/drill routes render a placeholder notice until their script ships.
 
 ---
 

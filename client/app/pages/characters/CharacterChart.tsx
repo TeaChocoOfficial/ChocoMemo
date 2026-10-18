@@ -1,22 +1,16 @@
 // -Path: 'client/app/pages/characters/CharacterChart.tsx'
-import { useParams } from 'react-router';
-import { ALL_TARGETS, targetLanguage } from '~/data/language';
-import { targetFromCode } from '~/utils/config/targetLang';
-import KanaChart from './kana/Kana';
-import CharacterComingSoon from './CharacterComingSoon';
+import EnChartPage from './en/EnChart';
+import JaChartPage from './ja/JaChart';
+import CharacterLayout from '~/components/layout/CharacterLatout';
 
 /**
  * The character chart for `:target`. The target language's capabilities decide
- * which chart to show; only kana exists today, so every other language (and an
- * unknown target) falls through to the coming-soon notice. The route carries a
- * concrete target, so the deck-list "all languages" filter is dropped here.
+ * which chart to show: English and Japanese have a page, and every other
+ * language (or an unknown target) falls through to the fallback panel —
+ * coming soon for a known language, not found for anything else. The route
+ * carries a concrete target, so the deck-list "all languages" filter is
+ * dropped here.
  */
 export default function CharacterChart() {
-    const { target } = useParams();
-    const targetLang = targetFromCode(target);
-    const language = targetLang === ALL_TARGETS ? undefined : targetLang;
-    const set = language ? targetLanguage(language)?.characters?.id : undefined;
-
-    if (set === 'kana') return <KanaChart />;
-    return <CharacterComingSoon targetLang={language} />;
+    return <CharacterLayout en={<EnChartPage />} ja={<JaChartPage />} />;
 }

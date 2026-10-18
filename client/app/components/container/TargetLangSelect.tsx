@@ -11,9 +11,9 @@ import { useDeckListStore } from '~/stores/config/deckList.store';
 /**
  * The single target-language control, shared by the deck list and the study
  * hub. It shows the active target and, on change, persists the choice and
- * writes `?target=` back to the URL so the link stays shareable. Languages that
- * are not ready are listed but disabled. With `allowAll` it also offers the
- * deck-list "all languages" option, which the study hub has no use for.
+ * writes `?target=` back to the URL so the link stays shareable. With
+ * `allowAll` it also offers the deck-list "all languages" option, which the
+ * study hub has no use for.
  */
 export default function TargetLangSelect({
     className,
@@ -42,7 +42,6 @@ export default function TargetLangSelect({
             value: language.id,
             label: t(`language.${language.id}`),
             icon: <span className='text-base font-black leading-none'>{language.glyph}</span>,
-            disabled: language.status !== 'ready',
         })),
     ];
 

@@ -8,7 +8,8 @@ import { useTranslation } from 'react-i18next';
 import { getVoiceForSpeech } from '~/hooks/base/useSpeak';
 import { useSpeechStore } from '~/stores/config/speech.store';
 import { useKanaProgressStore } from '~/stores/japanese/kanaProgress.store';
-import type { Kana, KanaChars, KanaSetId } from '~/data/japanese/kana';
+import type { KanaChars, KanaSetId } from '~/data/ja/kana';
+import type { ReadableChar } from '~/types/characters';
 
 export function useKanaReader(
     activeSet: KanaSetId,
@@ -35,7 +36,7 @@ export function useKanaReader(
         : 0;
     const isResume = readSoFar > 0;
     const percentRead = groupTotal ? Math.round((readSoFar / groupTotal) * 100) : 0;
-    const currentRomaji = isResume ? (groupList[readSoFar - 1]?.romaji ?? '') : '';
+    const currentRomaji = isResume ? (groupList[readSoFar - 1]?.read ?? '') : '';
     const statusLabel = isReading
         ? t('japanese.kana.nowReading')
         : isResume
@@ -113,7 +114,7 @@ export function useKanaReader(
     }, [activeGroup, key, kanaChars, lang, progress, rate, recordRead, voiceURI, volume]);
 
     const handleCardRead = useCallback(
-        (kana: Kana, index: number) => {
+        (kana: ReadableChar, index: number) => {
             recordRead(key, index);
             setReadingChar(kana.char);
             if (readingRef.current) stopReading();

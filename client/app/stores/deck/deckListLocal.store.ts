@@ -5,16 +5,13 @@
 // reference (words, passages) lives in its own store.
 import { create } from 'zustand';
 import { Languages } from '~/data/language';
-import type { ExamSet } from '~/types/deck/exam';
-import { importedDeckSchema } from '~/utils/deck/deck';
-import type { RenderPassage } from '~/types/deck/render';
-import type { ExamQuestion } from '~/types/deck/exam';
-import { importedExamSetSchema } from '~/utils/exam/exam';
 import { newDeckMeta } from '~/utils/deck/deckMeta';
+import type { ExamQuestion } from '~/types/deck/exam';
+import { importedDeckSchema } from '~/utils/deck/deck';
 import type { DeckData, DeckLists } from '~/types/deck';
+import type { RenderPassage } from '~/types/deck/render';
+import { DEFAULT_PASSAGES } from '~/data/ja/renderPassages';
 import { createJSONStorage, persist } from 'zustand/middleware';
-import { DEFAULT_PASSAGES } from '~/data/japanese/renderPassages';
-import { defaultExamSets } from '~/data/temp/defaultExamSets';
 
 const storage = typeof window !== 'undefined' ? createJSONStorage(() => localStorage) : undefined;
 
@@ -35,14 +32,6 @@ interface DeckListLocalState {
     addPassage: (passage: Omit<RenderPassage, 'id'>) => string;
     updatePassage: (id: string, passage: Omit<RenderPassage, 'id'>) => void;
     removePassage: (id: string) => void;
-    /** Adds an exam set, mapping it onto the shared deck model. */
-    addExamSet: (set: Omit<ExamSet, 'id'>) => string;
-    /** Validates a raw exam JSON payload and files it as an exam deck.
-     *  Returns an error message instead of throwing so the UI can show it. */
-    importExamSet: (
-        language: Languages,
-        raw: unknown,
-    ) => { success: true; id: string } | { success: false; error: string };
     addDeck: (
         language: Languages,
         deck: Omit<DeckData, 'id' | 'source' | 'meta' | 'targetLang'>,
@@ -137,37 +126,6 @@ export const useDeckListLocalStore = create<DeckListLocalState>()(
                     ),
                 })),
 
-            addExamSet: (set_) => {
-                const id = newId('exam');
-                const deck: Omit<DeckData, 'id' | 'source' | 'meta' | 'targetLang'> = {
-                    name: set_.title,
-                    description: set_.description,
-                    type: 'exam',
-                    tags: [],
-                    nsfw: false,
-                    contentIds: set_.questions.map((q) => q.id),
-                };
-                get().addDeck(Languages.ja, deck);
-                return id;
-            },
-
-            importExamSet: (language, raw) => {
-                const result = importedExamSetSchema.safeParse(raw);
-                if (!result.success) {
-                    return { success: false, error: 'This file is not a valid exam set.' };
-                }
-                const id = get().addDeck(language, {
-                    name: result.data.title,
-                    description: result.data.description,
-                    type: 'exam',
-                    tags: [],
-                    nsfw: false,
-                    contentIds: result.data.questions.map((q) => q.id),
-                });
-                set((state) => ({ questions: [...state.questions, ...result.data.questions] }));
-                return { success: true, id };
-            },
-
             importDeck: (language, raw) => {
                 const result = importedDeckSchema.safeParse(raw);
                 if (!result.success) {
@@ -178,14 +136,14 @@ export const useDeckListLocalStore = create<DeckListLocalState>()(
                 // the file, so an import can't overwrite an existing deck or
                 // claim authorship, a timestamp or a visibility it never had.
                 const stored: DeckData = {
-                    ...result.data,
                     id,
+                    name: result.data.name,
+                    description: result.data.description,
                     source: 'local',
                     type: 'vocab',
                     tags: [],
                     nsfw: false,
-                    // Exported files carry `wordIds`; the deck model calls the
-                    // same field `contentIds` because it spans all deck types.
+                    index: 0,
                     contentIds: result.data.wordIds,
                     meta: newDeckMeta(),
                     targetLang: language,
@@ -218,9 +176,9 @@ export function localDecksOfType(language: Languages, type: DeckData['type']): D
     return localDecks(language).filter((deck) => deck.type === type);
 }
 
-/** Every stored question, built-in ones included. */
+/** Every question the user has built or imported. */
 export function allQuestions(): ExamQuestion[] {
-    return [...defaultExamQuestions(), ...useDeckListLocalStore.getState().questions];
+    return [...useDeckListLocalStore.getState().questions];
 }
 
 /** Resolve an exam deck's `contentIds` to questions, mirroring
@@ -232,11 +190,6 @@ export function deckQuestions(deck: DeckData): ExamQuestion[] {
     return deck.contentIds
         .map((id) => all.find((q) => q.id === id))
         .filter((q): q is ExamQuestion => q != null);
-}
-
-/** Flattened questions from the built-in exam sets. */
-function defaultExamQuestions(): ExamQuestion[] {
-    return defaultExamSets.flatMap((set) => set.questions);
 }
 
 /** Every stored passage, built-in ones included. */

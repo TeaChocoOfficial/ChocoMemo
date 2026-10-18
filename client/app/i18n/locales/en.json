@@ -236,8 +236,7 @@
         },
         "tag": {
             "ready": "Ready",
-            "current": "Current",
-            "comingSoon": "Coming Soon"
+            "current": "Current"
         },
         "action": {
             "start": "Start"
@@ -290,14 +289,28 @@
     },
     "characters": {
         "backHub": "Back to hub",
-        "comingSoon": "The {{language}} character chart is coming soon.",
-        "unknown": "This language"
+        "notFound": {
+            "badge": "Not found",
+            "title": "Language not found",
+            "body": "This address has no study language behind it. Head back to the study hub and pick one from the list."
+        },
+        "soon": {
+            "badge": "Coming soon",
+            "title": "{{language}} {{feature}}",
+            "body": "The {{language}} {{feature}} is still being built. Vocabulary, reading, exam and review for {{language}} are ready in the meantime.",
+            "deckOnly": "Another language is decks only — there is no character chart or drill. Vocabulary, reading, exam and review are ready to study.",
+            "features": {
+                "characters": "character chart",
+                "drill": "character drill"
+            },
+            "ctaChart": "See the Japanese chart",
+            "ctaDrill": "Try the Japanese drill"
+        }
     },
     "languageSelect": {
         "back_home": "Back to Home",
         "status": {
-            "available": "Available",
-            "comingSoon": "Coming Soon"
+            "available": "Available"
         },
         "cta": {
             "start": "Start Learning"
@@ -561,6 +574,88 @@
         "resetSuccess": "Password updated. Please sign in.",
         "sendResetCode": "Send reset code"
     },
+    "english": {
+        "badge": "English",
+        "title": "Learn English",
+        "description": "English is a new track. The deck features below work today; the character set and drill are still being built.",
+        "character": {
+            "badge": "Alphabet",
+            "title": "English Alphabet",
+            "description": "Twenty-six letters, upper and lower case. Tap a letter to hear it, or walk through a group out loud.",
+            "tabs": {
+                "uppercase": "Uppercase",
+                "lowercase": "Lowercase"
+            },
+            "vowels": "Vowels",
+            "consonants": "Consonants",
+            "stats": {
+                "set": "In set",
+                "group": "In group",
+                "read": "Read"
+            },
+            "readProgress": "{{read}} / {{total}}",
+            "gridHint": "Tap a letter to hear it, or press Start reading to walk through the group from where you left off.",
+            "readStart": "Start reading",
+            "readContinue": "Continue reading",
+            "readStop": "Stop",
+            "nowReading": "now reading",
+            "upNext": "up next",
+            "pinToolbar": "Pin toolbar",
+            "unpinToolbar": "Unpin toolbar",
+            "sticky": "Sticky",
+            "stickyOn": "On",
+            "stickyOff": "Off"
+        },
+        "nav": {
+            "render": {
+                "title": "Render",
+                "description": "Read short passages and check yourself against the translation.",
+                "action": "Start Reading"
+            },
+            "review": {
+                "title": "Vocabulary Review",
+                "description": "Review vocabulary with flashcards and spaced repetition.",
+                "action": "Start Review"
+            },
+            "exam": {
+                "title": "Vocabulary exam",
+                "description": "Test yourself with multiple-choice exam built from your vocabulary.",
+                "action": "Take an Exam"
+            },
+            "vocab": {
+                "title": "Browse Vocabulary",
+                "description": "Read through a deck's words with readings, meanings, and examples.",
+                "action": "Browse Words"
+            },
+            "edit": {
+                "title": "Edit Decks",
+                "description": "Rename, reorder, or remove the decks in your collection.",
+                "action": "Edit Decks"
+            }
+        },
+        "edit": {
+            "title": "Edit Decks",
+            "description": "Manage the decks in your collection. The editor is coming soon.",
+            "back": "Back to English"
+        },
+        "vocab": {
+            "title": "Vocabulary"
+        },
+        "render": {
+            "title": "Render"
+        },
+        "review": {
+            "title": "Vocabulary Review"
+        },
+        "exam": {
+            "title": "Exam"
+        },
+        "sections": {
+            "learn": "Learn",
+            "practice": "Practice",
+            "manage": "Manage"
+        }
+    },
     "japanese": {
         "badge": "Japanese",
         "title": "Learn Japanese",
@@ -701,6 +796,17 @@
                 "cancel": "Cancel",
                 "submit": "Create exam"
             }
+        },
+        "character": {
+            "badge": "Kana",
+            "title": "Japanese Kana",
+            "description": "Hiragana and Katakana are the two Japanese syllabaries. Tap the tabs to switch.",
+            "stats": {
+                "set": "In set",
+                "group": "In group",
+                "read": "Read"
+            },
+            "readProgress": "{{read}} / {{total}}"
         },
         "kana": {
             "badge": "Kana",
@@ -868,60 +974,6 @@
         },
         "review": {
             "title": "Vocabulary Review"
-        }
-    },
-    "english": {
-        "badge": "English",
-        "title": "Learn English",
-        "description": "English is a new track. The deck features below work today; the character set and drill are still being built.",
-        "nav": {
-            "render": {
-                "title": "Render",
-                "description": "Read short passages and check yourself against the translation.",
-                "action": "Start Reading"
-            },
-            "review": {
-                "title": "Vocabulary Review",
-                "description": "Review vocabulary with flashcards and spaced repetition.",
-                "action": "Start Review"
-            },
-            "exam": {
-                "title": "Vocabulary exam",
-                "description": "Test yourself with multiple-choice exam built from your vocabulary.",
-                "action": "Take an Exam"
-            },
-            "vocab": {
-                "title": "Browse Vocabulary",
-                "description": "Read through a deck's words with readings, meanings, and examples.",
-                "action": "Browse Words"
-            },
-            "edit": {
-                "title": "Edit Decks",
-                "description": "Rename, reorder, or remove the decks in your collection.",
-                "action": "Edit Decks"
-            }
-        },
-        "edit": {
-            "title": "Edit Decks",
-            "description": "Manage the decks in your collection. The editor is coming soon.",
-            "back": "Back to English"
-        },
-        "vocab": {
-            "title": "Vocabulary"
-        },
-        "render": {
-            "title": "Render"
-        },
-        "review": {
-            "title": "Vocabulary Review"
-        },
-        "exam": {
-            "title": "Exam"
-        },
-        "sections": {
-            "learn": "Learn",
-            "practice": "Practice",
-            "manage": "Manage"
         }
     },
     "settings": {

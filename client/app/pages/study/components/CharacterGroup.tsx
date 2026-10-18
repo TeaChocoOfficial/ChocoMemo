@@ -25,10 +25,9 @@ export default function CharacterGroup({ items }: { items: StudyItem<CharacterSe
                 {items.map((item) => (
                     <CharacterTile
                         key={item.language.id}
-                        code={item.language.code}
-                        feature={item.feature}
                         active={item.active}
-                        status={item.status}
+                        feature={item.feature}
+                        code={item.language.code}
                     />
                 ))}
             </div>
