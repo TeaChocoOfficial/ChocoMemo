@@ -24,14 +24,16 @@ const storage = typeof window !== 'undefined' ? createJSONStorage(() => localSto
 
 /**
  * The chart toolbar's sticky preference, shared by every character chart page
- * (kana and alphabet) and remembered across visits, so pinning the toolbar
- * once applies to both charts and survives a reload.
+ * (kana, alphabet and Thai) and remembered across visits, so pinning the toolbar
+ * once applies to every chart and survives a reload.
  */
 export const useCharacterToolbarStore = create<CharacterToolbarState>()(
     persist(
         (set, get) => ({
-            activeSets: { en: 'uppercase', ja: 'hiragana' },
-            activeGroups: { en: 'consonants', ja: 'contracted' },
+            /** ko and zh charts do not exist yet; their empty defaults keep the Record<CharLang, string> shape satisfied until those pages ship. */
+            activeSets: { en: 'uppercase', ja: 'hiragana', th: 'consonants', ko: '', zh: '' },
+            /** ko and zh charts do not exist yet; their empty defaults keep the Record<CharLang, string> shape satisfied until those pages ship. */
+            activeGroups: { en: 'consonants', ja: 'contracted', th: 'headed', ko: '', zh: '' },
             stickyEnabled: DEFAULT_CHART_STICKY,
             getActiveSet: (lang) => get().activeSets[lang],
             getActiveGroup: (lang) => get().activeGroups[lang],

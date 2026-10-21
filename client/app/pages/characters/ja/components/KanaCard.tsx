@@ -17,11 +17,11 @@ export default function KanaCard({ kana, index, active = false, onRead }: KanaCa
     return (
         <motion.button
             type='button'
-            whileTap={{ scale: 0.95 }}
             onClick={() => {
                 onRead?.(kana, index);
                 speak(kana.char);
             }}
+            whileTap={{ scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             initial={{ opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.3, delay: index * 0.02 }}
@@ -31,9 +31,11 @@ export default function KanaCard({ kana, index, active = false, onRead }: KanaCa
                     : 'border-line bg-surface hover:border-primary hover:bg-surface-overlay'
             }`}
         >
-            <span className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-1 sm:mb-3 leading-none transition-colors duration-200 ${
-                active ? 'text-primary' : 'text-surface-foreground group-hover:text-primary'
-            }`}>
+            <span
+                className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-1 sm:mb-3 leading-none transition-colors duration-200 ${
+                    active ? 'text-primary' : 'text-surface-foreground group-hover:text-primary'
+                }`}
+            >
                 {kana.char}
             </span>
             <span className='flex items-center gap-1.5 text-[10px] sm:text-sm font-mono uppercase tracking-wider text-primary whitespace-nowrap'>

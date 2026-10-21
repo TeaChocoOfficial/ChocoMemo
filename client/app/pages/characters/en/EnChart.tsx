@@ -1,6 +1,5 @@
 // -Path: 'client/app/pages/characters/en/EnChart.tsx'
 import LetterGrid from './components/LetterGrid';
-import type { ReadableChar } from '~/types/characters';
 import CharactersPage from '../components/CharactersPage';
 import { useCharacterReader } from '~/hooks/characters/useCharacterReader';
 
@@ -14,15 +13,11 @@ import { useCharacterReader } from '~/hooks/characters/useCharacterReader';
 export default function EnChartPage() {
     const lang = 'en';
     const characterReader = useCharacterReader({ targetLang: lang });
-    const { readingChar, groupList, handleCardRead } = characterReader;
+    const { readingChar, handleCardRead } = characterReader;
 
     return (
         <CharactersPage lang={lang} characterReader={characterReader}>
-            <LetterGrid
-                onRead={handleCardRead}
-                activeChar={readingChar}
-                letters={groupList as ReadableChar[]}
-            />
+            <LetterGrid activeChar={readingChar} onRead={handleCardRead} />
         </CharactersPage>
     );
 }

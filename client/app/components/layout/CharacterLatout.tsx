@@ -1,8 +1,7 @@
 // -Path: 'client/app/pages/characters/CharacterChart.tsx'
-import { useParams } from 'react-router';
-import { targetFromCode } from '~/utils/config/targetLang';
+import { type LangCode } from '~/data/language';
+import useTargetLang from '~/hooks/characters/useTargetLang';
 import NotFoundPanel from '~/components/page/character/NotFoundPanel';
-import { ALL_TARGETS, targetLanguage, type LangCode } from '~/data/language';
 
 /**
  * The character layout for `:target`. The target language's capabilities decide
@@ -15,10 +14,7 @@ import { ALL_TARGETS, targetLanguage, type LangCode } from '~/data/language';
 export default function CharacterLayout(
     pages: Partial<Record<LangCode, React.ReactNode>>,
 ): React.ReactNode {
-    const { target } = useParams();
-    const targetLang = targetFromCode(target);
-    const language = targetLang === ALL_TARGETS ? undefined : targetLang;
-    const code = language ? targetLanguage(language)?.code : undefined;
+    const { code } = useTargetLang();
 
     if (code && pages[code]) return pages[code];
     return <NotFoundPanel />;

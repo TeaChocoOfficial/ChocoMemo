@@ -1,8 +1,8 @@
 // -Path: 'client/app/pages/characters/kana/components/KanaGrid.tsx'
 import KanaCard from './KanaCard';
 import type { KanaChars } from '~/data/ja/kana';
-import { useCharacterToolbar } from '~/hooks/characters/useChacterToolbar';
 import type { ReadableChar } from '~/types/characters';
+import { useCharacterToolbar } from '~/hooks/characters/useChacterToolbar';
 
 const groupColumns: Record<keyof KanaChars, number> = {
     voiceless: 5,

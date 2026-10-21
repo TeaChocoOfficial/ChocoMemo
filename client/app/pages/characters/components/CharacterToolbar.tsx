@@ -5,6 +5,9 @@ import { Languages } from '~/data/language';
 import TransportPane from './TransportPane';
 import { useTranslation } from 'react-i18next';
 import VoicePicker from '~/components/config/VoicePicker';
+import TtsVoicePicker from '~/components/config/TtsVoicePicker';
+import ThaiClipVoicePicker from '../th/components/ThaiClipVoicePicker';
+import { targetSpeechLang } from '~/utils/config/targetLang';
 import { useChromeStore } from '~/stores/config/chrome.store';
 import SetTabs, { type SetTabOption } from '~/components/custom/SetTabs';
 import { useCharacterToolbar } from '~/hooks/characters/useChacterToolbar';
@@ -19,7 +22,8 @@ interface ChacterToolbarProps<Lang extends CharLang> {
 
 /**
  * The sticky control bar for the chacter chart: pin toggle, set and group
- * tabs, then the reading console and voice picker side by side.
+ * tabs, then the reading console and the voice picker (chooser + preview +
+ * volume, limited to this chart's language) side by side.
  *
  * @param props - ChacterToolbar props.
  * @returns The rendered toolbar.
@@ -93,14 +97,22 @@ export default function ChacterToolbar<Lang extends CharLang>({
 
             {/* reading console */}
             <div className='mt-4 flex flex-col gap-2 sm:flex-row sm:items-stretch'>
-                <TransportPane lang={lang} render={() => <></>} characterReader={characterReader} />
+                <TransportPane lang={lang} characterReader={characterReader} />
 
                 {/* hairline divider */}
                 <div className='hidden w-px shrink-0 self-stretch bg-line sm:block' />
 
-                {/* voice pane */}
+                {/* voice pane: the Thai chart picks a Google Cloud TTS voice,
+                    every other chart picks an OS voice for its language */}
                 <div className='flex flex-col justify-center gap-2 rounded-sm bg-surface-overlay p-3 sm:w-72 sm:shrink-0 sm:p-3.5'>
-                    <VoicePicker />
+                    {lang === 'th' ? (
+                        <TtsVoicePicker
+                            languageCode='th-TH'
+                            fallback={<ThaiClipVoicePicker />}
+                        />
+                    ) : (
+                        <VoicePicker speechLang={targetSpeechLang(Languages[lang])} />
+                    )}
                 </div>
             </div>
         </motion.div>

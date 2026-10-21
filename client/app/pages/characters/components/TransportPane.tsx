@@ -13,7 +13,6 @@ interface TransportPaneProps<Lang extends CharLang> {
     lang: Lang;
     characterReader: CharacterReader<Lang>;
     getCurrentName?: (group: ReadableChar) => string;
-    render: (groupList: ReadableChar[]) => React.ReactNode;
 }
 
 /**
@@ -25,7 +24,6 @@ interface TransportPaneProps<Lang extends CharLang> {
  */
 export default function TransportPane<Lang extends CharLang>({
     lang,
-    render,
     getCurrentName,
     characterReader,
 }: TransportPaneProps<Lang>) {
@@ -49,16 +47,16 @@ export default function TransportPane<Lang extends CharLang>({
     const currentGroup = groupList[readSoFar - 1];
     const currentName = isResume ? (getCurrentName?.(currentGroup) ?? currentGroup.char ?? '') : '';
     const statusLabel = isReading
-        ? t(`${language}.character.nowReading`)
+        ? t('characters.nowReading')
         : isResume
-          ? t(`${language}.character.upNext`)
-          : t(`${language}.character.readStart`);
+          ? t('characters.upNext')
+          : t('characters.readStart');
 
     return (
         <div className='flex flex-1 flex-col justify-between gap-2.5 rounded-sm bg-surface-overlay p-3 sm:p-3.5'>
             <div className='flex items-center gap-3'>
                 <div
-                    className={`grid h-10 w-10 shrink-0 place-items-center rounded-sm border transition-colors duration-200 ${
+                    className={`grid h-10 min-w-10 p-2 shrink-0 place-items-center rounded-sm border transition-colors duration-200 ${
                         isReading
                             ? 'border-primary bg-primary-subtle'
                             : 'border-line-strong bg-surface'
@@ -66,13 +64,9 @@ export default function TransportPane<Lang extends CharLang>({
                 >
                     <motion.span
                         key={displayChar ?? 'empty'}
-                        initial={{ scale: 0.85, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
-                        transition={{
-                            type: 'spring',
-                            stiffness: 350,
-                            damping: 22,
-                        }}
+                        initial={{ scale: 0.85, opacity: 0 }}
+                        transition={{ damping: 22, type: 'spring', stiffness: 350 }}
                         className={`text-xl font-black leading-none ${
                             isReading ? 'text-primary' : 'text-surface-foreground'
                         }`}
@@ -89,13 +83,13 @@ export default function TransportPane<Lang extends CharLang>({
                         <span className='truncate'>{statusLabel}</span>
                         <span className='text-line-strong'>·</span>
                         <span className='truncate text-primary'>
-                            {t(`${language}.character.group.${activeGroupId}`)}
+                            {t(`${language}.character.tabs.${activeGroupId}`)}
                         </span>
                     </p>
                     <p className='mt-0.5 truncate font-mono text-xs font-semibold text-primary'>
                         {currentName || '—'}
                         <span className='ml-1.5 text-[11px] font-medium text-surface-muted'>
-                            {t('english.character.readProgress', {
+                            {t('characters.readProgress', {
                                 read: readSoFar,
                                 total: groupTotal,
                             })}
@@ -104,10 +98,10 @@ export default function TransportPane<Lang extends CharLang>({
                 </div>
 
                 <Button
-                    variant={isReading ? 'outline' : isResume ? 'secondary' : 'primary'}
                     size='sm'
-                    onClick={() => (isReading ? stopReading() : startReading())}
                     className='h-9 shrink-0 whitespace-nowrap'
+                    onClick={() => (isReading ? stopReading() : startReading())}
+                    variant={isReading ? 'outline' : isResume ? 'secondary' : 'primary'}
                 >
                     {isReading ? (
                         <FaStop className='h-3.5 w-3.5' />
@@ -116,10 +110,10 @@ export default function TransportPane<Lang extends CharLang>({
                     )}
                     <span>
                         {isReading
-                            ? t('english.character.readStop')
+                            ? t('characters.readStop')
                             : isResume
-                              ? t('english.character.readContinue')
-                              : t('english.character.readStart')}
+                              ? t('characters.readContinue')
+                              : t('characters.readStart')}
                     </span>
                     <kbd className='ml-0.5 hidden shrink-0 items-center rounded-sm border border-current px-1 py-0.5 font-mono text-[9px] font-semibold tracking-widest opacity-70 sm:inline-flex'>
                         SPC
@@ -129,7 +123,24 @@ export default function TransportPane<Lang extends CharLang>({
 
             {/* scrubber rail */}
             <div className='flex h-6 items-center gap-3'>
-                <div className='flex flex-1 gap-0.5'>{render(groupList)}</div>
+                <div className='flex flex-1 gap-0.5'>
+                    {groupList.map((kana, index) => {
+                        const isCurrent = index === readSoFar - 1;
+                        const isDone = index < readSoFar - 1;
+                        return (
+                            <span
+                                key={`${kana.char}-${index}`}
+                                className={`h-1 min-w-0 flex-1 rounded-[1px] transition-colors duration-300 ${
+                                    isCurrent
+                                        ? 'bg-primary'
+                                        : isDone
+                                          ? 'bg-primary/40'
+                                          : 'bg-line/60'
+                                }`}
+                            />
+                        );
+                    })}
+                </div>
                 <span className='w-9 shrink-0 text-right font-mono text-[11px] font-semibold tabular-nums text-surface-muted'>
                     {percentRead}%
                 </span>

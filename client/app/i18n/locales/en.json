@@ -23,6 +23,58 @@
         "show": "Show",
         "toggleLabel": "Show interface"
     },
+    "theme": {
+        "pickerLabel": "Change theme",
+        "names": {
+            "lightChoco": "Light Choco",
+            "darkChoco": "Dark Choco",
+            "darkGalaxy": "Dark Galaxy",
+            "lightGalaxy": "Light Galaxy",
+            "darkSakura": "Dark Sakura",
+            "lightSakura": "Light Sakura",
+            "darkPaper": "Dark Paper",
+            "lightPaper": "Light Paper",
+            "darkNature": "Dark Nature",
+            "lightNature": "Light Nature",
+            "darkAutumn": "Dark Autumn",
+            "lightAutumn": "Light Autumn",
+            "darkWinter": "Dark Winter",
+            "lightWinter": "Light Winter"
+        }
+    },
+    "common": {
+        "loading": "Loading…",
+        "error": {
+            "oops": "Oops!",
+            "unexpected": "An unexpected error occurred.",
+            "notFound": "The requested page could not be found."
+        },
+        "tabs": {
+            "local": "Local",
+            "official": "Official",
+            "cloud": "Cloud",
+            "community": "Community"
+        },
+        "comingSoon": {
+            "cloud": "Cloud sync coming soon, sign in required",
+            "community": "Browsing community sets isn't available yet"
+        },
+        "select": "Select",
+        "voice_label": "Voice",
+        "voice_preview": "Preview",
+        "voice_auto": "Auto",
+        "voice_choose": "Choose a voice",
+        "voice_missing": "No voice speaking {{lang}} is installed on this device — speech falls back to the system default.",
+        "tts_voice_choose": "Choose a voice",
+        "tts_voice_preview": "Preview",
+        "tts_voice_unavailable": "Google TTS voices are unavailable right now."
+    },
+    "notfound": {
+        "title": "Page Not Found",
+        "description": "The page you are looking for doesn't exist or has been moved.",
+        "back_home": "Back to Home",
+        "error_code": "404"
+    },
     "home": {
         "badge": "ChocoMemo · community language library",
         "title": "Learn any language,",
@@ -111,50 +163,6 @@
             "primary": "Start learning",
             "secondary": "Create a deck"
         }
-    },
-    "theme": {
-        "pickerLabel": "Change theme",
-        "names": {
-            "lightChoco": "Light Choco",
-            "darkChoco": "Dark Choco",
-            "darkGalaxy": "Dark Galaxy",
-            "lightGalaxy": "Light Galaxy",
-            "darkSakura": "Dark Sakura",
-            "lightSakura": "Light Sakura",
-            "darkPaper": "Dark Paper",
-            "lightPaper": "Light Paper",
-            "darkNature": "Dark Nature",
-            "lightNature": "Light Nature",
-            "darkAutumn": "Dark Autumn",
-            "lightAutumn": "Light Autumn",
-            "darkWinter": "Dark Winter",
-            "lightWinter": "Light Winter"
-        }
-    },
-    "common": {
-        "loading": "Loading…",
-        "error": {
-            "oops": "Oops!",
-            "unexpected": "An unexpected error occurred.",
-            "notFound": "The requested page could not be found."
-        },
-        "tabs": {
-            "local": "Local",
-            "official": "Official",
-            "cloud": "Cloud",
-            "community": "Community"
-        },
-        "comingSoon": {
-            "cloud": "Cloud sync coming soon, sign in required",
-            "community": "Browsing community sets isn't available yet"
-        },
-        "select": "Select"
-    },
-    "notfound": {
-        "title": "Page Not Found",
-        "description": "The page you are looking for doesn't exist or has been moved.",
-        "back_home": "Back to Home",
-        "error_code": "404"
     },
     "study": {
         "title": "Study",
@@ -285,26 +293,6 @@
                 "description": "Rename, reorder, or remove the decks in your collection.",
                 "action": "Edit Decks"
             }
-        }
-    },
-    "characters": {
-        "backHub": "Back to hub",
-        "notFound": {
-            "badge": "Not found",
-            "title": "Language not found",
-            "body": "This address has no study language behind it. Head back to the study hub and pick one from the list."
-        },
-        "soon": {
-            "badge": "Coming soon",
-            "title": "{{language}} {{feature}}",
-            "body": "The {{language}} {{feature}} is still being built. Vocabulary, reading, exam and review for {{language}} are ready in the meantime.",
-            "deckOnly": "Another language is decks only — there is no character chart or drill. Vocabulary, reading, exam and review are ready to study.",
-            "features": {
-                "characters": "character chart",
-                "drill": "character drill"
-            },
-            "ctaChart": "See the Japanese chart",
-            "ctaDrill": "Try the Japanese drill"
         }
     },
     "languageSelect": {
@@ -574,6 +562,42 @@
         "resetSuccess": "Password updated. Please sign in.",
         "sendResetCode": "Send reset code"
     },
+    "characters": {
+        "backHub": "Back to hub",
+        "readProgress": "{{read}} / {{total}}",
+        "readStart": "Start reading",
+        "readContinue": "Continue reading",
+        "readStop": "Stop",
+        "nowReading": "now reading",
+        "upNext": "up next",
+        "pinToolbar": "Pin toolbar",
+        "unpinToolbar": "Unpin toolbar",
+        "sticky": "Sticky",
+        "stickyOn": "On",
+        "stickyOff": "Off",
+        "stats": {
+            "set": "In set",
+            "group": "In group",
+            "read": "Read"
+        },
+        "notFound": {
+            "badge": "Not found",
+            "title": "Language not found",
+            "body": "This address has no study language behind it. Head back to the study hub and pick one from the list."
+        },
+        "soon": {
+            "badge": "Coming soon",
+            "title": "{{language}} {{feature}}",
+            "body": "The {{language}} {{feature}} is still being built. Vocabulary, reading, exam and review for {{language}} are ready in the meantime.",
+            "deckOnly": "Another language is decks only — there is no character chart or drill. Vocabulary, reading, exam and review are ready to study.",
+            "features": {
+                "characters": "character chart",
+                "drill": "character drill"
+            },
+            "ctaChart": "See the Japanese chart",
+            "ctaDrill": "Try the Japanese drill"
+        }
+    },
     "english": {
         "badge": "English",
         "title": "Learn English",
@@ -584,27 +608,11 @@
             "description": "Twenty-six letters, upper and lower case. Tap a letter to hear it, or walk through a group out loud.",
             "tabs": {
                 "uppercase": "Uppercase",
-                "lowercase": "Lowercase"
+                "lowercase": "Lowercase",
+                "vowels": "Vowels",
+                "consonants": "Consonants"
             },
-            "vowels": "Vowels",
-            "consonants": "Consonants",
-            "stats": {
-                "set": "In set",
-                "group": "In group",
-                "read": "Read"
-            },
-            "readProgress": "{{read}} / {{total}}",
-            "gridHint": "Tap a letter to hear it, or press Start reading to walk through the group from where you left off.",
-            "readStart": "Start reading",
-            "readContinue": "Continue reading",
-            "readStop": "Stop",
-            "nowReading": "now reading",
-            "upNext": "up next",
-            "pinToolbar": "Pin toolbar",
-            "unpinToolbar": "Unpin toolbar",
-            "sticky": "Sticky",
-            "stickyOn": "On",
-            "stickyOff": "Off"
+            "gridHint": "Tap a letter to hear it, or press Start reading to walk through the group from where you left off."
         },
         "nav": {
             "render": {
@@ -661,12 +669,6 @@
         "title": "Learn Japanese",
         "description": "Master the basics of Japanese through kana, vocabulary, and quizzes.",
         "back_language": "Back to Language Selection",
-        "stats": {
-            "kana": "Kana characters",
-            "vocabulary": "Vocabulary words",
-            "learned": "Words learned",
-            "due": "Due for review"
-        },
         "sections": {
             "kana": "Kana",
             "kanaHint": "Learn the two Japanese syllabaries — browse every character and drill your recognition.",
@@ -801,12 +803,14 @@
             "badge": "Kana",
             "title": "Japanese Kana",
             "description": "Hiragana and Katakana are the two Japanese syllabaries. Tap the tabs to switch.",
-            "stats": {
-                "set": "In set",
-                "group": "In group",
-                "read": "Read"
+            "tabs": {
+                "hiragana": "Hiragana",
+                "katakana": "Katakana",
+                "voiceless": "Voiceless",
+                "voiced": "Voiced",
+                "contracted": "Contracted"
             },
-            "readProgress": "{{read}} / {{total}}"
+            "upNext": "up next"
         },
         "kana": {
             "badge": "Kana",
@@ -816,23 +820,8 @@
                 "hiragana": "Hiragana",
                 "katakana": "Katakana"
             },
-            "voiceless": "Voiceless",
-            "voiced": "Voiced",
-            "contracted": "Contracted",
-            "voice_label": "Voice",
-            "voice_preview": "Preview",
-            "voice_auto": "Auto",
-            "voice_choose": "Choose a voice",
-            "voice_ja": "Japanese",
-            "voice_volume": "Volume",
             "take_quiz": "Take the Quiz",
             "count": "kana",
-            "stats": {
-                "set": "In set",
-                "group": "In group",
-                "read": "Read"
-            },
-            "readProgress": "{{read}} / {{total}}",
             "gridHint": "Tap a kana to hear it, or press Start reading to walk through the group from where you left off.",
             "readStart": "Start reading",
             "readContinue": "Continue reading",
@@ -974,6 +963,35 @@
         },
         "review": {
             "title": "Vocabulary Review"
+        }
+    },
+    "thai": {
+        "badge": "Thai",
+        "title": "Learn Thai",
+        "description": "Master the basics of Thai through its script, vocabulary, and quizzes.",
+        "character": {
+            "badge": "Thai Script",
+            "title": "Thai Characters",
+            "description": "Every consonant from ก to ฮ in traditional order, common vowels, and the tone marks. Tap a character to hear it, or walk through a set out loud.",
+            "gridHint": "Tap a character to hear it, or press Start reading to walk through the set from where you left off.",
+            "tabs": {
+                "consonants": "Consonants",
+                "vowels": "Vowels",
+                "tones": "Tones & Marks",
+                "headed": "Looped",
+                "headless": "Loopless"
+            },
+            "voice": {
+                "female": "Female",
+                "male": "Male"
+            },
+            "voiceUnavailable": "Google TTS voices are unavailable right now.",
+            "stats": {
+                "set": "Sets",
+                "group": "In group",
+                "read": "Read"
+            },
+            "readProgress": "{{read}} of {{total}} read"
         }
     },
     "settings": {

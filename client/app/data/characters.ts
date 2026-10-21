@@ -1,4 +1,5 @@
 import { KANA_CHARS } from './ja/kana';
+import { THAI_CHARS } from './th/thai';
 import { ALPHABET_CHARS } from './en/alphabet';
 import type { ActiveGroups, ActiveSet, CharLang, OptionsItem } from '~/types/characters';
 
@@ -25,9 +26,9 @@ export const characterToolOptions = {
         groupId: [],
     },
     th: {
-        items: {},
-        setId: [],
-        groupId: [],
+        items: THAI_CHARS,
+        setId: ['consonants', 'vowels', 'tones'],
+        groupId: ['headed', 'headless'],
     },
     zh: {
         items: {},

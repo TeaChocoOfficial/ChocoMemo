@@ -6,7 +6,7 @@ import { useCharacterReader } from '~/hooks/characters/useCharacterReader';
 export default function JaChartPage() {
     const lang = 'ja';
     const characterReader = useCharacterReader({ targetLang: lang });
-    const { readingChar, groupList, handleCardRead } = characterReader;
+    const { readingChar, handleCardRead } = characterReader;
 
     return (
         <CharactersPage lang={lang} characterReader={characterReader}>

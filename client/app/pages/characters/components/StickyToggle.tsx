@@ -15,16 +15,16 @@ export default function StickyToggle({
     return (
         <div
             role='group'
-            aria-label={t('japanese.kana.sticky')}
+            aria-label={t('characters.sticky')}
             title={
-                enabled ? t('japanese.kana.unpinToolbar') : t('japanese.kana.pinToolbar')
+                enabled ? t('characters.unpinToolbar') : t('characters.pinToolbar')
             }
             className='inline-flex items-center rounded-sm border border-line bg-surface-overlay p-1'
         >
             <span className='flex items-center gap-1.5 border-r border-line pr-2 pl-1.5'>
                 <FaThumbtack className='h-3.5 w-3.5 text-primary' />
                 <span className='font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-surface-muted'>
-                    {t('japanese.kana.sticky')}
+                    {t('characters.sticky')}
                 </span>
             </span>
             <div className='relative ml-1 flex items-center gap-0.5'>
@@ -38,8 +38,8 @@ export default function StickyToggle({
                             onClick={() => onChange(opt)}
                             aria-label={
                                 opt
-                                    ? t('japanese.kana.pinToolbar')
-                                    : t('japanese.kana.unpinToolbar')
+                                    ? t('characters.pinToolbar')
+                                    : t('characters.unpinToolbar')
                             }
                             className={`relative rounded-sm px-2.5 py-1 text-xs font-bold transition-colors duration-200 cursor-pointer ${
                                 active
@@ -60,8 +60,8 @@ export default function StickyToggle({
                             )}
                             <span className='relative z-10'>
                                 {opt
-                                    ? t('japanese.kana.stickyOn')
-                                    : t('japanese.kana.stickyOff')}
+                                    ? t('characters.stickyOn')
+                                    : t('characters.stickyOff')}
                             </span>
                         </button>
                     );

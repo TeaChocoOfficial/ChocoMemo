@@ -6,7 +6,8 @@
 // their own items, progress store and UI text.
 
 import { useCharacterToolbar } from './useChacterToolbar';
-import { getVoiceForSpeech } from '~/hooks/base/useSpeak';
+import { getVoiceForSpeech, useSpeak } from '~/hooks/base/useSpeak';
+import { useTtsSpeak, stopTtsSpeaking } from '~/hooks/base/useTtsSpeak';
 import { useSpeechStore } from '~/stores/config/speech.store';
 import { ALL_TARGETS, Languages } from '~/data/language';
 import type { CharLang, OptionItem } from '~/types/characters';
@@ -17,11 +18,23 @@ import { targetFromCode, targetSpeechLang } from '~/utils/config/targetLang';
 /** What the reading console is doing, for the caller to turn into text. */
 export type ReaderStatus = 'reading' | 'resume' | 'idle';
 
+/** Google Cloud TTS settings: speak with this language and voice instead of the OS voice. */
+export interface ReaderTtsOptions {
+    /** BCP47 tag, e.g. `th-TH`. */
+    languageCode: string;
+    /** Google voice name, e.g. `th-TH-Standard-A`. Empty falls back to the OS voice. */
+    voiceName: string;
+}
+
 export interface CharacterReaderOptions<Lang extends CharLang> {
     /** The group being read, in reading order. Entries with an empty `char` are layout gaps and are skipped. */
     targetLang: Lang;
     /** What to speak for an item. Defaults to its glyph. */
     getSpeechText?: (item: OptionItem<Lang>[number]) => string;
+    /** When set, speak through Google Cloud TTS (server proxy) instead of the OS voice. */
+    tts?: ReaderTtsOptions;
+    /** A pre-rendered audio file for an item. Played instead of the spoken text. */
+    getAudioSrc?: (item: OptionItem<Lang>[number]) => string | undefined;
 }
 
 export type CharacterReader<Lang extends CharLang> = ReturnType<typeof useCharacterReader<Lang>>;
@@ -37,9 +50,12 @@ export type CharacterReader<Lang extends CharLang> = ReturnType<typeof useCharac
 export function useCharacterReader<Lang extends CharLang>({
     targetLang,
     getSpeechText,
+    tts,
+    getAudioSrc,
 }: CharacterReaderOptions<Lang>) {
     const readingRef = useRef(false);
     const [isReading, setIsReading] = useState(false);
+    const speakTts = useTtsSpeak();
     const { progress, recordRead } = useReadProgressStore();
     const { voiceURI, rate, volume } = useSpeechStore();
     const [readingChar, setReadingChar] = useState<string | null>(null);
@@ -52,6 +68,9 @@ export function useCharacterReader<Lang extends CharLang>({
     const speechLang = targetSpeechLang(
         target && target !== ALL_TARGETS ? target : Languages.en,
     );
+
+    // Plays a pre-rendered clip for an item, with the OS voice as its fallback.
+    const speakAudio = useSpeak(speechLang);
 
     const progressKey = `${activeSet}:${activeGroup}`;
     const groupList = items.filter((item) => item.char);
@@ -73,19 +92,27 @@ export function useCharacterReader<Lang extends CharLang>({
         readingRef.current = false;
         if (typeof window !== 'undefined' && 'speechSynthesis' in window)
             window.speechSynthesis.cancel();
+        // A walk that speaks through Google TTS must stop sounding too.
+        stopTtsSpeaking();
 
         setIsReading(false);
         setReadingChar(null);
     }, []);
 
     const startReading = useCallback(() => {
-        if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
+        if (typeof window === 'undefined') return;
+        // Google Cloud TTS does not need the Web Speech API, so a chart that
+        // speaks through the server proxy works without it. A pre-rendered
+        // clip does not need it either.
+        const hasTts = Boolean(tts?.voiceName);
+        const hasClip = Boolean(getAudioSrc);
+        if (!hasTts && !hasClip && !('speechSynthesis' in window)) return;
         if (items.length === 0) return;
 
         let index = progress[progressKey] ?? 0;
         if (index >= items.length) index = 0;
 
-        window.speechSynthesis.cancel();
+        if ('speechSynthesis' in window) window.speechSynthesis.cancel();
         readingRef.current = true;
         setIsReading(true);
 
@@ -104,6 +131,29 @@ export function useCharacterReader<Lang extends CharLang>({
             if (!item.char) return step(position + 1);
 
             setReadingChar(item.char);
+
+            // Google Cloud TTS (server proxy) when the caller supplies a voice,
+            // so the pronunciation is the same on every device.
+            if (tts?.voiceName) {
+                speakTts(getSpeechText?.(item) ?? item.char, tts.languageCode, tts.voiceName, () => {
+                    if (!readingRef.current) return;
+                    recordRead(progressKey, position);
+                    step(position + 1);
+                });
+                return;
+            }
+
+            // A pre-rendered clip, when the chart ships one: the chart's own
+            // voice, the same on every device.
+            const audioSrc = getAudioSrc?.(item);
+            if (audioSrc) {
+                speakAudio(getSpeechText?.(item) ?? item.char, audioSrc, () => {
+                    if (!readingRef.current) return;
+                    recordRead(progressKey, position);
+                    step(position + 1);
+                });
+                return;
+            }
 
             const utterance = new SpeechSynthesisUtterance(getSpeechText?.(item) ?? item.char);
             utterance.pitch = 1;
@@ -132,7 +182,7 @@ export function useCharacterReader<Lang extends CharLang>({
         };
 
         step(index);
-    }, [items, progressKey, progress, recordRead, getSpeechText, speechLang, rate, volume, voiceURI]);
+    }, [items, progressKey, progress, recordRead, getSpeechText, getAudioSrc, speakAudio, speakTts, tts, speechLang, rate, volume, voiceURI]);
 
     /** A tap on a card: remember it as the resume point and stop any running walk. */
     const handleCardRead = useCallback(

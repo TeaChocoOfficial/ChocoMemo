@@ -38,11 +38,15 @@ function pickVoiceForLang(lang: string): SpeechSynthesisVoice | null {
     return getVoices().find((v) => v.lang.toLowerCase().startsWith(base)) ?? null;
 }
 
-/** The voice to speak with: the viewer's pick, else the first voice matching
- *  the target language. */
+/** The voice to speak with: the viewer's pick when it speaks the requested
+ *  language, else the first installed voice for that language. The stored
+ *  pick can belong to another language (a ja voice saved on the kana chart
+ *  would mispronounce Thai), so its base language must match. */
 export function getVoiceForSpeech(voiceURI: string, lang: string): SpeechSynthesisVoice | null {
+    const base = lang.toLowerCase().split('-')[0];
     const selected = voiceURI ? getVoices().find((v) => v.voiceURI === voiceURI) ?? null : null;
-    return selected ?? pickVoiceForLang(lang);
+    if (selected && selected.lang.toLowerCase().startsWith(base)) return selected;
+    return pickVoiceForLang(lang);
 }
 
 /**
@@ -65,6 +69,7 @@ export function useSpeak(speechLangOverride?: string) {
 
             if (audioSrc) {
                 const audio = new Audio(audioSrc);
+                audio.volume = volume;
                 activeAudio = audio;
                 audio.onended = () => {
                     if (activeAudio === audio) activeAudio = null;

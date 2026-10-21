@@ -28,16 +28,16 @@ export default function CharactersPage<Lang extends CharLang>({
 }) {
     const { t } = useTranslation();
     const language = Languages[lang];
+    const { readSoFar, groupTotal } = characterReader;
     const { activeSet, activeGroup, items, options } = useCharacterToolbar(lang);
     const activeGroupId = options.groupId.find((group) => group === activeGroup);
-    const { readSoFar, groupTotal } = characterReader;
 
     const stats: Stat[] = [
-        { label: t(`${language}.character.stats.set`), value: items.length.toLocaleString() },
-        { label: t(`${language}.character.stats.group`), value: groupTotal.toLocaleString() },
+        { label: t('characters.stats.set'), value: items.length.toLocaleString() },
+        { label: t('characters.stats.group'), value: groupTotal.toLocaleString() },
         {
-            label: t(`${language}.character.stats.read`),
-            value: t(`${language}.character.readProgress`, { read: readSoFar, total: groupTotal }),
+            label: t('characters.stats.read'),
+            value: t('characters.readProgress', { read: readSoFar, total: groupTotal }),
         },
     ];
 
@@ -95,7 +95,7 @@ export default function CharactersPage<Lang extends CharLang>({
                 <SectionHeading
                     hint={t(`${language}.character.gridHint`)}
                     step={t(`${language}.character.tabs.${activeSet}`)}
-                    label={t(`${language}.character.group.${activeGroupId}`)}
+                    label={t(`${language}.character.tabs.${activeGroupId}`)}
                 />
 
                 {children}

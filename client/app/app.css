@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@100;200;300&display=swap');
 @import 'tailwindcss';
 
 /* Theme Variant — kept for legacy `dark:` variants in custom components */
@@ -7,6 +8,7 @@
 /* Editorial / minimal: monochrome base + ONE primary hue per theme, hairline
    borders, flat surfaces. No gradients, no glow, no soft shadows. */
 @theme {
+    --font-thai: 'Prompt', sans-serif;
     /* --- Surface (fallback = choco) --- */
     --color-surface: hsl(30 32% 97%);
     --color-surface-foreground: hsl(24 34% 12%);

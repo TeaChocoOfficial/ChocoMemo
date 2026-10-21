@@ -59,6 +59,8 @@ export const validationSchema = Joi.object({
     GOOGLE_CLIENT_SECRET: Joi.string().required(),
     GOOGLE_CALLBACK_URL: Joi.string().uri().required(),
 
+    GOOGLE_TTS_API_KEY: Joi.string().allow('').default(''),
+
     DISCORD_CLIENT_ID: Joi.string().required(),
     DISCORD_CLIENT_SECRET: Joi.string().required(),
     DISCORD_CALLBACK_URL: Joi.string().uri().required(),
