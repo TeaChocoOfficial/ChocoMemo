@@ -11,7 +11,7 @@
 // page read as a single control surface rather than two stacked widgets.
 import { useTranslation } from 'react-i18next';
 import DeckCard from '~/components/container/DeckCard/DeckCard';
-import { useDeckListQuery, type DeckListQueryControls } from '~/hooks/deck/useDeckListQuery';
+import { useDeckListQuery } from '~/hooks/deck/useDeckListQuery';
 import DeckListEmpty from './DeckListEmpty';
 import DeckListSkeleton from './DeckListSkeleton';
 import SourceTally from './SourceTally';

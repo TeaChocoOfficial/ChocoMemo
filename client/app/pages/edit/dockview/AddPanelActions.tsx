@@ -1,11 +1,12 @@
 // -Path: 'client/app/components/edit/dockview/AddPanelActions.tsx'
 import { FaPlus } from 'react-icons/fa6';
 import { createPortal } from 'react-dom';
-import { AnimatePresence, motion } from 'framer-motion';
-import { useEffect, useId, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { PANEL_DEFS, type PanelDefinition } from '../panel/panels';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useOpenPanel } from '~/hooks/editor/useOpenPanel';
+import { useEffect, useId, useRef, useState } from 'react';
 import type { IDockviewHeaderActionsProps } from 'dockview-react';
+import { PANEL_DEFS, type PanelDefinition } from '../panel/panels';
 
 /** Gap between the trigger and the menu, in pixels. */
 const MENU_GAP = 6;
@@ -25,8 +26,11 @@ const VIEWPORT_PAD = 8;
  */
 export default function AddPanelActions(props: IDockviewHeaderActionsProps) {
     const menuId = useId();
-    const countRef = useRef(0);
     const { t } = useTranslation();
+    const addPanel = useOpenPanel({
+        direction: 'within',
+        referenceId: props.activePanel?.id ?? props.panels[0]?.id,
+    });
     const [open, setOpen] = useState(false);
     const menuRef = useRef<HTMLDivElement>(null);
     const wrapperRef = useRef<HTMLDivElement>(null);
@@ -77,22 +81,9 @@ export default function AddPanelActions(props: IDockviewHeaderActionsProps) {
         };
     }, [open]);
 
+    /** Opens a registered panel, or activates it when it is already docked. */
     const add = (def: PanelDefinition) => {
-        // A unique id per instance, so adding the same component twice - or
-        // alongside the default one - never collides.
-        countRef.current += 1;
-        const id = `${def.id}-${Date.now().toString(36)}${countRef.current.toString(36)}`;
-        const reference = props.activePanel?.id ?? props.panels[0]?.id;
-
-        props.containerApi.addPanel({
-            id,
-            component: def.id,
-            title: t(def.titleKey),
-            initialWidth: def.initialWidth,
-            minimumWidth: def.minimumWidth,
-            maximumWidth: def.maximumWidth,
-            position: reference ? { referencePanel: reference, direction: 'within' } : undefined,
-        });
+        addPanel(def);
         setOpen(false);
     };
 

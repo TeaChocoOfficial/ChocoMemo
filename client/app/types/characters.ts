@@ -13,6 +13,8 @@ export interface ReadableChar {
     read: string;
     // sound: such as 'ko-kai.mp3'
     sound: string;
+    /** The card's picture, e.g. `/th/image/ko-kai.png`; empty when the chart has none. */
+    image: string;
 }
 
 export interface ActiveSet extends Record<CharLang, string> {

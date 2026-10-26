@@ -1,21 +1,16 @@
 // -Path: 'client/app/pages/study/hooks/useStudyTargets.ts'
 import { languages } from '~/data/language';
+import type { AvailableLanguage } from '~/data/language';
 import { useTargetLang } from '~/hooks/base/useTargetLang';
-import type { DrillConfig, AvailableLanguage, CharacterSetConfig } from '~/data/language';
 
 /** A character-set tile or drill row, annotated for the study hub. */
-export interface StudyItem<Feature> {
-    /** The language the item belongs to. */
-    language: AvailableLanguage;
-    /** The feature's config — a chart or a drill. */
-    feature: Feature;
+export interface StudyItem extends AvailableLanguage {
     /** True when this language is the active target. */
     active: boolean;
 }
 
 export interface StudyTargets {
-    characters: StudyItem<CharacterSetConfig>[];
-    drills: StudyItem<DrillConfig>[];
+    characters: StudyItem[];
     /** The active language's config entry, or `undefined` if unknown. */
     active: AvailableLanguage | undefined;
 }
@@ -28,33 +23,9 @@ export interface StudyTargets {
 export function useStudyTargets(): StudyTargets {
     const targetLang = useTargetLang();
 
-    const characters = languages.flatMap((language) =>
-        language.characters
-            ? [
-                  {
-                      language,
-                      feature: language.characters,
-                      active: language.id === targetLang,
-                  },
-              ]
-            : [],
+    const characters: StudyItem[] = languages.flatMap((language) =>
+        language.code !== 'other' ? [{ ...language, active: language.id === targetLang }] : [],
     );
 
-    const drills = languages.flatMap((language) =>
-        language.drill
-            ? [
-                  {
-                      language,
-                      feature: language.drill,
-                      active: language.id === targetLang,
-                  },
-              ]
-            : [],
-    );
-
-    return {
-        characters,
-        drills,
-        active: languages.find((language) => language.id === targetLang),
-    };
+    return { characters, active: languages.find((language) => language.id === targetLang) };
 }

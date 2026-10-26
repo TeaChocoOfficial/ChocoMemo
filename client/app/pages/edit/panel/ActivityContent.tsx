@@ -1,6 +1,5 @@
 // -Path: 'client/app/pages/edit/panel/ActivityContent.tsx'
 import PanelChooser from './PanelChooser';
-import type { DockviewApi } from 'dockview-react';
 import ActivityRail from '../content/ActivityRail';
 
 /** Props for {@link ActivityContent}. */
@@ -9,7 +8,6 @@ interface ActivityContentProps {
      *  Omitted in the mobile drawer, where the chooser falls back to the active
      *  panel or the active group. */
     referenceId?: string;
-    containerApi: DockviewApi;
     /** Fired after a panel is added, so the drawer can close itself. */
     onAdd?: () => void;
     /** How a panel docks beside the fallback reference: a new column on desktop,
@@ -27,21 +25,11 @@ interface ActivityContentProps {
  *                direction.
  * @returns The rendered activity content.
  */
-export default function ActivityContent({
-    referenceId,
-    containerApi,
-    onAdd,
-    direction,
-}: ActivityContentProps) {
+export default function ActivityContent({ onAdd, direction, referenceId }: ActivityContentProps) {
     return (
         <div className='flex h-full flex-col'>
             <ActivityRail />
-            <PanelChooser
-                referenceId={referenceId}
-                containerApi={containerApi}
-                onAdd={onAdd}
-                direction={direction}
-            />
+            <PanelChooser referenceId={referenceId} onAdd={onAdd} direction={direction} />
         </div>
     );
 }

@@ -30,8 +30,9 @@ export default function Footer() {
                                 <li key={item.to}>
                                     <Link
                                         to={item.to}
-                                        className='text-surface-foreground hover:text-primary transition-colors'
+                                        className='flex items-center gap-1 text-surface-foreground hover:text-primary transition-colors'
                                     >
+                                        <item.icon className='h-3.5 w-3.5 shrink-0 opacity-70' />
                                         {t(item.label)}
                                     </Link>
                                 </li>

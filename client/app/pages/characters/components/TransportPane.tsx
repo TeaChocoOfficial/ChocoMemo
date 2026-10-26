@@ -4,16 +4,7 @@ import { Languages } from '~/data/language';
 import { useTranslation } from 'react-i18next';
 import Button from '~/components/custom/Button';
 import { FaPlay, FaStop } from 'react-icons/fa6';
-import type { CharLang, ReadableChar } from '~/types/characters';
-import { useCharacterToolbar } from '~/hooks/characters/useChacterToolbar';
-import { type CharacterReader } from '~/hooks/characters/useCharacterReader';
-
-/** Props for {@link TransportPane}. */
-interface TransportPaneProps<Lang extends CharLang> {
-    lang: Lang;
-    characterReader: CharacterReader<Lang>;
-    getCurrentName?: (group: ReadableChar) => string;
-}
+import { useCharacterToolbar } from '~/hooks/characters/useCharacterToolbar';
 
 /**
  * The left half of the toolbar's console: current-letter tile, status line,
@@ -22,30 +13,28 @@ interface TransportPaneProps<Lang extends CharLang> {
  * @param props - TransportPane props.
  * @returns The rendered transport pane.
  */
-export default function TransportPane<Lang extends CharLang>({
-    lang,
-    getCurrentName,
-    characterReader,
-}: TransportPaneProps<Lang>) {
-    const { t } = useTranslation();
-    const language = Languages[lang];
-    const { activeGroup, options } = useCharacterToolbar(lang);
-
+export default function TransportPane() {
     const {
-        isReading,
+        lang,
+        options,
         isResume,
-        displayChar,
+        isReading,
+        groupList,
         readSoFar,
         groupTotal,
-        groupList,
+        activeGroup,
         percentRead,
-        startReading,
+        displayChar,
         stopReading,
-    } = characterReader;
+        startReading,
+    } = useCharacterToolbar();
+    const { t } = useTranslation();
+    const language = Languages[lang];
+
     const activeGroupId = options.groupId.find((group) => group === activeGroup);
 
     const currentGroup = groupList[readSoFar - 1];
-    const currentName = isResume ? (getCurrentName?.(currentGroup) ?? currentGroup.char ?? '') : '';
+    const currentName = isResume ? (currentGroup.char ?? '') : '';
     const statusLabel = isReading
         ? t('characters.nowReading')
         : isResume
@@ -108,14 +97,14 @@ export default function TransportPane<Lang extends CharLang>({
                     ) : (
                         <FaPlay className='h-3.5 w-3.5' />
                     )}
-                    <span>
+                    <span className='hidden md:inline-flex'>
                         {isReading
                             ? t('characters.readStop')
                             : isResume
                               ? t('characters.readContinue')
                               : t('characters.readStart')}
                     </span>
-                    <kbd className='ml-0.5 hidden shrink-0 items-center rounded-sm border border-current px-1 py-0.5 font-mono text-[9px] font-semibold tracking-widest opacity-70 sm:inline-flex'>
+                    <kbd className='ml-0.5 hidden shrink-0 items-center rounded-sm border border-current px-1 py-0.5 font-mono text-[9px] font-semibold tracking-widest opacity-70 lg:inline-flex'>
                         SPC
                     </kbd>
                 </Button>

@@ -1,6 +1,6 @@
 import { useParams } from 'react-router';
-import { ALL_TARGETS, targetLanguage } from '~/data/language';
 import { targetFromCode } from '~/utils/config/targetLang';
+import { ALL_TARGETS, targetLanguage } from '~/data/language';
 
 export default function useTargetLang() {
     const { target } = useParams();

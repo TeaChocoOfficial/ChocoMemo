@@ -34,6 +34,17 @@ VOICES = {
 # the character is still voiced instead of failing the whole run.
 FALLBACK_SUFFIX = "."
 
+# Clips whose chart `read` is right but the voice still says it wrong. The key
+# is the clip's file name; the value is the text to synthesize instead.
+SPOKEN_OVERRIDES = {
+    # "ผอ" is a common abbreviation (ผ.อ.), so the voice spells the letters out
+    # ("พอ-ออ"). ภอ is the same sound (/pʰɔː/) and stays one syllable.
+    "pho-phueng.mp3": "ภอ ผึ้ง",
+    # The thanthakhat over ษ makes the voice add a second syllable
+    # ("ยักษ์ ย่าย"). The closed syllable alone sounds the same to a learner.
+    "yo-yak.mp3": "ยอ ยัก",
+}
+
 ROOT = Path(__file__).resolve().parent.parent
 DATA_FILE = ROOT / "client" / "app" / "data" / "th" / "thai.ts"
 OUTPUT_ROOT = ROOT / "client" / "public" / "th" / "sound"
@@ -77,16 +88,25 @@ async def main() -> int:
         action="store_true",
         help="re-render clips that already exist",
     )
+    parser.add_argument(
+        "--only",
+        default="",
+        help="comma-separated clip file names to render (default: every clip)",
+    )
     args = parser.parse_args()
 
     items = chart_items()
+    only = set(args.only.split(",")) if args.only else set()
+    if only:
+        items = [item for item in items if item[2] in only]
     for label, voice in VOICES.items():
         out_dir = OUTPUT_ROOT / label
         out_dir.mkdir(parents=True, exist_ok=True)
         written = 0
         for _, name, sound in items:
             path = out_dir / sound
-            if await render(voice, name, path, args.force):
+            text = SPOKEN_OVERRIDES.get(sound, name)
+            if await render(voice, text, path, args.force):
                 written += 1
         print(f"{label}: {written} clips written of {len(items)} -> {out_dir}")
     return 0

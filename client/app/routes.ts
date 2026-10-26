@@ -12,6 +12,7 @@ export default [
         layout('routes/layout.tsx', [
             index('routes/page/home.tsx'),
             route('study', 'routes/page/study.tsx'),
+            route('guide', 'routes/page/guide.tsx'),
             route('decks/:deckId', 'routes/page/decks/$deckId.tsx'),
             route('vocab', 'routes/page/vocab/vocab.tsx'),
             route('vocab/:deckId', 'routes/page/vocab/vocab.$deckId.tsx'),

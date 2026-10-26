@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { createCloseButton, createPinButton } from 'dockview-react';
-import { usePinnedTabsStore } from '~/stores/config/pinnedTabs.store';
+import { usePinnedTabsStore } from '~/stores/edit/pinnedTabs.store';
 import type { PointerEvent, SyntheticEvent } from 'react';
 import type { DockviewPanelApi, IDockviewPanelHeaderProps } from 'dockview-react';
 

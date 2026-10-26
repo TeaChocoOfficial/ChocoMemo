@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import HomeSection from './HomeSection';
 import SectionPill from './SectionPill';
-import { FaArrowsRotate, FaBolt, FaGlobe, FaPenNib } from 'react-icons/fa6';
+import { FaArrowRight, FaArrowsRotate, FaBolt, FaGlobe, FaPenNib } from 'react-icons/fa6';
 
 /** Whether creating decks is live yet; step 4 stays upcoming until it is. */
 const CREATE_DECK = false;
@@ -73,6 +73,15 @@ export default function HomeHowItWorks() {
                         </Link>
                     </motion.div>
                 ))}
+            </div>
+            <div className='mt-8 text-center'>
+                <Link
+                    to='/guide'
+                    className='inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary-emphasis'
+                >
+                    {t('home.how.guideLink')}
+                    <FaArrowRight className='h-3.5 w-3.5' />
+                </Link>
             </div>
         </HomeSection>
     );

@@ -5,7 +5,7 @@
 // (`useKanaReader`, `useAlphabetReader`, ...) are thin wrappers that supply
 // their own items, progress store and UI text.
 
-import { useCharacterToolbar } from './useChacterToolbar';
+import { useCharacterToolbar } from './useCharacterToolbar';
 import { getVoiceForSpeech, useSpeak } from '~/hooks/base/useSpeak';
 import { useTtsSpeak, stopTtsSpeaking } from '~/hooks/base/useTtsSpeak';
 import { useSpeechStore } from '~/stores/config/speech.store';
@@ -27,8 +27,6 @@ export interface ReaderTtsOptions {
 }
 
 export interface CharacterReaderOptions<Lang extends CharLang> {
-    /** The group being read, in reading order. Entries with an empty `char` are layout gaps and are skipped. */
-    targetLang: Lang;
     /** What to speak for an item. Defaults to its glyph. */
     getSpeechText?: (item: OptionItem<Lang>[number]) => string;
     /** When set, speak through Google Cloud TTS (server proxy) instead of the OS voice. */
@@ -48,7 +46,6 @@ export type CharacterReader<Lang extends CharLang> = ReturnType<typeof useCharac
  * @returns Reading state, derived display values, and start / stop / tap handlers.
  */
 export function useCharacterReader<Lang extends CharLang>({
-    targetLang,
     getSpeechText,
     tts,
     getAudioSrc,
@@ -59,15 +56,13 @@ export function useCharacterReader<Lang extends CharLang>({
     const { progress, recordRead } = useReadProgressStore();
     const { voiceURI, rate, volume } = useSpeechStore();
     const [readingChar, setReadingChar] = useState<string | null>(null);
-    const { items, activeSet, activeGroup } = useCharacterToolbar(targetLang);
+    const { lang, items, activeSet, activeGroup } = useCharacterToolbar();
 
     // The walk speaks in the chart's own language (en chart → en-US), not in
     // whatever language the global speech store last held — the voice pane is
     // not mounted on every page, so the store can still carry ja-JP here.
-    const target = targetFromCode(targetLang);
-    const speechLang = targetSpeechLang(
-        target && target !== ALL_TARGETS ? target : Languages.en,
-    );
+    const target = targetFromCode(lang);
+    const speechLang = targetSpeechLang(target && target !== ALL_TARGETS ? target : Languages.en);
 
     // Plays a pre-rendered clip for an item, with the OS voice as its fallback.
     const speakAudio = useSpeak(speechLang);
@@ -135,11 +130,16 @@ export function useCharacterReader<Lang extends CharLang>({
             // Google Cloud TTS (server proxy) when the caller supplies a voice,
             // so the pronunciation is the same on every device.
             if (tts?.voiceName) {
-                speakTts(getSpeechText?.(item) ?? item.char, tts.languageCode, tts.voiceName, () => {
-                    if (!readingRef.current) return;
-                    recordRead(progressKey, position);
-                    step(position + 1);
-                });
+                speakTts(
+                    getSpeechText?.(item) ?? item.char,
+                    tts.languageCode,
+                    tts.voiceName,
+                    () => {
+                        if (!readingRef.current) return;
+                        recordRead(progressKey, position);
+                        step(position + 1);
+                    },
+                );
                 return;
             }
 
@@ -182,7 +182,21 @@ export function useCharacterReader<Lang extends CharLang>({
         };
 
         step(index);
-    }, [items, progressKey, progress, recordRead, getSpeechText, getAudioSrc, speakAudio, speakTts, tts, speechLang, rate, volume, voiceURI]);
+    }, [
+        items,
+        progressKey,
+        progress,
+        recordRead,
+        getSpeechText,
+        getAudioSrc,
+        speakAudio,
+        speakTts,
+        tts,
+        speechLang,
+        rate,
+        volume,
+        voiceURI,
+    ]);
 
     /** A tap on a card: remember it as the resume point and stop any running walk. */
     const handleCardRead = useCallback(

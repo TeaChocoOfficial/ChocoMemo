@@ -91,7 +91,7 @@ export default function VoicePicker({ speechLang: speechLangProp }: { speechLang
                             onChange={handleChange}
                             value={selectedUri || AUTO_VALUE}
                             containerClassName='h-full'
-                            className='h-full bg-surface !px-3 !py-0'
+                            className='h-full bg-surface px-3! py-0!'
                             placeholder={t('japanese.kana.voice_choose')}
                             icon={<FaVolumeHigh className='w-3 h-3 shrink-0' />}
                         />

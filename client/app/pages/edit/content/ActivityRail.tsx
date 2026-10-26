@@ -1,9 +1,9 @@
 // -Path: 'client/app/components/edit/ActivityRail.tsx'
-import { FaClock, FaHeart, FaLayerGroup } from 'react-icons/fa6';
 import type { ReactNode } from 'react';
+import type { DeckView } from '~/types/deck';
 import { useTranslation } from 'react-i18next';
 import { useEditor } from '~/hooks/editor/useEditor';
-import type { DeckView } from '~/stores/config/deckEditor.store';
+import { FaClock, FaHeart, FaLayerGroup } from 'react-icons/fa6';
 
 /** One selectable explorer view. */
 interface ViewItem {

@@ -4,42 +4,17 @@ import { Languages } from '~/data/language';
 import Badge from '~/components/custom/Badge';
 import { FaArrowLeft } from 'react-icons/fa6';
 import { useTranslation } from 'react-i18next';
+import CharactersStats from './CharactersStats';
 import ChacterToolbar from './CharacterToolbar';
 import Section from '~/components/custom/Section';
-import type { CharLang } from '~/types/characters';
 import SectionHeading from '~/components/custom/SectionHeading';
-import { useCharacterToolbar } from '~/hooks/characters/useChacterToolbar';
-import type { CharacterReader } from '~/hooks/characters/useCharacterReader';
+import { useCharacterToolbar } from '~/hooks/characters/useCharacterToolbar';
 
-/** One figure in the three-up stats row under the hero. */
-export interface Stat {
-    label: string;
-    value: string;
-}
-
-export default function CharactersPage<Lang extends CharLang>({
-    lang,
-    children,
-    characterReader,
-}: {
-    lang: Lang;
-    children: React.ReactNode;
-    characterReader: CharacterReader<Lang>;
-}) {
+export default function CharactersPage({ children }: { children: React.ReactNode }) {
     const { t } = useTranslation();
-    const language = Languages[lang];
-    const { readSoFar, groupTotal } = characterReader;
-    const { activeSet, activeGroup, items, options } = useCharacterToolbar(lang);
+    const { lang, options, activeSet, activeGroup } = useCharacterToolbar();
     const activeGroupId = options.groupId.find((group) => group === activeGroup);
-
-    const stats: Stat[] = [
-        { label: t('characters.stats.set'), value: items.length.toLocaleString() },
-        { label: t('characters.stats.group'), value: groupTotal.toLocaleString() },
-        {
-            label: t('characters.stats.read'),
-            value: t('characters.readProgress', { read: readSoFar, total: groupTotal }),
-        },
-    ];
+    const language = Languages[lang];
 
     return (
         <Section>
@@ -69,28 +44,9 @@ export default function CharactersPage<Lang extends CharLang>({
                     </p>
                 </motion.div>
 
-                <motion.div
-                    initial={{ opacity: 0, y: 24 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.15 }}
-                    className='grid grid-cols-3 gap-4 mb-6'
-                >
-                    {stats.map((stat) => (
-                        <div
-                            key={stat.label}
-                            className='rounded-sm border border-line bg-surface-overlay px-5 py-4'
-                        >
-                            <p className='text-2xl sm:text-3xl font-black tracking-tight text-surface-foreground'>
-                                {stat.value}
-                            </p>
-                            <p className='mt-1.5 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-surface-muted'>
-                                {stat.label}
-                            </p>
-                        </div>
-                    ))}
-                </motion.div>
+                <CharactersStats />
 
-                <ChacterToolbar lang={lang} characterReader={characterReader} />
+                <ChacterToolbar />
 
                 <SectionHeading
                     hint={t(`${language}.character.gridHint`)}

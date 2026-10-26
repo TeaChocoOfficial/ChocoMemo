@@ -7,8 +7,8 @@ import type {
 } from 'dockview-react';
 import type { TFunction } from 'i18next';
 import { orderPinnedFirst } from './pinnedTabs';
-import { dockviewApiRef } from '~/stores/config/dockviewApi.store';
-import { usePinnedTabsStore } from '~/stores/config/pinnedTabs.store';
+import { dockviewApiRef } from '~/stores/edit/dockviewApi.store';
+import { usePinnedTabsStore } from '~/stores/edit/pinnedTabs.store';
 
 /**
  * Builds the tab right-click menu. The pin toggle and the close items are the

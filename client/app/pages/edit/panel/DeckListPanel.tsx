@@ -2,6 +2,7 @@
 import DeckEditList from '../content/DeckEditList';
 import { useEditor } from '~/hooks/editor/useEditor';
 import type { IDockviewPanelProps } from 'dockview-react';
+import DeckList from '~/components/container/DeckList/DeckList';
 
 /**
  * Dockview panel that renders the explorer: the deck list, narrowed by the
@@ -10,18 +11,10 @@ import type { IDockviewPanelProps } from 'dockview-react';
  * editor state from the editor stores.
  */
 export default function DeckListPanel(_props: IDockviewPanelProps) {
-    const { visibleDecks, selectedId, remove, select, reorder, typeFilter, setTypeFilter } =
-        useEditor();
-
     return (
-        <DeckEditList
-            decks={visibleDecks}
-            selectedId={selectedId}
-            onDelete={remove}
-            onSelect={select}
-            onReorder={reorder}
-            typeFilter={typeFilter}
-            onTypeFilterChange={setTypeFilter}
-        />
+        <>
+            <DeckList type='review' />
+            <DeckEditList />
+        </>
     );
 }

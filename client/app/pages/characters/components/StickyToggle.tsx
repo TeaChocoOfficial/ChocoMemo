@@ -2,23 +2,17 @@
 import { motion } from 'framer-motion';
 import { FaThumbtack } from 'react-icons/fa6';
 import { useTranslation } from 'react-i18next';
+import { useCharacterToolbar } from '~/hooks/characters/useCharacterToolbar';
 
-export default function StickyToggle({
-    enabled,
-    onChange,
-}: {
-    enabled: boolean;
-    onChange: (enabled: boolean) => void;
-}) {
+export default function StickyToggle() {
     const { t } = useTranslation();
+    const { stickyEnabled, setStickyEnabled } = useCharacterToolbar();
 
     return (
         <div
             role='group'
             aria-label={t('characters.sticky')}
-            title={
-                enabled ? t('characters.unpinToolbar') : t('characters.pinToolbar')
-            }
+            title={stickyEnabled ? t('characters.unpinToolbar') : t('characters.pinToolbar')}
             className='inline-flex items-center rounded-sm border border-line bg-surface-overlay p-1'
         >
             <span className='flex items-center gap-1.5 border-r border-line pr-2 pl-1.5'>
@@ -29,17 +23,15 @@ export default function StickyToggle({
             </span>
             <div className='relative ml-1 flex items-center gap-0.5'>
                 {([true, false] as const).map((opt) => {
-                    const active = enabled === opt;
+                    const active = stickyEnabled === opt;
                     return (
                         <button
                             key={String(opt)}
                             type='button'
                             aria-pressed={active}
-                            onClick={() => onChange(opt)}
+                            onClick={() => setStickyEnabled(opt)}
                             aria-label={
-                                opt
-                                    ? t('characters.pinToolbar')
-                                    : t('characters.unpinToolbar')
+                                opt ? t('characters.pinToolbar') : t('characters.unpinToolbar')
                             }
                             className={`relative rounded-sm px-2.5 py-1 text-xs font-bold transition-colors duration-200 cursor-pointer ${
                                 active
@@ -59,9 +51,7 @@ export default function StickyToggle({
                                 />
                             )}
                             <span className='relative z-10'>
-                                {opt
-                                    ? t('characters.stickyOn')
-                                    : t('characters.stickyOff')}
+                                {opt ? t('characters.stickyOn') : t('characters.stickyOff')}
                             </span>
                         </button>
                     );

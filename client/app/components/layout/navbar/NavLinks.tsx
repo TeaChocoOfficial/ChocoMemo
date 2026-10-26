@@ -1,7 +1,7 @@
 // -Path: 'client/app/components/layout/navbar/NavLinks.tsx'
-import { getPrimaryNavItems, isNavItemActive } from './utils';
 import { useTranslation } from 'react-i18next';
 import { Link, usePathname } from '~/i18n/routing';
+import { getPrimaryNavItems, isNavItemActive } from './utils';
 
 type NavLinksProps = {
     className?: string;
@@ -23,20 +23,17 @@ export default function NavLinks({ onNavigate, className = '' }: NavLinksProps) 
 
     return (
         <div className={className}>
-            {primary.map((item) => {
-                const Icon = item.icon;
-                return (
-                    <Link
-                        key={item.to}
-                        to={item.to}
-                        onClick={onNavigate}
-                        className={linkClass(isNavItemActive(item, pathname))}
-                    >
-                        <Icon className='h-3.5 w-3.5 shrink-0 opacity-70' />
-                        {t(item.label)}
-                    </Link>
-                );
-            })}
+            {primary.map((item) => (
+                <Link
+                    key={item.to}
+                    to={item.to}
+                    onClick={onNavigate}
+                    className={linkClass(isNavItemActive(item, pathname))}
+                >
+                    <item.icon className='h-3.5 w-3.5 shrink-0 opacity-70' />
+                    {t(item.label)}
+                </Link>
+            ))}
         </div>
     );
 }

@@ -1,24 +1,13 @@
 // -Path: 'client/app/components/edit/DeckEditList.tsx'
-import type { DeckData } from '~/types/deck';
 import Badge from '~/components/custom/Badge';
 import { useTranslation } from 'react-i18next';
-import { useLangText } from '~/hooks/config/useLangText';
+import type { DeckFilter } from '~/types/deck';
+import Select from '~/components/custom/Select';
+import { useEditor } from '~/hooks/editor/useEditor';
 import SortableList from '../components/SortableList';
+import { useLangText } from '~/hooks/config/useLangText';
 import { FaTrash, FaGripVertical } from 'react-icons/fa6';
-import type { DeckFilter } from '~/stores/config/deckEditor.store';
-
-/** Props for {@link DeckEditList}. */
-interface DeckEditListProps {
-    decks: DeckData[];
-    selectedId: string | null;
-    onDelete: (id: string) => void;
-    onSelect: (id: string) => void;
-    /** Receives the full id order after a drag, ready to persist. */
-    onReorder: (ids: string[]) => void;
-    /** When set, a type filter row is rendered under the heading. */
-    typeFilter?: DeckFilter;
-    onTypeFilterChange?: (value: DeckFilter) => void;
-}
+import { DECK_SOURCE_TABS } from '~/utils/deck/deckListQuery';
 
 /** The type filters offered in the explorer header. */
 const FILTERS: DeckFilter[] = ['all', 'vocab', 'render', 'review', 'exam'];
@@ -26,9 +15,6 @@ const FILTERS: DeckFilter[] = ['all', 'vocab', 'render', 'review', 'exam'];
 const ROW = 'group/row flex items-center gap-1 rounded-sm px-2 py-1.5 transition-colors';
 const ROW_IDLE = 'hover:bg-surface-overlay';
 const ROW_ACTIVE = 'bg-primary-subtle';
-const CHIP = 'rounded-sm border px-2 py-1 text-[11px] font-semibold transition-colors';
-const CHIP_IDLE = 'border-line text-surface-muted hover:bg-surface-overlay hover:text-surface-foreground';
-const CHIP_ACTIVE = 'border-primary bg-primary-subtle text-primary';
 const HANDLE =
     'flex h-8 w-7 shrink-0 cursor-grab items-center justify-center rounded-sm text-surface-muted transition-colors hover:bg-surface-sunken hover:text-surface-foreground focus-visible:outline-2 focus-visible:outline-primary active:cursor-grabbing';
 const SELECT =
@@ -46,57 +32,70 @@ const REMOVE =
  *                optional type filter.
  * @returns The rendered deck list.
  */
-export default function DeckEditList({
-    decks,
-    selectedId,
-    onDelete,
-    onSelect,
-    onReorder,
-    typeFilter,
-    onTypeFilterChange,
-}: DeckEditListProps) {
-    const { t } = useTranslation();
+export default function DeckEditList() {
+    const {
+        sources,
+        selectedId,
+        typeFilters,
+        visibleDecks,
+        select,
+        remove,
+        reorder,
+        setSource,
+        setTypeFilters,
+    } = useEditor();
     const locale = useLangText();
+    const { t } = useTranslation();
+    // const counts = useDeckCounts(targetLang, type);
 
     return (
         <section className='flex h-full flex-col gap-3 p-4'>
-            <h2 className='text-xs font-bold uppercase tracking-[0.14em] text-surface-subtle'>
-                {t('deck.edit.listTitle')}
-            </h2>
-
-            {typeFilter && onTypeFilterChange && (
-                <div
-                    role='group'
+            <div className='flex gap-2'>
+                <Select
+                    value={typeFilters}
                     aria-label={t('deck.edit.filters')}
-                    className='flex flex-wrap gap-1'
-                >
-                    {FILTERS.map((filter) => {
-                        const active = filter === typeFilter;
-                        return (
-                            <button
-                                key={filter}
-                                type='button'
-                                aria-pressed={active}
-                                onClick={() => onTypeFilterChange(filter)}
-                                className={`${CHIP} ${active ? CHIP_ACTIVE : CHIP_IDLE}`}
-                            >
+                    onChange={(value) => setTypeFilters(value)}
+                    options={FILTERS.map((filter) => ({
+                        value: filter,
+                        label: (
+                            <div className='flex gap-2 items-center'>
                                 {filter === 'all'
                                     ? t('deck.edit.filterAll')
                                     : t(`deck.type.${filter}`)}
-                            </button>
-                        );
-                    })}
-                </div>
-            )}
+                                <span className='font-mono text-xs tabular-nums opacity-60'>0</span>
+                            </div>
+                        ),
+                    }))}
+                />
+                <Select
+                    value={sources}
+                    aria-label={t('deck.tallyAria')}
+                    onChange={(value) => setSource(value)}
+                    options={DECK_SOURCE_TABS.map((source) => ({
+                        value: source,
+                        label: (
+                            <div className='flex gap-2 items-center'>
+                                {t(`common.tabs.${source}`)}
+                                <span className='font-mono text-xs tabular-nums opacity-60'>0</span>
+                            </div>
+                        ),
+                        // icon: (
+                        //     <span className='font-mono text-xs tabular-nums opacity-60'>
+                        //         {/* {counts[source]} */}0
+                        //     </span>
+                        // ),
+                    }))}
+                />
+            </div>
 
-            {decks.length === 0 ? (
+            {visibleDecks.length === 0 ? (
                 <p className='rounded-sm border border-dashed border-line-strong px-4 py-10 text-center text-sm text-surface-muted'>
                     {t('deck.edit.empty')}
                 </p>
             ) : (
                 <SortableList
-                    items={decks}
-                    onReorder={onReorder}
+                    items={visibleDecks}
+                    onReorder={reorder}
                     className='m-0 flex list-none flex-col gap-1 p-0'
                     renderItem={(deck, { handleProps, isDragging }) => (
                         <div
@@ -112,8 +111,8 @@ export default function DeckEditList({
                             </button>
                             <button
                                 type='button'
-                                onClick={() => onSelect(deck.id)}
                                 className={SELECT}
+                                onClick={() => select(deck.id)}
                             >
                                 <span className='min-w-0 flex-1 truncate text-sm font-medium text-surface-foreground'>
                                     {locale(deck.name)}
@@ -122,9 +121,9 @@ export default function DeckEditList({
                             </button>
                             <button
                                 type='button'
-                                onClick={() => onDelete(deck.id)}
-                                aria-label={t('deck.deleteAria')}
                                 className={REMOVE}
+                                onClick={() => remove(deck.id)}
+                                aria-label={t('deck.deleteAria')}
                             >
                                 <FaTrash className='h-3.5 w-3.5' />
                             </button>

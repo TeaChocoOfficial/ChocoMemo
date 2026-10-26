@@ -21,7 +21,7 @@ import {
     useDeckListStore,
     type DeckListOptions,
     DEFAULT_DECK_LIST_OPTIONS,
-} from '~/stores/config/deckList.store';
+} from '~/stores/deck/deckList.store';
 import type { DeckSource } from '~/types/deck';
 import { useSearchParams } from 'react-router';
 import { DEFAULT_DECK_LIST_QUERY } from '~/types/deckList';

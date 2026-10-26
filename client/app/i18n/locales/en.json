@@ -3,6 +3,7 @@
         "home": "Home",
         "study": "Study",
         "edit": "Edit",
+        "guide": "Guide",
         "languages": "Languages",
         "menu": "Open menu",
         "settings": "Settings",
@@ -155,7 +156,8 @@
             "step4": {
                 "title": "Create your own",
                 "hint": "Soon you'll add the words you keep forgetting and share them with other learners."
-            }
+            },
+            "guideLink": "Read the full guide"
         },
         "cta": {
             "title": "Start from the first character.",
@@ -164,9 +166,107 @@
             "secondary": "Create a deck"
         }
     },
+    "guide": {
+        "badge": "Guide",
+        "tag": "User manual",
+        "title": "How to use ChocoMemo",
+        "subtitle": "A short tour of the app: what every area does, and the order that makes a first session work.",
+        "quickStart": {
+            "title": "Four moves, one sitting",
+            "hint": "Read a chart, drill it, then review what you learned. Everything else in ChocoMemo is a variation on these three steps."
+        },
+        "steps": {
+            "step1": {
+                "title": "Pick a language",
+                "hint": "The landing page lists every target. Picking one opens its vocabulary decks, and the choice is remembered on this device."
+            },
+            "step2": {
+                "title": "Read the chart",
+                "hint": "Browse the character chart for the script you are learning and tap any glyph to hear it spoken aloud."
+            },
+            "step3": {
+                "title": "Drill it",
+                "hint": "A timed multiple-choice round over the characters you picked. Set the timer, the question count and the groups to match your level."
+            },
+            "step4": {
+                "title": "Review the words",
+                "hint": "Flashcards bring back the vocabulary you have studied, on a schedule, so nothing slips away."
+            }
+        },
+        "sections": {
+            "title": "What each part does",
+            "hint": "One card per area of the app. Each card links straight to the page it describes.",
+            "landing": {
+                "title": "Landing page",
+                "hint": "The front door: what the app is, and the languages it teaches.",
+                "point1": "Every target language is listed as a full-width row — pick one to start.",
+                "point2": "The language you pick is remembered on the device and becomes the active target.",
+                "point3": "No sign-up wall: charts and decks are open before you create an account."
+            },
+            "hub": {
+                "title": "Study hub",
+                "hint": "The overview you land on after choosing a language.",
+                "point1": "Characters — one tile per script, dominated by the glyph itself.",
+                "point2": "Drill — a list of character drills, one row each.",
+                "point3": "Decks — Learn (vocabulary, render), Practice (review, exam) and a Manage row for editing."
+            },
+            "charts": {
+                "title": "Character charts",
+                "hint": "The reference view of a script, with sound on every character.",
+                "point1": "Kana (Japanese), the Latin alphabet (English) and Thai are implemented today.",
+                "point2": "Each chart is grouped — voiceless, voiced and contracted for kana; vowels and consonants for the alphabet.",
+                "point3": "Tap a character to hear it spoken. The voice follows the target language, not the interface language.",
+                "point4": "A reading order walks the chart for you and remembers how far you got."
+            },
+            "drill": {
+                "title": "Character drill",
+                "hint": "The fast, multiple-choice round that turns recognition into recall.",
+                "point1": "Toggle the character groups and the question count, from all of them down to a handful.",
+                "point2": "A per-question timer with a countdown bar, and optional auto-advance.",
+                "point3": "Live Correct / Wrong / Timeout counters while you play.",
+                "point4": "At the end: a score rank, a breakdown of every answer, and a replay button."
+            },
+            "decks": {
+                "title": "Vocabulary, render, review and exam",
+                "hint": "Four features over one shared deck list — they differ only in what happens when a deck opens.",
+                "point1": "Vocabulary decks hold the words; Render decks hold the reading material.",
+                "point2": "Review turns a deck into flashcards on a spaced schedule.",
+                "point3": "Exam turns a deck into a multiple-choice test.",
+                "point4": "The toolbar filters by target language, and sort, density and source are remembered on the device."
+            },
+            "edit": {
+                "title": "Edit decks",
+                "hint": "One editor for every deck type, in a full-screen workspace of dockable panels.",
+                "point1": "Panels for the deck list, the editor, the preview, the inspector and the settings.",
+                "point2": "Arrange them yourself: drag, resize, pin a tab, or reset the layout.",
+                "point3": "On a phone the same panels become a tab strip with a slide-out menu."
+            },
+            "voice": {
+                "title": "Voice and appearance",
+                "hint": "The settings that decide how the app sounds and looks.",
+                "point1": "Themes: pick one of the light and dark palettes, and the app follows.",
+                "point2": "Voice: choose which installed voice speaks the characters, with a preview button.",
+                "point3": "Interface: switch the interface language and hide the navbar for a distraction-free view."
+            },
+            "account": {
+                "title": "Account and community",
+                "hint": "Where the account features live.",
+                "point1": "Sign in or create an account to reach your profile and settings.",
+                "point2": "Your public profile is addressable by name tag, so it can be shared.",
+                "point3": "Cloud sync and community decks are on the way."
+            }
+        },
+        "action": {
+            "open": "Open",
+            "comingSoon": "Coming soon"
+        }
+    },
     "study": {
         "title": "Study",
         "subtitle": "Pick a language, then a way to practise it.",
+        "basic": {
+            "title": "Basics"
+        },
         "characters": {
             "title": "Characters",
             "description": "Browse a language's character chart and hear each one spoken.",
@@ -580,6 +680,10 @@
             "group": "In group",
             "read": "Read"
         },
+        "voice": {
+            "female": "Female",
+            "male": "Male"
+        },
         "notFound": {
             "badge": "Not found",
             "title": "Language not found",
@@ -977,7 +1081,7 @@
             "tabs": {
                 "consonants": "Consonants",
                 "vowels": "Vowels",
-                "tones": "Tones & Marks",
+                "tones": "Tones",
                 "headed": "Looped",
                 "headless": "Loopless"
             },

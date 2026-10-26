@@ -14,10 +14,13 @@
 //     viewer actually chose and a shared link never pins a preference that used
 //     to be the implicit one. The tab is the one exception: it is always
 //     written, so the URL always names the source it shows.
-import { DEFAULT_DECK_LIST_QUERY } from '~/types/deckList';
-import type { DeckDensity, DeckListQuery, DeckNsfwFilter, DeckSort } from '~/types/deckList';
-import type { DeckSource } from '~/types/deck';
 import type { DeckData } from '~/types/deck';
+import { DEFAULT_DECK_LIST_QUERY } from '~/types/deckList';
+import type { DeckFilter, DeckSource } from '~/types/deck';
+import type { DeckDensity, DeckListQuery, DeckNsfwFilter, DeckSort } from '~/types/deckList';
+
+/** The type filters offered in the explorer header. */
+export const DECK_FILTERS: readonly DeckFilter[] = ['all', 'vocab', 'render', 'review', 'exam'];
 
 /** Query-string keys, named once so parsing and writing cannot drift. */
 export const DECK_LIST_PARAMS = {
@@ -31,12 +34,7 @@ export const DECK_LIST_PARAMS = {
 
 /** Tab order. What the viewer made, then what the app ships, then the two
  *  sources still waiting on a server — the same order the tally used to list. */
-export const DECK_SOURCE_TABS: readonly DeckSource[] = [
-    'local',
-    'official',
-    'cloud',
-    'community',
-];
+export const DECK_SOURCE_TABS: readonly DeckSource[] = ['local', 'official', 'cloud', 'community'];
 
 export const DECK_SORTS: readonly DeckSort[] = ['default', 'name', 'recent', 'popular', 'size'];
 
@@ -168,7 +166,9 @@ export function sortDecks(
             // Most downloads first. Sources that do not report a count rank
             // last rather than tying with a real zero, so "popular" stays
             // meaningful on the local tab where every deck is unmeasured.
-            return sorted.sort((a, b) => (b.meta.downloadCount ?? -1) - (a.meta.downloadCount ?? -1));
+            return sorted.sort(
+                (a, b) => (b.meta.downloadCount ?? -1) - (a.meta.downloadCount ?? -1),
+            );
         case 'size':
             return sorted.sort((a, b) => (b.meta.size ?? -1) - (a.meta.size ?? -1));
         default:

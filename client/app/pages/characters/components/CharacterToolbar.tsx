@@ -1,24 +1,14 @@
 // -Path: 'client/app/pages/characters/en/components/ChacterToolbar.tsx'
 import { motion } from 'framer-motion';
 import StickyToggle from './StickyToggle';
-import { Languages } from '~/data/language';
 import TransportPane from './TransportPane';
+import ReadingVolume from './ReadingVolume';
+import { Languages } from '~/data/language';
 import { useTranslation } from 'react-i18next';
-import VoicePicker from '~/components/config/VoicePicker';
-import TtsVoicePicker from '~/components/config/TtsVoicePicker';
-import ThaiClipVoicePicker from '../th/components/ThaiClipVoicePicker';
-import { targetSpeechLang } from '~/utils/config/targetLang';
 import { useChromeStore } from '~/stores/config/chrome.store';
 import SetTabs, { type SetTabOption } from '~/components/custom/SetTabs';
-import { useCharacterToolbar } from '~/hooks/characters/useChacterToolbar';
 import type { ActiveGroups, ActiveSet, CharLang } from '~/types/characters';
-import { type CharacterReader } from '~/hooks/characters/useCharacterReader';
-
-/** Props for {@link ChacterToolbar}. */
-interface ChacterToolbarProps<Lang extends CharLang> {
-    lang: Lang;
-    characterReader: CharacterReader<Lang>;
-}
+import { useCharacterToolbar } from '~/hooks/characters/useCharacterToolbar';
 
 /**
  * The sticky control bar for the chacter chart: pin toggle, set and group
@@ -28,30 +18,27 @@ interface ChacterToolbarProps<Lang extends CharLang> {
  * @param props - ChacterToolbar props.
  * @returns The rendered toolbar.
  */
-export default function ChacterToolbar<Lang extends CharLang>({
-    lang,
-    characterReader,
-}: ChacterToolbarProps<Lang>) {
+export default function ChacterToolbar() {
     const {
+        lang,
         options,
         activeSet,
         activeGroup,
         stickyEnabled,
+        stopReading,
         setActiveSet,
         setActiveGroup,
-        setStickyEnabled,
-    } = useCharacterToolbar(lang);
+    } = useCharacterToolbar();
     const { t } = useTranslation();
     const language = Languages[lang];
     const { showChrome } = useChromeStore();
-    const { stopReading } = characterReader;
 
-    const onSetChange = (option: SetTabOption<string, ActiveSet[Lang]>) => {
+    const onSetChange = (option: SetTabOption<string, ActiveSet[CharLang]>) => {
         stopReading();
         setActiveSet(option.id);
     };
 
-    const onGroupChange = (option: SetTabOption<string, ActiveGroups[Lang]>) => {
+    const onGroupChange = (option: SetTabOption<string, ActiveGroups[CharLang]>) => {
         stopReading();
         setActiveGroup(option.id);
     };
@@ -61,22 +48,22 @@ export default function ChacterToolbar<Lang extends CharLang>({
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0, top: showChrome ? '4.5rem' : '1rem' }}
             transition={{
-                opacity: { duration: 0.5, delay: 0.2 },
                 y: { duration: 0.5, delay: 0.2 },
+                opacity: { duration: 0.5, delay: 0.2 },
                 top: { type: 'spring', stiffness: 400, damping: 34 },
             }}
-            className={`rounded-sm border border-line bg-surface p-4 sm:p-5 mb-10 ${
+            className={`rounded-sm border border-line bg-surface p-3 md:p-5 mb-10 ${
                 stickyEnabled ? 'sticky z-30 shadow-lg shadow-line/20' : ''
             }`}
         >
-            <div className='flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between'>
-                <StickyToggle enabled={stickyEnabled} onChange={setStickyEnabled} />
+            <div className='flex gap-2 sm:gap-4 flex-row sm:items-center sm:justify-between overflow-x-auto'>
+                <StickyToggle />
                 {activeSet && (
                     <SetTabs
                         active={activeSet}
                         onChange={onSetChange}
                         options={options.setId.map((id) => ({
-                            id: id as ActiveSet[Lang],
+                            id: id as ActiveSet[CharLang],
                             label: t(`${language}.character.tabs.${id}`),
                         }))}
                     />
@@ -86,34 +73,23 @@ export default function ChacterToolbar<Lang extends CharLang>({
                         active={activeGroup}
                         onChange={onGroupChange}
                         options={options.groupId.map((id) => ({
-                            id: id as ActiveGroups[Lang],
+                            id: id as ActiveGroups[CharLang],
                             label: t(`${language}.character.tabs.${id}`),
                         }))}
                     />
                 )}
             </div>
 
-            <div className='my-4 h-px bg-line' />
+            <div className='my-2 h-px bg-line' />
 
             {/* reading console */}
-            <div className='mt-4 flex flex-col gap-2 sm:flex-row sm:items-stretch'>
-                <TransportPane lang={lang} characterReader={characterReader} />
+            <div className='flex flex-col gap-2 md:flex-row sm:items-stretch'>
+                <TransportPane />
 
                 {/* hairline divider */}
-                <div className='hidden w-px shrink-0 self-stretch bg-line sm:block' />
+                <div className='hidden w-px shrink-0 self-stretch bg-line md:block' />
 
-                {/* voice pane: the Thai chart picks a Google Cloud TTS voice,
-                    every other chart picks an OS voice for its language */}
-                <div className='flex flex-col justify-center gap-2 rounded-sm bg-surface-overlay p-3 sm:w-72 sm:shrink-0 sm:p-3.5'>
-                    {lang === 'th' ? (
-                        <TtsVoicePicker
-                            languageCode='th-TH'
-                            fallback={<ThaiClipVoicePicker />}
-                        />
-                    ) : (
-                        <VoicePicker speechLang={targetSpeechLang(Languages[lang])} />
-                    )}
-                </div>
+                <ReadingVolume />
             </div>
         </motion.div>
     );

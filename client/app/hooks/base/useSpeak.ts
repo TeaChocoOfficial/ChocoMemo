@@ -44,7 +44,7 @@ function pickVoiceForLang(lang: string): SpeechSynthesisVoice | null {
  *  would mispronounce Thai), so its base language must match. */
 export function getVoiceForSpeech(voiceURI: string, lang: string): SpeechSynthesisVoice | null {
     const base = lang.toLowerCase().split('-')[0];
-    const selected = voiceURI ? getVoices().find((v) => v.voiceURI === voiceURI) ?? null : null;
+    const selected = voiceURI ? (getVoices().find((v) => v.voiceURI === voiceURI) ?? null) : null;
     if (selected && selected.lang.toLowerCase().startsWith(base)) return selected;
     return pickVoiceForLang(lang);
 }
@@ -55,10 +55,8 @@ export function getVoiceForSpeech(voiceURI: string, lang: string): SpeechSynthes
  * `other` deck speaks its own language.
  */
 export function useSpeak(speechLangOverride?: string) {
-    const voiceURI = useSpeechStore((s) => s.voiceURI);
-    const rate = useSpeechStore((s) => s.rate);
-    const volume = useSpeechStore((s) => s.volume);
     const targetLang = useTargetLang();
+    const { rate, volume, voiceURI } = useSpeechStore();
     const speechLang = speechLangOverride ?? targetSpeechLang(targetLang);
 
     return useCallback(
@@ -85,7 +83,7 @@ export function useSpeak(speechLangOverride?: string) {
                 });
                 return;
             }
-            speakWithTTS(text, onEnd);
+            // speakWithTTS(text, onEnd);
         },
         [voiceURI, speechLang, rate, volume],
     );

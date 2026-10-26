@@ -1,12 +1,12 @@
 // -Path: 'client/app/components/container/TargetLangSelect.tsx'
+import { FaGlobe } from 'react-icons/fa6';
 import { useTranslation } from 'react-i18next';
 import { useSearchParams } from 'react-router';
+import { targetCode } from '~/utils/config/targetLang';
+import { useDeckListStore } from '~/stores/deck/deckList.store';
 import Select, { type OptionSelectType } from '~/components/custom/Select';
-import { FaGlobe } from 'react-icons/fa6';
 import { ALL_TARGETS, languages, type TargetFilter } from '~/data/language';
 import { useDeckTargetLang, useTargetLang } from '~/hooks/base/useTargetLang';
-import { targetCode } from '~/utils/config/targetLang';
-import { useDeckListStore } from '~/stores/config/deckList.store';
 
 /**
  * The single target-language control, shared by the deck list and the study
@@ -55,10 +55,10 @@ export default function TargetLangSelect({
     return (
         <Select<TargetFilter>
             options={options}
-            value={allowAll ? deckTarget : targetLang}
             className={className}
             onChange={handleChange}
             placeholder={t('deck.target')}
+            value={allowAll ? deckTarget : targetLang}
             icon={<FaGlobe className='h-3.5 w-3.5' />}
         />
     );

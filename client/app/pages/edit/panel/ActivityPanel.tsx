@@ -8,6 +8,6 @@ import type { IDockviewPanelProps } from 'dockview-react';
  *
  * @param props - The dockview panel props, used to dock new panels.
  */
-export default function ActivityPanel({ containerApi, api }: IDockviewPanelProps) {
-    return <ActivityContent containerApi={containerApi} referenceId={api.id} />;
+export default function ActivityPanel({ api }: IDockviewPanelProps) {
+    return <ActivityContent referenceId={api.id} />;
 }

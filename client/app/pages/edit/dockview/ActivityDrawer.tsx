@@ -2,7 +2,7 @@
 import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ActivityContent from '../panel/ActivityContent';
-import { dockviewApiRef } from '~/stores/config/dockviewApi.store';
+import { dockviewApiRef } from '~/stores/edit/dockviewApi.store';
 
 /** Props for {@link ActivityDrawer}. */
 interface ActivityDrawerProps {
@@ -51,13 +51,7 @@ export default function ActivityDrawer({ open, onClose }: ActivityDrawerProps) {
                         transition={{ duration: 0.2 }}
                         className='absolute inset-y-0 left-0 flex w-72 max-w-[85vw] flex-col border-r border-line bg-surface'
                     >
-                        {api && (
-                            <ActivityContent
-                                containerApi={api}
-                                onAdd={onClose}
-                                direction='within'
-                            />
-                        )}
+                        {api && <ActivityContent onAdd={onClose} direction='within' />}
                     </motion.aside>
                 </div>
             )}

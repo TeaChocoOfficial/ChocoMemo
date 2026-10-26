@@ -4,6 +4,13 @@ import type { Languages } from '~/data/language';
 
 export type Version = `${number}.${number}.${number}`;
 
+/** Which slice of the collection the explorer is showing. */
+export type DeckView = 'all' | 'favourites' | 'recent';
+
+/** Explorer filter: one editable deck type, or `all` for the whole collection.
+ *  `drill` is excluded because it has no rail entry to select it. */
+export type DeckFilter = 'all' | Exclude<DeckType, 'drill'>;
+
 /** Where a deck came from, which decides who may edit it.
  *  - `official`: ships inside the app bundle, read-only for everyone.
  *  - `local`: authored on this device by the viewer.

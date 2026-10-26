@@ -64,8 +64,9 @@ client/
         vocab/ render/ exam/ review/   # deck lists (+ :deckId)
         characters/$target.tsx         # character chart
         drill/$target.tsx              # character drill
+        guide.tsx                      # in-app manual
     pages/               # actual page UI, one folder per page/feature
-      study/{components,hooks}/ characters/ drill/ home/ decks/ ...
+      study/{components,hooks}/ characters/ drill/ home/ guide/ decks/ ...
     components/
       custom/            # design-system primitives (Button, Card, Modal, ...)
       container/         # shared deck UI (DecksList, DeckCard, ExamSetCard)
@@ -85,7 +86,7 @@ Rules of thumb:
 
 - Every route is nested under **`/:lang`** (the i18n locale segment), account pages included: `/:lang/settings`, `/:lang/profile`, `/:lang/profile/:nameTag`.
 - The study language is a **filter, not a path segment**. Deck lists read `?target=ja`; the character routes carry the target in `:target` (`ja`, `en`, `other`, `ko`, `zh`, `th`).
-- Routes: `/:lang` (Landing — introduces the app and picks a language), `/:lang/study` (study hub), `/:lang/edit`, `/:lang/decks/:deckId`, `/:lang/{vocab,render,exam,review}` (+ `/:deckId`), `/:lang/characters/:target`, `/:lang/drill/:target`. There is no language-select route: the first choice is on the Landing and later changes go through the navbar switcher.
+- Routes: `/:lang` (Landing — introduces the app and picks a language), `/:lang/study` (study hub), `/:lang/guide` (in-app manual), `/:lang/edit`, `/:lang/decks/:deckId`, `/:lang/{vocab,render,exam,review}` (+ `/:deckId`), `/:lang/characters/:target`, `/:lang/drill/:target`. There is no language-select route: the first choice is on the Landing and later changes go through the navbar switcher.
 - `other` is a deck-only catch-all target (no character set, so no chart or drill). An `other` deck carries `targetInfo` (`label` + BCP-47 `speechTag`) for its own language name and TTS tag.
 - **Terminology:** `uiLang` = the `:lang` segment (i18n locale). `targetLang` = the language being studied. Never use a bare `lang` where it could mean either.
 - The capabilities config in `app/data/language.ts` declares each target's character set and drill (no `status` field — every target is active/selectable). The character routes only implement `kana`, so any other target shows a coming-soon placeholder on its chart/drill route. The study hub is target-agnostic.

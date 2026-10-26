@@ -1,16 +1,17 @@
 // -Path: 'client/app/pages/study/components/DeckGroup.tsx'
-import { useTranslation } from 'react-i18next';
-import DeckLink from './DeckLink';
-import StudySectionHeading from './StudySectionHeading';
-import type { Languages } from '~/data/language';
-import { withTarget } from '~/utils/config/targetLang';
 import {
     FaBookOpen,
+    FaLayerGroup,
+    FaPenToSquare,
     FaArrowsRotate,
     FaBookOpenReader,
     FaClipboardCheck,
-    FaPenToSquare,
 } from 'react-icons/fa6';
+import DeckLink from './DeckLink';
+import { useTranslation } from 'react-i18next';
+import { withTarget } from '~/utils/config/targetLang';
+import StudySectionHeading from './StudySectionHeading';
+import { useTargetLang } from '~/hooks/base/useTargetLang';
 
 /** Two columns of deck destinations, collapsing to one below `sm` (640px). */
 const COLUMNS = 'grid gap-4 sm:grid-cols-2';
@@ -21,14 +22,9 @@ const COLUMNS = 'grid gap-4 sm:grid-cols-2';
  * carries the active target as `?target=`, and the heading states which
  * language the decks are for.
  */
-export default function DeckGroup({
-    targetLang,
-    languageName,
-}: {
-    targetLang: Languages;
-    languageName: string;
-}) {
+export default function DeckGroup() {
     const { t } = useTranslation();
+    const targetLang = useTargetLang();
 
     const learn = [
         {
@@ -57,7 +53,9 @@ export default function DeckGroup({
 
     const column = (id: 'learn' | 'practice', items: typeof learn) => (
         <div>
-            <p className='mb-3 text-xs font-semibold text-surface-muted'>{t(`study.decks.${id}`)}</p>
+            <p className='mb-3 text-xs font-semibold text-surface-muted'>
+                {t(`study.decks.${id}`)}
+            </p>
             <div className='space-y-3'>
                 {items.map((item) => (
                     <DeckLink
@@ -75,8 +73,11 @@ export default function DeckGroup({
     return (
         <section>
             <StudySectionHeading
+                Icon={FaLayerGroup}
                 title={t('study.decks.title')}
-                description={t('study.decks.for', { language: languageName })}
+                description={t('study.decks.for', {
+                    language: t(`languageSelect.languages.${targetLang}.name`),
+                })}
             />
             <div className={COLUMNS}>
                 {column('learn', learn)}

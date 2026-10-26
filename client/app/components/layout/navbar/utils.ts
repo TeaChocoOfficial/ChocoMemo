@@ -1,6 +1,6 @@
 // -Path: 'client/app/components/layout/navbar/utils.ts'
 import type { IconType } from 'react-icons';
-import { FaGraduationCap, FaHouse, FaPenToSquare } from 'react-icons/fa6';
+import { FaBookOpen, FaGraduationCap, FaHouse, FaPenToSquare } from 'react-icons/fa6';
 
 export type NavItem = {
     to: string;
@@ -13,23 +13,24 @@ export type NavItem = {
 
 /** Top-level destinations in the navbar, desktop and mobile alike. */
 export const getPrimaryNavItems = (): NavItem[] => [
-    { label: 'nav.home', to: '/', icon: FaHouse },
+    { to: '/', label: 'nav.home', icon: FaHouse },
+    { to: '/guide', label: 'nav.guide', icon: FaBookOpen },
     {
-        label: 'nav.study',
         to: '/study',
+        label: 'nav.study',
         icon: FaGraduationCap,
         activeFor: [
             '/study',
-            '/decks',
-            '/vocab',
-            '/render',
-            '/review',
-            '/exam',
             '/characters',
             '/drill',
+            '/decks',
+            '/vocab',
+            '/review',
+            '/render',
+            '/exam',
         ],
     },
-    { label: 'nav.edit', to: '/edit', icon: FaPenToSquare },
+    { to: '/edit', label: 'nav.edit', icon: FaPenToSquare },
 ];
 
 /** Whether a nav item should read as active for the current pathname. */

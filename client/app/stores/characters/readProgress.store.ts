@@ -6,7 +6,11 @@ import { persist } from 'zustand/middleware';
 
 interface ReadProgressState {
     // key: `${ReadSetId}:${keyof ReadChars}` -> index of the last spoken read
+    voice: string;
+    volume: number;
     progress: Record<string, number>;
+    setVoice: (voice: string) => void;
+    setVolume: (volume: number) => void;
     recordRead: (key: string, index: number) => void;
     getProgress: (key: string) => number;
 }
@@ -14,7 +18,11 @@ interface ReadProgressState {
 export const useReadProgressStore = create<ReadProgressState>()(
     persist(
         (set, get) => ({
+            voice: 'female',
+            volume: 1,
             progress: {},
+            setVoice: (voice) => set({ voice }),
+            setVolume: (volume) => set({ volume }),
             recordRead: (key, index) =>
                 set((state) => ({ progress: { ...state.progress, [key]: index } })),
             getProgress: (key) => get().progress[key] ?? 0,

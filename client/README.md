@@ -4,7 +4,7 @@
 
 Built with **React Router v7 (framework mode)**, **TypeScript**, **Zustand**, **i18next**, and **Tailwind CSS**.
 
-> Every target language is **active**: all six can be browsed and studied through decks. The **Japanese** character chart and drill are the only ones implemented so far — the other languages' chart and drill routes still show a placeholder notice until their scripts ship. **Another language** is a deck-only catch-all for languages the app has no built-in support for.
+> Every target language is **active**: all six can be browsed and studied through decks. The **Japanese** (kana), **English** (alphabet) and **Thai** character charts are implemented, and the drill ships for **Japanese** and **English** — the other scripts' chart and drill routes still show a placeholder notice until they ship. **Another language** is a deck-only catch-all for languages the app has no built-in support for.
 
 ---
 
@@ -17,7 +17,7 @@ The study language is **not** part of the URL path. Every route is language-agno
 - Deck-list pages read `?target=ja` from the query string, so a link is shareable and the loader/SSR can read it.
 - When the query is absent, the last target the viewer browsed is used (saved on the device), falling back to a default.
 - A **target-language selector** in the deck-list toolbar switches which language is browsed; every language is selectable, plus an "all languages" option.
-- A single capabilities config (`app/data/language.ts`) declares each target language's character set and drill. The character routes read from it: only `kana` is implemented today, so any other language shows a placeholder "coming soon" notice instead of a chart.
+- A single capabilities config (`app/data/language.ts`) declares each target language's character set and drill. The character routes read from it: `kana`, the `alphabet` and `thai` are implemented today, so Korean and Chinese still show a placeholder "coming soon" notice instead of a chart.
 
 ### Choosing a target language
 
@@ -35,7 +35,7 @@ There is no separate language-select page. The **Landing page** lists the langua
 - **Drill** — a list of character drills, one row each.
 - **Decks** — a **Learn** column (vocabulary, render), a **Practice** column (review, exam), and a full-width **Manage** row (edit decks). Every deck link carries the active target as `?target=`.
 
-The character and drill groups are driven by the capabilities config (`app/data/language.ts`), so every target language is listed (only `kana` is implemented today; the other routes show a placeholder notice), and the Decks group follows the active target. The active target's items are highlighted, and a shared **target selector** in the header changes the target.
+The character and drill groups are driven by the capabilities config (`app/data/language.ts`), so every target language is listed (kana, the alphabet and Thai have a real chart; the other routes show a placeholder notice), and the Decks group follows the active target. The active target's items are highlighted, and a shared **target selector** in the header changes the target.
 
 ### Another language
 
@@ -43,19 +43,26 @@ The character and drill groups are driven by the capabilities config (`app/data/
 
 ### Character charts
 
-`/:lang/characters/:target` renders the character chart for a target language. Only **Japanese kana** is wired today:
+`/:lang/characters/:target` renders the character chart for a target language. Three scripts are wired today:
 
-- Browse **Hiragana** and **Katakana** reference charts, organized into three groups:
+- **Japanese kana** — **Hiragana** and **Katakana**, organized into three groups:
   - **Voiceless** (清音 — seion)
   - **Voiced** (濁音・半濁音 — dakuten / handakuten)
   - **Contracted** (拗音 — yōon)
-- Each character card is clickable and will **speak the character aloud** using the browser's Web Speech API.
+- **English alphabet** — uppercase and lowercase, split into **vowels** and **consonants**.
+- **Thai** — consonants, vowels and tone marks, split into **headed** and **headless** groups.
 
-Other languages fall through to a "Coming Soon" notice until their chart ships.
+Every chart shares the same behaviour:
+
+- Each character card is clickable and will **speak the character aloud** using the browser's Web Speech API.
+- A **reading order** walks the chart and remembers how far you got.
+- The toolbar holds the group/set toggles, the sticky-header switch and the **voice picker**.
+
+Korean and Chinese fall through to a "Coming Soon" notice until their chart ships.
 
 ### Character drill
 
-`/:lang/drill/:target` runs the character drill for a target language. Only **Japanese kana** is wired today. A fully configurable multiple-choice drill:
+`/:lang/drill/:target` runs the character drill for a target language. **Japanese kana** and the **English alphabet** are wired today. A fully configurable multiple-choice drill:
 
 - **Kana groups** — toggle Hiragana / Katakana and any combination of Voiceless / Voiced / Contracted; each switch shows the character count it adds, plus a running total.
 - **Question set** — toggle between *all* characters in the selected groups or a specific *number* (2–12).
@@ -78,13 +85,18 @@ Decks live in one shared collection; each deck carries a `targetLang` so a list 
 
 ### Edit Decks
 
-One page for editing across **every** deck type — vocabulary, render, review, and exam — instead of per feature, so it lives in the study hub's **Manage** section rather than under Learn or Practice. The route and hub entry exist today; the editor screen itself is still an empty placeholder.
+One page for editing across **every** deck type — vocabulary, render, review, and exam — instead of per feature, so it lives in the study hub's **Manage** section rather than under Learn or Practice. The route is a full-screen workspace of **dockable panels** (deck list, editor, preview, inspector, settings): drag, resize, pin a tab, or reset the layout. On a phone the same panels become a tab strip with a slide-out menu.
+
+### Guide page
+
+`/:lang/guide` is the in-app manual: a quick start of four steps (pick a language → read the chart → drill it → review the words) followed by one card per area of the app — landing, study hub, charts, drill, decks, deck editor, voice and appearance, account and community. Every card links straight to the page it describes. It sits in the **navbar** (desktop and mobile) and the footer's **Explore** list, and the landing page's *How it works* section links to it with "Read the full guide".
 
 ### Voice (TTS)
 
 - Per-character click-to-speak on the character charts.
 - A **Voice Picker** on the character page to choose the TTS voice, language, and speech rate (with an "Auto" option and a preview button).
 - Speech follows the **target language**, never the interface locale. An `other` deck speaks its own `targetInfo.speechTag`.
+- Thai reads through **Google Cloud TTS** (the server proxies it): every Thai voice Google offers is listed, with a pre-recorded clip as the fallback when the API key is not configured.
 
 ### Profile & Settings
 
@@ -109,12 +121,13 @@ All account routes are locale-scoped, so these are reached as `/:lang/...`:
 |-------|------|
 | `/:lang` | Landing — introduces the app and lets the visitor pick a language |
 | `/:lang/study` | Study hub — Characters / Drill / Decks for the active target language |
+| `/:lang/guide` | Guide — the in-app manual: quick start plus one card per area |
 
 ### Study
 
 | Route | Page |
 |-------|------|
-| `/:lang/edit` | Edit decks (Manage; placeholder) |
+| `/:lang/edit` | Edit decks (Manage; dockable-panel workspace) |
 | `/:lang/decks/:deckId` | Deck details (any deck type) |
 | `/:lang/vocab` | Vocabulary deck list |
 | `/:lang/vocab/:deckId` | Browse a vocabulary deck |
@@ -124,7 +137,7 @@ All account routes are locale-scoped, so these are reached as `/:lang/...`:
 | `/:lang/exam/:deckId` | Run an exam |
 | `/:lang/review` | Review deck list |
 | `/:lang/review/:deckId` | Flashcard / spaced review |
-| `/:lang/characters/:target` | Character chart (kana, alphabet, hangul, hanzi, thai) + voice picker |
+| `/:lang/characters/:target` | Character chart (kana, alphabet, thai implemented; hangul and hanzi pending) + voice picker |
 | `/:lang/drill/:target` | Character drill |
 
 ### Account
@@ -142,14 +155,14 @@ Account concerns are locale-scoped like everything else, so `/settings` is reach
 
 | Target | Code | Character set |
 |--------|------|---------------|
-| Japanese | `ja` | Kana (implemented) |
-| English | `en` | Alphabet (planned) |
+| Japanese | `ja` | Kana (chart + drill) |
+| English | `en` | Alphabet (chart + drill) |
 | Another language | `other` | none (decks only) |
 | Korean | `ko` | Hangul (planned) |
-| Thai | `th` | Thai (planned) |
+| Thai | `th` | Thai (chart) |
 | Chinese | `zh` | Hanzi (planned) |
 
-All six targets are active — selectable in every selector and studyable through decks. The character chart and drill are implemented for `ja` only — the other chart/drill routes render a placeholder notice until their script ships.
+All six targets are active — selectable in every selector and studyable through decks. The character chart is implemented for `ja`, `en` and `th`, and the drill for `ja` and `en` — the other chart/drill routes render a placeholder notice until their script ships.
 
 ---
 

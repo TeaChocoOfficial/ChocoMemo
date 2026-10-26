@@ -34,22 +34,6 @@ export const ALL_TARGETS = 'all';
 /** A deck-list target selection: one language, or every language at once. */
 export type TargetFilter = Languages | typeof ALL_TARGETS;
 
-/** A target language's character chart, when it has one. */
-export interface CharacterSetConfig {
-    /** Large script glyph for the tile, e.g. あ or Aa. */
-    glyph: string;
-    /** Scripts/count subtitle, e.g. "ひらがな · カタカナ". */
-    subtitle: string;
-}
-
-/** A target language's character drill, when it has one. */
-export interface DrillConfig {
-    /** Small language badge shown on the row, e.g. 日 or En. */
-    badge: string;
-    /** i18n key for the one-line description, e.g. `study.drill.items.ja.description`. */
-    description: string;
-}
-
 /**
  * One target language's capabilities. This is the single config the menus, the
  * study hub and the character routes read, so a language's glyph, its
@@ -62,10 +46,8 @@ export interface AvailableLanguage {
     glyph: string;
     /** Flag emoji for the language, e.g. 🇯🇵. `other` uses the globe. */
     flag: string;
-    /** The character chart, when this language has one. */
-    characters?: CharacterSetConfig;
-    /** The character drill, when this language has one. */
-    drill?: DrillConfig;
+    /** Scripts/count subtitle, e.g. "ひらがな · カタカナ". */
+    subtitle: string;
 }
 
 export const languages: AvailableLanguage[] = [
@@ -74,76 +56,42 @@ export const languages: AvailableLanguage[] = [
         code: 'en',
         glyph: 'A',
         flag: '🇺🇸',
-        characters: {
-            glyph: 'Aa',
-            subtitle: 'A – Z',
-        },
-        drill: {
-            badge: 'En',
-            description: 'study.drill.items.en.description',
-        },
+        subtitle: 'A – Z',
     },
     {
         id: Languages.ja,
         code: 'ja',
         glyph: 'あ',
         flag: '🇯🇵',
-        characters: {
-            glyph: 'あ',
-            subtitle: 'ひらがな · カタカナ',
-        },
-        drill: {
-            badge: '日',
-            description: 'study.drill.items.ja.description',
-        },
+        subtitle: 'ひらがな · カタカナ',
     },
     {
         id: Languages.th,
         code: 'th',
         glyph: 'ก',
         flag: '🇹🇭',
-        characters: {
-            glyph: 'ก',
-            subtitle: 'ก – ฮ',
-        },
-        drill: {
-            badge: 'ก',
-            description: 'study.drill.items.th.description',
-        },
+        subtitle: 'ก – ฮ',
     },
     {
         id: Languages.zh,
         code: 'zh',
         glyph: '字',
         flag: '🇨🇳',
-        characters: {
-            glyph: '汉',
-            subtitle: '汉字',
-        },
-        drill: {
-            badge: '中',
-            description: 'study.drill.items.zh.description',
-        },
+        subtitle: '汉字',
     },
     {
         id: Languages.ko,
         code: 'ko',
         glyph: '한',
         flag: '🇰🇷',
-        characters: {
-            glyph: '한',
-            subtitle: '한글',
-        },
-        drill: {
-            badge: '한',
-            description: 'study.drill.items.ko.description',
-        },
+        subtitle: '한글',
     },
     {
         id: Languages.other,
         code: 'other',
         glyph: OTHER_GLYPH,
         flag: OTHER_GLYPH,
+        subtitle: OTHER_GLYPH,
     },
 ];
 

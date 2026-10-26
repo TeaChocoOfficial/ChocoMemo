@@ -2,7 +2,7 @@
 import Switch from '~/components/custom/Switch';
 import { useTranslation } from 'react-i18next';
 import type { IDockviewPanelProps } from 'dockview-react';
-import { useDockviewStore } from '~/stores/config/dockview.store';
+import { useDockviewStore } from '~/stores/edit/dockview.store';
 import LanguageSwitcher from '~/components/config/LanguageSwitcher';
 
 /** Dockview panel with the workspace settings — currently the spaced mode

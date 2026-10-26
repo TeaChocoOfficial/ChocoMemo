@@ -1,19 +1,34 @@
-//-Path: "Vite-React-TypeScript/src/components/custom/Select.tsx"
-import { useTranslation } from 'react-i18next';
-import { FaCheck, FaChevronDown } from 'react-icons/fa6';
-import { AnimatePresence, motion } from 'framer-motion';
+// -Path: 'client/app/components/custom/Select.tsx'
 import { createPortal } from 'react-dom';
-import React, { useState, useRef, useEffect, useLayoutEffect, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
+import { AnimatePresence, motion } from 'framer-motion';
+import { FaCheck, FaChevronDown } from 'react-icons/fa6';
+import { useState, useRef, useEffect, useLayoutEffect, useMemo, isValidElement } from 'react';
 
+/**
+ * Whether a label candidate can go straight into the tree. Labels are nodes, so
+ * a badge, an icon and text can share one option, but a raw `value` (a number,
+ * an enum, an object) still has to be turned into text.
+ */
+function isRenderable(value: unknown): value is React.ReactNode {
+    return (
+        typeof value === 'string' ||
+        typeof value === 'number' ||
+        Array.isArray(value) ||
+        isValidElement(value)
+    );
+}
+
+/** Props for {@link SelectOption}. */
 interface SelectOptionProps<ValueType = string> {
     value: ValueType;
-    label?: string;
     selected?: boolean;
     disabled?: boolean;
     className?: string;
     sizeClass?: string;
     onClick?: () => void;
     icon?: React.ReactNode;
+    label?: React.ReactNode;
     children?: React.ReactNode;
 }
 
@@ -21,11 +36,11 @@ function SelectOption<ValueType>({
     icon,
     label,
     value,
-    sizeClass,
     onClick,
     selected,
     disabled,
     children,
+    sizeClass,
     className,
 }: SelectOptionProps<ValueType>) {
     const content = children || label || value;
@@ -46,15 +61,13 @@ function SelectOption<ValueType>({
             } ${className}`}
         >
             {icon && (
-                <span
-                    className={`${
-                        selected ? 'text-primary-foreground' : 'text-surface-muted'
-                    }`}
-                >
+                <span className={`${selected ? 'text-primary-foreground' : 'text-surface-muted'}`}>
                     {icon}
                 </span>
             )}
-            <span className='tracking-tight'>{String(content)}</span>
+            <span className='tracking-tight'>
+                {isRenderable(content) ? content : String(content)}
+            </span>
             {selected && <FaCheck className='absolute h-3.5 w-3.5 right-4' />}
         </button>
     );
@@ -62,17 +75,17 @@ function SelectOption<ValueType>({
 
 export interface OptionSelectType<ValueType = string> {
     value: ValueType;
-    label: string;
+    label: React.ReactNode;
     icon?: React.ReactNode;
     /** Shown but not selectable, e.g. a language that isn't ready yet. */
     disabled?: boolean;
 }
 
 export interface SelectProps<ValueType = string> {
-    label?: string;
     value?: ValueType;
     required?: boolean;
     className?: string;
+    label?: React.ReactNode;
     size?: 'sm' | 'md' | 'lg';
     placeholder?: string;
     icon?: React.ReactNode;
@@ -148,8 +161,7 @@ export default function Select<ValueType>({
                     option = {
                         icon: optionIcon,
                         value: optionValue,
-                        label: (optionLabel ??
-                            (typeof optionChildren === 'string' ? optionChildren : '')) as string,
+                        label: optionLabel ?? (typeof optionChildren === 'string' ? optionChildren : ''),
                     };
                 }
                 return <></>;
@@ -263,7 +275,7 @@ export default function Select<ValueType>({
                             isOpen ? 'text-primary' : 'text-surface-foreground'
                         }`}
                     >
-                        {String(displayText)}
+                        {isRenderable(displayText) ? displayText : String(displayText)}
                     </span>
                 </div>
                 <FaChevronDown
