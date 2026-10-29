@@ -20,11 +20,11 @@ import {
     FaTableCells,
     FaArrowDownWideShort,
 } from 'react-icons/fa6';
+import { useTranslation } from 'react-i18next';
 import Button from '~/components/custom/Button';
 import Select from '~/components/custom/Select';
-import { useTranslation } from 'react-i18next';
 import { DECK_SORTS, DECK_NSFW_FILTERS } from '~/utils/deck/deckListQuery';
-import type { DeckDensity, DeckNsfwFilter, DeckSort } from '~/types/deckList';
+import type { DeckDensity, DeckListQuery, DeckNsfwFilter, DeckSort } from '~/types/deckList';
 
 /**
  * The deck-list toolbar: sort and flagged-deck selects, a density toggle, and
@@ -35,14 +35,14 @@ import type { DeckDensity, DeckNsfwFilter, DeckSort } from '~/types/deckList';
  */
 export default function DeckListOptions({
     query,
-    onNsfwChange,
     onSortChange,
+    onNsfwChange,
     onDensityChange,
 }: {
     /** Only the three fields this component reads. */
-    query: { sort: DeckSort; density: DeckDensity; nsfw: DeckNsfwFilter };
-    onNsfwChange: (nsfw: DeckNsfwFilter) => void;
+    query: DeckListQuery;
     onSortChange: (sort: DeckSort) => void;
+    onNsfwChange: (nsfw: DeckNsfwFilter) => void;
     onDensityChange: (density: DeckDensity) => void;
     /** Add/import affordances for this page, or `null` where none apply. */
 }) {
@@ -63,7 +63,7 @@ export default function DeckListOptions({
     const isCompact = query.density === 'compact';
 
     return (
-        <div className='flex flex-wrap items-center gap-2'>
+        <div className='flex items-center gap-2 overflow-x-auto'>
             <Select
                 size='sm'
                 value={query.sort}

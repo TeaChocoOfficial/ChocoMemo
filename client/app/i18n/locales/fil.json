@@ -3,6 +3,7 @@
         "home": "Tahanan",
         "study": "Mag-aral",
         "edit": "I-edit",
+        "guide": "Gabay",
         "languages": "Mga Wika",
         "menu": "Buksan ang menu",
         "settings": "Mga Setting",
@@ -22,6 +23,58 @@
         "hide": "Itago",
         "show": "Ipakita",
         "toggleLabel": "Ipakita ang interface"
+    },
+    "theme": {
+        "pickerLabel": "Baguhin ang tema",
+        "names": {
+            "lightChoco": "Maliwanag na Choco",
+            "darkChoco": "Madilim na Choco",
+            "darkGalaxy": "Madilim na Galaksya",
+            "lightGalaxy": "Maliwanag na Galaksya",
+            "darkSakura": "Madilim na Sakura",
+            "lightSakura": "Maliwanag na Sakura",
+            "darkPaper": "Madilim na Papel",
+            "lightPaper": "Maliwanag na Papel",
+            "darkNature": "Madilim na Kalikasan",
+            "lightNature": "Maliwanag na Kalikasan",
+            "darkAutumn": "Madilim na Taglagas",
+            "lightAutumn": "Maliwanag na Taglagas",
+            "darkWinter": "Madilim na Taglamig",
+            "lightWinter": "Maliwanag na Taglamig"
+        }
+    },
+    "common": {
+        "loading": "Loading…",
+        "error": {
+            "oops": "Ay!",
+            "unexpected": "May naganap na hindi inaasahang error.",
+            "notFound": "Hindi mahanap ang hiniling na pahina."
+        },
+        "tabs": {
+            "local": "Lokal",
+            "official": "Opisyal",
+            "cloud": "Cloud",
+            "community": "Komunidad"
+        },
+        "comingSoon": {
+            "cloud": "Malapit na ang cloud sync, kailangan mag-sign in",
+            "community": "Hindi pa available ang pagtingin sa mga set ng komunidad"
+        },
+        "select": "Pumili",
+        "voice_label": "Boses",
+        "voice_preview": "Preview",
+        "voice_auto": "Auto",
+        "voice_choose": "Pumili ng boses",
+        "voice_missing": "Walang naka-install na boses na nagsasalita ng {{lang}} sa device na ito — gagamitin ng pagsasalita ang default ng system.",
+        "tts_voice_choose": "Pumili ng boses",
+        "tts_voice_preview": "Preview",
+        "tts_voice_unavailable": "Hindi available ang mga boses ng Google TTS sa ngayon."
+    },
+    "notfound": {
+        "title": "Hindi Nahanap ang Pahina",
+        "description": "Ang pahinang hinahanap mo ay hindi umiiral o nailipat na.",
+        "back_home": "Bumalik sa Tahanan",
+        "error_code": "404"
     },
     "home": {
         "badge": "ChocoMemo · shared na library ng wika",
@@ -103,7 +156,8 @@
             "step4": {
                 "title": "I-publish ang sarili mo",
                 "hint": "Idagdag ang mga salitang palaging nakakalimot at ibahagi muli sa shelf."
-            }
+            },
+            "guideLink": "Basahin ang buong gabay"
         },
         "cta": {
             "title": "Magsimula sa unang karakter.",
@@ -112,53 +166,107 @@
             "secondary": "I-publish ang deck"
         }
     },
-    "theme": {
-        "pickerLabel": "Baguhin ang tema",
-        "names": {
-            "lightChoco": "Maliwanag na Choco",
-            "darkChoco": "Madilim na Choco",
-            "darkGalaxy": "Madilim na Galaksya",
-            "lightGalaxy": "Maliwanag na Galaksya",
-            "darkSakura": "Madilim na Sakura",
-            "lightSakura": "Maliwanag na Sakura",
-            "darkPaper": "Madilim na Papel",
-            "lightPaper": "Maliwanag na Papel",
-            "darkNature": "Madilim na Kalikasan",
-            "lightNature": "Maliwanag na Kalikasan",
-            "darkAutumn": "Madilim na Taglagas",
-            "lightAutumn": "Maliwanag na Taglagas",
-            "darkWinter": "Madilim na Taglamig",
-            "lightWinter": "Maliwanag na Taglamig"
+    "guide": {
+        "badge": "Gabay",
+        "tag": "Manwal ng gumagamit",
+        "title": "Paano gamitin ang ChocoMemo",
+        "subtitle": "Isang maikling paglilibot sa app: ano ang ginagawa ng bawat bahagi, at sa anong pagkakasunod-sunod gumagana ang unang sesyon.",
+        "quickStart": {
+            "title": "Apat na galaw, isang upuan",
+            "hint": "Magbasa ng tsart, magsanay dito, pagkatapos ay balikan ang natutunan. Ang lahat ng iba pa sa ChocoMemo ay baryasyon ng tatlong hakbang na ito."
+        },
+        "steps": {
+            "step1": {
+                "title": "Pumili ng wika",
+                "hint": "Inililista ng landing page ang bawat target. Kapag pumili ka, bubukas ang mga deck ng bokabularyo nito, at matatandaan ang pinili sa device na ito."
+            },
+            "step2": {
+                "title": "Basahin ang tsart",
+                "hint": "Tingnan ang tsart ng mga karakter ng script na pinag-aaralan mo at i-tap ang anumang glipo upang marinig itong bigkasin."
+            },
+            "step3": {
+                "title": "Magsanay dito",
+                "hint": "Isang may-timer na multiple-choice na round sa mga karakter na pinili mo. Itakda ang timer, bilang ng tanong at mga grupo ayon sa iyong antas."
+            },
+            "step4": {
+                "title": "Balikan ang mga salita",
+                "hint": "Ibinabalik ng mga flashcard ang bokabularyong pinag-aralan mo, ayon sa iskedyul, upang walang makalimutan."
+            }
+        },
+        "sections": {
+            "title": "Ano ang ginagawa ng bawat bahagi",
+            "hint": "Isang card bawat bahagi ng app. Ang bawat card ay direktang naka-link sa page na inilalarawan nito.",
+            "landing": {
+                "title": "Pangunahing pahina",
+                "hint": "Ang pintuan: ano ang app, at anong mga wika ang itinuturo nito.",
+                "point1": "Nakalista ang bawat target na wika sa isang buong-lapad na hilera — pumili ng isa upang magsimula.",
+                "point2": "Ang wikang pinili mo ay natatandaan sa device at nagiging aktibong target.",
+                "point3": "Walang harang sa pag-sign up: bukas ang mga tsart at deck bago ka gumawa ng account."
+            },
+            "hub": {
+                "title": "Sentro ng pag-aaral",
+                "hint": "Ang pangkalahatang tanawin na dinadaluyan mo pagkatapos pumili ng wika.",
+                "point1": "Mga karakter — isang tile bawat script, nangingibabaw ang glipo mismo.",
+                "point2": "Pagsasanay — isang listahan ng mga pagsasanay sa karakter, isang hilera bawat isa.",
+                "point3": "Mga deck — Matuto (bokabularyo, pagbasa), Magsanay (pagbabalik-aral, pagsusulit) at hilera ng Pamahalaan para sa pag-edit."
+            },
+            "charts": {
+                "title": "Mga tsart ng karakter",
+                "hint": "Ang sangguniang tanawin ng isang script, may tunog sa bawat karakter.",
+                "point1": "Ang kana (Hapones), ang Latin na alpabeto (Ingles) at Thai ay gumagana na ngayon.",
+                "point2": "Nakapangkat ang bawat tsart — walang boses, may boses at kontraktado para sa kana; patinig at katinig para sa alpabeto.",
+                "point3": "I-tap ang isang karakter upang marinig ito. Sinusunod ng boses ang target na wika, hindi ang wika ng interface.",
+                "point4": "May pagkakasunod-sunod ng pagbasa na gumagabay sa tsart at natatandaan kung hanggang saan ka na."
+            },
+            "drill": {
+                "title": "Pagsasanay sa karakter",
+                "hint": "Ang mabilis na multiple-choice na round na nagpapalit ng pagkilala tungo sa pag-alala.",
+                "point1": "I-toggle ang mga grupo ng karakter at ang bilang ng tanong, mula sa lahat hanggang sa kakaunti.",
+                "point2": "May timer bawat tanong na may countdown bar, at opsyonal na auto-advance.",
+                "point3": "Live na bilang ng Tama / Mali / Timeout habang naglalaro ka.",
+                "point4": "Sa dulo: ranggo ng iskor, paghahati-hati ng bawat sagot, at pindutan ng replay."
+            },
+            "decks": {
+                "title": "Bokabularyo, pagbasa, pagbabalik-aral at pagsusulit",
+                "hint": "Apat na feature sa isang pinagsasaluhang listahan ng deck — nagkakaiba lamang sa nangyayari kapag binuksan ang isang deck.",
+                "point1": "Ang mga deck ng bokabularyo ay may mga salita; ang mga deck ng pagbasa ay may babasahin.",
+                "point2": "Ginagawang flashcard ng pagbabalik-aral ang isang deck ayon sa spaced na iskedyul.",
+                "point3": "Ginagawang multiple-choice na pagsusulit ng pagsusulit ang isang deck.",
+                "point4": "Nagfi-filter ang toolbar ayon sa target na wika, at natatandaan sa device ang pagkakasunod-sunod, density at pinagmulan."
+            },
+            "edit": {
+                "title": "I-edit ang mga deck",
+                "hint": "Isang editor para sa bawat uri ng deck, sa full-screen na workspace ng mga naidok na panel.",
+                "point1": "Mga panel para sa listahan ng deck, editor, preview, inspector at mga setting.",
+                "point2": "Ikaw ang mag-ayos: i-drag, baguhin ang laki, i-pin ang tab, o i-reset ang layout.",
+                "point3": "Sa telepono, nagiging tab strip na may slide-out menu ang parehong mga panel."
+            },
+            "voice": {
+                "title": "Boses at hitsura",
+                "hint": "Ang mga setting na nagtatakda kung paano tumunog at magmukha ang app.",
+                "point1": "Mga tema: pumili ng isa sa maliwanag at madilim na palette, at susunod ang app.",
+                "point2": "Boses: piliin kung aling naka-install na boses ang magsasalita ng mga karakter, may pindutan ng preview.",
+                "point3": "Interface: palitan ang wika ng interface at itago ang navbar para sa tanawin na walang abala."
+            },
+            "account": {
+                "title": "Account at komunidad",
+                "hint": "Dito matatagpuan ang mga feature ng account.",
+                "point1": "Mag-sign in o gumawa ng account upang maabot ang iyong profile at mga setting.",
+                "point2": "Naaabot ang pampublikong profile mo sa pamamagitan ng name tag, kaya maaari itong ibahagi.",
+                "point3": "Paparating na ang cloud sync at mga deck ng komunidad."
+            }
+        },
+        "action": {
+            "open": "Buksan",
+            "comingSoon": "Malapit na"
         }
-    },
-    "common": {
-        "loading": "Loading…",
-        "error": {
-            "oops": "Ay!",
-            "unexpected": "May naganap na hindi inaasahang error.",
-            "notFound": "Hindi mahanap ang hiniling na pahina."
-        },
-        "tabs": {
-            "local": "Lokal",
-            "official": "Opisyal",
-            "cloud": "Cloud",
-            "community": "Komunidad"
-        },
-        "comingSoon": {
-            "cloud": "Malapit na ang cloud sync, kailangan mag-sign in",
-            "community": "Hindi pa available ang pagtingin sa mga set ng komunidad"
-        },
-        "select": "Pumili"
-    },
-    "notfound": {
-        "title": "Hindi Nahanap ang Pahina",
-        "description": "Ang pahinang hinahanap mo ay hindi umiiral o nailipat na.",
-        "back_home": "Bumalik sa Tahanan",
-        "error_code": "404"
     },
     "study": {
         "title": "Mag-aral",
         "subtitle": "Pumili ng wika, pagkatapos ay paraan ng pagsasanay dito.",
+        "basic": {
+            "title": "Mga pangunahing kaalaman"
+        },
         "characters": {
             "title": "Mga karakter",
             "description": "Tingnan ang chart ng karakter ng isang wika at pakinggan ang bawat isa.",
@@ -236,8 +344,7 @@
         },
         "tag": {
             "ready": "Handa",
-            "current": "Kasalukuyan",
-            "comingSoon": "Malapit Na"
+            "current": "Kasalukuyan"
         },
         "action": {
             "start": "Simulan"
@@ -288,16 +395,10 @@
             }
         }
     },
-    "characters": {
-        "backHub": "Bumalik sa hub",
-        "comingSoon": "Malapit nang dumating ang chart ng karakter ng {{language}}.",
-        "unknown": "Wikang ito"
-    },
     "languageSelect": {
         "back_home": "Bumalik sa Tahanan",
         "status": {
-            "available": "Available",
-            "comingSoon": "Malapit Na"
+            "available": "Available"
         },
         "cta": {
             "start": "Magsimulang Matuto"
@@ -454,11 +555,13 @@
         "viewAuthor": "Tingnan ang profile ni {{author}}",
         "edit": {
             "listTitle": "Mga Deck",
+            "title": "Tagapamahala ng deck",
+            "back": "Bumalik",
+            "openMenu": "Buksan ang menu",
             "panelTitle": "Editor",
-            "layoutTitle": "Layout",
+            "settingTitle": "Mga Setting",
             "spacedLabel": "May espasyong panel",
             "spacedHint": "Mag-iwan ng puwang sa pagitan ng mga naka-dock na panel.",
-            "statusTitle": "Katayuan",
             "previewTitle": "Preview",
             "inspectorTitle": "Inspector",
             "loading": "Naglo-load ang iyong mga deck…",
@@ -475,7 +578,6 @@
             "save": "I-save ang mga pagbabago",
             "delete": "Burahin ang deck",
             "dragHandle": "I-drag para muling ayusin",
-            "mobileHint": "Muling ayusin at i-edit ang mga deck sa ibaba. Buksan sa mas malawak na screen para gamitin ang deck manager.",
             "filters": "Salain ang mga deck ayon sa uri",
             "filterAll": "Lahat ng deck",
             "typeLabel": "Uri",
@@ -484,6 +586,17 @@
             "statusDecks": "{{visible}} / {{total}} deck",
             "noneSelected": "Walang napiling deck",
             "addPanel": "Magdagdag ng panel",
+            "emptyPanel": "Walang laman na panel",
+            "resetLayout": "I-reset ang layout",
+            "emptyLayoutTitle": "Walang bukas na panel",
+            "emptyLayoutHint": "I-reset ang layout upang maibalik ang mga default na panel.",
+            "pinTab": "I-pin ang tab",
+            "unpinTab": "Alisin ang pin ng tab",
+            "closeTab": "Isara",
+            "closeOthers": "Isara ang iba",
+            "closeAll": "Isara lahat",
+            "closeLeft": "Isara sa kaliwa",
+            "closeRight": "Isara sa kanan",
             "views": "Mga view ng editor",
             "viewAll": "Lahat ng deck",
             "viewFavourites": "Mga paborito",
@@ -549,17 +662,117 @@
         "resetSuccess": "Password updated. Please sign in.",
         "sendResetCode": "Ipadala ang reset code"
     },
+    "characters": {
+        "backHub": "Bumalik sa hub",
+        "readProgress": "{{read}} / {{total}}",
+        "readStart": "Simulang basahin",
+        "readContinue": "Ipagpatuloy ang pagbasa",
+        "readStop": "Itigil",
+        "nowReading": "kasalukuyang binabasa",
+        "upNext": "sunod",
+        "pinToolbar": "I-pin ang toolbar",
+        "unpinToolbar": "Alisin ang pin ng toolbar",
+        "sticky": "Nakadikit",
+        "stickyOn": "Naka-on",
+        "stickyOff": "Naka-off",
+        "stats": {
+            "set": "Sa set",
+            "group": "Sa grupo",
+            "read": "Nabasa"
+        },
+        "voice": {
+            "female": "Babae",
+            "male": "Lalaki"
+        },
+        "notFound": {
+            "badge": "Hindi natagpuan",
+            "title": "Hindi natagpuan ang wika",
+            "body": "Walang wikang pinag-aaralan sa address na ito. Bumalik sa sentro ng pag-aaral at pumili mula sa listahan."
+        },
+        "soon": {
+            "badge": "Malapit na",
+            "title": "{{feature}} ng {{language}}",
+            "body": "Ginagawa pa ang {{feature}} ng {{language}}. Samantala, handa na ang bokabularyo, pagbasa, pagsusulit at pagbabalik-aral para sa {{language}}.",
+            "deckOnly": "Ang ibang wika ay mga deck lamang — walang tsart ng karakter o pagsasanay. Handa nang pag-aralan ang bokabularyo, pagbasa, pagsusulit at pagbabalik-aral.",
+            "features": {
+                "characters": "tsart ng karakter",
+                "drill": "pagsasanay sa karakter"
+            },
+            "ctaChart": "Tingnan ang tsart ng Hapones",
+            "ctaDrill": "Subukan ang pagsasanay sa Hapones"
+        }
+    },
+    "english": {
+        "badge": "Ingles",
+        "title": "Matuto ang Ingles",
+        "description": "Ang Ingles ay bagong track. Gumagana na ang mga tampok na deck sa ibaba; ang character set at drill ay ginagawa pa.",
+        "character": {
+            "badge": "Alpabeto",
+            "title": "Alpabetong Ingles",
+            "description": "Dalawampu't anim na letra, malaki at maliit. I-tap ang isang letra upang marinig ito, o bigkasin ang isang grupo nang malakas.",
+            "tabs": {
+                "uppercase": "Malaking letra",
+                "lowercase": "Maliit na letra",
+                "vowels": "Mga patinig",
+                "consonants": "Mga katinig"
+            },
+            "gridHint": "I-tap ang isang letra upang marinig ito, o pindutin ang Simulang basahin upang daanan ang grupo mula sa huling natapos mo."
+        },
+        "nav": {
+            "render": {
+                "title": "Pagbabasa",
+                "description": "Magbasa ng maikling teksto at i-check sa pagsasalin.",
+                "action": "Simulan ang pagbasa"
+            },
+            "review": {
+                "title": "Rebyu ng bokabularyo",
+                "description": "Rebyuhin ang bokabularyo gamit ang flashcards at spaced repetition.",
+                "action": "Simulan ang rebyu"
+            },
+            "exam": {
+                "title": "Pagsusulit sa bokabularyo",
+                "description": "Subukan ang sarili mo sa maraming sagot mula sa sarili mong bokabularyo.",
+                "action": "Kumuha ng pagsusulit"
+            },
+            "vocab": {
+                "title": "Tingnan ang bokabularyo",
+                "description": "Dumaan sa mga salita ng isang deck kasama ang pagbasa, kahulugan at halimbawa.",
+                "action": "Tingnan ang mga salita"
+            },
+            "edit": {
+                "title": "I-edit ang mga Deck",
+                "description": "Palitan ang pangalan, muling ayusin, o alisin ang mga deck sa iyong koleksyon.",
+                "action": "I-edit ang mga Deck"
+            }
+        },
+        "edit": {
+            "title": "I-edit ang mga Deck",
+            "description": "Pamahalaan ang mga deck sa iyong koleksyon. Malapit nang dumating ang editor.",
+            "back": "Bumalik sa Ingles"
+        },
+        "vocab": {
+            "title": "Bokabularyo"
+        },
+        "render": {
+            "title": "Pagbabasa"
+        },
+        "review": {
+            "title": "Rebyu ng bokabularyo"
+        },
+        "exam": {
+            "title": "Pagsusulit"
+        },
+        "sections": {
+            "learn": "Matuto",
+            "practice": "Magsanay",
+            "manage": "Pamahalaan"
+        }
+    },
     "japanese": {
         "badge": "Hapones",
         "title": "Matuto ng Hapones",
         "description": "Kabisaduhin ang mga batayan ng Hapones sa pamamagitan ng kana, bokabularyo, at mga pagsusulit.",
         "back_language": "Bumalik sa Pagpili ng Wika",
-        "stats": {
-            "kana": "Mga karakter ng kana",
-            "vocabulary": "Mga salitang bokabularyo",
-            "learned": "Mga salitang natutunan",
-            "due": "Dahil na para sa pagre-rebyu"
-        },
         "sections": {
             "kana": "Kana",
             "kanaHint": "Alamin ang dalawang alpabetong pantig ng Hapones — tingnan ang bawat karakter at sanayin ang pagkilala.",
@@ -690,6 +903,19 @@
                 "submit": "Gumawa ng set"
             }
         },
+        "character": {
+            "badge": "Kana",
+            "title": "Kana ng Hapones",
+            "description": "Ang Hiragana at Katakana ay ang dalawang alpabetong pantig ng Hapones. I-tap ang mga tab upang lumipat.",
+            "tabs": {
+                "hiragana": "Hiragana",
+                "katakana": "Katakana",
+                "voiceless": "Walang boses",
+                "voiced": "May boses",
+                "contracted": "Kontraktado"
+            },
+            "upNext": "sunod"
+        },
         "kana": {
             "badge": "Kana",
             "title": "Kana ng Hapones",
@@ -698,23 +924,8 @@
                 "hiragana": "Hiragana",
                 "katakana": "Katakana"
             },
-            "voiceless": "Walang boses",
-            "voiced": "May boses",
-            "contracted": "Kontraktado",
-            "voice_label": "Boses",
-            "voice_preview": "Preview",
-            "voice_auto": "Auto",
-            "voice_choose": "Pumili ng boses",
-            "voice_ja": "Hapones",
-            "voice_volume": "Volume",
             "take_quiz": "Kumuha ng Pagsusulit",
             "count": "kana",
-            "stats": {
-                "set": "Sa set",
-                "group": "Sa grupo",
-                "read": "Nabasa"
-            },
-            "readProgress": "{{read}} / {{total}}",
             "gridHint": "I-tap ang isang kana upang marinig ito, o pindutin ang Simulang basahin upang dumaan sa grupo kung saan ka huminto.",
             "readStart": "Simulang basahin",
             "readContinue": "Ipagpatuloy ang pagbasa",
@@ -858,58 +1069,33 @@
             "title": "Vocabulary Review"
         }
     },
-    "english": {
-        "badge": "Ingles",
-        "title": "Matuto ang Ingles",
-        "description": "Ang Ingles ay bagong track. Gumagana na ang mga tampok na deck sa ibaba; ang character set at drill ay ginagawa pa.",
-        "nav": {
-            "render": {
-                "title": "Pagbabasa",
-                "description": "Magbasa ng maikling teksto at i-check sa pagsasalin.",
-                "action": "Simulan ang pagbasa"
+    "thai": {
+        "badge": "Thai",
+        "title": "Matuto ng Thai",
+        "description": "Kabihasnan ang mga batayan ng Thai sa pamamagitan ng script, bokabularyo at mga pagsusulit nito.",
+        "character": {
+            "badge": "Script ng Thai",
+            "title": "Mga karakter ng Thai",
+            "description": "Bawat katinig mula ก hanggang ฮ sa tradisyonal na pagkakasunod-sunod, mga karaniwang patinig, at mga tone mark. I-tap ang isang karakter upang marinig ito, o bigkasin ang isang set nang malakas.",
+            "gridHint": "I-tap ang isang karakter upang marinig ito, o pindutin ang Simulang basahin upang daanan ang set mula sa huling natapos mo.",
+            "tabs": {
+                "consonants": "Mga katinig",
+                "vowels": "Mga patinig",
+                "tones": "Mga tono",
+                "headed": "May loop",
+                "headless": "Walang loop"
             },
-            "review": {
-                "title": "Rebyu ng bokabularyo",
-                "description": "Rebyuhin ang bokabularyo gamit ang flashcards at spaced repetition.",
-                "action": "Simulan ang rebyu"
+            "voice": {
+                "female": "Babae",
+                "male": "Lalaki"
             },
-            "exam": {
-                "title": "Pagsusulit sa bokabularyo",
-                "description": "Subukan ang sarili mo sa maraming sagot mula sa sarili mong bokabularyo.",
-                "action": "Kumuha ng pagsusulit"
+            "voiceUnavailable": "Hindi available ang mga boses ng Google TTS sa ngayon.",
+            "stats": {
+                "set": "Mga set",
+                "group": "Sa grupo",
+                "read": "Nabasa"
             },
-            "vocab": {
-                "title": "Tingnan ang bokabularyo",
-                "description": "Dumaan sa mga salita ng isang deck kasama ang pagbasa, kahulugan at halimbawa.",
-                "action": "Tingnan ang mga salita"
-            },
-            "edit": {
-                "title": "I-edit ang mga Deck",
-                "description": "Palitan ang pangalan, muling ayusin, o alisin ang mga deck sa iyong koleksyon.",
-                "action": "I-edit ang mga Deck"
-            }
-        },
-        "edit": {
-            "title": "I-edit ang mga Deck",
-            "description": "Pamahalaan ang mga deck sa iyong koleksyon. Malapit nang dumating ang editor.",
-            "back": "Bumalik sa Ingles"
-        },
-        "vocab": {
-            "title": "Bokabularyo"
-        },
-        "render": {
-            "title": "Pagbabasa"
-        },
-        "review": {
-            "title": "Rebyu ng bokabularyo"
-        },
-        "exam": {
-            "title": "Pagsusulit"
-        },
-        "sections": {
-            "learn": "Matuto",
-            "practice": "Magsanay",
-            "manage": "Pamahalaan"
+            "readProgress": "{{read}} sa {{total}} ang nabasa"
         }
     },
     "settings": {

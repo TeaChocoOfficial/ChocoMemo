@@ -31,24 +31,24 @@ export type DeckNsfwFilter = 'all' | 'only' | 'hide';
 
 /** A single view of a deck list: which source, narrowed by how. */
 export interface DeckListQuery {
-    /** Which source tab is showing. */
-    tab: DeckSource;
+    /** Every selected tag must be present — tags narrow, they never widen. */
+    tags: string[];
     /** Free-text match over name, description and tags. */
     search: string;
     sort: DeckSort;
-    density: DeckDensity;
+    /** Which source tab is showing. */
+    source: DeckSource;
     /** Which flagged decks survive: `all`, only the flagged ones, or none. */
     nsfw: DeckNsfwFilter;
-    /** Every selected tag must be present — tags narrow, they never widen. */
-    tags: string[];
+    density: DeckDensity;
 }
 
 /** The query that a bare URL means: the local tab, nothing narrowed. */
 export const DEFAULT_DECK_LIST_QUERY: DeckListQuery = {
-    tab: 'local',
-    search: '',
-    sort: 'default',
-    density: 'comfortable',
-    nsfw: 'hide',
     tags: [],
+    search: '',
+    nsfw: 'hide',
+    sort: 'default',
+    source: 'local',
+    density: 'comfortable',
 };

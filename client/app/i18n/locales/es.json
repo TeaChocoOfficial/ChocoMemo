@@ -3,6 +3,7 @@
         "home": "Inicio",
         "study": "Estudiar",
         "edit": "Editar",
+        "guide": "Guía",
         "languages": "Idiomas",
         "menu": "Abrir menú",
         "settings": "Ajustes",
@@ -22,6 +23,58 @@
         "hide": "Ocultar",
         "show": "Mostrar",
         "toggleLabel": "Mostrar interfaz"
+    },
+    "theme": {
+        "pickerLabel": "Cambiar tema",
+        "names": {
+            "lightChoco": "Chocolate Claro",
+            "darkChoco": "Chocolate Oscuro",
+            "darkGalaxy": "Galaxia Oscura",
+            "lightGalaxy": "Galaxia Clara",
+            "darkSakura": "Sakura Oscuro",
+            "lightSakura": "Sakura Claro",
+            "darkPaper": "Papel Oscuro",
+            "lightPaper": "Papel Claro",
+            "darkNature": "Naturaleza Oscura",
+            "lightNature": "Naturaleza Clara",
+            "darkAutumn": "Otoño Oscuro",
+            "lightAutumn": "Otoño Claro",
+            "darkWinter": "Invierno Oscuro",
+            "lightWinter": "Invierno Claro"
+        }
+    },
+    "common": {
+        "loading": "Loading…",
+        "error": {
+            "oops": "¡Uy!",
+            "unexpected": "Ocurrió un error inesperado.",
+            "notFound": "La página solicitada no se pudo encontrar."
+        },
+        "tabs": {
+            "local": "Local",
+            "official": "Oficial",
+            "cloud": "Nube",
+            "community": "Comunidad"
+        },
+        "comingSoon": {
+            "cloud": "La sincronización en la nube llegará pronto, requiere iniciar sesión",
+            "community": "Explorar conjuntos de la comunidad aún no está disponible"
+        },
+        "select": "Seleccionar",
+        "voice_label": "Voz",
+        "voice_preview": "Vista previa",
+        "voice_auto": "Auto",
+        "voice_choose": "Elegir una voz",
+        "voice_missing": "No hay ninguna voz que hable {{lang}} instalada en este dispositivo: el habla usará la voz predeterminada del sistema.",
+        "tts_voice_choose": "Elegir una voz",
+        "tts_voice_preview": "Vista previa",
+        "tts_voice_unavailable": "Las voces de Google TTS no están disponibles ahora mismo."
+    },
+    "notfound": {
+        "title": "Página No Encontrada",
+        "description": "La página que buscas no existe o ha sido movida.",
+        "back_home": "Volver al Inicio",
+        "error_code": "404"
     },
     "home": {
         "badge": "ChocoMemo · biblioteca de idiomas de la comunidad",
@@ -103,7 +156,8 @@
             "step4": {
                 "title": "Publica el tuyo",
                 "hint": "Añade las palabras que siempre olvidas y devuélvelas al estante."
-            }
+            },
+            "guideLink": "Leer la guía completa"
         },
         "cta": {
             "title": "Empieza por el primer carácter.",
@@ -112,53 +166,107 @@
             "secondary": "Publicar un mazo"
         }
     },
-    "theme": {
-        "pickerLabel": "Cambiar tema",
-        "names": {
-            "lightChoco": "Chocolate Claro",
-            "darkChoco": "Chocolate Oscuro",
-            "darkGalaxy": "Galaxia Oscura",
-            "lightGalaxy": "Galaxia Clara",
-            "darkSakura": "Sakura Oscuro",
-            "lightSakura": "Sakura Claro",
-            "darkPaper": "Papel Oscuro",
-            "lightPaper": "Papel Claro",
-            "darkNature": "Naturaleza Oscura",
-            "lightNature": "Naturaleza Clara",
-            "darkAutumn": "Otoño Oscuro",
-            "lightAutumn": "Otoño Claro",
-            "darkWinter": "Invierno Oscuro",
-            "lightWinter": "Invierno Claro"
+    "guide": {
+        "badge": "Guía",
+        "tag": "Manual del usuario",
+        "title": "Cómo usar ChocoMemo",
+        "subtitle": "Un recorrido breve por la app: qué hace cada zona y en qué orden funciona una primera sesión.",
+        "quickStart": {
+            "title": "Cuatro pasos, una sesión",
+            "hint": "Lee una tabla, practícala y luego repasa lo aprendido. Todo lo demás en ChocoMemo es una variación de estos tres pasos."
+        },
+        "steps": {
+            "step1": {
+                "title": "Elige un idioma",
+                "hint": "La página de inicio enumera todos los destinos. Al elegir uno se abren sus mazos de vocabulario y la elección se recuerda en este dispositivo."
+            },
+            "step2": {
+                "title": "Lee la tabla",
+                "hint": "Explora la tabla de caracteres de la escritura que estudias y toca cualquier símbolo para oírlo en voz alta."
+            },
+            "step3": {
+                "title": "Practícala",
+                "hint": "Una ronda cronometrada de opción múltiple sobre los caracteres que elegiste. Ajusta el temporizador, el número de preguntas y los grupos a tu nivel."
+            },
+            "step4": {
+                "title": "Repasa las palabras",
+                "hint": "Las tarjetas recuperan el vocabulario estudiado según un calendario, para que nada se escape."
+            }
+        },
+        "sections": {
+            "title": "Qué hace cada parte",
+            "hint": "Una tarjeta por zona de la app. Cada tarjeta enlaza directamente a la página que describe.",
+            "landing": {
+                "title": "Página de inicio",
+                "hint": "La puerta de entrada: qué es la app y qué idiomas enseña.",
+                "point1": "Cada idioma de destino aparece como una fila de ancho completo: elige uno para empezar.",
+                "point2": "El idioma que eliges se recuerda en el dispositivo y pasa a ser el destino activo.",
+                "point3": "Sin muro de registro: las tablas y los mazos están abiertos antes de crear una cuenta."
+            },
+            "hub": {
+                "title": "Centro de estudio",
+                "hint": "La vista general a la que llegas tras elegir un idioma.",
+                "point1": "Caracteres: un mosaico por escritura, dominado por el propio símbolo.",
+                "point2": "Ejercicio: una lista de ejercicios de caracteres, una fila cada uno.",
+                "point3": "Mazos: Aprender (vocabulario, lectura), Practicar (repaso, examen) y una fila Gestionar para editar."
+            },
+            "charts": {
+                "title": "Tablas de caracteres",
+                "hint": "La vista de referencia de una escritura, con sonido en cada carácter.",
+                "point1": "Kana (japonés), el alfabeto latino (inglés) y el tailandés ya están implementados.",
+                "point2": "Cada tabla está agrupada: sordos, sonoros y contraídos para el kana; vocales y consonantes para el alfabeto.",
+                "point3": "Toca un carácter para oírlo. La voz sigue al idioma de destino, no al idioma de la interfaz.",
+                "point4": "Un orden de lectura recorre la tabla por ti y recuerda hasta dónde llegaste."
+            },
+            "drill": {
+                "title": "Ejercicio de caracteres",
+                "hint": "La ronda rápida de opción múltiple que convierte el reconocimiento en recuerdo.",
+                "point1": "Activa los grupos de caracteres y el número de preguntas, desde todos hasta un puñado.",
+                "point2": "Un temporizador por pregunta con barra de cuenta atrás y avance automático opcional.",
+                "point3": "Contadores en vivo de Correcto / Incorrecto / Tiempo agotado mientras juegas.",
+                "point4": "Al final: una clasificación de la puntuación, el desglose de cada respuesta y un botón de repetición."
+            },
+            "decks": {
+                "title": "Vocabulario, lectura, repaso y examen",
+                "hint": "Cuatro funciones sobre una lista de mazos compartida: solo difieren en lo que ocurre al abrir un mazo.",
+                "point1": "Los mazos de vocabulario contienen las palabras; los de lectura, el material de lectura.",
+                "point2": "El repaso convierte un mazo en tarjetas con un calendario espaciado.",
+                "point3": "El examen convierte un mazo en una prueba de opción múltiple.",
+                "point4": "La barra de herramientas filtra por idioma de destino, y el orden, la densidad y el origen se recuerdan en el dispositivo."
+            },
+            "edit": {
+                "title": "Editar mazos",
+                "hint": "Un editor para cada tipo de mazo, en un espacio de trabajo a pantalla completa con paneles acoplables.",
+                "point1": "Paneles para la lista de mazos, el editor, la vista previa, el inspector y los ajustes.",
+                "point2": "Organízalos a tu gusto: arrastra, cambia el tamaño, fija una pestaña o restablece el diseño.",
+                "point3": "En el móvil, los mismos paneles se convierten en una tira de pestañas con un menú desplegable."
+            },
+            "voice": {
+                "title": "Voz y apariencia",
+                "hint": "Los ajustes que deciden cómo suena y se ve la app.",
+                "point1": "Temas: elige una de las paletas claras y oscuras, y la app se adapta.",
+                "point2": "Voz: elige qué voz instalada pronuncia los caracteres, con un botón de vista previa.",
+                "point3": "Interfaz: cambia el idioma de la interfaz y oculta la barra de navegación para una vista sin distracciones."
+            },
+            "account": {
+                "title": "Cuenta y comunidad",
+                "hint": "Donde viven las funciones de la cuenta.",
+                "point1": "Inicia sesión o crea una cuenta para acceder a tu perfil y ajustes.",
+                "point2": "Tu perfil público se identifica por etiqueta de nombre, así que se puede compartir.",
+                "point3": "La sincronización en la nube y los mazos de la comunidad están en camino."
+            }
+        },
+        "action": {
+            "open": "Abrir",
+            "comingSoon": "Próximamente"
         }
-    },
-    "common": {
-        "loading": "Loading…",
-        "error": {
-            "oops": "¡Uy!",
-            "unexpected": "Ocurrió un error inesperado.",
-            "notFound": "La página solicitada no se pudo encontrar."
-        },
-        "tabs": {
-            "local": "Local",
-            "official": "Oficial",
-            "cloud": "Nube",
-            "community": "Comunidad"
-        },
-        "comingSoon": {
-            "cloud": "La sincronización en la nube llegará pronto, requiere iniciar sesión",
-            "community": "Explorar conjuntos de la comunidad aún no está disponible"
-        },
-        "select": "Seleccionar"
-    },
-    "notfound": {
-        "title": "Página No Encontrada",
-        "description": "La página que buscas no existe o ha sido movida.",
-        "back_home": "Volver al Inicio",
-        "error_code": "404"
     },
     "study": {
         "title": "Estudiar",
         "subtitle": "Elige un idioma y luego una forma de practicarlo.",
+        "basic": {
+            "title": "Fundamentos"
+        },
         "characters": {
             "title": "Caracteres",
             "description": "Explora la tabla de caracteres de un idioma y escucha cada uno pronunciado.",
@@ -236,8 +344,7 @@
         },
         "tag": {
             "ready": "Listo",
-            "current": "Actual",
-            "comingSoon": "Próximamente"
+            "current": "Actual"
         },
         "action": {
             "start": "Empezar"
@@ -288,16 +395,10 @@
             }
         }
     },
-    "characters": {
-        "backHub": "Volver al centro",
-        "comingSoon": "La tabla de caracteres de {{language}} llegará pronto.",
-        "unknown": "Este idioma"
-    },
     "languageSelect": {
         "back_home": "Volver al Inicio",
         "status": {
-            "available": "Disponible",
-            "comingSoon": "Próximamente"
+            "available": "Disponible"
         },
         "cta": {
             "start": "Empezar a Aprender"
@@ -454,11 +555,13 @@
         "viewAuthor": "Ver el perfil de {{author}}",
         "edit": {
             "listTitle": "Mazos",
+            "title": "Gestor de mazos",
+            "back": "Atrás",
+            "openMenu": "Abrir menú",
             "panelTitle": "Editor",
-            "layoutTitle": "Disposición",
+            "settingTitle": "Ajustes",
             "spacedLabel": "Paneles espaciados",
             "spacedHint": "Deja un espacio entre los paneles acoplados.",
-            "statusTitle": "Estado",
             "previewTitle": "Vista previa",
             "inspectorTitle": "Inspector",
             "loading": "Cargando tus mazos…",
@@ -475,7 +578,6 @@
             "save": "Guardar cambios",
             "delete": "Eliminar mazo",
             "dragHandle": "Arrastra para reordenar",
-            "mobileHint": "Reordena y edita los mazos abajo. Ábrelo en una pantalla más ancha para usar el gestor de mazos.",
             "filters": "Filtrar mazos por tipo",
             "filterAll": "Todos los mazos",
             "typeLabel": "Tipo",
@@ -484,6 +586,17 @@
             "statusDecks": "{{visible}} / {{total}} mazos",
             "noneSelected": "Ningún mazo seleccionado",
             "addPanel": "Añadir panel",
+            "emptyPanel": "Panel vacío",
+            "resetLayout": "Restablecer diseño",
+            "emptyLayoutTitle": "No hay paneles abiertos",
+            "emptyLayoutHint": "Restablece el diseño para recuperar los paneles predeterminados.",
+            "pinTab": "Fijar pestaña",
+            "unpinTab": "Desfijar pestaña",
+            "closeTab": "Cerrar",
+            "closeOthers": "Cerrar las demás",
+            "closeAll": "Cerrar todas",
+            "closeLeft": "Cerrar a la izquierda",
+            "closeRight": "Cerrar a la derecha",
             "views": "Vistas del editor",
             "viewAll": "Todas las barajas",
             "viewFavourites": "Favoritos",
@@ -549,17 +662,117 @@
         "resetSuccess": "Password updated. Please sign in.",
         "sendResetCode": "Enviar código de restablecimiento"
     },
+    "characters": {
+        "backHub": "Volver al centro",
+        "readProgress": "{{read}} / {{total}}",
+        "readStart": "Iniciar lectura",
+        "readContinue": "Continuar lectura",
+        "readStop": "Detener",
+        "nowReading": "leyendo ahora",
+        "upNext": "a continuación",
+        "pinToolbar": "Fijar barra de herramientas",
+        "unpinToolbar": "Desfijar barra de herramientas",
+        "sticky": "Fijo",
+        "stickyOn": "Activado",
+        "stickyOff": "Desactivado",
+        "stats": {
+            "set": "En el conjunto",
+            "group": "En el grupo",
+            "read": "Leído"
+        },
+        "voice": {
+            "female": "Femenina",
+            "male": "Masculina"
+        },
+        "notFound": {
+            "badge": "No encontrado",
+            "title": "Idioma no encontrado",
+            "body": "Esta dirección no tiene ningún idioma de estudio asociado. Vuelve al centro de estudio y elige uno de la lista."
+        },
+        "soon": {
+            "badge": "Próximamente",
+            "title": "{{feature}} de {{language}}",
+            "body": "El {{feature}} de {{language}} todavía se está construyendo. Mientras tanto, el vocabulario, la lectura, el examen y el repaso de {{language}} ya están listos.",
+            "deckOnly": "Otro idioma solo tiene mazos: no hay tabla de caracteres ni ejercicio. El vocabulario, la lectura, el examen y el repaso están listos para estudiar.",
+            "features": {
+                "characters": "tabla de caracteres",
+                "drill": "ejercicio de caracteres"
+            },
+            "ctaChart": "Ver la tabla de japonés",
+            "ctaDrill": "Probar el ejercicio de japonés"
+        }
+    },
+    "english": {
+        "badge": "Inglés",
+        "title": "Aprende inglés",
+        "description": "El inglés es una vía nueva. Las funciones de mazos de abajo ya funcionan; el conjunto de caracteres y el drill siguen en construcción.",
+        "character": {
+            "badge": "Alfabeto",
+            "title": "Alfabeto inglés",
+            "description": "Veintiséis letras, en mayúscula y minúscula. Toca una letra para oírla o recorre un grupo en voz alta.",
+            "tabs": {
+                "uppercase": "Mayúsculas",
+                "lowercase": "Minúsculas",
+                "vowels": "Vocales",
+                "consonants": "Consonantes"
+            },
+            "gridHint": "Toca una letra para oírla o pulsa Iniciar lectura para recorrer el grupo desde donde lo dejaste."
+        },
+        "nav": {
+            "render": {
+                "title": "Lectura",
+                "description": "Lee textos cortos y compruébalo con la traducción.",
+                "action": "Empezar a leer"
+            },
+            "review": {
+                "title": "Repaso de vocabulario",
+                "description": "Repasa vocabulario con tarjetas y repetición espaciada.",
+                "action": "Empezar el repaso"
+            },
+            "exam": {
+                "title": "Examen de vocabulario",
+                "description": "Ponte a prueba con un examen de opción múltiple hecho de tu vocabulario.",
+                "action": "Hacer el examen"
+            },
+            "vocab": {
+                "title": "Explorar vocabulario",
+                "description": "Recorre las palabras de un mazo con su lectura, significado y ejemplos.",
+                "action": "Ver palabras"
+            },
+            "edit": {
+                "title": "Editar mazos",
+                "description": "Cambia el nombre, reordena o elimina los mazos de tu colección.",
+                "action": "Editar mazos"
+            }
+        },
+        "edit": {
+            "title": "Editar mazos",
+            "description": "Gestiona los mazos de tu colección. El editor llegará pronto.",
+            "back": "Volver al Inglés"
+        },
+        "vocab": {
+            "title": "Vocabulario"
+        },
+        "render": {
+            "title": "Lectura"
+        },
+        "review": {
+            "title": "Repaso de vocabulario"
+        },
+        "exam": {
+            "title": "Examen"
+        },
+        "sections": {
+            "learn": "Aprender",
+            "practice": "Practicar",
+            "manage": "Gestionar"
+        }
+    },
     "japanese": {
         "badge": "Japonés",
         "title": "Aprender Japonés",
         "description": "Domina lo básico del japonés mediante kana, vocabulario y cuestionarios.",
         "back_language": "Volver a la Selección de Idioma",
-        "stats": {
-            "kana": "Caracteres kana",
-            "vocabulary": "Palabras de vocabulario",
-            "learned": "Palabras aprendidas",
-            "due": "Pendientes de revisión"
-        },
         "sections": {
             "kana": "Kana",
             "kanaHint": "Aprende los dos silabarios japoneses: explora cada carácter y practica su reconocimiento.",
@@ -690,6 +903,19 @@
                 "submit": "Crear conjunto"
             }
         },
+        "character": {
+            "badge": "Kana",
+            "title": "Kana Japonés",
+            "description": "El hiragana y el katakana son los dos silabarios japoneses. Toca las pestañas para cambiar.",
+            "tabs": {
+                "hiragana": "Hiragana",
+                "katakana": "Katakana",
+                "voiceless": "Sordo",
+                "voiced": "Sonoro",
+                "contracted": "Contraído"
+            },
+            "upNext": "a continuación"
+        },
         "kana": {
             "badge": "Kana",
             "title": "Kana Japonés",
@@ -698,23 +924,8 @@
                 "hiragana": "Hiragana",
                 "katakana": "Katakana"
             },
-            "voiceless": "Sordo",
-            "voiced": "Sonoro",
-            "contracted": "Contraído",
-            "voice_label": "Voz",
-            "voice_preview": "Vista previa",
-            "voice_auto": "Auto",
-            "voice_choose": "Elegir una voz",
-            "voice_ja": "Japonés",
-            "voice_volume": "Volumen",
             "take_quiz": "Hacer el Cuestionario",
             "count": "kana",
-            "stats": {
-                "set": "En el conjunto",
-                "group": "En el grupo",
-                "read": "Leído"
-            },
-            "readProgress": "{{read}} / {{total}}",
             "gridHint": "Toca un kana para oírlo, o pulsa Iniciar lectura para recorrer el grupo desde donde lo dejaste.",
             "readStart": "Iniciar lectura",
             "readContinue": "Continuar lectura",
@@ -858,58 +1069,33 @@
             "title": "Vocabulary Review"
         }
     },
-    "english": {
-        "badge": "Inglés",
-        "title": "Aprende inglés",
-        "description": "El inglés es una vía nueva. Las funciones de mazos de abajo ya funcionan; el conjunto de caracteres y el drill siguen en construcción.",
-        "nav": {
-            "render": {
-                "title": "Lectura",
-                "description": "Lee textos cortos y compruébalo con la traducción.",
-                "action": "Empezar a leer"
+    "thai": {
+        "badge": "Tailandés",
+        "title": "Aprende tailandés",
+        "description": "Domina lo básico del tailandés mediante su escritura, su vocabulario y sus pruebas.",
+        "character": {
+            "badge": "Escritura tailandesa",
+            "title": "Caracteres tailandeses",
+            "description": "Todas las consonantes de ก a ฮ en orden tradicional, las vocales comunes y los signos de tono. Toca un carácter para oírlo o recorre un conjunto en voz alta.",
+            "gridHint": "Toca un carácter para oírlo o pulsa Iniciar lectura para recorrer el conjunto desde donde lo dejaste.",
+            "tabs": {
+                "consonants": "Consonantes",
+                "vowels": "Vocales",
+                "tones": "Tonos",
+                "headed": "Con bucle",
+                "headless": "Sin bucle"
             },
-            "review": {
-                "title": "Repaso de vocabulario",
-                "description": "Repasa vocabulario con tarjetas y repetición espaciada.",
-                "action": "Empezar el repaso"
+            "voice": {
+                "female": "Femenina",
+                "male": "Masculina"
             },
-            "exam": {
-                "title": "Examen de vocabulario",
-                "description": "Ponte a prueba con un examen de opción múltiple hecho de tu vocabulario.",
-                "action": "Hacer el examen"
+            "voiceUnavailable": "Las voces de Google TTS no están disponibles ahora mismo.",
+            "stats": {
+                "set": "Conjuntos",
+                "group": "En el grupo",
+                "read": "Leído"
             },
-            "vocab": {
-                "title": "Explorar vocabulario",
-                "description": "Recorre las palabras de un mazo con su lectura, significado y ejemplos.",
-                "action": "Ver palabras"
-            },
-            "edit": {
-                "title": "Editar mazos",
-                "description": "Cambia el nombre, reordena o elimina los mazos de tu colección.",
-                "action": "Editar mazos"
-            }
-        },
-        "edit": {
-            "title": "Editar mazos",
-            "description": "Gestiona los mazos de tu colección. El editor llegará pronto.",
-            "back": "Volver al Inglés"
-        },
-        "vocab": {
-            "title": "Vocabulario"
-        },
-        "render": {
-            "title": "Lectura"
-        },
-        "review": {
-            "title": "Repaso de vocabulario"
-        },
-        "exam": {
-            "title": "Examen"
-        },
-        "sections": {
-            "learn": "Aprender",
-            "practice": "Practicar",
-            "manage": "Gestionar"
+            "readProgress": "{{read}} de {{total}} leídos"
         }
     },
     "settings": {

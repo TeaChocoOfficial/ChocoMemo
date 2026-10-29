@@ -3,6 +3,7 @@
         "home": "Beranda",
         "study": "Belajar",
         "edit": "Edit",
+        "guide": "Panduan",
         "languages": "Bahasa",
         "menu": "Buka menu",
         "settings": "Pengaturan",
@@ -22,6 +23,58 @@
         "hide": "Sembunyikan",
         "show": "Tampilkan",
         "toggleLabel": "Tampilkan antarmuka"
+    },
+    "theme": {
+        "pickerLabel": "Ganti tema",
+        "names": {
+            "lightChoco": "Cokelat Terang",
+            "darkChoco": "Cokelat Gelap",
+            "darkGalaxy": "Galaksi Gelap",
+            "lightGalaxy": "Galaksi Terang",
+            "darkSakura": "Sakura Gelap",
+            "lightSakura": "Sakura Terang",
+            "darkPaper": "Kertas Gelap",
+            "lightPaper": "Kertas Terang",
+            "darkNature": "Alam Gelap",
+            "lightNature": "Alam Terang",
+            "darkAutumn": "Musim Gugur Gelap",
+            "lightAutumn": "Musim Gugur Terang",
+            "darkWinter": "Musim Dingin Gelap",
+            "lightWinter": "Musim Dingin Terang"
+        }
+    },
+    "common": {
+        "loading": "Loading…",
+        "error": {
+            "oops": "Ups!",
+            "unexpected": "Terjadi kesalahan yang tidak terduga.",
+            "notFound": "Halaman yang diminta tidak dapat ditemukan."
+        },
+        "tabs": {
+            "local": "Lokal",
+            "official": "Resmi",
+            "cloud": "Cloud",
+            "community": "Komunitas"
+        },
+        "comingSoon": {
+            "cloud": "Sinkronisasi cloud segera hadir, diperlukan masuk",
+            "community": "Menjelajahi set komunitas belum tersedia"
+        },
+        "select": "Pilih",
+        "voice_label": "Suara",
+        "voice_preview": "Pratinjau",
+        "voice_auto": "Otomatis",
+        "voice_choose": "Pilih suara",
+        "voice_missing": "Tidak ada suara yang berbicara {{lang}} yang terpasang di perangkat ini — ucapan akan memakai bawaan sistem.",
+        "tts_voice_choose": "Pilih suara",
+        "tts_voice_preview": "Pratinjau",
+        "tts_voice_unavailable": "Suara Google TTS tidak tersedia saat ini."
+    },
+    "notfound": {
+        "title": "Halaman Tidak Ditemukan",
+        "description": "Halaman yang Anda cari tidak ada atau telah dipindahkan.",
+        "back_home": "Kembali ke Beranda",
+        "error_code": "404"
     },
     "home": {
         "badge": "ChocoMemo · pustaka bahasa komunitas",
@@ -103,7 +156,8 @@
             "step4": {
                 "title": "Terbitkan milikmu",
                 "hint": "Tambahkan kata yang selalu kamu lupakan dan bagikan kembali ke rak."
-            }
+            },
+            "guideLink": "Baca panduan lengkap"
         },
         "cta": {
             "title": "Mulai dari karakter pertama.",
@@ -112,53 +166,107 @@
             "secondary": "Terbitkan deck"
         }
     },
-    "theme": {
-        "pickerLabel": "Ganti tema",
-        "names": {
-            "lightChoco": "Cokelat Terang",
-            "darkChoco": "Cokelat Gelap",
-            "darkGalaxy": "Galaksi Gelap",
-            "lightGalaxy": "Galaksi Terang",
-            "darkSakura": "Sakura Gelap",
-            "lightSakura": "Sakura Terang",
-            "darkPaper": "Kertas Gelap",
-            "lightPaper": "Kertas Terang",
-            "darkNature": "Alam Gelap",
-            "lightNature": "Alam Terang",
-            "darkAutumn": "Musim Gugur Gelap",
-            "lightAutumn": "Musim Gugur Terang",
-            "darkWinter": "Musim Dingin Gelap",
-            "lightWinter": "Musim Dingin Terang"
+    "guide": {
+        "badge": "Panduan",
+        "tag": "Panduan pengguna",
+        "title": "Cara menggunakan ChocoMemo",
+        "subtitle": "Tur singkat aplikasi: apa fungsi setiap bagian, dan urutan yang membuat sesi pertama berhasil.",
+        "quickStart": {
+            "title": "Empat langkah, satu sesi",
+            "hint": "Baca bagan, latih, lalu tinjau yang sudah dipelajari. Semua hal lain di ChocoMemo hanyalah variasi dari tiga langkah ini."
+        },
+        "steps": {
+            "step1": {
+                "title": "Pilih bahasa",
+                "hint": "Halaman awal mencantumkan semua bahasa target. Memilih satu akan membuka dek kosakatanya, dan pilihan diingat di perangkat ini."
+            },
+            "step2": {
+                "title": "Baca bagan",
+                "hint": "Jelajahi bagan karakter untuk aksara yang kamu pelajari dan ketuk glif mana pun untuk mendengarnya diucapkan."
+            },
+            "step3": {
+                "title": "Latih",
+                "hint": "Ronde pilihan ganda berwaktu atas karakter yang kamu pilih. Atur pengatur waktu, jumlah soal, dan grup sesuai levelmu."
+            },
+            "step4": {
+                "title": "Tinjau kata-katanya",
+                "hint": "Kartu flash mengembalikan kosakata yang sudah kamu pelajari sesuai jadwal, agar tidak ada yang hilang."
+            }
+        },
+        "sections": {
+            "title": "Fungsi setiap bagian",
+            "hint": "Satu kartu untuk setiap area aplikasi. Setiap kartu langsung menautkan ke halaman yang dijelaskannya.",
+            "landing": {
+                "title": "Halaman awal",
+                "hint": "Pintu depan: apa itu aplikasi ini, dan bahasa apa yang diajarkan.",
+                "point1": "Setiap bahasa target tercantum sebagai baris selebar penuh — pilih satu untuk memulai.",
+                "point2": "Bahasa yang kamu pilih diingat di perangkat dan menjadi target aktif.",
+                "point3": "Tanpa tembok pendaftaran: bagan dan dek terbuka sebelum kamu membuat akun."
+            },
+            "hub": {
+                "title": "Pusat belajar",
+                "hint": "Ikhtisar yang kamu tuju setelah memilih bahasa.",
+                "point1": "Karakter — satu ubin per aksara, didominasi oleh glifnya sendiri.",
+                "point2": "Latihan — daftar latihan karakter, satu baris masing-masing.",
+                "point3": "Dek — Belajar (kosakata, bacaan), Latihan (tinjau, ujian) dan baris Kelola untuk menyunting."
+            },
+            "charts": {
+                "title": "Bagan karakter",
+                "hint": "Tampilan referensi sebuah aksara, dengan suara pada setiap karakter.",
+                "point1": "Kana (Jepang), alfabet Latin (Inggris) dan Thai sudah diterapkan saat ini.",
+                "point2": "Setiap bagan dikelompokkan — tanpa suara, bersuara dan kontraksi untuk kana; vokal dan konsonan untuk alfabet.",
+                "point3": "Ketuk karakter untuk mendengarnya. Suara mengikuti bahasa target, bukan bahasa antarmuka.",
+                "point4": "Urutan baca menuntunmu menyusuri bagan dan mengingat sampai mana kamu sudah sampai."
+            },
+            "drill": {
+                "title": "Latihan karakter",
+                "hint": "Ronde pilihan ganda cepat yang mengubah pengenalan menjadi ingatan.",
+                "point1": "Aktifkan grup karakter dan jumlah soal, dari semuanya hingga segenggam.",
+                "point2": "Pengatur waktu per soal dengan bilah hitung mundur, dan maju otomatis opsional.",
+                "point3": "Penghitung Benar / Salah / Waktu habis secara langsung saat bermain.",
+                "point4": "Di akhir: peringkat skor, rincian setiap jawaban, dan tombol ulangi."
+            },
+            "decks": {
+                "title": "Kosakata, bacaan, tinjau dan ujian",
+                "hint": "Empat fitur pada satu daftar dek bersama — bedanya hanya apa yang terjadi saat dek dibuka.",
+                "point1": "Dek kosakata menyimpan kata-kata; dek bacaan menyimpan bahan bacaan.",
+                "point2": "Tinjau mengubah dek menjadi kartu flash sesuai jadwal berjarak.",
+                "point3": "Ujian mengubah dek menjadi tes pilihan ganda.",
+                "point4": "Bilah alat menyaring menurut bahasa target, dan urutan, kerapatan serta sumber diingat di perangkat."
+            },
+            "edit": {
+                "title": "Sunting dek",
+                "hint": "Satu editor untuk setiap jenis dek, di ruang kerja layar penuh dengan panel yang dapat didok.",
+                "point1": "Panel untuk daftar dek, editor, pratinjau, inspektur dan pengaturan.",
+                "point2": "Atur sendiri: seret, ubah ukuran, sematkan tab, atau atur ulang tata letak.",
+                "point3": "Di ponsel, panel yang sama menjadi deretan tab dengan menu geser."
+            },
+            "voice": {
+                "title": "Suara dan tampilan",
+                "hint": "Pengaturan yang menentukan bagaimana aplikasi terdengar dan terlihat.",
+                "point1": "Tema: pilih salah satu palet terang dan gelap, dan aplikasi akan mengikuti.",
+                "point2": "Suara: pilih suara terpasang yang mengucapkan karakter, dengan tombol pratinjau.",
+                "point3": "Antarmuka: ganti bahasa antarmuka dan sembunyikan bilah navigasi untuk tampilan tanpa gangguan."
+            },
+            "account": {
+                "title": "Akun dan komunitas",
+                "hint": "Tempat fitur akun berada.",
+                "point1": "Masuk atau buat akun untuk mengakses profil dan pengaturanmu.",
+                "point2": "Profil publikmu dapat dialamatkan lewat tag nama, sehingga bisa dibagikan.",
+                "point3": "Sinkronisasi cloud dan dek komunitas sedang dalam perjalanan."
+            }
+        },
+        "action": {
+            "open": "Buka",
+            "comingSoon": "Segera hadir"
         }
-    },
-    "common": {
-        "loading": "Loading…",
-        "error": {
-            "oops": "Ups!",
-            "unexpected": "Terjadi kesalahan yang tidak terduga.",
-            "notFound": "Halaman yang diminta tidak dapat ditemukan."
-        },
-        "tabs": {
-            "local": "Lokal",
-            "official": "Resmi",
-            "cloud": "Cloud",
-            "community": "Komunitas"
-        },
-        "comingSoon": {
-            "cloud": "Sinkronisasi cloud segera hadir, diperlukan masuk",
-            "community": "Menjelajahi set komunitas belum tersedia"
-        },
-        "select": "Pilih"
-    },
-    "notfound": {
-        "title": "Halaman Tidak Ditemukan",
-        "description": "Halaman yang Anda cari tidak ada atau telah dipindahkan.",
-        "back_home": "Kembali ke Beranda",
-        "error_code": "404"
     },
     "study": {
         "title": "Belajar",
         "subtitle": "Pilih bahasa, lalu pilih cara melatihnya.",
+        "basic": {
+            "title": "Dasar-dasar"
+        },
         "characters": {
             "title": "Karakter",
             "description": "Telusuri bagan karakter suatu bahasa dan dengarkan setiap karakter dilafalkan.",
@@ -236,8 +344,7 @@
         },
         "tag": {
             "ready": "Siap",
-            "current": "Saat ini",
-            "comingSoon": "Segera Hadir"
+            "current": "Saat ini"
         },
         "action": {
             "start": "Mulai"
@@ -288,16 +395,10 @@
             }
         }
     },
-    "characters": {
-        "backHub": "Kembali ke hub",
-        "comingSoon": "Bagan karakter {{language}} segera hadir.",
-        "unknown": "Bahasa ini"
-    },
     "languageSelect": {
         "back_home": "Kembali ke Beranda",
         "status": {
-            "available": "Tersedia",
-            "comingSoon": "Segera Hadir"
+            "available": "Tersedia"
         },
         "cta": {
             "start": "Mulai Belajar"
@@ -454,11 +555,13 @@
         "viewAuthor": "Lihat profil {{author}}",
         "edit": {
             "listTitle": "Dek",
+            "title": "Pengelola dek",
+            "back": "Kembali",
+            "openMenu": "Buka menu",
             "panelTitle": "Editor",
-            "layoutTitle": "Tata Letak",
+            "settingTitle": "Pengaturan",
             "spacedLabel": "Panel berjarak",
             "spacedHint": "Sisakan celah di antara panel yang tersemat.",
-            "statusTitle": "Status",
             "previewTitle": "Pratinjau",
             "inspectorTitle": "Inspektur",
             "loading": "Memuat dek Anda…",
@@ -475,7 +578,6 @@
             "save": "Simpan perubahan",
             "delete": "Hapus dek",
             "dragHandle": "Seret untuk mengubah urutan",
-            "mobileHint": "Ubah urutan dan edit dek di bawah. Buka di layar yang lebih lebar untuk menggunakan pengelola dek.",
             "filters": "Filter dek berdasarkan jenis",
             "filterAll": "Semua dek",
             "typeLabel": "Jenis",
@@ -484,6 +586,17 @@
             "statusDecks": "{{visible}} / {{total}} dek",
             "noneSelected": "Tidak ada dek yang dipilih",
             "addPanel": "Tambah panel",
+            "emptyPanel": "Panel kosong",
+            "resetLayout": "Atur ulang tata letak",
+            "emptyLayoutTitle": "Tidak ada panel terbuka",
+            "emptyLayoutHint": "Atur ulang tata letak untuk memunculkan kembali panel bawaan.",
+            "pinTab": "Sematkan tab",
+            "unpinTab": "Lepas sematan tab",
+            "closeTab": "Tutup",
+            "closeOthers": "Tutup yang lain",
+            "closeAll": "Tutup semua",
+            "closeLeft": "Tutup yang di kiri",
+            "closeRight": "Tutup yang di kanan",
             "views": "Tampilan editor",
             "viewAll": "Semua dek",
             "viewFavourites": "Favorit",
@@ -549,17 +662,117 @@
         "resetSuccess": "Password updated. Please sign in.",
         "sendResetCode": "Kirim kode reset"
     },
+    "characters": {
+        "backHub": "Kembali ke hub",
+        "readProgress": "{{read}} / {{total}}",
+        "readStart": "Mulai membaca",
+        "readContinue": "Lanjutkan membaca",
+        "readStop": "Berhenti",
+        "nowReading": "sedang membaca",
+        "upNext": "berikutnya",
+        "pinToolbar": "Sematkan toolbar",
+        "unpinToolbar": "Lepas sematan toolbar",
+        "sticky": "Lengket",
+        "stickyOn": "Aktif",
+        "stickyOff": "Nonaktif",
+        "stats": {
+            "set": "Dalam set",
+            "group": "Dalam grup",
+            "read": "Dibaca"
+        },
+        "voice": {
+            "female": "Perempuan",
+            "male": "Laki-laki"
+        },
+        "notFound": {
+            "badge": "Tidak ditemukan",
+            "title": "Bahasa tidak ditemukan",
+            "body": "Alamat ini tidak memiliki bahasa belajar. Kembali ke pusat belajar dan pilih satu dari daftar."
+        },
+        "soon": {
+            "badge": "Segera hadir",
+            "title": "{{feature}} {{language}}",
+            "body": "{{feature}} {{language}} masih dalam pembangunan. Sementara itu, kosakata, bacaan, ujian dan tinjauan {{language}} sudah siap.",
+            "deckOnly": "Bahasa lain hanya berupa dek — tidak ada bagan karakter atau latihan. Kosakata, bacaan, ujian dan tinjauan siap dipelajari.",
+            "features": {
+                "characters": "bagan karakter",
+                "drill": "latihan karakter"
+            },
+            "ctaChart": "Lihat bagan Jepang",
+            "ctaDrill": "Coba latihan Jepang"
+        }
+    },
+    "english": {
+        "badge": "Bahasa Inggris",
+        "title": "Belajar Bahasa Inggris",
+        "description": "Bahasa Inggris adalah jalur baru. Fitur dek di bawah ini sudah bisa dipakai; set karakter dan drill masih dikerjakan.",
+        "character": {
+            "badge": "Alfabet",
+            "title": "Alfabet Bahasa Inggris",
+            "description": "Dua puluh enam huruf, besar dan kecil. Ketuk huruf untuk mendengarnya, atau ucapkan satu grup dengan lantang.",
+            "tabs": {
+                "uppercase": "Huruf besar",
+                "lowercase": "Huruf kecil",
+                "vowels": "Vokal",
+                "consonants": "Konsonan"
+            },
+            "gridHint": "Ketuk huruf untuk mendengarnya, atau tekan Mulai membaca untuk menyusuri grup dari tempat kamu berhenti."
+        },
+        "nav": {
+            "render": {
+                "title": "Membaca",
+                "description": "Baca teks pendek lalu cek dengan terjemahannya.",
+                "action": "Mulai membaca"
+            },
+            "review": {
+                "title": "Tinjauan Kosakata",
+                "description": "Tinjau kosakata dengan kartu dan pengulangan berjarak.",
+                "action": "Mulai tinjauan"
+            },
+            "exam": {
+                "title": "Ujian Kosakata",
+                "description": "Uji diri dengan soal pilihan ganda dari kosakatamu sendiri.",
+                "action": "Kerjakan ujian"
+            },
+            "vocab": {
+                "title": "Lihat kosakata",
+                "description": "Baca kata-kata dalam dek beserta laja, arti, dan contohnya.",
+                "action": "Lihat kata"
+            },
+            "edit": {
+                "title": "Edit Dek",
+                "description": "Ganti nama, ubah urutan, atau hapus dek di koleksi Anda.",
+                "action": "Edit Dek"
+            }
+        },
+        "edit": {
+            "title": "Edit Dek",
+            "description": "Kelola dek di koleksi Anda. Editor akan segera hadir.",
+            "back": "Kembali ke Bahasa Inggris"
+        },
+        "vocab": {
+            "title": "Kosakata"
+        },
+        "render": {
+            "title": "Membaca"
+        },
+        "review": {
+            "title": "Tinjauan Kosakata"
+        },
+        "exam": {
+            "title": "Ujian"
+        },
+        "sections": {
+            "learn": "Belajar",
+            "practice": "Latihan",
+            "manage": "Kelola"
+        }
+    },
     "japanese": {
         "badge": "Bahasa Jepang",
         "title": "Belajar Bahasa Jepang",
         "description": "Kuasai dasar-dasar bahasa Jepang melalui kana, kosakata, dan kuis.",
         "back_language": "Kembali ke Pilihan Bahasa",
-        "stats": {
-            "kana": "Karakter kana",
-            "vocabulary": "Kata kosakata",
-            "learned": "Kata dipelajari",
-            "due": "Jatuh tempo untuk ditinjau"
-        },
         "sections": {
             "kana": "Kana",
             "kanaHint": "Pelajari dua silabari Jepang — telusuri setiap karakter dan latih pengenalanmu.",
@@ -690,6 +903,19 @@
                 "submit": "Buat set"
             }
         },
+        "character": {
+            "badge": "Kana",
+            "title": "Kana Bahasa Jepang",
+            "description": "Hiragana dan Katakana adalah dua silabari bahasa Jepang. Ketuk tab untuk berpindah.",
+            "tabs": {
+                "hiragana": "Hiragana",
+                "katakana": "Katakana",
+                "voiceless": "Tanpa suara",
+                "voiced": "Bersuara",
+                "contracted": "Kontraksi"
+            },
+            "upNext": "berikutnya"
+        },
         "kana": {
             "badge": "Kana",
             "title": "Kana Bahasa Jepang",
@@ -698,23 +924,8 @@
                 "hiragana": "Hiragana",
                 "katakana": "Katakana"
             },
-            "voiceless": "Tanpa suara",
-            "voiced": "Bersuara",
-            "contracted": "Kontraksi",
-            "voice_label": "Suara",
-            "voice_preview": "Pratinjau",
-            "voice_auto": "Otomatis",
-            "voice_choose": "Pilih suara",
-            "voice_ja": "Jepang",
-            "voice_volume": "Volume",
             "take_quiz": "Ikuti Kuis",
             "count": "kana",
-            "stats": {
-                "set": "Dalam set",
-                "group": "Dalam grup",
-                "read": "Dibaca"
-            },
-            "readProgress": "{{read}} / {{total}}",
             "gridHint": "Ketuk kana untuk mendengarnya, atau tekan Mulai membaca untuk berjalan melalui grup dari tempat terakhir.",
             "readStart": "Mulai membaca",
             "readContinue": "Lanjutkan membaca",
@@ -858,58 +1069,33 @@
             "title": "Vocabulary Review"
         }
     },
-    "english": {
-        "badge": "Bahasa Inggris",
-        "title": "Belajar Bahasa Inggris",
-        "description": "Bahasa Inggris adalah jalur baru. Fitur dek di bawah ini sudah bisa dipakai; set karakter dan drill masih dikerjakan.",
-        "nav": {
-            "render": {
-                "title": "Membaca",
-                "description": "Baca teks pendek lalu cek dengan terjemahannya.",
-                "action": "Mulai membaca"
+    "thai": {
+        "badge": "Thai",
+        "title": "Belajar Bahasa Thai",
+        "description": "Kuasai dasar-dasar bahasa Thai melalui aksara, kosakata dan kuisnya.",
+        "character": {
+            "badge": "Aksara Thai",
+            "title": "Karakter Thai",
+            "description": "Setiap konsonan dari ก hingga ฮ dalam urutan tradisional, vokal umum, dan tanda nada. Ketuk karakter untuk mendengarnya, atau ucapkan satu set dengan lantang.",
+            "gridHint": "Ketuk karakter untuk mendengarnya, atau tekan Mulai membaca untuk menyusuri set dari tempat kamu berhenti.",
+            "tabs": {
+                "consonants": "Konsonan",
+                "vowels": "Vokal",
+                "tones": "Nada",
+                "headed": "Berlingkar",
+                "headless": "Tanpa lingkar"
             },
-            "review": {
-                "title": "Tinjauan Kosakata",
-                "description": "Tinjau kosakata dengan kartu dan pengulangan berjarak.",
-                "action": "Mulai tinjauan"
+            "voice": {
+                "female": "Perempuan",
+                "male": "Laki-laki"
             },
-            "exam": {
-                "title": "Ujian Kosakata",
-                "description": "Uji diri dengan soal pilihan ganda dari kosakatamu sendiri.",
-                "action": "Kerjakan ujian"
+            "voiceUnavailable": "Suara Google TTS tidak tersedia saat ini.",
+            "stats": {
+                "set": "Set",
+                "group": "Dalam grup",
+                "read": "Dibaca"
             },
-            "vocab": {
-                "title": "Lihat kosakata",
-                "description": "Baca kata-kata dalam dek beserta laja, arti, dan contohnya.",
-                "action": "Lihat kata"
-            },
-            "edit": {
-                "title": "Edit Dek",
-                "description": "Ganti nama, ubah urutan, atau hapus dek di koleksi Anda.",
-                "action": "Edit Dek"
-            }
-        },
-        "edit": {
-            "title": "Edit Dek",
-            "description": "Kelola dek di koleksi Anda. Editor akan segera hadir.",
-            "back": "Kembali ke Bahasa Inggris"
-        },
-        "vocab": {
-            "title": "Kosakata"
-        },
-        "render": {
-            "title": "Membaca"
-        },
-        "review": {
-            "title": "Tinjauan Kosakata"
-        },
-        "exam": {
-            "title": "Ujian"
-        },
-        "sections": {
-            "learn": "Belajar",
-            "practice": "Latihan",
-            "manage": "Kelola"
+            "readProgress": "{{read}} dari {{total}} dibaca"
         }
     },
     "settings": {

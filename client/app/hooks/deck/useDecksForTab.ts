@@ -5,7 +5,7 @@
 // read. `official` is the odd one out — its store is seeded from the bundled
 // data rather than fetched, so it is already complete on the first paint.
 import { useMemo } from 'react';
-import type { DeckData, DeckLists, DeckSource, DeckType } from '~/types/deck';
+import type { DeckData, DeckFilter, DeckLists, DeckSource, DeckType } from '~/types/deck';
 import { ALL_TARGETS, languages, type TargetFilter } from '~/data/language';
 import { officialDecksOfType } from '~/stores/deck/deckListOfficial.store';
 import { useDeckListLocalStore } from '~/stores/deck/deckListLocal.store';
@@ -20,7 +20,7 @@ const allDecks = (lists: DeckLists): DeckData[] =>
 /** The decks one tab shows, or an empty list while its store rehydrates. */
 export function useDecksForTab(
     language: TargetFilter,
-    type: DeckType,
+    type: DeckFilter,
     tab: DeckSource,
 ): DeckData[] {
     const localLists = useDeckListLocalStore((state) => state.deckLists);

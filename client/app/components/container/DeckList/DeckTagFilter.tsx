@@ -6,22 +6,22 @@
 // down to zero still remains present and tappable. That way a viewer who
 // clicked the wrong tag can unselect it in one tap instead of being trapped
 // in an empty list with no visible way to back out.
-import { useTranslation } from 'react-i18next';
 import { FaXmark } from 'react-icons/fa6';
+import { useTranslation } from 'react-i18next';
 import Button from '~/components/custom/Button';
 
 export default function DeckTagFilter({
     tags,
     selected,
-    onToggle,
     onClear,
+    onToggle,
 }: {
     /** All tags present in the current tab. */
     tags: string[];
     /** The tags the viewer has already picked. */
     selected: string[];
-    onToggle: (tag: string) => void;
     onClear: () => void;
+    onToggle: (tag: string) => void;
 }) {
     const { t } = useTranslation();
 

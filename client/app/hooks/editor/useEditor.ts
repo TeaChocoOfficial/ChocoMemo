@@ -1,28 +1,32 @@
 // -Path: 'client/app/components/edit/useDeckEditor.ts'
 import { useMemo } from 'react';
 import { useTargetLang } from '../base/useTargetLang';
-import { useDeckEditorStore } from '~/stores/deck/deckEditor.store';
 import { useFavouritesStore } from '~/stores/deck/favourites.store';
 import { useDeckListLocalStore } from '~/stores/deck/deckListLocal.store';
+import type { DeckDensity, DeckNsfwFilter, DeckSort } from '~/types/deckList';
 import type { DeckData, DeckFilter, DeckSource, DeckView } from '~/types/deck';
+import { useDeckEditorStore, type DeckEditorData } from '~/stores/deck/deckEditor.store';
 
 /** The editor surface `useDeckEditor` exposes to any language track. */
 export interface DeckEditor {
-    view: DeckView;
+    data: DeckEditorData;
     decks: DeckData[];
-    sources: DeckSource;
     selected: DeckData | null;
-    selectedId: string | null;
-    typeFilters: DeckFilter;
     visibleDecks: DeckData[];
     typeCounts: Record<DeckFilter, number>;
+    clearTags: () => void;
     remove: (id?: string) => void;
-    select: (id: string | null) => void;
+    toggleTag: (tag: string) => void;
+    setSort: (sort: DeckSort) => void;
     setView: (value: DeckView) => void;
+    setSearch: (value: string) => void;
+    select: (id: string | null) => void;
+    setFilter: (value: DeckFilter) => void;
     reorder: (orderedIds: string[]) => void;
+    setNsfw: (nsfw: DeckNsfwFilter) => void;
     setSource: (source: DeckSource) => void;
     update: (patch: Partial<DeckData>) => void;
-    setTypeFilters: (value: DeckFilter) => void;
+    setDensity: (density: DeckDensity) => void;
 }
 
 /**
@@ -36,15 +40,23 @@ export interface DeckEditor {
  * @returns Ordered decks, the view/filter, selection helpers, and actions.
  */
 export function useEditor(): DeckEditor {
+    const {
+        setSort,
+        setNsfw,
+        setView,
+        setFilter,
+        setSearch,
+        setSource,
+        clearTags,
+        toggleTag,
+        setDensity,
+        setSelectedId,
+    } = useDeckEditorStore();
     const language = useTargetLang();
     const { ids } = useFavouritesStore();
     const { removeDeck, updateDeck } = useDeckListLocalStore();
-    const view = useDeckEditorStore((state) => state.views[language] ?? 'all');
-    const { setView, setSource, setFilter, setSelection } = useDeckEditorStore();
+    const data = useDeckEditorStore((state) => state.datas[language]);
     const storedDecks = useDeckListLocalStore((state) => state.deckLists[language]);
-    const sources = useDeckEditorStore((state) => state.sources[language] ?? 'local');
-    const typeFilters = useDeckEditorStore((state) => state.filters[language] ?? 'all');
-    const selectedId = useDeckEditorStore((state) => state.selections[language] ?? null);
 
     /** Store order is insertion order, so `index` is what the editor shows. */
     const decks = useMemo(
@@ -54,19 +66,18 @@ export function useEditor(): DeckEditor {
 
     /** The view narrows the collection; the type filter then narrows that. */
     const viewedDecks = useMemo(() => {
-        if (view === 'favourites') return decks.filter((deck) => ids[deck.id]);
-        if (view === 'recent') {
+        if (data.view === 'favourites') return decks.filter((deck) => ids[deck.id]);
+        if (data.view === 'recent')
             return [...decks].sort((a, b) => b.meta.updatedAt.localeCompare(a.meta.updatedAt));
-        }
         return decks;
-    }, [decks, view, ids]);
+    }, [decks, data, ids]);
 
     const visibleDecks = useMemo(
         () =>
-            typeFilters === 'all'
+            data.filter === 'all'
                 ? viewedDecks
-                : viewedDecks.filter((deck) => deck.type === typeFilters),
-        [viewedDecks, typeFilters],
+                : viewedDecks.filter((deck) => deck.type === data.filter),
+        [viewedDecks, data.filter],
     );
 
     /** Per-type totals for the filter, computed once per change. */
@@ -86,8 +97,8 @@ export function useEditor(): DeckEditor {
     }, [decks]);
 
     const selected = useMemo(
-        () => decks.find((deck) => deck.id === selectedId) ?? null,
-        [decks, selectedId],
+        () => decks.find((deck) => deck.id === data.selectedId) ?? null,
+        [decks, data.selectedId],
     );
 
     /**
@@ -111,27 +122,30 @@ export function useEditor(): DeckEditor {
 
     /** Clears the selection only when the removed deck was the one selected. */
     const remove = (id?: string) => {
-        const target = id ?? selectedId;
+        const target = id ?? data.selectedId;
         if (!target) return;
         removeDeck(language, target);
-        if (target === selectedId) setSelection(language, null);
+        if (target === data.selectedId) setSelectedId(language, null);
     };
 
     return {
-        view,
+        data,
         decks,
-        sources,
         selected,
         typeCounts,
-        selectedId,
-        typeFilters,
         visibleDecks,
         update,
         remove,
         reorder,
-        select: (id) => setSelection(language, id),
+        clearTags: () => clearTags(language),
+        setSort: (sort) => setSort(language, sort),
+        setNsfw: (nsfw) => setNsfw(language, nsfw),
+        select: (id) => setSelectedId(language, id),
         setView: (value) => setView(language, value),
+        toggleTag: (tag) => toggleTag(language, tag),
         setSource: (value) => setSource(language, value),
-        setTypeFilters: (value) => setFilter(language, value),
+        setFilter: (value) => setFilter(language, value),
+        setSearch: (search) => setSearch(language, search),
+        setDensity: (density) => setDensity(language, density),
     };
 }

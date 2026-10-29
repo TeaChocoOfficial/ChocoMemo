@@ -11,7 +11,7 @@
 import { create } from 'zustand';
 import { deckListOfficialData } from '~/data/ja/deck/deckListOfficialData';
 import type { Languages } from '~/data/language';
-import type { DeckData, DeckLists, DeckType } from '~/types/deck';
+import type { DeckData, DeckFilter, DeckLists, DeckType } from '~/types/deck';
 
 interface DeckListOfficialState {
     /** language id -> the decks that ship with the app in that language.
@@ -30,6 +30,6 @@ export function officialDecks(language: Languages): DeckData[] {
 }
 
 /** Bundled decks of one type, as a deck-list tab wants them. */
-export function officialDecksOfType(language: Languages, type: DeckType): DeckData[] {
-    return officialDecks(language).filter((deck) => deck.type === type);
+export function officialDecksOfType(language: Languages, type: DeckFilter): DeckData[] {
+    return officialDecks(language).filter((deck) => deck.type === type || type === 'all');
 }

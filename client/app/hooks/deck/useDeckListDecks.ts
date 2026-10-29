@@ -11,7 +11,7 @@
 import { useMemo } from 'react';
 import type { TargetFilter } from '~/data/language';
 import type { DeckListQuery } from '~/types/deckList';
-import type { DeckData, DeckType } from '~/types/deck';
+import type { DeckData, DeckFilter, DeckType } from '~/types/deck';
 import { useLangText } from '~/hooks/config/useLangText';
 import { useDecksForTab } from '~/hooks/deck/useDecksForTab';
 import { useDeckSourceReady } from '~/hooks/deck/useDeckSourceReady';
@@ -46,12 +46,12 @@ export interface DeckListResult {
  */
 export function useDeckListDecks(
     language: TargetFilter,
-    type: DeckType,
+    type: DeckFilter,
     query: DeckListQuery,
 ): DeckListResult {
     const locale = useLangText();
-    const decks = useDecksForTab(language, type, query.tab);
-    const isLoading = useDeckSourceReady(language, query.tab);
+    const decks = useDecksForTab(language, type, query.source);
+    const isLoading = useDeckSourceReady(language, query.source);
 
     const name = useMemo(() => (deck: DeckData) => locale(deck.name), [locale]);
 
@@ -100,7 +100,7 @@ export function useDeckListDecks(
     // built from the values rather than the object so it stays a primitive.
     const { visible, hasMore, sentinelRef } = useIncrementalList(
         matched,
-        `${query.tab}:${query.sort}:${query.search}:${query.tags.join(',')}:${query.nsfw}`,
+        `${query.source}:${query.sort}:${query.search}:${query.tags.join(',')}:${query.nsfw}`,
     );
 
     return {

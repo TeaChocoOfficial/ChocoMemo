@@ -7,7 +7,13 @@ import { useEditor } from '~/hooks/editor/useEditor';
 import SortableList from '../components/SortableList';
 import { useLangText } from '~/hooks/config/useLangText';
 import { FaTrash, FaGripVertical } from 'react-icons/fa6';
-import { DECK_SOURCE_TABS } from '~/utils/deck/deckListQuery';
+import { useTargetLang } from '~/hooks/base/useTargetLang';
+import { useDeckListDecks } from '~/hooks/deck/useDeckListDecks';
+import { DECK_SOURCE_SOURCES } from '~/utils/deck/deckListQuery';
+import TargetLangSelect from '~/components/container/TargetLangSelect';
+import DeckTagFilter from '~/components/container/DeckList/DeckTagFilter';
+import DeckListSearch from '~/components/container/DeckList/DeckListSearch';
+import DeckListOptions from '~/components/container/DeckList/DeckListOptions';
 
 /** The type filters offered in the explorer header. */
 const FILTERS: DeckFilter[] = ['all', 'vocab', 'render', 'review', 'exam'];
@@ -34,27 +40,34 @@ const REMOVE =
  */
 export default function DeckEditList() {
     const {
-        sources,
-        selectedId,
-        typeFilters,
+        data,
         visibleDecks,
         select,
         remove,
         reorder,
+        setSort,
+        setNsfw,
         setSource,
-        setTypeFilters,
+        setSearch,
+        setFilter,
+        clearTags,
+        toggleTag,
+        setDensity,
     } = useEditor();
     const locale = useLangText();
     const { t } = useTranslation();
+    const language = useTargetLang();
+    const { availableTags } = useDeckListDecks(language, data.filter, data);
     // const counts = useDeckCounts(targetLang, type);
 
     return (
-        <section className='flex h-full flex-col gap-3 p-4'>
-            <div className='flex gap-2'>
+        <section className='flex h-full flex-col gap-2 p-4'>
+            <div className='flex gap-2 overflow-x-auto'>
+                <TargetLangSelect allowAll className='py-2.5!' />
                 <Select
-                    value={typeFilters}
+                    value={data.filter}
                     aria-label={t('deck.edit.filters')}
-                    onChange={(value) => setTypeFilters(value)}
+                    onChange={(value) => setFilter(value)}
                     options={FILTERS.map((filter) => ({
                         value: filter,
                         label: (
@@ -68,10 +81,10 @@ export default function DeckEditList() {
                     }))}
                 />
                 <Select
-                    value={sources}
+                    value={data.source}
                     aria-label={t('deck.tallyAria')}
                     onChange={(value) => setSource(value)}
-                    options={DECK_SOURCE_TABS.map((source) => ({
+                    options={DECK_SOURCE_SOURCES.map((source) => ({
                         value: source,
                         label: (
                             <div className='flex gap-2 items-center'>
@@ -87,7 +100,27 @@ export default function DeckEditList() {
                     }))}
                 />
             </div>
-
+            <div className='min-w-0'>
+                <DeckListSearch
+                    value={data.search}
+                    onChange={setSearch}
+                    onClear={() => setSearch('')}
+                />
+            </div>
+            <div className='flex flex-col gap-2 overflow-x-auto'>
+                <DeckListOptions
+                    query={data}
+                    onSortChange={setSort}
+                    onNsfwChange={setNsfw}
+                    onDensityChange={setDensity}
+                />
+                <DeckTagFilter
+                    onClear={clearTags}
+                    tags={availableTags}
+                    onToggle={toggleTag}
+                    selected={data.tags}
+                />
+            </div>
             {visibleDecks.length === 0 ? (
                 <p className='rounded-sm border border-dashed border-line-strong px-4 py-10 text-center text-sm text-surface-muted'>
                     {t('deck.edit.empty')}
@@ -99,7 +132,7 @@ export default function DeckEditList() {
                     className='m-0 flex list-none flex-col gap-1 p-0'
                     renderItem={(deck, { handleProps, isDragging }) => (
                         <div
-                            className={`${ROW} ${deck.id === selectedId ? ROW_ACTIVE : ROW_IDLE} ${isDragging ? 'opacity-60' : ''}`}
+                            className={`${ROW} ${deck.id === data.selectedId ? ROW_ACTIVE : ROW_IDLE} ${isDragging ? 'opacity-60' : ''}`}
                         >
                             <button
                                 type='button'

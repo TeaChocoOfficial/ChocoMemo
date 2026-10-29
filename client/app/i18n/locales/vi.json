@@ -3,6 +3,7 @@
         "home": "Trang chủ",
         "study": "Học",
         "edit": "Chỉnh sửa",
+        "guide": "Hướng dẫn",
         "languages": "Ngôn ngữ",
         "menu": "Mở menu",
         "settings": "Cài đặt",
@@ -22,6 +23,58 @@
         "hide": "Ẩn",
         "show": "Hiện",
         "toggleLabel": "Hiển thị giao diện"
+    },
+    "theme": {
+        "pickerLabel": "Đổi chủ đề",
+        "names": {
+            "lightChoco": "Sô cô la sáng",
+            "darkChoco": "Sô cô la tối",
+            "darkGalaxy": "Thiên hà tối",
+            "lightGalaxy": "Thiên hà sáng",
+            "darkSakura": "Sakura tối",
+            "lightSakura": "Sakura sáng",
+            "darkPaper": "Giấy tối",
+            "lightPaper": "Giấy sáng",
+            "darkNature": "Thiên nhiên tối",
+            "lightNature": "Thiên nhiên sáng",
+            "darkAutumn": "Thu tối",
+            "lightAutumn": "Thu sáng",
+            "darkWinter": "Đông tối",
+            "lightWinter": "Đông sáng"
+        }
+    },
+    "common": {
+        "loading": "Loading…",
+        "error": {
+            "oops": "Ối!",
+            "unexpected": "Đã xảy ra lỗi không mong muốn.",
+            "notFound": "Không tìm thấy trang bạn yêu cầu."
+        },
+        "tabs": {
+            "local": "Trong máy",
+            "official": "Chính thức",
+            "cloud": "Đám mây",
+            "community": "Cộng đồng"
+        },
+        "comingSoon": {
+            "cloud": "Đồng bộ đám mây sắp ra mắt, cần đăng nhập",
+            "community": "Chưa thể duyệt bộ từ của cộng đồng"
+        },
+        "select": "Chọn",
+        "voice_label": "Giọng đọc",
+        "voice_preview": "Nghe thử",
+        "voice_auto": "Tự động",
+        "voice_choose": "Chọn giọng đọc",
+        "voice_missing": "Thiết bị này chưa cài giọng đọc {{lang}} — tính năng đọc sẽ dùng giọng mặc định của hệ thống.",
+        "tts_voice_choose": "Chọn giọng đọc",
+        "tts_voice_preview": "Nghe thử",
+        "tts_voice_unavailable": "Giọng Google TTS hiện không khả dụng."
+    },
+    "notfound": {
+        "title": "Không tìm thấy trang",
+        "description": "Trang bạn đang tìm không tồn tại hoặc đã được di chuyển.",
+        "back_home": "Về trang chủ",
+        "error_code": "404"
     },
     "home": {
         "badge": "ChocoMemo · thư viện ngôn ngữ cộng đồng",
@@ -103,7 +156,8 @@
             "step4": {
                 "title": "Đăng bộ thẻ của bạn",
                 "hint": "Thêm những từ bạn hay quên và chia sẻ lại với kệ."
-            }
+            },
+            "guideLink": "Đọc hướng dẫn đầy đủ"
         },
         "cta": {
             "title": "Bắt đầu từ ký tự đầu tiên.",
@@ -112,53 +166,107 @@
             "secondary": "Đăng bộ thẻ"
         }
     },
-    "theme": {
-        "pickerLabel": "Đổi chủ đề",
-        "names": {
-            "lightChoco": "Sô cô la sáng",
-            "darkChoco": "Sô cô la tối",
-            "darkGalaxy": "Thiên hà tối",
-            "lightGalaxy": "Thiên hà sáng",
-            "darkSakura": "Sakura tối",
-            "lightSakura": "Sakura sáng",
-            "darkPaper": "Giấy tối",
-            "lightPaper": "Giấy sáng",
-            "darkNature": "Thiên nhiên tối",
-            "lightNature": "Thiên nhiên sáng",
-            "darkAutumn": "Thu tối",
-            "lightAutumn": "Thu sáng",
-            "darkWinter": "Đông tối",
-            "lightWinter": "Đông sáng"
+    "guide": {
+        "badge": "Hướng dẫn",
+        "tag": "Sổ tay người dùng",
+        "title": "Cách dùng ChocoMemo",
+        "subtitle": "Một vòng tham quan ngắn: mỗi khu vực làm gì và thứ tự nào giúp buổi học đầu tiên thành công.",
+        "quickStart": {
+            "title": "Bốn bước, một buổi học",
+            "hint": "Đọc một bảng, luyện tập, rồi ôn lại những gì đã học. Mọi thứ khác trong ChocoMemo đều là biến thể của ba bước này."
+        },
+        "steps": {
+            "step1": {
+                "title": "Chọn một ngôn ngữ",
+                "hint": "Trang chủ liệt kê mọi ngôn ngữ đích. Chọn một ngôn ngữ sẽ mở các bộ thẻ từ vựng của ngôn ngữ đó, và lựa chọn được ghi nhớ trên thiết bị này."
+            },
+            "step2": {
+                "title": "Đọc bảng",
+                "hint": "Duyệt bảng ký tự của hệ chữ bạn đang học và chạm vào bất kỳ ký tự nào để nghe phát âm."
+            },
+            "step3": {
+                "title": "Luyện tập",
+                "hint": "Một vòng trắc nghiệm có giới hạn thời gian trên các ký tự bạn đã chọn. Đặt hẹn giờ, số câu hỏi và nhóm cho phù hợp với trình độ."
+            },
+            "step4": {
+                "title": "Ôn lại từ vựng",
+                "hint": "Thẻ ghi nhớ đưa từ vựng đã học trở lại theo lịch, để không điều gì bị bỏ quên."
+            }
+        },
+        "sections": {
+            "title": "Mỗi phần làm gì",
+            "hint": "Một thẻ cho mỗi khu vực của ứng dụng. Mỗi thẻ liên kết thẳng đến trang mà nó mô tả.",
+            "landing": {
+                "title": "Trang chủ",
+                "hint": "Cửa ngõ: ứng dụng là gì và dạy những ngôn ngữ nào.",
+                "point1": "Mỗi ngôn ngữ đích được liệt kê thành một hàng rộng toàn phần — chọn một để bắt đầu.",
+                "point2": "Ngôn ngữ bạn chọn được ghi nhớ trên thiết bị và trở thành mục tiêu đang dùng.",
+                "point3": "Không có rào đăng ký: bảng và bộ thẻ mở trước khi bạn tạo tài khoản."
+            },
+            "hub": {
+                "title": "Trung tâm học tập",
+                "hint": "Tổng quan bạn đến sau khi chọn ngôn ngữ.",
+                "point1": "Ký tự — một ô cho mỗi hệ chữ, nổi bật là chính ký tự.",
+                "point2": "Luyện tập — danh sách các bài luyện ký tự, mỗi bài một hàng.",
+                "point3": "Bộ thẻ — Học (từ vựng, đọc), Luyện (ôn tập, bài kiểm tra) và hàng Quản lý để chỉnh sửa."
+            },
+            "charts": {
+                "title": "Bảng ký tự",
+                "hint": "Chế độ xem tham chiếu của một hệ chữ, có âm thanh cho mọi ký tự.",
+                "point1": "Kana (tiếng Nhật), bảng chữ cái Latinh (tiếng Anh) và tiếng Thái đã được triển khai.",
+                "point2": "Mỗi bảng được nhóm lại — vô thanh, hữu thanh và âm ghép cho kana; nguyên âm và phụ âm cho bảng chữ cái.",
+                "point3": "Chạm vào một ký tự để nghe. Giọng đọc theo ngôn ngữ đích, không theo ngôn ngữ giao diện.",
+                "point4": "Một thứ tự đọc sẽ dẫn bạn đi qua bảng và ghi nhớ bạn đã đến đâu."
+            },
+            "drill": {
+                "title": "Luyện ký tự",
+                "hint": "Vòng trắc nghiệm nhanh biến việc nhận diện thành ghi nhớ.",
+                "point1": "Bật tắt các nhóm ký tự và số câu hỏi, từ tất cả đến một vài câu.",
+                "point2": "Hẹn giờ cho từng câu với thanh đếm ngược, và tự động chuyển câu tùy chọn.",
+                "point3": "Bộ đếm Đúng / Sai / Hết giờ trực tiếp khi chơi.",
+                "point4": "Khi kết thúc: xếp hạng điểm, phân tích từng câu trả lời và nút chơi lại."
+            },
+            "decks": {
+                "title": "Từ vựng, đọc, ôn tập và kiểm tra",
+                "hint": "Bốn tính năng trên một danh sách bộ thẻ chung — chúng chỉ khác nhau ở điều xảy ra khi mở một bộ thẻ.",
+                "point1": "Bộ thẻ từ vựng chứa các từ; bộ thẻ đọc chứa tài liệu đọc.",
+                "point2": "Ôn tập biến một bộ thẻ thành thẻ ghi nhớ theo lịch giãn cách.",
+                "point3": "Bài kiểm tra biến một bộ thẻ thành bài trắc nghiệm.",
+                "point4": "Thanh công cụ lọc theo ngôn ngữ đích, còn thứ tự, mật độ và nguồn được ghi nhớ trên thiết bị."
+            },
+            "edit": {
+                "title": "Chỉnh sửa bộ thẻ",
+                "hint": "Một trình chỉnh sửa cho mọi loại bộ thẻ, trong không gian làm việc toàn màn hình với các bảng có thể gắn.",
+                "point1": "Bảng cho danh sách bộ thẻ, trình chỉnh sửa, bản xem trước, trình kiểm tra và cài đặt.",
+                "point2": "Tự sắp xếp: kéo, đổi kích thước, ghim một tab hoặc đặt lại bố cục.",
+                "point3": "Trên điện thoại, các bảng đó trở thành dải tab với menu trượt ra."
+            },
+            "voice": {
+                "title": "Giọng đọc và giao diện",
+                "hint": "Các cài đặt quyết định ứng dụng nghe và trông như thế nào.",
+                "point1": "Chủ đề: chọn một trong các bảng màu sáng và tối, ứng dụng sẽ theo đó.",
+                "point2": "Giọng đọc: chọn giọng đã cài để đọc các ký tự, kèm nút nghe thử.",
+                "point3": "Giao diện: đổi ngôn ngữ giao diện và ẩn thanh điều hướng để có chế độ xem không bị phân tâm."
+            },
+            "account": {
+                "title": "Tài khoản và cộng đồng",
+                "hint": "Nơi chứa các tính năng tài khoản.",
+                "point1": "Đăng nhập hoặc tạo tài khoản để vào hồ sơ và cài đặt của bạn.",
+                "point2": "Hồ sơ công khai của bạn có thể truy cập bằng thẻ tên, nên có thể chia sẻ.",
+                "point3": "Đồng bộ đám mây và bộ thẻ cộng đồng đang trên đường tới."
+            }
+        },
+        "action": {
+            "open": "Mở",
+            "comingSoon": "Sắp ra mắt"
         }
-    },
-    "common": {
-        "loading": "Loading…",
-        "error": {
-            "oops": "Ối!",
-            "unexpected": "Đã xảy ra lỗi không mong muốn.",
-            "notFound": "Không tìm thấy trang bạn yêu cầu."
-        },
-        "tabs": {
-            "local": "Trong máy",
-            "official": "Chính thức",
-            "cloud": "Đám mây",
-            "community": "Cộng đồng"
-        },
-        "comingSoon": {
-            "cloud": "Đồng bộ đám mây sắp ra mắt, cần đăng nhập",
-            "community": "Chưa thể duyệt bộ từ của cộng đồng"
-        },
-        "select": "Chọn"
-    },
-    "notfound": {
-        "title": "Không tìm thấy trang",
-        "description": "Trang bạn đang tìm không tồn tại hoặc đã được di chuyển.",
-        "back_home": "Về trang chủ",
-        "error_code": "404"
     },
     "study": {
         "title": "Học",
         "subtitle": "Chọn một ngôn ngữ, rồi chọn cách luyện tập.",
+        "basic": {
+            "title": "Cơ bản"
+        },
         "characters": {
             "title": "Ký tự",
             "description": "Duyệt bảng ký tự của một ngôn ngữ và nghe phát âm từng ký tự.",
@@ -236,8 +344,7 @@
         },
         "tag": {
             "ready": "Sẵn sàng",
-            "current": "Hiện tại",
-            "comingSoon": "Sắp ra mắt"
+            "current": "Hiện tại"
         },
         "action": {
             "start": "Bắt đầu"
@@ -288,16 +395,10 @@
             }
         }
     },
-    "characters": {
-        "backHub": "Quay lại trung tâm",
-        "comingSoon": "Bảng ký tự của {{language}} sắp ra mắt.",
-        "unknown": "Ngôn ngữ này"
-    },
     "languageSelect": {
         "back_home": "Về trang chủ",
         "status": {
-            "available": "Khả dụng",
-            "comingSoon": "Sắp ra mắt"
+            "available": "Khả dụng"
         },
         "cta": {
             "start": "Bắt đầu học"
@@ -454,11 +555,13 @@
         "viewAuthor": "Xem trang cá nhân của {{author}}",
         "edit": {
             "listTitle": "Bộ thẻ",
+            "title": "Trình quản lý bộ thẻ",
+            "back": "Quay lại",
+            "openMenu": "Mở menu",
             "panelTitle": "Trình chỉnh sửa",
-            "layoutTitle": "Bố cục",
+            "settingTitle": "Cài đặt",
             "spacedLabel": "Bảng có khoảng cách",
             "spacedHint": "Để lại một khoảng trống giữa các bảng được gắn.",
-            "statusTitle": "Trạng thái",
             "previewTitle": "Xem trước",
             "inspectorTitle": "Trình kiểm tra",
             "loading": "Đang tải bộ thẻ của bạn…",
@@ -475,7 +578,6 @@
             "save": "Lưu thay đổi",
             "delete": "Xoá bộ thẻ",
             "dragHandle": "Kéo để sắp xếp lại",
-            "mobileHint": "Sắp xếp lại và chỉnh sửa bộ thẻ bên dưới. Mở trên màn hình rộng hơn để dùng trình quản lý bộ thẻ.",
             "filters": "Lọc bộ thẻ theo loại",
             "filterAll": "Tất cả bộ thẻ",
             "typeLabel": "Loại",
@@ -484,6 +586,17 @@
             "statusDecks": "{{visible}} / {{total}} bộ thẻ",
             "noneSelected": "Chưa chọn bộ thẻ nào",
             "addPanel": "Thêm bảng",
+            "emptyPanel": "Bảng trống",
+            "resetLayout": "Đặt lại bố cục",
+            "emptyLayoutTitle": "Không có bảng nào mở",
+            "emptyLayoutHint": "Đặt lại bố cục để mang các bảng mặc định trở lại.",
+            "pinTab": "Ghim tab",
+            "unpinTab": "Bỏ ghim tab",
+            "closeTab": "Đóng",
+            "closeOthers": "Đóng các tab khác",
+            "closeAll": "Đóng tất cả",
+            "closeLeft": "Đóng bên trái",
+            "closeRight": "Đóng bên phải",
             "views": "Chế độ xem trình chỉnh sửa",
             "viewAll": "Tất cả bộ",
             "viewFavourites": "Yêu thích",
@@ -549,17 +662,117 @@
         "resetSuccess": "Password updated. Please sign in.",
         "sendResetCode": "Gửi mã đặt lại"
     },
+    "characters": {
+        "backHub": "Quay lại trung tâm",
+        "readProgress": "{{read}} / {{total}}",
+        "readStart": "Bắt đầu đọc",
+        "readContinue": "Đọc tiếp",
+        "readStop": "Dừng",
+        "nowReading": "đang đọc",
+        "upNext": "tiếp theo",
+        "pinToolbar": "Ghim thanh công cụ",
+        "unpinToolbar": "Bỏ ghim thanh công cụ",
+        "sticky": "Cố định",
+        "stickyOn": "Bật",
+        "stickyOff": "Tắt",
+        "stats": {
+            "set": "Trong bộ",
+            "group": "Trong nhóm",
+            "read": "Đã đọc"
+        },
+        "voice": {
+            "female": "Nữ",
+            "male": "Nam"
+        },
+        "notFound": {
+            "badge": "Không tìm thấy",
+            "title": "Không tìm thấy ngôn ngữ",
+            "body": "Địa chỉ này không gắn với ngôn ngữ học nào. Hãy quay lại trung tâm học tập và chọn một ngôn ngữ trong danh sách."
+        },
+        "soon": {
+            "badge": "Sắp ra mắt",
+            "title": "{{feature}} {{language}}",
+            "body": "{{feature}} {{language}} vẫn đang được xây dựng. Trong lúc đó, từ vựng, đọc, kiểm tra và ôn tập cho {{language}} đã sẵn sàng.",
+            "deckOnly": "Ngôn ngữ khác chỉ có bộ thẻ — không có bảng ký tự hay bài luyện. Từ vựng, đọc, kiểm tra và ôn tập đã sẵn sàng để học.",
+            "features": {
+                "characters": "bảng ký tự",
+                "drill": "bài luyện ký tự"
+            },
+            "ctaChart": "Xem bảng ký tự tiếng Nhật",
+            "ctaDrill": "Thử bài luyện tiếng Nhật"
+        }
+    },
+    "english": {
+        "badge": "Tiếng Anh",
+        "title": "Học tiếng Anh",
+        "description": "Tiếng Anh là một bài học mới. Các tính năng bộ thẻ bên dưới đã dùng được; bộ ký tự và bài luyện vẫn đang được xây dựng.",
+        "character": {
+            "badge": "Bảng chữ cái",
+            "title": "Bảng chữ cái tiếng Anh",
+            "description": "Hai mươi sáu chữ cái, viết hoa và viết thường. Chạm vào một chữ để nghe, hoặc đọc to một nhóm.",
+            "tabs": {
+                "uppercase": "Chữ hoa",
+                "lowercase": "Chữ thường",
+                "vowels": "Nguyên âm",
+                "consonants": "Phụ âm"
+            },
+            "gridHint": "Chạm vào một chữ để nghe, hoặc nhấn Bắt đầu đọc để đi qua nhóm từ chỗ bạn đã dừng."
+        },
+        "nav": {
+            "render": {
+                "title": "Đọc hiểu",
+                "description": "Đọc đoạn văn ngắn và đối chiếu với bản dịch.",
+                "action": "Bắt đầu đọc"
+            },
+            "review": {
+                "title": "Ôn tập từ vựng",
+                "description": "Ôn từ vựng bằng thẻ ghi nhớ và lặp lại ngắt quãng.",
+                "action": "Bắt đầu ôn tập"
+            },
+            "exam": {
+                "title": "Kiểm tra từ vựng",
+                "description": "Tự kiểm tra bằng bộ trắc nghiệm dựng từ từ vựng của bạn.",
+                "action": "Làm bài kiểm tra"
+            },
+            "vocab": {
+                "title": "Xem từ vựng",
+                "description": "Đọc từ trong bộ thẻ kèm cách đọc, nghĩa và ví dụ.",
+                "action": "Xem từ"
+            },
+            "edit": {
+                "title": "Chỉnh sửa bộ thẻ",
+                "description": "Đổi tên, sắp xếp lại hoặc xoá các bộ thẻ trong bộ sưu tập của bạn.",
+                "action": "Chỉnh sửa bộ thẻ"
+            }
+        },
+        "edit": {
+            "title": "Chỉnh sửa bộ thẻ",
+            "description": "Quản lý các bộ thẻ trong bộ sưu tập của bạn. Trình chỉnh sửa sắp ra mắt.",
+            "back": "Quay lại tiếng Anh"
+        },
+        "vocab": {
+            "title": "Từ vựng"
+        },
+        "render": {
+            "title": "Đọc hiểu"
+        },
+        "review": {
+            "title": "Ôn tập từ vựng"
+        },
+        "exam": {
+            "title": "Bài kiểm tra"
+        },
+        "sections": {
+            "learn": "Học",
+            "practice": "Luyện tập",
+            "manage": "Quản lý"
+        }
+    },
     "japanese": {
         "badge": "Tiếng Nhật",
         "title": "Học tiếng Nhật",
         "description": "Nắm vững nền tảng tiếng Nhật qua kana, từ vựng và các bài quiz.",
         "back_language": "Quay lại chọn ngôn ngữ",
-        "stats": {
-            "kana": "Ký tự kana",
-            "vocabulary": "Từ vựng",
-            "learned": "Từ đã học",
-            "due": "Đến hạn ôn tập"
-        },
         "sections": {
             "kana": "Kana",
             "kanaHint": "Học hai bảng chữ cái tiếng Nhật — xem từng ký tự và luyện nhận biết.",
@@ -690,6 +903,19 @@
                 "submit": "Tạo bộ đề"
             }
         },
+        "character": {
+            "badge": "Kana",
+            "title": "Bảng chữ Kana tiếng Nhật",
+            "description": "Hiragana và Katakana là hai bảng chữ cái của tiếng Nhật. Chạm vào các tab để chuyển đổi.",
+            "tabs": {
+                "hiragana": "Hiragana",
+                "katakana": "Katakana",
+                "voiceless": "Âm trong",
+                "voiced": "Âm đục",
+                "contracted": "Âm ghép"
+            },
+            "upNext": "tiếp theo"
+        },
         "kana": {
             "badge": "Kana",
             "title": "Bảng chữ Kana tiếng Nhật",
@@ -698,23 +924,8 @@
                 "hiragana": "Hiragana",
                 "katakana": "Katakana"
             },
-            "voiceless": "Âm trong",
-            "voiced": "Âm đục",
-            "contracted": "Âm ghép",
-            "voice_label": "Giọng đọc",
-            "voice_preview": "Nghe thử",
-            "voice_auto": "Tự động",
-            "voice_choose": "Chọn giọng đọc",
-            "voice_ja": "Tiếng Nhật",
-            "voice_volume": "Âm lượng",
             "take_quiz": "Làm bài kiểm tra",
             "count": "kana",
-            "stats": {
-                "set": "Trong bộ",
-                "group": "Trong nhóm",
-                "read": "Đã đọc"
-            },
-            "readProgress": "{{read}} / {{total}}",
             "gridHint": "Chạm vào một kana để nghe âm, hoặc nhấn Bắt đầu đọc để đọc lần lượt trong nhóm từ vị trí đã dừng.",
             "readStart": "Bắt đầu đọc",
             "readContinue": "Đọc tiếp",
@@ -858,58 +1069,33 @@
             "title": "Vocabulary Review"
         }
     },
-    "english": {
-        "badge": "Tiếng Anh",
-        "title": "Học tiếng Anh",
-        "description": "Tiếng Anh là một bài học mới. Các tính năng bộ thẻ bên dưới đã dùng được; bộ ký tự và bài luyện vẫn đang được xây dựng.",
-        "nav": {
-            "render": {
-                "title": "Đọc hiểu",
-                "description": "Đọc đoạn văn ngắn và đối chiếu với bản dịch.",
-                "action": "Bắt đầu đọc"
+    "thai": {
+        "badge": "Tiếng Thái",
+        "title": "Học tiếng Thái",
+        "description": "Nắm vững những điều cơ bản của tiếng Thái qua hệ chữ, từ vựng và bài kiểm tra.",
+        "character": {
+            "badge": "Hệ chữ Thái",
+            "title": "Ký tự Thái",
+            "description": "Mọi phụ âm từ ก đến ฮ theo thứ tự truyền thống, các nguyên âm thông dụng và dấu thanh. Chạm vào một ký tự để nghe, hoặc đọc to một bộ.",
+            "gridHint": "Chạm vào một ký tự để nghe, hoặc nhấn Bắt đầu đọc để đi qua bộ từ chỗ bạn đã dừng.",
+            "tabs": {
+                "consonants": "Phụ âm",
+                "vowels": "Nguyên âm",
+                "tones": "Thanh điệu",
+                "headed": "Có vòng",
+                "headless": "Không vòng"
             },
-            "review": {
-                "title": "Ôn tập từ vựng",
-                "description": "Ôn từ vựng bằng thẻ ghi nhớ và lặp lại ngắt quãng.",
-                "action": "Bắt đầu ôn tập"
+            "voice": {
+                "female": "Nữ",
+                "male": "Nam"
             },
-            "exam": {
-                "title": "Kiểm tra từ vựng",
-                "description": "Tự kiểm tra bằng bộ trắc nghiệm dựng từ từ vựng của bạn.",
-                "action": "Làm bài kiểm tra"
+            "voiceUnavailable": "Giọng Google TTS hiện không khả dụng.",
+            "stats": {
+                "set": "Bộ",
+                "group": "Trong nhóm",
+                "read": "Đã đọc"
             },
-            "vocab": {
-                "title": "Xem từ vựng",
-                "description": "Đọc từ trong bộ thẻ kèm cách đọc, nghĩa và ví dụ.",
-                "action": "Xem từ"
-            },
-            "edit": {
-                "title": "Chỉnh sửa bộ thẻ",
-                "description": "Đổi tên, sắp xếp lại hoặc xoá các bộ thẻ trong bộ sưu tập của bạn.",
-                "action": "Chỉnh sửa bộ thẻ"
-            }
-        },
-        "edit": {
-            "title": "Chỉnh sửa bộ thẻ",
-            "description": "Quản lý các bộ thẻ trong bộ sưu tập của bạn. Trình chỉnh sửa sắp ra mắt.",
-            "back": "Quay lại tiếng Anh"
-        },
-        "vocab": {
-            "title": "Từ vựng"
-        },
-        "render": {
-            "title": "Đọc hiểu"
-        },
-        "review": {
-            "title": "Ôn tập từ vựng"
-        },
-        "exam": {
-            "title": "Bài kiểm tra"
-        },
-        "sections": {
-            "learn": "Học",
-            "practice": "Luyện tập",
-            "manage": "Quản lý"
+            "readProgress": "Đã đọc {{read}} trên {{total}}"
         }
     },
     "settings": {

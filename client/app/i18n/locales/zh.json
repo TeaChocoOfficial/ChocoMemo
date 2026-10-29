@@ -3,6 +3,7 @@
         "home": "首页",
         "study": "学习",
         "edit": "编辑",
+        "guide": "指南",
         "languages": "语言",
         "menu": "打开菜单",
         "settings": "设置",
@@ -22,6 +23,58 @@
         "hide": "隐藏",
         "show": "显示",
         "toggleLabel": "显示界面"
+    },
+    "theme": {
+        "pickerLabel": "切换主题",
+        "names": {
+            "lightChoco": "浅巧克力",
+            "darkChoco": "暗巧克力",
+            "darkGalaxy": "暗银河",
+            "lightGalaxy": "浅银河",
+            "darkSakura": "暗樱花",
+            "lightSakura": "浅樱花",
+            "darkPaper": "暗纸张",
+            "lightPaper": "浅纸张",
+            "darkNature": "暗抹茶",
+            "lightNature": "浅抹茶",
+            "darkAutumn": "暗红叶",
+            "lightAutumn": "浅红叶",
+            "darkWinter": "暗冬雪",
+            "lightWinter": "浅冬雪"
+        }
+    },
+    "common": {
+        "loading": "Loading…",
+        "error": {
+            "oops": "哎呀！",
+            "unexpected": "发生了意外错误。",
+            "notFound": "请求的页面未找到。"
+        },
+        "tabs": {
+            "local": "本地",
+            "official": "官方",
+            "cloud": "云端",
+            "community": "社区"
+        },
+        "comingSoon": {
+            "cloud": "云同步即将推出，需登录",
+            "community": "浏览社区词集的功能尚不可用"
+        },
+        "select": "选择",
+        "voice_label": "语音",
+        "voice_preview": "试听",
+        "voice_auto": "自动",
+        "voice_choose": "选择语音",
+        "voice_missing": "此设备未安装能说{{lang}}的语音 — 朗读将使用系统默认语音。",
+        "tts_voice_choose": "选择语音",
+        "tts_voice_preview": "试听",
+        "tts_voice_unavailable": "Google TTS 语音目前不可用。"
+    },
+    "notfound": {
+        "title": "页面未找到",
+        "description": "您要找的页面不存在或已被移动。",
+        "back_home": "返回首页",
+        "error_code": "404"
     },
     "home": {
         "badge": "ChocoMemo · 社区语言库",
@@ -103,7 +156,8 @@
             "step4": {
                 "title": "发布你自己的",
                 "hint": "补上你总记不住的词，再分享回书架。"
-            }
+            },
+            "guideLink": "阅读完整指南"
         },
         "cta": {
             "title": "从第一个字符开始。",
@@ -112,53 +166,107 @@
             "secondary": "发布卡组"
         }
     },
-    "theme": {
-        "pickerLabel": "切换主题",
-        "names": {
-            "lightChoco": "浅巧克力",
-            "darkChoco": "暗巧克力",
-            "darkGalaxy": "暗银河",
-            "lightGalaxy": "浅银河",
-            "darkSakura": "暗樱花",
-            "lightSakura": "浅樱花",
-            "darkPaper": "暗纸张",
-            "lightPaper": "浅纸张",
-            "darkNature": "暗抹茶",
-            "lightNature": "浅抹茶",
-            "darkAutumn": "暗红叶",
-            "lightAutumn": "浅红叶",
-            "darkWinter": "暗冬雪",
-            "lightWinter": "浅冬雪"
+    "guide": {
+        "badge": "指南",
+        "tag": "用户手册",
+        "title": "如何使用 ChocoMemo",
+        "subtitle": "快速了解应用：每个区域的作用，以及让第一次学习顺利进行的使用顺序。",
+        "quickStart": {
+            "title": "四个步骤，一次学习",
+            "hint": "读一张表，练习它，然后复习所学内容。ChocoMemo 的其他功能都只是这三个步骤的变体。"
+        },
+        "steps": {
+            "step1": {
+                "title": "选择语言",
+                "hint": "首页列出了所有目标语言。选择一种即可打开其词汇卡组，选择会记录在此设备上。"
+            },
+            "step2": {
+                "title": "读表",
+                "hint": "浏览你正在学习的文字字符表，点击任意字形即可听它发音。"
+            },
+            "step3": {
+                "title": "练习",
+                "hint": "针对所选字符的限时选择题回合。设置计时器、题目数量和分组以匹配你的水平。"
+            },
+            "step4": {
+                "title": "复习单词",
+                "hint": "闪卡会按计划带回你学过的词汇，让任何内容都不会流失。"
+            }
+        },
+        "sections": {
+            "title": "各部分的作用",
+            "hint": "应用的每个区域一张卡片。每张卡片直接链接到它描述的页面。",
+            "landing": {
+                "title": "首页",
+                "hint": "入口：应用是什么，以及它教授哪些语言。",
+                "point1": "每种目标语言都列为整行 — 选择一种开始。",
+                "point2": "你选择的语言会记录在设备上，并成为当前目标。",
+                "point3": "没有注册墙：创建账户前即可使用字符表和卡组。"
+            },
+            "hub": {
+                "title": "学习中心",
+                "hint": "选择语言后进入的概览页。",
+                "point1": "字符 — 每种文字一个磁贴，以字形本身为主。",
+                "point2": "练习 — 字符练习列表，每项一行。",
+                "point3": "卡组 — 学习（词汇、阅读）、练习（复习、考试）以及用于编辑的管理行。"
+            },
+            "charts": {
+                "title": "字符表",
+                "hint": "某种文字的参考视图，每个字符都有声音。",
+                "point1": "假名（日语）、拉丁字母（英语）和泰文目前已经实现。",
+                "point2": "每张表都分组显示 — 假名分为清音、浊音和拗音；字母表分为元音和辅音。",
+                "point3": "点击字符即可听发音。语音跟随目标语言，而不是界面语言。",
+                "point4": "朗读顺序会带你浏览整张表，并记住你读到哪里。"
+            },
+            "drill": {
+                "title": "字符练习",
+                "hint": "快速的选择题回合，把辨认变成记忆。",
+                "point1": "切换字符分组和题目数量，从全部到少量。",
+                "point2": "每题计时器带倒计时条，以及可选的自动前进。",
+                "point3": "游戏过程中实时显示正确 / 错误 / 超时计数。",
+                "point4": "结束时：分数等级、每道答案的分析和重玩按钮。"
+            },
+            "decks": {
+                "title": "词汇、阅读、复习和考试",
+                "hint": "共享同一个卡组列表的四项功能 — 它们只在打开卡组后发生的事情上不同。",
+                "point1": "词汇卡组存放单词；阅读卡组存放阅读材料。",
+                "point2": "复习把卡组变成按间隔计划安排的闪卡。",
+                "point3": "考试把卡组变成选择题测试。",
+                "point4": "工具栏按目标语言筛选，排序、密度和来源会记录在设备上。"
+            },
+            "edit": {
+                "title": "编辑卡组",
+                "hint": "一个编辑器适用于所有卡组类型，位于可停靠面板的全屏工作区中。",
+                "point1": "用于卡组列表、编辑器、预览、检查器和设置的面板。",
+                "point2": "自行布置：拖动、调整大小、固定标签页或重置布局。",
+                "point3": "在手机上，同样的面板会变成带滑出菜单的标签栏。"
+            },
+            "voice": {
+                "title": "语音和外观",
+                "hint": "决定应用声音和外观的设置。",
+                "point1": "主题：选择浅色或深色调色板之一，应用会随之变化。",
+                "point2": "语音：选择由哪个已安装语音朗读字符，并配有预览按钮。",
+                "point3": "界面：切换界面语言，并隐藏导航栏以获得无干扰视图。"
+            },
+            "account": {
+                "title": "账户和社区",
+                "hint": "账户功能所在的位置。",
+                "point1": "登录或创建账户以访问你的个人资料和设置。",
+                "point2": "你的公开资料可通过名称标签访问，因此可以分享。",
+                "point3": "云同步和社区卡组即将推出。"
+            }
+        },
+        "action": {
+            "open": "打开",
+            "comingSoon": "即将推出"
         }
-    },
-    "common": {
-        "loading": "Loading…",
-        "error": {
-            "oops": "哎呀！",
-            "unexpected": "发生了意外错误。",
-            "notFound": "请求的页面未找到。"
-        },
-        "tabs": {
-            "local": "本地",
-            "official": "官方",
-            "cloud": "云端",
-            "community": "社区"
-        },
-        "comingSoon": {
-            "cloud": "云同步即将推出，需登录",
-            "community": "浏览社区词集的功能尚不可用"
-        },
-        "select": "选择"
-    },
-    "notfound": {
-        "title": "页面未找到",
-        "description": "您要找的页面不存在或已被移动。",
-        "back_home": "返回首页",
-        "error_code": "404"
     },
     "study": {
         "title": "学习",
         "subtitle": "选择一种语言，再选择练习方式。",
+        "basic": {
+            "title": "基础"
+        },
         "characters": {
             "title": "字符",
             "description": "浏览某种语言的字符表，并聆听每个字符的发音。",
@@ -236,8 +344,7 @@
         },
         "tag": {
             "ready": "就绪",
-            "current": "当前",
-            "comingSoon": "即将推出"
+            "current": "当前"
         },
         "action": {
             "start": "开始"
@@ -288,16 +395,10 @@
             }
         }
     },
-    "characters": {
-        "backHub": "返回中心",
-        "comingSoon": "{{language}}字符表即将推出。",
-        "unknown": "此语言"
-    },
     "languageSelect": {
         "back_home": "返回首页",
         "status": {
-            "available": "可用",
-            "comingSoon": "即将推出"
+            "available": "可用"
         },
         "cta": {
             "start": "开始学习"
@@ -454,11 +555,13 @@
         "viewAuthor": "查看 {{author}} 的主页",
         "edit": {
             "listTitle": "卡组",
+            "title": "卡组管理器",
+            "back": "返回",
+            "openMenu": "打开菜单",
             "panelTitle": "编辑器",
-            "layoutTitle": "布局",
+            "settingTitle": "设置",
             "spacedLabel": "面板间距",
             "spacedHint": "在停靠面板之间留出间隙。",
-            "statusTitle": "状态",
             "previewTitle": "预览",
             "inspectorTitle": "检查器",
             "loading": "正在加载你的卡组…",
@@ -475,7 +578,6 @@
             "save": "保存更改",
             "delete": "删除卡组",
             "dragHandle": "拖动以重新排序",
-            "mobileHint": "在下方重新排序和编辑卡组。在更宽的屏幕上打开以使用卡组管理器。",
             "filters": "按类型筛选卡组",
             "filterAll": "所有卡组",
             "typeLabel": "类型",
@@ -484,6 +586,17 @@
             "statusDecks": "{{visible}} / {{total}} 个卡组",
             "noneSelected": "未选择卡组",
             "addPanel": "添加面板",
+            "emptyPanel": "空面板",
+            "resetLayout": "重置布局",
+            "emptyLayoutTitle": "没有打开的面板",
+            "emptyLayoutHint": "重置布局以恢复默认面板。",
+            "pinTab": "固定标签页",
+            "unpinTab": "取消固定标签页",
+            "closeTab": "关闭",
+            "closeOthers": "关闭其他",
+            "closeAll": "全部关闭",
+            "closeLeft": "关闭左侧",
+            "closeRight": "关闭右侧",
             "views": "编辑器视图",
             "viewAll": "全部卡组",
             "viewFavourites": "收藏",
@@ -549,17 +662,117 @@
         "resetSuccess": "Password updated. Please sign in.",
         "sendResetCode": "发送重置码"
     },
+    "characters": {
+        "backHub": "返回中心",
+        "readProgress": "{{read}} / {{total}}",
+        "readStart": "开始朗读",
+        "readContinue": "继续朗读",
+        "readStop": "停止",
+        "nowReading": "正在朗读",
+        "upNext": "下一个",
+        "pinToolbar": "固定工具栏",
+        "unpinToolbar": "取消固定",
+        "sticky": "固定",
+        "stickyOn": "开",
+        "stickyOff": "关",
+        "stats": {
+            "set": "套内",
+            "group": "组内",
+            "read": "已读"
+        },
+        "voice": {
+            "female": "女声",
+            "male": "男声"
+        },
+        "notFound": {
+            "badge": "未找到",
+            "title": "未找到语言",
+            "body": "此地址背后没有学习语言。请返回学习中心并从列表中选择一种。"
+        },
+        "soon": {
+            "badge": "即将推出",
+            "title": "{{language}}{{feature}}",
+            "body": "{{language}}{{feature}}仍在开发中。在此期间，{{language}}的词汇、阅读、考试和复习已经可用。",
+            "deckOnly": "另一种语言只有卡组 — 没有字符表或练习。词汇、阅读、考试和复习已可学习。",
+            "features": {
+                "characters": "字符表",
+                "drill": "字符练习"
+            },
+            "ctaChart": "查看日语字符表",
+            "ctaDrill": "试试日语练习"
+        }
+    },
+    "english": {
+        "badge": "英语",
+        "title": "学习英语",
+        "description": "英语是一门新课程。下面这些卡组功能已经可用，字符集和练习仍在开发中。",
+        "character": {
+            "badge": "字母表",
+            "title": "英语字母表",
+            "description": "二十六个字母，包含大写和小写。点击字母即可听发音，或朗读一个分组。",
+            "tabs": {
+                "uppercase": "大写",
+                "lowercase": "小写",
+                "vowels": "元音",
+                "consonants": "辅音"
+            },
+            "gridHint": "点击字母即可听发音，或按开始朗读从上次停下的地方浏览该分组。"
+        },
+        "nav": {
+            "render": {
+                "title": "阅读",
+                "description": "读短文并对照译文检查自己。",
+                "action": "开始阅读"
+            },
+            "review": {
+                "title": "词汇复习",
+                "description": "用单词卡和间隔重复复习词汇。",
+                "action": "开始复习"
+            },
+            "exam": {
+                "title": "词汇测验",
+                "description": "用自己词汇生成的单选题测试自己。",
+                "action": "参加测验"
+            },
+            "vocab": {
+                "title": "浏览词汇",
+                "description": "浏览卡组中的单词，含读音、释义和例句。",
+                "action": "查看单词"
+            },
+            "edit": {
+                "title": "编辑卡组",
+                "description": "重命名、重新排序或移除你收藏中的卡组。",
+                "action": "编辑卡组"
+            }
+        },
+        "edit": {
+            "title": "编辑卡组",
+            "description": "管理你收藏中的卡组。编辑器即将推出。",
+            "back": "返回英语"
+        },
+        "vocab": {
+            "title": "词汇"
+        },
+        "render": {
+            "title": "阅读"
+        },
+        "review": {
+            "title": "词汇复习"
+        },
+        "exam": {
+            "title": "考试"
+        },
+        "sections": {
+            "learn": "学习",
+            "practice": "练习",
+            "manage": "管理"
+        }
+    },
     "japanese": {
         "badge": "日语",
         "title": "学习日语",
         "description": "通过假名、词汇和测验掌握日语基础。",
         "back_language": "返回语言选择",
-        "stats": {
-            "kana": "假名字符",
-            "vocabulary": "词汇单词",
-            "learned": "已学单词",
-            "due": "待复习"
-        },
         "sections": {
             "kana": "假名",
             "kanaHint": "学习日语的两种音节文字 — 浏览全部字符并练习识别。",
@@ -690,6 +903,19 @@
                 "submit": "创建卡组"
             }
         },
+        "character": {
+            "badge": "假名",
+            "title": "日语假名",
+            "description": "平假名和片假名是日语的两种音节文字。点击选项卡进行切换。",
+            "tabs": {
+                "hiragana": "平假名",
+                "katakana": "片假名",
+                "voiceless": "清音",
+                "voiced": "浊音",
+                "contracted": "拗音"
+            },
+            "upNext": "下一个"
+        },
         "kana": {
             "badge": "假名",
             "title": "日语假名",
@@ -698,23 +924,8 @@
                 "hiragana": "平假名",
                 "katakana": "片假名"
             },
-            "voiceless": "清音",
-            "voiced": "浊音",
-            "contracted": "拗音",
-            "voice_label": "语音",
-            "voice_preview": "试听",
-            "voice_auto": "自动",
-            "voice_choose": "选择语音",
-            "voice_ja": "日语",
-            "voice_volume": "音量",
             "take_quiz": "开始测验",
             "count": "个假名",
-            "stats": {
-                "set": "当前表",
-                "group": "当前组",
-                "read": "已读"
-            },
-            "readProgress": "{{read}} / {{total}}",
             "gridHint": "点按假名即可发音，或按「开始朗读」从上次位置逐字朗读。",
             "readStart": "开始朗读",
             "readContinue": "继续朗读",
@@ -858,58 +1069,33 @@
             "title": "Vocabulary Review"
         }
     },
-    "english": {
-        "badge": "英语",
-        "title": "学习英语",
-        "description": "英语是一门新课程。下面这些卡组功能已经可用，字符集和练习仍在开发中。",
-        "nav": {
-            "render": {
-                "title": "阅读",
-                "description": "读短文并对照译文检查自己。",
-                "action": "开始阅读"
+    "thai": {
+        "badge": "泰语",
+        "title": "学习泰语",
+        "description": "通过文字、词汇和测验掌握泰语基础。",
+        "character": {
+            "badge": "泰文",
+            "title": "泰语字符",
+            "description": "按传统顺序从 ก 到 ฮ 的所有辅音、常用元音和声调符号。点击字符即可听发音，或朗读一组。",
+            "gridHint": "点击字符即可听发音，或按开始朗读从上次停下的地方浏览该组。",
+            "tabs": {
+                "consonants": "辅音",
+                "vowels": "元音",
+                "tones": "声调",
+                "headed": "有环",
+                "headless": "无环"
             },
-            "review": {
-                "title": "词汇复习",
-                "description": "用单词卡和间隔重复复习词汇。",
-                "action": "开始复习"
+            "voice": {
+                "female": "女声",
+                "male": "男声"
             },
-            "exam": {
-                "title": "词汇测验",
-                "description": "用自己词汇生成的单选题测试自己。",
-                "action": "参加测验"
+            "voiceUnavailable": "Google TTS 语音目前不可用。",
+            "stats": {
+                "set": "套",
+                "group": "组内",
+                "read": "已读"
             },
-            "vocab": {
-                "title": "浏览词汇",
-                "description": "浏览卡组中的单词，含读音、释义和例句。",
-                "action": "查看单词"
-            },
-            "edit": {
-                "title": "编辑卡组",
-                "description": "重命名、重新排序或移除你收藏中的卡组。",
-                "action": "编辑卡组"
-            }
-        },
-        "edit": {
-            "title": "编辑卡组",
-            "description": "管理你收藏中的卡组。编辑器即将推出。",
-            "back": "返回英语"
-        },
-        "vocab": {
-            "title": "词汇"
-        },
-        "render": {
-            "title": "阅读"
-        },
-        "review": {
-            "title": "词汇复习"
-        },
-        "exam": {
-            "title": "考试"
-        },
-        "sections": {
-            "learn": "学习",
-            "practice": "练习",
-            "manage": "管理"
+            "readProgress": "已读 {{read}} / {{total}}"
         }
     },
     "settings": {

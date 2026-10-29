@@ -47,7 +47,7 @@ export interface DeckListQueryControls {
     push: (update: QueryUpdate) => void;
     /** A refinement happening too fast to be worth a history entry. */
     replace: (update: QueryUpdate) => void;
-    setTab: (tab: DeckSource) => void;
+    setSource: (tab: DeckSource) => void;
     setSearch: (search: string) => void;
     setSort: (sort: DeckSort) => void;
     setDensity: (density: DeckDensity) => void;
@@ -122,7 +122,7 @@ export function useDeckListQuery(): DeckListQueryControls {
     const push = useCallback((update: QueryUpdate) => commit(update, 'push'), [commit]);
     const replace = useCallback((update: QueryUpdate) => commit(update, 'replace'), [commit]);
 
-    const setTab = useCallback((tab: DeckSource) => push({ tab }), [push]);
+    const setSource = useCallback((source: DeckSource) => push({ source }), [push]);
     const setSearch = useCallback((search: string) => replace({ search }), [replace]);
     const toggleTag = useCallback(
         (tag: string) => push((current) => ({ tags: toggleQueryTag(current.tags, tag) })),
@@ -162,7 +162,7 @@ export function useDeckListQuery(): DeckListQueryControls {
         });
         const next = new URLSearchParams(latestParams.current);
         for (const key of Object.values(DECK_LIST_PARAMS)) next.delete(key);
-        next.set(DECK_LIST_PARAMS.tab, DEFAULT_DECK_LIST_QUERY.tab);
+        next.set(DECK_LIST_PARAMS.source, DEFAULT_DECK_LIST_QUERY.source);
         latestParams.current = next;
         setSearchParams(next, { replace: true, preventScrollReset: true });
     }, [save, setSearchParams]);
@@ -171,7 +171,7 @@ export function useDeckListQuery(): DeckListQueryControls {
         query,
         push,
         replace,
-        setTab,
+        setSource,
         setSearch,
         setSort,
         setDensity,
@@ -179,6 +179,6 @@ export function useDeckListQuery(): DeckListQueryControls {
         toggleTag,
         reset,
         isDefault:
-            isDeckListQueryDefault(query, defaults) && query.tab === DEFAULT_DECK_LIST_QUERY.tab,
+            isDeckListQueryDefault(query, defaults) && query.source === DEFAULT_DECK_LIST_QUERY.source,
     };
 }

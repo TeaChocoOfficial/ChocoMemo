@@ -1,6 +1,5 @@
 // -Path: 'client/app/components/page/EditPage.tsx'
 import EditWorkspace from './dockview/EditWorkspace';
-import { useTargetLang } from '~/hooks/base/useTargetLang';
 
 /**
  * Full-screen host for the deck manager: the workspace fills the whole viewport
@@ -10,11 +9,9 @@ import { useTargetLang } from '~/hooks/base/useTargetLang';
  * offset against.
  */
 export default function EditPage() {
-    const targetLang = useTargetLang();
-
     return (
         <div className='h-dvh w-full overflow-hidden'>
-            <EditWorkspace language={targetLang} />
+            <EditWorkspace />
         </div>
     );
 }

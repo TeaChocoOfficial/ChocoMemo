@@ -1,18 +1,12 @@
 // -Path: 'client/app/components/edit/EditWorkspace.tsx'
 import Dockviews from './Dockviews';
 import { useEffect, useState } from 'react';
-import { Languages } from '~/data/language';
 import ActivityDrawer from './ActivityDrawer';
 import StatusPanel from '../panel/StatusPanel';
 import DeckTitleBar from '../content/DeckTitleBar';
 import { useMediaQuery } from '~/hooks/editor/useMediaQuery';
 import DeckEditorSkeleton from '../components/DeckEditorSkeleton';
 import { useDeckStoreHydrated } from '../../../hooks/editor/useDeckStoreHydrated';
-
-/** Props for {@link EditWorkspace}. */
-interface EditWorkspaceProps {
-    language: Languages;
-}
 
 /**
  * The deck manager, laid out like a VS Code window: a title bar, the dockview
@@ -29,7 +23,7 @@ interface EditWorkspaceProps {
  *
  * @param props - The track whose decks are managed.
  */
-export default function EditWorkspace({ language }: EditWorkspaceProps) {
+export default function EditWorkspace() {
     const isDesktop = useMediaQuery('(min-width: 768px)');
     const hydrated = useDeckStoreHydrated();
     const [menuOpen, setMenuOpen] = useState(false);
@@ -43,10 +37,7 @@ export default function EditWorkspace({ language }: EditWorkspaceProps) {
 
     return (
         <div className='flex h-full flex-col'>
-            <DeckTitleBar
-                language={language}
-                onMenuClick={isDesktop ? undefined : () => setMenuOpen(true)}
-            />
+            <DeckTitleBar onMenuClick={isDesktop ? undefined : () => setMenuOpen(true)} />
             <div className='relative min-h-0 flex-1'>
                 <Dockviews variant={isDesktop ? 'desktop' : 'mobile'} />
                 <ActivityDrawer open={menuOpen} onClose={() => setMenuOpen(false)} />

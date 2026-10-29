@@ -24,7 +24,7 @@ export const DECK_FILTERS: readonly DeckFilter[] = ['all', 'vocab', 'render', 'r
 
 /** Query-string keys, named once so parsing and writing cannot drift. */
 export const DECK_LIST_PARAMS = {
-    tab: 'tab',
+    source: 'source',
     search: 'q',
     sort: 'sort',
     density: 'density',
@@ -34,7 +34,7 @@ export const DECK_LIST_PARAMS = {
 
 /** Tab order. What the viewer made, then what the app ships, then the two
  *  sources still waiting on a server — the same order the tally used to list. */
-export const DECK_SOURCE_TABS: readonly DeckSource[] = ['local', 'official', 'cloud', 'community'];
+export const DECK_SOURCE_SOURCES: readonly DeckSource[] = ['local', 'official', 'cloud', 'community'];
 
 export const DECK_SORTS: readonly DeckSort[] = ['default', 'name', 'recent', 'popular', 'size'];
 
@@ -75,7 +75,7 @@ export function parseDeckListQuery(
     // hand-edited `?nsfw=foo` still hides flagged decks rather than exposing
     // them.
     return {
-        tab: pick(params.get(DECK_LIST_PARAMS.tab), DECK_SOURCE_TABS, defaults.tab),
+        source: pick(params.get(DECK_LIST_PARAMS.source), DECK_SOURCE_SOURCES, defaults.source),
         search: params.get(DECK_LIST_PARAMS.search)?.trim() ?? defaults.search,
         sort: pick(params.get(DECK_LIST_PARAMS.sort), DECK_SORTS, defaults.sort),
         density: pick(params.get(DECK_LIST_PARAMS.density), DECK_DENSITIES, defaults.density),
@@ -97,7 +97,7 @@ export function deckListQueryToParams(
 
     // The tab is always explicit: a shared link should say which source it
     // opens, and the viewer should see the tab they picked in the URL.
-    params.set(DECK_LIST_PARAMS.tab, query.tab);
+    params.set(DECK_LIST_PARAMS.source, query.source);
     set(DECK_LIST_PARAMS.search, query.search.trim());
     set(DECK_LIST_PARAMS.sort, query.sort === defaults.sort ? '' : query.sort);
     set(DECK_LIST_PARAMS.density, query.density === defaults.density ? '' : query.density);

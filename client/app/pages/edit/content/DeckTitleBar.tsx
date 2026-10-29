@@ -11,7 +11,6 @@ const SETTING_PANEL_ID = 'setting';
 
 /** Props for {@link DeckTitleBar}. */
 interface DeckTitleBarProps {
-    language: Languages;
     onMenuClick?: () => void;
 }
 
@@ -24,7 +23,7 @@ interface DeckTitleBarProps {
  * @param props - The target language whose decks are being edited, and an
  *                optional callback to open the mobile menu.
  */
-export default function DeckTitleBar({ language, onMenuClick }: DeckTitleBarProps) {
+export default function DeckTitleBar({ onMenuClick }: DeckTitleBarProps) {
     const { t } = useTranslation();
     const navigate = useNavigate();
     const openPanel = useOpenPanel({ direction: 'within' });
@@ -67,9 +66,6 @@ export default function DeckTitleBar({ language, onMenuClick }: DeckTitleBarProp
             </div>
 
             <div className='flex gap-2'>
-                <span className='shrink-0 rounded-sm bg-primary-subtle px-2 py-0.5 text-[11px] font-medium text-primary'>
-                    {t(`language.${language}`)}
-                </span>
                 <button
                     type='button'
                     onClick={openSetting}

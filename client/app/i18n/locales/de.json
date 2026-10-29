@@ -3,6 +3,7 @@
         "home": "Startseite",
         "study": "Lernen",
         "edit": "Bearbeiten",
+        "guide": "Anleitung",
         "languages": "Sprachen",
         "menu": "Menü öffnen",
         "settings": "Einstellungen",
@@ -22,6 +23,58 @@
         "hide": "Ausblenden",
         "show": "Anzeigen",
         "toggleLabel": "Oberfläche anzeigen"
+    },
+    "theme": {
+        "pickerLabel": "Thema wechseln",
+        "names": {
+            "lightChoco": "Helle Schoko",
+            "darkChoco": "Dunkle Schoko",
+            "darkGalaxy": "Dunkle Galaxie",
+            "lightGalaxy": "Helle Galaxie",
+            "darkSakura": "Dunkle Sakura",
+            "lightSakura": "Helle Sakura",
+            "darkPaper": "Dunkles Papier",
+            "lightPaper": "Helles Papier",
+            "darkNature": "Dunkle Natur",
+            "lightNature": "Helle Natur",
+            "darkAutumn": "Dunkler Herbst",
+            "lightAutumn": "Heller Herbst",
+            "darkWinter": "Dunkler Winter",
+            "lightWinter": "Heller Winter"
+        }
+    },
+    "common": {
+        "loading": "Loading…",
+        "error": {
+            "oops": "Hoppla!",
+            "unexpected": "Ein unerwarteter Fehler ist aufgetreten.",
+            "notFound": "Die angeforderte Seite konnte nicht gefunden werden."
+        },
+        "tabs": {
+            "local": "Lokal",
+            "official": "Offiziell",
+            "cloud": "Cloud",
+            "community": "Community"
+        },
+        "comingSoon": {
+            "cloud": "Cloud-Sync kommt bald, Anmeldung erforderlich",
+            "community": "Community-Sets durchstöbern ist noch nicht verfügbar"
+        },
+        "select": "Auswählen",
+        "voice_label": "Stimme",
+        "voice_preview": "Vorschau",
+        "voice_auto": "Auto",
+        "voice_choose": "Stimme wählen",
+        "voice_missing": "Auf diesem Gerät ist keine Stimme für {{lang}} installiert — die Sprachausgabe verwendet die Systemvorgabe.",
+        "tts_voice_choose": "Stimme wählen",
+        "tts_voice_preview": "Vorschau",
+        "tts_voice_unavailable": "Google-TTS-Stimmen sind derzeit nicht verfügbar."
+    },
+    "notfound": {
+        "title": "Seite Nicht Gefunden",
+        "description": "Die gesuchte Seite existiert nicht oder wurde verschoben.",
+        "back_home": "Zurück zur Startseite",
+        "error_code": "404"
     },
     "home": {
         "badge": "ChocoMemo · Sprachbibliothek der Community",
@@ -103,7 +156,8 @@
             "step4": {
                 "title": "Veröffentliche deins",
                 "hint": "Füge die Wörter hinzu, die du vergisst, und teil sie mit dem Regal."
-            }
+            },
+            "guideLink": "Die vollständige Anleitung lesen"
         },
         "cta": {
             "title": "Fang beim ersten Zeichen an.",
@@ -112,53 +166,107 @@
             "secondary": "Deck veröffentlichen"
         }
     },
-    "theme": {
-        "pickerLabel": "Thema wechseln",
-        "names": {
-            "lightChoco": "Helle Schoko",
-            "darkChoco": "Dunkle Schoko",
-            "darkGalaxy": "Dunkle Galaxie",
-            "lightGalaxy": "Helle Galaxie",
-            "darkSakura": "Dunkle Sakura",
-            "lightSakura": "Helle Sakura",
-            "darkPaper": "Dunkles Papier",
-            "lightPaper": "Helles Papier",
-            "darkNature": "Dunkle Natur",
-            "lightNature": "Helle Natur",
-            "darkAutumn": "Dunkler Herbst",
-            "lightAutumn": "Heller Herbst",
-            "darkWinter": "Dunkler Winter",
-            "lightWinter": "Heller Winter"
+    "guide": {
+        "badge": "Anleitung",
+        "tag": "Benutzerhandbuch",
+        "title": "So verwendest du ChocoMemo",
+        "subtitle": "Ein kurzer Rundgang durch die App: was jeder Bereich tut und in welcher Reihenfolge eine erste Sitzung gelingt.",
+        "quickStart": {
+            "title": "Vier Schritte, eine Sitzung",
+            "hint": "Lies eine Tafel, übe sie und wiederhole dann das Gelernte. Alles andere in ChocoMemo ist eine Variante dieser drei Schritte."
+        },
+        "steps": {
+            "step1": {
+                "title": "Sprache wählen",
+                "hint": "Die Startseite listet alle Zielsprachen. Wählst du eine aus, öffnen sich ihre Vokabelstapel, und die Auswahl wird auf diesem Gerät gespeichert."
+            },
+            "step2": {
+                "title": "Die Tafel lesen",
+                "hint": "Durchstöbere die Zeichentafel der Schrift, die du lernst, und tippe auf ein Zeichen, um es laut zu hören."
+            },
+            "step3": {
+                "title": "Üben",
+                "hint": "Eine zeitlich begrenzte Multiple-Choice-Runde über die gewählten Zeichen. Stelle Timer, Fragenzahl und Gruppen passend zu deinem Niveau ein."
+            },
+            "step4": {
+                "title": "Die Wörter wiederholen",
+                "hint": "Karteikarten bringen die gelernten Vokabeln nach einem Zeitplan zurück, damit nichts verloren geht."
+            }
+        },
+        "sections": {
+            "title": "Was die einzelnen Bereiche tun",
+            "hint": "Eine Karte pro Bereich der App. Jede Karte führt direkt zu der Seite, die sie beschreibt.",
+            "landing": {
+                "title": "Startseite",
+                "hint": "Die Eingangstür: was die App ist und welche Sprachen sie lehrt.",
+                "point1": "Jede Zielsprache steht als Zeile über die volle Breite — wähle eine zum Starten.",
+                "point2": "Die gewählte Sprache wird auf dem Gerät gespeichert und zum aktiven Ziel.",
+                "point3": "Keine Registrierungshürde: Tafeln und Stapel sind offen, bevor du ein Konto erstellst."
+            },
+            "hub": {
+                "title": "Lernzentrale",
+                "hint": "Die Übersicht, auf der du nach der Sprachwahl landest.",
+                "point1": "Zeichen — eine Kachel pro Schrift, dominiert vom Zeichen selbst.",
+                "point2": "Übung — eine Liste von Zeichenübungen, eine Zeile pro Eintrag.",
+                "point3": "Stapel — Lernen (Vokabeln, Lesen), Üben (Wiederholung, Test) und eine Verwalten-Zeile zum Bearbeiten."
+            },
+            "charts": {
+                "title": "Zeichentafeln",
+                "hint": "Die Referenzansicht einer Schrift, mit Ton für jedes Zeichen.",
+                "point1": "Kana (Japanisch), das lateinische Alphabet (Englisch) und Thai sind heute umgesetzt.",
+                "point2": "Jede Tafel ist gruppiert — stimmlos, stimmhaft und kontrahiert bei Kana; Vokale und Konsonanten beim Alphabet.",
+                "point3": "Tippe auf ein Zeichen, um es zu hören. Die Stimme folgt der Zielsprache, nicht der Oberflächensprache.",
+                "point4": "Eine Lesereihenfolge führt dich durch die Tafel und merkt sich, wie weit du gekommen bist."
+            },
+            "drill": {
+                "title": "Zeichenübung",
+                "hint": "Die schnelle Multiple-Choice-Runde, die Erkennen in Erinnern verwandelt.",
+                "point1": "Schalte die Zeichengruppen und die Fragenzahl um, von allen bis zu einer Handvoll.",
+                "point2": "Ein Timer pro Frage mit Fortschrittsbalken und optionalem automatischem Weitergehen.",
+                "point3": "Live-Zähler für Richtig / Falsch / Zeitüberschreitung während des Spiels.",
+                "point4": "Am Ende: ein Punkterang, eine Auswertung jeder Antwort und eine Wiederholen-Schaltfläche."
+            },
+            "decks": {
+                "title": "Vokabeln, Lesen, Wiederholung und Test",
+                "hint": "Vier Funktionen auf einer gemeinsamen Stapelliste — sie unterscheiden sich nur darin, was beim Öffnen eines Stapels passiert.",
+                "point1": "Vokabelstapel enthalten die Wörter; Lesestapel enthalten den Lesestoff.",
+                "point2": "Wiederholung macht aus einem Stapel Karteikarten nach einem verteilten Zeitplan.",
+                "point3": "Test macht aus einem Stapel einen Multiple-Choice-Test.",
+                "point4": "Die Symbolleiste filtert nach Zielsprache, und Sortierung, Dichte und Quelle werden auf dem Gerät gespeichert."
+            },
+            "edit": {
+                "title": "Stapel bearbeiten",
+                "hint": "Ein Editor für jeden Stapeltyp, in einem bildschirmfüllenden Arbeitsbereich mit andockbaren Panels.",
+                "point1": "Panels für Stapelliste, Editor, Vorschau, Inspektor und Einstellungen.",
+                "point2": "Ordne sie selbst an: ziehen, Größe ändern, einen Tab anheften oder das Layout zurücksetzen.",
+                "point3": "Auf dem Handy werden dieselben Panels zu einer Tab-Leiste mit ausfahrbarem Menü."
+            },
+            "voice": {
+                "title": "Stimme und Aussehen",
+                "hint": "Die Einstellungen, die bestimmen, wie die App klingt und aussieht.",
+                "point1": "Designs: Wähle eine der hellen und dunklen Paletten, und die App folgt.",
+                "point2": "Stimme: Wähle, welche installierte Stimme die Zeichen spricht, mit einer Vorschau-Schaltfläche.",
+                "point3": "Oberfläche: Wechsle die Oberflächensprache und blende die Navigationsleiste für eine ablenkungsfreie Ansicht aus."
+            },
+            "account": {
+                "title": "Konto und Community",
+                "hint": "Hier leben die Konto-Funktionen.",
+                "point1": "Melde dich an oder erstelle ein Konto, um zu deinem Profil und den Einstellungen zu gelangen.",
+                "point2": "Dein öffentliches Profil ist über den Namenstag adressierbar und kann geteilt werden.",
+                "point3": "Cloud-Synchronisierung und Community-Stapel sind auf dem Weg."
+            }
+        },
+        "action": {
+            "open": "Öffnen",
+            "comingSoon": "Bald verfügbar"
         }
-    },
-    "common": {
-        "loading": "Loading…",
-        "error": {
-            "oops": "Hoppla!",
-            "unexpected": "Ein unerwarteter Fehler ist aufgetreten.",
-            "notFound": "Die angeforderte Seite konnte nicht gefunden werden."
-        },
-        "tabs": {
-            "local": "Lokal",
-            "official": "Offiziell",
-            "cloud": "Cloud",
-            "community": "Community"
-        },
-        "comingSoon": {
-            "cloud": "Cloud-Sync kommt bald, Anmeldung erforderlich",
-            "community": "Community-Sets durchstöbern ist noch nicht verfügbar"
-        },
-        "select": "Auswählen"
-    },
-    "notfound": {
-        "title": "Seite Nicht Gefunden",
-        "description": "Die gesuchte Seite existiert nicht oder wurde verschoben.",
-        "back_home": "Zurück zur Startseite",
-        "error_code": "404"
     },
     "study": {
         "title": "Lernen",
         "subtitle": "Wähle eine Sprache und dann eine Art zu üben.",
+        "basic": {
+            "title": "Grundlagen"
+        },
         "characters": {
             "title": "Zeichen",
             "description": "Durchstöbere die Zeichentabelle einer Sprache und höre dir jedes Zeichen an.",
@@ -236,8 +344,7 @@
         },
         "tag": {
             "ready": "Bereit",
-            "current": "Aktuell",
-            "comingSoon": "Bald Verfügbar"
+            "current": "Aktuell"
         },
         "action": {
             "start": "Starten"
@@ -288,16 +395,10 @@
             }
         }
     },
-    "characters": {
-        "backHub": "Zurück zum Hub",
-        "comingSoon": "Die Zeichentabelle für {{language}} ist bald verfügbar.",
-        "unknown": "Diese Sprache"
-    },
     "languageSelect": {
         "back_home": "Zurück zur Startseite",
         "status": {
-            "available": "Verfügbar",
-            "comingSoon": "Bald Verfügbar"
+            "available": "Verfügbar"
         },
         "cta": {
             "start": "Jetzt Lernen"
@@ -454,11 +555,13 @@
         "viewAuthor": "Profil von {{author}} ansehen",
         "edit": {
             "listTitle": "Stapel",
+            "title": "Stapelverwaltung",
+            "back": "Zurück",
+            "openMenu": "Menü öffnen",
             "panelTitle": "Editor",
-            "layoutTitle": "Layout",
+            "settingTitle": "Einstellungen",
             "spacedLabel": "Abgesetzte Panels",
             "spacedHint": "Lass eine Lücke zwischen den angedockten Panels.",
-            "statusTitle": "Status",
             "previewTitle": "Vorschau",
             "inspectorTitle": "Inspektor",
             "loading": "Deine Stapel werden geladen…",
@@ -475,7 +578,6 @@
             "save": "Änderungen speichern",
             "delete": "Stapel löschen",
             "dragHandle": "Zum Umsortieren ziehen",
-            "mobileHint": "Sortiere und bearbeite die Stapel unten. Öffne einen breiteren Bildschirm, um den Stapel-Manager zu verwenden.",
             "filters": "Stapel nach Typ filtern",
             "filterAll": "Alle Stapel",
             "typeLabel": "Typ",
@@ -484,6 +586,17 @@
             "statusDecks": "{{visible}} / {{total}} Stapel",
             "noneSelected": "Kein Stapel ausgewählt",
             "addPanel": "Panel hinzufügen",
+            "emptyPanel": "Leeres Panel",
+            "resetLayout": "Layout zurücksetzen",
+            "emptyLayoutTitle": "Keine Panels geöffnet",
+            "emptyLayoutHint": "Setze das Layout zurück, um die Standard-Panels wiederherzustellen.",
+            "pinTab": "Tab anheften",
+            "unpinTab": "Tab lösen",
+            "closeTab": "Schließen",
+            "closeOthers": "Andere schließen",
+            "closeAll": "Alle schließen",
+            "closeLeft": "Links schließen",
+            "closeRight": "Rechts schließen",
             "views": "Editor-Ansichten",
             "viewAll": "Alle Stapel",
             "viewFavourites": "Favoriten",
@@ -549,17 +662,117 @@
         "resetSuccess": "Password updated. Please sign in.",
         "sendResetCode": "Reset-Code senden"
     },
+    "characters": {
+        "backHub": "Zurück zum Hub",
+        "readProgress": "{{read}} / {{total}}",
+        "readStart": "Lesen starten",
+        "readContinue": "Lesen fortsetzen",
+        "readStop": "Stopp",
+        "nowReading": "liest gerade",
+        "upNext": "als Nächstes",
+        "pinToolbar": "Symbolleiste anheften",
+        "unpinToolbar": "Symbolleiste lösen",
+        "sticky": "Fixiert",
+        "stickyOn": "An",
+        "stickyOff": "Aus",
+        "stats": {
+            "set": "Im Set",
+            "group": "In der Gruppe",
+            "read": "Gelesen"
+        },
+        "voice": {
+            "female": "Weiblich",
+            "male": "Männlich"
+        },
+        "notFound": {
+            "badge": "Nicht gefunden",
+            "title": "Sprache nicht gefunden",
+            "body": "Hinter dieser Adresse steht keine Lernsprache. Geh zurück zur Lernzentrale und wähle eine aus der Liste."
+        },
+        "soon": {
+            "badge": "Bald verfügbar",
+            "title": "{{feature}} für {{language}}",
+            "body": "Die {{feature}} für {{language}} wird noch gebaut. Vokabeln, Lesen, Test und Wiederholung für {{language}} sind in der Zwischenzeit bereit.",
+            "deckOnly": "Eine andere Sprache ist nur als Stapel verfügbar — es gibt keine Zeichentafel und keine Übung. Vokabeln, Lesen, Test und Wiederholung stehen zum Lernen bereit.",
+            "features": {
+                "characters": "Zeichentafel",
+                "drill": "Zeichenübung"
+            },
+            "ctaChart": "Die japanische Tafel ansehen",
+            "ctaDrill": "Die japanische Übung ausprobieren"
+        }
+    },
+    "english": {
+        "badge": "Englisch",
+        "title": "Englisch lernen",
+        "description": "Englisch ist ein neuer Track. Die Stapel-Funktionen unten funktionieren bereits; Zeichensatz und Drill entstehen noch.",
+        "character": {
+            "badge": "Alphabet",
+            "title": "Englisches Alphabet",
+            "description": "Sechsundzwanzig Buchstaben in Groß- und Kleinschreibung. Tippe auf einen Buchstaben, um ihn zu hören, oder geh eine Gruppe laut durch.",
+            "tabs": {
+                "uppercase": "Großbuchstaben",
+                "lowercase": "Kleinbuchstaben",
+                "vowels": "Vokale",
+                "consonants": "Konsonanten"
+            },
+            "gridHint": "Tippe auf einen Buchstaben, um ihn zu hören, oder drücke Lesen starten, um die Gruppe von deinem letzten Stand aus durchzugehen."
+        },
+        "nav": {
+            "render": {
+                "title": "Leseverstehen",
+                "description": "Lies kurze Texte und prüfe sie an der Übersetzung.",
+                "action": "Zum Lesen starten"
+            },
+            "review": {
+                "title": "Wortschatz-Wiederholung",
+                "description": "Wiederhole Wortschatz mit Karteikarten und verteilten Wiederholungen.",
+                "action": "Wiederholung starten"
+            },
+            "exam": {
+                "title": "Wortschatz-Prüfung",
+                "description": "Prüfe dich mit einer Multiple-Choice-Prüfung aus deinem Wortschatz.",
+                "action": "Prüfung ablegen"
+            },
+            "vocab": {
+                "title": "Wortschatz durchsehen",
+                "description": "Sieh dir die Wörter eines Stapels mit Aussprache, Bedeutung und Beispielsätzen an.",
+                "action": "Wörter ansehen"
+            },
+            "edit": {
+                "title": "Stapel bearbeiten",
+                "description": "Benenne die Stapel in deiner Sammlung um, sortiere sie neu oder entferne sie.",
+                "action": "Stapel bearbeiten"
+            }
+        },
+        "edit": {
+            "title": "Stapel bearbeiten",
+            "description": "Verwalte die Stapel in deiner Sammlung. Der Editor kommt bald.",
+            "back": "Zurück zu Englisch"
+        },
+        "vocab": {
+            "title": "Wortschatz"
+        },
+        "render": {
+            "title": "Leseverstehen"
+        },
+        "review": {
+            "title": "Wortschatz-Wiederholung"
+        },
+        "exam": {
+            "title": "Prüfung"
+        },
+        "sections": {
+            "learn": "Lernen",
+            "practice": "Üben",
+            "manage": "Verwalten"
+        }
+    },
     "japanese": {
         "badge": "Japanisch",
         "title": "Japanisch lernen",
         "description": "Meistere die Grundlagen des Japanischen mit Kana, Wortschatz und Quizzen.",
         "back_language": "Zurück zur Sprachauswahl",
-        "stats": {
-            "kana": "Kana-Zeichen",
-            "vocabulary": "Vokabeln",
-            "learned": "Gelernte Wörter",
-            "due": "Zur Wiederholung fällig"
-        },
         "sections": {
             "kana": "Kana",
             "kanaHint": "Lerne die beiden japanischen Silbenschriften: durchstöbere jedes Zeichen und trainiere dein Erkennen.",
@@ -690,6 +903,19 @@
                 "submit": "Set erstellen"
             }
         },
+        "character": {
+            "badge": "Kana",
+            "title": "Japanisches Kana",
+            "description": "Hiragana und Katakana sind die beiden japanischen Silbenschriften. Tippe auf die Tabs, um zu wechseln.",
+            "tabs": {
+                "hiragana": "Hiragana",
+                "katakana": "Katakana",
+                "voiceless": "Stimmlos",
+                "voiced": "Stimmhaft",
+                "contracted": "Kontrahiert"
+            },
+            "upNext": "als Nächstes"
+        },
         "kana": {
             "badge": "Kana",
             "title": "Japanisches Kana",
@@ -698,23 +924,8 @@
                 "hiragana": "Hiragana",
                 "katakana": "Katakana"
             },
-            "voiceless": "Stimmlos",
-            "voiced": "Stimmhaft",
-            "contracted": "Kontrahiert",
-            "voice_label": "Stimme",
-            "voice_preview": "Vorschau",
-            "voice_auto": "Auto",
-            "voice_choose": "Stimme wählen",
-            "voice_ja": "Japanisch",
-            "voice_volume": "Lautstärke",
             "take_quiz": "Quiz machen",
             "count": "Kana",
-            "stats": {
-                "set": "Im Set",
-                "group": "In der Gruppe",
-                "read": "Gelesen"
-            },
-            "readProgress": "{{read}} / {{total}}",
             "gridHint": "Tippe auf ein Kana, um es zu hören, oder drücke Lesen starten, um die Gruppe dort fortzusetzen, wo du aufgehört hast.",
             "readStart": "Lesen starten",
             "readContinue": "Lesen fortsetzen",
@@ -858,58 +1069,33 @@
             "title": "Vocabulary Review"
         }
     },
-    "english": {
-        "badge": "Englisch",
-        "title": "Englisch lernen",
-        "description": "Englisch ist ein neuer Track. Die Stapel-Funktionen unten funktionieren bereits; Zeichensatz und Drill entstehen noch.",
-        "nav": {
-            "render": {
-                "title": "Leseverstehen",
-                "description": "Lies kurze Texte und prüfe sie an der Übersetzung.",
-                "action": "Zum Lesen starten"
+    "thai": {
+        "badge": "Thai",
+        "title": "Thai lernen",
+        "description": "Meistere die Grundlagen des Thailändischen über seine Schrift, Vokabeln und Tests.",
+        "character": {
+            "badge": "Thailändische Schrift",
+            "title": "Thailändische Zeichen",
+            "description": "Jeder Konsonant von ก bis ฮ in traditioneller Reihenfolge, gängige Vokale und die Tonzeichen. Tippe auf ein Zeichen, um es zu hören, oder geh ein Set laut durch.",
+            "gridHint": "Tippe auf ein Zeichen, um es zu hören, oder drücke Lesen starten, um das Set von deinem letzten Stand aus durchzugehen.",
+            "tabs": {
+                "consonants": "Konsonanten",
+                "vowels": "Vokale",
+                "tones": "Tonzeichen",
+                "headed": "Mit Schleife",
+                "headless": "Ohne Schleife"
             },
-            "review": {
-                "title": "Wortschatz-Wiederholung",
-                "description": "Wiederhole Wortschatz mit Karteikarten und verteilten Wiederholungen.",
-                "action": "Wiederholung starten"
+            "voice": {
+                "female": "Weiblich",
+                "male": "Männlich"
             },
-            "exam": {
-                "title": "Wortschatz-Prüfung",
-                "description": "Prüfe dich mit einer Multiple-Choice-Prüfung aus deinem Wortschatz.",
-                "action": "Prüfung ablegen"
+            "voiceUnavailable": "Google-TTS-Stimmen sind derzeit nicht verfügbar.",
+            "stats": {
+                "set": "Sets",
+                "group": "In der Gruppe",
+                "read": "Gelesen"
             },
-            "vocab": {
-                "title": "Wortschatz durchsehen",
-                "description": "Sieh dir die Wörter eines Stapels mit Aussprache, Bedeutung und Beispielsätzen an.",
-                "action": "Wörter ansehen"
-            },
-            "edit": {
-                "title": "Stapel bearbeiten",
-                "description": "Benenne die Stapel in deiner Sammlung um, sortiere sie neu oder entferne sie.",
-                "action": "Stapel bearbeiten"
-            }
-        },
-        "edit": {
-            "title": "Stapel bearbeiten",
-            "description": "Verwalte die Stapel in deiner Sammlung. Der Editor kommt bald.",
-            "back": "Zurück zu Englisch"
-        },
-        "vocab": {
-            "title": "Wortschatz"
-        },
-        "render": {
-            "title": "Leseverstehen"
-        },
-        "review": {
-            "title": "Wortschatz-Wiederholung"
-        },
-        "exam": {
-            "title": "Prüfung"
-        },
-        "sections": {
-            "learn": "Lernen",
-            "practice": "Üben",
-            "manage": "Verwalten"
+            "readProgress": "{{read}} von {{total}} gelesen"
         }
     },
     "settings": {

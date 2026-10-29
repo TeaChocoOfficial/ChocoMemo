@@ -3,6 +3,7 @@
         "home": "ホーム",
         "study": "学習",
         "edit": "編集",
+        "guide": "ガイド",
         "languages": "言語",
         "menu": "メニューを開く",
         "settings": "設定",
@@ -22,6 +23,58 @@
         "hide": "非表示",
         "show": "表示",
         "toggleLabel": "インターフェースを表示"
+    },
+    "theme": {
+        "pickerLabel": "テーマを変更",
+        "names": {
+            "lightChoco": "チョコライト",
+            "darkChoco": "チョコダーク",
+            "darkGalaxy": "銀河ダーク",
+            "lightGalaxy": "銀河ライト",
+            "darkSakura": "桜ダーク",
+            "lightSakura": "桜ライト",
+            "darkPaper": "紙ダーク",
+            "lightPaper": "紙ライト",
+            "darkNature": "抹茶ダーク",
+            "lightNature": "抹茶ライト",
+            "darkAutumn": "紅葉ダーク",
+            "lightAutumn": "紅葉ライト",
+            "darkWinter": "雪ダーク",
+            "lightWinter": "雪ライト"
+        }
+    },
+    "common": {
+        "loading": "Loading…",
+        "error": {
+            "oops": "おっと！",
+            "unexpected": "予期しないエラーが発生しました。",
+            "notFound": "要求されたページが見つかりませんでした。"
+        },
+        "tabs": {
+            "local": "ローカル",
+            "official": "公式",
+            "cloud": "クラウド",
+            "community": "コミュニティ"
+        },
+        "comingSoon": {
+            "cloud": "クラウド同期は近日公開、サインインが必要です",
+            "community": "コミュニティのセットを閲覧する機能はまだ利用できません"
+        },
+        "select": "選択",
+        "voice_label": "音声",
+        "voice_preview": "試聴",
+        "voice_auto": "自動",
+        "voice_choose": "音声を選択",
+        "voice_missing": "このデバイスには{{lang}}を話す音声がインストールされていません — 読み上げはシステムの既定音声に切り替わります。",
+        "tts_voice_choose": "音声を選択",
+        "tts_voice_preview": "試聴",
+        "tts_voice_unavailable": "Google TTS の音声は現在利用できません。"
+    },
+    "notfound": {
+        "title": "ページが見つかりません",
+        "description": "お探しのページは存在しないか、移動された可能性があります。",
+        "back_home": "ホームに戻る",
+        "error_code": "404"
     },
     "home": {
         "badge": "ChocoMemo · コミュニティの言語ライブラリ",
@@ -103,7 +156,8 @@
             "step4": {
                 "title": "自分のデッキを公開する",
                 "hint": "よく忘れる言葉を足して、棚に分け合ってください。"
-            }
+            },
+            "guideLink": "ガイドをすべて読む"
         },
         "cta": {
             "title": "最初の文字から始めましょう。",
@@ -112,53 +166,107 @@
             "secondary": "デッキを公開する"
         }
     },
-    "theme": {
-        "pickerLabel": "テーマを変更",
-        "names": {
-            "lightChoco": "チョコライト",
-            "darkChoco": "チョコダーク",
-            "darkGalaxy": "銀河ダーク",
-            "lightGalaxy": "銀河ライト",
-            "darkSakura": "桜ダーク",
-            "lightSakura": "桜ライト",
-            "darkPaper": "紙ダーク",
-            "lightPaper": "紙ライト",
-            "darkNature": "抹茶ダーク",
-            "lightNature": "抹茶ライト",
-            "darkAutumn": "紅葉ダーク",
-            "lightAutumn": "紅葉ライト",
-            "darkWinter": "雪ダーク",
-            "lightWinter": "雪ライト"
+    "guide": {
+        "badge": "ガイド",
+        "tag": "ユーザーマニュアル",
+        "title": "ChocoMemo の使い方",
+        "subtitle": "アプリの短いツアー：各エリアの役割と、最初のセッションをうまく進める順番。",
+        "quickStart": {
+            "title": "4つの動作、1回の学習",
+            "hint": "表を読み、ドリルをして、学んだことを復習する。ChocoMemo のほかの機能は、すべてこの3ステップの応用です。"
+        },
+        "steps": {
+            "step1": {
+                "title": "言語を選ぶ",
+                "hint": "トップページにすべての対象言語が並びます。1つ選ぶとその語彙デッキが開き、選択はこのデバイスに記憶されます。"
+            },
+            "step2": {
+                "title": "表を読む",
+                "hint": "学んでいる文字の表を眺め、任意の文字をタップすると発音が聞こえます。"
+            },
+            "step3": {
+                "title": "ドリルする",
+                "hint": "選んだ文字を対象にした時間制限付きの選択式ラウンド。タイマー、問題数、グループをレベルに合わせて設定できます。"
+            },
+            "step4": {
+                "title": "単語を復習する",
+                "hint": "フラッシュカードが、学んだ語彙をスケジュールに沿って出題するので、忘れずに済みます。"
+            }
+        },
+        "sections": {
+            "title": "各部分の役割",
+            "hint": "アプリのエリアごとに1枚のカード。各カードは説明するページへ直接リンクします。",
+            "landing": {
+                "title": "トップページ",
+                "hint": "玄関口：アプリの概要と、教えている言語。",
+                "point1": "対象言語はすべて全幅の行で並びます — 1つ選んで始めましょう。",
+                "point2": "選んだ言語はデバイスに記憶され、アクティブな対象になります。",
+                "point3": "登録の壁はありません：アカウント作成前から表とデッキを利用できます。"
+            },
+            "hub": {
+                "title": "学習ハブ",
+                "hint": "言語を選んだあとに表示される概要ページ。",
+                "point1": "文字 — 文字体系ごとに1枚のタイル。文字そのものが主役です。",
+                "point2": "ドリル — 文字ドリルの一覧で、1件につき1行。",
+                "point3": "デッキ — 学習（語彙、読解）、練習（復習、テスト）と、編集用の管理行。"
+            },
+            "charts": {
+                "title": "文字表",
+                "hint": "文字体系のリファレンス表示で、すべての文字に音声付き。",
+                "point1": "かな（日本語）、ラテン文字（英語）、タイ文字が現在実装されています。",
+                "point2": "各表はグループ化されています — かなは清音・濁音・拗音、アルファベットは母音と子音。",
+                "point3": "文字をタップすると発音が聞こえます。音声はインターフェース言語ではなく対象言語に従います。",
+                "point4": "読み上げ順が表を順に案内し、どこまで進んだかを記憶します。"
+            },
+            "drill": {
+                "title": "文字ドリル",
+                "hint": "認識を記憶に変える、速い選択式ラウンド。",
+                "point1": "文字グループと問題数を切り替え、すべてからひと握りまで調整できます。",
+                "point2": "問題ごとのタイマーとカウントダウンバー、任意の自動送り。",
+                "point3": "プレイ中は正解 / 不正解 / タイムアウトのカウンターをリアルタイム表示。",
+                "point4": "最後に：スコアのランク、各回答の内訳、もう一度のボタン。"
+            },
+            "decks": {
+                "title": "語彙・読解・復習・テスト",
+                "hint": "1つの共通デッキ一覧に対する4つの機能 — 違いは、デッキを開いたときに何が起きるかだけです。",
+                "point1": "語彙デッキには単語、読解デッキには読み物が入ります。",
+                "point2": "復習はデッキを間隔をあけたスケジュールのフラッシュカードに変えます。",
+                "point3": "テストはデッキを選択式テストに変えます。",
+                "point4": "ツールバーは対象言語で絞り込み、並び順・密度・ソースはデバイスに記憶されます。"
+            },
+            "edit": {
+                "title": "デッキを編集",
+                "hint": "すべてのデッキ種別に対応する1つのエディター。ドッキング可能なパネルを持つ全画面ワークスペースです。",
+                "point1": "デッキ一覧、エディター、プレビュー、インスペクター、設定のパネル。",
+                "point2": "自分で配置できます：ドラッグ、サイズ変更、タブの固定、レイアウトのリセット。",
+                "point3": "スマートフォンでは同じパネルが、スライドアウトメニュー付きのタブ列になります。"
+            },
+            "voice": {
+                "title": "音声と外観",
+                "hint": "アプリの聞こえ方と見た目を決める設定。",
+                "point1": "テーマ：ライトとダークのパレットから1つ選ぶと、アプリがそれに従います。",
+                "point2": "音声：インストール済みのどの音声が文字を読むかを、プレビューボタン付きで選べます。",
+                "point3": "インターフェース：表示言語を切り替え、ナビゲーションバーを隠して集中できる表示にできます。"
+            },
+            "account": {
+                "title": "アカウントとコミュニティ",
+                "hint": "アカウント機能がある場所。",
+                "point1": "サインインまたはアカウント作成で、プロフィールと設定にアクセスできます。",
+                "point2": "公開プロフィールは名前タグで参照できるため、共有できます。",
+                "point3": "クラウド同期とコミュニティデッキは準備中です。"
+            }
+        },
+        "action": {
+            "open": "開く",
+            "comingSoon": "近日公開"
         }
-    },
-    "common": {
-        "loading": "Loading…",
-        "error": {
-            "oops": "おっと！",
-            "unexpected": "予期しないエラーが発生しました。",
-            "notFound": "要求されたページが見つかりませんでした。"
-        },
-        "tabs": {
-            "local": "ローカル",
-            "official": "公式",
-            "cloud": "クラウド",
-            "community": "コミュニティ"
-        },
-        "comingSoon": {
-            "cloud": "クラウド同期は近日公開、サインインが必要です",
-            "community": "コミュニティのセットを閲覧する機能はまだ利用できません"
-        },
-        "select": "選択"
-    },
-    "notfound": {
-        "title": "ページが見つかりません",
-        "description": "お探しのページは存在しないか、移動された可能性があります。",
-        "back_home": "ホームに戻る",
-        "error_code": "404"
     },
     "study": {
         "title": "学習",
         "subtitle": "言語を選び、次に練習方法を選びましょう。",
+        "basic": {
+            "title": "基本"
+        },
         "characters": {
             "title": "文字",
             "description": "言語の文字表を見て、それぞれの発音を聞けます。",
@@ -236,8 +344,7 @@
         },
         "tag": {
             "ready": "準備OK",
-            "current": "現在",
-            "comingSoon": "近日公開"
+            "current": "現在"
         },
         "action": {
             "start": "開始"
@@ -288,16 +395,10 @@
             }
         }
     },
-    "characters": {
-        "backHub": "ハブに戻る",
-        "comingSoon": "{{language}} の文字表は近日公開です。",
-        "unknown": "この言語"
-    },
     "languageSelect": {
         "back_home": "ホームに戻る",
         "status": {
-            "available": "利用可能",
-            "comingSoon": "近日公開"
+            "available": "利用可能"
         },
         "cta": {
             "start": "学習を始める"
@@ -454,11 +555,13 @@
         "viewAuthor": "{{author}} のプロフィールを見る",
         "edit": {
             "listTitle": "デッキ",
+            "title": "デッキマネージャー",
+            "back": "戻る",
+            "openMenu": "メニューを開く",
             "panelTitle": "エディター",
-            "layoutTitle": "レイアウト",
+            "settingTitle": "設定",
             "spacedLabel": "パネルの間隔",
             "spacedHint": "ドッキングしたパネルの間にすき間を空けます。",
-            "statusTitle": "ステータス",
             "previewTitle": "プレビュー",
             "inspectorTitle": "インスペクター",
             "loading": "デッキを読み込んでいます…",
@@ -475,7 +578,6 @@
             "save": "変更を保存",
             "delete": "デッキを削除",
             "dragHandle": "ドラッグして並べ替え",
-            "mobileHint": "下でデッキの並べ替えと編集ができます。デッキマネージャーを使うには、より広い画面で開いてください。",
             "filters": "種類でデッキを絞り込む",
             "filterAll": "すべてのデッキ",
             "typeLabel": "種類",
@@ -484,6 +586,17 @@
             "statusDecks": "{{visible}} / {{total}} デッキ",
             "noneSelected": "デッキが選択されていません",
             "addPanel": "パネルを追加",
+            "emptyPanel": "空のパネル",
+            "resetLayout": "レイアウトをリセット",
+            "emptyLayoutTitle": "開いているパネルがありません",
+            "emptyLayoutHint": "レイアウトをリセットして既定のパネルを戻します。",
+            "pinTab": "タブを固定",
+            "unpinTab": "タブの固定を解除",
+            "closeTab": "閉じる",
+            "closeOthers": "ほかを閉じる",
+            "closeAll": "すべて閉じる",
+            "closeLeft": "左側を閉じる",
+            "closeRight": "右側を閉じる",
             "views": "エディター表示",
             "viewAll": "すべてのデッキ",
             "viewFavourites": "お気に入り",
@@ -549,17 +662,117 @@
         "resetSuccess": "Password updated. Please sign in.",
         "sendResetCode": "リセットコードを送信"
     },
+    "characters": {
+        "backHub": "ハブに戻る",
+        "readProgress": "{{read}} / {{total}}",
+        "readStart": "読み上げ開始",
+        "readContinue": "続きから読む",
+        "readStop": "停止",
+        "nowReading": "読み上げ中",
+        "upNext": "次に読む",
+        "pinToolbar": "ツールバーを固定",
+        "unpinToolbar": "固定を解除",
+        "sticky": "固定",
+        "stickyOn": "オン",
+        "stickyOff": "オフ",
+        "stats": {
+            "set": "セット内",
+            "group": "グループ内",
+            "read": "読了"
+        },
+        "voice": {
+            "female": "女性",
+            "male": "男性"
+        },
+        "notFound": {
+            "badge": "見つかりません",
+            "title": "言語が見つかりません",
+            "body": "このアドレスに対応する学習言語がありません。学習ハブに戻り、一覧から選んでください。"
+        },
+        "soon": {
+            "badge": "近日公開",
+            "title": "{{language}}の{{feature}}",
+            "body": "{{language}}の{{feature}}はまだ開発中です。その間も、{{language}}の語彙・読解・テスト・復習は利用できます。",
+            "deckOnly": "別の言語はデッキのみです — 文字表やドリルはありません。語彙・読解・テスト・復習は学習できます。",
+            "features": {
+                "characters": "文字表",
+                "drill": "文字ドリル"
+            },
+            "ctaChart": "日本語の文字表を見る",
+            "ctaDrill": "日本語のドリルを試す"
+        }
+    },
+    "english": {
+        "badge": "英語",
+        "title": "英語を学ぼう",
+        "description": "英語は新しいコースです。下のデッキ機能はすでに使えます。文字セットとドリルは現在開発中です。",
+        "character": {
+            "badge": "アルファベット",
+            "title": "英語のアルファベット",
+            "description": "大文字と小文字の26文字。文字をタップすると発音が聞こえ、グループを声に出してたどることもできます。",
+            "tabs": {
+                "uppercase": "大文字",
+                "lowercase": "小文字",
+                "vowels": "母音",
+                "consonants": "子音"
+            },
+            "gridHint": "文字をタップすると発音が聞こえます。前回の続きからグループをたどるには「読み上げ開始」を押してください。"
+        },
+        "nav": {
+            "render": {
+                "title": "読解",
+                "description": "短い文章を読み、訳で確認します。",
+                "action": "読解を始める"
+            },
+            "review": {
+                "title": "語彙復習",
+                "description": "フラッシュカードと間隔反復で語彙を復習します。",
+                "action": "復習を始める"
+            },
+            "exam": {
+                "title": "語彙テスト",
+                "description": "自分の語彙から作った選択式で自分自身をテストします。",
+                "action": "テストを受ける"
+            },
+            "vocab": {
+                "title": "語彙を見る",
+                "description": "デッキの単語を発音・意味・例文つきで確認できます。",
+                "action": "単語を見る"
+            },
+            "edit": {
+                "title": "デッキを編集",
+                "description": "コレクション内のデッキの名前変更、並べ替え、削除ができます。",
+                "action": "デッキを編集"
+            }
+        },
+        "edit": {
+            "title": "デッキを編集",
+            "description": "コレクション内のデッキを管理します。エディターは近日公開予定です。",
+            "back": "英語に戻る"
+        },
+        "vocab": {
+            "title": "語彙"
+        },
+        "render": {
+            "title": "読解"
+        },
+        "review": {
+            "title": "語彙復習"
+        },
+        "exam": {
+            "title": "テスト"
+        },
+        "sections": {
+            "learn": "学習",
+            "practice": "練習",
+            "manage": "管理"
+        }
+    },
     "japanese": {
         "badge": "日本語",
         "title": "日本語を学ぶ",
         "description": "かな、語彙、クイズを通して日本語の基礎をマスターしましょう。",
         "back_language": "言語選択に戻る",
-        "stats": {
-            "kana": "かなの文字",
-            "vocabulary": "語彙の単語",
-            "learned": "学習済み単語",
-            "due": "復習予定"
-        },
         "sections": {
             "kana": "かな",
             "kanaHint": "日本語の二つの音節文字を学ぼう — 全文字を確認して、認識力を練習しましょう。",
@@ -690,6 +903,19 @@
                 "submit": "セットを作成"
             }
         },
+        "character": {
+            "badge": "かな",
+            "title": "日本語のかな",
+            "description": "ひらがなとカタカナは日本語の二つの音節文字です。タブで切り替えられます。",
+            "tabs": {
+                "hiragana": "ひらがな",
+                "katakana": "カタカナ",
+                "voiceless": "清音",
+                "voiced": "濁音",
+                "contracted": "拗音"
+            },
+            "upNext": "次に読む"
+        },
         "kana": {
             "badge": "かな",
             "title": "日本語のかな",
@@ -698,23 +924,8 @@
                 "hiragana": "ひらがな",
                 "katakana": "カタカナ"
             },
-            "voiceless": "清音",
-            "voiced": "濁音",
-            "contracted": "拗音",
-            "voice_label": "音声",
-            "voice_preview": "試聴",
-            "voice_auto": "自動",
-            "voice_choose": "音声を選択",
-            "voice_ja": "日本語",
-            "voice_volume": "音量",
             "take_quiz": "クイズに挑戦",
             "count": "かな",
-            "stats": {
-                "set": "セット内",
-                "group": "グループ内",
-                "read": "読了"
-            },
-            "readProgress": "{{read}} / {{total}}",
             "gridHint": "かなをタップして発音を聞くか、[読み上げ]で前回の続きからグループを読み上げます。",
             "readStart": "読み上げ開始",
             "readContinue": "続きから読む",
@@ -858,58 +1069,33 @@
             "title": "Vocabulary Review"
         }
     },
-    "english": {
-        "badge": "英語",
-        "title": "英語を学ぼう",
-        "description": "英語は新しいコースです。下のデッキ機能はすでに使えます。文字セットとドリルは現在開発中です。",
-        "nav": {
-            "render": {
-                "title": "読解",
-                "description": "短い文章を読み、訳で確認します。",
-                "action": "読解を始める"
+    "thai": {
+        "badge": "タイ語",
+        "title": "タイ語を学ぶ",
+        "description": "文字・語彙・クイズを通してタイ語の基礎を身につけましょう。",
+        "character": {
+            "badge": "タイ文字",
+            "title": "タイ文字",
+            "description": "ก から ฮ までのすべての子音を伝統的な順序で、よく使う母音と声調記号も収録。文字をタップすると発音が聞こえ、セットを声に出してたどることもできます。",
+            "gridHint": "文字をタップすると発音が聞こえます。前回の続きからセットをたどるには「読み上げ開始」を押してください。",
+            "tabs": {
+                "consonants": "子音",
+                "vowels": "母音",
+                "tones": "声調",
+                "headed": "ループあり",
+                "headless": "ループなし"
             },
-            "review": {
-                "title": "語彙復習",
-                "description": "フラッシュカードと間隔反復で語彙を復習します。",
-                "action": "復習を始める"
+            "voice": {
+                "female": "女性",
+                "male": "男性"
             },
-            "exam": {
-                "title": "語彙テスト",
-                "description": "自分の語彙から作った選択式で自分自身をテストします。",
-                "action": "テストを受ける"
+            "voiceUnavailable": "Google TTS の音声は現在利用できません。",
+            "stats": {
+                "set": "セット",
+                "group": "グループ内",
+                "read": "読了"
             },
-            "vocab": {
-                "title": "語彙を見る",
-                "description": "デッキの単語を発音・意味・例文つきで確認できます。",
-                "action": "単語を見る"
-            },
-            "edit": {
-                "title": "デッキを編集",
-                "description": "コレクション内のデッキの名前変更、並べ替え、削除ができます。",
-                "action": "デッキを編集"
-            }
-        },
-        "edit": {
-            "title": "デッキを編集",
-            "description": "コレクション内のデッキを管理します。エディターは近日公開予定です。",
-            "back": "英語に戻る"
-        },
-        "vocab": {
-            "title": "語彙"
-        },
-        "render": {
-            "title": "読解"
-        },
-        "review": {
-            "title": "語彙復習"
-        },
-        "exam": {
-            "title": "テスト"
-        },
-        "sections": {
-            "learn": "学習",
-            "practice": "練習",
-            "manage": "管理"
+            "readProgress": "{{total}} 中 {{read}} 読み上げ済み"
         }
     },
     "settings": {

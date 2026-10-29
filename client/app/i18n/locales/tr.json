@@ -3,6 +3,7 @@
         "home": "Ana Sayfa",
         "study": "Çalış",
         "edit": "Düzenle",
+        "guide": "Kılavuz",
         "languages": "Diller",
         "menu": "Menüyü aç",
         "settings": "Ayarlar",
@@ -22,6 +23,58 @@
         "hide": "Gizle",
         "show": "Göster",
         "toggleLabel": "Arayüzü göster"
+    },
+    "theme": {
+        "pickerLabel": "Temayı değiştir",
+        "names": {
+            "lightChoco": "Açık Çikolata",
+            "darkChoco": "Koyu Çikolata",
+            "darkGalaxy": "Koyu Galaksi",
+            "lightGalaxy": "Açık Galaksi",
+            "darkSakura": "Koyu Sakura",
+            "lightSakura": "Açık Sakura",
+            "darkPaper": "Koyu Kağıt",
+            "lightPaper": "Açık Kağıt",
+            "darkNature": "Koyu Doğa",
+            "lightNature": "Açık Doğa",
+            "darkAutumn": "Koyu Sonbahar",
+            "lightAutumn": "Açık Sonbahar",
+            "darkWinter": "Koyu Kış",
+            "lightWinter": "Açık Kış"
+        }
+    },
+    "common": {
+        "loading": "Loading…",
+        "error": {
+            "oops": "Hata!",
+            "unexpected": "Beklenmeyen bir hata oluştu.",
+            "notFound": "İstenen sayfa bulunamadı."
+        },
+        "tabs": {
+            "local": "Yerel",
+            "official": "Resmî",
+            "cloud": "Bulut",
+            "community": "Topluluk"
+        },
+        "comingSoon": {
+            "cloud": "Bulut senkronizasyonu yakında geliyor, giriş gereklidir",
+            "community": "Topluluk setlerine göz atma henüz mevcut değil"
+        },
+        "select": "Seç",
+        "voice_label": "Ses",
+        "voice_preview": "Önizle",
+        "voice_auto": "Otomatik",
+        "voice_choose": "Bir ses seçin",
+        "voice_missing": "Bu cihazda {{lang}} konuşan bir ses yüklü değil — konuşma sistemin varsayılan sesine geçecek.",
+        "tts_voice_choose": "Bir ses seçin",
+        "tts_voice_preview": "Önizle",
+        "tts_voice_unavailable": "Google TTS sesleri şu anda kullanılamıyor."
+    },
+    "notfound": {
+        "title": "Sayfa Bulunamadı",
+        "description": "Aradığınız sayfa mevcut değil veya taşınmış.",
+        "back_home": "Ana Sayfaya Dön",
+        "error_code": "404"
     },
     "home": {
         "badge": "ChocoMemo · topluluk dil kitaplığı",
@@ -103,7 +156,8 @@
             "step4": {
                 "title": "Kendi desteni yayımla",
                 "hint": "Sürekli unuttuğun kelimeleri ekle ve rafa geri paylaş."
-            }
+            },
+            "guideLink": "Tam kılavuzu oku"
         },
         "cta": {
             "title": "İlk karakterden başla.",
@@ -112,53 +166,107 @@
             "secondary": "Deste yayımla"
         }
     },
-    "theme": {
-        "pickerLabel": "Temayı değiştir",
-        "names": {
-            "lightChoco": "Açık Çikolata",
-            "darkChoco": "Koyu Çikolata",
-            "darkGalaxy": "Koyu Galaksi",
-            "lightGalaxy": "Açık Galaksi",
-            "darkSakura": "Koyu Sakura",
-            "lightSakura": "Açık Sakura",
-            "darkPaper": "Koyu Kağıt",
-            "lightPaper": "Açık Kağıt",
-            "darkNature": "Koyu Doğa",
-            "lightNature": "Açık Doğa",
-            "darkAutumn": "Koyu Sonbahar",
-            "lightAutumn": "Açık Sonbahar",
-            "darkWinter": "Koyu Kış",
-            "lightWinter": "Açık Kış"
+    "guide": {
+        "badge": "Kılavuz",
+        "tag": "Kullanım kılavuzu",
+        "title": "ChocoMemo nasıl kullanılır",
+        "subtitle": "Uygulamada kısa bir tur: her bölüm ne yapar ve ilk oturumu başarıya götüren sıra nedir.",
+        "quickStart": {
+            "title": "Dört hamle, tek oturum",
+            "hint": "Bir tablo oku, alıştırma yap, sonra öğrendiklerini gözden geçir. ChocoMemo'daki diğer her şey bu üç adımın bir varyasyonudur."
+        },
+        "steps": {
+            "step1": {
+                "title": "Bir dil seç",
+                "hint": "Açılış sayfası tüm hedef dilleri listeler. Birini seçmek kelime destelerini açar ve seçim bu cihazda hatırlanır."
+            },
+            "step2": {
+                "title": "Tabloyu oku",
+                "hint": "Öğrendiğin yazının karakter tablosuna göz at ve sesli duymak için herhangi bir glife dokun."
+            },
+            "step3": {
+                "title": "Alıştırma yap",
+                "hint": "Seçtiğin karakterler üzerinde süreli çoktan seçmeli bir tur. Zamanlayıcıyı, soru sayısını ve grupları seviyene göre ayarla."
+            },
+            "step4": {
+                "title": "Kelimeleri gözden geçir",
+                "hint": "Bilgi kartları, çalıştığın kelimeleri bir programa göre geri getirir; böylece hiçbir şey kaybolmaz."
+            }
+        },
+        "sections": {
+            "title": "Her bölüm ne yapar",
+            "hint": "Uygulamanın her alanı için bir kart. Her kart, anlattığı sayfaya doğrudan bağlanır.",
+            "landing": {
+                "title": "Açılış sayfası",
+                "hint": "Giriş kapısı: uygulama nedir ve hangi dilleri öğretir.",
+                "point1": "Her hedef dil tam genişlikte bir satır olarak listelenir — başlamak için birini seç.",
+                "point2": "Seçtiğin dil cihazda hatırlanır ve etkin hedef olur.",
+                "point3": "Kayıt duvarı yok: tablolar ve desteler hesap oluşturmadan önce açıktır."
+            },
+            "hub": {
+                "title": "Öğrenme merkezi",
+                "hint": "Bir dil seçtikten sonra geldiğin genel bakış.",
+                "point1": "Karakterler — her yazı için bir kutu, glifin kendisi öne çıkar.",
+                "point2": "Alıştırma — karakter alıştırmalarının listesi, her biri bir satır.",
+                "point3": "Desteler — Öğren (kelime, okuma), Alıştır (tekrar, sınav) ve düzenleme için bir Yönet satırı."
+            },
+            "charts": {
+                "title": "Karakter tabloları",
+                "hint": "Bir yazının başvuru görünümü, her karakterde sesle birlikte.",
+                "point1": "Kana (Japonca), Latin alfabesi (İngilizce) ve Tayca bugün uygulanmış durumda.",
+                "point2": "Her tablo gruplara ayrılmıştır — kana için sessiz, sesli ve büzülmüş; alfabe için ünlüler ve ünsüzler.",
+                "point3": "Sesli duymak için bir karaktere dokun. Ses, arayüz dilini değil hedef dili izler.",
+                "point4": "Bir okuma sırası tabloyu senin için gezer ve nerede kaldığını hatırlar."
+            },
+            "drill": {
+                "title": "Karakter alıştırması",
+                "hint": "Tanımayı hatırlamaya dönüştüren hızlı çoktan seçmeli tur.",
+                "point1": "Karakter gruplarını ve soru sayısını, hepsinden bir avuca kadar değiştir.",
+                "point2": "Her soru için geri sayım çubuklu bir zamanlayıcı ve isteğe bağlı otomatik ilerleme.",
+                "point3": "Oynarken canlı Doğru / Yanlış / Süre doldu sayaçları.",
+                "point4": "Sonunda: puan sıralaması, her yanıtın dökümü ve bir tekrar oynat düğmesi."
+            },
+            "decks": {
+                "title": "Kelime, okuma, tekrar ve sınav",
+                "hint": "Ortak bir deste listesi üzerinde dört özellik — yalnızca bir deste açıldığında ne olduğu bakımından farklıdırlar.",
+                "point1": "Kelime desteleri sözcükleri tutar; okuma desteleri okuma materyalini tutar.",
+                "point2": "Tekrar, bir desteyi aralıklı programa göre bilgi kartlarına çevirir.",
+                "point3": "Sınav, bir desteyi çoktan seçmeli teste çevirir.",
+                "point4": "Araç çubuğu hedef dile göre filtreler; sıralama, yoğunluk ve kaynak cihazda hatırlanır."
+            },
+            "edit": {
+                "title": "Desteleri düzenle",
+                "hint": "Her deste türü için tek bir düzenleyici, kenetlenebilir panellerden oluşan tam ekran bir çalışma alanında.",
+                "point1": "Deste listesi, düzenleyici, önizleme, denetçi ve ayarlar için paneller.",
+                "point2": "Kendin düzenle: sürükle, yeniden boyutlandır, bir sekmeyi sabitle veya yerleşimi sıfırla.",
+                "point3": "Telefonda aynı paneller, kayan menülü bir sekme şeridine dönüşür."
+            },
+            "voice": {
+                "title": "Ses ve görünüm",
+                "hint": "Uygulamanın nasıl duyulacağını ve görüneceğini belirleyen ayarlar.",
+                "point1": "Temalar: açık ve koyu paletlerden birini seç, uygulama ona uyar.",
+                "point2": "Ses: yüklü seslerden hangisinin karakterleri okuyacağını bir önizleme düğmesiyle seç.",
+                "point3": "Arayüz: arayüz dilini değiştir ve dikkat dağıtmayan bir görünüm için gezinme çubuğunu gizle."
+            },
+            "account": {
+                "title": "Hesap ve topluluk",
+                "hint": "Hesap özelliklerinin bulunduğu yer.",
+                "point1": "Profiline ve ayarlarına ulaşmak için giriş yap veya hesap oluştur.",
+                "point2": "Herkese açık profilin ad etiketiyle adreslenebilir, böylece paylaşılabilir.",
+                "point3": "Bulut eşitleme ve topluluk desteleri yolda."
+            }
+        },
+        "action": {
+            "open": "Aç",
+            "comingSoon": "Yakında"
         }
-    },
-    "common": {
-        "loading": "Loading…",
-        "error": {
-            "oops": "Hata!",
-            "unexpected": "Beklenmeyen bir hata oluştu.",
-            "notFound": "İstenen sayfa bulunamadı."
-        },
-        "tabs": {
-            "local": "Yerel",
-            "official": "Resmî",
-            "cloud": "Bulut",
-            "community": "Topluluk"
-        },
-        "comingSoon": {
-            "cloud": "Bulut senkronizasyonu yakında geliyor, giriş gereklidir",
-            "community": "Topluluk setlerine göz atma henüz mevcut değil"
-        },
-        "select": "Seç"
-    },
-    "notfound": {
-        "title": "Sayfa Bulunamadı",
-        "description": "Aradığınız sayfa mevcut değil veya taşınmış.",
-        "back_home": "Ana Sayfaya Dön",
-        "error_code": "404"
     },
     "study": {
         "title": "Çalış",
         "subtitle": "Bir dil seçin, sonra onu çalışmanın bir yolunu seçin.",
+        "basic": {
+            "title": "Temeller"
+        },
         "characters": {
             "title": "Karakterler",
             "description": "Bir dilin karakter tablosuna göz atın ve her birinin sesini dinleyin.",
@@ -236,8 +344,7 @@
         },
         "tag": {
             "ready": "Hazır",
-            "current": "Geçerli",
-            "comingSoon": "Yakında"
+            "current": "Geçerli"
         },
         "action": {
             "start": "Başla"
@@ -288,16 +395,10 @@
             }
         }
     },
-    "characters": {
-        "backHub": "Hub'a dön",
-        "comingSoon": "{{language}} karakter tablosu yakında geliyor.",
-        "unknown": "Bu dil"
-    },
     "languageSelect": {
         "back_home": "Ana Sayfaya Dön",
         "status": {
-            "available": "Mevcut",
-            "comingSoon": "Yakında"
+            "available": "Mevcut"
         },
         "cta": {
             "start": "Öğrenmeye Başla"
@@ -454,11 +555,13 @@
         "viewAuthor": "{{author}} profilini görüntüle",
         "edit": {
             "listTitle": "Desteler",
+            "title": "Deste yöneticisi",
+            "back": "Geri",
+            "openMenu": "Menüyü aç",
             "panelTitle": "Düzenleyici",
-            "layoutTitle": "Düzen",
+            "settingTitle": "Ayarlar",
             "spacedLabel": "Aralıklı paneller",
             "spacedHint": "Yerleştirilmiş paneller arasında boşluk bırakın.",
-            "statusTitle": "Durum",
             "previewTitle": "Önizleme",
             "inspectorTitle": "Denetçi",
             "loading": "Desteleriniz yükleniyor…",
@@ -475,7 +578,6 @@
             "save": "Değişiklikleri kaydet",
             "delete": "Deste sil",
             "dragHandle": "Yeniden sıralamak için sürükleyin",
-            "mobileHint": "Aşağıdan desteleri yeniden sıralayın ve düzenleyin. Deste yöneticisini kullanmak için daha geniş bir ekranda açın.",
             "filters": "Desteleri türe göre filtrele",
             "filterAll": "Tüm desteler",
             "typeLabel": "Tür",
@@ -484,6 +586,17 @@
             "statusDecks": "{{visible}} / {{total}} deste",
             "noneSelected": "Deste seçilmedi",
             "addPanel": "Panel ekle",
+            "emptyPanel": "Boş panel",
+            "resetLayout": "Yerleşimi sıfırla",
+            "emptyLayoutTitle": "Açık panel yok",
+            "emptyLayoutHint": "Varsayılan panelleri geri getirmek için yerleşimi sıfırla.",
+            "pinTab": "Sekmeyi sabitle",
+            "unpinTab": "Sekme sabitlemesini kaldır",
+            "closeTab": "Kapat",
+            "closeOthers": "Diğerlerini kapat",
+            "closeAll": "Tümünü kapat",
+            "closeLeft": "Soldakileri kapat",
+            "closeRight": "Sağdakileri kapat",
             "views": "Düzenleyici görünümleri",
             "viewAll": "Tüm desteler",
             "viewFavourites": "Sık kullanılanlar",
@@ -549,17 +662,117 @@
         "resetSuccess": "Password updated. Please sign in.",
         "sendResetCode": "Sıfırlama kodu gönder"
     },
+    "characters": {
+        "backHub": "Hub'a dön",
+        "readProgress": "{{read}} / {{total}}",
+        "readStart": "Okumaya başla",
+        "readContinue": "Okumaya devam et",
+        "readStop": "Durdur",
+        "nowReading": "şu an okunuyor",
+        "upNext": "sırada",
+        "pinToolbar": "Araç çubuğunu sabitle",
+        "unpinToolbar": "Araç çubuğunu sabitlemeyi kaldır",
+        "sticky": "Sabit",
+        "stickyOn": "Açık",
+        "stickyOff": "Kapalı",
+        "stats": {
+            "set": "Set içinde",
+            "group": "Grupta",
+            "read": "Okundu"
+        },
+        "voice": {
+            "female": "Kadın",
+            "male": "Erkek"
+        },
+        "notFound": {
+            "badge": "Bulunamadı",
+            "title": "Dil bulunamadı",
+            "body": "Bu adresin arkasında bir öğrenme dili yok. Öğrenme merkezine dön ve listeden birini seç."
+        },
+        "soon": {
+            "badge": "Yakında",
+            "title": "{{language}} {{feature}}",
+            "body": "{{language}} {{feature}} hâlâ geliştiriliyor. Bu arada {{language}} için kelime, okuma, sınav ve tekrar hazır.",
+            "deckOnly": "Başka bir dil yalnızca destelerden oluşur — karakter tablosu veya alıştırma yoktur. Kelime, okuma, sınav ve tekrar çalışmaya hazırdır.",
+            "features": {
+                "characters": "karakter tablosu",
+                "drill": "karakter alıştırması"
+            },
+            "ctaChart": "Japonca tabloyu gör",
+            "ctaDrill": "Japonca alıştırmayı dene"
+        }
+    },
+    "english": {
+        "badge": "İngilizce",
+        "title": "İngilizce öğren",
+        "description": "İngilizce yeni bir izlektir. Aşağıdaki deste özellikleri çalışıyor; karakter seti ve antrenman hâlâ hazırlanıyor.",
+        "character": {
+            "badge": "Alfabe",
+            "title": "İngiliz alfabesi",
+            "description": "Yirmi altı harf, büyük ve küçük. Sesli duymak için bir harfe dokun veya bir grubu yüksek sesle geç.",
+            "tabs": {
+                "uppercase": "Büyük harf",
+                "lowercase": "Küçük harf",
+                "vowels": "Ünlüler",
+                "consonants": "Ünsüzler"
+            },
+            "gridHint": "Sesli duymak için bir harfe dokun veya kaldığın yerden grubu geçmek için Okumaya başla'ya bas."
+        },
+        "nav": {
+            "render": {
+                "title": "Okuma",
+                "description": "Kısa metinleri okuyun ve çeviriyle karşılaştırın.",
+                "action": "Okumaya başla"
+            },
+            "review": {
+                "title": "Kelime Tekrarı",
+                "description": "Kartlar ve aralıklı tekrar ile kelimeleri gözden geçirin.",
+                "action": "Tekrarı başlat"
+            },
+            "exam": {
+                "title": "Kelime sınavı",
+                "description": "Kendi kelimelerinizden oluşan çoktan seçmeli sınavla kendinizi deneyin.",
+                "action": "Sınava gir"
+            },
+            "vocab": {
+                "title": "Kelimelere göz at",
+                "description": "Bir destedeki kelimeleri okunuşları, anlamları ve örnekleriyle inceleyin.",
+                "action": "Kelimeleri gör"
+            },
+            "edit": {
+                "title": "Desteleri Düzenle",
+                "description": "Koleksiyonundaki desteleri yeniden adlandır, sırala veya kaldır.",
+                "action": "Desteleri Düzenle"
+            }
+        },
+        "edit": {
+            "title": "Desteleri Düzenle",
+            "description": "Koleksiyonundaki desteleri yönet. Düzenleyici yakında geliyor.",
+            "back": "İngilizceye Dön"
+        },
+        "vocab": {
+            "title": "Kelime"
+        },
+        "render": {
+            "title": "Okuma"
+        },
+        "review": {
+            "title": "Kelime Tekrarı"
+        },
+        "exam": {
+            "title": "Sınav"
+        },
+        "sections": {
+            "learn": "Öğren",
+            "practice": "Pratik Yap",
+            "manage": "Yönet"
+        }
+    },
     "japanese": {
         "badge": "Japonca",
         "title": "Japonca Öğren",
         "description": "Kana, kelime bilgisi ve testlerle Japoncanın temellerini öğrenin.",
         "back_language": "Dil Seçimine Dön",
-        "stats": {
-            "kana": "Kana karakterleri",
-            "vocabulary": "Kelime bilgisi",
-            "learned": "Öğrenilen kelimeler",
-            "due": "Tekrar zamanı gelen"
-        },
         "sections": {
             "kana": "Kana",
             "kanaHint": "İki Japonca hece alfabesini öğrenin — her karakteri keşfedin ve tanıma becerinizi geliştirin.",
@@ -690,6 +903,19 @@
                 "submit": "Set oluştur"
             }
         },
+        "character": {
+            "badge": "Kana",
+            "title": "Japon Kana",
+            "description": "Hiragana ve Katakana, Japoncada iki hece alfabesidir. Değiştirmek için sekmelere dokunun.",
+            "tabs": {
+                "hiragana": "Hiragana",
+                "katakana": "Katakana",
+                "voiceless": "Sessiz",
+                "voiced": "Sesli",
+                "contracted": "Büzülmüş"
+            },
+            "upNext": "sırada"
+        },
         "kana": {
             "badge": "Kana",
             "title": "Japon Kana",
@@ -698,23 +924,8 @@
                 "hiragana": "Hiragana",
                 "katakana": "Katakana"
             },
-            "voiceless": "Sessiz",
-            "voiced": "Sesli",
-            "contracted": "Büzülmüş",
-            "voice_label": "Ses",
-            "voice_preview": "Önizle",
-            "voice_auto": "Otomatik",
-            "voice_choose": "Bir ses seçin",
-            "voice_ja": "Japonca",
-            "voice_volume": "Ses düzeyi",
             "take_quiz": "Teste Gir",
             "count": "kana",
-            "stats": {
-                "set": "Set içinde",
-                "group": "Grupta",
-                "read": "Okundu"
-            },
-            "readProgress": "{{read}} / {{total}}",
             "gridHint": "Duymak için bir kanaya dokunun veya kaldığınız yerden grubu geçmek için Okumaya başla'ya basın.",
             "readStart": "Okumaya başla",
             "readContinue": "Okumaya devam et",
@@ -858,58 +1069,33 @@
             "title": "Vocabulary Review"
         }
     },
-    "english": {
-        "badge": "İngilizce",
-        "title": "İngilizce öğren",
-        "description": "İngilizce yeni bir izlektir. Aşağıdaki deste özellikleri çalışıyor; karakter seti ve antrenman hâlâ hazırlanıyor.",
-        "nav": {
-            "render": {
-                "title": "Okuma",
-                "description": "Kısa metinleri okuyun ve çeviriyle karşılaştırın.",
-                "action": "Okumaya başla"
+    "thai": {
+        "badge": "Tayca",
+        "title": "Tayca öğren",
+        "description": "Taycanın temellerini yazısı, kelimeleri ve testleriyle öğren.",
+        "character": {
+            "badge": "Tay yazısı",
+            "title": "Tay karakterleri",
+            "description": "Geleneksel sırayla ก'dan ฮ'ya kadar tüm ünsüzler, yaygın ünlüler ve ton işaretleri. Sesli duymak için bir karaktere dokun veya bir seti yüksek sesle geç.",
+            "gridHint": "Sesli duymak için bir karaktere dokun veya kaldığın yerden seti geçmek için Okumaya başla'ya bas.",
+            "tabs": {
+                "consonants": "Ünsüzler",
+                "vowels": "Ünlüler",
+                "tones": "Tonlar",
+                "headed": "Halkalı",
+                "headless": "Halkasız"
             },
-            "review": {
-                "title": "Kelime Tekrarı",
-                "description": "Kartlar ve aralıklı tekrar ile kelimeleri gözden geçirin.",
-                "action": "Tekrarı başlat"
+            "voice": {
+                "female": "Kadın",
+                "male": "Erkek"
             },
-            "exam": {
-                "title": "Kelime sınavı",
-                "description": "Kendi kelimelerinizden oluşan çoktan seçmeli sınavla kendinizi deneyin.",
-                "action": "Sınava gir"
+            "voiceUnavailable": "Google TTS sesleri şu anda kullanılamıyor.",
+            "stats": {
+                "set": "Setler",
+                "group": "Grupta",
+                "read": "Okundu"
             },
-            "vocab": {
-                "title": "Kelimelere göz at",
-                "description": "Bir destedeki kelimeleri okunuşları, anlamları ve örnekleriyle inceleyin.",
-                "action": "Kelimeleri gör"
-            },
-            "edit": {
-                "title": "Desteleri Düzenle",
-                "description": "Koleksiyonundaki desteleri yeniden adlandır, sırala veya kaldır.",
-                "action": "Desteleri Düzenle"
-            }
-        },
-        "edit": {
-            "title": "Desteleri Düzenle",
-            "description": "Koleksiyonundaki desteleri yönet. Düzenleyici yakında geliyor.",
-            "back": "İngilizceye Dön"
-        },
-        "vocab": {
-            "title": "Kelime"
-        },
-        "render": {
-            "title": "Okuma"
-        },
-        "review": {
-            "title": "Kelime Tekrarı"
-        },
-        "exam": {
-            "title": "Sınav"
-        },
-        "sections": {
-            "learn": "Öğren",
-            "practice": "Pratik Yap",
-            "manage": "Yönet"
+            "readProgress": "{{total}} içinden {{read}} okundu"
         }
     },
     "settings": {

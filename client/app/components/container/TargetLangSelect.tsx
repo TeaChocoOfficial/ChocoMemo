@@ -19,10 +19,10 @@ export default function TargetLangSelect({
     className,
     allowAll = false,
 }: {
-    className?: string;
     /** Offer the deck-list "all languages" option. Off by default, because a
      *  study surface always needs one concrete target. */
     allowAll?: boolean;
+    className?: string;
 }) {
     const { t } = useTranslation();
     const targetLang = useTargetLang();

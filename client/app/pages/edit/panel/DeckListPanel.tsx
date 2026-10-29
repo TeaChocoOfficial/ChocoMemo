@@ -1,6 +1,5 @@
 // -Path: 'client/app/components/edit/DeckListPanel.tsx'
 import DeckEditList from '../content/DeckEditList';
-import { useEditor } from '~/hooks/editor/useEditor';
 import type { IDockviewPanelProps } from 'dockview-react';
 import DeckList from '~/components/container/DeckList/DeckList';
 
@@ -13,7 +12,7 @@ import DeckList from '~/components/container/DeckList/DeckList';
 export default function DeckListPanel(_props: IDockviewPanelProps) {
     return (
         <>
-            <DeckList type='review' />
+            {/* <DeckList type='review' /> */}
             <DeckEditList />
         </>
     );

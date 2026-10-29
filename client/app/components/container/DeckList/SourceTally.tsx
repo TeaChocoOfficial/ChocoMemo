@@ -2,7 +2,7 @@
 import { useTranslation } from 'react-i18next';
 import type { DeckSource } from '~/types/deck';
 import SetTabs from '~/components/custom/SetTabs';
-import { DECK_SOURCE_TABS } from '~/utils/deck/deckListQuery';
+import { DECK_SOURCE_SOURCES } from '~/utils/deck/deckListQuery';
 
 /** Props for {@link SourceTally}. */
 interface SourceTallyProps {
@@ -37,7 +37,7 @@ export default function SourceTally({ counts, active, onSelect }: SourceTallyPro
             active={active}
             ariaLabel={t('deck.tallyAria')}
             className='-mb-px w-full overflow-x-auto whitespace-nowrap'
-            options={DECK_SOURCE_TABS.map((source) => ({
+            options={DECK_SOURCE_SOURCES.map((source) => ({
                 id: source,
                 label: t(`common.tabs.${source}`),
                 hint: (

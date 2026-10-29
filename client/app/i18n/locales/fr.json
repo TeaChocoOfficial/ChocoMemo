@@ -3,6 +3,7 @@
         "home": "Accueil",
         "study": "Étudier",
         "edit": "Modifier",
+        "guide": "Guide",
         "languages": "Langues",
         "menu": "Ouvrir le menu",
         "settings": "Paramètres",
@@ -22,6 +23,58 @@
         "hide": "Masquer",
         "show": "Afficher",
         "toggleLabel": "Afficher l'interface"
+    },
+    "theme": {
+        "pickerLabel": "Changer de thème",
+        "names": {
+            "lightChoco": "Choco Clair",
+            "darkChoco": "Choco Sombre",
+            "darkGalaxy": "Galaxie Sombre",
+            "lightGalaxy": "Galaxie Claire",
+            "darkSakura": "Sakura Sombre",
+            "lightSakura": "Sakura Clair",
+            "darkPaper": "Papier Sombre",
+            "lightPaper": "Papier Clair",
+            "darkNature": "Nature Sombre",
+            "lightNature": "Nature Claire",
+            "darkAutumn": "Automne Sombre",
+            "lightAutumn": "Automne Clair",
+            "darkWinter": "Hiver Sombre",
+            "lightWinter": "Hiver Clair"
+        }
+    },
+    "common": {
+        "loading": "Loading…",
+        "error": {
+            "oops": "Oups !",
+            "unexpected": "Une erreur inattendue s'est produite.",
+            "notFound": "La page demandée est introuvable."
+        },
+        "tabs": {
+            "local": "Local",
+            "official": "Officiel",
+            "cloud": "Cloud",
+            "community": "Communauté"
+        },
+        "comingSoon": {
+            "cloud": "La synchronisation cloud arrive bientôt, connexion requise",
+            "community": "Parcourir les ensembles communautaires n'est pas encore disponible"
+        },
+        "select": "Sélectionner",
+        "voice_label": "Voix",
+        "voice_preview": "Aperçu",
+        "voice_auto": "Auto",
+        "voice_choose": "Choisir une voix",
+        "voice_missing": "Aucune voix parlant {{lang}} n'est installée sur cet appareil — la synthèse vocale utilisera la voix par défaut du système.",
+        "tts_voice_choose": "Choisir une voix",
+        "tts_voice_preview": "Aperçu",
+        "tts_voice_unavailable": "Les voix Google TTS sont indisponibles pour le moment."
+    },
+    "notfound": {
+        "title": "Page Introuvable",
+        "description": "La page que vous recherchez n'existe pas ou a été déplacée.",
+        "back_home": "Retour à l'Accueil",
+        "error_code": "404"
     },
     "home": {
         "badge": "ChocoMemo · bibliothèque de langues communautaire",
@@ -103,7 +156,8 @@
             "step4": {
                 "title": "Publiez le vôtre",
                 "hint": "Ajoutez les mots que vous oubliez toujours et rendez-les à l'étagère."
-            }
+            },
+            "guideLink": "Lire le guide complet"
         },
         "cta": {
             "title": "Commencez par le premier caractère.",
@@ -112,53 +166,107 @@
             "secondary": "Publier un deck"
         }
     },
-    "theme": {
-        "pickerLabel": "Changer de thème",
-        "names": {
-            "lightChoco": "Choco Clair",
-            "darkChoco": "Choco Sombre",
-            "darkGalaxy": "Galaxie Sombre",
-            "lightGalaxy": "Galaxie Claire",
-            "darkSakura": "Sakura Sombre",
-            "lightSakura": "Sakura Clair",
-            "darkPaper": "Papier Sombre",
-            "lightPaper": "Papier Clair",
-            "darkNature": "Nature Sombre",
-            "lightNature": "Nature Claire",
-            "darkAutumn": "Automne Sombre",
-            "lightAutumn": "Automne Clair",
-            "darkWinter": "Hiver Sombre",
-            "lightWinter": "Hiver Clair"
+    "guide": {
+        "badge": "Guide",
+        "tag": "Manuel d'utilisation",
+        "title": "Comment utiliser ChocoMemo",
+        "subtitle": "Une courte visite de l'app : ce que fait chaque zone et dans quel ordre réussir une première session.",
+        "quickStart": {
+            "title": "Quatre gestes, une séance",
+            "hint": "Lisez un tableau, entraînez-vous, puis révisez ce que vous avez appris. Tout le reste dans ChocoMemo n'est qu'une variante de ces trois étapes."
+        },
+        "steps": {
+            "step1": {
+                "title": "Choisissez une langue",
+                "hint": "La page d'accueil liste toutes les langues cibles. En choisir une ouvre ses paquets de vocabulaire, et le choix est mémorisé sur cet appareil."
+            },
+            "step2": {
+                "title": "Lisez le tableau",
+                "hint": "Parcourez le tableau des caractères de l'écriture que vous apprenez et touchez un glyphe pour l'entendre prononcé."
+            },
+            "step3": {
+                "title": "Entraînez-vous",
+                "hint": "Une manche chronométrée à choix multiples sur les caractères choisis. Réglez le minuteur, le nombre de questions et les groupes selon votre niveau."
+            },
+            "step4": {
+                "title": "Révisez les mots",
+                "hint": "Les cartes mémoire ramènent le vocabulaire étudié selon un calendrier, pour que rien ne s'échappe."
+            }
+        },
+        "sections": {
+            "title": "Le rôle de chaque partie",
+            "hint": "Une carte par zone de l'app. Chaque carte mène directement à la page qu'elle décrit.",
+            "landing": {
+                "title": "Page d'accueil",
+                "hint": "La porte d'entrée : ce qu'est l'app et quelles langues elle enseigne.",
+                "point1": "Chaque langue cible apparaît sur une ligne pleine largeur — choisissez-en une pour commencer.",
+                "point2": "La langue choisie est mémorisée sur l'appareil et devient la cible active.",
+                "point3": "Pas de mur d'inscription : les tableaux et les paquets sont ouverts avant la création d'un compte."
+            },
+            "hub": {
+                "title": "Espace d'étude",
+                "hint": "La vue d'ensemble sur laquelle vous arrivez après avoir choisi une langue.",
+                "point1": "Caractères — une tuile par écriture, dominée par le glyphe lui-même.",
+                "point2": "Exercice — une liste d'exercices de caractères, une ligne chacun.",
+                "point3": "Paquets — Apprendre (vocabulaire, lecture), S'entraîner (révision, examen) et une ligne Gérer pour l'édition."
+            },
+            "charts": {
+                "title": "Tableaux de caractères",
+                "hint": "La vue de référence d'une écriture, avec le son sur chaque caractère.",
+                "point1": "Le kana (japonais), l'alphabet latin (anglais) et le thaï sont disponibles aujourd'hui.",
+                "point2": "Chaque tableau est groupé — sourdes, sonores et contractées pour le kana ; voyelles et consonnes pour l'alphabet.",
+                "point3": "Touchez un caractère pour l'entendre. La voix suit la langue cible, pas la langue de l'interface.",
+                "point4": "Un ordre de lecture parcourt le tableau pour vous et retient où vous en êtes."
+            },
+            "drill": {
+                "title": "Exercice de caractères",
+                "hint": "La manche rapide à choix multiples qui transforme la reconnaissance en rappel.",
+                "point1": "Activez les groupes de caractères et le nombre de questions, de tous à une poignée.",
+                "point2": "Un minuteur par question avec barre de compte à rebours et avance automatique facultative.",
+                "point3": "Compteurs en direct Correct / Faux / Temps écoulé pendant la partie.",
+                "point4": "À la fin : un rang de score, le détail de chaque réponse et un bouton de relecture."
+            },
+            "decks": {
+                "title": "Vocabulaire, lecture, révision et examen",
+                "hint": "Quatre fonctions sur une liste de paquets commune — elles ne diffèrent que par ce qui se passe à l'ouverture d'un paquet.",
+                "point1": "Les paquets de vocabulaire contiennent les mots ; les paquets de lecture contiennent le texte à lire.",
+                "point2": "La révision transforme un paquet en cartes mémoire selon un calendrier espacé.",
+                "point3": "L'examen transforme un paquet en test à choix multiples.",
+                "point4": "La barre d'outils filtre par langue cible, et le tri, la densité et la source sont mémorisés sur l'appareil."
+            },
+            "edit": {
+                "title": "Modifier les paquets",
+                "hint": "Un éditeur pour chaque type de paquet, dans un espace de travail plein écran composé de panneaux ancrables.",
+                "point1": "Des panneaux pour la liste des paquets, l'éditeur, l'aperçu, l'inspecteur et les paramètres.",
+                "point2": "Organisez-les vous-même : glissez, redimensionnez, épinglez un onglet ou réinitialisez la disposition.",
+                "point3": "Sur téléphone, les mêmes panneaux deviennent une barre d'onglets avec un menu coulissant."
+            },
+            "voice": {
+                "title": "Voix et apparence",
+                "hint": "Les paramètres qui décident du son et de l'apparence de l'app.",
+                "point1": "Thèmes : choisissez l'une des palettes claires et sombres, et l'app suit.",
+                "point2": "Voix : choisissez la voix installée qui prononce les caractères, avec un bouton d'aperçu.",
+                "point3": "Interface : changez la langue de l'interface et masquez la barre de navigation pour une vue sans distraction."
+            },
+            "account": {
+                "title": "Compte et communauté",
+                "hint": "Là où se trouvent les fonctions du compte.",
+                "point1": "Connectez-vous ou créez un compte pour accéder à votre profil et à vos paramètres.",
+                "point2": "Votre profil public est identifié par un nom d'affichage, il peut donc être partagé.",
+                "point3": "La synchronisation cloud et les paquets communautaires arrivent bientôt."
+            }
+        },
+        "action": {
+            "open": "Ouvrir",
+            "comingSoon": "Bientôt disponible"
         }
-    },
-    "common": {
-        "loading": "Loading…",
-        "error": {
-            "oops": "Oups !",
-            "unexpected": "Une erreur inattendue s'est produite.",
-            "notFound": "La page demandée est introuvable."
-        },
-        "tabs": {
-            "local": "Local",
-            "official": "Officiel",
-            "cloud": "Cloud",
-            "community": "Communauté"
-        },
-        "comingSoon": {
-            "cloud": "La synchronisation cloud arrive bientôt, connexion requise",
-            "community": "Parcourir les ensembles communautaires n'est pas encore disponible"
-        },
-        "select": "Sélectionner"
-    },
-    "notfound": {
-        "title": "Page Introuvable",
-        "description": "La page que vous recherchez n'existe pas ou a été déplacée.",
-        "back_home": "Retour à l'Accueil",
-        "error_code": "404"
     },
     "study": {
         "title": "Étudier",
         "subtitle": "Choisissez une langue, puis une façon de la pratiquer.",
+        "basic": {
+            "title": "Bases"
+        },
         "characters": {
             "title": "Caractères",
             "description": "Parcourez le tableau des caractères d'une langue et écoutez chacun d'eux prononcé.",
@@ -236,8 +344,7 @@
         },
         "tag": {
             "ready": "Prêt",
-            "current": "Actuel",
-            "comingSoon": "Bientôt Disponible"
+            "current": "Actuel"
         },
         "action": {
             "start": "Démarrer"
@@ -288,16 +395,10 @@
             }
         }
     },
-    "characters": {
-        "backHub": "Retour au hub",
-        "comingSoon": "Le tableau des caractères de {{language}} arrive bientôt.",
-        "unknown": "Cette langue"
-    },
     "languageSelect": {
         "back_home": "Retour à l'Accueil",
         "status": {
-            "available": "Disponible",
-            "comingSoon": "Bientôt Disponible"
+            "available": "Disponible"
         },
         "cta": {
             "start": "Commencer à Apprendre"
@@ -454,11 +555,13 @@
         "viewAuthor": "Voir le profil de {{author}}",
         "edit": {
             "listTitle": "Paquets",
+            "title": "Gestionnaire de paquets",
+            "back": "Retour",
+            "openMenu": "Ouvrir le menu",
             "panelTitle": "Éditeur",
-            "layoutTitle": "Disposition",
+            "settingTitle": "Paramètres",
             "spacedLabel": "Panneaux espacés",
             "spacedHint": "Laissez un espace entre les panneaux ancrés.",
-            "statusTitle": "Statut",
             "previewTitle": "Aperçu",
             "inspectorTitle": "Inspecteur",
             "loading": "Chargement de vos paquets…",
@@ -475,7 +578,6 @@
             "save": "Enregistrer les modifications",
             "delete": "Supprimer le paquet",
             "dragHandle": "Glisser pour réorganiser",
-            "mobileHint": "Réorganisez et modifiez les paquets ci-dessous. Ouvrez sur un écran plus large pour utiliser le gestionnaire de paquets.",
             "filters": "Filtrer les paquets par type",
             "filterAll": "Tous les paquets",
             "typeLabel": "Type",
@@ -484,6 +586,17 @@
             "statusDecks": "{{visible}} / {{total}} paquets",
             "noneSelected": "Aucun paquet sélectionné",
             "addPanel": "Ajouter un panneau",
+            "emptyPanel": "Panneau vide",
+            "resetLayout": "Réinitialiser la disposition",
+            "emptyLayoutTitle": "Aucun panneau ouvert",
+            "emptyLayoutHint": "Réinitialisez la disposition pour retrouver les panneaux par défaut.",
+            "pinTab": "Épingler l'onglet",
+            "unpinTab": "Désépingler l'onglet",
+            "closeTab": "Fermer",
+            "closeOthers": "Fermer les autres",
+            "closeAll": "Tout fermer",
+            "closeLeft": "Fermer à gauche",
+            "closeRight": "Fermer à droite",
             "views": "Vues de l’éditeur",
             "viewAll": "Tous les paquets",
             "viewFavourites": "Favoris",
@@ -549,17 +662,117 @@
         "resetSuccess": "Password updated. Please sign in.",
         "sendResetCode": "Envoyer le code de réinitialisation"
     },
+    "characters": {
+        "backHub": "Retour au hub",
+        "readProgress": "{{read}} / {{total}}",
+        "readStart": "Commencer la lecture",
+        "readContinue": "Continuer la lecture",
+        "readStop": "Arrêter",
+        "nowReading": "en lecture",
+        "upNext": "suivant",
+        "pinToolbar": "Épingler la barre d'outils",
+        "unpinToolbar": "Désépingler la barre d'outils",
+        "sticky": "Épinglé",
+        "stickyOn": "Activé",
+        "stickyOff": "Désactivé",
+        "stats": {
+            "set": "Dans l'ensemble",
+            "group": "Dans le groupe",
+            "read": "Lu"
+        },
+        "voice": {
+            "female": "Féminine",
+            "male": "Masculine"
+        },
+        "notFound": {
+            "badge": "Introuvable",
+            "title": "Langue introuvable",
+            "body": "Cette adresse ne correspond à aucune langue d'étude. Revenez à l'espace d'étude et choisissez-en une dans la liste."
+        },
+        "soon": {
+            "badge": "Bientôt disponible",
+            "title": "{{feature}} en {{language}}",
+            "body": "Le {{feature}} en {{language}} est encore en construction. Le vocabulaire, la lecture, l'examen et la révision en {{language}} sont déjà prêts.",
+            "deckOnly": "Une autre langue ne propose que des paquets — pas de tableau de caractères ni d'exercice. Le vocabulaire, la lecture, l'examen et la révision sont prêts à être étudiés.",
+            "features": {
+                "characters": "tableau de caractères",
+                "drill": "exercice de caractères"
+            },
+            "ctaChart": "Voir le tableau de japonais",
+            "ctaDrill": "Essayer l'exercice de japonais"
+        }
+    },
+    "english": {
+        "badge": "Anglais",
+        "title": "Apprendre l'anglais",
+        "description": "L'anglais est une nouvelle voie. Les fonctions de paquets ci-dessous fonctionnent déjà ; le jeu de caractères et le drill sont encore en cours.",
+        "character": {
+            "badge": "Alphabet",
+            "title": "Alphabet anglais",
+            "description": "Vingt-six lettres, en majuscules et minuscules. Touchez une lettre pour l'entendre, ou parcourez un groupe à voix haute.",
+            "tabs": {
+                "uppercase": "Majuscules",
+                "lowercase": "Minuscules",
+                "vowels": "Voyelles",
+                "consonants": "Consonnes"
+            },
+            "gridHint": "Touchez une lettre pour l'entendre, ou appuyez sur Commencer la lecture pour parcourir le groupe depuis votre dernier point."
+        },
+        "nav": {
+            "render": {
+                "title": "Lecture",
+                "description": "Lisez de courts textes et vérifiez avec la traduction.",
+                "action": "Commencer à lire"
+            },
+            "review": {
+                "title": "Révision de vocabulaire",
+                "description": "Révisez le vocabulaire avec des cartes et la répétition espacée.",
+                "action": "Commencer la révision"
+            },
+            "exam": {
+                "title": "Examen de vocabulaire",
+                "description": "Testez-vous avec un examen à choix multiple fait de ton vocabulaire.",
+                "action": "Passer l'examen"
+            },
+            "vocab": {
+                "title": "Parcourir le vocabulaire",
+                "description": "Parcourez les mots d'un paquet avec leur prononciation, leur sens et des exemples.",
+                "action": "Voir les mots"
+            },
+            "edit": {
+                "title": "Modifier les paquets",
+                "description": "Renommez, réorganisez ou supprimez les paquets de votre collection.",
+                "action": "Modifier les paquets"
+            }
+        },
+        "edit": {
+            "title": "Modifier les paquets",
+            "description": "Gérez les paquets de votre collection. L'éditeur arrive bientôt.",
+            "back": "Retour à l'Anglais"
+        },
+        "vocab": {
+            "title": "Vocabulaire"
+        },
+        "render": {
+            "title": "Lecture"
+        },
+        "review": {
+            "title": "Révision de vocabulaire"
+        },
+        "exam": {
+            "title": "Examen"
+        },
+        "sections": {
+            "learn": "Apprendre",
+            "practice": "S'entraîner",
+            "manage": "Gérer"
+        }
+    },
     "japanese": {
         "badge": "Japonais",
         "title": "Apprendre le Japonais",
         "description": "Maîtrisez les bases du japonais grâce au kana, au vocabulaire et aux quiz.",
         "back_language": "Retour à la Sélection de la Langue",
-        "stats": {
-            "kana": "Caractères kana",
-            "vocabulary": "Mots de vocabulaire",
-            "learned": "Mots appris",
-            "due": "À réviser"
-        },
         "sections": {
             "kana": "Kana",
             "kanaHint": "Apprenez les deux syllabaires japonais : parcourez chaque caractère et entraînez votre reconnaissance.",
@@ -690,6 +903,19 @@
                 "submit": "Créer l'ensemble"
             }
         },
+        "character": {
+            "badge": "Kana",
+            "title": "Kana Japonais",
+            "description": "Le hiragana et le katakana sont les deux syllabaires japonais. Touchez les onglets pour changer.",
+            "tabs": {
+                "hiragana": "Hiragana",
+                "katakana": "Katakana",
+                "voiceless": "Sourd",
+                "voiced": "Sonore",
+                "contracted": "Contracté"
+            },
+            "upNext": "suivant"
+        },
         "kana": {
             "badge": "Kana",
             "title": "Kana Japonais",
@@ -698,23 +924,8 @@
                 "hiragana": "Hiragana",
                 "katakana": "Katakana"
             },
-            "voiceless": "Sourd",
-            "voiced": "Sonore",
-            "contracted": "Contracté",
-            "voice_label": "Voix",
-            "voice_preview": "Aperçu",
-            "voice_auto": "Auto",
-            "voice_choose": "Choisir une voix",
-            "voice_ja": "Japonais",
-            "voice_volume": "Volume",
             "take_quiz": "Faire le Quiz",
             "count": "kana",
-            "stats": {
-                "set": "Dans l'ensemble",
-                "group": "Dans le groupe",
-                "read": "Lu"
-            },
-            "readProgress": "{{read}} / {{total}}",
             "gridHint": "Touchez un kana pour l'entendre, ou appuyez sur Commencer la lecture pour parcourir le groupe là où vous vous étiez arrêté.",
             "readStart": "Commencer la lecture",
             "readContinue": "Continuer la lecture",
@@ -858,58 +1069,33 @@
             "title": "Vocabulary Review"
         }
     },
-    "english": {
-        "badge": "Anglais",
-        "title": "Apprendre l'anglais",
-        "description": "L'anglais est une nouvelle voie. Les fonctions de paquets ci-dessous fonctionnent déjà ; le jeu de caractères et le drill sont encore en cours.",
-        "nav": {
-            "render": {
-                "title": "Lecture",
-                "description": "Lisez de courts textes et vérifiez avec la traduction.",
-                "action": "Commencer à lire"
+    "thai": {
+        "badge": "Thaï",
+        "title": "Apprendre le thaï",
+        "description": "Maîtrisez les bases du thaï grâce à son écriture, son vocabulaire et ses quiz.",
+        "character": {
+            "badge": "Écriture thaïe",
+            "title": "Caractères thaïs",
+            "description": "Toutes les consonnes de ก à ฮ dans l'ordre traditionnel, les voyelles courantes et les signes de ton. Touchez un caractère pour l'entendre, ou parcourez un ensemble à voix haute.",
+            "gridHint": "Touchez un caractère pour l'entendre, ou appuyez sur Commencer la lecture pour parcourir l'ensemble depuis votre dernier point.",
+            "tabs": {
+                "consonants": "Consonnes",
+                "vowels": "Voyelles",
+                "tones": "Tons",
+                "headed": "Avec boucle",
+                "headless": "Sans boucle"
             },
-            "review": {
-                "title": "Révision de vocabulaire",
-                "description": "Révisez le vocabulaire avec des cartes et la répétition espacée.",
-                "action": "Commencer la révision"
+            "voice": {
+                "female": "Féminine",
+                "male": "Masculine"
             },
-            "exam": {
-                "title": "Examen de vocabulaire",
-                "description": "Testez-vous avec un examen à choix multiple fait de ton vocabulaire.",
-                "action": "Passer l'examen"
+            "voiceUnavailable": "Les voix Google TTS sont indisponibles pour le moment.",
+            "stats": {
+                "set": "Ensembles",
+                "group": "Dans le groupe",
+                "read": "Lu"
             },
-            "vocab": {
-                "title": "Parcourir le vocabulaire",
-                "description": "Parcourez les mots d'un paquet avec leur prononciation, leur sens et des exemples.",
-                "action": "Voir les mots"
-            },
-            "edit": {
-                "title": "Modifier les paquets",
-                "description": "Renommez, réorganisez ou supprimez les paquets de votre collection.",
-                "action": "Modifier les paquets"
-            }
-        },
-        "edit": {
-            "title": "Modifier les paquets",
-            "description": "Gérez les paquets de votre collection. L'éditeur arrive bientôt.",
-            "back": "Retour à l'Anglais"
-        },
-        "vocab": {
-            "title": "Vocabulaire"
-        },
-        "render": {
-            "title": "Lecture"
-        },
-        "review": {
-            "title": "Révision de vocabulaire"
-        },
-        "exam": {
-            "title": "Examen"
-        },
-        "sections": {
-            "learn": "Apprendre",
-            "practice": "S'entraîner",
-            "manage": "Gérer"
+            "readProgress": "{{read}} sur {{total}} lus"
         }
     },
     "settings": {

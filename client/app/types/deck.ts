@@ -1,28 +1,27 @@
 import type { Role } from './auth';
 import type { LangText } from './type';
 import type { Languages } from '~/data/language';
+import type { DeckSort, DeckDensity, DeckNsfwFilter } from './deckList';
 
 export type Version = `${number}.${number}.${number}`;
 
 /** Which slice of the collection the explorer is showing. */
 export type DeckView = 'all' | 'favourites' | 'recent';
 
-/** Explorer filter: one editable deck type, or `all` for the whole collection.
- *  `drill` is excluded because it has no rail entry to select it. */
-export type DeckFilter = 'all' | Exclude<DeckType, 'drill'>;
-
+export type DeckType = 'vocab' | 'render' | 'review' | 'exam';
 /** Where a deck came from, which decides who may edit it.
  *  - `official`: ships inside the app bundle, read-only for everyone.
  *  - `local`: authored on this device by the viewer.
  *  - `cloud`: the viewer's own decks, server-synced (planned).
  *  - `community`: published by other users, fetched rather than owned. */
 export type DeckSource = 'official' | 'local' | 'cloud' | 'community';
-
 /** Who may see a deck. `unlisted` is reachable by link but absent from
  *  listings; `private` is the viewer's alone. */
 export type DeckVisibility = 'public' | 'unlisted' | 'private';
-export type DeckType = 'vocab' | 'render' | 'review' | 'exam';
 export type DeckListStatus = 'idle' | 'loading' | 'ready' | 'error';
+/** Explorer filter: one editable deck type, or `all` for the whole collection.
+ *  `drill` is excluded because it has no rail entry to select it. */
+export type DeckFilter = 'all' | DeckType;
 
 /** How a downloaded copy relates to the deck it came from.
  *  - `tracking`: read-only mirror. When the author updates the origin
@@ -30,6 +29,12 @@ export type DeckListStatus = 'idle' | 'loading' | 'ready' | 'error';
  *  - `forked`: detached, editable copy. No longer receives updates
  *    from the origin, even if the author changes it later. */
 export type DeckSyncMode = 'tracking' | 'forked';
+
+export interface DeckListQuery {
+    sort: DeckSort;
+    nsfw: DeckNsfwFilter;
+    density: DeckDensity;
+}
 
 export interface DeckAuthor {
     userId: string;

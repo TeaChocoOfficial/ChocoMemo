@@ -37,7 +37,7 @@ export default function DeckList({ type }: { type: DeckType }) {
     const { t } = useTranslation();
     const targetLang = useDeckTargetLang();
     const counts = useDeckCounts(targetLang, type);
-    const { query, push, setTab, setSearch, setSort, setDensity, setNsfw, toggleTag, reset } =
+    const { query, push, setSource, setSearch, setSort, setDensity, setNsfw, toggleTag, reset } =
         useDeckListQuery();
     const { visible, matched, total, availableTags, isLoading, isNarrowedEmpty, sentinelRef } =
         useDeckListDecks(targetLang, type, query);
@@ -48,15 +48,15 @@ export default function DeckList({ type }: { type: DeckType }) {
     const isSignedIn = useAuthStore((state) => state.user != null);
 
     // Three genuinely different problems, so three different explanations.
-    // A tab that simply has nothing in it, a query that hid everything, and a
+    // A source that simply has nothing in it, a query that hid everything, and a
     // cloud tab that is empty *because* there is no session are not the same
     // message, and only the last one has something to offer.
     const emptyCopy = isNarrowedEmpty
         ? 'deck.empty.filtered'
         : !query.search.trim() && query.tags.length === 0
-          ? query.tab === 'cloud' && isSignedIn
+          ? query.source === 'cloud' && isSignedIn
               ? 'deck.empty.cloudSignedIn'
-              : `deck.empty.${query.tab}`
+              : `deck.empty.${query.source}`
           : 'deck.noResults';
 
     // Only offer a way out where there is one, and only while it would work. A
@@ -68,9 +68,9 @@ export default function DeckList({ type }: { type: DeckType }) {
     // exit is honest.
     const emptyAction = isNarrowedEmpty
         ? { label: t('deck.empty.filtered.action'), onClick: reset }
-        : query.tab === 'local'
-          ? { label: t('deck.empty.local.action'), onClick: () => setTab('official') }
-          : query.tab === 'cloud' && !isSignedIn
+        : query.source === 'local'
+          ? { label: t('deck.empty.local.action'), onClick: () => setSource('official') }
+          : query.source === 'cloud' && !isSignedIn
             ? {
                   label: t('deck.empty.cloud.action'),
                   onClick: () => useAuthStore.getState().setOpen(true),
@@ -79,7 +79,7 @@ export default function DeckList({ type }: { type: DeckType }) {
 
     return (
         <>
-            <SourceTally counts={counts} active={query.tab} onSelect={setTab} />
+            <SourceTally counts={counts} active={query.source} onSelect={setSource} />
 
             <div className='my-4 flex flex-col gap-3'>
                 <div className='flex flex-col gap-3 sm:flex-row sm:items-center'>
