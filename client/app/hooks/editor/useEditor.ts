@@ -1,17 +1,28 @@
 // -Path: 'client/app/components/edit/useDeckEditor.ts'
+import type { DeckMeta, DeckFilter, DeckSource, DeckView, DeckData } from '~/types/deck';
 import { useMemo } from 'react';
 import { useTargetLang } from '../base/useTargetLang';
 import { useFavouritesStore } from '~/stores/deck/favourites.store';
 import { useDeckListLocalStore } from '~/stores/deck/deckListLocal.store';
 import type { DeckDensity, DeckNsfwFilter, DeckSort } from '~/types/deckList';
-import type { DeckData, DeckFilter, DeckSource, DeckView } from '~/types/deck';
+import type { DeckFormPatch } from '~/utils/edit/deckForm';
 import { useDeckEditorStore, type DeckEditorData } from '~/stores/deck/deckEditor.store';
+
+/** What the editor form collects when creating a deck; the store fills the rest
+ *  (id, meta defaults and target language). */
+export type NewDeckInput = DeckFormPatch & {
+    /** Meta rows the author set, spread over the store's defaults. */
+    meta?: Partial<DeckMeta>;
+};
 
 /** The editor surface `useDeckEditor` exposes to any language track. */
 export interface DeckEditor {
     data: DeckEditorData;
+    creating: boolean;
     decks: DeckData[];
+    create: (deck: NewDeckInput) => string;
     selected: DeckData | null;
+    startCreate: () => void;
     visibleDecks: DeckData[];
     typeCounts: Record<DeckFilter, number>;
     clearTags: () => void;
@@ -50,11 +61,12 @@ export function useEditor(): DeckEditor {
         clearTags,
         toggleTag,
         setDensity,
+        setCreating,
         setSelectedId,
     } = useDeckEditorStore();
     const language = useTargetLang();
     const { ids } = useFavouritesStore();
-    const { removeDeck, updateDeck } = useDeckListLocalStore();
+    const { addDeck, removeDeck, updateDeck } = useDeckListLocalStore();
     const data = useDeckEditorStore((state) => state.datas[language]);
     const storedDecks = useDeckListLocalStore((state) => state.deckLists[language]);
 
@@ -120,6 +132,23 @@ export function useEditor(): DeckEditor {
         if (selected) updateDeck(language, selected.id, patch);
     };
 
+    /** Files the drafted deck (order and contents come from the form) and
+     *  selects it, which leaves the form in edit mode on the deck just made. */
+    const create = (deck: NewDeckInput) => {
+        const { meta, ...fields } = deck;
+        const id = addDeck(language, fields, meta);
+        setCreating(language, false);
+        setSelectedId(language, id);
+        return id;
+    };
+
+    /** Opens an empty form; the selection is cleared so the panel never edits a
+     *  deck the user did not pick. */
+    const startCreate = () => {
+        setCreating(language, true);
+        setSelectedId(language, null);
+    };
+
     /** Clears the selection only when the removed deck was the one selected. */
     const remove = (id?: string) => {
         const target = id ?? data.selectedId;
@@ -130,8 +159,11 @@ export function useEditor(): DeckEditor {
 
     return {
         data,
+        create,
         decks,
         selected,
+        startCreate,
+        creating: data.creating === true,
         typeCounts,
         visibleDecks,
         update,
@@ -140,7 +172,10 @@ export function useEditor(): DeckEditor {
         clearTags: () => clearTags(language),
         setSort: (sort) => setSort(language, sort),
         setNsfw: (nsfw) => setNsfw(language, nsfw),
-        select: (id) => setSelectedId(language, id),
+        select: (id) => {
+            setCreating(language, false);
+            setSelectedId(language, id);
+        },
         setView: (value) => setView(language, value),
         toggleTag: (tag) => toggleTag(language, tag),
         setSource: (value) => setSource(language, value),

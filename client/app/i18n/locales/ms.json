@@ -50,12 +50,6 @@
             "unexpected": "Berlaku ralat yang tidak dijangka.",
             "notFound": "Halaman yang diminta tidak dapat ditemui."
         },
-        "tabs": {
-            "local": "Tempatan",
-            "official": "Rasmi",
-            "cloud": "Awan",
-            "community": "Komuniti"
-        },
         "comingSoon": {
             "cloud": "Segerak awan akan tiba tidak lama lagi, log masuk diperlukan",
             "community": "Semakan set komuniti belum tersedia"

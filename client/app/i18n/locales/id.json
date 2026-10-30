@@ -50,12 +50,6 @@
             "unexpected": "Terjadi kesalahan yang tidak terduga.",
             "notFound": "Halaman yang diminta tidak dapat ditemukan."
         },
-        "tabs": {
-            "local": "Lokal",
-            "official": "Resmi",
-            "cloud": "Cloud",
-            "community": "Komunitas"
-        },
         "comingSoon": {
             "cloud": "Sinkronisasi cloud segera hadir, diperlukan masuk",
             "community": "Menjelajahi set komunitas belum tersedia"

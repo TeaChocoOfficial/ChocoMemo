@@ -8,6 +8,8 @@ import type { DeckDensity, DeckNsfwFilter, DeckSort, DeckListQuery } from '~/typ
 export type DeckEditorData = DeckListQuery & {
     view: DeckView;
     filter: DeckFilter;
+    /** Whether the form is drafting a deck that does not exist yet. */
+    creating: boolean;
     selectedId: string | null;
 };
 
@@ -22,6 +24,7 @@ interface DeckEditorState {
     setSource: (language: Languages, source: DeckSource) => void;
     setFilter: (language: Languages, filter: DeckFilter) => void;
     setDensity: (language: Languages, density: DeckDensity) => void;
+    setCreating: (language: Languages, creating: boolean) => void;
     setSelectedId: (language: Languages, id: string | null) => void;
 }
 
@@ -31,6 +34,7 @@ const defaultData: DeckEditorData = {
     view: 'all',
     nsfw: 'all',
     filter: 'all',
+    creating: false,
     sort: 'default',
     source: 'local',
     selectedId: null,
@@ -75,6 +79,7 @@ export const useDeckEditorStore = create<DeckEditorState>()(
             setSource: (languages, source) => set(setDatas(languages, 'source', source)),
             setFilter: (languages, filter) => set(setDatas(languages, 'filter', filter)),
             setDensity: (languages, density) => set(setDatas(languages, 'density', density)),
+            setCreating: (languages, creating) => set(setDatas(languages, 'creating', creating)),
             setSelectedId: (languages, selectedId) =>
                 set(setDatas(languages, 'selectedId', selectedId)),
         }),

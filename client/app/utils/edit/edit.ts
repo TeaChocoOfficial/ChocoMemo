@@ -25,11 +25,21 @@ export function writeLangText(
     return { ...base, [localeKey(language)]: value };
 }
 
+/** Turns a comma-separated field into a trimmed, de-duplicated list. */
+function parseList(text: string): string[] {
+    const items = text
+        .split(',')
+        .map((item) => item.trim())
+        .filter((item) => item.length > 0);
+    return [...new Set(items)];
+}
+
 /** Turns a comma-separated field into a trimmed, de-duplicated tag list. */
 export function parseTags(text: string): string[] {
-    const tags = text
-        .split(',')
-        .map((tag) => tag.trim())
-        .filter((tag) => tag.length > 0);
-    return [...new Set(tags)];
+    return parseList(text);
+}
+
+/** Turns a comma-separated field into a trimmed, de-duplicated id list. */
+export function parseIds(text: string): string[] {
+    return parseList(text);
 }

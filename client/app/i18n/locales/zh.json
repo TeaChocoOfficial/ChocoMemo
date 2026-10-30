@@ -50,12 +50,6 @@
             "unexpected": "发生了意外错误。",
             "notFound": "请求的页面未找到。"
         },
-        "tabs": {
-            "local": "本地",
-            "official": "官方",
-            "cloud": "云端",
-            "community": "社区"
-        },
         "comingSoon": {
             "cloud": "云同步即将推出，需登录",
             "community": "浏览社区词集的功能尚不可用"

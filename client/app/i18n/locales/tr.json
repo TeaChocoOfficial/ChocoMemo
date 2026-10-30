@@ -50,12 +50,6 @@
             "unexpected": "Beklenmeyen bir hata oluştu.",
             "notFound": "İstenen sayfa bulunamadı."
         },
-        "tabs": {
-            "local": "Yerel",
-            "official": "Resmî",
-            "cloud": "Bulut",
-            "community": "Topluluk"
-        },
         "comingSoon": {
             "cloud": "Bulut senkronizasyonu yakında geliyor, giriş gereklidir",
             "community": "Topluluk setlerine göz atma henüz mevcut değil"

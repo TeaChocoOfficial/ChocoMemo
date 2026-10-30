@@ -50,12 +50,6 @@
             "unexpected": "An unexpected error occurred.",
             "notFound": "The requested page could not be found."
         },
-        "tabs": {
-            "local": "Local",
-            "official": "Official",
-            "cloud": "Cloud",
-            "community": "Community"
-        },
         "comingSoon": {
             "cloud": "Cloud sync coming soon, sign in required",
             "community": "Browsing community sets isn't available yet"
@@ -566,6 +560,7 @@
             "inspectorTitle": "Inspector",
             "loading": "Loading your decks…",
             "empty": "No decks to edit yet.",
+            "newDeck": "New deck",
             "previewEmpty": "This deck has no content yet.",
             "selectPrompt": "Select a deck to edit its details.",
             "nameLabel": "Name",
@@ -576,11 +571,22 @@
             "tagsPlaceholder": "Comma-separated tags",
             "nsfwLabel": "Mark as NSFW",
             "save": "Save changes",
+            "create": "Create deck",
+            "readOnly": "Official and community decks are read-only. Import a copy to make it yours.",
             "delete": "Delete deck",
             "dragHandle": "Drag to reorder",
             "filters": "Filter decks by type",
             "filterAll": "All decks",
             "typeLabel": "Type",
+            "imageLabel": "Cover image",
+            "imagePlaceholder": "Image URL",
+            "visibilityLabel": "Visibility",
+            "indexLabel": "Order",
+            "versionLabel": "Version",
+            "allowForkLabel": "Allow forking",
+            "contentIdsLabel": "Item ids",
+            "contentIdsPlaceholder": "Comma-separated item ids",
+            "versionPlaceholder": "1.0.0",
             "sourceLabel": "Source",
             "itemsLabel": "Items",
             "statusDecks": "{{visible}} / {{total}} decks",

@@ -2,14 +2,23 @@
 import { useId } from 'react';
 
 interface SwitchProps {
-    label?: string;
+    /** Nodes are allowed so a caller can put a glyph before the text. */
+    label?: React.ReactNode;
     description?: string;
     checked: boolean;
+    disabled?: boolean;
     className?: string;
     onCheckedChange: (checked: boolean) => void;
 }
 
-export default function Switch({ label, description, checked, className, onCheckedChange }: SwitchProps) {
+export default function Switch({
+    label,
+    description,
+    checked,
+    disabled,
+    className,
+    onCheckedChange,
+}: SwitchProps) {
     const id = useId();
     const trackClass = `relative inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full transition-colors focus-visible:outline-none focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-50 ${
         checked ? 'bg-primary' : 'bg-secondary-muted'
@@ -26,6 +35,7 @@ export default function Switch({ label, description, checked, className, onCheck
                 type="button"
                 className={trackClass}
                 aria-checked={checked}
+                disabled={disabled}
                 onClick={() => onCheckedChange(!checked)}>
                 <span className={thumbClass} />
             </button>

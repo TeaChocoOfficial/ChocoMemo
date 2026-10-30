@@ -50,12 +50,6 @@
             "unexpected": "May naganap na hindi inaasahang error.",
             "notFound": "Hindi mahanap ang hiniling na pahina."
         },
-        "tabs": {
-            "local": "Lokal",
-            "official": "Opisyal",
-            "cloud": "Cloud",
-            "community": "Komunidad"
-        },
         "comingSoon": {
             "cloud": "Malapit na ang cloud sync, kailangan mag-sign in",
             "community": "Hindi pa available ang pagtingin sa mga set ng komunidad"

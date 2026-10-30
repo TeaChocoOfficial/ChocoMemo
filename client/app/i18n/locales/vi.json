@@ -50,12 +50,6 @@
             "unexpected": "Đã xảy ra lỗi không mong muốn.",
             "notFound": "Không tìm thấy trang bạn yêu cầu."
         },
-        "tabs": {
-            "local": "Trong máy",
-            "official": "Chính thức",
-            "cloud": "Đám mây",
-            "community": "Cộng đồng"
-        },
         "comingSoon": {
             "cloud": "Đồng bộ đám mây sắp ra mắt, cần đăng nhập",
             "community": "Chưa thể duyệt bộ từ của cộng đồng"

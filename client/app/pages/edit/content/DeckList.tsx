@@ -1,22 +1,22 @@
-// -Path: 'client/app/components/edit/DeckEditList.tsx'
+// -Path: 'client/app/pages/edit/content/DeckList.tsx'
 import Badge from '~/components/custom/Badge';
 import { useTranslation } from 'react-i18next';
-import type { DeckFilter } from '~/types/deck';
 import Select from '~/components/custom/Select';
 import { useEditor } from '~/hooks/editor/useEditor';
 import SortableList from '../components/SortableList';
 import { useLangText } from '~/hooks/config/useLangText';
 import { FaTrash, FaGripVertical } from 'react-icons/fa6';
 import { useTargetLang } from '~/hooks/base/useTargetLang';
+import { useOpenDeckEdit } from '~/hooks/editor/useOpenDeckEdit';
 import { useDeckListDecks } from '~/hooks/deck/useDeckListDecks';
-import { DECK_SOURCE_SOURCES } from '~/utils/deck/deckListQuery';
+import { isDeckEditable } from '~/utils/edit/deckForm';
+import { DECK_FILTERS, DECK_SOURCE_SOURCES } from '~/utils/deck/deckListQuery';
+import { FILTER_ICONS, SOURCE_ICONS } from '~/constants/deckFilterIcons';
 import TargetLangSelect from '~/components/container/TargetLangSelect';
 import DeckTagFilter from '~/components/container/DeckList/DeckTagFilter';
 import DeckListSearch from '~/components/container/DeckList/DeckListSearch';
+import NewDeckButton from './NewDeckButton';
 import DeckListOptions from '~/components/container/DeckList/DeckListOptions';
-
-/** The type filters offered in the explorer header. */
-const FILTERS: DeckFilter[] = ['all', 'vocab', 'render', 'review', 'exam'];
 
 const ROW = 'group/row flex items-center gap-1 rounded-sm px-2 py-1.5 transition-colors';
 const ROW_IDLE = 'hover:bg-surface-overlay';
@@ -38,7 +38,7 @@ const REMOVE =
  *                optional type filter.
  * @returns The rendered deck list.
  */
-export default function DeckEditList() {
+export default function DeckList() {
     const {
         data,
         visibleDecks,
@@ -57,7 +57,15 @@ export default function DeckEditList() {
     const locale = useLangText();
     const { t } = useTranslation();
     const language = useTargetLang();
+    const openDeckEdit = useOpenDeckEdit();
     const { availableTags } = useDeckListDecks(language, data.filter, data);
+
+    /** Selects the row's deck and brings its form forward, so a click on the
+     *  list lands on the values of the deck that was clicked. */
+    const open = (id: string) => {
+        select(id);
+        openDeckEdit();
+    };
     // const counts = useDeckCounts(targetLang, type);
 
     return (
@@ -68,37 +76,45 @@ export default function DeckEditList() {
                     value={data.filter}
                     aria-label={t('deck.edit.filters')}
                     onChange={(value) => setFilter(value)}
-                    options={FILTERS.map((filter) => ({
-                        value: filter,
-                        label: (
-                            <div className='flex gap-2 items-center'>
-                                {filter === 'all'
-                                    ? t('deck.edit.filterAll')
-                                    : t(`deck.type.${filter}`)}
-                                <span className='font-mono text-xs tabular-nums opacity-60'>0</span>
-                            </div>
-                        ),
-                    }))}
+                    options={DECK_FILTERS.map((filter) => {
+                        const Icon = FILTER_ICONS[filter];
+                        return {
+                            value: filter,
+                            icon: <Icon className='h-3.5 w-3.5' />,
+                            label: (
+                                <div className='flex gap-2 items-center'>
+                                    {filter === 'all'
+                                        ? t('deck.edit.filterAll')
+                                        : t(`deck.type.${filter}`)}
+                                    <span className='font-mono text-xs tabular-nums opacity-60'>
+                                        0
+                                    </span>
+                                </div>
+                            ),
+                        };
+                    })}
                 />
                 <Select
                     value={data.source}
                     aria-label={t('deck.tallyAria')}
                     onChange={(value) => setSource(value)}
-                    options={DECK_SOURCE_SOURCES.map((source) => ({
-                        value: source,
-                        label: (
-                            <div className='flex gap-2 items-center'>
-                                {t(`common.tabs.${source}`)}
-                                <span className='font-mono text-xs tabular-nums opacity-60'>0</span>
-                            </div>
-                        ),
-                        // icon: (
-                        //     <span className='font-mono text-xs tabular-nums opacity-60'>
-                        //         {/* {counts[source]} */}0
-                        //     </span>
-                        // ),
-                    }))}
+                    options={DECK_SOURCE_SOURCES.map((value) => {
+                        const Icon = SOURCE_ICONS[value];
+                        return {
+                            value,
+                            icon: <Icon className='h-3.5 w-3.5' />,
+                            label: (
+                                <div className='flex gap-2 items-center'>
+                                    {t(`deck.source.${value}`)}
+                                    <span className='font-mono text-xs tabular-nums opacity-60'>
+                                        0
+                                    </span>
+                                </div>
+                            ),
+                        };
+                    })}
                 />
+                <NewDeckButton />
             </div>
             <div className='min-w-0'>
                 <DeckListSearch
@@ -145,21 +161,23 @@ export default function DeckEditList() {
                             <button
                                 type='button'
                                 className={SELECT}
-                                onClick={() => select(deck.id)}
+                                onClick={() => open(deck.id)}
                             >
                                 <span className='min-w-0 flex-1 truncate text-sm font-medium text-surface-foreground'>
                                     {locale(deck.name)}
                                 </span>
                                 <Badge>{t(`deck.type.${deck.type}`)}</Badge>
                             </button>
-                            <button
-                                type='button'
-                                className={REMOVE}
-                                onClick={() => remove(deck.id)}
-                                aria-label={t('deck.deleteAria')}
-                            >
-                                <FaTrash className='h-3.5 w-3.5' />
-                            </button>
+                            {isDeckEditable(deck) && (
+                                <button
+                                    type='button'
+                                    className={REMOVE}
+                                    onClick={() => remove(deck.id)}
+                                    aria-label={t('deck.deleteAria')}
+                                >
+                                    <FaTrash className='h-3.5 w-3.5' />
+                                </button>
+                            )}
                         </div>
                     )}
                 />

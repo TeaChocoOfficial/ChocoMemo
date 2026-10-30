@@ -50,12 +50,6 @@
             "unexpected": "Une erreur inattendue s'est produite.",
             "notFound": "La page demandée est introuvable."
         },
-        "tabs": {
-            "local": "Local",
-            "official": "Officiel",
-            "cloud": "Cloud",
-            "community": "Communauté"
-        },
         "comingSoon": {
             "cloud": "La synchronisation cloud arrive bientôt, connexion requise",
             "community": "Parcourir les ensembles communautaires n'est pas encore disponible"

@@ -50,12 +50,6 @@
             "unexpected": "Ein unerwarteter Fehler ist aufgetreten.",
             "notFound": "Die angeforderte Seite konnte nicht gefunden werden."
         },
-        "tabs": {
-            "local": "Lokal",
-            "official": "Offiziell",
-            "cloud": "Cloud",
-            "community": "Community"
-        },
         "comingSoon": {
             "cloud": "Cloud-Sync kommt bald, Anmeldung erforderlich",
             "community": "Community-Sets durchstöbern ist noch nicht verfügbar"

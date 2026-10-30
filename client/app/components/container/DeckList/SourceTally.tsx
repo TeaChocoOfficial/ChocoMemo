@@ -39,7 +39,7 @@ export default function SourceTally({ counts, active, onSelect }: SourceTallyPro
             className='-mb-px w-full overflow-x-auto whitespace-nowrap'
             options={DECK_SOURCE_SOURCES.map((source) => ({
                 id: source,
-                label: t(`common.tabs.${source}`),
+                label: t(`deck.source.${source}`),
                 hint: (
                     <span className='font-mono text-xs tabular-nums opacity-60'>
                         {counts[source]}

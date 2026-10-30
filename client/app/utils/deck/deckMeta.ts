@@ -12,7 +12,7 @@ import { APP_AUTHOR_ID, GUEST_AUTHOR_ID } from '~/constants/deckAuthors';
 import type { DeckAuthor, DeckMeta } from '~/types/deck';
 
 /** Deck content revision. Nothing bumps it yet, so everything starts here. */
-const INITIAL_VERSION = '0.0.1';
+export const INITIAL_VERSION = '0.0.1';
 
 /** When the bundled content landed, stamped onto every deck that ships in the
  *  app. Fixed rather than read from the clock: `app/data` is evaluated once on

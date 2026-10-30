@@ -1,8 +1,8 @@
 // -Path: 'client/app/components/edit/dockview/panels.tsx'
-import EditorPanel from './EditorPanel';
 import SettingPanel from './SettingPanel';
 import PreviewPanel from './PreviewPanel';
 import ActivityPanel from './ActivityPanel';
+import DeckEditPanel from './DeckEditPanel';
 import DeckListPanel from './DeckListPanel';
 import InspectorPanel from './InspectorPanel';
 import type { FunctionComponent } from 'react';
@@ -74,8 +74,8 @@ export const PANEL_DEFS: PanelDefinition[] = [
         mobileOrder: 1,
     },
     {
-        id: 'editor',
-        component: EditorPanel,
+        id: 'deckEdit',
+        component: DeckEditPanel,
         titleKey: 'deck.edit.panelTitle',
         position: { referencePanel: 'list', direction: 'right' },
         mobileOrder: 2,
@@ -84,14 +84,14 @@ export const PANEL_DEFS: PanelDefinition[] = [
         id: 'inspector',
         component: InspectorPanel,
         titleKey: 'deck.edit.inspectorTitle',
-        position: { referencePanel: 'editor', direction: 'right' },
+        position: { referencePanel: 'deckEdit', direction: 'right' },
         mobileOrder: 4,
     },
     {
         id: 'preview',
         component: PreviewPanel,
         titleKey: 'deck.edit.previewTitle',
-        position: { referencePanel: 'editor', direction: 'below' },
+        position: { referencePanel: 'deckEdit', direction: 'below' },
         mobileOrder: 3,
     },
     {

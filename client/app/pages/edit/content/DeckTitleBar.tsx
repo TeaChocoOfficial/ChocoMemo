@@ -1,7 +1,6 @@
 // -Path: 'client/app/pages/edit/content/DeckTitleBar.tsx'
 import { useNavigate } from 'react-router';
 import { useTranslation } from 'react-i18next';
-import type { Languages } from '~/data/language';
 import { PANEL_DEFS } from '~/pages/edit/panel/panels';
 import { useOpenPanel } from '~/hooks/editor/useOpenPanel';
 import { FaArrowLeft, FaBars, FaGear, FaLayerGroup } from 'react-icons/fa6';

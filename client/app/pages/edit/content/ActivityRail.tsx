@@ -25,7 +25,7 @@ const BUTTON = 'relative flex h-11 w-11 items-center justify-center rounded-sm t
  */
 export default function ActivityRail() {
     const { t } = useTranslation();
-    const { view, setView } = useEditor();
+    const { data, setView } = useEditor();
 
     /** Label for a view button, from the shared i18n keys. */
     const viewLabel = (id: DeckView) =>
@@ -42,7 +42,7 @@ export default function ActivityRail() {
         >
             <div className='flex items-center gap-1'>
                 {VIEWS.map((item) => {
-                    const active = item.id === view;
+                    const active = item.id === data.view;
                     const label = viewLabel(item.id);
 
                     return (

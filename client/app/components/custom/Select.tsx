@@ -83,6 +83,7 @@ export interface OptionSelectType<ValueType = string> {
 
 export interface SelectProps<ValueType = string> {
     value?: ValueType;
+    disabled?: boolean;
     required?: boolean;
     className?: string;
     label?: React.ReactNode;
@@ -131,6 +132,7 @@ export default function Select<ValueType>({
     value,
     size = 'md',
     options,
+    disabled,
     required,
     children,
     onChange,
@@ -146,7 +148,10 @@ export default function Select<ValueType>({
     const dropdownRef = useRef<HTMLDivElement>(null);
     const [panelPos, setPanelPos] = useState<PanelPosition | null>(null);
 
-    const handleToggle = () => setIsOpen((prev) => !prev);
+    const handleToggle = () => {
+        if (disabled) return;
+        setIsOpen((prev) => !prev);
+    };
 
     const selectedOption = useMemo(() => {
         let option = options.find((option) => option.value === value);
@@ -260,9 +265,10 @@ export default function Select<ValueType>({
             <button
                 type='button'
                 onClick={handleToggle}
+                disabled={disabled}
                 className={`${triggerClass} ${className} ${
                     isOpen ? 'border-primary' : 'border-line'
-                }`}
+                } disabled:cursor-not-allowed disabled:opacity-60 disabled:pointer-events-none`}
             >
                 <div className='flex items-center gap-3 truncate'>
                     {(selectedOption?.icon || icon) && (

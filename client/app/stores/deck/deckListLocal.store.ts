@@ -8,7 +8,7 @@ import { Languages } from '~/data/language';
 import { newDeckMeta } from '~/utils/deck/deckMeta';
 import type { ExamQuestion } from '~/types/deck/exam';
 import { importedDeckSchema } from '~/utils/deck/deck';
-import type { DeckData, DeckLists } from '~/types/deck';
+import type { DeckData, DeckLists, DeckMeta } from '~/types/deck';
 import type { RenderPassage } from '~/types/deck/render';
 import { DEFAULT_PASSAGES } from '~/data/ja/renderPassages';
 import { createJSONStorage, persist } from 'zustand/middleware';
@@ -32,9 +32,13 @@ interface DeckListLocalState {
     addPassage: (passage: Omit<RenderPassage, 'id'>) => string;
     updatePassage: (id: string, passage: Omit<RenderPassage, 'id'>) => void;
     removePassage: (id: string) => void;
+    /** Files a new deck. The store stamps the id, the meta and the language;
+     *  the source, order and content come from the author. `meta` overrides the
+     *  defaults stamped on creation (e.g. the visibility they picked). */
     addDeck: (
         language: Languages,
-        deck: Omit<DeckData, 'id' | 'source' | 'meta' | 'targetLang'>,
+        deck: Omit<DeckData, 'id' | 'meta' | 'targetLang'>,
+        meta?: Partial<DeckMeta>,
     ) => string;
     updateDeck: (language: Languages, id: string, patch: Partial<DeckData>) => void;
     removeDeck: (language: Languages, id: string) => void;
@@ -59,7 +63,7 @@ export const useDeckListLocalStore = create<DeckListLocalState>()(
             passages: [],
             questions: [],
 
-            addDeck: (language, deck) => {
+            addDeck: (language, deck, meta) => {
                 const id = newId(deck.type);
                 // Meta is stamped here rather than by the caller: the store is
                 // the only place that knows a deck was just created, so no
@@ -67,8 +71,7 @@ export const useDeckListLocalStore = create<DeckListLocalState>()(
                 const stored: DeckData = {
                     ...deck,
                     id,
-                    source: 'local',
-                    meta: newDeckMeta(),
+                    meta: { ...newDeckMeta(), ...meta },
                     targetLang: language,
                 };
                 set((state) =>
